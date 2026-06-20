@@ -1,0 +1,30 @@
+name: Plumber
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions: read-all
+
+jobs:
+  plumber:
+    name: Plumber CI/CD Compliance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          persist-credentials: false
+
+      - name: Run Plumber
+        uses: getplumber/plumber@a0658c7fbd82163d75803cce492d18e50ef71afd # v1
+        with:
+          config: .plumber.yaml
+          gate: 90
