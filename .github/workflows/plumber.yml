@@ -10,7 +10,7 @@ permissions: read-all
 
 jobs:
   plumber:
-    name: Plumber CI/CD Compliance
+    name: Plumber - CI/CD Compliance
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -47,9 +47,19 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always() && hashFiles('plumber-results.json') != ''
         with:
-          name: plumber-compliance
+          name: plumber-report
           path: |
             plumber-results.json
             plumber-results.sarif
             plumber-pbom.cdx.json
           retention-days: 30
+
+      - name: Plumber Gate (conformite >= 90% requise)
+        if: hashFiles('plumber-results.json') != ''
+        run: |
+          SCORE=$(jq '.compliance' plumber-results.json)
+          echo "Plumber compliance: ${SCORE}%"
+          if [ "$SCORE" -lt 90 ]; then
+            echo "::error::Plumber compliance ${SCORE}% < 90% (security gate)"
+            exit 1
+          fi
