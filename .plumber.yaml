@@ -1,0 +1,55 @@
+version: "2.0"
+
+github:
+  controls:
+
+    actionsMustBePinnedByCommitSha:
+      enabled: true
+      trustedOwners: []
+
+    actionsMustNotBeArchived:
+      enabled: true
+
+    actionsMustNotCarryKnownCVEs:
+      enabled: true
+
+    githubActionMustComeFromAuthorizedSources:
+      enabled: true
+      trustGithubOfficialActions: true
+      trustSameOrgActions: true
+      trustedGithubActions:
+        - ossf/scorecard-action
+        - getplumber/plumber
+
+    pipelineMustNotEnableDebugTrace:
+      enabled: true
+      forbiddenVariables:
+        - ACTIONS_STEP_DEBUG
+        - ACTIONS_RUNNER_DEBUG
+
+    pipelineMustNotExecuteUnverifiedScripts:
+      enabled: true
+      trustedUrls: []
+
+    workflowMustNotInjectUserInputInScripts:
+      enabled: true
+
+    workflowMustNotUseDangerousTriggers:
+      enabled: true
+
+    workflowsMustDeclarePermissions:
+      enabled: true
+
+    workflowMustNotGrantPermissionsWriteAll:
+      enabled: true
+
+    reusableWorkflowsMustNotInheritSecrets:
+      enabled: true
+
+    branchMustBeProtected:
+      enabled: true
+      defaultMustBeProtected: true
+      namePatterns:
+        - main
+      allowForcePush: false
+      codeOwnerApprovalRequired: false
