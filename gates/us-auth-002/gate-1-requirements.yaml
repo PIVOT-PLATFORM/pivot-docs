@@ -1,0 +1,59 @@
+---
+us: US-AUTH-002
+gate: 1
+name: "Breaking Point 1 — Exigences validées"
+status: PASS
+date: "2026-06-21"
+
+description: >
+  Migration JWT HS512 → tokens opaques DB/TTL.
+  Validation que les exigences fonctionnelles et de sécurité sont couvertes
+  avant démarrage de l'implémentation.
+
+acceptance_criteria:
+  - id: AC-001
+    description: "Le token brut (UUID) n'est jamais persisté en base de données"
+    status: PASS
+    evidence: "TokenService.issue() stocke CryptoUtils.sha256(rawToken) — jamais rawToken"
+
+  - id: AC-002
+    description: "Le TTL est configurable par un admin via feature_flags sans redéploiement"
+    status: PASS
+    evidence: "Flags SESSION_TTL_SECONDS, SESSION_TTL_REMEMBER_ME_SECONDS, SESSION_REFRESH_THRESHOLD en DB"
+
+  - id: AC-003
+    description: "Option 'Se souvenir de moi' applique un TTL étendu (30 jours par défaut)"
+    status: PASS
+    evidence: "LoginRequest.rememberMe → TokenService.issue(rememberMe=true) → TTL 2592000s"
+
+  - id: AC-004
+    description: "Le token est auto-refreshé côté serveur lorsque le seuil de TTL restant est atteint"
+    status: PASS
+    evidence: "TokenAuthenticationFilter → token.needsRefresh(threshold) → tokenService.rotate() → X-New-Token header"
+
+  - id: AC-005
+    description: "Le cookie de session est httpOnly, Secure, SameSite=Strict"
+    status: PASS
+    evidence: "TokenAuthenticationFilter.setSessionCookie() : httpOnly=true, secure=true, SameSite=Strict, path=/api/auth"
+
+  - id: AC-006
+    description: "JWT et refresh tokens entièrement supprimés"
+    status: PASS
+    evidence: "JwtService, RefreshToken, RefreshTokenRepository supprimés. SecurityConfig sans oauth2ResourceServer().jwt()"
+
+  - id: AC-007
+    description: "Race condition sur la rotation concurrente de token gérée"
+    status: PASS
+    evidence: "TokenService.rotate() → findByTokenHashAndStatusForUpdate() PESSIMISTIC_WRITE → Optional.empty() si déjà révoqué"
+
+  - id: AC-008
+    description: "Nombre maximum de sessions par utilisateur configurable et appliqué"
+    status: PASS
+    evidence: "Feature flag MAX_SESSIONS_PER_USER (défaut 10) — éviction LIFO dans TokenService.issue()"
+
+security_review:
+  red_team: PASS
+  blue_team: PASS
+  findings_resolved: 7
+  findings_open: 1
+  open_finding: "R5 — UUID v4 vs SecureRandom 256 bits (LOW — optionnel post-MVP)"
