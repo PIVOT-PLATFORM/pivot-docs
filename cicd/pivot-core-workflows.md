@@ -110,3 +110,21 @@ docker compose up -d   # postgres:18 + redis:7 + mailpit + pivot-core app
 | Redis | 6379 | Cache + WebSocket sessions |
 | Mailpit | 8025 | Interface SMTP de test |
 | pivot-core | 8080 | API REST + WebSocket |
+
+---
+
+## Branch protection — vérifications GitHub Settings
+
+`Settings → Branches → Branch protection rules → main` :
+
+| Règle | Valeur attendue |
+|-------|-----------------|
+| Require a pull request before merging | ✅ activé |
+| Require approvals | ≥ 1 |
+| **Require review from Code Owners** | ✅ activé — sinon CODEOWNERS ignoré |
+| Require status checks to pass | ✅ activé (CI obligatoire) |
+| Require branches to be up to date | ✅ activé |
+| Do not allow bypassing the above settings | ✅ activé |
+
+> **Action requise après toute modification de `.github/CODEOWNERS`** : vérifier que
+> « Require review from Code Owners » est bien coché — GitHub ne l'active pas automatiquement.

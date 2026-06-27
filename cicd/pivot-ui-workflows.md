@@ -121,3 +121,21 @@ npm run test                                    # Vitest watch
 npm run build -- --configuration production    # build prod → dist/frontend/browser/
 docker compose up                              # servir le build prod via nginx :80
 ```
+
+---
+
+## Branch protection — vérifications GitHub Settings
+
+`Settings → Branches → Branch protection rules → main` :
+
+| Règle | Valeur attendue |
+|-------|-----------------|
+| Require a pull request before merging | ✅ activé |
+| Require approvals | ≥ 1 |
+| **Require review from Code Owners** | ✅ activé — sinon CODEOWNERS ignoré |
+| Require status checks to pass | ✅ activé (CI obligatoire) |
+| Require branches to be up to date | ✅ activé |
+| Do not allow bypassing the above settings | ✅ activé |
+
+> **Action requise après toute modification de `.github/CODEOWNERS`** : vérifier que
+> « Require review from Code Owners » est bien coché — GitHub ne l'active pas automatiquement.
