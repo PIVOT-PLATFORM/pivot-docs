@@ -1,0 +1,140 @@
+@startuml PIVOT ACDD — Workflow agentique
+!pragma layout smetana
+
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.5
+skinparam ArrowColor #546E7A
+
+skinparam activity {
+  BackgroundColor #FFFFFF
+  BorderColor #546E7A
+  BorderThickness 1.5
+  FontSize 10
+  DiamondBackgroundColor #FFF9C4
+  DiamondBorderColor #F9A825
+  DiamondFontSize 9
+}
+
+skinparam partition {
+  BackgroundColor #F5F5F5
+  BorderColor #90A4AE
+  FontSize 11
+  FontStyle bold
+}
+
+skinparam note {
+  BackgroundColor #FFFFF8
+  BorderColor #90A4AE
+  FontSize 9
+}
+
+title PIVOT — Workflow agentique ACDD\n(Acceptance Criteria Driven Development)
+
+|#E3F2FD| PO Agent |
+start
+:Rédige **Epic → Feature → US**\nAC : Given/When/Then\n+ Security + A11y;
+
+|#E8F5E9| Architect + Security + QA |
+:Revue AC\n• Faisabilité technique\n• Surface d'attaque (Red Team)\n• Couverture testable;
+
+|#FFF9C4| Gates & Breaking Points |
+:**Gate 1 — READINESS**\nscore 0–100;
+
+if (score ≥ 70 ?) then (oui)
+  :→ **Breaking Point 1**\nDemande validation mainteneur\n[US + AC];
+  note right
+    Human Gate :
+    needs-human-valid
+    → attend mainteneur
+  end note
+  if (Human Gate ?) then (human-validated)
+  else (human-reject)
+    |#E3F2FD| PO Agent |
+    :Recadre AC / périmètre;
+    note right : repasse needs-human-valid
+    detach
+  endif
+else (non)
+  |#E3F2FD| PO Agent |
+  :Clarifie AC avec mainteneur;
+  detach
+endif
+
+|#FCE4EC| Dev Agent |
+:Crée branche\n**feat/us-{id}-{slug}**\n(checkout main → pull → new branch);
+
+repeat
+  :Code + tests\n(commit atomique);
+
+  |#FFF9C4| Gates & Breaking Points |
+  :**Gate 2 — COVERAGE**\nscore 0–100 par commit;
+
+  if (score ?) then (≥ 85)
+    note right : CONTINUE
+  elseif (70–84) then (70–84)
+    |#FCE4EC| Dev Agent |
+    :Complète tests manquants;
+    note right : AC sans test = non implémenté
+  else (< 70)
+    |#FCE4EC| Dev Agent |
+    :Stop — consulte QA Agent;
+    detach
+  endif
+
+  |#FCE4EC| Dev Agent |
+
+repeat while (US complète ?) is (non)
+-> oui;
+
+:Qualité : ESLint / Checkstyle /\nSpotBugs — 0 warning;
+
+|#EDE7F6| PR Review Agent |
+:Ouvre PR + Gate 3;
+:CI pipeline (Plumber, Gitleaks,\nSemgrep, tests, build);
+
+|#FFF9C4| Gates & Breaking Points |
+:**Gate 3 — QUALITY**\nHard blocks check;
+
+if (Hard block ?) then (oui)
+  note right
+    Hard blocks :
+    • Secret Gitleaks
+    • label security
+    • breaking-change
+    • contrat module modifié
+  end note
+  :Label **needs-human-review**\n+ escalade Breaking Point 2;
+  detach
+else (non)
+
+  |#EDE7F6| PR Review Agent |
+  :**Gate 4 — MERGE CONFIDENCE**\nscore 0–100\n(breakdown en commentaire PR);
+
+  |#FFF9C4| Gates & Breaking Points |
+  if (score Gate 4 ?) then (≥ 85)
+    |#EDE7F6| PR Review Agent |
+    :Merge autonome;
+    note right : Stage → Review (Claude)
+  elseif (60–84) then (60–84)
+    |#EDE7F6| PR Review Agent |
+    :Merge documenté\n(commentaire breakdown);
+    note right : Stage → Review (Claude)
+  else (< 60)
+    :→ **Breaking Point 2**\nLabel needs-human-review\n+ score breakdown;
+    detach
+  endif
+
+endif
+
+|#EFEBE9| Mainteneur (Human) |
+:Recette + validation\n**Stage → Done**;
+note right
+  Claude ne pose JAMAIS Done.
+  Mainteneur uniquement.
+end note
+
+stop
+
+@enduml
