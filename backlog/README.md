@@ -33,9 +33,9 @@ EPIC
 
 | Champ | Type | Valeurs |
 |-------|------|---------|
-| **Type** | single-select | `Epic` · `Feature` · `Enabler` · `US` |
+| **Item Type** | single-select | `Epic` · `Feature` · `Enabler` · `US` (`Type` est un nom réservé GitHub) |
 | **Parent** | text | Clé du parent (ex. `E01`, `F01.1`) |
-| **Status** | single-select | `Backlog` · `Ready` · `In progress` · `Review` · `Done` |
+| **Stage** | single-select | `Backlog` · `Ready` · `In progress` · `Review` · `Done` (le champ natif `Status` n'est pas reconfigurable via API) |
 | **Human Gate** | single-select | `needs-human-valid` · `validated` |
 | **Priority** | single-select | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | single-select (extensible) | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` · *(nouveaux modules ajoutés au fil de l'eau)* |
