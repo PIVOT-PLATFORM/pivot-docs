@@ -1,0 +1,130 @@
+@startuml PIVOT Platform Architecture
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 11
+skinparam ArrowThickness 1.5
+skinparam ArrowColor #444444
+skinparam NoteBorderColor #999999
+skinparam NoteBackgroundColor #FFFFF0
+skinparam componentStyle rectangle
+
+skinparam rectangle {
+  BackgroundColor #F8F9FA
+  BorderColor #6C757D
+  BorderThickness 1
+  FontStyle bold
+}
+
+skinparam database {
+  BackgroundColor #E8F4FD
+  BorderColor #1565C0
+}
+
+skinparam component {
+  BackgroundColor #FFFFFF
+  BorderColor #495057
+}
+
+skinparam actor {
+  BackgroundColor #FFF3E0
+  BorderColor #E65100
+}
+
+skinparam cloud {
+  BackgroundColor #EDE7F6
+  BorderColor #4527A0
+}
+
+' ─────────────────────────────────────
+' ACTEURS EXTERNES
+' ─────────────────────────────────────
+actor "Utilisateur\n(Browser)" as browser #FFF3E0
+cloud "IdP externe\nKeycloak · Azure AD · Okta\n(OIDC enterprise uniquement)" as idp #EDE7F6
+
+' ─────────────────────────────────────
+' ZONE PUBLIQUE — nginx (DMZ)
+' ─────────────────────────────────────
+rectangle "  DMZ — pivot-ui  " as zone_dmz #E8F5E9 {
+
+  rectangle "  Docker : nginx  " as nginx_box #C8E6C9 {
+    component "nginx\nTLS 1.3 termination\nHSTS · CSP · X-Frame-Options\nGzip · Cache-Control\n──────────────\nServe : Angular bundle\nProxy : /api/** → core :8080\nProxy : /ws/**  → core :8080" as nginx #FFFFFF
+  }
+
+}
+
+note right of nginx
+  <b>Décision sécurité :</b>
+  TLS terminé ici.
+  nginx → core = HTTP (réseau Docker interne).
+  Acceptable si réseau Docker isolé
+  (<b>non exposé sur l'hôte</b>).
+end note
+
+' ─────────────────────────────────────
+' ZONE INTERNE — réseau Docker pivot-net
+' ─────────────────────────────────────
+rectangle "  Réseau Docker interne (pivot-net)  " as zone_internal #FFF8E1 {
+
+  rectangle "  Docker : pivot-core (JRE 25)  " as core_box #FFE0B2 {
+    component "Spring Boot 4.x · Java 25\n──────────────\nREST API :8080\nSTOMP / WebSocket :8080\n──────────────\nAuth interne : opaque tokens SHA-256\nAuth enterprise : JWKS resource server\nFlyway migrations (démarrage)\nApplicationEventPublisher (bus modules)" as spring #FFFFFF
+  }
+
+  database "PostgreSQL 18\n:5432" as postgres
+  database "Redis 7\n:6379\n(cache + sessions WS)" as redis
+  component "SMTP\nMailpit :1025 (dev)\nSMTPS :465 (prod)" as smtp
+
+}
+
+' ─────────────────────────────────────
+' CONNEXIONS — Internet → DMZ
+' ─────────────────────────────────────
+browser -[#1565C0]-> nginx : <b>HTTPS :443</b>\nTLS 1.3 · HTTP/2\n(pages, assets, API)
+browser -[#0097A7]..> nginx : <b>WSS :443</b> /ws/**\n(WebSocket Secure\nSTOMP upgrade)
+
+' ─────────────────────────────────────
+' CONNEXIONS — DMZ → Internal
+' ─────────────────────────────────────
+nginx -[#558B2F]-> spring : <b>HTTP :8080</b>\n(réseau Docker interne)\n[proxy /api/**]
+nginx -[#00796B]..> spring : <b>WS :8080</b>\n(proxy WebSocket\n/ws/**)
+
+' ─────────────────────────────────────
+' CONNEXIONS — Internal services
+' ─────────────────────────────────────
+spring -[#1565C0]-> postgres : <b>JDBC :5432</b>\nssl=require (prod)\nssl=disable (dev)
+spring -[#6A1B9A]-> redis : <b>RESP :6379</b>\nrequirepass + TLS (prod)\nno-auth (dev)
+spring -[#E65100]-> smtp : <b>SMTPS :465</b> (prod)\n<b>SMTP :1025</b> (dev)
+
+' ─────────────────────────────────────
+' CONNEXIONS — OIDC enterprise
+' ─────────────────────────────────────
+browser -[#4527A0]-> idp : <b>HTTPS :443</b>\nOIDC Authorization Code\n+ PKCE S256 (state · nonce)\n→ JWT access token
+spring -[#4527A0]-> idp : <b>HTTPS :443</b>\nJWKS validation\n(signature · expiry · issuer)\nrotation auto-gérée
+
+note bottom of idp
+  <b>CORS en dev :</b> localhost:4200 strict.
+  <b>Prod :</b> same-origin via nginx proxy
+  → CORS non requis côté core.
+end note
+
+' ─────────────────────────────────────
+' LÉGENDE
+' ─────────────────────────────────────
+legend right
+  <b>Légende protocoles</b>
+  ──────────────────────
+  <color:#1565C0>—— HTTPS / JDBC/SSL</color>  chiffré TLS
+  <color:#0097A7>···· WSS</color>              WebSocket Secure
+  <color:#558B2F>—— HTTP</color>               réseau interne Docker
+  <color:#00796B>···· WS</color>               WebSocket (interne)
+  <color:#6A1B9A>—— RESP</color>               Redis (TLS prod)
+  <color:#E65100>—— SMTP(S)</color>            email
+  <color:#4527A0>—— OIDC</color>               PKCE S256 enterprise
+  ──────────────────────
+  <b>Gaps MVP (backlog)</b>
+  Rate limiting : Bucket4j / nginx limit_req
+  Redis TLS : prod uniquement
+  PG SSL     : ssl=require prod
+endlegend
+
+@enduml
