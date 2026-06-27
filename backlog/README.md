@@ -47,7 +47,7 @@ EPIC
 
 ## 3. Human Gate — démarrage d'implémentation
 
-**Règle absolue : aucune implémentation ne démarre tant que `Human Gate = human-validated`.**
+**Règle absolue : aucune implémentation ne démarre avant que `Human Gate = human-validated`.**
 
 - Toute US naît en `needs-human-valid`.
 - Le mainteneur passe l'item à `human-validated` après revue de l'US **et** de ses critères
@@ -101,7 +101,7 @@ Afin de [bénéfice]
 - [ ] Security : [propriété de sécurité garantie]
 - [ ] A11y : [propriété WCAG 2.1 AA garantie] (si composant UI)
 
-## Critères de NON-acceptation (hors périmètre)
+## Hors périmètre
 - [ ] [ce que cette US ne couvre explicitement PAS]
 - [ ] [cas reportés à une autre US / phase]
 
@@ -120,7 +120,7 @@ Dépendances: …
 ## 5. Cycle de vie d'un item
 
 ```
-Backlog ──(rédaction AC + non-AC + notes)──► Ready
+Backlog ──(rédaction AC + hors-périmètre + notes)──► Ready
    │                                            │
    │                                   (mainteneur) Human Gate → human-validated
    ▼                                            ▼
@@ -185,7 +185,7 @@ maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
 | **Epic** | intention, valeur, périmètre, hors-périmètre, modules, dépendances |
 | **Feature** | description, bénéfice utilisateur, US rattachées, critères de succès, hors-périmètre |
 | **Enabler** | type, objectif technique, justification, critères de complétion |
-| **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), critères de non-acceptation, notes d'implémentation, champs renseignés (Type/Parent/Module/Phase/Size/Priority) |
+| **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), hors-périmètre, notes d'implémentation, champs renseignés (Type/Parent/Module/Phase/Size/Priority) |
 
 > Le mainteneur ne passe `needs-human-valid → human-validated` que si la Definition of Ready
 > du niveau est satisfaite (= Breaking Point 1 / ACDD Gate 1).
@@ -194,8 +194,8 @@ maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
 
 | Vague | Contenu | Statut |
 |-------|---------|--------|
-| **1** | E01 Auth & IAM · E02 Espace compte | ✅ seedé |
-| **2** | Plateforme — Système de modules, Observabilité, CI/CD & supply-chain (surtout Enablers) | ⬜ |
+| **1** | E01 Auth & IAM · E02 Espace compte · E05 CI/CD & supply-chain | ✅ seedé |
+| **2** | Plateforme — Système de modules, Observabilité (surtout Enablers) | ⬜ |
 | **3** | Admin — Activation modules, Gestion utilisateurs, Gestion tenants | ⬜ |
 | **4** | 1er module MVP (whiteboard **ou** session) — Features + US | ⬜ |
 | **ult.** | Autres modules, OIDC multi-tenant, RGPD cron/purge… (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
