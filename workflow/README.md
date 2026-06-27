@@ -5,16 +5,15 @@
 PIVOT utilise un workflow **ACDD (Acceptance Criteria Driven Development)** piloté par agents IA.
 Chaque User Story passe par une chaîne d'agents spécialisés avant, pendant et après l'implémentation.
 
-Proche de [BMAD](https://github.com/bmad-method/bmad-method) dans l'esprit (décomposition en agents rôlés),
-PIVOT va plus loin sur deux points :
+Principes fondateurs :
 
-| Dimension | BMAD | PIVOT ACDD |
-|-----------|------|------------|
-| Review PR | Humaine | **Agent PR Review** autonome (Gate 3 + 4) |
-| Critères d'acceptation | Optionnels | **Obligatoires** — tout AC mappe à ≥ 1 test |
-| Seuils de confiance | Booléens | **Scores 0–100** continus (gates ACDD) |
-| Sécurité | Post-implémentation | **Agent Security** avant et après |
-| Trace backlog | Recommandée | **Obligatoire** — pas d'implémentation sans Issue |
+| Principe | Règle |
+|----------|-------|
+| Review PR | **PR Review Agent** autonome (Gate 3 + 4) |
+| Critères d'acceptation | **Obligatoires** — tout AC mappe à ≥ 1 test |
+| Seuils de confiance | **Scores 0–100** continus (jamais booléens) |
+| Sécurité | Security Agent bloquant **avant** implémentation et après |
+| Trace backlog | **Obligatoire** — pas d'implémentation sans Issue tracée |
 
 ---
 
@@ -161,14 +160,6 @@ Orchestrator Agent (loop)
   │    └─ QA Agent   → review Gate 2 sur PR ouverte US-41
   └─ PR Review Agent → déclenché sur chaque PR prête (Gate 3 + 4)
 ```
-
-Différences clés vs BMAD :
-
-| | BMAD | PIVOT avec Orchestrator |
-|-|------|------------------------|
-| Parallélisme | Non — séquentiel | US indépendantes en parallèle |
-| Déclenchement | Humain entre chaque rôle | Loop sur état backlog |
-| Review PR | Humaine | PR Review Agent autonome (Gate 4 ≥ 85) |
 
 Points d'architecture à résoudre avant d'aller là :
 - **Isolation** : exclusion mutuelle si deux US modifient les mêmes fichiers
