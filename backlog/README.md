@@ -125,15 +125,20 @@ Dépendances: …
 ## 5. Cycle de vie d'un item
 
 ```
-Backlog ──(rédaction AC + hors-périmètre + notes)──► Ready
-   │                                            │
-   │                                   (mainteneur) Human Gate → human-validated
-   ▼                                            ▼
-needs-human-valid                          In progress ──► Review ──► Done
+Backlog ──(Claude : rédaction AC + DoR)──► Ready ──(mainteneur : human-validated)──► In progress
+                                                                                           │
+                                                                                      (Claude : implémentation)
+                                                                                           │
+Done ◄──(mainteneur : recette + test)──── Review ◄────────────────────────────────────────┘
 ```
 
-- **Claude** passe un item en `Review` quand Gate 2 (COVERAGE) est vert.
-- **Le mainteneur** valide `Review → Done`.
+| Transition | Qui | Condition |
+|------------|-----|-----------|
+| `Backlog → Ready` | **Claude** | Definition of Ready §8.2 satisfaite |
+| `Ready → In progress` | **Claude** | Après `Human Gate = human-validated` par le mainteneur |
+| `In progress → Review` | **Claude** | Implémentation terminée, Gate 4 vert, recette humaine attendue |
+| `Review → Done` | **Mainteneur** | Recette + tests OK — **jamais Claude** |
+
 - US bloquée → retour `Backlog` + note.
 
 Voir `CLAUDE.md` (Gates ACDD, Breaking Points, Workflow) pour le détail du cycle de dev.
@@ -251,5 +256,5 @@ d'implémentation**.
 ### Répartition des rôles
 | Acteur | Responsabilité |
 |--------|----------------|
-| **Mainteneur** | pose `human-validated` · valide `Review → Done` · déclare « MVP terminé » |
-| **Claude** | rédige/affine les items · convertit draft → Issue · déplace les `Stage` · implémente |
+| **Mainteneur** | pose `human-validated` · valide `Review → Done` (**seul autorisé**) · déclare « MVP terminé » |
+| **Claude** | rédige/affine les items · convertit draft → Issue · `Backlog → Ready` (DoR) · `Ready → In progress` (démarrage) · `In progress → Review` (fini) · **jamais `Done`** |
