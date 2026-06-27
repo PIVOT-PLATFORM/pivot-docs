@@ -79,7 +79,7 @@ repeat
     note right : AC sans test = non implémenté
   else (< 70)
     |#FCE4EC| Dev Agent |
-    :Stop — consulte QA Agent;
+    :Stop — label **needs-human-review**\nescalade QA Agent + mainteneur;
     detach
   endif
 
@@ -89,9 +89,10 @@ repeat while (US complète ?) is (non)
 -> oui;
 
 :Qualité : ESLint / Checkstyle /\nSpotBugs — 0 warning;
+:Push branche + **ouvre PR**\n(Stage reste In progress);
 
 |#EDE7F6| PR Review Agent |
-:Ouvre PR + Gate 3;
+:Gate 3 — analyse PR;
 :CI pipeline (Plumber, Gitleaks,\nSemgrep, tests, build);
 
 |#FFF9C4| Gates & Breaking Points |
@@ -115,12 +116,12 @@ else (non)
   |#FFF9C4| Gates & Breaking Points |
   if (score Gate 4 ?) then (≥ 85)
     |#EDE7F6| PR Review Agent |
+    :Pose **Stage → Review** dans Project\n(recette humaine attendue);
     :Merge autonome;
-    note right : Stage → Review (Claude)
   elseif (60–84) then (60–84)
     |#EDE7F6| PR Review Agent |
+    :Pose **Stage → Review** dans Project;
     :Merge documenté\n(commentaire breakdown);
-    note right : Stage → Review (Claude)
   else (< 60)
     :→ **Breaking Point 2**\nLabel needs-human-review\n+ score breakdown;
     detach
