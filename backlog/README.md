@@ -161,3 +161,42 @@ Epics transverses + un Epic par module. Modules **activables** et **extensibles*
 
 Le contenu détaillé (Epics → Features/Enablers → US) est généré dans le Project org et
 maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
+
+---
+
+## 8. Plan de construction du backlog
+
+### 8.1 Méthode de décomposition
+
+1. **EPIC** — on part de la capacité (module ou axe transverse). On décrit intention, valeur,
+   périmètre, hors-périmètre.
+2. **Décomposition Epic → FEATURE + ENABLER** :
+   - une **Feature** par fonctionnalité à valeur utilisateur ;
+   - un **Enabler** par brique technique nécessaire (sécurité, archi, infra, dette, spike).
+3. **Décomposition Feature/Enabler → US** : chaque US est un incrément implémentable et testable,
+   avec AC + critères de non-acceptation + notes d'implémentation.
+4. Chaque US naît `Stage: Backlog` · `Human Gate: needs-human-valid`.
+
+### 8.2 Definition of Ready (avant `human-validated`)
+
+| Niveau | Doit contenir |
+|--------|---------------|
+| **Epic** | intention, valeur, périmètre, hors-périmètre, modules, dépendances |
+| **Feature** | description, bénéfice utilisateur, US rattachées, critères de succès, hors-périmètre |
+| **Enabler** | type, objectif technique, justification, critères de complétion |
+| **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), critères de non-acceptation, notes d'implémentation, champs renseignés (Type/Parent/Module/Phase/Size/Priority) |
+
+> Le mainteneur ne passe `needs-human-valid → human-validated` que si la Definition of Ready
+> du niveau est satisfaite (= Breaking Point 1 / ACDD Gate 1).
+
+### 8.3 Ordre de construction (vagues)
+
+| Vague | Contenu | Statut |
+|-------|---------|--------|
+| **1** | E01 Auth & IAM · E02 Espace compte | ✅ seedé |
+| **2** | Plateforme — Système de modules, Observabilité, CI/CD & supply-chain (surtout Enablers) | ⬜ |
+| **3** | Admin — Activation modules, Gestion utilisateurs, Gestion tenants | ⬜ |
+| **4** | 1er module MVP (whiteboard **ou** session) — Features + US | ⬜ |
+| **ult.** | Autres modules, OIDC multi-tenant, RGPD cron/purge… (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
+
+Chaque vague suit §8.1–8.2 et reste dans `Phase: MVP` tant que le verrou MVP (§6) est actif.
