@@ -1,130 +1,182 @@
-@startuml PIVOT Platform Architecture
+@startuml PIVOT Platform Architecture Enterprise
 !pragma layout smetana
-skinparam backgroundColor #FFFFFF
+
+skinparam backgroundColor #FAFAFA
 skinparam defaultFontName "Arial"
-skinparam defaultFontSize 11
-skinparam ArrowThickness 1.5
-skinparam ArrowColor #444444
-skinparam NoteBorderColor #999999
-skinparam NoteBackgroundColor #FFFFF0
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.6
+skinparam ArrowFontSize 9
+skinparam NoteBorderColor #90A4AE
+skinparam NoteBackgroundColor #FFFFF8
+skinparam NoteFontSize 9
 skinparam componentStyle rectangle
 
 skinparam rectangle {
-  BackgroundColor #F8F9FA
-  BorderColor #6C757D
-  BorderThickness 1
+  BackgroundColor #F5F5F5
+  BorderColor #78909C
+  BorderThickness 1.5
   FontStyle bold
+  FontSize 11
 }
-
 skinparam database {
-  BackgroundColor #E8F4FD
+  BackgroundColor #E3F2FD
   BorderColor #1565C0
+  BorderThickness 2
+  FontSize 10
 }
-
 skinparam component {
   BackgroundColor #FFFFFF
-  BorderColor #495057
+  BorderColor #546E7A
+  BorderThickness 1.5
+  FontSize 10
 }
-
 skinparam actor {
-  BackgroundColor #FFF3E0
-  BorderColor #E65100
+  BackgroundColor #FFF9C4
+  BorderColor #F57F17
+  FontSize 10
 }
-
 skinparam cloud {
   BackgroundColor #EDE7F6
-  BorderColor #4527A0
+  BorderColor #6A1B9A
+  FontSize 10
 }
 
-' ─────────────────────────────────────
-' ACTEURS EXTERNES
-' ─────────────────────────────────────
-actor "Utilisateur\n(Browser)" as browser #FFF3E0
-cloud "IdP externe\nKeycloak · Azure AD · Okta\n(OIDC enterprise uniquement)" as idp #EDE7F6
+' ═══════════════════════════════════════════════
+' ZONE INTERNET
+' ═══════════════════════════════════════════════
+rectangle "INTERNET" as zone_internet #E8F5E9 {
+  actor "Utilisateur\n(Browser + Angular SPA)" as browser
+  cloud "IdP externe\nKeycloak / Azure AD / Okta\n(OIDC enterprise uniquement)" as idp
+}
 
-' ─────────────────────────────────────
-' ZONE PUBLIQUE — nginx (DMZ)
-' ─────────────────────────────────────
-rectangle "  DMZ — pivot-ui  " as zone_dmz #E8F5E9 {
+' ═══════════════════════════════════════════════
+' DMZ — nginx : TLS termination + Load Balancer
+' ═══════════════════════════════════════════════
+rectangle "DMZ — nginx  |  TLS Termination  +  Load Balancer" as zone_dmz #C8E6C9 {
+  component "nginx  :443  /  :80\n══════════════════════════════\nTLS 1.3  ·  HTTP/2  ·  HSTS\nCSP  ·  X-Frame-Options DENY\nX-Content-Type-Options nosniff\nReferrer-Policy  ·  Permissions-Policy\n──────────────────────────────\nSert fichiers statiques Angular\n(dist/frontend/browser/)\nRedirect :80 → :443\n══════════════════════════════\nUpstream pool  pivot-net-app :\n  /api/**  →  round-robin (core-1…N)\n  /ws/**   →  ip_hash sticky (WS)\n  /actuator/health  →  health-check" as nginx #DCEDC8
+}
 
-  rectangle "  Docker : nginx  " as nginx_box #C8E6C9 {
-    component "nginx\nTLS 1.3 termination\nHSTS · CSP · X-Frame-Options\nGzip · Cache-Control\n──────────────\nServe : Angular bundle\nProxy : /api/** → core :8080\nProxy : /ws/**  → core :8080" as nginx #FFFFFF
-  }
+' ═══════════════════════════════════════════════
+' APPLICATION TIER — N instances pivot-core
+' ═══════════════════════════════════════════════
+rectangle "APPLICATION TIER — réseau Docker pivot-net-app  (N instances)" as zone_app #FFF8E1 {
+
+  component "pivot-core  :8443\n══════════════════════════════\nSpring Boot 4.x  ·  Java 25\nTLS 1.3  (keystore interne)\n──────────────────────────────\nREST API  :8443/api/**\nSTOMP broker relay  :8443/ws\nSpring Security 7\nModule registry  (PivotModule)\n──────────────────────────────\nAuth interne    opaque tokens SHA-256\nAuth enterprise JWKS resource server\nApplicationEventPublisher (bus modules)\n──────────────────────────────\nActuator  :8081/actuator/health  (non exposé)" as core #FFE082
+
+  component "pivot-core  :8443\n    Instance 2…N\n    (identique)" as coreN #FFD54F
 
 }
 
-note right of nginx
-  <b>Décision sécurité :</b>
-  TLS terminé ici.
-  nginx → core = HTTP (réseau Docker interne).
-  Acceptable si réseau Docker isolé
-  (<b>non exposé sur l'hôte</b>).
+note right of core
+  <b>Scalabilite horizontale :</b>
+  - Opaque tokens lookup → PG (partage entre instances)
+  - STOMP messages → Redis pub/sub relay (broadcast N instances)
+  - Aucun etat local → scaling stateless
+  - Flyway : verrou DB au demarrage (une seule migration active)
 end note
 
-' ─────────────────────────────────────
-' ZONE INTERNE — réseau Docker pivot-net
-' ─────────────────────────────────────
-rectangle "  Réseau Docker interne (pivot-net)  " as zone_internal #FFF8E1 {
+' ═══════════════════════════════════════════════
+' DATA TIER
+' ═══════════════════════════════════════════════
+rectangle "DATA TIER — réseau Docker pivot-net-data" as zone_data #EDE7F6 {
 
-  rectangle "  Docker : pivot-core (JRE 25)  " as core_box #FFE0B2 {
-    component "Spring Boot 4.x · Java 25\n──────────────\nREST API :8080\nSTOMP / WebSocket :8080\n──────────────\nAuth interne : opaque tokens SHA-256\nAuth enterprise : JWKS resource server\nFlyway migrations (démarrage)\nApplicationEventPublisher (bus modules)" as spring #FFFFFF
-  }
+  component "PgBouncer  :5432\n───────────────\nMode : transaction\nPool max : 20/instance\nTLS passthrough" as pgb #D1C4E9
 
-  database "PostgreSQL 18\n:5432" as postgres
-  database "Redis 7\n:6379\n(cache + sessions WS)" as redis
-  component "SMTP\nMailpit :1025 (dev)\nSMTPS :465 (prod)" as smtp
+  database "PostgreSQL 18  :5433\n══════════════════════════════\nACCESS_TOKENS    hash SHA-256  TTL  révocable\nUSERS            email · hash_pwd · roles\nTENANTS          config multi-tenant\nOIDC_CONFIGS     TenantOidcConfig par tenant\nMODULES_STATE    activation par tenant\nFEATURE_FLAGS    MAX_SESSIONS_PER_USER…\nAUDIT_EVENTS     actions state-changing\nDEVICE_TOKENS    vérification appareil\nEMAIL_VERIF      tokens vérification email\nPASSWORD_RESET   tokens reset mot de passe\n══════════════════════════════\nFlyway V1__, V2__…  (migrations)\nIndex : token_hash, user_id, tenant_id" as postgres #BBDEFB
+
+  database "Redis 7  :6380\n══════════════════════════════\nSTOMP relay    pub/sub topics (WS N instances)\nModule cache   statut activation (TTL 60 s)\nRate limit     compteurs Bucket4j  [gap MVP]\n══════════════════════════════\nPersistance : AOF (prod)\nrequirepass + TLS 1.3" as redis #B3E5FC
+
+  component "SMTP\n───────────────\nMailpit :1025 (dev)\nSMTPS   :465  (prod)\n───────────────\nEmail verif\nReset password\nDevice OTP" as smtp #FFCCBC
 
 }
 
-' ─────────────────────────────────────
-' CONNEXIONS — Internet → DMZ
-' ─────────────────────────────────────
-browser -[#1565C0]-> nginx : <b>HTTPS :443</b>\nTLS 1.3 · HTTP/2\n(pages, assets, API)
-browser -[#0097A7]..> nginx : <b>WSS :443</b> /ws/**\n(WebSocket Secure\nSTOMP upgrade)
+' ═══════════════════════════════════════════════
+' FLUX : Internet → DMZ
+' ═══════════════════════════════════════════════
+browser -[#0D47A1]--> nginx : <b>HTTPS :443  TLS 1.3  HTTP/2</b>\nGET static assets (Angular bundle)\nGET|POST /api/**  (REST)\nHSTS enforced
+browser -[#006064]..> nginx : <b>WSS :443  TLS 1.3</b>\nWebSocket Upgrade  GET /ws/**\nSTOMP CONNECT (Authorization: Bearer)
 
-' ─────────────────────────────────────
-' CONNEXIONS — DMZ → Internal
-' ─────────────────────────────────────
-nginx -[#558B2F]-> spring : <b>HTTP :8080</b>\n(réseau Docker interne)\n[proxy /api/**]
-nginx -[#00796B]..> spring : <b>WS :8080</b>\n(proxy WebSocket\n/ws/**)
+' ═══════════════════════════════════════════════
+' FLUX : DMZ → Application (TLS interne)
+' ═══════════════════════════════════════════════
+nginx -[#1B5E20]--> core : <b>HTTPS :8443  TLS 1.3</b>\ncert auto-signe interne\nproxy_pass /api/**\n(round-robin)
+nginx -[#1B5E20]--> coreN : <b>HTTPS :8443  TLS 1.3</b>\n(round-robin)
+nginx -[#004D40]..> core : <b>WSS :8443  TLS 1.3</b>\nWebSocket Upgrade\nproxy_pass /ws/**  (ip_hash sticky)
 
-' ─────────────────────────────────────
-' CONNEXIONS — Internal services
-' ─────────────────────────────────────
-spring -[#1565C0]-> postgres : <b>JDBC :5432</b>\nssl=require (prod)\nssl=disable (dev)
-spring -[#6A1B9A]-> redis : <b>RESP :6379</b>\nrequirepass + TLS (prod)\nno-auth (dev)
-spring -[#E65100]-> smtp : <b>SMTPS :465</b> (prod)\n<b>SMTP :1025</b> (dev)
+' ═══════════════════════════════════════════════
+' FLUX : Application → Data
+' ═══════════════════════════════════════════════
+core -[#1A237E]--> pgb : <b>JDBC :5432  TLS 1.3</b>\nsslmode=verify-full\npool transaction
+pgb -[#283593]--> postgres : <b>JDBC :5433  TLS 1.3</b>\nsslmode=require
 
-' ─────────────────────────────────────
-' CONNEXIONS — OIDC enterprise
-' ─────────────────────────────────────
-browser -[#4527A0]-> idp : <b>HTTPS :443</b>\nOIDC Authorization Code\n+ PKCE S256 (state · nonce)\n→ JWT access token
-spring -[#4527A0]-> idp : <b>HTTPS :443</b>\nJWKS validation\n(signature · expiry · issuer)\nrotation auto-gérée
+core -[#4A148C]--> redis : <b>RESP :6380  TLS 1.3</b>\nrequirepass\nSTOMP relay  /  cache  /  rate-limit
 
-note bottom of idp
-  <b>CORS en dev :</b> localhost:4200 strict.
-  <b>Prod :</b> same-origin via nginx proxy
-  → CORS non requis côté core.
+core -[#BF360C]--> smtp : <b>SMTPS :465  TLS 1.3</b>  (prod)\n<b>SMTP :1025</b>  (dev · Mailpit)
+
+coreN -[#1A237E]..> pgb : <b>JDBC :5432  TLS 1.3</b>
+coreN -[#4A148C]..> redis : <b>RESP :6380  TLS 1.3</b>\nSTOMP relay (memes topics)
+
+' ═══════════════════════════════════════════════
+' FLUX : OIDC enterprise (IdP externe)
+' ═══════════════════════════════════════════════
+browser -[#4A148C]--> idp : <b>HTTPS :443  TLS 1.3</b>\nOIDC Authorization Code  +  PKCE S256\nstate · nonce · code_challenge_method=S256\n→ JWT access_token  +  refresh_token
+core -[#6A1B9A]--> idp : <b>HTTPS :443  TLS 1.3</b>\nJWKS endpoint — validation signature\nissuer · expiry · audience\nrotation cles auto-geree par Spring Security
+
+' ═══════════════════════════════════════════════
+' NOTES FLUX DETAILLES
+' ═══════════════════════════════════════════════
+note bottom of postgres
+  <b>Flux en lecture (R) :</b>
+  R  token lookup par hash SHA-256 (chaque requete)
+  R  user / roles / tenant (auth + autorisations)
+  R  module state par tenant (guard modules)
+  R  feature flags (MAX_SESSIONS, TTL token…)
+  <b>Flux en ecriture (W) :</b>
+  W  session create / revoke (opaque token)
+  W  audit event (chaque action state-changing)
+  W  email verif / device OTP / password reset
+  W  module activation par admin tenant
+  <b>Demarrage :</b>
+  W  Flyway migrations (verrou DB, une instance)
 end note
 
-' ─────────────────────────────────────
-' LÉGENDE
-' ─────────────────────────────────────
+note bottom of redis
+  <b>Lecture/Ecriture :</b>
+  R/W  STOMP topics pub/sub (WS multi-instances)
+  R    module status cache — TTL 60 s
+  W    rate limiting counters [gap MVP]
+  <b>STOMP relay :</b>
+  Toutes les instances core souscrivent
+  aux memes topics Redis → broadcast WS
+  sans sticky session applicative
+end note
+
+' ═══════════════════════════════════════════════
+' LEGENDE
+' ═══════════════════════════════════════════════
 legend right
-  <b>Légende protocoles</b>
-  ──────────────────────
-  <color:#1565C0>—— HTTPS / JDBC/SSL</color>  chiffré TLS
-  <color:#0097A7>···· WSS</color>              WebSocket Secure
-  <color:#558B2F>—— HTTP</color>               réseau interne Docker
-  <color:#00796B>···· WS</color>               WebSocket (interne)
-  <color:#6A1B9A>—— RESP</color>               Redis (TLS prod)
-  <color:#E65100>—— SMTP(S)</color>            email
-  <color:#4527A0>—— OIDC</color>               PKCE S256 enterprise
-  ──────────────────────
-  <b>Gaps MVP (backlog)</b>
-  Rate limiting : Bucket4j / nginx limit_req
-  Redis TLS : prod uniquement
-  PG SSL     : ssl=require prod
+  <b>Protocoles et chiffrement</b>
+  ─────────────────────────────────────
+  <color:#0D47A1>────  HTTPS :443</color>         TLS 1.3 · Internet (nginx)
+  <color:#006064>····  WSS   :443</color>         WebSocket Secure · Internet
+  <color:#1B5E20>────  HTTPS :8443</color>        TLS 1.3 · interne (cert auto-signe)
+  <color:#004D40>····  WSS   :8443</color>        WebSocket Secure · interne
+  <color:#1A237E>────  JDBC  :5432/5433</color>   TLS 1.3 · sslmode=verify-full
+  <color:#4A148C>────  RESP  :6380</color>        TLS 1.3 · requirepass · Redis
+  <color:#BF360C>────  SMTPS :465</color>         TLS 1.3 · email
+  <color:#4A148C>────  OIDC  HTTPS :443</color>   PKCE S256 · enterprise uniquement
+  ─────────────────────────────────────
+  <b>Scalabilite horizontale</b>
+  nginx upstream   round-robin  /api/**
+  nginx upstream   ip_hash      /ws/** (sticky WS)
+  Redis pub/sub    STOMP relay  N instances
+  PgBouncer        pool trans.  max 20/instance
+  ─────────────────────────────────────
+  <b>Gaps MVP → Enablers backlog</b>
+  EN??  Rate limiting  Bucket4j / nginx limit_req
+  EN??  Redis TLS      cert + requirepass prod
+  EN??  PG ssl=verify  sslmode=verify-full prod
+  EN??  Cert interne   CA auto-signee nginx<->core
 endlegend
 
 @enduml
