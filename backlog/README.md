@@ -200,3 +200,45 @@ maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
 | **ult.** | Autres modules, OIDC multi-tenant, RGPD cron/purge… (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
 
 Chaque vague suit §8.1–8.2 et reste dans `Phase: MVP` tant que le verrou MVP (§6) est actif.
+
+---
+
+## 9. Workflow draft → Issue (automatisé par Claude)
+
+Les items naissent en **draft** (carte Project sans Issue). Un draft ne peut pas porter
+de branche/PR ni être fermé par une PR. La conversion en Issue est donc le **déclencheur
+d'implémentation**.
+
+### Déclencheur unique : `Human Gate = human-validated`
+- **Seul geste humain** : le mainteneur passe l'item `needs-human-valid → human-validated`
+  (après revue de la Definition of Ready §8.2 = Breaking Point 1 / ACDD Gate 1).
+- Claude **ne pose jamais** `human-validated` lui-même — il le **consomme**.
+
+### Ce que Claude fait dès qu'un item est `human-validated` (et `Phase: MVP`)
+1. **Convertit le draft en Issue** dans le repo cible (voir mapping ci-dessous).
+   L'item garde sa place, son `Parent` et ses champs dans le Project.
+2. **Fait avancer `Stage`** automatiquement :
+   - `Backlog/Ready → In progress` au démarrage,
+   - `→ Review` quand ACDD Gate 2 (COVERAGE) est vert,
+   - le mainteneur valide `Review → Done` (recette).
+3. Crée la branche `feat/us-{id}-{slug}` → PR `Closes #issue` → cycle dev de `CLAUDE.md`.
+
+### Mapping Module → repo cible
+| Module / nature | Repo |
+|-----------------|------|
+| backend, BDD, API, sécurité serveur | `pivot-core` |
+| UI Angular, front | `pivot-ui` |
+| documentation, ADR | `pivot-docs` |
+| US full-stack | Issue côté `pivot-core` **et** `pivot-ui` (liées), parent commun |
+
+### Garde-fous
+- Rien hors `Phase: MVP` n'est converti/implémenté tant que le verrou MVP (§6) est actif.
+- Un item sans Definition of Ready (§8.2) reste `needs-human-valid` — non converti.
+- US bloquée en cours → retour `Stage: Backlog` + note, conformément à la règle d'escalade
+  (`CLAUDE.md`, 2 tentatives max).
+
+### Répartition des rôles
+| Acteur | Responsabilité |
+|--------|----------------|
+| **Mainteneur** | pose `human-validated` · valide `Review → Done` · déclare « MVP terminé » |
+| **Claude** | rédige/affine les items · convertit draft → Issue · déplace les `Stage` · implémente |
