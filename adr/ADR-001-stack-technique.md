@@ -9,7 +9,7 @@ Refonte complète du POC PouetPouet (Node.js/TypeScript) en une suite collaborat
 
 ## Décision
 
-**Backend :** Java 25 · Spring Boot 4.x · Maven
+**Backend :** Java 25 · Spring Boot 4.x · Maven · Flyway
 **Frontend :** Angular 22 · TypeScript strict · SCSS
 
 ## Raisons
@@ -17,8 +17,8 @@ Refonte complète du POC PouetPouet (Node.js/TypeScript) en une suite collaborat
 ### Backend Java/Spring Boot
 
 - Écosystème mature pour applications d'entreprise (sécurité, multi-tenancy, transactions)
-- Spring Security : intégration native OIDC/JWT, `@PreAuthorize`, filtres
-- Spring Data JPA + Liquibase : migrations versionnées, intégrité référentielle
+- Spring Security 7 : opaque tokens SHA-256 (auth interne) + resource server OIDC/JWKS (enterprise), `@PreAuthorize`, filtres
+- Spring Data JPA + Flyway : migrations versionnées (V1__, V2__…), intégrité référentielle
 - Spring WebSocket (STOMP) : temps réel pour sessions live
 - Testcontainers : tests d'intégration réalistes (PostgreSQL, Redis)
 - vs Node.js : typage fort, meilleure isolation des threads, écosystème enterprise plus riche

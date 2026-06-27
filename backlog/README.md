@@ -36,7 +36,7 @@ EPIC
 | **Item Type** | single-select | `Epic` · `Feature` · `Enabler` · `US` (`Type` est un nom réservé GitHub) |
 | **Parent** | text | Clé du parent (ex. `E01`, `F01.1`) |
 | **Stage** | single-select | `Backlog` · `Ready` · `In progress` · `Review` · `Done` (le champ natif `Status` n'est pas reconfigurable via API) |
-| **Human Gate** | single-select | `needs-human-valid` · `human-validated` |
+| **Human Gate** | single-select | `needs-human-valid` · `human-validated` · `human-reject` |
 | **Priority** | single-select | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | single-select (extensible) | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` · *(nouveaux modules ajoutés au fil de l'eau)* |
 | **Phase** | single-select | `MVP` · `v1-enterprise` · `phase-3` |
@@ -49,11 +49,16 @@ EPIC
 
 **Règle absolue : aucune implémentation ne démarre avant que `Human Gate = human-validated`.**
 
-- Toute US naît en `needs-human-valid`.
-- Le mainteneur passe l'item à `human-validated` après revue de l'US **et** de ses critères
-  d'acceptation (= Breaking Point 1 de `CLAUDE.md`, et ACDD Gate 1 READINESS ≥ 70).
+| Valeur | Posé par | Signification |
+|--------|----------|---------------|
+| `needs-human-valid` | Claude (à la création) | En attente de revue mainteneur |
+| `human-validated` | Mainteneur **seul** | AC et périmètre validés — implémentation autorisée |
+| `human-reject` | Mainteneur **seul** | Rejeté — AC ambigus, périmètre incorrect, ou quelque chose manque ; remettre en question et retravailler avant nouvelle soumission |
+
+- Toute US / Enabler naît en `needs-human-valid`.
 - `human-validated` + `Stage: Ready` = bon pour `In progress`.
-- Sans `human-validated`, le Dev Agent **stoppe** et demande la validation.
+- `human-reject` → Claude **stoppe**, ouvre un dialogue PO pour challenger et corriger l'AC, le périmètre ou les critères. Repasse à `needs-human-valid` après réécriture.
+- Claude **ne pose jamais** `human-validated` ni `human-reject` — consommation uniquement.
 
 ---
 

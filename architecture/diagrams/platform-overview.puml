@@ -1,0 +1,205 @@
+@startuml PIVOT Platform Architecture Enterprise
+!pragma layout smetana
+
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.6
+skinparam ArrowFontSize 9
+skinparam NoteBorderColor #90A4AE
+skinparam NoteBackgroundColor #FFFFF8
+skinparam NoteFontSize 9
+skinparam componentStyle rectangle
+
+skinparam rectangle {
+  BackgroundColor #F5F5F5
+  BorderColor #78909C
+  BorderThickness 1.5
+  FontStyle bold
+  FontSize 11
+}
+skinparam database {
+  BackgroundColor #E3F2FD
+  BorderColor #1565C0
+  BorderThickness 2
+  FontSize 10
+}
+skinparam component {
+  BackgroundColor #FFFFFF
+  BorderColor #546E7A
+  BorderThickness 1.5
+  FontSize 10
+}
+skinparam actor {
+  BackgroundColor #FFF9C4
+  BorderColor #F57F17
+  FontSize 10
+}
+skinparam cloud {
+  BackgroundColor #EDE7F6
+  BorderColor #6A1B9A
+  FontSize 10
+}
+
+' ═══════════════════════════════════════════════
+' ZONE INTERNET
+' ═══════════════════════════════════════════════
+rectangle "INTERNET" as zone_internet #E8F5E9 {
+  actor "Utilisateur\n(Browser + Angular SPA)" as browser
+  cloud "IdP externe\nKeycloak / Azure AD / Okta\n(OIDC enterprise uniquement)" as idp
+}
+
+' ═══════════════════════════════════════════════
+' DMZ — nginx : TLS termination + Load Balancer
+' ═══════════════════════════════════════════════
+rectangle "DMZ — nginx  |  TLS Termination  +  Load Balancer" as zone_dmz #C8E6C9 {
+  component "nginx  :443  /  :80\n══════════════════════════════\nTLS 1.3  ·  HTTP/2  ·  HSTS\nCSP  ·  X-Frame-Options DENY\nX-Content-Type-Options nosniff\nReferrer-Policy  ·  Permissions-Policy\n──────────────────────────────\nSert fichiers statiques Angular\n(dist/frontend/browser/)\nRedirect :80 → :443\n══════════════════════════════\nUpstream pool  pivot-net-app :\n  /api/**  →  round-robin (core-1…N)\n  /ws/**   →  ip_hash sticky (WS)\n  /actuator/health  →  health-check" as nginx #DCEDC8
+}
+
+' ═══════════════════════════════════════════════
+' APPLICATION TIER — N instances pivot-core
+' ═══════════════════════════════════════════════
+rectangle "APPLICATION TIER — réseau Docker pivot-net-app  (N instances)" as zone_app #FFF8E1 {
+
+  component "pivot-core  :8080  [dev]  /  :8443  [prod TLS]\n══════════════════════════════\nSpring Boot 4.x  ·  Java 25\n──────────────────────────────\nREST API  /api/**\nSTOMP broker relay  /ws  →  ActiveMQ\nSpring Security 7\nModule registry  (PivotModule)\n──────────────────────────────\nAuth interne    opaque tokens SHA-256\nAuth enterprise JWKS resource server\nApplicationEventPublisher (bus modules)\n──────────────────────────────\nActuator  :8081/actuator/health  (non expose)" as core #FFE082
+
+  component "pivot-core\nInstance 2…N\n(identique)" as coreN #FFD54F
+
+}
+
+note right of core
+  <b>Scalabilite horizontale :</b>
+  Opaque tokens → lookup PG (partage entre instances)
+  STOMP messages → ActiveMQ relay (broadcast N instances)
+  enableStompBrokerRelay() → ActiveMQ :61613
+  Aucun etat local → scaling stateless
+  Flyway : verrou DB au demarrage (une migration active)
+  <b>TLS interne [prod] :</b>
+  :8443 necessite keystore + cert entreprise
+end note
+
+' ═══════════════════════════════════════════════
+' DATA TIER
+' ═══════════════════════════════════════════════
+rectangle "DATA TIER — réseau Docker pivot-net-data" as zone_data #EDE7F6 {
+
+  component "PgBouncer  :5432\n───────────────────────────\nMode : session\n(compatible Hibernate — aucune\nconf supplementaire requise)\nPool max : 20 / instance\n[prod] TLS passthrough vers PG" as pgb #D1C4E9
+
+  database "PostgreSQL 18  :5432\n══════════════════════════════\nACCESS_TOKENS    hash SHA-256  TTL  revocable\nUSERS            email · hash_pwd · roles\nTENANTS          config multi-tenant\nOIDC_CONFIGS     TenantOidcConfig par tenant\nMODULES_STATE    activation par tenant\nFEATURE_FLAGS    MAX_SESSIONS_PER_USER…\nAUDIT_EVENTS     actions state-changing\nDEVICE_TOKENS    verification appareil\nEMAIL_VERIF      tokens verification email\nPASSWORD_RESET   tokens reset mot de passe\n══════════════════════════════\nFlyway V1__, V2__…  (migrations)\nIndex : token_hash · user_id · tenant_id" as postgres #BBDEFB
+
+  database "Redis 7  :6379\n══════════════════════════════\nModule status cache  (TTL 60 s)\nRate limiting counters  [gap MVP]\n──────────────────────────────\n[dev]  no-auth\n[prod] requirepass + TLS 1.3" as redis #B3E5FC
+
+  component "ActiveMQ  :61613  [dev  STOMP]\n           :61617  [prod STOMP+TLS]\n───────────────────────────\nBroker STOMP natif Spring\nenableStompBrokerRelay()\nTopics /topic/**  /queue/**\nBroadcast WS N instances\n[prod] console :8161 non expose" as activemq #F8BBD9
+
+  component "SMTP\n─────────────────\nMailpit :1025  [dev]\nSMTPS   :465   [prod]\n─────────────────\nEmail verif\nReset password\nDevice OTP" as smtp #FFCCBC
+
+}
+
+' ═══════════════════════════════════════════════
+' FLUX : Internet → DMZ
+' ═══════════════════════════════════════════════
+browser -[#0D47A1]--> nginx : <b>HTTPS :443  TLS 1.3  HTTP/2</b>\nstatic assets (Angular bundle)\nGET|POST /api/**\nHSTS enforced
+browser -[#006064]..> nginx : <b>WSS :443  TLS 1.3</b>\nWebSocket Upgrade  /ws/**\nSTOMP CONNECT (Authorization: Bearer)
+
+' ═══════════════════════════════════════════════
+' FLUX : DMZ → Application
+' ═══════════════════════════════════════════════
+nginx -[#1B5E20]--> core : <b>HTTP :8080  [dev]</b>\n<b>HTTPS :8443  TLS 1.3  [prod — cert ent.]</b>\nproxy_pass /api/**  (round-robin)
+nginx -[#1B5E20]--> coreN : <b>HTTP :8080 / HTTPS :8443  [prod]</b>\n(round-robin)
+nginx -[#004D40]..> core : <b>WS :8080  [dev]</b>\n<b>WSS :8443  TLS 1.3  [prod]</b>\nproxy_pass /ws/**  (ip_hash sticky)
+
+' ═══════════════════════════════════════════════
+' FLUX : Application → Data
+' ═══════════════════════════════════════════════
+core -[#1A237E]--> pgb : <b>JDBC :5432</b>\n[dev] no SSL\n[prod] TLS 1.3  sslmode=verify-full
+pgb -[#283593]--> postgres : <b>JDBC :5432</b>\n[dev] no SSL\n[prod] TLS 1.3
+
+core -[#880E4F]--> activemq : <b>STOMP :61613  [dev]</b>\n<b>STOMP+TLS :61617  [prod]</b>\nenableStompBrokerRelay()\nsubscribe /topic/** /queue/**
+coreN -[#880E4F]..> activemq : <b>STOMP :61613 / :61617  [prod]</b>
+
+core -[#4A148C]--> redis : <b>RESP :6379</b>\n[dev] no-auth\n[prod] requirepass + TLS 1.3\nmodule cache · rate-limit
+
+core -[#BF360C]--> smtp : <b>SMTP :1025  [dev · Mailpit]</b>\n<b>SMTPS :465  TLS 1.3  [prod]</b>
+
+coreN -[#1A237E]..> pgb : <b>JDBC :5432</b>
+coreN -[#4A148C]..> redis : <b>RESP :6379</b>
+
+' ═══════════════════════════════════════════════
+' FLUX : OIDC enterprise (IdP externe)
+' ═══════════════════════════════════════════════
+browser -[#4A148C]--> idp : <b>HTTPS :443  TLS 1.3</b>\nOIDC Authorization Code  +  PKCE S256\nstate · nonce · code_challenge_method=S256\n→ JWT access_token  +  refresh_token
+core -[#6A1B9A]--> idp : <b>HTTPS :443  TLS 1.3</b>\nJWKS endpoint — validation signature\nissuer · expiry · audience\nrotation cles auto-geree
+
+' ═══════════════════════════════════════════════
+' NOTES FLUX DETAILLES
+' ═══════════════════════════════════════════════
+note bottom of postgres
+  <b>Flux en lecture (R) :</b>
+  R  token lookup par hash SHA-256 (chaque requete)
+  R  user / roles / tenant
+  R  module state par tenant (guard)
+  R  feature flags (MAX_SESSIONS, TTL token…)
+  <b>Flux en ecriture (W) :</b>
+  W  session create / revoke (opaque token)
+  W  audit event (action state-changing)
+  W  email verif / device OTP / password reset
+  W  module activation par admin tenant
+  <b>Demarrage :</b>
+  W  Flyway migrations (verrou DB, une instance)
+end note
+
+note bottom of activemq
+  <b>STOMP relay multi-instances :</b>
+  Chaque instance core :
+    subscribe /topic/** /queue/**
+  Publication d'un message → ActiveMQ
+    → redistribue a tous les abonnes
+    → broadcast WS sans sticky session
+  Remplacement du simple broker
+    Spring in-memory (single-instance)
+end note
+
+note bottom of redis
+  <b>Usages Redis :</b>
+  R    module status cache — TTL 60 s
+       (evite appel DB a chaque navigation)
+  W    rate limiting counters  [gap MVP]
+  Pas de STOMP relay (→ ActiveMQ)
+end note
+
+' ═══════════════════════════════════════════════
+' LEGENDE
+' ═══════════════════════════════════════════════
+legend right
+  <b>Protocoles et chiffrement</b>
+  ──────────────────────────────────────────
+  <color:#0D47A1>────  HTTPS :443</color>          TLS 1.3 · Internet
+  <color:#006064>····  WSS :443</color>             WebSocket Secure · Internet
+  <color:#1B5E20>────  HTTP :8080</color>           [dev] interne Docker
+  <color:#1B5E20>════  HTTPS :8443</color>          [prod] TLS 1.3 · cert entreprise requis
+  <color:#004D40>····  WS/WSS :8080/:8443</color>   WebSocket interne
+  <color:#1A237E>────  JDBC :5432</color>           [prod] TLS 1.3 · sslmode=verify-full
+  <color:#880E4F>────  STOMP :61613</color>         [dev] broker ActiveMQ
+  <color:#880E4F>════  STOMP+TLS :61617</color>     [prod] TLS 1.3 · ActiveMQ
+  <color:#4A148C>────  RESP :6379</color>           [prod] TLS 1.3 · requirepass
+  <color:#BF360C>────  SMTPS :465</color>           [prod] TLS 1.3 · email
+  <color:#6A1B9A>────  OIDC HTTPS</color>           PKCE S256 · enterprise uniquement
+  ──────────────────────────────────────────
+  [dev]  = configuration developpement locale
+  [prod] = configuration production  (TLS 1.3 partout)
+  cert entreprise = keystore + cert signe requis
+  ──────────────────────────────────────────
+  <b>Scalabilite horizontale</b>
+  nginx upstream   round-robin   /api/**
+  nginx upstream   ip_hash       /ws/** (handshake)
+  ActiveMQ relay   pub/sub STOMP N instances (WS)
+  PgBouncer        session mode  (Hibernate-safe)
+  ──────────────────────────────────────────
+  <b>Gaps → Enablers backlog</b>
+  Rate limiting    Bucket4j / nginx limit_req
+  TLS interne      cert entreprise + keystore Spring
+  Redis prod TLS   requirepass + tls-port
+  PG prod TLS      ssl=require + CA cert
+endlegend
+
+@enduml
