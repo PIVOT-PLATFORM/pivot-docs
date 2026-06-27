@@ -36,7 +36,7 @@ EPIC
 | **Item Type** | single-select | `Epic` · `Feature` · `Enabler` · `US` (`Type` est un nom réservé GitHub) |
 | **Parent** | text | Clé du parent (ex. `E01`, `F01.1`) |
 | **Stage** | single-select | `Backlog` · `Ready` · `In progress` · `Review` · `Done` (le champ natif `Status` n'est pas reconfigurable via API) |
-| **Human Gate** | single-select | `needs-human-valid` · `validated` |
+| **Human Gate** | single-select | `needs-human-valid` · `human-validated` |
 | **Priority** | single-select | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | single-select (extensible) | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` · *(nouveaux modules ajoutés au fil de l'eau)* |
 | **Phase** | single-select | `MVP` · `v1-enterprise` · `phase-3` |
@@ -46,13 +46,13 @@ EPIC
 
 ## 3. Human Gate — démarrage d'implémentation
 
-**Règle absolue : aucune implémentation ne démarre tant que `Human Gate = validated`.**
+**Règle absolue : aucune implémentation ne démarre tant que `Human Gate = human-validated`.**
 
 - Toute US naît en `needs-human-valid`.
-- Le mainteneur passe l'item à `validated` après revue de l'US **et** de ses critères
+- Le mainteneur passe l'item à `human-validated` après revue de l'US **et** de ses critères
   d'acceptation (= Breaking Point 1 de `CLAUDE.md`, et ACDD Gate 1 READINESS ≥ 70).
-- `validated` + `Status: Ready` = bon pour `In progress`.
-- Sans `validated`, le Dev Agent **stoppe** et demande la validation.
+- `human-validated` + `Status: Ready` = bon pour `In progress`.
+- Sans `human-validated`, le Dev Agent **stoppe** et demande la validation.
 
 ---
 
@@ -121,7 +121,7 @@ Dépendances: …
 ```
 Backlog ──(rédaction AC + non-AC + notes)──► Ready
    │                                            │
-   │                                   (mainteneur) Human Gate → validated
+   │                                   (mainteneur) Human Gate → human-validated
    ▼                                            ▼
 needs-human-valid                          In progress ──► Review ──► Done
 ```
@@ -138,7 +138,7 @@ Voir `CLAUDE.md` (Gates ACDD, Breaking Points, Workflow) pour le détail du cycl
 
 **La phase active reste `MVP` tant que le mainteneur n'a pas explicitement déclaré le MVP terminé.**
 
-- Seuls les items `Phase: MVP` sont éligibles à `Ready`, `validated` et à l'implémentation.
+- Seuls les items `Phase: MVP` sont éligibles à `Ready`, `human-validated` et à l'implémentation.
 - Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`,
   `needs-human-valid` — **non travaillés**, quelle que soit leur priorité.
 - Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »),
