@@ -51,7 +51,7 @@ EPIC
 - Toute US naît en `needs-human-valid`.
 - Le mainteneur passe l'item à `human-validated` après revue de l'US **et** de ses critères
   d'acceptation (= Breaking Point 1 de `CLAUDE.md`, et ACDD Gate 1 READINESS ≥ 70).
-- `human-validated` + `Status: Ready` = bon pour `In progress`.
+- `human-validated` + `Stage: Ready` = bon pour `In progress`.
 - Sans `human-validated`, le Dev Agent **stoppe** et demande la validation.
 
 ---
@@ -110,7 +110,7 @@ Afin de [bénéfice]
 - [dépendances techniques, contrats d'API/module impactés]
 
 ---
-Type: US · Parent: F… / EN… · Module: pivot-{x} · Phase: … · Size: … · Priority: …
+Item Type: US · Parent: F… / EN… · Module: {x} · Phase: … · Size: … · Priority: …
 Dépendances: …
 ```
 
@@ -229,7 +229,10 @@ d'implémentation**.
 | backend, BDD, API, sécurité serveur | `pivot-core` |
 | UI Angular, front | `pivot-ui` |
 | documentation, ADR | `pivot-docs` |
-| US full-stack | Issue côté `pivot-core` **et** `pivot-ui` (liées), parent commun |
+
+> **1 draft → 1 Issue → 1 repo.** Une US réellement *full-stack* se **scinde** en deux US
+> (une `pivot-core`, une `pivot-ui`) sous la même Feature/Enabler — on ne convertit pas un
+> draft en deux Issues.
 
 ### Garde-fous
 - Rien hors `Phase: MVP` n'est converti/implémenté tant que le verrou MVP (§6) est actif.
