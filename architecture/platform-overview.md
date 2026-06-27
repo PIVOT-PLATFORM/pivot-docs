@@ -12,22 +12,23 @@ PIVOT est une suite collaborative auto-hébergeable, conçue pour les associatio
 
 ## Flux et protocoles
 
-**Principe : TLS 1.3 sur tous les flux, y compris les connexions internes (Zero Trust).**
+**Cible prod : TLS 1.3 sur tous les flux (Zero Trust). Dev : HTTP/WS/no-auth en réseau Docker isolé.**
 
-| Lien | Protocole | Port | Chiffrement |
-|------|-----------|------|-------------|
-| Browser → nginx | HTTPS | :443 | TLS 1.3 · HTTP/2 · HSTS |
-| Browser → nginx | WSS | :443 /ws/** | TLS 1.3 · WebSocket Secure · STOMP upgrade |
-| nginx → pivot-core | HTTPS | :8443 | TLS 1.3 · cert auto-signé interne (CA pivot-net) |
-| nginx → pivot-core | WSS | :8443 /ws/** | TLS 1.3 · proxy WebSocket · sticky ip_hash |
-| pivot-core → PgBouncer | JDBC | :5432 | TLS 1.3 · `sslmode=verify-full` |
-| PgBouncer → PostgreSQL | JDBC | :5433 | TLS 1.3 · `sslmode=require` |
-| pivot-core → Redis | RESP | :6380 | TLS 1.3 · `requirepass` |
-| pivot-core → SMTP | SMTPS / SMTP | :465 / :1025 dev | TLS 1.3 (prod) · Mailpit dev |
-| Browser → IdP | HTTPS | :443 | TLS 1.3 · OIDC PKCE S256 · state · nonce |
-| pivot-core → IdP JWKS | HTTPS | :443 | TLS 1.3 · rotation de clés auto-gérée |
+| Lien | Protocole | Dev | Prod |
+|------|-----------|-----|------|
+| Browser → nginx | HTTPS :443 | TLS 1.3 | TLS 1.3 · HTTP/2 · HSTS |
+| Browser → nginx | WSS :443 /ws/** | TLS 1.3 | TLS 1.3 · STOMP upgrade |
+| nginx → pivot-core | HTTP/HTTPS | HTTP :8080 | HTTPS :8443 · TLS 1.3 · cert entreprise |
+| nginx → pivot-core | WS/WSS | WS :8080 | WSS :8443 · TLS 1.3 · ip_hash sticky |
+| pivot-core → PgBouncer | JDBC :5432 | no SSL | TLS 1.3 · `sslmode=verify-full` |
+| PgBouncer → PostgreSQL | JDBC :5432 | no SSL | TLS 1.3 |
+| pivot-core → ActiveMQ | STOMP | :61613 | :61617 STOMP+TLS 1.3 |
+| pivot-core → Redis | RESP :6379 | no-auth | TLS 1.3 · `requirepass` |
+| pivot-core → SMTP | SMTP/SMTPS | :1025 Mailpit | :465 SMTPS · TLS 1.3 |
+| Browser → IdP | HTTPS :443 | TLS 1.3 | TLS 1.3 · OIDC PKCE S256 |
+| pivot-core → IdP JWKS | HTTPS :443 | TLS 1.3 | TLS 1.3 · rotation auto-gérée |
 
-> En dev avec Testcontainers : PostgreSQL et Redis sans TLS (réseau loopback isolé). Jamais exposés hors du process de test.
+> TLS interne [prod] nécessite un keystore Spring Boot + cert signé (entreprise ou CA interne). Enabler backlog dédié.
 
 ---
 
@@ -39,7 +40,8 @@ PIVOT est une suite collaborative auto-hébergeable, conçue pour les associatio
 | Reverse proxy / TLS | nginx · HSTS · CSP · X-Frame-Options | pivot-ui |
 | API REST | Spring Boot 4.x · Java 25 · Maven | pivot-core |
 | Base de données | PostgreSQL 18 · Spring Data JPA · Flyway | pivot-core |
-| Cache / Temps réel | Redis 7 · Spring WebSocket (STOMP) | pivot-core |
+| Cache / Temps réel | Redis 7 (module cache TTL · rate limiting) | pivot-core |
+| Message broker | ActiveMQ · STOMP relay (WS multi-instances) | pivot-core |
 | Auth interne | Spring Security 7 · Opaque tokens SHA-256 (BDD) | pivot-core |
 | Auth enterprise | OIDC PKCE S256 (Angular) · resource server JWKS (Spring) | pivot-core + pivot-ui |
 | Tests backend | JUnit 5 · Mockito · Testcontainers | pivot-core |
@@ -102,20 +104,21 @@ Chaque module est activable indépendamment par les admins tenant.
 | Aspect | Mécanisme |
 |--------|-----------|
 | **Load balancing REST** | nginx upstream pool · round-robin `/api/**` |
-| **Load balancing WebSocket** | nginx ip_hash sticky `/ws/**` (handshake) · puis Redis pub/sub relay (STOMP messages) |
+| **Load balancing WebSocket** | nginx ip_hash sticky `/ws/**` (handshake) · puis ActiveMQ relay (STOMP messages broadcast) |
 | **State partagé** | Opaque tokens en PostgreSQL (partagés entre instances) · aucun état local |
-| **Connexions DB** | PgBouncer mode transaction · pool max 20/instance |
-| **STOMP multi-instance** | `enableStompBrokerRelay()` → Redis pub/sub · tous les cores souscrivent aux mêmes topics |
-| **Migrations Flyway** | Verrou distribué DB au démarrage (une seule migration active simultanément) |
+| **Connexions DB** | PgBouncer **mode session** · pool max 20/instance · compatible Hibernate sans config supplémentaire |
+| **STOMP multi-instance** | `enableStompBrokerRelay()` → ActiveMQ :61613 · tous les cores souscrivent aux mêmes topics STOMP |
+| **Redis** | Cache module status (TTL 60s) · compteurs rate limiting [gap MVP] — **pas** de STOMP relay |
+| **Migrations Flyway** | Verrou distribué DB au démarrage (advisory lock PostgreSQL — une seule migration active) |
 
 ## Gaps — Enablers backlog MVP
 
 | Gap | Risque | Enabler cible |
 |-----|--------|--------------|
 | Rate limiting absent | Brute force `/auth/login` · `/auth/forgot-password` | Bucket4j (Spring) ou `nginx limit_req` |
-| CA interne auto-signée | Cert nginx→core à provisionner | PKI interne Docker ou cert Let's Encrypt interne |
-| Redis TLS en dev | Port Redis exposé sans TLS | `requirepass` + réseau Docker isolé |
-| PgBouncer `sslmode=verify-full` | Vérification certificat PG | CA cert dans PgBouncer config |
+| TLS interne nginx→core | Traffic lisible si host partagé | Keystore Spring + cert entreprise + `proxy_ssl_*` nginx |
+| Redis TLS prod | Cache exposé sans chiffrement | `requirepass` + `tls-port 6379` Redis config |
+| PG TLS prod | Connexion JDBC en clair | `ssl=require` + CA cert dans PgBouncer + JDBC URL |
 
 ---
 
