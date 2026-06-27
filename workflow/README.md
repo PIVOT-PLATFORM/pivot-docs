@@ -146,6 +146,39 @@ AC sans test = non implémenté, peu importe le code présent.
 
 ---
 
+## Évolution — Orchestrator Loop _(non implémenté)_
+
+Le workflow actuel est **séquentiel** : un Dev Agent par US, orchestration manuelle entre chaque étape.
+
+Une évolution naturelle serait un **Orchestrator Agent** en boucle autonome :
+
+```
+Orchestrator Agent (loop)
+  ├─ Lit le Project org (US human-validated + Phase MVP)
+  ├─ Lance en parallèle :
+  │    ├─ Dev Agent  → US-42  (branche feat/us-42-...)
+  │    ├─ Dev Agent  → US-43  (branche feat/us-43-...)
+  │    └─ QA Agent   → review Gate 2 sur PR ouverte US-41
+  └─ PR Review Agent → déclenché sur chaque PR prête (Gate 3 + 4)
+```
+
+Différences clés vs BMAD :
+
+| | BMAD | PIVOT avec Orchestrator |
+|-|------|------------------------|
+| Parallélisme | Non — séquentiel | US indépendantes en parallèle |
+| Déclenchement | Humain entre chaque rôle | Loop sur état backlog |
+| Review PR | Humaine | PR Review Agent autonome (Gate 4 ≥ 85) |
+
+Points d'architecture à résoudre avant d'aller là :
+- **Isolation** : exclusion mutuelle si deux US modifient les mêmes fichiers
+- **Orchestrateur** : Claude Code `/loop`, GitHub Actions scheduled, ou runner dédié
+- **Rollback** : stratégie si Gate 4 < 60 sur plusieurs US en vol simultanément
+
+> Ce mode reste un chantier futur. Le workflow actuel (séquentiel, un agent à la fois) est la référence opérationnelle.
+
+---
+
 ## Diagramme
 
 → [`acdd-workflow.puml`](acdd-workflow.puml) (PlantUML)
