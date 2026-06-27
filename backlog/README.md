@@ -36,7 +36,7 @@ EPIC
 | **Type** | single-select | `Epic` · `Feature` · `Enabler` · `US` |
 | **Parent** | text | Clé du parent (ex. `E01`, `F01.1`) |
 | **Status** | single-select | `Backlog` · `Ready` · `In progress` · `Review` · `Done` |
-| **Human Gate** | single-select | `needs-human-valid` · `HUMAN-VALID` |
+| **Human Gate** | single-select | `needs-human-valid` · `validated` |
 | **Priority** | single-select | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | single-select (extensible) | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` · *(nouveaux modules ajoutés au fil de l'eau)* |
 | **Phase** | single-select | `MVP` · `v1-enterprise` · `phase-3` |
@@ -44,15 +44,15 @@ EPIC
 
 ---
 
-## 3. Gate `HUMAN-VALID` — démarrage d'implémentation
+## 3. Human Gate — démarrage d'implémentation
 
-**Règle absolue : aucune implémentation ne démarre tant que `Human Gate = HUMAN-VALID`.**
+**Règle absolue : aucune implémentation ne démarre tant que `Human Gate = validated`.**
 
 - Toute US naît en `needs-human-valid`.
-- Le mainteneur passe l'item à `HUMAN-VALID` après revue de l'US **et** de ses critères
+- Le mainteneur passe l'item à `validated` après revue de l'US **et** de ses critères
   d'acceptation (= Breaking Point 1 de `CLAUDE.md`, et ACDD Gate 1 READINESS ≥ 70).
-- `HUMAN-VALID` + `Status: Ready` = bon pour `In progress`.
-- Sans `HUMAN-VALID`, le Dev Agent **stoppe** et demande la validation.
+- `validated` + `Status: Ready` = bon pour `In progress`.
+- Sans `validated`, le Dev Agent **stoppe** et demande la validation.
 
 ---
 
@@ -121,7 +121,7 @@ Dépendances: …
 ```
 Backlog ──(rédaction AC + non-AC + notes)──► Ready
    │                                            │
-   │                                   (mainteneur) Human Gate → HUMAN-VALID
+   │                                   (mainteneur) Human Gate → validated
    ▼                                            ▼
 needs-human-valid                          In progress ──► Review ──► Done
 ```
