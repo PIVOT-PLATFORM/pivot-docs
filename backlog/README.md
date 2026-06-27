@@ -40,6 +40,7 @@ EPIC
 | **Priority** | single-select | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | single-select (extensible) | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` · *(nouveaux modules ajoutés au fil de l'eau)* |
 | **Phase** | single-select | `MVP` · `v1-enterprise` · `phase-3` |
+| **Sprint** | single-select | `Sprint 1` … `Sprint N` (planification temporelle) |
 | **Size** | single-select | `XS` · `S` · `M` · `L` · `XL` |
 
 ---
@@ -213,6 +214,8 @@ d'implémentation**.
 - **Seul geste humain** : le mainteneur passe l'item `needs-human-valid → human-validated`
   (après revue de la Definition of Ready §8.2 = Breaking Point 1 / ACDD Gate 1).
 - Claude **ne pose jamais** `human-validated` lui-même — il le **consomme**.
+- **Pas d'automation live** : Claude lit l'état du Project (Human Gate, Stage, Phase) **au
+  démarrage de session** et agit en conséquence — il n'y a pas de polling continu.
 
 ### Ce que Claude fait dès qu'un item est `human-validated` (et `Phase: MVP`)
 1. **Convertit le draft en Issue** dans le repo cible (voir mapping ci-dessous).
