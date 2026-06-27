@@ -12,19 +12,22 @@ PIVOT est une suite collaborative auto-hébergeable, conçue pour les associatio
 
 ## Flux et protocoles
 
-| Lien | Protocole | Chiffrement | Notes |
-|------|-----------|-------------|-------|
-| Browser → nginx | **HTTPS :443** | TLS 1.3 | pages, assets, requêtes API |
-| Browser → nginx | **WSS :443** /ws/** | TLS 1.3 | WebSocket Secure · STOMP upgrade |
-| nginx → pivot-core | **HTTP :8080** | aucun | réseau Docker interne (`pivot-net`) — décision consciente¹ |
-| nginx → pivot-core | **WS :8080** | aucun | proxy WebSocket interne |
-| pivot-core → PostgreSQL | **JDBC :5432** | `ssl=require` (prod) | `ssl=disable` en dev Testcontainers |
-| pivot-core → Redis | **RESP :6379** | `requirepass` + TLS (prod) | no-auth en dev |
-| pivot-core → SMTP | **SMTPS :465** (prod) / **SMTP :1025** (dev) | TLS (prod) | emails vérification · reset pwd · OTP device |
-| Browser → IdP | **HTTPS :443** | TLS | OIDC Authorization Code + PKCE S256 · state · nonce |
-| pivot-core → IdP JWKS | **HTTPS :443** | TLS | validation signature · expiry · issuer · rotation auto |
+**Principe : TLS 1.3 sur tous les flux, y compris les connexions internes (Zero Trust).**
 
-¹ **HTTP interne acceptable** si le réseau Docker est isolé (réseau non exposé sur l'hôte). En cas de déploiement multi-hôtes, activer mTLS nginx↔core.
+| Lien | Protocole | Port | Chiffrement |
+|------|-----------|------|-------------|
+| Browser → nginx | HTTPS | :443 | TLS 1.3 · HTTP/2 · HSTS |
+| Browser → nginx | WSS | :443 /ws/** | TLS 1.3 · WebSocket Secure · STOMP upgrade |
+| nginx → pivot-core | HTTPS | :8443 | TLS 1.3 · cert auto-signé interne (CA pivot-net) |
+| nginx → pivot-core | WSS | :8443 /ws/** | TLS 1.3 · proxy WebSocket · sticky ip_hash |
+| pivot-core → PgBouncer | JDBC | :5432 | TLS 1.3 · `sslmode=verify-full` |
+| PgBouncer → PostgreSQL | JDBC | :5433 | TLS 1.3 · `sslmode=require` |
+| pivot-core → Redis | RESP | :6380 | TLS 1.3 · `requirepass` |
+| pivot-core → SMTP | SMTPS / SMTP | :465 / :1025 dev | TLS 1.3 (prod) · Mailpit dev |
+| Browser → IdP | HTTPS | :443 | TLS 1.3 · OIDC PKCE S256 · state · nonce |
+| pivot-core → IdP JWKS | HTTPS | :443 | TLS 1.3 · rotation de clés auto-gérée |
+
+> En dev avec Testcontainers : PostgreSQL et Redis sans TLS (réseau loopback isolé). Jamais exposés hors du process de test.
 
 ---
 
@@ -94,14 +97,25 @@ Chaque module est activable indépendamment par les admins tenant.
 
 ---
 
-## Gaps de sécurité — MVP (backlog)
+## Scalabilité horizontale
 
-| Gap | Risque | Mitigation cible |
-|-----|--------|-----------------|
+| Aspect | Mécanisme |
+|--------|-----------|
+| **Load balancing REST** | nginx upstream pool · round-robin `/api/**` |
+| **Load balancing WebSocket** | nginx ip_hash sticky `/ws/**` (handshake) · puis Redis pub/sub relay (STOMP messages) |
+| **State partagé** | Opaque tokens en PostgreSQL (partagés entre instances) · aucun état local |
+| **Connexions DB** | PgBouncer mode transaction · pool max 20/instance |
+| **STOMP multi-instance** | `enableStompBrokerRelay()` → Redis pub/sub · tous les cores souscrivent aux mêmes topics |
+| **Migrations Flyway** | Verrou distribué DB au démarrage (une seule migration active simultanément) |
+
+## Gaps — Enablers backlog MVP
+
+| Gap | Risque | Enabler cible |
+|-----|--------|--------------|
 | Rate limiting absent | Brute force `/auth/login` · `/auth/forgot-password` | Bucket4j (Spring) ou `nginx limit_req` |
-| Redis sans TLS en dev | Port accidentellement exposé | `requirepass` + réseau Docker interne uniquement |
-| PostgreSQL `ssl=disable` en dev | Connexion JDBC en clair | Testcontainers uniquement — non exposé |
-| nginx→core HTTP | Lisible si host partagé | mTLS en cas de déploiement multi-hôtes |
+| CA interne auto-signée | Cert nginx→core à provisionner | PKI interne Docker ou cert Let's Encrypt interne |
+| Redis TLS en dev | Port Redis exposé sans TLS | `requirepass` + réseau Docker isolé |
+| PgBouncer `sslmode=verify-full` | Vérification certificat PG | CA cert dans PgBouncer config |
 
 ---
 
