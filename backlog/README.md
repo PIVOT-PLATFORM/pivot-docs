@@ -134,7 +134,20 @@ Voir `CLAUDE.md` (Gates ACDD, Breaking Points, Workflow) pour le détail du cycl
 
 ---
 
-## 6. Périmètre cible (vision complète)
+## 6. Phase active — verrou MVP
+
+**La phase active reste `MVP` tant que le mainteneur n'a pas explicitement déclaré le MVP terminé.**
+
+- Seuls les items `Phase: MVP` sont éligibles à `Ready`, `validated` et à l'implémentation.
+- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`,
+  `needs-human-valid` — **non travaillés**, quelle que soit leur priorité.
+- Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »),
+  qui débloque alors `v1-enterprise`.
+- Tant que le verrou MVP est actif : ne rien valider ni implémenter hors `MVP`.
+
+---
+
+## 7. Périmètre cible (vision complète)
 
 Epics transverses + un Epic par module. Modules **activables** et **extensibles**
 (de nouveaux modules s'ajoutent sans casser l'existant — voir `architecture/modules-system.md`).
