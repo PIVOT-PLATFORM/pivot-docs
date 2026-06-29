@@ -9,19 +9,19 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Page `/contact` avec champs email et message | ✅ | ⬜ | ⬜ | ⬜ |
-| Validation email (requis + format) et message (requis) avec messages d'erreur i18n | ✅ | ⬜ | ⬜ | ⬜ |
-| Soumission → `POST /api/contact` avec `{ email, message, lang }` | ✅ | ⬜ | ⬜ | ⬜ |
-| Backend : 202 Accepted + email de confirmation envoyé à l'expéditeur | ✅ | ⬜ | ⬜ | ⬜ |
-| Email de confirmation i18n FR/EN selon le champ `lang` | ✅ | ⬜ | ⬜ | ⬜ |
-| Succès → message de confirmation, formulaire masqué | ✅ | ⬜ | ⬜ | ⬜ |
-| Erreur API → message d'erreur avec email de contact direct | ✅ | ⬜ | ⬜ | ⬜ |
-| État `loading` → bouton désactivé "Envoi en cours…" | ✅ | ⬜ | ⬜ | ⬜ |
-| Tous les textes i18n FR/EN (titre, labels, placeholders, bouton, messages) | ✅ | ⬜ | ⬜ | ⬜ |
-| A11y : `<main aria-label="Page de contact">`, hierarchy h1>h2, `role="alert"` erreurs | ✅ | ⬜ | ⬜ | ⬜ |
-| Tests Vitest : mount, validation, POST call, succès, erreur API, A11y | ✅ | ⬜ | ⬜ | ⬜ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Page `/contact` avec champs email et message | ✅ | ⬜ |
+| Validation email (requis + format) et message (requis) avec messages d'erreur i18n | ✅ | ⬜ |
+| Soumission → `POST /api/contact` avec `{ email, message, lang }` | ✅ | ⬜ |
+| Backend : 202 Accepted + email de confirmation envoyé à l'expéditeur | ✅ | ⬜ |
+| Email de confirmation i18n FR/EN selon le champ `lang` | ✅ | ⬜ |
+| Succès → message de confirmation, formulaire masqué | ✅ | ⬜ |
+| Erreur API → message d'erreur avec email de contact direct | ✅ | ⬜ |
+| État `loading` → bouton désactivé "Envoi en cours…" | ✅ | ⬜ |
+| Tous les textes i18n FR/EN (titre, labels, placeholders, bouton, messages) | ✅ | ⬜ |
+| A11y : `<main aria-label="Page de contact">`, hierarchy h1>h2, `role="alert"` erreurs | ✅ | ⬜ |
+| Tests Vitest : mount, validation, POST call, succès, erreur API, A11y | ✅ | ⬜ |
 
 ## Hors périmètre
 - Pièces jointes

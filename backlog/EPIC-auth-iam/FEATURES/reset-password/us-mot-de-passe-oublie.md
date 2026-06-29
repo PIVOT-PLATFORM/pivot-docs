@@ -6,12 +6,12 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Page `/auth/forgot-password` avec champ email | ✅ | ✅ | ⬜ | ✅ |
-| Email connu → token reset généré (TTL 1h), email envoyé avec lien | ✅ | ✅ | ⬜ | ✅ |
-| Email inconnu → réponse générique "Si un compte existe, un email vous a été envoyé" (anti-énumération) | ✅ | ✅ | ⬜ | ✅ |
-| Token SHA-256 stocké en BDD, TTL 1h | ✅ | ✅ | — | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Page `/auth/forgot-password` avec champ email | ✅ | ✅ |
+| Email connu → token reset généré (TTL 1h), email envoyé avec lien | ✅ | ✅ |
+| Email inconnu → réponse générique "Si un compte existe, un email vous a été envoyé" (anti-énumération) | ✅ | ✅ |
+| Token SHA-256 stocké en BDD, TTL 1h | ✅ | ✅ |
 
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: MVP · Size: S · Priority: Critical

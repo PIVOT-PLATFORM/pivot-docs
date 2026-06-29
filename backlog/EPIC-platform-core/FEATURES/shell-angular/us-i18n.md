@@ -6,16 +6,16 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Sélecteur FR/EN en navbar (pilule, langue active visible) | ✅ | ✅ | ⬜ | ✅ |
-| Changement de langue → toute l'interface mise à jour instantanément | ✅ | ✅ | ⬜ | ✅ |
-| Langue persistée en `localStorage` entre sessions | ✅ | ✅ | ⬜ | ✅ |
-| Fichiers i18n : `public/assets/i18n/fr.json` + `en.json` | ✅ | ✅ | — | ✅ |
-| Clés i18n pour : navbar, footer, auth (login/register/etc.), contact, pages légales | ✅ | ✅ | — | ✅ |
-| Pages légales : contenu hardcodé FR + banner EN "⚠ This document is legally binding in French only." | ✅ | ✅ | ⬜ | ✅ |
-| `TranslocoPipe` utilisé dans les templates, `translate()` pour les signaux dynamiques | ✅ | ✅ | — | ✅ |
-| Tests Vitest : `TranslocoTestingModule.forRoot()` (import depuis `@jsverse/transloco`, pas subpath `/testing`) | ✅ | ✅ | — | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Sélecteur FR/EN en navbar (pilule, langue active visible) | ✅ | ✅ |
+| Changement de langue → toute l'interface mise à jour instantanément | ✅ | ✅ |
+| Langue persistée en `localStorage` entre sessions | ✅ | ✅ |
+| Fichiers i18n : `public/assets/i18n/fr.json` + `en.json` | ✅ | ✅ |
+| Clés i18n pour : navbar, footer, auth (login/register/etc.), contact, pages légales | ✅ | ✅ |
+| Pages légales : contenu hardcodé FR + banner EN "⚠ This document is legally binding in French only." | ✅ | ✅ |
+| `TranslocoPipe` utilisé dans les templates, `translate()` pour les signaux dynamiques | ✅ | ✅ |
+| Tests Vitest : `TranslocoTestingModule.forRoot()` (import depuis `@jsverse/transloco`, pas subpath `/testing`) | ✅ | ✅ |
 
 ## Notes d'implémentation
 - Library : `@jsverse/transloco`

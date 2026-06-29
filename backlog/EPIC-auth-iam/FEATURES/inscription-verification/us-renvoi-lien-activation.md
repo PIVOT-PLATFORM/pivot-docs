@@ -6,12 +6,12 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Page `/auth/resend-activation` avec champ email | ✅ | ✅ | ⬜ | ✅ |
-| Email connu + compte PENDING → nouveau token généré, ancien invalidé, email envoyé | ✅ | ✅ | ⬜ | ✅ |
-| Email inconnu ou compte déjà ACTIVE → réponse générique (anti-énumération) | ✅ | ✅ | ⬜ | ✅ |
-| Renvoi silencieux depuis le flux de connexion (compte non vérifié détecté) | ✅ | ✅ | ⬜ | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Page `/auth/resend-activation` avec champ email | ✅ | ✅ |
+| Email connu + compte PENDING → nouveau token généré, ancien invalidé, email envoyé | ✅ | ✅ |
+| Email inconnu ou compte déjà ACTIVE → réponse générique (anti-énumération) | ✅ | ✅ |
+| Renvoi silencieux depuis le flux de connexion (compte non vérifié détecté) | ✅ | ✅ |
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: XS · Priority: High

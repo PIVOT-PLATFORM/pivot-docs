@@ -6,16 +6,16 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Email + password corrects → token opaque posé en cookie HttpOnly, redirection `/home` | ✅ | ✅ | ⬜ | ✅ |
-| Email inexistant → message générique "Identifiants invalides" (anti-énumération) | ✅ | ✅ | ⬜ | ✅ |
-| Mot de passe incorrect → même message générique (anti-énumération) | ✅ | ✅ | ⬜ | ✅ |
-| Compte non vérifié → renvoi silencieux du lien d'activation + réponse générique | ✅ | ✅ | ⬜ | ✅ |
-| Token opaque 256-bit SecureRandom, SHA-256 stocké en BDD, raw token jamais persisté | ✅ | ✅ | — | ✅ |
-| Cookie HttpOnly, SameSite=Strict, Secure — jamais de token en LocalStorage | ✅ | ✅ | — | ✅ |
-| Champ email focus au chargement de la page de login | ✅ | ✅ | ⬜ | ✅ |
-| A11y : `role="alert"` sur le message d'erreur, labels explicites, focus trap | ✅ | ✅ | ⬜ | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Email + password corrects → token opaque posé en cookie HttpOnly, redirection `/home` | ✅ | ✅ |
+| Email inexistant → message générique "Identifiants invalides" (anti-énumération) | ✅ | ✅ |
+| Mot de passe incorrect → même message générique (anti-énumération) | ✅ | ✅ |
+| Compte non vérifié → renvoi silencieux du lien d'activation + réponse générique | ✅ | ✅ |
+| Token opaque 256-bit SecureRandom, SHA-256 stocké en BDD, raw token jamais persisté | ✅ | ✅ |
+| Cookie HttpOnly, SameSite=Strict, Secure — jamais de token en LocalStorage | ✅ | ✅ |
+| Champ email focus au chargement de la page de login | ✅ | ✅ |
+| A11y : `role="alert"` sur le message d'erreur, labels explicites, focus trap | ✅ | ✅ |
 
 ## Hors périmètre
 - Rate limiting (voir EN01.x)

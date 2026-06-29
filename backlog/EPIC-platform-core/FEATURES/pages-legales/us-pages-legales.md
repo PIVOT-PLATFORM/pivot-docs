@@ -6,16 +6,16 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| `/legal/mentions-legales`, `/legal/confidentialite`, `/legal/cgu` accessibles | ✅ | ✅ | ⬜ | ✅ |
-| Contenu intégralement en français (obligation légale) — titres et corps hardcodés FR | ✅ | ✅ | — | ✅ |
-| Banner jaune "⚠ This document is legally binding in French only." quand lang=EN uniquement | ✅ | ✅ | ⬜ | ✅ |
-| Bouton "← Retour" → `Location.back()` (adapté au contexte : shell ou login) | ✅ | ✅ | ⬜ | ✅ |
-| Connecté → pages avec navbar + footer (shell via `authMatchGuard`) | ✅ | ✅ | ⬜ | ✅ |
-| Non connecté → pages standalone (sans navbar/footer, fond violet dark mode) | ✅ | ✅ | ⬜ | ✅ |
-| Dark mode : fond violet `var(--auth-gradient)` via `:host-context([data-theme="dark"])` | ✅ | ✅ | ⬜ | ✅ |
-| A11y : heading hierarchy h1 > h2, liens descriptifs, contraste AA | ✅ | ✅ | ⬜ | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| `/legal/mentions-legales`, `/legal/confidentialite`, `/legal/cgu` accessibles | ✅ | ✅ |
+| Contenu intégralement en français (obligation légale) — titres et corps hardcodés FR | ✅ | ✅ |
+| Banner jaune "⚠ This document is legally binding in French only." quand lang=EN uniquement | ✅ | ✅ |
+| Bouton "← Retour" → `Location.back()` (adapté au contexte : shell ou login) | ✅ | ✅ |
+| Connecté → pages avec navbar + footer (shell via `authMatchGuard`) | ✅ | ✅ |
+| Non connecté → pages standalone (sans navbar/footer, fond violet dark mode) | ✅ | ✅ |
+| Dark mode : fond violet `var(--auth-gradient)` via `:host-context([data-theme="dark"])` | ✅ | ✅ |
+| A11y : heading hierarchy h1 > h2, liens descriptifs, contraste AA | ✅ | ✅ |
 
 ## Notes d'implémentation
 - Pattern routing : `LEGAL_CHILDREN` constant partagée dans `app.routes.ts`

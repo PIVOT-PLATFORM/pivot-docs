@@ -27,17 +27,17 @@ Fournir les briques transverses de la plateforme : shell Angular (navbar, footer
 
 ## Suivi d'avancement
 
-| Élément | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| **F02.1 — Shell Angular** | | | | |
-| [US02.1.1 — Navbar](FEATURES/shell-angular/us-navbar.md) | ✅ | ✅ | ⬜ | ✅ |
-| [US02.1.2 — Footer](FEATURES/shell-angular/us-footer.md) | ✅ | ✅ | ⬜ | ✅ |
-| [US02.1.3 — Thème clair/sombre](FEATURES/shell-angular/us-theme-switcher.md) | ✅ | ✅ | ⬜ | ✅ |
-| [US02.1.4 — i18n FR/EN](FEATURES/shell-angular/us-i18n.md) | ✅ | ✅ | ⬜ | ✅ |
-| **F02.2 — Pages légales** | | | | |
-| [US02.2.1 — ML + PC + CGU](FEATURES/pages-legales/us-pages-legales.md) | ✅ | ✅ | ⬜ | ✅ |
-| **F02.3 — Contact** | | | | |
-| [US02.3.1 — Formulaire de contact](FEATURES/contact/us-formulaire-contact.md) | 🔄 | ⬜ | ⬜ | ⬜ |
-| **Enablers** | | | | |
-| [EN02.1 — Module system backend](ENABLERS/en-module-system-backend.md) | ⬜ | ⬜ | — | ⬜ |
-| [EN02.2 — Module system Angular](ENABLERS/en-module-system-angular.md) | ⬜ | ⬜ | — | ⬜ |
+| Élément | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| **F02.1 — Shell Angular** | | |
+| [US02.1.1 — Navbar](FEATURES/shell-angular/us-navbar.md) | ✅ | ✅ |
+| [US02.1.2 — Footer](FEATURES/shell-angular/us-footer.md) | ✅ | ✅ |
+| [US02.1.3 — Thème clair/sombre](FEATURES/shell-angular/us-theme-switcher.md) | ✅ | ✅ |
+| [US02.1.4 — i18n FR/EN](FEATURES/shell-angular/us-i18n.md) | ✅ | ✅ |
+| **F02.2 — Pages légales** | | |
+| [US02.2.1 — ML + PC + CGU](FEATURES/pages-legales/us-pages-legales.md) | ✅ | ✅ |
+| **F02.3 — Contact** | | |
+| [US02.3.1 — Formulaire de contact](FEATURES/contact/us-formulaire-contact.md) | 🔄 | ⬜ |
+| **Enablers** | | |
+| [EN02.1 — Module system backend](ENABLERS/en-module-system-backend.md) | ⬜ | ⬜ |
+| [EN02.2 — Module system Angular](ENABLERS/en-module-system-angular.md) | ⬜ | ⬜ |

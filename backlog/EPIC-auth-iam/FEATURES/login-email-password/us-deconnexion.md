@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Clic "Déconnexion" → `POST /api/auth/logout` → token révoqué en BDD | ✅ | ✅ | ⬜ | ✅ |
-| Cookie `pivot_session` supprimé après déconnexion | ✅ | ✅ | ⬜ | ✅ |
-| Redirection vers `/auth/login` après déconnexion | ✅ | ✅ | ⬜ | ✅ |
-| Token révoqué → toute requête ultérieure avec ce token renvoie 401 | ✅ | ✅ | — | ✅ |
-| A11y : bouton "Déconnexion" accessible au clavier dans le menu utilisateur | ✅ | ✅ | ⬜ | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Clic "Déconnexion" → `POST /api/auth/logout` → token révoqué en BDD | ✅ | ✅ |
+| Cookie `pivot_session` supprimé après déconnexion | ✅ | ✅ |
+| Redirection vers `/auth/login` après déconnexion | ✅ | ✅ |
+| Token révoqué → toute requête ultérieure avec ce token renvoie 401 | ✅ | ✅ |
+| A11y : bouton "Déconnexion" accessible au clavier dans le menu utilisateur | ✅ | ✅ |
 
 ## Notes d'implémentation
 - Bouton dans `NavbarComponent` → user menu dropdown

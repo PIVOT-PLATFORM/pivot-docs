@@ -33,23 +33,23 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ### Sprint 1 — Auth & Plateforme Core (MVP)
 
-| US | Titre | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|----|-------|--------|-------|--------|----------|
-| US01.1.1 | Connexion email/password | ✅ | ✅ | ⬜ | ✅ |
-| US01.1.2 | Déconnexion | ✅ | ✅ | ⬜ | ✅ |
-| US01.1.3 | Se souvenir de moi | ✅ | ✅ | ⬜ | ✅ |
-| US01.2.1 | Inscription | ✅ | ✅ | ⬜ | ✅ |
-| US01.2.2 | Vérification email | ✅ | ✅ | ⬜ | ✅ |
-| US01.2.3 | Renvoi lien activation | ✅ | ✅ | ⬜ | ✅ |
-| US01.3.1 | Mot de passe oublié | ✅ | ✅ | ⬜ | ✅ |
-| US01.3.2 | Réinitialisation mot de passe | ✅ | ✅ | ⬜ | ✅ |
-| US01.4.1 | Confirmation d'appareil OTP | ✅ | ✅ | ⬜ | ✅ |
-| US02.1.1 | Navbar (thème, langue, user menu) | ✅ | ✅ | ⬜ | ✅ |
-| US02.1.2 | Footer avec liens légaux | ✅ | ✅ | ⬜ | ✅ |
-| US02.1.3 | Thème clair/sombre | ✅ | ✅ | ⬜ | ✅ |
-| US02.1.4 | i18n FR/EN (Transloco) | ✅ | ✅ | ⬜ | ✅ |
-| US02.2.1 | Pages légales (ML/PC/CGU) | ✅ | ✅ | ⬜ | ✅ |
-| **US02.3.1** | **Formulaire de contact** | 🔄 | ⬜ | ⬜ | ⬜ |
+| US | Titre | 🤖 Dev | ✅ PO |
+|----|-------|--------|-------|
+| US01.1.1 | Connexion email/password | ✅ | ✅ |
+| US01.1.2 | Déconnexion | ✅ | ✅ |
+| US01.1.3 | Se souvenir de moi | ✅ | ✅ |
+| US01.2.1 | Inscription | ✅ | ✅ |
+| US01.2.2 | Vérification email | ✅ | ✅ |
+| US01.2.3 | Renvoi lien activation | ✅ | ✅ |
+| US01.3.1 | Mot de passe oublié | ✅ | ✅ |
+| US01.3.2 | Réinitialisation mot de passe | ✅ | ✅ |
+| US01.4.1 | Confirmation d'appareil OTP | ✅ | ✅ |
+| US02.1.1 | Navbar (thème, langue, user menu) | ✅ | ✅ |
+| US02.1.2 | Footer avec liens légaux | ✅ | ✅ |
+| US02.1.3 | Thème clair/sombre | ✅ | ✅ |
+| US02.1.4 | i18n FR/EN (Transloco) | ✅ | ✅ |
+| US02.2.1 | Pages légales (ML/PC/CGU) | ✅ | ✅ |
+| **US02.3.1** | **Formulaire de contact** | 🔄 | ⬜ |
 
 > US02.3.1 : branche `feat/us16-3-1-contact` en cours — pivot-core + pivot-ui
 

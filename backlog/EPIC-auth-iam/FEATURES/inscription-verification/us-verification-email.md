@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| `GET /api/auth/verify?token=xxx` → compte passé à `ACTIVE` | ✅ | ✅ | ⬜ | ✅ |
-| Token valide → redirection `/auth/login` avec banner succès "Compte activé !" | ✅ | ✅ | ⬜ | ✅ |
-| Token expiré (> 24h) → page d'erreur avec bouton "Renvoyer un lien" | ✅ | ✅ | ⬜ | ✅ |
-| Token inconnu → page d'erreur générique (ne révèle pas l'existence du compte) | ✅ | ✅ | ⬜ | ✅ |
-| Token SHA-256 stocké en BDD, supprimé après utilisation | ✅ | ✅ | — | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| `GET /api/auth/verify?token=xxx` → compte passé à `ACTIVE` | ✅ | ✅ |
+| Token valide → redirection `/auth/login` avec banner succès "Compte activé !" | ✅ | ✅ |
+| Token expiré (> 24h) → page d'erreur avec bouton "Renvoyer un lien" | ✅ | ✅ |
+| Token inconnu → page d'erreur générique (ne révèle pas l'existence du compte) | ✅ | ✅ |
+| Token SHA-256 stocké en BDD, supprimé après utilisation | ✅ | ✅ |
 
 ## Notes d'implémentation
 - `VerifyEmailComponent` lit le `token` query param

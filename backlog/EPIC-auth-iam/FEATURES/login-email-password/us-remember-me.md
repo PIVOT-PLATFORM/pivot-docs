@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Case "Se souvenir de moi" visible sur le formulaire de connexion | ✅ | ✅ | ⬜ | ✅ |
-| Case cochée → TTL token = 30 jours (vs 24h par défaut) | ✅ | ✅ | — | ✅ |
-| Case non cochée → TTL token = 24h | ✅ | ✅ | — | ✅ |
-| TTL stocké en BDD (`access_tokens.expires_at`), pas dans le cookie | ✅ | ✅ | — | ✅ |
-| Token expiré → 401 → redirection `/auth/login` | ✅ | ✅ | ⬜ | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Case "Se souvenir de moi" visible sur le formulaire de connexion | ✅ | ✅ |
+| Case cochée → TTL token = 30 jours (vs 24h par défaut) | ✅ | ✅ |
+| Case non cochée → TTL token = 24h | ✅ | ✅ |
+| TTL stocké en BDD (`access_tokens.expires_at`), pas dans le cookie | ✅ | ✅ |
+| Token expiré → 401 → redirection `/auth/login` | ✅ | ✅ |
 
 ## Notes d'implémentation
 - `LoginRequest.rememberMe: boolean` → `TokenService.generateToken(rememberMe)`

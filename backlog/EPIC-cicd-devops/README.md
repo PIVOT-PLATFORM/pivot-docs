@@ -23,11 +23,11 @@ Pipeline CI/CD complet : GitHub Actions, SonarCloud, Gitleaks, Semgrep, Semantic
 
 | Élément | 🤖 Dev | ✅ PO | 🚀 Merge |
 |---------|--------|-------|----------|
-| EN04.1 — GitHub Actions (pivot-core) | ⬜ | ⬜ | ⬜ |
-| EN04.1 — GitHub Actions (pivot-ui) | ⬜ | ⬜ | ⬜ |
-| EN04.2 — SonarCloud config | ⬜ | ⬜ | ⬜ |
-| EN04.3 — Dockerfiles prod | ⬜ | ⬜ | ⬜ |
-| EN04.4 — Semantic Release | ⬜ | ⬜ | ⬜ |
-| EN04.5 — SBOM + Plumber | ⬜ | ⬜ | ⬜ |
+| EN04.1 — GitHub Actions (pivot-core) | ⬜ | ⬜ |
+| EN04.1 — GitHub Actions (pivot-ui) | ⬜ | ⬜ |
+| EN04.2 — SonarCloud config | ⬜ | ⬜ |
+| EN04.3 — Dockerfiles prod | ⬜ | ⬜ |
+| EN04.4 — Semantic Release | ⬜ | ⬜ |
+| EN04.5 — SBOM + Plumber | ⬜ | ⬜ |
 
 > US détaillées à créer lors du Sprint CI planning.

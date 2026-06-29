@@ -6,16 +6,16 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO | 🎭 E2E | 🚀 Merge |
-|---------|--------|-------|--------|----------|
-| Empreinte d'appareil inconnue détectée à la connexion → envoi OTP 6 chiffres | ✅ | ✅ | ⬜ | ✅ |
-| Page `/auth/device-confirm` avec champ OTP et timer | ✅ | ✅ | ⬜ | ✅ |
-| OTP correct (5 min TTL) → appareil enregistré, connexion finalisée | ✅ | ✅ | ⬜ | ✅ |
-| OTP expiré → message d'erreur + bouton "Renvoyer le code" | ✅ | ✅ | ⬜ | ✅ |
-| OTP incorrect → message d'erreur (max 5 tentatives) | ✅ | ✅ | ⬜ | ✅ |
-| Appareil connu → pas d'OTP, connexion directe | ✅ | ✅ | — | ✅ |
-| OTP généré côté backend : 6 chiffres, SecureRandom, SHA-256 BDD | ✅ | ✅ | — | ✅ |
-| A11y : timer annoncé via `aria-live`, champ OTP avec label explicite | ✅ | ✅ | ⬜ | ✅ |
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Empreinte d'appareil inconnue détectée à la connexion → envoi OTP 6 chiffres | ✅ | ✅ |
+| Page `/auth/device-confirm` avec champ OTP et timer | ✅ | ✅ |
+| OTP correct (5 min TTL) → appareil enregistré, connexion finalisée | ✅ | ✅ |
+| OTP expiré → message d'erreur + bouton "Renvoyer le code" | ✅ | ✅ |
+| OTP incorrect → message d'erreur (max 5 tentatives) | ✅ | ✅ |
+| Appareil connu → pas d'OTP, connexion directe | ✅ | ✅ |
+| OTP généré côté backend : 6 chiffres, SecureRandom, SHA-256 BDD | ✅ | ✅ |
+| A11y : timer annoncé via `aria-live`, champ OTP avec label explicite | ✅ | ✅ |
 
 ## Notes d'implémentation
 - Empreinte = hash de `userAgent + IP + Accept-Language` (non-persisté en clair)
