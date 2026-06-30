@@ -4,7 +4,7 @@
 
 - Docker Desktop (avec Compose v2)
 - Git
-- Les deux repos clonés **côte à côte** dans le même répertoire parent
+- Les trois repos clonés **côte à côte** dans le même répertoire parent (`pivot-core/` et `pivot-ui/` doivent être adjacents — requis par `compose.yml`)
 
 ## Clonage
 
@@ -57,6 +57,8 @@ docker compose down -v
 ```
 
 ## Développement natif (sans Docker pour les apps)
+
+Prérequis supplémentaires : **JDK 25** (backend) · **Node.js 24+** (frontend).
 
 Pour travailler sur le backend ou le frontend sans rebuilder les images à chaque changement :
 

@@ -204,7 +204,7 @@ Done ◄──(mainteneur : merge PR)──────────── Review
 pivot-docs/backlog/
 ├── SPRINTS.md              ← état des sprints, assignation US, avancement
 ├── README.md               ← ce fichier — modèle & conventions
-├── EPIC-auth/
+├── EPIC-auth-iam/
 │   ├── README.md           ← description de l'epic
 │   └── FEATURES/
 │       ├── login/

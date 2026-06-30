@@ -2,13 +2,13 @@
 
 Source de vérité pour l'organisation des sprints et l'assignation des US aux branches.
 
-**Règle branche :** `sprint/sprint-N` — toutes les US du sprint + mises à jour backlog + PATCH_NOTES sur la même branche.
+**Règle branche :** `feat/{us-id}-{slug}` par US/Enabler — une branche par item, agents en parallèle sur branches séparées.
 
 ---
 
 ## Sprint 1 — Auth & Shell MVP ✅ Terminé (sauf US16.3.1)
 
-**Branche :** `feat/us16-3-1-contact` *(ancienne convention — branche déjà ouverte)*
+**Branche :** `feat/us16-3-1-contact`
 
 | US | Titre | 🤖 Dev | ✅ PO |
 |----|-------|--------|-------|
@@ -146,12 +146,12 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ## Règles d'utilisation
 
-1. **Démarrage sprint :** `git checkout main && git pull && git checkout -b sprint/sprint-N`
-2. **US en cours :** commits atomiques sur `sprint/sprint-N` — backlog + code + PATCH_NOTES dans chaque commit
-3. **Actions parallèles :** plusieurs US du sprint lancées simultanément sur la même branche (fichiers distincts = pas de conflit)
-4. **Mise à jour SPRINTS.md :** à chaque changement d'état d'une US (commit sur la branche courante)
-5. **Fin de sprint :** PR `sprint/sprint-N → main`, squash WIP, Gate 4 ≥ 85
-6. **US bloquée :** retour Backlog + note dans ce fichier + commit sur la branche sprint courante
+1. **Démarrage item :** `git checkout main && git pull && git checkout -b feat/{us-id}-{slug}`
+2. **US en cours :** commits atomiques sur `feat/{us-id}-{slug}` — backlog + code + PATCH_NOTES dans chaque commit
+3. **Actions parallèles :** plusieurs US du sprint lancées simultanément — **une branche par US/Enabler**, agents séparés
+4. **Mise à jour SPRINTS.md :** à chaque changement d'état d'une US (commit sur la branche de l'US)
+5. **Fin d'US :** PR `feat/{us-id}-{slug} → main`, autoloop review + CI, Gate 4 ≥ 85
+6. **US bloquée :** retour Backlog + note dans ce fichier + commit sur la branche de l'US courante
 
 ---
 

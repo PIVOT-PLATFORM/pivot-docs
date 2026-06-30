@@ -15,8 +15,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ## Synthèse EPICs
 
-| EPIC | GitHub | Features | Enablers | US | Avancement |
-|------|--------|----------|----------|----|------------|
+| EPIC | Clé | Features | Enablers | US | Avancement |
+|------|-----|----------|----------|----|------------|
 | [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
 | [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ⬜ Sprint 2 |
