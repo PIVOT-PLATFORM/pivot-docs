@@ -35,7 +35,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ## Sprint 2 — Système de modules + Auth manquant
 
-**Branche :** `sprint/sprint-2`
+**Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
 **Scope :** E03 (enablers + admin features) + US01 manquants
 **Priorité :** Critical — débloque tous les modules E08–E15
 
@@ -59,7 +59,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ## Sprint 3 — Espace compte + Administration
 
-**Branche :** `sprint/sprint-3`
+**Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
 **Scope :** E02 (espace compte utilisateur) + E06 (administration tenant/superadmin)
 
 | US | Titre | Size | Priorité | 🤖 Dev | ✅ PO |
@@ -86,7 +86,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ## Sprint 4 — Infrastructure prod + Auth avancé + Notifications
 
-**Branche :** `sprint/sprint-4`
+**Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
 **Scope :** E07 (infra déploiement) + US01 sécurité avancée + EN-NOTIF + US16 restants + US03 SUPER_ADMIN
 
 | US | Titre | Size | Priorité | 🤖 Dev | ✅ PO |
@@ -110,7 +110,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ## Sprint 5 — Module Whiteboard (MVP)
 
-**Branche :** `sprint/sprint-5`
+**Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
 **Scope :** E08 Whiteboard complet
 **Pré-requis :** Sprint 2 terminé + Sprint 4 EN07.x validé + Human Gate US08.x = human-validated
 
