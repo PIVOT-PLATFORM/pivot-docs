@@ -1,9 +1,8 @@
 # Backlog PIVOT — Modèle & conventions
 
-> Source de vérité du **modèle** de backlog. Le backlog **opérationnel** vit dans le
-> **GitHub Project de l'organisation** `PIVOT-PLATFORM` (« PIVOT Platform »). Tant que le
-> produit n'est pas ouvert au public, les items sont des **éléments de Project** (pas encore
-> des Issues repo). Les Issues seront créées à l'ouverture publique, reliées aux items.
+> Source de vérité du **modèle** de backlog. Le backlog opérationnel vit dans les fichiers
+> markdown de **`pivot-docs/backlog/`**. L'état des sprints et l'avancement des US sont dans
+> **`SPRINTS.md`**. Toute mise à jour d'état se commit sur la branche de l'US en cours.
 
 ---
 
@@ -21,27 +20,33 @@ EPIC
 |--------|-----------|---------|
 | **EPIC** | Grande capacité produit/métier. Souvent = un module ou un axe transverse. | `Authentification & IAM`, `Module Whiteboard` |
 | **FEATURE** | Fonctionnalité livrable apportant de la valeur utilisateur. | `Login email/password`, `Tableau blanc temps réel` |
-| **ENABLER** | Travail technique sans valeur user directe mais nécessaire (architecture, sécurité, infra, dette, recherche/spike). | `Bus d'événements modules`, `Pipeline SLSA L3` |
-| **US** | User Story implémentable. Format `En tant que… je veux… afin de…`. | `US-AUTH-002` |
+| **ENABLER** | Travail technique sans valeur user directe mais nécessaire (architecture, sécurité, infra, dette, spike). | `Bus d'événements modules`, `Pipeline SLSA L3` |
+| **US** | User Story implémentable. Format `En tant que… je veux… afin de…`. | `US01.1.1` |
 
-**Clé de nommage** (parent traçable sans Issues) :
-`E01` → `F01.1` (feature) / `EN01.1` (enabler) → `US01.1.1` (story).
+**Clé de nommage :** `E01` → `F01.1` (feature) / `EN01.1` (enabler) → `US01.1.1` (story).
 
 ---
 
-## 2. Champs du Project org
+## 2. Champs (frontmatter markdown)
 
-| Champ | Type | Valeurs |
-|-------|------|---------|
-| **Item Type** | single-select | `Epic` · `Feature` · `Enabler` · `US` (`Type` est un nom réservé GitHub) |
-| **Parent** | text | Clé du parent (ex. `E01`, `F01.1`) |
-| **Stage** | single-select | `Backlog` · `Ready` · `In progress` · `Review` · `Done` (le champ natif `Status` n'est pas reconfigurable via API) |
-| **Human Gate** | single-select | `needs-human-valid` · `human-validated` · `human-reject` |
-| **Priority** | single-select | `Critical` · `High` · `Medium` · `Low` |
-| **Module** | single-select (extensible) | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` · *(nouveaux modules ajoutés au fil de l'eau)* |
-| **Phase** | single-select | `MVP` · `v1-enterprise` · `phase-3` |
-| **Sprint** | single-select | `Sprint 1` … `Sprint N` (planification temporelle) |
-| **Size** | single-select | `XS` · `S` · `M` · `L` · `XL` |
+Chaque fichier US porte en pied de fichier les métadonnées suivantes :
+
+```
+Item Type: US · Parent: F… / EN… · Module: {x} · Phase: … · Size: … · Priority: …
+Human Gate: needs-human-valid · Stage: Backlog
+Dépendances: …
+```
+
+| Champ | Valeurs |
+|-------|---------|
+| **Item Type** | `Epic` · `Feature` · `Enabler` · `US` |
+| **Parent** | Clé du parent (ex. `E01`, `F01.1`) |
+| **Stage** | `Backlog` · `Ready` · `In progress` · `Review` · `Done` |
+| **Human Gate** | `needs-human-valid` · `human-validated` · `human-reject` |
+| **Priority** | `Critical` · `High` · `Medium` · `Low` |
+| **Module** | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` |
+| **Phase** | `MVP` · `v1-enterprise` · `phase-3` |
+| **Size** | `XS` · `S` · `M` · `L` · `XL` |
 
 ---
 
@@ -53,12 +58,13 @@ EPIC
 |--------|----------|---------------|
 | `needs-human-valid` | Claude (à la création) | En attente de revue mainteneur |
 | `human-validated` | Mainteneur **seul** | AC et périmètre validés — implémentation autorisée |
-| `human-reject` | Mainteneur **seul** | Rejeté — AC ambigus, périmètre incorrect, ou quelque chose manque ; remettre en question et retravailler avant nouvelle soumission |
+| `human-reject` | Mainteneur **seul** | Rejeté — AC ambigus, périmètre incorrect ; retravailler avant nouvelle soumission |
 
 - Toute US / Enabler naît en `needs-human-valid`.
 - `human-validated` + `Stage: Ready` = bon pour `In progress`.
-- `human-reject` → Claude **stoppe**, ouvre un dialogue PO pour challenger et corriger l'AC, le périmètre ou les critères. Repasse à `needs-human-valid` après réécriture.
+- `human-reject` → Claude **stoppe**, ouvre un dialogue PO pour challenger et corriger l'AC. Repasse à `needs-human-valid` après réécriture.
 - Claude **ne pose jamais** `human-validated` ni `human-reject` — consommation uniquement.
+- Le mainteneur met à jour le frontmatter du fichier US et commit sur la branche courante.
 
 ---
 
@@ -101,22 +107,17 @@ Je veux [action]
 Afin de [bénéfice]
 
 ## Critères d'acceptation
-- [ ] Given [contexte], when [action], then [résultat observable]
-- [ ] Error : given [input invalide], system retourne [erreur / status code]
-- [ ] Security : [propriété de sécurité garantie]
-- [ ] A11y : [propriété WCAG 2.1 AA garantie] (si composant UI)
 
-## Hors périmètre
-- [ ] [ce que cette US ne couvre explicitement PAS]
-- [ ] [cas reportés à une autre US / phase]
-
-## Notes d'implémentation
-- [contraintes techniques, pistes, fichiers/composants concernés]
-- [points de sécurité / RGPD / perf à surveiller]
-- [dépendances techniques, contrats d'API/module impactés]
+| Critère | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
+| Given [contexte], when [action], then [résultat observable] | ⬜ | ⬜ |
+| Error : given [input invalide], system retourne [erreur / status code] | ⬜ | ⬜ |
+| Security : [propriété de sécurité garantie] | ⬜ | ⬜ |
+| A11y : [propriété WCAG 2.1 AA garantie] (si composant UI) | ⬜ | ⬜ |
 
 ---
 Item Type: US · Parent: F… / EN… · Module: {x} · Phase: … · Size: … · Priority: …
+Human Gate: needs-human-valid · Stage: Backlog
 Dépendances: …
 ```
 
@@ -127,21 +128,20 @@ Dépendances: …
 ```
 Backlog ──(Claude : rédaction AC + DoR)──► Ready ──(mainteneur : human-validated)──► In progress
                                                                                            │
-                                                                                      (Claude : implémentation)
+                                                                                      (Claude : implémentation + autoloop PR)
                                                                                            │
-Done ◄──(mainteneur : recette + test)──── Review ◄────────────────────────────────────────┘
+Done ◄──(mainteneur : merge PR)──────────── Review ◄────────────────────────────────────────┘
 ```
 
 | Transition | Qui | Condition |
 |------------|-----|-----------|
 | `Backlog → Ready` | **Claude** | Definition of Ready §8.2 satisfaite |
 | `Ready → In progress` | **Claude** | Après `Human Gate = human-validated` par le mainteneur |
-| `In progress → Review` | **Claude** | Implémentation terminée, Gate 4 vert, recette humaine attendue |
-| `Review → Done` | **Mainteneur** | Recette + tests OK — **jamais Claude** |
+| `In progress → Review` | **Claude** | PR autoloop terminé (Gate 4 vert, CI verte, max 10 boucles) |
+| `Review → Done` | **Mainteneur** | Merge PR — **jamais Claude** |
 
-- US bloquée → retour `Backlog` + note.
-
-Voir `CLAUDE.md` (Gates ACDD, Breaking Points, Workflow) pour le détail du cycle de dev.
+- US bloquée → retour `Backlog` + note dans SPRINTS.md.
+- Mise à jour du frontmatter (`Stage`, `Human Gate`) dans le fichier US à chaque transition — commit sur la branche de l'US.
 
 ---
 
@@ -150,18 +150,12 @@ Voir `CLAUDE.md` (Gates ACDD, Breaking Points, Workflow) pour le détail du cycl
 **La phase active reste `MVP` tant que le mainteneur n'a pas explicitement déclaré le MVP terminé.**
 
 - Seuls les items `Phase: MVP` sont éligibles à `Ready`, `human-validated` et à l'implémentation.
-- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`,
-  `needs-human-valid` — **non travaillés**, quelle que soit leur priorité.
-- Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »),
-  qui débloque alors `v1-enterprise`.
-- Tant que le verrou MVP est actif : ne rien valider ni implémenter hors `MVP`.
+- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`, `needs-human-valid` — **non travaillés**.
+- Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »).
 
 ---
 
 ## 7. Périmètre cible (vision complète)
-
-Epics transverses + un Epic par module. Modules **activables** et **extensibles**
-(de nouveaux modules s'ajoutent sans casser l'existant — voir `architecture/modules-system.md`).
 
 | Axe | Epics (indicatif) | Phase |
 |-----|-------------------|-------|
@@ -170,22 +164,15 @@ Epics transverses + un Epic par module. Modules **activables** et **extensibles*
 | Admin | Activation modules, Gestion utilisateurs, Gestion tenants | MVP → v1-enterprise |
 | Modules | whiteboard, session, quiz, survey, roadmap | MVP (1 module) → phase-3 |
 
-Le contenu détaillé (Epics → Features/Enablers → US) est généré dans le Project org et
-maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
-
 ---
 
 ## 8. Plan de construction du backlog
 
 ### 8.1 Méthode de décomposition
 
-1. **EPIC** — on part de la capacité (module ou axe transverse). On décrit intention, valeur,
-   périmètre, hors-périmètre.
-2. **Décomposition Epic → FEATURE + ENABLER** :
-   - une **Feature** par fonctionnalité à valeur utilisateur ;
-   - un **Enabler** par brique technique nécessaire (sécurité, archi, infra, dette, spike).
-3. **Décomposition Feature/Enabler → US** : chaque US est un incrément implémentable et testable,
-   avec AC + critères de non-acceptation + notes d'implémentation.
+1. **EPIC** — on part de la capacité (module ou axe transverse). On décrit intention, valeur, périmètre, hors-périmètre.
+2. **Décomposition Epic → FEATURE + ENABLER** : une Feature par fonctionnalité à valeur utilisateur ; un Enabler par brique technique nécessaire.
+3. **Décomposition Feature/Enabler → US** : chaque US est un incrément implémentable et testable, avec AC + notes d'implémentation.
 4. Chaque US naît `Stage: Backlog` · `Human Gate: needs-human-valid`.
 
 ### 8.2 Definition of Ready (avant `human-validated`)
@@ -195,10 +182,9 @@ maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
 | **Epic** | intention, valeur, périmètre, hors-périmètre, modules, dépendances |
 | **Feature** | description, bénéfice utilisateur, US rattachées, critères de succès, hors-périmètre |
 | **Enabler** | type, objectif technique, justification, critères de complétion |
-| **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), hors-périmètre, notes d'implémentation, champs renseignés (Type/Parent/Module/Phase/Size/Priority) |
+| **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), hors-périmètre, notes d'implémentation, champs frontmatter renseignés |
 
-> Le mainteneur ne passe `needs-human-valid → human-validated` que si la Definition of Ready
-> du niveau est satisfaite (= Breaking Point 1 / ACDD Gate 1).
+> Le mainteneur ne passe `needs-human-valid → human-validated` que si la Definition of Ready est satisfaite (= Breaking Point 1 / ACDD Gate 1).
 
 ### 8.3 Ordre de construction (vagues)
 
@@ -208,53 +194,68 @@ maintenu par vagues (MVP d'abord, puis v1-enterprise, puis phase-3).
 | **2** | Plateforme — Système de modules, Observabilité (surtout Enablers) | ⬜ |
 | **3** | Admin — Activation modules, Gestion utilisateurs, Gestion tenants | ⬜ |
 | **4** | 1er module MVP (whiteboard **ou** session) — Features + US | ⬜ |
-| **ult.** | Autres modules, OIDC multi-tenant, RGPD cron/purge… (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
-
-Chaque vague suit §8.1–8.2 et reste dans `Phase: MVP` tant que le verrou MVP (§6) est actif.
+| **ult.** | Autres modules, OIDC multi-tenant, RGPD (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
 
 ---
 
-## 9. Workflow draft → Issue (automatisé par Claude)
+## 9. Structure des fichiers markdown
 
-Les items naissent en **draft** (carte Project sans Issue). Un draft ne peut pas porter
-de branche/PR ni être fermé par une PR. La conversion en Issue est donc le **déclencheur
-d'implémentation**.
+```
+pivot-docs/backlog/
+├── SPRINTS.md              ← état des sprints, assignation US, avancement
+├── README.md               ← ce fichier — modèle & conventions
+├── EPIC-auth-iam/
+│   ├── README.md           ← description de l'epic
+│   └── FEATURES/
+│       ├── login/
+│       │   ├── us-connexion-email.md
+│       │   └── us-deconnexion.md
+│       └── ...
+├── EPIC-whiteboard/
+│   └── ...
+└── ...
+```
 
-### Déclencheur unique : `Human Gate = human-validated`
-- **Seul geste humain** : le mainteneur passe l'item `needs-human-valid → human-validated`
-  (après revue de la Definition of Ready §8.2 = Breaking Point 1 / ACDD Gate 1).
-- Claude **ne pose jamais** `human-validated` lui-même — il le **consomme**.
-- **Pas d'automation live** : Claude lit l'état du Project (Human Gate, Stage, Phase) **au
-  démarrage de session** et agit en conséquence — il n'y a pas de polling continu.
+**Règles de fichiers :**
+- 1 fichier par US / Enabler — nommage `us-{slug}.md` ou `en-{slug}.md`
+- Frontmatter en pied de fichier (champs §2)
+- Mise à jour `Stage` et `Human Gate` dans le fichier à chaque transition, committée sur la branche de l'US
 
-### Ce que Claude fait dès qu'un item est `human-validated` (et `Phase: MVP`)
-1. **Convertit le draft en Issue** dans le repo cible (voir mapping ci-dessous).
-   L'item garde sa place, son `Parent` et ses champs dans le Project.
-2. **Fait avancer `Stage`** automatiquement :
-   - `Backlog/Ready → In progress` au démarrage,
-   - `→ Review` quand ACDD Gate 2 (COVERAGE) est vert,
-   - le mainteneur valide `Review → Done` (recette).
-3. Crée la branche `feat/us-{id}-{slug}` → PR `Closes #issue` → cycle dev de `CLAUDE.md`.
+---
 
-### Mapping Module → repo cible
-| Module / nature | Repo |
-|-----------------|------|
-| backend, BDD, API, sécurité serveur | `pivot-core` |
-| UI Angular, front | `pivot-ui` |
-| documentation, ADR | `pivot-docs` |
+## 10. Démarrage de session Claude
 
-> **1 draft → 1 Issue → 1 repo.** Une US réellement *full-stack* se **scinde** en deux US
-> (une `pivot-core`, une `pivot-ui`) sous la même Feature/Enabler — on ne convertit pas un
-> draft en deux Issues.
+Au démarrage de chaque session, Claude :
 
-### Garde-fous
-- Rien hors `Phase: MVP` n'est converti/implémenté tant que le verrou MVP (§6) est actif.
-- Un item sans Definition of Ready (§8.2) reste `needs-human-valid` — non converti.
-- US bloquée en cours → retour `Stage: Backlog` + note, conformément à la règle d'escalade
-  (`CLAUDE.md`, 2 tentatives max).
+1. Lit `pivot-docs/backlog/SPRINTS.md` — identifie le sprint courant et les US `In progress` ou `Ready`
+2. Lit les fichiers US du sprint courant — vérifie `Human Gate` et `Stage`
+3. Pour chaque US `human-validated` + `Stage: Ready` → lance l'implémentation (branche `feat/{us-id}-{slug}`)
+4. Pour chaque US `Stage: In progress` → reprend la branche existante, vérifie l'état de la PR
+5. Ne travaille pas les US `needs-human-valid` — attend la validation mainteneur
 
-### Répartition des rôles
+**Priorité :** Critical → High → Medium → Low. Phase MVP uniquement tant que verrou actif (§6).
+
+---
+
+## 11. Autoloop PR — cycle par US
+
+Après implémentation d'une US sur `feat/{us-id}-{slug}` :
+
+1. Ouvrir une PR (ou draft PR)
+2. **Autoloop** (10 itérations max) :
+   - **Review neutre** — Expert PR Review : cohérence architecture, AC couverts, sécurité, dette, a11y
+   - **Corrections** — appliquées sur la branche, commit `fix({scope}): ...`
+   - **CI** — `mvn verify -q` + `npx tsc --noEmit` + `npm run lint` + `npm run test:ci` + build prod = 0 erreur
+   - **Corrections CI** — si échec, corriger et relancer
+   - **Convergence** — Gate 4 ≥ 85 ET CI verte → sortir de la boucle
+3. **Gate 4 vert** → mettre `Stage: Review` dans le frontmatter US + signal mainteneur "PR prête"
+4. **Blocage 10 boucles** → Breaking Point 2 (label `needs-human-review`, escalade mainteneur)
+
+---
+
+## Répartition des rôles
+
 | Acteur | Responsabilité |
 |--------|----------------|
-| **Mainteneur** | pose `human-validated` · valide `Review → Done` (**seul autorisé**) · déclare « MVP terminé » |
-| **Claude** | rédige/affine les items · convertit draft → Issue · `Backlog → Ready` (DoR) · `Ready → In progress` (démarrage) · `In progress → Review` (fini) · **jamais `Done`** |
+| **Mainteneur** | pose `human-validated` dans le frontmatter US · merge PR (`Review → Done`) · déclare « MVP terminé » |
+| **Claude** | rédige/affine les items · implémente · ouvre PR · autoloop review+CI · met à jour `Stage` dans frontmatter · **jamais `Done`** |
