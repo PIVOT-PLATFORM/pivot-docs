@@ -15,6 +15,9 @@
 | Ancien token utilisé → 400 (token déjà consommé) | ✅ | ✅ |
 | Password trop court → validation avant appel API | ✅ | ✅ |
 | Toutes les sessions actives de l'utilisateur révoquées après reset | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.resetPassword.*` (fr.json / en.json) — libellés, erreurs token, succès | ⬜ | ⬜ |
+| A11y : erreurs de validation (token expiré, passwords différents) affichées avec `role="alert"` et focus géré | ⬜ | ⬜ |
+| État de chargement (bouton désactivé + spinner) pendant la soumission du nouveau mot de passe | ⬜ | ⬜ |
 
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: MVP · Size: S · Priority: Critical

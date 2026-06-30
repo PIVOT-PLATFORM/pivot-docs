@@ -13,6 +13,8 @@
 | Case non cochée → TTL token = 24h | ✅ | ✅ |
 | TTL stocké en BDD (`access_tokens.expires_at`), pas dans le cookie | ✅ | ✅ |
 | Token expiré → 401 → redirection `/auth/login` | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.rememberMe.*` (fr.json / en.json) — libellé case à cocher | ⬜ | ⬜ |
+| Case "Se souvenir de moi" a un `aria-label` explicite ou label associé via `for`/`id` | ⬜ | ⬜ |
 
 ## Notes d'implémentation
 - `LoginRequest.rememberMe: boolean` → `TokenService.generateToken(rememberMe)`

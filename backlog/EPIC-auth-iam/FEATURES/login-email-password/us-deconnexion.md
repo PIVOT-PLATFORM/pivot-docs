@@ -13,6 +13,7 @@
 | Redirection vers `/auth/login` après déconnexion | ✅ | ✅ |
 | Token révoqué → toute requête ultérieure avec ce token renvoie 401 | ✅ | ✅ |
 | A11y : bouton "Déconnexion" accessible au clavier dans le menu utilisateur | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.logout.*` (fr.json / en.json) — libellé bouton, confirmation éventuelle | ⬜ | ⬜ |
 
 ## Notes d'implémentation
 - Bouton dans `NavbarComponent` → user menu dropdown

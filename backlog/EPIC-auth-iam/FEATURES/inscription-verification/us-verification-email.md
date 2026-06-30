@@ -13,6 +13,8 @@
 | Token expiré (> 24h) → page d'erreur avec bouton "Renvoyer un lien" | ✅ | ✅ |
 | Token inconnu → page d'erreur générique (ne révèle pas l'existence du compte) | ✅ | ✅ |
 | Token SHA-256 stocké en BDD, supprimé après utilisation | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.verifyEmail.*` (fr.json / en.json) — bannière succès, pages d'erreur, bouton renvoi | ⬜ | ⬜ |
+| A11y : page de résultat (succès ou erreur) annonce le statut via `role="status"` ou `role="alert"` selon le cas | ⬜ | ⬜ |
 
 ## Notes d'implémentation
 - `VerifyEmailComponent` lit le `token` query param

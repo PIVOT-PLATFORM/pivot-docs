@@ -16,6 +16,9 @@
 | Email format invalide → erreur de validation | ✅ | ✅ |
 | Password haché BCrypt-12 en BDD — jamais en clair | ✅ | ✅ |
 | A11y : labels, messages d'erreur, focus management | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.register.*` (fr.json / en.json) — libellés, erreurs, messages de succès | ⬜ | ⬜ |
+| État de chargement (bouton désactivé + spinner) pendant la requête POST /api/auth/register | ⬜ | ⬜ |
+| Rate limiting sur POST /api/auth/register (voir EN01.x) — endpoint sensible à l'abus | ⬜ | ⬜ |
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: M · Priority: Critical

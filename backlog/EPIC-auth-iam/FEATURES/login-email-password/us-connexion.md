@@ -16,6 +16,8 @@
 | Cookie HttpOnly, SameSite=Strict, Secure — jamais de token en LocalStorage | ✅ | ✅ |
 | Champ email focus au chargement de la page de login | ✅ | ✅ |
 | A11y : `role="alert"` sur le message d'erreur, labels explicites, focus trap | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.login.*` (fr.json / en.json) — libellés, erreurs, placeholders | ⬜ | ⬜ |
+| État de chargement (bouton désactivé + spinner) pendant la requête POST /api/auth/login | ⬜ | ⬜ |
 
 ## Hors périmètre
 - Rate limiting (voir EN01.x)

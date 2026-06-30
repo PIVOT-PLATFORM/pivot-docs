@@ -16,6 +16,8 @@
 | Appareil connu → pas d'OTP, connexion directe | ✅ | ✅ |
 | OTP généré côté backend : 6 chiffres, SecureRandom, SHA-256 BDD | ✅ | ✅ |
 | A11y : timer annoncé via `aria-live`, champ OTP avec label explicite | ✅ | ✅ |
+| Clés i18n dans l'espace `auth.deviceConfirm.*` (fr.json / en.json) — libellés, erreurs, timer, bouton renvoi | ⬜ | ⬜ |
+| Rate limiting sur POST /api/auth/device-confirm/resend — au plus 3 renvois OTP par tentative de connexion | ⬜ | ⬜ |
 
 ## Notes d'implémentation
 - Empreinte = hash de `userAgent + IP + Accept-Language` (non-persisté en clair)

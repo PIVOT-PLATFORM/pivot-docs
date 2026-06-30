@@ -15,82 +15,101 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ## Synthèse EPICs
 
-| EPIC | Features | Enablers | US | Avancement |
-|------|----------|----------|----|------------|
-| [E01 — Auth & IAM](EPIC-auth-iam/README.md) | 7 | 8 | 13 | ✅ Implémenté |
-| [E02 — Plateforme Core](EPIC-platform-core/README.md) | 5 | 3 | 11 | 🔄 En cours |
-| [E03 — Administration](EPIC-admin/README.md) | 3 | 1 | 8 | ⬜ À planifier |
-| [E04 — CI/CD & DevSecOps](EPIC-cicd-devops/README.md) | 0 | 5 | 5 | ⬜ À planifier |
-| [E05 — Module Whiteboard](EPIC-module-whiteboard/README.md) | — | — | — | ⏸️ Post-MVP |
-| [E06 — Module Session](EPIC-module-session/README.md) | — | — | — | ⏸️ Post-MVP |
-| **Total MVP** | **15** | **17** | **37** | 🔄 En cours |
+| EPIC | GitHub | Features | Enablers | US | Avancement |
+|------|--------|----------|----------|----|------------|
+| [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
+| [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
+| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ⬜ Sprint 2 |
+| E04 — Observabilité | E04 | — | — | — | ⏸️ Non documenté |
+| [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
+| [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
+| [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
+| [E08 — Module Whiteboard](EPIC-whiteboard/README.md) | E08 | 4 | 2 | 7 | ⏸️ Gate MVP |
+| [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
+| [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
+| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
+| E12 — Module MeetOps | E12 | — | — | — | ⏸️ Non documenté |
+| E13 — Module Cahiers de tests | E13 | — | — | — | ⏸️ Non documenté |
+| [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
+| [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
+| [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 contact 🔄 |
+| [Module Session (concept)](EPIC-module-session/README.md) | — | — | — | — | ⏸️ Non planifié |
+| **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 
 ---
 
 ## Suivi Sprint actif
 
-### Sprint 1 — Auth & Plateforme Core (MVP)
+### Sprint 1 — Auth & Shell (MVP) — ✅ Terminé sauf contact
 
 | US | Titre | 🤖 Dev | ✅ PO |
 |----|-------|--------|-------|
-| US01.1.1 | Connexion email/password | ✅ | ✅ |
+| US01.1.1 | Connexion email + mot de passe | ✅ | ✅ |
 | US01.1.2 | Déconnexion | ✅ | ✅ |
-| US01.1.3 | Se souvenir de moi | ✅ | ✅ |
+| US01.1.3 | Rester connecté (remember-me) | ✅ | ✅ |
 | US01.2.1 | Inscription | ✅ | ✅ |
 | US01.2.2 | Vérification email | ✅ | ✅ |
 | US01.2.3 | Renvoi lien activation | ✅ | ✅ |
-| US01.3.1 | Mot de passe oublié | ✅ | ✅ |
-| US01.3.2 | Réinitialisation mot de passe | ✅ | ✅ |
-| US01.4.1 | Confirmation d'appareil OTP | ✅ | ✅ |
-| US01.5.1 | Restauration de session | ✅ | ✅ |
-| US01.6.1 | Connexion Google OAuth2 | ✅ | ✅ |
-| US01.7.1 | OIDC enterprise login | ✅ | ✅ |
-| US01.7.2 | OIDC provisionnement JIT | ✅ | ✅ |
-| US02.1.1 | Navbar (thème, langue, user menu) | ✅ | ✅ |
-| US02.1.2 | Footer avec liens légaux | ✅ | ✅ |
-| US02.1.3 | Thème clair/sombre | ✅ | ✅ |
-| US02.1.4 | i18n FR/EN (Transloco) | ✅ | ✅ |
-| US02.2.1 | Pages légales (ML/PC/CGU) | ✅ | ✅ |
-| US02.4.1 | Page d'accueil | ✅ | ✅ |
-| US02.4.2 | Dashboard utilisateur | ✅ | ✅ |
-| US02.5.1 | Pages coming soon | ✅ | ✅ |
-| **US02.3.1** | **Formulaire de contact** | 🔄 | ⬜ |
+| US01.3.1 | Demande de réinitialisation | ✅ | ✅ |
+| US01.3.2 | Réinitialisation par token | ✅ | ✅ |
+| US01.4.1 | OTP appareil inconnu | ✅ | ✅ |
+| F01.6 | Connexion Google OAuth2 | ✅ | ✅ |
+| F01.7/F01.8 | OIDC enterprise + JIT + session restore | ✅ | ✅ |
+| US16.1.1 | Navigation principale | ✅ | ✅ |
+| US16.1.2 | Menu utilisateur | ✅ | ✅ |
+| US16.2.1 | Page d'accueil (grille modules) | ✅ | ✅ |
+| US16.4.1 | Thème clair/sombre | ✅ | ✅ |
+| Pages légales | ML + PC + CGU | ✅ | ✅ |
+| Footer + i18n | Footer + Transloco FR/EN | ✅ | ✅ |
+| **US16.3.1** | **Formulaire de contact** | 🔄 | ⬜ |
 
-> US02.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
+> US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
-### Sprint 2 — Système de modules + Administration (MVP)
+### Sprint 2 — Système de modules + Auth manquant (MVP)
 
 | US | Titre | 🤖 Dev | ✅ PO |
 |----|-------|--------|-------|
-| EN02.1 | Module system backend (registry) | ⬜ | ⬜ |
-| EN02.2 | Module system Angular (guard) | ⬜ | ⬜ |
-| US03.1.x | Activation/désactivation de modules | ⬜ | ⬜ |
-| US03.2.x | Gestion des utilisateurs admin | ⬜ | ⬜ |
+| EN03.1 | PivotModule interface + registre backend | ⬜ | ⬜ |
+| EN03.2 | Guard Angular moduleGuard + status API | ⬜ | ⬜ |
+| EN03.3 | Cache Redis statut modules TTL 60s | ⬜ | ⬜ |
+| EN03.4 | Contrat module frontend (TypeScript) | ⬜ | ⬜ |
+| US03.1.1 | Admin active un module | ⬜ | ⬜ |
+| US03.1.2 | Admin désactive un module | ⬜ | ⬜ |
+| US03.2.1 | UI liste modules avec statut | ⬜ | ⬜ |
+| US03.2.2 | Guard Angular bloque module désactivé | ⬜ | ⬜ |
+| US01.1.4 | Redirection post-login | ⬜ | ⬜ |
+| US01.1.5 | Expiration session + auto-logout | ⬜ | ⬜ |
+| US01.2.4 | Politique robustesse mot de passe | ⬜ | ⬜ |
 
 ---
 
 ## Verrou MVP
 
 **Phase active : MVP.** Seuls les items `Phase: MVP` sont implémentables.
-Modules (whiteboard, session, quiz, survey, roadmap) = `phase-3` — **verrouillés**.
+
+- Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
+- E08 Whiteboard = MVP mais Human Gate `needs-human-valid` → **bloqué**
+- E02/E04/E06/E07 = MVP mais non démarré
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 ---
 
-## Plan de priorisation
+## Plan de priorisation MVP
 
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
-| Critical | Auth complète E01 (y compris Google + OIDC + session restore) | MVP | ✅ Implémenté |
-| Critical | Shell + Core Platform (E02 sauf contact) | MVP | ✅ Implémenté |
-| High | Formulaire de contact (US02.3.1) | MVP | 🔄 En cours |
-| High | Système de modules backend (EN02.1) | MVP | ⬜ Next |
-| High | Système de modules Angular (EN02.2) | MVP | ⬜ Next |
-| Medium | Administration (E03) | MVP | ⬜ À planifier |
-| Medium | CI/CD complet (E04) | MVP | ⬜ À planifier |
-| Low | E2E Playwright complets (toutes features) | MVP | ⬜ Partiellement (auth 8 specs) |
-| — | Modules collaboratifs (E05–E06+) | phase-3 | ⏸️ Verrouillé |
+| Critical | US16.3.1 Formulaire de contact | MVP | 🔄 En cours |
+| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | ⬜ Sprint 2 |
+| Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ needs-human-valid |
+| High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
+| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ⬜ Sprint 2 |
+| High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
+| Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
+| Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
+| Medium | US16.2.2 Section modules à venir | MVP | ⬜ À planifier |
+| — | E08 Whiteboard | MVP | ⏸️ needs-human-valid |
+| — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 
 ---
 
