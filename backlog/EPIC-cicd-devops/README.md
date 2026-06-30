@@ -21,8 +21,8 @@ Pipeline CI/CD complet : GitHub Actions, SonarCloud, Gitleaks, Semgrep, Semantic
 
 ## Suivi d'avancement
 
-| Élément | 🤖 Dev | ✅ PO | 🚀 Merge |
-|---------|--------|-------|----------|
+| Élément | 🤖 Dev | ✅ PO |
+|---------|--------|-------|
 | EN04.1 — GitHub Actions (pivot-core) | ⬜ | ⬜ |
 | EN04.1 — GitHub Actions (pivot-ui) | ⬜ | ⬜ |
 | EN04.2 — SonarCloud config | ⬜ | ⬜ |
