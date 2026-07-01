@@ -25,7 +25,7 @@ jobs:
           persist-credentials: false
 
       - name: Run Plumber
-        uses: getplumber/plumber@4d04d1cacca6625bc0e3f08f61f16f9d0367cd27 # v1
+        uses: getplumber/plumber@c4151ebc23108288077ba050acdb2e0782cdfe05 # v1
         with:
           sarif: plumber-results.sarif
           output: plumber-results.json
