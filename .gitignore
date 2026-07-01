@@ -3,6 +3,7 @@ _site/
 .docusaurus/
 .vuepress/dist/
 node_modules/
+build/
 
 # ===== OS =====
 .DS_Store

@@ -1,6 +1,6 @@
 # Authentification — PIVOT
 
-PIVOT supporte deux mécanismes d'authentification distincts. Voir [ADR-004](../adr/ADR-004-oidc-multi-tenant.md) et [ADR-005](../adr/ADR-005-opaque-tokens.md).
+PIVOT supporte deux mécanismes d'authentification distincts. Voir [ADR-004](/adr/ADR-004-oidc-multi-tenant) et [ADR-005](/adr/ADR-005-opaque-tokens).
 
 ---
 
@@ -115,5 +115,5 @@ via le `TokenAuthenticationFilter`.
 
 ## Voir aussi
 
-- [ADR-004 — OIDC Multi-tenant](../adr/ADR-004-oidc-multi-tenant.md)
-- [ADR-005 — Opaque tokens (auth interne)](../adr/ADR-005-opaque-tokens.md)
+- [ADR-004 — OIDC Multi-tenant](/adr/ADR-004-oidc-multi-tenant)
+- [ADR-005 — Opaque tokens (auth interne)](/adr/ADR-005-opaque-tokens)
