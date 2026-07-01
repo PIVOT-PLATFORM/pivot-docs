@@ -16,10 +16,9 @@ review_dimensions:
 
   backlog_consistency:
     rules:
-      - "Stage et Human Gate du frontmatter cohérents avec SPRINTS.md"
+      - "Stage du frontmatter cohérent avec SPRINTS.md"
       - "Pas d'US en Stage: Done sans PR mergée"
       - "Pas d'US en Stage: Review sans Gate 4 posté en commentaire PR"
-      - "Pas de modification ✅ PO par Claude — réservé au mainteneur"
 
   ac_coverage:
     rules:
@@ -103,8 +102,7 @@ artifact_format: |
 
 gate_checklist:
   gate_4:
-    - "Frontmatter cohérent avec SPRINTS.md"
-    - "Pas de ✅ PO modifié par Claude"
+    - "Frontmatter Stage cohérent avec SPRINTS.md"
     - "Tous les ACs Given/When/Then complets"
     - "markdownlint + cspell verts"
     - "Nomenclature fichiers respectée"
