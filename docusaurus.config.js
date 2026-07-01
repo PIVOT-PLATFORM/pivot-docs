@@ -1,8 +1,18 @@
 // @ts-check
+const fs = require('fs');
+const path = require('path');
 const { themes: prismThemes } = require('prism-react-renderer');
 
 const organizationName = 'PIVOT-PLATFORM';
 const projectName = 'pivot-docs';
+
+// Docusaurus crée <id>_versions.json au premier `docs:version:<id>`. Tant que
+// ce fichier n'existe pas, il n'y a qu'une seule version ("Next") : afficher
+// un dropdown de version dans ce cas n'a aucun sens et n'affiche que "Next"
+// sans rien à sélectionner. On ne l'active donc qu'une fois une version coupée.
+function hasCutVersions(id) {
+  return fs.existsSync(path.join(__dirname, `${id}_versions.json`));
+}
 
 /**
  * Une instance de plugin docs par dossier racine existant, sidebar auto-générée.
@@ -110,7 +120,7 @@ const config = {
               label: section.label,
               position: 'left',
             },
-            ...(section.versioned
+            ...(section.versioned && hasCutVersions(section.id)
               ? [
                   {
                     type: 'docsVersionDropdown',
