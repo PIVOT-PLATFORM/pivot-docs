@@ -172,3 +172,32 @@ Contraintes :
 ![CI/CD Pipeline](cicd-pipeline.png)
 
 > Source PlantUML : [`cicd-pipeline.puml`](cicd-pipeline.puml)
+
+---
+
+## Vision cible — Plateforme Agentique IT4IT
+
+PIVOT s'inspire du modèle **IT4IT** (Information Technology for Information Technology) :
+le backlog et les maquettes déposés par le PO et l'UX déclenchent **automatiquement** la chaîne
+agentique — sans go humain intermédiaire. L'ingénieur intervient uniquement pour la review MR et
+le RUN PROD.
+
+| Élément du modèle IT4IT | Correspondance PIVOT |
+|-------------------------|----------------------|
+| Portail web de dépôt | `pivot-docs` — backlog markdown + SPRINTS.md |
+| Plateforme Agentique dev | Claude Code — agents ACDD (PO · Dev · QA · Security · PR Review) |
+| Agents spécialisés | Skills PIVOT (skill-spring-architecture, skill-angular-architecture, …) |
+| Moteurs agents | Claude Code (Sonnet 4.6 / Opus 4.8) |
+| Forge | GitHub PR + CI GitHub Actions (quality, tests, build) |
+| Briques communes | pivot-core / pivot-ui / pivot-docs (réutilisés, pas re-créés) |
+| Ingénieur plateforme (supervision) | Mainteneur — reçoit escalades `needs-human-review` |
+| Ingénieur logiciel (review + prod) | Mainteneur — merge PR + deploy |
+
+**Limites actuelles vs vision cible :**
+- Portail = fichiers markdown (pas encore un vrai portail web de dépôt)
+- FinOps / monitoring coût-token : non implémenté (roadmap)
+- Autocorrection CI → agents : partiel (autoloop × 10 push)
+
+![IT4IT Vision cible](it4it-vision.png)
+
+> Source PlantUML : [`it4it-vision.puml`](it4it-vision.puml)
