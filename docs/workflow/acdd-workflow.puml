@@ -30,40 +30,32 @@ skinparam note {
   FontSize 9
 }
 
-title PIVOT — Workflow agentique ACDD\n(Acceptance Criteria Driven Development)
+title PIVOT — Workflow agentique ACDD\n(Acceptance Criteria Driven Development — Full Autonome)
 
 |#E3F2FD| PO Agent |
 start
-:Rédige **Epic → Feature → US**\nAC : Given/When/Then\n+ Security + A11y;
+:Lit **SPRINTS.md** — sprint courant\nLit fichiers US : Stage + Phase MVP;
+
+:**Gate 1 — READINESS** (autonome)\nDoR check + score 0–100;
+
+if (score ≥ 70 ?) then (oui)
+  :Complète / valide les ACs\n→ **Stage: Ready**;
+  note right
+    PO Agent autonome —
+    aucune intervention humaine
+    pour valider les ACs
+  end note
+else (non)
+  :Réécrit / clarifie les ACs\nRecalcule Gate 1;
+  note right : Boucle interne jusqu'à ≥ 70
+  detach
+endif
 
 |#E8F5E9| Architect + Security + QA |
 :Revue AC\n• Faisabilité technique\n• Surface d'attaque (Red Team)\n• Couverture testable;
 
-|#FFF9C4| Gates & Breaking Points |
-:**Gate 1 — READINESS**\nscore 0–100;
-
-if (score ≥ 70 ?) then (oui)
-  :→ **Breaking Point 1**\nDemande validation mainteneur\n[US + AC];
-  note right
-    Human Gate :
-    needs-human-valid
-    → attend mainteneur
-  end note
-  if (Human Gate ?) then (human-validated)
-  else (human-reject)
-    |#E3F2FD| PO Agent |
-    :Recadre AC / périmètre;
-    note right : repasse needs-human-valid
-    detach
-  endif
-else (non)
-  |#E3F2FD| PO Agent |
-  :Clarifie AC avec mainteneur;
-  detach
-endif
-
 |#FCE4EC| Dev Agent |
-:Crée branche\n**feat/us-{id}-{slug}**\n(checkout main → pull → new branch);
+:Crée branche\n**feat/us-{id}-{slug}**\n(checkout main → pull → new branch)\n→ **Stage: In progress**;
 
 repeat
   :Code + tests\n(commit atomique);
@@ -116,11 +108,11 @@ else (non)
   |#FFF9C4| Gates & Breaking Points |
   if (score Gate 4 ?) then (≥ 85)
     |#EDE7F6| PR Review Agent |
-    :Pose **Stage → Review** dans Project\n(recette humaine attendue);
+    :Pose **Stage → Review**\n+ signal mainteneur;
     :Merge autonome;
   elseif (60–84) then (60–84)
     |#EDE7F6| PR Review Agent |
-    :Pose **Stage → Review** dans Project;
+    :Pose **Stage → Review**;
     :Merge documenté\n(commentaire breakdown);
   else (< 60)
     :→ **Breaking Point 2**\nLabel needs-human-review\n+ score breakdown;
@@ -130,10 +122,10 @@ else (non)
 endif
 
 |#EFEBE9| Mainteneur (Human) |
-:Recette + validation\n**Stage → Done**;
+:Review PR + merge\n**Stage → Done**;
 note right
+  Seul point d'intervention humaine.
   Claude ne pose JAMAIS Done.
-  Mainteneur uniquement.
 end note
 
 stop
