@@ -60,7 +60,7 @@ PIVOT supporte deux mécanismes distincts selon le contexte de déploiement :
 | **Opaque tokens** | Auth interne (email/password) | Token 256-bit SecureRandom · hash SHA-256 stocké en BDD (`access_tokens`) · raw token jamais persisté · TTL en BDD · révocable · max 5 sessions/utilisateur |
 | **OIDC enterprise** | Tenants avec IdP externe | PKCE S256 côté Angular · validation JWKS côté Spring · multi-tenant (`TenantOidcConfig`) · rotation de clés IdP transparente |
 
-> Access token toujours en mémoire uniquement — **jamais localStorage, jamais cookie**. Voir [ADR-005](/adr/ADR-005-opaque-tokens).
+> Access token toujours en mémoire uniquement — **jamais localStorage, jamais cookie**. Voir [ADR-005](https://pivot-platform.github.io/pivot-docs/adr/ADR-005-opaque-tokens).
 
 **WebSocket auth** : Spring Security intercepte le handshake HTTP → opaque token vérifié avant l'upgrade WebSocket → connexion STOMP sécurisée.
 
@@ -84,7 +84,7 @@ Chaque module est activable indépendamment par les admins tenant.
 
 - Module désactivé → 403 côté API + bundle Angular non chargé (lazy-loading)
 - Aucune logique inter-module directe → `ApplicationEventPublisher` (backend) · services core Angular (frontend)
-- Contrat de module défini par `PivotModule` interface (voir [ADR-003](/adr/ADR-003-systeme-modules))
+- Contrat de module défini par `PivotModule` interface (voir [ADR-003](https://pivot-platform.github.io/pivot-docs/adr/ADR-003-systeme-modules))
 
 ---
 
