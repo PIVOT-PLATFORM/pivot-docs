@@ -158,6 +158,12 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} PIVOT Platform — AGPL-3.0-or-later`,
       },
+      metadata: [
+        { property: 'og:type', content: 'website' },
+        { property: 'og:image', content: `https://${organizationName.toLowerCase()}.github.io/${projectName}/img/logo.svg` },
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:image', content: `https://${organizationName.toLowerCase()}.github.io/${projectName}/img/logo.svg` },
+      ],
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
