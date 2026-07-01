@@ -197,10 +197,10 @@ Done ◄──(mainteneur : merge PR)──────────── Review
 | Vague | Contenu | Statut |
 |-------|---------|--------|
 | **1** | E01 Auth & IAM · E02 Espace compte · E05 CI/CD & supply-chain | ✅ seedé |
-| **2** | Plateforme — Système de modules, Observabilité (surtout Enablers) |
-| **3** | Admin — Activation modules, Gestion utilisateurs, Gestion tenants |
-| **4** | 1er module MVP (whiteboard **ou** session) — Features + US |
-| **ult.** | Autres modules, OIDC multi-tenant, RGPD (`v1-enterprise` / `phase-3`, **verrouillés**) |
+| **2** | Plateforme — Système de modules, Observabilité (surtout Enablers) | ⬜ |
+| **3** | Admin — Activation modules, Gestion utilisateurs, Gestion tenants | ⬜ |
+| **4** | 1er module MVP (whiteboard **ou** session) — Features + US | ⬜ |
+| **ult.** | Autres modules, OIDC multi-tenant, RGPD (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
 
 ---
 
