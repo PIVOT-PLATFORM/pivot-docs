@@ -8,11 +8,11 @@
 
 | Critère | 🤖 Dev | ✅ PO |
 |---------|--------|-------|
-| Section "À venir" visible sur /home sous la grille des modules actifs | ⬜ | ⬜ |
-| Affiche les modules désactivés ou phase-3 avec label "Bientôt disponible" | ⬜ | ⬜ |
-| Pas de lien cliquable vers les modules à venir | ⬜ | ⬜ |
-| Responsive sur mobile | ⬜ | ⬜ |
+| Section "À venir" visible sur /home sous la grille des modules actifs | ✅ | ⬜ |
+| Affiche les modules désactivés ou phase-3 avec label "Bientôt disponible" | ✅ | ⬜ |
+| Pas de lien cliquable vers les modules à venir | ✅ | ⬜ |
+| Responsive sur mobile | ✅ | ⬜ |
 
 ---
 Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: Low
-Human Gate: human-validated · Stage: Backlog
+Human Gate: human-validated · Stage: In progress

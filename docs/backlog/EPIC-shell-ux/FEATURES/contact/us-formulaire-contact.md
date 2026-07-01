@@ -36,4 +36,4 @@
 
 ---
 Item Type: US · Parent: F16.3 · Module: core · Phase: MVP · Size: M · Priority: Low
-Human Gate: human-validated · Stage: In progress
+Human Gate: human-validated · Stage: Review
