@@ -8,7 +8,7 @@
 
 | Critère | 🤖 Dev | ✅ PO |
 |---------|--------|-------|
-| PATCH /api/admin/users/{userId}/role accepte `{ role: "ROLE_ADMIN" | "ROLE_USER" }` | ⬜ | ⬜ |
+| PATCH /api/admin/users/{userId}/role accepte `{ role: "ROLE_ADMIN" \| "ROLE_USER" }` | ⬜ | ⬜ |
 | Requiert ROLE_ADMIN | ⬜ | ⬜ |
 | Un admin ne peut pas se rétrograder lui-même | ⬜ | ⬜ |
 | Audit event `UserRoleChanged` enregistré | ⬜ | ⬜ |

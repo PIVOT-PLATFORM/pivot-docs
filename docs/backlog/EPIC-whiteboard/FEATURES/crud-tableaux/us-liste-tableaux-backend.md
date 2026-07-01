@@ -14,7 +14,7 @@
 | Paginé (20 par page), trié par updatedAt DESC | ⬜ | ⬜ |
 | Tests TI GET /api/whiteboard/boards | ⬜ | ⬜ |
 | thumbnailUrl = null acceptable en MVP — valeur null retournée si aucune miniature générée | ⬜ | ⬜ |
-| Valeurs du champ role : "owner" | "editor" | "viewer" | ⬜ | ⬜ |
+| Valeurs du champ role : "owner" \| "editor" \| "viewer" | ⬜ | ⬜ |
 | activeParticipantCount (entier) inclus dans la réponse : nombre de participants actuellement connectés au board | ⬜ | ⬜ |
 | Réponse inclut totalElements, totalPages, currentPage, hasNext pour pagination côté Angular | ⬜ | ⬜ |
 | Taille de page plafonnée côté backend à 50 ; size négatif ou nul → 400 Bad Request | ⬜ | ⬜ |

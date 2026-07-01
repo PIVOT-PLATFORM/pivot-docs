@@ -1,24 +1,31 @@
 /**
- * Palette PIVOT — surcharge minimale des variables Infima.
+ * PrimeReact — thème Lara Blue (mêmes tokens que PrimeNG "Lara").
+ */
+@import 'primereact/resources/themes/lara-light-blue/theme.css';
+@import 'primereact/resources/primereact.min.css';
+@import 'primeicons/primeicons.css';
+
+/**
+ * Palette PIVOT — variables Infima alignées sur la couleur primaire PrimeReact (#3b82f6).
  */
 
 :root {
-  --ifm-color-primary: #2e5aac;
-  --ifm-color-primary-dark: #29509a;
-  --ifm-color-primary-darker: #274c92;
-  --ifm-color-primary-darkest: #203f78;
-  --ifm-color-primary-light: #3364be;
-  --ifm-color-primary-lighter: #3569c6;
-  --ifm-color-primary-lightest: #4c79cc;
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #bfdbfe;
   --ifm-code-font-size: 95%;
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #7ea6ea;
-  --ifm-color-primary-dark: #5c8ee4;
-  --ifm-color-primary-darker: #4b83e1;
-  --ifm-color-primary-darkest: #1d63d5;
-  --ifm-color-primary-light: #a0bef0;
-  --ifm-color-primary-lighter: #b1c9f2;
-  --ifm-color-primary-lightest: #e4ecfb;
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
 }

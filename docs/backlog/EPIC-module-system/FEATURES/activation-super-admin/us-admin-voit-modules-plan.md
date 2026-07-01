@@ -12,7 +12,7 @@
 | Modules hors plan invisibles (pas 403, juste absents de la liste) | ⬜ | ⬜ |
 | Override SUPER_ADMIN visible si actif | ⬜ | ⬜ |
 | Tests TI avec 2 tenants de plans différents | ⬜ | ⬜ |
-| L'API retourne un champ source: 'plan' | 'override' par module | ⬜ | ⬜ |
+| L'API retourne un champ source: 'plan' \| 'override' par module | ⬜ | ⬜ |
 | Un module disponible via override SUPER_ADMIN est affiché avec un indicateur visuel distinct (badge "Activé par l'administrateur plateforme") | ⬜ | ⬜ |
 
 ---

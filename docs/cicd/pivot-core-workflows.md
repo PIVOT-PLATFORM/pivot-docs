@@ -27,7 +27,7 @@ Concurrence : un run par branche (cancel-in-progress).
 
 Déclenché sur push `main`. Pipeline en 4 jobs séquencés.
 
-```
+```text
 prepare (dry-run) → release (build/scan/push/publish) → provenance-jar (SLSA L3)
                                                        → provenance-container (SLSA L3)
 ```

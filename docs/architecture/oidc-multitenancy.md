@@ -8,7 +8,7 @@ PIVOT supporte deux mécanismes d'authentification distincts. Voir [ADR-004](htt
 
 Mécanisme par défaut pour tous les tenants sans IdP externe.
 
-```
+```text
 Utilisateur → pivot-ui → POST /api/auth/login (email + password)
                               ↓
                        pivot-core valide credentials
@@ -47,7 +47,7 @@ pivot-ui → pivot-core  Authorization: Bearer {raw_token}
 
 Pour les tenants avec Keycloak, Azure AD, Okta ou autre IdP compatible OIDC.
 
-```
+```text
 Utilisateur → pivot-ui → IdP (Keycloak / Azure AD / Okta)
                 ↓ Authorization Code + PKCE S256
             code → token endpoint IdP

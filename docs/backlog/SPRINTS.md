@@ -53,7 +53,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US01.1.5 | Expiration session + auto-logout | M | High | ⬜ | ⬜ |
 | US01.2.4 | Politique robustesse mot de passe | S | High | ⬜ | ⬜ |
 
-> **Parallelisable :** EN03.1+EN03.3 (backend) ‖ EN03.2+EN03.4 (frontend) ‖ US01.x (auth, indépendants de E03 côté code)
+> **Parallélisable :** EN03.1+EN03.3 (backend) ‖ EN03.2+EN03.4 (frontend) ‖ US01.x (auth, indépendants de E03 côté code)
 
 ---
 
@@ -80,7 +80,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US06.2.2 | Désactiver un tenant | M | High | ⬜ | ⬜ |
 | US06.2.3 | Liste des tenants | M | Medium | ⬜ | ⬜ |
 
-> **Parallelisable :** US02.x ‖ US06.x — dépendances : US06.1.5 après US06.1.4 ; US02.3.2 après US02.2.1
+> **Parallélisable :** US02.x ‖ US06.x — dépendances : US06.1.5 après US06.1.4 ; US02.3.2 après US02.2.1
 
 ---
 

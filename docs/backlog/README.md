@@ -8,7 +8,7 @@
 
 ## 1. Hiérarchie (SAFe-aligné)
 
-```
+```text
 EPIC
  ├── FEATURE      (valeur utilisateur)
  │    └── US      (incrément implémentable)
@@ -31,7 +31,7 @@ EPIC
 
 Chaque fichier US porte en pied de fichier les métadonnées suivantes :
 
-```
+```text
 Item Type: US · Parent: F… / EN… · Module: {x} · Phase: … · Size: … · Priority: …
 Human Gate: needs-human-valid · Stage: Backlog
 Dépendances: …
@@ -125,7 +125,7 @@ Dépendances: …
 
 ## 5. Cycle de vie d'un item
 
-```
+```text
 Backlog ──(Claude : rédaction AC + DoR)──► Ready ──(mainteneur : human-validated)──► In progress
                                                                                            │
                                                                                       (Claude : implémentation + autoloop PR)
@@ -200,7 +200,7 @@ Done ◄──(mainteneur : merge PR)──────────── Review
 
 ## 9. Structure des fichiers markdown
 
-```
+```text
 pivot-docs/backlog/
 ├── SPRINTS.md              ← état des sprints, assignation US, avancement
 ├── README.md               ← ce fichier — modèle & conventions

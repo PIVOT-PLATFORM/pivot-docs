@@ -27,7 +27,7 @@ const config = {
   markdown: {
     format: 'md',
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'throw',
     },
   },
 
@@ -39,7 +39,7 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
 
   i18n: {
     defaultLocale: 'fr',
@@ -84,7 +84,7 @@ const config = {
         },
         items: [
           ...sections.map((section) => ({
-            to: `/${section.id}/`,
+            to: `/${section.id}`,
             label: section.label,
             position: 'left',
           })),
@@ -110,7 +110,7 @@ const config = {
             title: 'Documentation',
             items: sections.map((section) => ({
               label: section.label,
-              to: `/${section.id}/`,
+              to: `/${section.id}`,
             })),
           },
         ],

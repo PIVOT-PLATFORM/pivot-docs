@@ -1,8 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import { useHistory } from '@docusaurus/router';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Card } from 'primereact/card';
+import { Button } from 'primereact/button';
 
 import styles from './index.module.css';
 
@@ -40,12 +42,21 @@ const sections = [
 ];
 
 function SectionCard({ id, title, description }) {
+  const history = useHistory();
+  const url = useBaseUrl(`/${id}`);
+
   return (
-    <div className={clsx('col col--4', styles.cardCol)}>
-      <Link to={`/${id}/`} className={styles.card}>
-        <Heading as="h3">{title}</Heading>
+    <div className={styles.cardCol}>
+      <Card title={title} className={styles.card}>
         <p>{description}</p>
-      </Link>
+        <Button
+          label="Explorer"
+          icon="pi pi-arrow-right"
+          iconPos="right"
+          text
+          onClick={() => history.push(url)}
+        />
+      </Card>
     </div>
   );
 }
@@ -56,12 +67,12 @@ export default function Home() {
       title="Accueil"
       description="Documentation générale de la suite collaborative PIVOT"
     >
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <header className={styles.heroBanner}>
         <div className="container">
-          <Heading as="h1" className="hero__title">
+          <Heading as="h1" className={styles.heroTitle}>
             PIVOT Docs
           </Heading>
-          <p className="hero__subtitle">
+          <p className={styles.heroSubtitle}>
             Documentation générale de la suite collaborative <strong>PIVOT</strong>
           </p>
         </div>
@@ -69,7 +80,7 @@ export default function Home() {
       <main>
         <section className={styles.sections}>
           <div className="container">
-            <div className="row">
+            <div className={styles.cardGrid}>
               {sections.map((section) => (
                 <SectionCard key={section.id} {...section} />
               ))}

@@ -32,7 +32,7 @@ Principes fondateurs :
 
 ## Cycle complet
 
-```
+```text
 PO Agent
   └─ Génère US + AC (Given/When/Then + Security + A11y)
        │
@@ -151,7 +151,7 @@ Le workflow actuel est **séquentiel** : un Dev Agent par US, orchestration manu
 
 Une évolution naturelle serait un **Orchestrator Agent** en boucle autonome :
 
-```
+```text
 Orchestrator Agent (loop)
   ├─ Lit le Project org (US human-validated + Phase MVP)
   ├─ Lance en parallèle :

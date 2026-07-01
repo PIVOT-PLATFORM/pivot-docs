@@ -17,7 +17,7 @@
 | Tests TU PasswordService + TI POST | ⬜ | ⬜ |
 | POST /api/account/password n'accepte aucun champ userId/accountId — identité extraite du token porteur uniquement. Champ inattendu dans body → 400 | ⬜ | ⬜ |
 | Révocation post-changement inclut le token courant ; nouveau token émis et retourné dans la réponse 200 | ⬜ | ⬜ |
-| Rate limiting par userId ET par IP indépendamment : 5 tentatives / 15 min → 429 avec Retry-After. Message 429 indistinguable de "mot de passe incorrect" (anti-enumération) | ⬜ | ⬜ |
+| Rate limiting par userId ET par IP indépendamment : 5 tentatives / 15 min → 429 avec Retry-After. Message 429 indistinguable de "mot de passe incorrect" (anti-énumération) | ⬜ | ⬜ |
 | La session courante est préservée après changement (seules les autres sessions révoquées) | ⬜ | ⬜ |
 | Dépendance : US01.2.4 (politique password) — règles de complexité validées côté backend | ⬜ | ⬜ |
 | Dépendance : US01.5.1 (email confirmation) — email envoyé après changement réussi | ⬜ | ⬜ |

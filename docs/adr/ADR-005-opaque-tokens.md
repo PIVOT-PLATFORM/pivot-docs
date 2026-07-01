@@ -33,7 +33,7 @@ raw token jamais persisté côté serveur, TTL géré en BDD, révocable immédi
 
 - **Révocabilité immédiate** : suppression en BDD → session invalide à la prochaine requête
 - **Pas de payload** : aucune information exposée côté client
-- **TTL flexible** : modifiable sans reémettre le token
+- **TTL flexible** : modifiable sans réémettre le token
 - **Multi-session contrôlable** : max 5 sessions par utilisateur (feature flag `MAX_SESSIONS_PER_USER`)
 - **Audit natif** : chaque token = ligne BDD avec `created_at`, `last_used_at`, `device_info`
 - **Cohérence auto-hébergée** : pas de PKI à gérer, juste PostgreSQL

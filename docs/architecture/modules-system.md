@@ -38,7 +38,7 @@ public interface PivotModule {
 
 ## Cycle d'activation
 
-```
+```text
 Admin tenant → active module via UI
       ↓
 PATCH /api/modules/{id}/enable (ROLE_ADMIN)
