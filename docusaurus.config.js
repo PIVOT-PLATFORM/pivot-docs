@@ -4,10 +4,17 @@ const { themes: prismThemes } = require('prism-react-renderer');
 const organizationName = 'PIVOT-PLATFORM';
 const projectName = 'pivot-docs';
 
-/** Une instance de plugin docs par dossier racine existant, sidebar auto-générée. */
+/**
+ * Une instance de plugin docs par dossier racine existant, sidebar auto-générée.
+ *
+ * `versioned: true` sur architecture/adr : ces sections sont figées à chaque
+ * release produit (tag pivot-core/pivot-ui) via `npm run docs:version:<id> -- <version>`.
+ * Les autres sections (cicd, audits, backlog, workflow) reflètent en continu
+ * l'état courant du sprint/produit — versionner leur contenu n'aurait pas de sens.
+ */
 const sections = [
-  { id: 'architecture', label: 'Architecture', path: 'docs/architecture' },
-  { id: 'adr', label: 'ADR', path: 'docs/adr' },
+  { id: 'architecture', label: 'Architecture', path: 'docs/architecture', versioned: true },
+  { id: 'adr', label: 'ADR', path: 'docs/adr', versioned: true },
   { id: 'cicd', label: 'CI/CD', path: 'docs/cicd' },
   { id: 'audits', label: 'Audits', path: 'docs/audits' },
   { id: 'backlog', label: 'Backlog', path: 'docs/backlog' },
@@ -15,6 +22,11 @@ const sections = [
 ];
 
 const editUrl = `https://github.com/${organizationName}/${projectName}/edit/main/`;
+
+// En build de preview PR (voir .github/workflows/docs-checks.yml), un bandeau
+// avertit que le site déployé n'est pas la production tant que main n'a pas
+// redéployé par-dessus.
+const previewPr = process.env.DOCS_PREVIEW_PR;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -76,6 +88,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      ...(previewPr && {
+        announcementBar: {
+          id: 'pr-preview-banner',
+          content: `⚠️ Aperçu de la PR #${previewPr} — ceci remplace temporairement le site de production, jusqu'au prochain déploiement de <code>main</code>.`,
+          backgroundColor: '#fbbf24',
+          textColor: '#1f2937',
+          isCloseable: false,
+        },
+      }),
       navbar: {
         title: 'PIVOT Docs',
         logo: {
@@ -83,11 +104,22 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          ...sections.map((section) => ({
-            to: `/${section.id}`,
-            label: section.label,
-            position: 'left',
-          })),
+          ...sections.flatMap((section) => [
+            {
+              to: `/${section.id}`,
+              label: section.label,
+              position: 'left',
+            },
+            ...(section.versioned
+              ? [
+                  {
+                    type: 'docsVersionDropdown',
+                    docsPluginId: section.id,
+                    position: 'left',
+                  },
+                ]
+              : []),
+          ]),
           {
             href: `https://github.com/${organizationName}/${projectName}`,
             label: 'GitHub',

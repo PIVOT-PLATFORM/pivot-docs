@@ -11,7 +11,9 @@
     "lint:md": "markdownlint-cli2",
     "lint:spelling": "cspell --no-progress \"docs/**/*.md\" \"*.md\"",
     "lint:naming": "node scripts/check-docs-naming.mjs",
-    "lint": "npm run lint:md && npm run lint:spelling && npm run lint:naming"
+    "lint": "npm run lint:md && npm run lint:spelling && npm run lint:naming",
+    "docs:version:architecture": "docusaurus docs:version:architecture",
+    "docs:version:adr": "docusaurus docs:version:adr"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
