@@ -35,6 +35,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate PNG diagrams from PlantUML sources
+        run: |
+          wget -q "https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar" -O /tmp/plantuml.jar
+          find docs -name "*.puml" -exec java -jar /tmp/plantuml.jar -tpng {} +
+
       - name: Lint markdown (structure)
         run: npm run lint:md
 
