@@ -29,7 +29,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US16.4.1 | Thème clair / sombre | ✅ | ✅ |
 | Pages légales | ML + PC + CGU | ✅ | ✅ |
 | Footer + i18n | Footer + Transloco FR/EN | ✅ | ✅ |
-| **US16.3.1** | **Formulaire de contact** | 🔄 | ⬜ |
+| **US16.3.1** | **Formulaire de contact** | ✅ | ⬜ |
 
 ---
 
