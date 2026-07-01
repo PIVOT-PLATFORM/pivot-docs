@@ -1,0 +1,111 @@
+skill:
+  id: pivot-pr-reviewer-docs
+  version: "1.0"
+  name: "PR Review — Gate 3 & Gate 4 (pivot-docs)"
+  description: >
+    Template uniforme de review PR pour pivot-docs.
+    Utilisé par PR_Review_Agent lors de chaque autoloop review.
+    Couvre : cohérence backlog, traçabilité AC, qualité markdown, CI.
+  loaded_by:
+    - PR_Review_Agent
+    - Expert_PR_Review
+
+---
+
+review_dimensions:
+
+  backlog_consistency:
+    rules:
+      - "Stage et Human Gate du frontmatter cohérents avec SPRINTS.md"
+      - "Pas d'US en Stage: Done sans PR mergée"
+      - "Pas d'US en Stage: Review sans Gate 4 posté en commentaire PR"
+      - "Pas de modification ✅ PO par Claude — réservé au mainteneur"
+
+  ac_coverage:
+    rules:
+      - "Chaque AC de l'US présente un Given/When/Then complet"
+      - "Pas d'AC orphelin (présent dans l'US, sans test en pivot-core/pivot-ui)"
+      - "🤖 Dev coché uniquement si implémentation ET test présents"
+
+  markdown_quality:
+    rules:
+      - "Lint markdownlint-cli2 vert (0 erreur)"
+      - "Orthographe cspell propre (0 erreur inconnue)"
+      - "Nomenclature fichiers : kebab-case, préfixe us-/en-/readme"
+      - "Pas de liens brisés entre fichiers backlog"
+
+  patch_notes:
+    rule: "Pas de PATCH_NOTES sur pivot-docs — PRs docs/chore uniquement"
+
+---
+
+gate_scoring:
+
+  gate_3_hard_blocks:
+    - "Secret Gitleaks détecté → STOP immédiat"
+    - "Label breaking-change → needs-human-review obligatoire"
+    - "markdownlint ou cspell rouge → corriger avant Gate 4"
+
+  gate_4_breakdown:
+    backlog_consistency_25pts: "Frontmatter cohérent, SPRINTS.md synchronisé"
+    ac_coverage_25pts: "ACs complets, Given/When/Then, 🤖 Dev tracé"
+    markdown_quality_25pts: "markdownlint + cspell verts, nomenclature ok"
+    links_and_refs_25pts: "Liens inter-fichiers valides, ADR/audits référencés"
+    thresholds:
+      merge_autonome: "≥ 85 — merge sans intervention humaine"
+      merge_documente: "60–84 — merge avec commentaire breakdown obligatoire"
+      breaking_point_2: "< 60 — label needs-human-review + escalade mainteneur"
+
+---
+
+review_template: |
+  ## PR Review — Gate 4
+
+  **Score : {score}/100**
+  **Décision : MERGE_AUTONOMOUS | MERGE_DOCUMENTED | NEEDS_HUMAN_REVIEW**
+
+  ### Breakdown
+  | Dimension | Score | Détail |
+  |-----------|-------|--------|
+  | Cohérence backlog (frontmatter + SPRINTS.md) | /25 | |
+  | Couverture AC (Given/When/Then, 🤖 Dev tracé) | /25 | |
+  | Qualité markdown (lint, cspell, nomenclature) | /25 | |
+  | Liens & références (ADR, audits, inter-fichiers) | /25 | |
+
+  ### Gate 3 — hard blocks
+  - [ ] Gitleaks clean
+  - [ ] markdownlint 0 erreur
+  - [ ] cspell 0 erreur inconnue
+  - [ ] Pas de secret committé
+
+  ### Findings
+  | # | Sévérité | Fichier | Description | Correction |
+  |---|----------|---------|-------------|------------|
+
+  ### Notes
+  {notes libres}
+
+---
+
+artifact_format: |
+  gate: MERGE_CONFIDENCE
+  us_id: {id}
+  score: {0-100}
+  decision: MERGE_AUTONOMOUS | MERGE_DOCUMENTED | BREAKING_POINT_2
+  breakdown:
+    backlog_consistency: {0-25}
+    ac_coverage: {0-25}
+    markdown_quality: {0-25}
+    links_and_refs: {0-25}
+  notes: "..."
+
+---
+
+gate_checklist:
+  gate_4:
+    - "Frontmatter cohérent avec SPRINTS.md"
+    - "Pas de ✅ PO modifié par Claude"
+    - "Tous les ACs Given/When/Then complets"
+    - "markdownlint + cspell verts"
+    - "Nomenclature fichiers respectée"
+    - "Score Gate 4 posté en commentaire PR (jamais de fichier committé)"

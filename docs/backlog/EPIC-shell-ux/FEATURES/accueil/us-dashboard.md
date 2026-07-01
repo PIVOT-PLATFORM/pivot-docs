@@ -1,4 +1,4 @@
-# Dashboard utilisateur — hors périmètre GitHub E16
+﻿# Dashboard utilisateur — hors périmètre GitHub E16
 
 **En tant que** utilisateur connecté
 **Je veux** un tableau de bord personnel
@@ -6,11 +6,11 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Route `/dashboard` — accessible uniquement après authentification | ✅ | ✅ |
-| `DashboardComponent` rendu avec le shell (navbar + footer) | ✅ | ✅ |
-| Tests `dashboard.component.spec.ts` | ✅ | ✅ |
+| Route `/dashboard` — accessible uniquement après authentification | ✅ |
+| `DashboardComponent` rendu avec le shell (navbar + footer) | ✅ |
+| Tests `dashboard.component.spec.ts` | ✅ |
 
 ## Notes d'implémentation
 - `DashboardComponent` : `src/app/features/dashboard/`

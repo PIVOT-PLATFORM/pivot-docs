@@ -1,4 +1,4 @@
-# US16.1.1 — Navigation principale (logo, liens, responsive)
+﻿# US16.1.1 — Navigation principale (logo, liens, responsive)
 
 **En tant que** utilisateur authentifié
 **Je veux** une barre de navigation claire avec mes options
@@ -6,15 +6,15 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Liens de navigation : Accueil, Modules, Mes équipes (avec indicateur page active) | ✅ | ✅ |
-| Basculeur thème clair/sombre (icône lune/soleil) | ✅ | ✅ |
-| Sélecteur langue FR/EN (pilule, langue active mise en évidence) | ✅ | ✅ |
-| Boutons ? (aide) et bug (email pré-rempli i18n) | ✅ | ✅ |
-| Menu utilisateur : avatar coloré, nom, email, raccourcis Coming soon, Déconnexion | ✅ | ✅ |
-| Design : dégradé indigo→violet (thème clair) / noir teinté violet (thème sombre) | ✅ | ✅ |
-| A11y : `role="banner"`, `aria-label`, `aria-current="page"`, focus visible, WCAG AA | ✅ | ✅ |
+| Liens de navigation : Accueil, Modules, Mes équipes (avec indicateur page active) | ✅ |
+| Basculeur thème clair/sombre (icône lune/soleil) | ✅ |
+| Sélecteur langue FR/EN (pilule, langue active mise en évidence) | ✅ |
+| Boutons ? (aide) et bug (email pré-rempli i18n) | ✅ |
+| Menu utilisateur : avatar coloré, nom, email, raccourcis Coming soon, Déconnexion | ✅ |
+| Design : dégradé indigo→violet (thème clair) / noir teinté violet (thème sombre) | ✅ |
+| A11y : `role="banner"`, `aria-label`, `aria-current="page"`, focus visible, WCAG AA | ✅ |
 
 ## Notes d'implémentation
 - `NavbarComponent` : `src/app/core/layout/navbar/`

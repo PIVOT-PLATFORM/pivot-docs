@@ -1,4 +1,4 @@
-# US01.1.2 — Déconnexion
+﻿# US01.1.2 — Déconnexion
 
 **En tant que** utilisateur connecté
 **Je veux** pouvoir me déconnecter
@@ -6,14 +6,14 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Clic "Déconnexion" → `POST /api/auth/logout` → token révoqué en BDD | ✅ | ✅ |
-| Cookie `pivot_session` supprimé après déconnexion | ✅ | ✅ |
-| Redirection vers `/auth/login` après déconnexion | ✅ | ✅ |
-| Token révoqué → toute requête ultérieure avec ce token renvoie 401 | ✅ | ✅ |
-| A11y : bouton "Déconnexion" accessible au clavier dans le menu utilisateur | ✅ | ✅ |
-| Clés i18n dans l'espace `auth.logout.*` (fr.json / en.json) — libellé bouton, confirmation éventuelle | ⬜ | ⬜ |
+| Clic "Déconnexion" → `POST /api/auth/logout` → token révoqué en BDD | ✅ |
+| Cookie `pivot_session` supprimé après déconnexion | ✅ |
+| Redirection vers `/auth/login` après déconnexion | ✅ |
+| Token révoqué → toute requête ultérieure avec ce token renvoie 401 | ✅ |
+| A11y : bouton "Déconnexion" accessible au clavier dans le menu utilisateur | ✅ |
+| Clés i18n dans l'espace `auth.logout.*` (fr.json / en.json) — libellé bouton, confirmation éventuelle | ⬜ |
 
 ## Notes d'implémentation
 - Bouton dans `NavbarComponent` → user menu dropdown

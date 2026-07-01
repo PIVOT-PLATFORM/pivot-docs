@@ -1,4 +1,4 @@
-# US05.14.2 — Required checks pivot-ui
+﻿# US05.14.2 — Required checks pivot-ui
 
 **En tant que** mainteneur
 **Je veux** que les required checks soient configurés sur pivot-ui
@@ -6,11 +6,11 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Branch protection `main` : required checks = build, test, lint, playwright, lighthouse | ⬜ | ⬜ |
-| Force push désactivé sur `main` | ⬜ | ⬜ |
-| PR obligatoire avant merge (min 1 review) | ⬜ | ⬜ |
+| Branch protection `main` : required checks = build, test, lint, playwright, lighthouse | ⬜ |
+| Force push désactivé sur `main` | ⬜ |
+| PR obligatoire avant merge (min 1 review) | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High

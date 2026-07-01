@@ -1,4 +1,4 @@
-# US16.2.1 — Page d'accueil : grille des modules actifs
+﻿# US16.2.1 — Page d'accueil : grille des modules actifs
 
 **En tant que** utilisateur connecté
 **Je veux** une page d'accueil après connexion
@@ -6,12 +6,12 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Route `/home` — accessible uniquement après authentification | ✅ | ✅ |
-| `HomeComponent` rendu avec le shell (navbar + footer) | ✅ | ✅ |
-| Redirection automatique `/` → `/home` pour les utilisateurs connectés | ✅ | ✅ |
-| Tests `home.component.spec.ts` | ✅ | ✅ |
+| Route `/home` — accessible uniquement après authentification | ✅ |
+| `HomeComponent` rendu avec le shell (navbar + footer) | ✅ |
+| Redirection automatique `/` → `/home` pour les utilisateurs connectés | ✅ |
+| Tests `home.component.spec.ts` | ✅ |
 
 ## Notes d'implémentation
 - `HomeComponent` : `src/app/features/home/`

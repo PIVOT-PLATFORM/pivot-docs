@@ -1,0 +1,104 @@
+skill:
+  id: pivot-backlog-workflow
+  version: "1.0"
+  name: "Backlog Workflow — Lecture & Mise à jour"
+  description: >
+    Protocole de lecture du backlog pivot-docs, sélection des US à implémenter,
+    et mise à jour des statuts. Chargé à chaque démarrage de session autonome.
+  loaded_by:
+    - PO_Agent
+    - Dev_Agent
+    - Scrum_Master
+
+---
+
+session_start_protocol:
+
+  description: >
+    Procédure de démarrage de session full-autonome. À exécuter dans cet ordre.
+
+  step_1_sync:
+    description: "Synchroniser tous les repos depuis main"
+    commands:
+      - "cd pivot-core && git pull origin main"
+      - "cd pivot-ui && git pull origin main"
+      - "cd pivot-docs && git pull origin main"
+
+  step_2_read_sprint:
+    description: "Lire le sprint courant"
+    file: "pivot-docs/docs/backlog/SPRINTS.md"
+    action: >
+      Identifier le sprint dont le titre ne contient pas ✅ (non terminé).
+      Lister toutes les US du sprint avec leur état 🤖 Dev.
+
+  step_3_read_us:
+    description: "Lire les fichiers US éligibles"
+    criteria:
+      - "Human Gate: human-validated"
+      - "Stage: Ready OU Stage: In progress"
+    path_pattern: "pivot-docs/docs/backlog/**/{us-id}-{slug}.md"
+    action: >
+      Pour chaque US éligible, lire son fichier markdown complet.
+      Vérifier les ACs, la taille (Size), les dépendances (Notes).
+
+  step_4_parallel_launch:
+    description: "Lancer les agents en parallèle — un par US éligible"
+    branch_naming: "feat/{us-id}-{slug}"
+    branch_creation: "git checkout main && git pull && git checkout -b feat/{us-id}-{slug}"
+    agent_context:
+      - "ID et titre de l'US"
+      - "Critères d'acceptation complets"
+      - "Skills applicables (voir _index.yaml)"
+      - "Dépendances (autres US / Enablers)"
+    parallelism: >
+      Agents lancés simultanément via parallel(). Chaque agent reçoit
+      sa propre branche. Pas de conflit inter-US possible.
+
+---
+
+us_file_format:
+
+  frontmatter_fields:
+    Item Type: "US | Enabler | Feature | Epic"
+    Parent: "clé du parent (ex. F01.1)"
+    Module: "core | auth | admin | whiteboard | session | ..."
+    Phase: "MVP | v1-enterprise | phase-3"
+    Size: "XS | S | M | L | XL"
+    Priority: "Critical | High | Medium | Low"
+    Human Gate: "needs-human-valid | human-validated | human-reject"
+    Stage: "Backlog | Ready | In progress | Review | Done"
+
+  stage_transitions:
+    backlog_to_ready: "Quand PO a rédigé les ACs complets → Gate 1 ≥ 70 → needs-human-valid"
+    ready_to_in_progress: "Après validation mainteneur (human-validated) → Dev_Agent démarre"
+    in_progress_to_review: "Après Gate 4 ≥ 85 → Stage: Review + signal mainteneur"
+    review_to_done: "Mainteneur merge la PR"
+
+---
+
+update_protocol:
+
+  when_to_update:
+    - "À chaque changement d'état Stage ou Human Gate"
+    - "Commit sur la branche de l'US concernée"
+    - "SPRINTS.md mis à jour en même temps que le fichier US"
+
+  how_to_update:
+    - "Modifier le frontmatter (dernière ligne du fichier) : Stage: X → Stage: Y"
+    - "Modifier la colonne 🤖 Dev dans SPRINTS.md"
+    - "Ne jamais modifier la colonne ✅ PO — réservée au mainteneur"
+    - "Commit atomique : doc(backlog): US{id} Stage {old} → {new}"
+
+---
+
+gate_1_readiness:
+
+  trigger: "Avant toute implémentation d'US"
+  scoring:
+    ac_clarity_40pts: "ACs Given/When/Then complets, pas d'ambiguïté"
+    dependencies_clear_30pts: "Dépendances identifiées et disponibles"
+    size_estimated_20pts: "Size renseignée et cohérente avec les ACs"
+    no_conflict_10pts: "Pas de conflit avec US en cours sur les mêmes fichiers"
+  thresholds:
+    proceed: "≥ 70 → Breaking Point 1 (demander validation mainteneur)"
+    clarify: "< 70 → demander clarification PO Agent d'abord"

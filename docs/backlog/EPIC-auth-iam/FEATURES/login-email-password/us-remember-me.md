@@ -1,4 +1,4 @@
-# US01.1.3 — Se souvenir de moi
+﻿# US01.1.3 — Se souvenir de moi
 
 **En tant que** utilisateur régulier
 **Je veux** cocher "Se souvenir de moi" lors de la connexion
@@ -6,15 +6,15 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Case "Se souvenir de moi" visible sur le formulaire de connexion | ✅ | ✅ |
-| Case cochée → TTL token = 30 jours (vs 24h par défaut) | ✅ | ✅ |
-| Case non cochée → TTL token = 24h | ✅ | ✅ |
-| TTL stocké en BDD (`access_tokens.expires_at`), pas dans le cookie | ✅ | ✅ |
-| Token expiré → 401 → redirection `/auth/login` | ✅ | ✅ |
-| Clés i18n dans l'espace `auth.rememberMe.*` (fr.json / en.json) — libellé case à cocher | ⬜ | ⬜ |
-| Case "Se souvenir de moi" a un `aria-label` explicite ou label associé via `for`/`id` | ⬜ | ⬜ |
+| Case "Se souvenir de moi" visible sur le formulaire de connexion | ✅ |
+| Case cochée → TTL token = 30 jours (vs 24h par défaut) | ✅ |
+| Case non cochée → TTL token = 24h | ✅ |
+| TTL stocké en BDD (`access_tokens.expires_at`), pas dans le cookie | ✅ |
+| Token expiré → 401 → redirection `/auth/login` | ✅ |
+| Clés i18n dans l'espace `auth.rememberMe.*` (fr.json / en.json) — libellé case à cocher | ⬜ |
+| Case "Se souvenir de moi" a un `aria-label` explicite ou label associé via `for`/`id` | ⬜ |
 
 ## Notes d'implémentation
 - `LoginRequest.rememberMe: boolean` → `TokenService.generateToken(rememberMe)`

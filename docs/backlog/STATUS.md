@@ -1,4 +1,4 @@
-# Backlog PIVOT — Tableau de bord
+﻿# Backlog PIVOT — Tableau de bord
 
 Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / session.
 
@@ -42,44 +42,44 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ### Sprint 1 — Auth & Shell (MVP) — ✅ Terminé sauf contact
 
-| US | Titre | 🤖 Dev | ✅ PO |
+| US | Titre | 🤖 Dev |
 |----|-------|--------|-------|
-| US01.1.1 | Connexion email + mot de passe | ✅ | ✅ |
-| US01.1.2 | Déconnexion | ✅ | ✅ |
-| US01.1.3 | Rester connecté (remember-me) | ✅ | ✅ |
-| US01.2.1 | Inscription | ✅ | ✅ |
-| US01.2.2 | Vérification email | ✅ | ✅ |
-| US01.2.3 | Renvoi lien activation | ✅ | ✅ |
-| US01.3.1 | Demande de réinitialisation | ✅ | ✅ |
-| US01.3.2 | Réinitialisation par token | ✅ | ✅ |
-| US01.4.1 | OTP appareil inconnu | ✅ | ✅ |
-| F01.6 | Connexion Google OAuth2 | ✅ | ✅ |
-| F01.7/F01.8 | OIDC enterprise + JIT + session restore | ✅ | ✅ |
-| US16.1.1 | Navigation principale | ✅ | ✅ |
-| US16.1.2 | Menu utilisateur | ✅ | ✅ |
-| US16.2.1 | Page d'accueil (grille modules) | ✅ | ✅ |
-| US16.4.1 | Thème clair/sombre | ✅ | ✅ |
-| Pages légales | ML + PC + CGU | ✅ | ✅ |
-| Footer + i18n | Footer + Transloco FR/EN | ✅ | ✅ |
-| **US16.3.1** | **Formulaire de contact** | 🔄 | ⬜ |
+| US01.1.1 | Connexion email + mot de passe | ✅ |
+| US01.1.2 | Déconnexion | ✅ |
+| US01.1.3 | Rester connecté (remember-me) | ✅ |
+| US01.2.1 | Inscription | ✅ |
+| US01.2.2 | Vérification email | ✅ |
+| US01.2.3 | Renvoi lien activation | ✅ |
+| US01.3.1 | Demande de réinitialisation | ✅ |
+| US01.3.2 | Réinitialisation par token | ✅ |
+| US01.4.1 | OTP appareil inconnu | ✅ |
+| F01.6 | Connexion Google OAuth2 | ✅ |
+| F01.7/F01.8 | OIDC enterprise + JIT + session restore | ✅ |
+| US16.1.1 | Navigation principale | ✅ |
+| US16.1.2 | Menu utilisateur | ✅ |
+| US16.2.1 | Page d'accueil (grille modules) | ✅ |
+| US16.4.1 | Thème clair/sombre | ✅ |
+| Pages légales | ML + PC + CGU | ✅ |
+| Footer + i18n | Footer + Transloco FR/EN | ✅ |
+| **US16.3.1** | **Formulaire de contact** | 🔄 |
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
 ### Sprint 2 — Système de modules + Auth manquant (MVP)
 
-| US | Titre | 🤖 Dev | ✅ PO |
+| US | Titre | 🤖 Dev |
 |----|-------|--------|-------|
-| EN03.1 | PivotModule interface + registre backend | ⬜ | ⬜ |
-| EN03.2 | Guard Angular moduleGuard + status API | ⬜ | ⬜ |
-| EN03.3 | Cache Redis statut modules TTL 60s | ⬜ | ⬜ |
-| EN03.4 | Contrat module frontend (TypeScript) | ⬜ | ⬜ |
-| US03.1.1 | Admin active un module | ⬜ | ⬜ |
-| US03.1.2 | Admin désactive un module | ⬜ | ⬜ |
-| US03.2.1 | UI liste modules avec statut | ⬜ | ⬜ |
-| US03.2.2 | Guard Angular bloque module désactivé | ⬜ | ⬜ |
-| US01.1.4 | Redirection post-login | ⬜ | ⬜ |
-| US01.1.5 | Expiration session + auto-logout | ⬜ | ⬜ |
-| US01.2.4 | Politique robustesse mot de passe | ⬜ | ⬜ |
+| EN03.1 | PivotModule interface + registre backend | ⬜ |
+| EN03.2 | Guard Angular moduleGuard + status API | ⬜ |
+| EN03.3 | Cache Redis statut modules TTL 60s | ⬜ |
+| EN03.4 | Contrat module frontend (TypeScript) | ⬜ |
+| US03.1.1 | Admin active un module | ⬜ |
+| US03.1.2 | Admin désactive un module | ⬜ |
+| US03.2.1 | UI liste modules avec statut | ⬜ |
+| US03.2.2 | Guard Angular bloque module désactivé | ⬜ |
+| US01.1.4 | Redirection post-login | ⬜ |
+| US01.1.5 | Expiration session + auto-logout | ⬜ |
+| US01.2.4 | Politique robustesse mot de passe | ⬜ |
 
 ---
 
