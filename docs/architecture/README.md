@@ -1,3 +1,9 @@
+---
+slug: /
+sidebar_position: 0
+sidebar_label: "Vue d'ensemble"
+---
+
 # Architecture
 
 | Document | Description |

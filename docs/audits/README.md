@@ -1,3 +1,9 @@
+---
+slug: /
+sidebar_position: 0
+sidebar_label: "Vue d'ensemble"
+---
+
 # Audits
 
 Un fichier par domaine, mis à jour en place. **Jamais de fichiers datés.**

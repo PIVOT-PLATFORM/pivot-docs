@@ -1,3 +1,9 @@
+---
+slug: /
+sidebar_position: 0
+sidebar_label: "Vue d'ensemble"
+---
+
 # Backlog PIVOT — Modèle & conventions
 
 > Source de vérité du **modèle** de backlog. Le backlog opérationnel vit dans les fichiers
