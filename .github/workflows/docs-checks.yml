@@ -1,0 +1,83 @@
+name: Docs Checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions: read-all
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  lint-and-build:
+    name: Lint + build docs site
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint markdown (structure)
+        run: npm run lint:md
+
+      - name: Lint spelling (FR + termes techniques)
+        run: npm run lint:spelling
+
+      - name: Lint nomenclature backlog/ADR
+        run: npm run lint:naming
+
+      - name: "Build (échoue sur lien cassé — onBrokenLinks: throw)"
+        run: npm run build
+        env:
+          # Injecte le bandeau d'avertissement "preview" uniquement pour une PR.
+          # Sur push main, DOCS_PREVIEW_PR est vide → build de production normal.
+          DOCS_PREVIEW_PR: ${{ github.event_name == 'pull_request' && github.event.pull_request.number || '' }}
+
+      - name: Setup Pages
+        if: github.event_name == 'pull_request'
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+
+      - name: Upload artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
+        with:
+          path: build
+
+  preview-deploy:
+    name: Déployer l'aperçu PR sur GitHub Pages
+    needs: lint-and-build
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
+    # Le lien de preview apparaît nativement dans l'onglet "Environments" de la
+    # PR (grâce à `environment:` ci-dessous) — pas besoin de token issues:write
+    # supplémentaire pour poster un commentaire.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy preview to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5

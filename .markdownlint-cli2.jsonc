@@ -1,0 +1,20 @@
+{
+  "config": {
+    "default": true,
+    // Contenu existant riche en tableaux/prose française — reformater
+    // rétroactivement 150+ fichiers pour ces règles de style pures serait
+    // du bruit, pas un gain de qualité. On garde les règles qui détectent
+    // de vraies erreurs de contenu (tableaux cassés, code sans langage,
+    // URLs nues, titres dupliqués dans un même fichier).
+    "MD013": false, // line-length
+    "MD060": false, // table-column-style (formatage, pas correction)
+    "MD022": false, // blanks-around-headings
+    "MD031": false, // blanks-around-fences
+    "MD032": false, // blanks-around-lists
+    "MD033": false, // no-inline-html — exemples HTML dans les critères d'acceptation
+    "MD036": false, // no-emphasis-as-heading
+    "MD024": { "siblings_only": true } // autorise les titres dupliqués entre fichiers différents
+  },
+  "globs": ["docs/**/*.md", "*.md"],
+  "ignores": ["node_modules/**", "build/**", ".docusaurus/**"]
+}

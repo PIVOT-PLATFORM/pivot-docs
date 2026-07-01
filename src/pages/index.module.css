@@ -1,0 +1,94 @@
+.heroBanner {
+  padding: 3rem 0;
+  text-align: center;
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+.heroTags {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.aboutText {
+  max-width: 760px;
+  font-size: 1.05rem;
+}
+
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.moduleItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.repoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.repoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.2s ease;
+}
+
+.repoCard:hover {
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+}
+
+.sections {
+  padding: 2rem 0 4rem;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  height: 100%;
+}

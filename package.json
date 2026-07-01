@@ -1,0 +1,53 @@
+{
+  "name": "pivot-docs-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "typecheck": "tsc",
+    "lint:md": "markdownlint-cli2",
+    "lint:spelling": "cspell --no-progress \"docs/**/*.md\" \"*.md\"",
+    "lint:naming": "node scripts/check-docs-naming.mjs",
+    "lint": "npm run lint:md && npm run lint:spelling && npm run lint:naming",
+    "docs:version:architecture": "docusaurus docs:version:architecture",
+    "docs:version:adr": "docusaurus docs:version:adr"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.1.1",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.8",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@cspell/dict-fr-fr": "^2.3.2",
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/tsconfig": "^3.9.2",
+    "@docusaurus/types": "^3.9.2",
+    "cspell": "^9.8.0",
+    "markdownlint-cli2": "^0.22.1",
+    "typescript": "~5.6.2"
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

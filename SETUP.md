@@ -24,9 +24,9 @@ docker compose up --build
 
 | Service | URL |
 |---------|-----|
-| Frontend (Angular) | http://localhost |
-| Backend (API REST) | http://localhost:8080/api |
-| Mailpit (emails dev) | http://localhost:8025 |
+| Frontend (Angular) | <http://localhost> |
+| Backend (API REST) | <http://localhost:8080/api> |
+| Mailpit (emails dev) | <http://localhost:8025> |
 | PostgreSQL | localhost:5432 |
 | Redis | localhost:6379 |
 
