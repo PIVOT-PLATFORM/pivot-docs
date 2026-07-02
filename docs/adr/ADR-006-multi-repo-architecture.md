@@ -23,7 +23,7 @@ Le risque principal d'un multi-repo naïf : duplication de l'auth, du design sys
 | Repo | Rôle | Artefact publié |
 |------|------|-----------------|
 | `pivot-core` | Shell backend + entités partagées (auth, tenant, équipes, registre modules) | `fr.pivot:pivot-core-starter` (Maven, GitHub Packages) |
-| `pivot-design-system` | Tokens CSS, composants UI génériques, SCSS BEM, Storybook, a11y | `@pivot/design-system` (npm, GitHub Packages) |
+| `pivot-design-system` | **Angular CDK** (comportement/a11y headless) + **SCSS BEM custom** (visuel) · tokens CSS, composants, Storybook | `@pivot/design-system` (npm, GitHub Packages) |
 | `pivot-ui` | Shell frontend + portail + OIDC client | `@pivot/ui-core` (npm, GitHub Packages) · consomme `@pivot/design-system` |
 | `pivot-docs` | Documentation, ADR, backlog, workflow agentique | — |
 
