@@ -64,16 +64,16 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
 | EN19.3 — Guard Angular module session | ⬜ |
 | **F19.1 — Création session** | |
 | [US19.1.1 — Créer une session live](FEATURES/creation/us-creer-session.md) | ⬜ |
-| [US19.1.2 — Piloter la session](FEATURES/creation/us-piloter-session.md) | ⬜ |
+| [US19.1.2 — Piloter la session](FEATURES/creation/us-gerer-session.md) | ⬜ |
 | **F19.2 — Participation** | |
 | [US19.2.1 — Rejoindre via code](FEATURES/participation/us-rejoindre-session.md) | ⬜ |
-| [US19.2.2 — Interagir avec activité](FEATURES/participation/us-interagir-activite.md) | ⬜ |
+| [US19.2.2 — Interagir avec activité](FEATURES/participation/us-vue-participant.md) | ⬜ |
 | **F19.3 — Types activité** | |
-| [US19.3.1 — Activité QUIZ](FEATURES/activites/us-activite-quiz.md) | ⬜ |
-| [US19.3.2 — Activité POLL](FEATURES/activites/us-activite-poll.md) | ⬜ |
-| [US19.3.3 — Activité WORDCLOUD](FEATURES/activites/us-activite-wordcloud.md) | ⬜ |
-| [US19.3.4 — Activité BRAINSTORM](FEATURES/activites/us-activite-brainstorm.md) | ⬜ |
-| [US19.3.5 — Activité Q&A](FEATURES/activites/us-activite-qa.md) | ⬜ |
+| [US19.3.1 — Activité QUIZ](FEATURES/activites/us-quiz.md) | ⬜ |
+| [US19.3.2 — Activité POLL](FEATURES/activites/us-poll.md) | ⬜ |
+| [US19.3.3 — Activité WORDCLOUD](FEATURES/activites/us-wordcloud.md) | ⬜ |
+| [US19.3.4 — Activité BRAINSTORM](FEATURES/activites/us-brainstorm.md) | ⬜ |
+| [US19.3.5 — Activité Q&A](FEATURES/activites/us-qa.md) | ⬜ |
 | **F19.4 — Résultats** | |
-| [US19.4.1 — Diffusion résultats temps réel](FEATURES/resultats/us-diffusion-resultats.md) | ⬜ |
+| [US19.4.1 — Diffusion résultats temps réel](FEATURES/resultats/us-resultats-temps-reel.md) | ⬜ |
 | [US19.4.2 — Export résultats session](FEATURES/resultats/us-export-resultats.md) | ⬜ |
