@@ -21,7 +21,7 @@
 
 - Pas de silent refresh : l'ancien flux « 401 → /auth/refresh → retry » du TokenInterceptor a été retiré — le 401 backend est le seul signal d'expiration (modèle opaque tokens).
 - `SessionExpiryService` (pivot-ui `core/auth/service/`) orchestre : purge mémoire (`AuthService.clearSession()`), toast (variante remember-me), BroadcastChannel `pivot-session`, redirection `/auth/login?returnUrl=…`.
-- Validation returnUrl locale (`core/auth/util/return-url.ts`) — à dédupliquer avec le validateur returnUrl de l'US01.1.4 au merge.
+- Validation returnUrl locale (`core/auth/util/return-url.ts`) — à fusionner avec le validateur returnUrl de l'US01.1.4 au merge (suppression du doublon).
 - Le flag remember-me vit en mémoire uniquement : perdu après reload (le refresh cookie ne le renvoie pas) → toast générique dans ce cas.
 
 ---
