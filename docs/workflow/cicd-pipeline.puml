@@ -1,4 +1,4 @@
-@startuml PIVOT CI/CD Pipeline
+@startuml
 !pragma layout smetana
 
 skinparam backgroundColor #FAFAFA

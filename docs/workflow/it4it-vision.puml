@@ -1,4 +1,4 @@
-@startuml Plateforme Agentique dev — IT4IT Vision cible
+@startuml
 !pragma layout smetana
 skinparam backgroundColor #FAFAFA
 skinparam defaultFontName "Arial"
