@@ -1,4 +1,4 @@
-﻿# E07 — Infrastructure & Déploiement
+# E07 — Infrastructure & Déploiement
 
 ## Objectif
 Stack de production complète : Docker Compose prod, gestion des secrets, ActiveMQ, PgBouncer, pipeline de déploiement CI/CD, TLS interne, Redis/PostgreSQL sécurisés, scaling horizontal.
@@ -20,7 +20,7 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 `core`
 
 ## Statut global
-⬜ À planifier — tous les items Critical/High en Backlog, Gate: needs-human-valid sur EN07.1/2/5/7-9
+⬜ À planifier — tous les items Critical/High en Backlog, Gate: Backlog sur EN07.1/2/5/7-9
 
 ---
 

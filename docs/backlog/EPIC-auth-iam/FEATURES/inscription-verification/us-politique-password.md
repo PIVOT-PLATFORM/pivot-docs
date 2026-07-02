@@ -1,4 +1,4 @@
-﻿# US01.2.4 — Politique de robustesse du mot de passe
+# US01.2.4 — Politique de robustesse du mot de passe
 
 **En tant que** utilisateur
 **Je veux** voir en temps réel si mon mot de passe respecte les critères de robustesse
@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

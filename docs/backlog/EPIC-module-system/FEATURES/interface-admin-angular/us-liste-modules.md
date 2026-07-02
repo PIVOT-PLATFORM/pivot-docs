@@ -1,4 +1,4 @@
-﻿# US03.2.1 — UI liste modules disponibles avec statut
+# US03.2.1 — UI liste modules disponibles avec statut
 
 **En tant que** admin tenant
 **Je veux** voir la liste des modules disponibles avec leur statut (actif/inactif) dans l'interface d'administration
@@ -27,4 +27,4 @@
 
 ---
 Item Type: US · Parent: F03.2 · Module: core · Phase: MVP · Size: M · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

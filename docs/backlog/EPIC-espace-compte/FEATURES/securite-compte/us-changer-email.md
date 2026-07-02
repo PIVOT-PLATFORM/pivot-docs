@@ -1,4 +1,4 @@
-﻿# US02.2.2 — Changer son e-mail
+# US02.2.2 — Changer son e-mail
 
 **En tant que** utilisateur connecté
 **Je veux** changer mon adresse e-mail
@@ -29,4 +29,4 @@
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

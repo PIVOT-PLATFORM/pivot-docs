@@ -1,4 +1,4 @@
-﻿# US05.13.1 — ZAP baseline planifié
+# US05.13.1 — ZAP baseline planifié
 
 **En tant que** équipe sécurité
 **Je veux** un scan ZAP baseline automatique planifié sur l'environnement de staging
@@ -16,4 +16,4 @@
 
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

@@ -1,4 +1,4 @@
-﻿# US08.1.2 — Utilisateur liste ses tableaux (backend)
+# US08.1.2 — Utilisateur liste ses tableaux (backend)
 
 **En tant que** utilisateur
 **Je veux** récupérer la liste de mes tableaux via l'API
@@ -23,4 +23,4 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

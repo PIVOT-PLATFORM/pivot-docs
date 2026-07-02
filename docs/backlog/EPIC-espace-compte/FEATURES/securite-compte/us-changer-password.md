@@ -1,4 +1,4 @@
-﻿# US02.2.1 — Changer son mot de passe
+# US02.2.1 — Changer son mot de passe
 
 **En tant que** utilisateur connecté
 **Je veux** changer mon mot de passe depuis mon espace compte
@@ -31,4 +31,4 @@
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

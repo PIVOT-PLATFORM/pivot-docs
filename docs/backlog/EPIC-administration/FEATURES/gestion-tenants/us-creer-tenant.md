@@ -1,4 +1,4 @@
-﻿# US06.2.1 — Super admin crée un tenant
+# US06.2.1 — Super admin crée un tenant
 
 **En tant que** SUPER_ADMIN
 **Je veux** créer un nouveau tenant sur la plateforme
@@ -29,4 +29,4 @@
 
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

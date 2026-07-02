@@ -1,4 +1,4 @@
-﻿# US06.1.1 — Admin liste utilisateurs de son tenant (backend)
+# US06.1.1 — Admin liste utilisateurs de son tenant (backend)
 
 **En tant que** admin tenant
 **Je veux** récupérer la liste des utilisateurs de mon organisation via l'API
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

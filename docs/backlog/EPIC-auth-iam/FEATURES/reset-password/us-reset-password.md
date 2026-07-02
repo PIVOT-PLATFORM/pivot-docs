@@ -1,4 +1,4 @@
-﻿# US01.3.2 — Réinitialisation du mot de passe
+# US01.3.2 — Réinitialisation du mot de passe
 
 **En tant que** utilisateur ayant reçu le lien de reset
 **Je veux** définir un nouveau mot de passe
@@ -21,4 +21,4 @@
 
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: MVP · Size: S · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

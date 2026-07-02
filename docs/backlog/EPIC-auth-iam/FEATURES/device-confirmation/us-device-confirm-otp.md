@@ -1,4 +1,4 @@
-﻿# US01.4.1 — Confirmation d'appareil par OTP
+# US01.4.1 — Confirmation d'appareil par OTP
 
 **En tant que** utilisateur se connectant depuis un nouvel appareil
 **Je veux** recevoir un code OTP par email pour confirmer la connexion
@@ -27,4 +27,4 @@
 
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: MVP · Size: M · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

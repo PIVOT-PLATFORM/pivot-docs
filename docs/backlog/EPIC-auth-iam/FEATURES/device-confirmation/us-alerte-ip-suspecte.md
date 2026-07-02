@@ -1,4 +1,4 @@
-﻿# US01.4.3b — Alerte connexion depuis IP/pays inhabituel
+# US01.4.3b — Alerte connexion depuis IP/pays inhabituel
 
 **En tant que** utilisateur
 **Je veux** être alerté si une connexion est détectée depuis une localisation IP inhabituelle
@@ -22,5 +22,5 @@
 
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: v1-enterprise · Size: L · Priority: Medium
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog
 Note: US01.4.3a (alerte appareil inconnu) = MVP → voir us-alerte-connexion-suspecte.md

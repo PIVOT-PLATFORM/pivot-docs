@@ -1,4 +1,4 @@
-﻿# Pages "Bientôt disponible" — hors périmètre GitHub E16
+# Pages "Bientôt disponible" — hors périmètre GitHub E16
 
 **En tant que** utilisateur
 **Je veux** voir une page claire quand une fonctionnalité n'est pas encore disponible
@@ -16,4 +16,4 @@
 
 ---
 Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: MVP · Size: XS · Priority: Low
-Human Gate: human-validated · Stage: Done
+Stage: Done

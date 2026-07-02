@@ -1,4 +1,4 @@
-﻿# US08.5.1 — Présence des participants sur le canvas
+# US08.5.1 — Présence des participants sur le canvas
 
 **En tant que** utilisateur connecté à un tableau
 **Je veux** voir qui est en train d'éditer le tableau en même temps que moi
@@ -24,4 +24,4 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

@@ -1,4 +1,4 @@
-﻿# US02.1.2 — Préférence de langue
+# US02.1.2 — Préférence de langue
 
 **En tant que** utilisateur connecté
 **Je veux** choisir ma langue préférée (FR/EN) dans mon profil
@@ -25,4 +25,4 @@
 
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: MVP · Size: XS · Priority: Low
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

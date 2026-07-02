@@ -1,4 +1,4 @@
-﻿# US08.1.3 — Angular : liste des tableaux
+# US08.1.3 — Angular : liste des tableaux
 
 **En tant que** utilisateur
 **Je veux** voir mes tableaux dans l'interface Angular
@@ -30,4 +30,4 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

@@ -1,4 +1,4 @@
-﻿# US08.3.1 — Connexion WebSocket au canvas d'un tableau
+# US08.3.1 — Connexion WebSocket au canvas d'un tableau
 
 **En tant que** utilisateur
 **Je veux** me connecter en temps réel au canvas d'un tableau via WebSocket
@@ -28,4 +28,4 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

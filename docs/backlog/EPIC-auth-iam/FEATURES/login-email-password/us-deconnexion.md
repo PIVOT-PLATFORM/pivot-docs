@@ -1,4 +1,4 @@
-﻿# US01.1.2 — Déconnexion
+# US01.1.2 — Déconnexion
 
 **En tant que** utilisateur connecté
 **Je veux** pouvoir me déconnecter
@@ -21,4 +21,4 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: XS · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

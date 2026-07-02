@@ -1,4 +1,4 @@
-﻿# US16.1.1 — Navigation principale (logo, liens, responsive)
+# US16.1.1 — Navigation principale (logo, liens, responsive)
 
 **En tant que** utilisateur authentifié
 **Je veux** une barre de navigation claire avec mes options
@@ -23,4 +23,4 @@
 
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: L · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

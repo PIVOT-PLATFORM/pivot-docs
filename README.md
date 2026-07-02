@@ -21,7 +21,7 @@ Le contenu source vit sous [`docs/`](docs/) et est publié via [Docusaurus](http
 | [`docs/adr/`](docs/adr/) | Architecture Decision Records |
 | [`docs/cicd/`](docs/cicd/) | Documentation des pipelines CI/CD (pivot-core + pivot-ui) |
 | [`docs/audits/`](docs/audits/) | Audits par domaine (cyber, QA, RGPD, UX…) |
-| [`docs/backlog/`](docs/backlog/) | Modèle de backlog — hiérarchie, champs Project, Human Gate, workflow draft→Issue |
+| [`docs/backlog/`](docs/backlog/) | Modèle de backlog — hiérarchie, champs Project, workflow draft→Issue |
 | [`docs/workflow/`](docs/workflow/) | Workflow agentique PIVOT (ACDD) |
 
 ### Développer le site localement

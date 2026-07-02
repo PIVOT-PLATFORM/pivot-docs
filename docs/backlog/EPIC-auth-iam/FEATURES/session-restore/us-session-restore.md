@@ -1,4 +1,4 @@
-﻿# US01.5.1 — Restauration de session
+# US01.5.1 — Restauration de session
 
 **En tant que** utilisateur connecté
 **Je veux** retrouver ma session sans me reconnecter après rechargement ou réouverture du navigateur
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F01.5 · Module: auth · Phase: MVP · Size: S · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

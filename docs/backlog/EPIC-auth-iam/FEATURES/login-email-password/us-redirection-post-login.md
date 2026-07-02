@@ -1,4 +1,4 @@
-﻿# US01.1.4 — Redirection post-login
+# US01.1.4 — Redirection post-login
 
 **En tant que** utilisateur
 **Je veux** être redirigé vers la page que je tentais d'accéder avant d'être renvoyé au login
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

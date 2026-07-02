@@ -1,4 +1,4 @@
-﻿# US08.4.1 — Utilisateur crée un tableau depuis un template
+# US08.4.1 — Utilisateur crée un tableau depuis un template
 
 **En tant que** utilisateur
 **Je veux** choisir un template pour initialiser mon tableau
@@ -30,4 +30,4 @@
 
 ---
 Item Type: US · Parent: F08.4 · Module: whiteboard · Phase: MVP · Size: M · Priority: Medium
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

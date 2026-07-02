@@ -1,4 +1,4 @@
-﻿# US08.2.3 — Angular : UI partage et gestion des rôles
+# US08.2.3 — Angular : UI partage et gestion des rôles
 
 **En tant que** owner d'un tableau
 **Je veux** gérer les membres et leurs rôles depuis l'interface Angular
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

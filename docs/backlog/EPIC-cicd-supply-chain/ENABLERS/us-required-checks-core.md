@@ -1,4 +1,4 @@
-﻿# US05.14.1 — Required checks pivot-core
+# US05.14.1 — Required checks pivot-core
 
 **En tant que** mainteneur
 **Je veux** que les required checks soient configurés sur pivot-core
@@ -15,4 +15,4 @@
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

@@ -1,4 +1,4 @@
-﻿# US06.1.3 — Admin modifie le rôle d'un utilisateur
+# US06.1.3 — Admin modifie le rôle d'un utilisateur
 
 **En tant que** admin tenant
 **Je veux** changer le rôle d'un utilisateur (USER ↔ ADMIN)
@@ -28,4 +28,4 @@
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

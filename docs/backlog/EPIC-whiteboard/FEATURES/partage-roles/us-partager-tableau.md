@@ -1,4 +1,4 @@
-﻿# US08.2.1 — Owner partage un tableau par lien public
+# US08.2.1 — Owner partage un tableau par lien public
 
 **En tant que** owner d'un tableau
 **Je veux** générer un lien d'invitation pour partager mon tableau
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

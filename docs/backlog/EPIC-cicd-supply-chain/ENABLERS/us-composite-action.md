@@ -1,4 +1,4 @@
-﻿# US05.15.1 — Composite action setup partagée
+# US05.15.1 — Composite action setup partagée
 
 **En tant que** développeur
 **Je veux** une composite action GitHub Actions partagée pour le setup (Java/Node/cache)
@@ -15,4 +15,4 @@
 
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: ? · Stage: Backlog
+Stage: Backlog

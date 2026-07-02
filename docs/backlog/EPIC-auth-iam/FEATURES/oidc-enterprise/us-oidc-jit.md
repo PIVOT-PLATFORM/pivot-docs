@@ -1,4 +1,4 @@
-﻿# US01.7.2 — Provisionnement JIT utilisateur OIDC
+# US01.7.2 — Provisionnement JIT utilisateur OIDC
 
 **En tant que** utilisateur enterprise se connectant pour la première fois via SSO
 **Je veux** que mon compte PIVOT soit créé automatiquement
@@ -17,4 +17,4 @@
 
 ---
 Item Type: US · Parent: F01.7 · Module: oidc · Phase: v1-enterprise · Size: M · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

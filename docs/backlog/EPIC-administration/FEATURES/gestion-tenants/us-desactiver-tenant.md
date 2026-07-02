@@ -1,4 +1,4 @@
-﻿# US06.2.2 — Super admin désactive un tenant
+# US06.2.2 — Super admin désactive un tenant
 
 **En tant que** SUPER_ADMIN
 **Je veux** désactiver un tenant
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

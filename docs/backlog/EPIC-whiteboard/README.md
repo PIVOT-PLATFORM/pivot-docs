@@ -1,4 +1,4 @@
-﻿# E08 — Module Whiteboard
+# E08 — Module Whiteboard
 
 ## Objectif
 Tableau blanc collaboratif temps réel : CRUD tableaux, partage par lien/rôles, canvas WebSocket, présence, undo/redo, templates. Inspiré de Miro / Klaxoon Whiteboard.
@@ -15,7 +15,7 @@ Tableau blanc collaboratif temps réel : CRUD tableaux, partage par lien/rôles,
 PouetPouet (tableau blanc collaboratif open-source)
 
 ## Phase
-⏸️ **MVP** — Human Gate: `needs-human-valid` sur tous les items · **VERROUILLÉ** tant que MVP Auth/Shell/Modules non terminé
+⬜ **MVP** — Gate 1 PO Agent à effectuer · bloqué jusqu'à fin MVP Auth/Shell/Modules
 
 ## Modules impactés
 `whiteboard`
@@ -24,7 +24,7 @@ PouetPouet (tableau blanc collaboratif open-source)
 - Dépend de : E03 Système de modules (EN03.1 + EN03.2)
 
 ## Statut global
-⬜ Non démarré — Human Gate: needs-human-valid
+⬜ Non démarré — Backlog
 
 ---
 

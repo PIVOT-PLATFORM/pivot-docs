@@ -1,4 +1,4 @@
-﻿# US02.1.1 — Voir et éditer son profil
+# US02.1.1 — Voir et éditer son profil
 
 **En tant que** utilisateur connecté
 **Je veux** consulter et modifier mon profil (prénom, nom, avatar)
@@ -32,4 +32,4 @@
 
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

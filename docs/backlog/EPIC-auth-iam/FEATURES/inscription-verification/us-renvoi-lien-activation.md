@@ -1,4 +1,4 @@
-﻿# US01.2.3 — Renvoi lien d'activation
+# US01.2.3 — Renvoi lien d'activation
 
 **En tant que** utilisateur dont le lien d'activation a expiré
 **Je veux** demander un nouveau lien
@@ -18,4 +18,4 @@
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: XS · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

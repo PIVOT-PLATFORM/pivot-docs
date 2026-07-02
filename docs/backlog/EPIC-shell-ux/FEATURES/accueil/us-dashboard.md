@@ -1,4 +1,4 @@
-﻿# Dashboard utilisateur — hors périmètre GitHub E16
+# Dashboard utilisateur — hors périmètre GitHub E16
 
 **En tant que** utilisateur connecté
 **Je veux** un tableau de bord personnel
@@ -18,4 +18,4 @@
 
 ---
 Item Type: US (hors GitHub) · Parent: F16.2 · Module: core · Phase: MVP · Size: XS · Priority: Medium
-Human Gate: human-validated · Stage: Done
+Stage: Done

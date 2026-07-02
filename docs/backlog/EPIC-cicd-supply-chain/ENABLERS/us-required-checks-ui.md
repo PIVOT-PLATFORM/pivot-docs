@@ -1,4 +1,4 @@
-﻿# US05.14.2 — Required checks pivot-ui
+# US05.14.2 — Required checks pivot-ui
 
 **En tant que** mainteneur
 **Je veux** que les required checks soient configurés sur pivot-ui
@@ -14,4 +14,4 @@
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

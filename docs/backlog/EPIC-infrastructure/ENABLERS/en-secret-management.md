@@ -9,8 +9,8 @@
 - [ ] Spring Boot lit les secrets via `${SECRET_FILE_PATH}` ou profil `prod`
 - [ ] Rotation des secrets : procédure documentée
 
-**Statut** : ⬜ À faire — Gate: needs-human-valid
+**Statut** : ⬜ À faire — Gate: Backlog
 
 ---
 Item Type: Enabler · Parent: E07 · Type: sécurité · Module: core · Phase: MVP
-Human Gate: needs-human-valid · Stage: Backlog · Priority: Critical
+Stage: Backlog · Priority: Critical

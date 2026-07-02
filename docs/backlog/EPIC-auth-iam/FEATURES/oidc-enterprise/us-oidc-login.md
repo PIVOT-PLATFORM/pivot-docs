@@ -1,4 +1,4 @@
-﻿# US01.7.1 — Connexion OIDC enterprise (SSO)
+# US01.7.1 — Connexion OIDC enterprise (SSO)
 
 **En tant que** utilisateur d'un tenant enterprise
 **Je veux** me connecter via le SSO de mon entreprise (Keycloak, Azure AD, Okta)
@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F01.7 · Module: oidc · Phase: v1-enterprise · Size: L · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

@@ -1,4 +1,4 @@
-﻿# US08.1.5 — Supprimer un tableau
+# US08.1.5 — Supprimer un tableau
 
 **En tant que** owner d'un tableau
 **Je veux** supprimer définitivement un tableau
@@ -25,4 +25,4 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: Critical
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

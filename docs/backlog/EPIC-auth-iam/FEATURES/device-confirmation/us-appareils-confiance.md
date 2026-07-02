@@ -1,4 +1,4 @@
-﻿# US01.4.2 — Gestion des appareils de confiance
+# US01.4.2 — Gestion des appareils de confiance
 
 **En tant que** utilisateur
 **Je veux** voir et révoquer mes appareils de confiance
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

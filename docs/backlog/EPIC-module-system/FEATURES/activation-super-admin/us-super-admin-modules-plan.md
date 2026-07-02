@@ -1,4 +1,4 @@
-﻿# US03.3.1 — SUPER_ADMIN définit modules disponibles par plan
+# US03.3.1 — SUPER_ADMIN définit modules disponibles par plan
 
 **En tant que** SUPER_ADMIN
 **Je veux** définir quels modules sont disponibles pour chaque plan tarifaire
@@ -19,4 +19,4 @@
 
 ---
 Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

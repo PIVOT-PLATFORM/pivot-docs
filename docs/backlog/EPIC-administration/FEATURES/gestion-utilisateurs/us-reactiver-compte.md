@@ -1,4 +1,4 @@
-﻿# US06.1.5 — Admin réactive un compte utilisateur
+# US06.1.5 — Admin réactive un compte utilisateur
 
 **En tant que** administrateur du tenant
 **Je veux** réactiver un compte utilisateur désactivé
@@ -23,4 +23,4 @@
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

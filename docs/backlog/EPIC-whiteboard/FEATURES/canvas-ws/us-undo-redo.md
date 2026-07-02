@@ -1,4 +1,4 @@
-﻿# US08.3.3 — Undo / Redo sur le canvas
+# US08.3.3 — Undo / Redo sur le canvas
 
 **En tant que** utilisateur éditant un tableau
 **Je veux** pouvoir annuler et rétablir mes actions sur le canvas
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

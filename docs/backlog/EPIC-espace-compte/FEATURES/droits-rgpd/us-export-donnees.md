@@ -1,4 +1,4 @@
-﻿# US02.3.1 — Export de ses données personnelles
+# US02.3.1 — Export de ses données personnelles
 
 **En tant que** utilisateur
 **Je veux** exporter toutes mes données personnelles stockées par PIVOT
@@ -29,4 +29,4 @@
 
 ---
 Item Type: US · Parent: F02.3 · Module: auth · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

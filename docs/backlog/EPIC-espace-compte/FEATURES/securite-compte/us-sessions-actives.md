@@ -1,4 +1,4 @@
-﻿# US02.2.3 — Voir et révoquer ses sessions actives
+# US02.2.3 — Voir et révoquer ses sessions actives
 
 **En tant que** utilisateur connecté
 **Je veux** voir la liste de mes sessions actives (appareil, date, IP) et en révoquer certaines
@@ -32,4 +32,4 @@
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

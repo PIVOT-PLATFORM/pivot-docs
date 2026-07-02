@@ -15,4 +15,4 @@ Roue de tirage pondéré anti-repeat pour animer des événements : CRUD roues, 
 - Dépend de : E03 Système de modules
 
 ## Statut global
-⏸️ Verrouillé — Human Gate: needs-human-valid sur tous les items
+⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint

@@ -1,4 +1,4 @@
-﻿# US03.3.3 — Admin tenant voit uniquement modules de son plan
+# US03.3.3 — Admin tenant voit uniquement modules de son plan
 
 **En tant que** admin tenant
 **Je veux** voir dans l'interface d'administration uniquement les modules inclus dans mon plan
@@ -17,4 +17,4 @@
 
 ---
 Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

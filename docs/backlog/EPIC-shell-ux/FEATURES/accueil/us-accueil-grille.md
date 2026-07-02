@@ -1,4 +1,4 @@
-﻿# US16.2.1 — Page d'accueil : grille des modules actifs
+# US16.2.1 — Page d'accueil : grille des modules actifs
 
 **En tant que** utilisateur connecté
 **Je veux** une page d'accueil après connexion
@@ -19,4 +19,4 @@
 
 ---
 Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

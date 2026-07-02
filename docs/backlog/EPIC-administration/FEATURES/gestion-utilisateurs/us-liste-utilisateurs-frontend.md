@@ -1,4 +1,4 @@
-﻿# US06.1.2 — Admin liste utilisateurs de son tenant (frontend)
+# US06.1.2 — Admin liste utilisateurs de son tenant (frontend)
 
 **En tant que** admin tenant
 **Je veux** voir la liste des utilisateurs dans l'interface d'administration Angular
@@ -27,4 +27,4 @@
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

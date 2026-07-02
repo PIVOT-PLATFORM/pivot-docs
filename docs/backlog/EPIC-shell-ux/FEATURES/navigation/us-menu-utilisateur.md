@@ -1,4 +1,4 @@
-﻿# US16.1.2 — Menu utilisateur (avatar bulle, nom, déconnexion)
+# US16.1.2 — Menu utilisateur (avatar bulle, nom, déconnexion)
 
 **En tant que** utilisateur connecté
 **Je veux** voir un menu utilisateur dans la navigation avec mon avatar, mon nom et un lien de déconnexion
@@ -19,4 +19,4 @@ Couvert par l'implémentation existante de la NavbarComponent (US02.1.1 legacy).
 
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

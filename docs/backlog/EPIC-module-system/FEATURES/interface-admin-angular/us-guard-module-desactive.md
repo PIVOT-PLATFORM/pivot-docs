@@ -1,4 +1,4 @@
-﻿# US03.2.2 — Guard Angular bloque accès module désactivé
+# US03.2.2 — Guard Angular bloque accès module désactivé
 
 **En tant que** utilisateur
 **Je veux** être redirigé avec un message clair si j'essaie d'accéder à un module désactivé
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F03.2 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

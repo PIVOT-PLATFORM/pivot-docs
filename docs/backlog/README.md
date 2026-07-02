@@ -1,4 +1,4 @@
-﻿---
+---
 slug: /
 sidebar_position: 0
 sidebar_label: "Vue d'ensemble"
@@ -152,7 +152,7 @@ Done ◄──(mainteneur : merge PR)────────────── 
 **La phase active reste `MVP` tant que le mainteneur n'a pas explicitement déclaré le MVP terminé.**
 
 - Seuls les items `Phase: MVP` sont éligibles à `Ready` et à l'implémentation.
-- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`, `needs-human-valid` — **non travaillés**.
+- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`, `Backlog` — **non travaillés**.
 - Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »).
 
 ---

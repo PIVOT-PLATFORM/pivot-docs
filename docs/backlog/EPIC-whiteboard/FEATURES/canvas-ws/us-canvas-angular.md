@@ -1,4 +1,4 @@
-﻿# US08.3.2 — Angular : canvas whiteboard
+# US08.3.2 — Angular : canvas whiteboard
 
 > **À décomposer avant implémentation :** US08.3.2a (canvas local) · US08.3.2b (sync STOMP) · US08.3.2c (curseurs temps réel). Voir fichiers dédiés.
 
@@ -40,4 +40,4 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: L · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

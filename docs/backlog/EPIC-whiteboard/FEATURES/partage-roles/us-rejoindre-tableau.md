@@ -1,4 +1,4 @@
-﻿# US08.2.2 — Utilisateur rejoint un tableau via token
+# US08.2.2 — Utilisateur rejoint un tableau via token
 
 **En tant que** utilisateur invité
 **Je veux** rejoindre un tableau en utilisant un lien d'invitation
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

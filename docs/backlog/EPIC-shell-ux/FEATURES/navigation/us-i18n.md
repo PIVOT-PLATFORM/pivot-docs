@@ -1,4 +1,4 @@
-﻿# i18n FR/EN (Transloco) — hors périmètre GitHub E16
+# i18n FR/EN (Transloco) — hors périmètre GitHub E16
 
 **En tant que** utilisateur
 **Je veux** choisir la langue de l'interface (Français ou Anglais)
@@ -24,4 +24,4 @@
 
 ---
 Item Type: US (hors GitHub) · Parent: F16.1 · Module: core · Phase: MVP · Size: M · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

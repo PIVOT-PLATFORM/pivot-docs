@@ -1,4 +1,4 @@
-﻿# US03.1.1 — Admin active un module pour son tenant
+# US03.1.1 — Admin active un module pour son tenant
 
 **En tant que** admin tenant
 **Je veux** activer un module PIVOT pour mon organisation
@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

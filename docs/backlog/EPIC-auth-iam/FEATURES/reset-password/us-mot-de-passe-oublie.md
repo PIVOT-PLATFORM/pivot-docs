@@ -1,4 +1,4 @@
-﻿# US01.3.1 — Mot de passe oublié (demande)
+# US01.3.1 — Mot de passe oublié (demande)
 
 **En tant que** utilisateur ayant oublié son mot de passe
 **Je veux** soumettre mon email pour recevoir un lien de réinitialisation
@@ -18,4 +18,4 @@
 
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: MVP · Size: S · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

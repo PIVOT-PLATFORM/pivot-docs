@@ -1,4 +1,4 @@
-﻿# US01.6.1 — Connexion Google OAuth2
+# US01.6.1 — Connexion Google OAuth2
 
 **En tant que** utilisateur
 **Je veux** me connecter avec mon compte Google
@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F01.6 · Module: auth · Phase: MVP · Size: M · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

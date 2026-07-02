@@ -1,4 +1,4 @@
-﻿# US03.3.2 — SUPER_ADMIN active/désactive un module par tenant (override)
+# US03.3.2 — SUPER_ADMIN active/désactive un module par tenant (override)
 
 **En tant que** SUPER_ADMIN
 **Je veux** forcer l'activation ou désactivation d'un module pour un tenant spécifique (hors plan)
@@ -18,4 +18,4 @@
 
 ---
 Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

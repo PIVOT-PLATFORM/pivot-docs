@@ -1,4 +1,4 @@
-﻿# SPRINTS — PIVOT Platform
+# SPRINTS — PIVOT Platform
 
 Source de vérité pour l'organisation des sprints et l'assignation des US aux branches.
 
@@ -112,7 +112,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 **Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
 **Scope :** E08 Whiteboard complet
-**Pré-requis :** Sprint 2 terminé + Sprint 4 EN07.x validé + Human Gate US08.x = human-validated
+**Pré-requis :** Sprint 2 terminé + Sprint 4 EN07.x validé + Gate 1 US08.x validé par PO Agent
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|-------|

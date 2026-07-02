@@ -1,4 +1,4 @@
-﻿# US05.15.2 — Aligner les workflows ui sur les conventions core
+# US05.15.2 — Aligner les workflows ui sur les conventions core
 
 **En tant que** développeur
 **Je veux** que les workflows pivot-ui suivent les mêmes conventions que pivot-core
@@ -15,4 +15,4 @@
 
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

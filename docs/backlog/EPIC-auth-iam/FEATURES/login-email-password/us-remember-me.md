@@ -1,4 +1,4 @@
-﻿# US01.1.3 — Se souvenir de moi
+# US01.1.3 — Se souvenir de moi
 
 **En tant que** utilisateur régulier
 **Je veux** cocher "Se souvenir de moi" lors de la connexion
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: XS · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

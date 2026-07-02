@@ -1,4 +1,4 @@
-﻿# Pages légales (ML, PC, CGU) — hors périmètre GitHub E16
+# Pages légales (ML, PC, CGU) — hors périmètre GitHub E16
 
 **En tant que** visiteur ou utilisateur
 **Je veux** accéder aux mentions légales, à la politique de confidentialité et aux CGU
@@ -26,4 +26,4 @@
 
 ---
 Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: MVP · Size: M · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

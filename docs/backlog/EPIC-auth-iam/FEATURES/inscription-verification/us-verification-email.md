@@ -1,4 +1,4 @@
-﻿# US01.2.2 — Vérification email
+# US01.2.2 — Vérification email
 
 **En tant que** utilisateur ayant reçu l'email de vérification
 **Je veux** cliquer le lien pour activer mon compte
@@ -23,4 +23,4 @@
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: S · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

@@ -1,4 +1,4 @@
-﻿# US02.2.4 — Suppression de compte (RGPD)
+# US02.2.4 — Suppression de compte (RGPD)
 
 **En tant que** utilisateur
 **Je veux** pouvoir supprimer définitivement mon compte
@@ -32,4 +32,4 @@
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

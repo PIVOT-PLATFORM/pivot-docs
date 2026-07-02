@@ -1,4 +1,4 @@
-﻿# Footer — hors périmètre GitHub E16
+# Footer — hors périmètre GitHub E16
 
 **En tant que** utilisateur authentifié
 **Je veux** un footer avec les liens légaux et informations PIVOT
@@ -17,4 +17,4 @@
 
 ---
 Item Type: US (hors GitHub) · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

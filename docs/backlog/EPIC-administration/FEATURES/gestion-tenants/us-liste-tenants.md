@@ -1,4 +1,4 @@
-﻿# US06.2.3 — Super admin liste tous les tenants
+# US06.2.3 — Super admin liste tous les tenants
 
 **En tant que** SUPER_ADMIN
 **Je veux** voir la liste de tous les tenants de la plateforme
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

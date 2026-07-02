@@ -1,4 +1,4 @@
-﻿# US01.4.3a — Alerte connexion suspecte (appareil inconnu)
+# US01.4.3a — Alerte connexion suspecte (appareil inconnu)
 
 **En tant que** utilisateur
 **Je veux** recevoir une alerte email quand une connexion depuis un nouvel appareil inconnu est détectée
@@ -20,4 +20,4 @@
 
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: MVP · Size: S · Priority: Medium · Note: US01.4.3b (alerte IP/géo) → v1-enterprise
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

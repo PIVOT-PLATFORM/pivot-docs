@@ -1,4 +1,4 @@
-﻿# US16.2.2 — Page d'accueil : section modules à venir
+# US16.2.2 — Page d'accueil : section modules à venir
 
 **En tant que** utilisateur
 **Je veux** voir sur la page d'accueil une section des modules pas encore activés ou en développement
@@ -15,4 +15,4 @@
 
 ---
 Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: Low
-Human Gate: human-validated · Stage: In progress
+Stage: In progress

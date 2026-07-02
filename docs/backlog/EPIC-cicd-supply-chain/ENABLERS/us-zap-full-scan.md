@@ -1,4 +1,4 @@
-﻿# US05.13.2 — ZAP full scan + rapport
+# US05.13.2 — ZAP full scan + rapport
 
 **En tant que** équipe sécurité
 **Je veux** un scan ZAP full (actif) avec rapport détaillé
@@ -15,4 +15,4 @@
 
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: M · Priority: Medium
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

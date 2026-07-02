@@ -1,4 +1,4 @@
-﻿# US01.2.1 — Inscription
+# US01.2.1 — Inscription
 
 **En tant que** visiteur
 **Je veux** créer un compte avec mon email et un mot de passe
@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: M · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

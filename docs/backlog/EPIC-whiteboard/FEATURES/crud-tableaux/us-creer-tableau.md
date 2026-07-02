@@ -1,4 +1,4 @@
-﻿# US08.1.1 — Utilisateur crée un tableau
+# US08.1.1 — Utilisateur crée un tableau
 
 **En tant que** utilisateur
 **Je veux** créer un nouveau tableau blanc
@@ -29,4 +29,4 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

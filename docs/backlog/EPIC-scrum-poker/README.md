@@ -16,4 +16,4 @@ Planning poker interactif : rooms, tickets, votes temps réel WebSocket, partici
 - Dépend de : E03 Système de modules
 
 ## Statut global
-⏸️ Verrouillé — Human Gate: needs-human-valid sur tous les items
+⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint

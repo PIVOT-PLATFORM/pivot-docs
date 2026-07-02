@@ -1,4 +1,4 @@
-﻿# US01.5.1 — E-mail de confirmation d'action sensible
+# US01.5.1 — E-mail de confirmation d'action sensible
 
 **En tant que** utilisateur
 **Je veux** recevoir un email de confirmation après chaque action sensible (changement mdp, email, suppression compte)
@@ -19,4 +19,4 @@
 
 ---
 Item Type: US · Parent: F01.5 · Module: auth · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

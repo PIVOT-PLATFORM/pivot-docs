@@ -1,4 +1,4 @@
-﻿# US06.1.4 — Admin désactive un compte utilisateur
+# US06.1.4 — Admin désactive un compte utilisateur
 
 **En tant que** admin tenant
 **Je veux** désactiver le compte d'un utilisateur de mon organisation
@@ -27,4 +27,4 @@
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

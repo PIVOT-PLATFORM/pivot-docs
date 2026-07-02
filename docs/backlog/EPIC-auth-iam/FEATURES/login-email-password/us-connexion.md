@@ -1,4 +1,4 @@
-﻿# US01.1.1 — Connexion email/password
+# US01.1.1 — Connexion email/password
 
 **En tant que** utilisateur inscrit et vérifié
 **Je veux** me connecter avec mon email et mon mot de passe
@@ -33,4 +33,4 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: Critical
-Human Gate: human-validated · Stage: Done
+Stage: Done

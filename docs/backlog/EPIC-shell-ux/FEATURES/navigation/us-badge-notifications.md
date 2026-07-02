@@ -1,4 +1,4 @@
-﻿# US16.1.3 — Badge notifications dans la navigation
+# US16.1.3 — Badge notifications dans la navigation
 
 **En tant que** utilisateur
 **Je veux** voir un badge dans la navigation indiquant le nombre de notifications non lues
@@ -21,4 +21,4 @@
 
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

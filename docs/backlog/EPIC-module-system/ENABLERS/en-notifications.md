@@ -22,4 +22,4 @@
 
 ---
 Item Type: Enabler · Parent: E03 (transversal) · Type: architecture · Module: core · Phase: MVP
-Human Gate: needs-human-valid · Stage: Backlog · Priority: Medium
+Stage: Backlog · Priority: Medium

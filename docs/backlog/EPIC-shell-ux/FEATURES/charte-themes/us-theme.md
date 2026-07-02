@@ -1,4 +1,4 @@
-﻿# US16.4.1 — Sélection et persistance du thème utilisateur
+# US16.4.1 — Sélection et persistance du thème utilisateur
 
 **En tant que** utilisateur
 **Je veux** basculer entre le thème clair et sombre
@@ -23,4 +23,4 @@
 
 ---
 Item Type: US · Parent: F16.4 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Done
+Stage: Done

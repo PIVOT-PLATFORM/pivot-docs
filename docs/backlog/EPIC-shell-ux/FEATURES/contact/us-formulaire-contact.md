@@ -1,4 +1,4 @@
-﻿# US16.3.1 — Page contact
+# US16.3.1 — Page contact
 
 > **Branche active** : `feat/us16-3-1-contact` (pivot-ui + pivot-core)
 > **Statut** : 🔄 En cours — implémentation complète, en attente de validation PO + merge
@@ -36,4 +36,4 @@
 
 ---
 Item Type: US · Parent: F16.3 · Module: core · Phase: MVP · Size: M · Priority: Low
-Human Gate: human-validated · Stage: Review
+Stage: Review

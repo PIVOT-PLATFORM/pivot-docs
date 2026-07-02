@@ -13,4 +13,4 @@
 
 ---
 Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: MVP
-Human Gate: human-validated · Stage: Backlog · Priority: Medium
+Stage: Backlog · Priority: Medium

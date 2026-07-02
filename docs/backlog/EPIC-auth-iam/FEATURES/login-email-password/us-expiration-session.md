@@ -1,4 +1,4 @@
-﻿# US01.1.5 — Expiration de session (front) + auto-logout
+# US01.1.5 — Expiration de session (front) + auto-logout
 
 **En tant que** utilisateur
 **Je veux** être automatiquement déconnecté quand ma session expire
@@ -19,4 +19,4 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

@@ -12,4 +12,4 @@
 
 ---
 Item Type: Enabler · Parent: E02 · Type: RGPD · Module: auth · Phase: v1-enterprise
-Human Gate: human-validated · Stage: Backlog · Priority: Low
+Stage: Backlog · Priority: Low

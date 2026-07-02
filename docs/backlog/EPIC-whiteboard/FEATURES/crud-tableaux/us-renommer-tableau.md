@@ -1,4 +1,4 @@
-﻿# US08.1.4 — Renommer un tableau
+# US08.1.4 — Renommer un tableau
 
 **En tant que** owner d'un tableau
 **Je veux** renommer mon tableau
@@ -25,4 +25,4 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog
