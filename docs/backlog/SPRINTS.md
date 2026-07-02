@@ -50,7 +50,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US03.2.1 | UI liste modules disponibles avec statut | M | High | ⬜ |
 | US03.2.2 | Guard Angular bloque accès module désactivé | S | Critical | ⬜ |
 | US01.1.4 | Redirection post-login | S | High | ⬜ |
-| US01.1.5 | Expiration session + auto-logout | M | High | ⬜ |
+| US01.1.5 | Expiration session + auto-logout | M | High | 🔎 Review |
 | US01.2.4 | Politique robustesse mot de passe | S | High | ⬜ |
 
 > **Parallélisable :** EN03.1+EN03.3 (backend) ‖ EN03.2+EN03.4 (frontend) ‖ US01.x (auth, indépendants de E03 côté code)
