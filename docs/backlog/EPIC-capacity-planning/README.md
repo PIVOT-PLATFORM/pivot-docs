@@ -1,6 +1,5 @@
 ﻿# E11 — Module Capacity Planning
 
-
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-agilite-core`** (schéma Flyway `agilite`, FK → `public.teams.id`)
 - Frontend : **`pivot-agilite-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)

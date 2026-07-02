@@ -1,6 +1,5 @@
 ﻿# E14 — Module La Roue
 
-
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-agilite-core`** (schéma Flyway `agilite`, FK → `public.teams.id`)
 - Frontend : **`pivot-agilite-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)

@@ -143,7 +143,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP)
 - E05 CI/CD Supply-chain restants (EN05.13-15 + 7 US)
 - E04 Observabilité — EN04.1–4 planifiés Sprint 4
-- E09–E15 Modules phase-3 (verrouillés — migreront vers pivot-agilite-* / pivot-collaboratif-*)
+- E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
 - E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
 - E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
 - E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique

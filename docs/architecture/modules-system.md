@@ -37,7 +37,7 @@ Chaque domaine fonctionnel = repo backend + repo frontend dédiés.
 
 ### Dépendances build-time
 
-```
+```text
 pivot-xxx-core  →  consomme  fr.pivot:pivot-core-starter  (Maven)
 pivot-xxx-ui    →  consomme  @pivot/ui-core  (npm)
                 →  consomme  @pivot/design-system  (npm, via @pivot/ui-core)
@@ -57,7 +57,7 @@ pivot-xxx-ui    →  consomme  @pivot/ui-core  (npm)
 
 ### Routing nginx par préfixe
 
-```
+```text
 /api/auth/**         →  pivot-core :8080
 /api/admin/**        →  pivot-core :8080
 /api/pilotage/**     →  pivot-pilotage-core :8081
@@ -118,7 +118,7 @@ Bundle pivot-xxx-ui chargé  →  route disponible pour le tenant
 
 ## Cache Redis module status
 
-```
+```text
 Clé   : module:{tenantId}:{moduleId}
 TTL   : 60 s
 Scope : partagé entre tous les backends (pivot-core + tous les module-core)

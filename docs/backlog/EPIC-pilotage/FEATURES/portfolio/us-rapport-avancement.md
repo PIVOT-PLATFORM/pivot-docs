@@ -10,7 +10,7 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| GET `/api/pilotage/portfolio/report?format=json|csv` génère rapport au format demandé | ⬜ |
+| GET `/api/pilotage/portfolio/report?format=json\|csv` génère rapport au format demandé | ⬜ |
 | Rapport contient : liste projets, statut, avancement %, jalons prochains, projets en retard | ⬜ |
 | Possibilité de filtrer par période et équipe | ⬜ |
 | Vue Angular : bouton export CSV / aperçu JSON | ⬜ |

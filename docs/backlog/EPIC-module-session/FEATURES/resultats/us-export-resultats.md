@@ -10,7 +10,7 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| GET `/api/collaboratif/sessions/{id}/results?format=json|csv` retourne résultats format demandé | ⬜ |
+| GET `/api/collaboratif/sessions/{id}/results?format=json\|csv` retourne résultats format demandé | ⬜ |
 | Session doit être `COMPLETED` pour export (session en cours → 409) | ⬜ |
 | Export QUIZ : questions + réponses + scores participants | ⬜ |
 | Export POLL : options + nb votes + % | ⬜ |

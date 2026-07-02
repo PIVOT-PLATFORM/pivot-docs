@@ -28,7 +28,7 @@ L'architecture multi-repo (ADR-006) introduit `pivot-design-system` comme repo d
 
 ### Structure `pivot-design-system`
 
-```
+```text
 src/
 ├── cdk/          # Wrappers Angular CDK (overlay, focus trap, a11y directives)
 ├── tokens/       # CSS custom properties : couleurs, spacing, typo, radius, shadows, z-index
