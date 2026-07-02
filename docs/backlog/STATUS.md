@@ -34,6 +34,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 contact 🔄 |
 | [Module Session (concept)](EPIC-module-session/README.md) | — | — | — | — | ⏸️ Non planifié |
+| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 6 | — | ⬜ phase-3 |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 
 ---
@@ -110,7 +111,8 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | US16.2.2 Section modules à venir | MVP | ⬜ À planifier |
 | — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
+| High | E17 Infrastructure multi-repo (EN17.1–6) | phase-3 | ⬜ Backlog |
 
 ---
 
-*Dernière mise à jour : 2026-06-30*
+*Dernière mise à jour : 2026-07-02*

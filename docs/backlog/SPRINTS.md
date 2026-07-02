@@ -139,8 +139,25 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP)
 - E05 CI/CD Supply-chain restants (EN05.13-15 + 7 US)
 - E04 Observabilité (non documenté)
-- E09–E15 Modules phase-3 (verrouillés)
-- Module Session (non planifié)
+- E09–E15 Modules phase-3 (verrouillés — migreront vers pivot-agilite-* / pivot-collaboratif-*)
+- Module Session (non planifié — pivot-collaboratif-*)
+
+---
+
+## Backlog phase-3 — Infrastructure multi-repo (E17)
+
+**Pré-requis :** E03 Système de modules terminé · E07 infra prod validée
+
+| Enabler | Titre | Priority | 🤖 Dev |
+|---------|-------|----------|--------|
+| EN17.4 | Convention BDD multi-schéma + Flyway baseline | Critical | ⬜ |
+| EN17.1 | Publication pivot-core-starter (Maven) | High | ⬜ |
+| EN17.2 | Publication @pivot/design-system (npm) | High | ⬜ |
+| EN17.3 | Publication @pivot/ui-core (npm) | High | ⬜ |
+| EN17.5 | Template repo pivot-xxx-core | High | ⬜ |
+| EN17.6 | Template repo pivot-xxx-ui | High | ⬜ |
+
+> **Parallélisable :** EN17.1 ‖ EN17.2 (indépendants) → EN17.3 (dépend de EN17.2) → EN17.4 ‖ EN17.5 → EN17.6 (dépend de EN17.2+3)
 
 ---
 
@@ -155,4 +172,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-06-30*
+*Dernière mise à jour : 2026-07-02*
