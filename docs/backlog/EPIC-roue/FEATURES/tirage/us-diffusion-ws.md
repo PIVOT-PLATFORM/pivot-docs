@@ -18,6 +18,6 @@
 | Test : broadcast reçu par tous les participants connectés | ⬜ |
 
 ---
-Item Type: US · Parent: F14.3 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F14.3 · Module: agilite · Repo: pivot-agilite-core/ui · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
 Dépendances: US14.2.1

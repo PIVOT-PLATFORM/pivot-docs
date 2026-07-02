@@ -17,5 +17,5 @@
 | Sécurité : tenantId extrait du TenantContext | ⬜ |
 
 ---
-Item Type: US · Parent: F14.1 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F14.1 · Module: agilite · Repo: pivot-agilite-core/ui · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog

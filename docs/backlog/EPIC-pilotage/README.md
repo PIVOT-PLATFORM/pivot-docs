@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt, gestion multi-projets, Architecture Decision Records (ADR) par projet.
+Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt, gestion multi-projets, Architecture Decision Records (ADR) par projet, et suivi de la commande publique (consultations, appels d'offres, attribution marchés).
 
 ## Repo cible (architecture multi-repo)
 
@@ -27,9 +27,13 @@ Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt,
 - **F18.3 — ADR projet** — Architecture Decision Records par projet
   - US18.3.1 : Créer un ADR dans un projet (titre, contexte, décision, conséquences)
   - US18.3.2 : Lister et filtrer les ADR d'un projet (statut : proposed / accepted / deprecated)
+- **F18.4 — Commande publique** — consultations, appels d'offres, attribution marchés
+  - US18.4.1 : Créer et gérer une consultation (appel d'offres, marché négocié, accord cadre)
+  - US18.4.2 : Suivre les candidats et analyser les offres (grille critères pondérés)
+  - US18.4.3 : Attribuer le marché et générer le rapport d'attribution
 
 ### Enablers
-- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (Project, Milestone, PortfolioView, Adr)
+- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (Project, Milestone, PortfolioView, Adr, Consultation, Candidate)
 - **EN18.2** — Guard Angular module pilotage (moduleGuard `moduleId: 'pilotage'`)
 
 ## Modules impactés
