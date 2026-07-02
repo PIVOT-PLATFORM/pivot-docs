@@ -20,7 +20,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
 | [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ⬜ Sprint 2 |
-| E04 — Observabilité | E04 | — | — | — | ⏸️ Non documenté |
+| [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
 | [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
@@ -33,8 +33,9 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 contact 🔄 |
-| [Module Session (concept)](EPIC-module-session/README.md) | — | — | — | — | ⏸️ Non planifié |
-| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 6 | — | ⬜ phase-3 |
+| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
+| [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 3 (F18.1–3) | 2 (EN18.1–2) | 7 | ⬜ phase-3 |
+| [E19 — Module Session](EPIC-module-session/README.md) | E19 | 4 (F19.1–4) | 3 (EN19.1–3) | 11 | ⬜ phase-3 |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 
 ---
@@ -111,7 +112,9 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | US16.2.2 Section modules à venir | MVP | ⬜ À planifier |
 | — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
-| High | E17 Infrastructure multi-repo (EN17.1–6) | phase-3 | ⬜ Backlog |
+| High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
+| High | E18 Module Pilotage (roadmap/Gantt, portefeuille, ADR projet) | phase-3 | ⬜ Backlog |
+| High | E19 Module Session (QUIZ/POLL/WORDCLOUD/BRAINSTORM/QA) | phase-3 | ⬜ Backlog |
 
 ---
 

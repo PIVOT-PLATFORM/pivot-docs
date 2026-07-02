@@ -12,6 +12,7 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 - Enabler EN17.4 : Convention BDD multi-schéma + migration Flyway baseline stabilisée
 - Enabler EN17.5 : Template repo `pivot-xxx-core`
 - Enabler EN17.6 : Template repo `pivot-xxx-ui`
+- [Enabler EN17.7 : nginx API Gateway — routing multi-backend par préfixe URL](ENABLERS/en-nginx-api-gateway.md)
 
 ## Phase
 
@@ -28,5 +29,5 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 
 ---
 
-Item Type: Epic · Clé: E17 · Phase: phase-3
+Item Type: Epic · Clé: E17 · Phase: phase-3 · Enablers: 7 (EN17.1–7)
 Stage: Backlog · Priority: High

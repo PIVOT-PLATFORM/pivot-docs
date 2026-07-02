@@ -1,6 +1,12 @@
-# US08.3.2 — Angular : canvas whiteboard
+# US08.3.2 — Angular : canvas whiteboard ⚠️ DÉCOMPOSÉE
 
-> **À décomposer avant implémentation :** US08.3.2a (canvas local) · US08.3.2b (sync STOMP) · US08.3.2c (curseurs temps réel). Voir fichiers dédiés.
+> **Cette US a été décomposée en 3 sous-US. Ne pas implémenter ce fichier — implémenter les 3 sous-US à la place :**
+>
+> - [US08.3.2a — Canvas local, outils de dessin et a11y](us-canvas-angular-08-3-2a.md)
+> - [US08.3.2b — Sync STOMP et états de connexion](us-canvas-angular-08-3-2b.md)
+> - [US08.3.2c — Présence, curseurs temps réel](us-canvas-angular-08-3-2c.md)
+>
+> **Raison :** US trop volumineuse (XL) pour un seul agent/PR — les 3 sous-US sont indépendantes et parallélisables.
 
 **En tant que** utilisateur
 **Je veux** un canvas interactif dans l'interface Angular pour dessiner et collaborer
@@ -40,4 +46,4 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: L · Priority: High
-Stage: Backlog
+Stage: Decomposed — voir US08.3.2a/b/c
