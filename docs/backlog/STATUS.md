@@ -75,7 +75,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | EN03.1 | PivotModule interface + registre backend | ⬜ |
 | EN03.2 | Guard Angular moduleGuard + status API | ⬜ |
 | EN03.3 | Cache Redis statut modules TTL 60s | ⬜ |
-| EN03.4 | Contrat module frontend (TypeScript) | ⬜ |
+| EN03.4 | Contrat module frontend (TypeScript) | ✅ |
 | US03.1.1 | Admin active un module | ⬜ |
 | US03.1.2 | Admin désactive un module | ⬜ |
 | US03.2.1 | UI liste modules avec statut | ⬜ |
