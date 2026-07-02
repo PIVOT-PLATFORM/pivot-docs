@@ -1,4 +1,4 @@
-# Module Session — Concept (hors GitHub Project)
+﻿# Module Session — Concept (hors GitHub Project)
 
 ## Note
 Ce module (QUIZ, POLL, WORDCLOUD, BRAINSTORM, Q&A) est mentionné dans CLAUDE.md mais n'a pas encore d'Epic dans le GitHub Project PIVOT-PLATFORM.
@@ -16,5 +16,10 @@ Si ce module est créé dans GitHub, ce dossier sera converti en Epic correspond
 ## Inspiration
 Klaxoon (sessions live collaboratives)
 
+
+## Repo cible (architecture multi-repo)
+- Backend : **`pivot-collaboratif-core`** (schéma Flyway `collaboratif`, FK → `public.teams.id`)
+- Frontend : **`pivot-collaboratif-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
+- Pré-requis EN17 : pivot-core-starter + @pivot/ui-core publiés avant implémentation
 ## Phase
 ⏸️ Non planifié — pas d'Epic GitHub
