@@ -149,7 +149,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
 - E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
-- E11 velocity tracking : US11.4.1-2 (burndown, veloicte) a planifier avec E11
+- E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
 
 ---
 
