@@ -1,4 +1,4 @@
-@startuml
+@startuml it4it-vision
 !pragma layout smetana
 skinparam backgroundColor #FAFAFA
 skinparam defaultFontName "Arial"
@@ -34,12 +34,12 @@ rectangle "**Forge**\n<size:9>MR → avis review (agent dédié) → CI/CD → m
 rectangle "**Mise en production (RUN PROD)**\n<size:9>staging → recette → production</size>" as Prod #E8F5E9
 
 ' ─── Briques communes ──────────────────────────────────────────────────────
-rectangle "**Briques communes**\n<size:8>l'IAG va les chercher elle-même</size>" as BriquesLabel #FAFAFA
+rectangle "**Briques communes PIVOT**\n<size:8>l'IAG va les chercher elle-même\n(libs partagées · GitHub Packages)</size>" as BriquesLabel #FAFAFA
 
-rectangle "Design system existant\n<size:8>composants UI, tokens, accessibilité</size>" as DS #E0F7FA
-rectangle "Brique authentification\n<size:8>SSO / OAuth / MFA, sessions</size>" as Auth #E0F7FA
+rectangle "@pivot/design-system\n<size:8>Angular CDK + SCSS BEM + tokens CSS\npublie par pivot-design-system</size>" as DS #E0F7FA
+rectangle "@pivot/ui-core  ·  Auth\n<size:8>pivot-core (opaque tokens · OIDC PKCE S256)\n@pivot/ui-core (AuthService · Guards)</size>" as Auth #E0F7FA
 rectangle "CI/CD\n<size:8>pipeline de la forge, déploiement</size>" as CICD #E0F7FA
-rectangle "Autres briques communes" as Autres #E0F7FA
+rectangle "fr.pivot:pivot-core-starter\n<size:8>TenantContext · PivotModule\nopaque token filter · Maven</size>" as Autres #E0F7FA
 
 ' ─── Flux ──────────────────────────────────────────────────────────────────
 PO -[#E65100]-> Portail : dépose backlog
@@ -75,11 +75,12 @@ legend bottom
 endlegend
 
 note as N1
-  **Mapping PIVOT**
+  **Mapping PIVOT (multi-repo)**
   Portail = pivot-docs (backlog markdown + SPRINTS.md)
   Plateforme = Claude Code (agents ACDD)
   Forge = GitHub PR + CI GitHub Actions
-  Briques = pivot-core / pivot-ui / pivot-docs existants
+  Briques = pivot-core-starter · @pivot/ui-core · @pivot/design-system
+  Repos modules = pivot-pilotage · pivot-agilite · pivot-collaboratif
   Ingénieur logiciel = Mainteneur (merge PR + deploy)
 end note
 

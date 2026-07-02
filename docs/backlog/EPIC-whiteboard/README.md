@@ -17,11 +17,17 @@ PouetPouet (tableau blanc collaboratif open-source)
 ## Phase
 ⬜ **MVP** — Gate 1 PO Agent à effectuer · bloqué jusqu'à fin MVP Auth/Shell/Modules
 
+## Repo cible (architecture multi-repo)
+- Backend : **`pivot-collaboratif-core`** (schéma Flyway `collaboratif`, FK → `public.teams.id`)
+- Frontend : **`pivot-collaboratif-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
+- Pré-requis EN17 : pivot-core-starter + @pivot/ui-core publiés avant implémentation
+
 ## Modules impactés
-`whiteboard`
+`collaboratif`
 
 ## Dépendances
 - Dépend de : E03 Système de modules (EN03.1 + EN03.2)
+- Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3)
 
 ## Statut global
 ⬜ Non démarré — Backlog

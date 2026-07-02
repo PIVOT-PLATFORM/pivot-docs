@@ -6,7 +6,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-## Sprint 1 — Auth & Shell MVP ✅ Terminé (sauf US16.3.1)
+## Sprint 1 — Auth & Shell MVP ✅ Terminé
 
 **Branche :** `feat/us16-3-1-contact`
 
@@ -44,7 +44,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | EN03.1 | PivotModule interface + registre backend | S | Critical | ⬜ |
 | EN03.2 | Guard Angular moduleGuard + status API | S | Critical | ⬜ |
 | EN03.3 | Cache Redis statut modules TTL 60s | S | Critical | ⬜ |
-| EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ⬜ |
+| EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ✅ |
 | US03.1.1 | Admin active un module pour son tenant | M | Critical | ⬜ |
 | US03.1.2 | Admin désactive un module pour son tenant | M | Critical | ⬜ |
 | US03.2.1 | UI liste modules disponibles avec statut | M | High | ⬜ |
@@ -103,8 +103,12 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | ⬜ |
 | US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | ⬜ |
 | US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | ⬜ |
+| EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | ⬜ |
+| EN04.2 | Spring Actuator (management port :8081, non routé nginx) | S | Medium | ⬜ |
+| EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | ⬜ |
+| EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | ⬜ |
 
-> **Blocker :** EN-NOTIF doit précéder US16.1.3. EN07.x validé avant toute release prod.
+> **Blocker :** EN-NOTIF doit précéder US16.1.3. EN07.x validé avant toute release prod. EN04.x parallélisables entre eux.
 
 ---
 
@@ -138,9 +142,32 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 - US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP)
 - E05 CI/CD Supply-chain restants (EN05.13-15 + 7 US)
-- E04 Observabilité (non documenté)
-- E09–E15 Modules phase-3 (verrouillés)
-- Module Session (non planifié)
+- E04 Observabilité — EN04.1–4 planifiés Sprint 4
+- E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
+- E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
+- E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
+- E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique
+- E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
+- E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
+- E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
+
+---
+
+## Backlog phase-3 — Infrastructure multi-repo (E17)
+
+**Pré-requis :** E03 Système de modules terminé · E07 infra prod validée
+
+| Enabler | Titre | Priority | 🤖 Dev |
+|---------|-------|----------|--------|
+| EN17.4 | Convention BDD multi-schéma + Flyway baseline | Critical | ⬜ |
+| EN17.1 | Publication pivot-core-starter (Maven) | High | ⬜ |
+| EN17.2 | Publication @pivot/design-system (npm) | High | ⬜ |
+| EN17.3 | Publication @pivot/ui-core (npm) | High | ⬜ |
+| EN17.5 | Template repo pivot-xxx-core | High | ⬜ |
+| EN17.6 | Template repo pivot-xxx-ui | High | ⬜ |
+| EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL | Critical | ⬜ |
+
+> **Parallélisable :** EN17.1 ‖ EN17.2 (indépendants) → EN17.3 (dépend de EN17.2) → EN17.4 ‖ EN17.5 → EN17.6 (dépend de EN17.2+3) · EN17.7 peut démarrer dès EN17.4 stable
 
 ---
 
@@ -155,4 +182,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-06-30*
+*Dernière mise à jour : 2026-07-02*
