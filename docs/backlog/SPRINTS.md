@@ -41,7 +41,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|-------|
-| EN03.1 | PivotModule interface + registre backend | S | Critical | ⬜ |
+| EN03.1 | PivotModule interface + registre backend | S | Critical | ✅ |
 | EN03.2 | Guard Angular moduleGuard + status API | S | Critical | ⬜ |
 | EN03.3 | Cache Redis statut modules TTL 60s | S | Critical | ⬜ |
 | EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ✅ |
