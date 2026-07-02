@@ -24,7 +24,7 @@ Infrastructure d'activation/désactivation de modules par tenant : registre back
 - Bloque : E08–E15 (tous les modules collaboratifs)
 
 ## Statut global
-⬜ À planifier — Sprint 2
+🔄 Sprint 2 en cours — EN03.1 ✅ · EN03.4 ✅
 
 ---
 
@@ -33,7 +33,7 @@ Infrastructure d'activation/désactivation de modules par tenant : registre back
 | Élément | 🤖 Dev |
 |---------|--------|-------|
 | **Enablers** | | |
-| [EN03.1 — PivotModule interface + registre backend](ENABLERS/en-module-registry-backend.md) | ⬜ |
+| [EN03.1 — PivotModule interface + registre backend](ENABLERS/en-module-registry-backend.md) | ✅ |
 | [EN03.2 — Guard Angular moduleGuard + status API](ENABLERS/en-module-guard-angular.md) | ⬜ |
 | [EN03.3 — Cache Redis statut modules TTL 60s](ENABLERS/en-module-cache-redis.md) | ⬜ |
 | [EN03.4 — Contrat de module frontend (TypeScript)](ENABLERS/en-module-contrat-frontend.md) | ⬜ |
