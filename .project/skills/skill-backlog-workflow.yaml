@@ -66,7 +66,6 @@ us_file_format:
     Phase: "MVP | v1-enterprise | phase-3"
     Size: "XS | S | M | L | XL"
     Priority: "Critical | High | Medium | Low"
-    Human Gate: "needs-human-valid | human-validated | human-reject"
     Stage: "Backlog | Ready | In progress | Review | Done"
 
   stage_transitions:
@@ -80,7 +79,7 @@ us_file_format:
 update_protocol:
 
   when_to_update:
-    - "À chaque changement d'état Stage ou Human Gate"
+    - "À chaque changement d'état Stage"
     - "Commit sur la branche de l'US concernée"
     - "SPRINTS.md mis à jour en même temps que le fichier US"
 

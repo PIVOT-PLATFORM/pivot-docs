@@ -21,7 +21,7 @@ skills:
       triggers:
         - "démarrage de session — lecture SPRINTS.md"
         - "sélection d'une US à implémenter"
-        - "mise à jour Stage ou Human Gate d'une US"
+        - "mise à jour Stage d'une US"
         - "création ou modification d'un fichier backlog US/Enabler/Feature"
 
   # ── TRAÇABILITÉ AC ────────────────────────────────────────────────────────────
