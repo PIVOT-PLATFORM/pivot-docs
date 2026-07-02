@@ -72,7 +72,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 | US | Titre | 🤖 Dev |
 |----|-------|--------|-------|
-| EN03.1 | PivotModule interface + registre backend | ⬜ |
+| EN03.1 | PivotModule interface + registre backend | ✅ |
 | EN03.2 | Guard Angular moduleGuard + status API | ⬜ |
 | EN03.3 | Cache Redis statut modules TTL 60s | ⬜ |
 | EN03.4 | Contrat module frontend (TypeScript) | ✅ |
@@ -103,7 +103,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
 | Critical | US16.3.1 Formulaire de contact | MVP | ✅ Done |
-| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.4 ✅ · Sprint 2 |
+| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.1 ✅ · EN03.4 ✅ · Sprint 2 |
 | Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
 | High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ⬜ Sprint 2 |
