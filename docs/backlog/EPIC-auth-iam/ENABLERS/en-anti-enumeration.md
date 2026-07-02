@@ -12,4 +12,4 @@
 
 ---
 Item Type: Enabler · Parent: E01 · Type: sécurité · Module: auth · Phase: MVP
-Human Gate: human-validated · Stage: Done · Priority: High
+Stage: Done · Priority: High

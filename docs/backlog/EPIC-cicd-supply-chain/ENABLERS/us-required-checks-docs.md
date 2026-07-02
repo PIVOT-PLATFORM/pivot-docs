@@ -6,11 +6,11 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Branch protection `main` : required check = gitleaks (secrets scan) | ⬜ | ⬜ |
-| Force push désactivé sur `main` | ⬜ | ⬜ |
+| Branch protection `main` : required check = gitleaks (secrets scan) | ⬜ |
+| Force push désactivé sur `main` | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: XS · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

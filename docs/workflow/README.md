@@ -39,42 +39,42 @@ Principes fondateurs :
 ## Cycle complet
 
 ```text
-PO Agent
-  └─ Génère US + AC (Given/When/Then + Security + A11y)
+PO Agent (autonome)
+  └─ Lit SPRINTS.md → US Stage: Backlog + Phase MVP
        │
        ▼
-  Gate 1 — READINESS
-  ├─ ≥ 70 → Breaking Point 1 (validation mainteneur)
-  └─ < 70 → clarification PO Agent
+  Gate 1 — READINESS (PO Agent self-challenge)
+  ├─ ≥ 70 → ACs validés → Stage: Ready → procéder
+  └─ < 70 → PO Agent réécrit ACs → recalculer
 
-       │ [human-validated]
+       │
        ▼
   Architect Agent + Security Agent + QA Agent
   └─ Revue AC : faisabilité, surface d'attaque, couverture
 
        │
        ▼
-  Dev Agent — branche feat/us-{id}-{slug}
+  Dev Agent — branche feat/us-{id}-{slug} → Stage: In progress
   ├─ Code + tests (un commit = Gate 2)
   ├─ Gate 2 — COVERAGE (par commit)
   │    ├─ ≥ 85 → continuer
   │    ├─ 70–84 → compléter les tests manquants
-  │    └─ < 70 → stop
+  │    └─ < 70 → stop + escalade
   └─ Qualité : ESLint / Checkstyle / SpotBugs → 0 warning
 
        │
        ▼
-  PR Review Agent
+  PR Review Agent — autoloop × 10
   ├─ Gate 3 — QUALITY (CI verte, Gitleaks, Semgrep)
   │    └─ Hard blocks : secret, label security, breaking-change contrat module
   └─ Gate 4 — MERGE CONFIDENCE
-       ├─ ≥ 85 → merge autonome
+       ├─ ≥ 85 → merge autonome → Stage: Review + signal mainteneur
        ├─ 60–84 → merge documenté (commentaire breakdown)
        └─ < 60 → Breaking Point 2 (escalade mainteneur)
 
-       │ [merge]
+       │ [merge mainteneur]
        ▼
-  Mainteneur → Stage: Done (jamais Claude)
+  Stage: Done (mainteneur uniquement — jamais Claude)
 ```
 
 ---
@@ -85,7 +85,7 @@ Scores continus 0–100 — postés en **commentaire de PR** (aucun fichier comm
 
 | Gate | Moment | Seuils |
 |------|--------|--------|
-| **1 — READINESS** | Avant implémentation | ≥ 70 → Breaking Point 1 · < 70 → clarification PO |
+| **1 — READINESS** | Avant implémentation | ≥ 70 → PO Agent valide → procéder · < 70 → PO Agent réécrit ACs |
 | **2 — COVERAGE** | Par commit | ≥ 85 → continuer · 70–84 → compléter · < 70 → stop |
 | **3 — QUALITY** | Après CI | Hard blocks : Gitleaks · `security` · `breaking-change` · contrat module |
 | **4 — MERGE CONFIDENCE** | Avant merge | ≥ 85 → merge autonome · 60–84 → merge documenté · < 60 → escalade |
@@ -107,34 +107,22 @@ pending_ac:
 
 ---
 
-## Breaking Points — validation humaine obligatoire
+## Breaking Points
 
-### Breaking Point 1 — avant implémentation
+### Step 0 — Challenge PO (autonome, avant implémentation)
 
-Le mainteneur valide **deux choses** avant toute ligne de code :
+PO Agent valide les ACs de l'US avant toute ligne de code :
 
-1. L'US elle-même (`human-validated` dans le Project GitHub org)
-2. Les critères d'acceptation (liste Given/When/Then)
+1. Vérifier DoR (story complète, ACs Given/When/Then, erreur + sécurité)
+2. Gate 1 ≥ 70 → `Stage: Ready` → procéder immédiatement
+3. Gate 1 < 70 → PO Agent réécrit/complète ACs → recalculer → procéder dès ≥ 70
 
-> Règle absolue : `Human Gate = needs-human-valid` → aucune implémentation.
+Pas de blocage humain — Claude est autonome de A à Z sur la validation des ACs.
 
 ### Breaking Point 2 — Gate 4 < 60 ou hard block
 
 Label `needs-human-review` + score breakdown + attente mainteneur.
 Déclenché aussi par : secret Gitleaks, label `security`, modif contrat module/OIDC.
-
----
-
-## Human Gate (Project GitHub org)
-
-| Valeur | Signification |
-|--------|---------------|
-| `needs-human-valid` | En attente de validation mainteneur — **aucune implémentation** |
-| `human-validated` | Validation accordée — Dev Agent peut démarrer |
-| `human-reject` | Rejeté — PO Agent recadre AC / périmètre, repasse à `needs-human-valid` |
-
-> Claude **consomme** le Human Gate, ne le pose jamais.
-> `Review → Done` : mainteneur uniquement.
 
 ---
 
@@ -151,31 +139,65 @@ AC sans test = non implémenté, peu importe le code présent.
 
 ---
 
-## Évolution — Orchestrator Loop _(non implémenté)_
+## Mode parallèle — agents simultanés
 
-Le workflow actuel est **séquentiel** : un Dev Agent par US, orchestration manuelle entre chaque étape.
-
-Une évolution naturelle serait un **Orchestrator Agent** en boucle autonome :
+Le workflow est **parallélisé par US** : un Dev Agent par US du sprint, lancés simultanément sur des branches séparées.
 
 ```text
-Orchestrator Agent (loop)
-  ├─ Lit le Project org (US human-validated + Phase MVP)
-  ├─ Lance en parallèle :
-  │    ├─ Dev Agent  → US-42  (branche feat/us-42-...)
-  │    ├─ Dev Agent  → US-43  (branche feat/us-43-...)
-  │    └─ QA Agent   → review Gate 2 sur PR ouverte US-41
-  └─ PR Review Agent → déclenché sur chaque PR prête (Gate 3 + 4)
+Session start
+  ├─ PO Agent → Gate 1 sur toutes les US Backlog éligibles
+  └─ parallel() :
+       ├─ Dev Agent → US-42 (feat/us-42-...) → PR → autoloop
+       ├─ Dev Agent → US-43 (feat/us-43-...) → PR → autoloop
+       └─ Dev Agent → US-44 (feat/us-44-...) → PR → autoloop
 ```
 
-Points d'architecture à résoudre avant d'aller là :
-- **Isolation** : exclusion mutuelle si deux US modifient les mêmes fichiers
-- **Orchestrateur** : Claude Code `/loop`, GitHub Actions scheduled, ou runner dédié
-- **Rollback** : stratégie si Gate 4 < 60 sur plusieurs US en vol simultanément
-
-> Ce mode reste un chantier futur. Le workflow actuel (séquentiel, un agent à la fois) est la référence opérationnelle.
+Contraintes :
+- **Isolation** : une branche par US — pas de conflit inter-US
+- **Backlog** : SPRINTS.md mis à jour sur chaque branche (pas de conflit si US différentes)
+- **Rollback** : Gate 4 < 60 → Breaking Point 2 sur l'US concernée uniquement
 
 ---
 
-## Diagramme
+## Diagrammes
 
-→ [`acdd-workflow.puml`](acdd-workflow.puml) (PlantUML)
+### Workflow agentique ACDD
+
+![ACDD Workflow](acdd-workflow.png)
+
+> Source PlantUML : [`acdd-workflow.puml`](acdd-workflow.puml)
+
+### Pipeline CI/CD
+
+![CI/CD Pipeline](cicd-pipeline.png)
+
+> Source PlantUML : [`cicd-pipeline.puml`](cicd-pipeline.puml)
+
+---
+
+## Vision cible — Plateforme Agentique IT4IT
+
+PIVOT s'inspire du modèle **IT4IT** (Information Technology for Information Technology) :
+le backlog et les maquettes déposés par le PO et l'UX déclenchent **automatiquement** la chaîne
+agentique — sans go humain intermédiaire. L'ingénieur intervient uniquement pour la review MR et
+le RUN PROD.
+
+| Élément du modèle IT4IT | Correspondance PIVOT |
+|-------------------------|----------------------|
+| Portail web de dépôt | `pivot-docs` — backlog markdown + SPRINTS.md |
+| Plateforme Agentique dev | Claude Code — agents ACDD (PO · Dev · QA · Security · PR Review) |
+| Agents spécialisés | Skills PIVOT (skill-spring-architecture, skill-angular-architecture, …) |
+| Moteurs agents | Claude Code (Sonnet 4.6 / Opus 4.8) |
+| Forge | GitHub PR + CI GitHub Actions (quality, tests, build) |
+| Briques communes | pivot-core / pivot-ui / pivot-docs (réutilisés, pas re-créés) |
+| Ingénieur plateforme (supervision) | Mainteneur — reçoit escalades `needs-human-review` |
+| Ingénieur logiciel (review + prod) | Mainteneur — merge PR + deploy |
+
+**Limites actuelles vs vision cible :**
+- Portail = fichiers markdown (pas encore un vrai portail web de dépôt)
+- FinOps / monitoring coût-token : non implémenté (roadmap)
+- Autocorrection CI → agents : partiel (autoloop × 10 push)
+
+![IT4IT Vision cible](it4it-vision.png)
+
+> Source PlantUML : [`it4it-vision.puml`](it4it-vision.puml)

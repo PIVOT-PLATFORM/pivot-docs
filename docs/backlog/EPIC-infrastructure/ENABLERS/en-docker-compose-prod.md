@@ -10,8 +10,8 @@
 - [ ] Réseau interne isolé (pas d'exposition port inutile)
 - [ ] Documentation déploiement dans `pivot-docs`
 
-**Statut** : ⬜ À faire — Gate: needs-human-valid
+**Statut** : ⬜ À faire — Gate: Backlog
 
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: MVP
-Human Gate: needs-human-valid · Stage: Backlog · Priority: Critical
+Stage: Backlog · Priority: Critical

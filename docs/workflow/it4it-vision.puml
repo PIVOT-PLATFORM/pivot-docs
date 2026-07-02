@@ -1,0 +1,86 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.5
+skinparam RectangleBorderThickness 1.5
+skinparam NoteBorderColor #90A4AE
+skinparam NoteBackgroundColor #FFFFF8
+skinparam NoteFontSize 9
+
+title Plateforme Agentique dev — IT4IT\n<size:9>PO & UX livrent quand c'est prêt · l'usinage démarre seul · l'ingénieur fait la review & le RUN PROD</size>
+
+' ─── Acteurs humains ───────────────────────────────────────────────────────
+actor "Product Owner\n<size:8>Dépose le dossier backlog\nValide la livraison\n+ IAG augmentée (US, critères)</size>" as PO #FFE0B2
+actor "UX / UI Designer\n<size:8>Dépose la maquette\nGarantit cohérence DS\n+ IAG augmentée (maquettes)</size>" as UX #FFE0B2
+
+actor "Ingénieur plateforme\nagentique (supervision)\n<size:8>Surveille runs & boucles\nReçoit les escalades\nDébloque & relance</size>" as IngPlat #FFE0B2
+actor "Ingénieur logiciel\npluridisciplinaire\n<size:8>Review MR · RUN PROD\n+ IAG d'appui (copilote)</size>" as IngLog #FFE0B2
+
+' ─── Portail de dépôt ──────────────────────────────────────────────────────
+rectangle "Portail web de dépôt\n<size:9>Backlog (Epic · Feature · Enabler · US) + maquette\navec critères d'acceptation · versionnés</size>" as Portail #E3F2FD
+
+' ─── Trigger ───────────────────────────────────────────────────────────────
+rectangle "**PO & UX livrent → démarrage automatique**\n<size:9>la livraison vaut feu vert · go ingénieur optionnel</size>" as Trigger #FFF9C4
+
+' ─── Plateforme Agentique dev ──────────────────────────────────────────────
+rectangle "**Plateforme Agentique dev**\n<size:8>Service IT4IT · accélère le dev & réduit les coûts</size>\n\n<size:9>Agents spécialisés · skills selon référence du domaine</size>\n[UI/Front] [Back/API] [Tests/QA] [Sécurité] [Review]\n\n<size:9>1 · **Comprend** — besoin + maquette → plan de tâches\n2 · **Assemble** — va chercher les briques + code spécifique\n3 · **Vérifie** — tests + critères d'acceptation + sécurité</size>\n\n<size:9>**FinOps & monitoring** : coût/token, budgets, observabilité</size>\n\n<size:8>Moteurs agents : [Codex] [Claude Code] [Cursor]</size>" as Plateforme #EDE7F6
+
+' ─── Forge ─────────────────────────────────────────────────────────────────
+rectangle "**Forge**\n<size:9>MR → avis review (agent dédié) → CI/CD → merge</size>" as Forge #E8F5E9
+
+' ─── Production ────────────────────────────────────────────────────────────
+rectangle "**Mise en production (RUN PROD)**\n<size:9>staging → recette → production</size>" as Prod #E8F5E9
+
+' ─── Briques communes ──────────────────────────────────────────────────────
+rectangle "**Briques communes**\n<size:8>l'IAG va les chercher elle-même</size>" as BriquesLabel #FAFAFA
+
+rectangle "Design system existant\n<size:8>composants UI, tokens, accessibilité</size>" as DS #E0F7FA
+rectangle "Brique authentification\n<size:8>SSO / OAuth / MFA, sessions</size>" as Auth #E0F7FA
+rectangle "CI/CD\n<size:8>pipeline de la forge, déploiement</size>" as CICD #E0F7FA
+rectangle "Autres briques communes" as Autres #E0F7FA
+
+' ─── Flux ──────────────────────────────────────────────────────────────────
+PO -[#E65100]-> Portail : dépose backlog
+UX -[#E65100]-> Portail : dépose maquette
+PO <-[#E65100]-> UX : collaboration (aller-retour)
+
+Portail -[#37474F,thickness=2]-> Trigger
+Trigger -[#37474F,thickness=2]-> Plateforme : démarrage auto
+
+IngPlat -[#E65100,dashed]-> Plateforme : go optionnel\n(démarrage)
+Plateforme -[#C62828,dashed]-> IngPlat : erreur / escalade
+IngPlat -[#C62828,dashed]-> Plateforme : relance
+
+Plateforme -[#37474F,thickness=2]-> Forge : flux principal
+Forge -[#37474F,thickness=2]-> Prod
+
+Forge -[#37474F]-> IngLog : review MR
+IngLog -[#37474F]-> Prod : run prod
+
+' Briques communes → Plateforme (autocorrection CI/CD)
+DS -[#1565C0,dashed]-> Plateforme : récupère / branche
+Auth -[#1565C0,dashed]-> Plateforme
+CICD -[#1565C0,dashed]-> Plateforme
+Autres -[#1565C0,dashed]-> Plateforme
+
+' ─── Légende ───────────────────────────────────────────────────────────────
+legend bottom
+  | <color:#E65100>──►</color> | Flux humain / dépôt |
+  | <color:#37474F>──►</color> | Flux principal |
+  | <color:#C62828>--►</color> | Boucle erreur → relance humaine |
+  | <color:#1565C0>--►</color> | Autocorrection ← retours CI/CD / briques communes |
+  | 👤 | Intervention humaine |
+endlegend
+
+note as N1
+  **Mapping PIVOT**
+  Portail = pivot-docs (backlog markdown + SPRINTS.md)
+  Plateforme = Claude Code (agents ACDD)
+  Forge = GitHub PR + CI GitHub Actions
+  Briques = pivot-core / pivot-ui / pivot-docs existants
+  Ingénieur logiciel = Mainteneur (merge PR + deploy)
+end note
+
+@enduml

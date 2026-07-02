@@ -39,7 +39,7 @@ Chaque fichier US porte en pied de fichier les métadonnées suivantes :
 
 ```text
 Item Type: US · Parent: F… / EN… · Module: {x} · Phase: … · Size: … · Priority: …
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog
 Dépendances: …
 ```
 
@@ -48,7 +48,6 @@ Dépendances: …
 | **Item Type** | `Epic` · `Feature` · `Enabler` · `US` |
 | **Parent** | Clé du parent (ex. `E01`, `F01.1`) |
 | **Stage** | `Backlog` · `Ready` · `In progress` · `Review` · `Done` |
-| **Human Gate** | `needs-human-valid` · `human-validated` · `human-reject` |
 | **Priority** | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` |
 | **Phase** | `MVP` · `v1-enterprise` · `phase-3` |
@@ -56,21 +55,18 @@ Dépendances: …
 
 ---
 
-## 3. Human Gate — démarrage d'implémentation
+## 3. Challenge PO — démarrage d'implémentation
 
-**Règle absolue : aucune implémentation ne démarre avant que `Human Gate = human-validated`.**
+**Gate 1 ≥ 70 requis avant implémentation — calculé et validé par le PO Agent (Claude).**
 
-| Valeur | Posé par | Signification |
-|--------|----------|---------------|
-| `needs-human-valid` | Claude (à la création) | En attente de revue mainteneur |
-| `human-validated` | Mainteneur **seul** | AC et périmètre validés — implémentation autorisée |
-| `human-reject` | Mainteneur **seul** | Rejeté — AC ambigus, périmètre incorrect ; retravailler avant nouvelle soumission |
+| Transition | Qui | Condition |
+|------------|-----|-----------|
+| `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 ≥ 70 |
+| `Ready → In progress` | **Claude** (Dev Agent) | Immédiat après `Stage: Ready` |
 
-- Toute US / Enabler naît en `needs-human-valid`.
-- `human-validated` + `Stage: Ready` = bon pour `In progress`.
-- `human-reject` → Claude **stoppe**, ouvre un dialogue PO pour challenger et corriger l'AC. Repasse à `needs-human-valid` après réécriture.
-- Claude **ne pose jamais** `human-validated` ni `human-reject` — consommation uniquement.
-- Le mainteneur met à jour le frontmatter du fichier US et commit sur la branche courante.
+- Gate 1 < 70 → PO Agent réécrit/clarifie les ACs → recalculer → procéder dès ≥ 70.
+- AC ambigus en cours d'implémentation → PO Agent clarifie → jamais d'interprétation unilatérale.
+- Pas de blocage humain — Claude est autonome de A à Z sur la validation des ACs.
 
 ---
 
@@ -114,16 +110,16 @@ Afin de [bénéfice]
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Given [contexte], when [action], then [résultat observable] | ⬜ | ⬜ |
-| Error : given [input invalide], system retourne [erreur / status code] | ⬜ | ⬜ |
-| Security : [propriété de sécurité garantie] | ⬜ | ⬜ |
-| A11y : [propriété WCAG 2.1 AA garantie] (si composant UI) | ⬜ | ⬜ |
+| Given [contexte], when [action], then [résultat observable] | ⬜ |
+| Error : given [input invalide], system retourne [erreur / status code] | ⬜ |
+| Security : [propriété de sécurité garantie] | ⬜ |
+| A11y : [propriété WCAG 2.1 AA garantie] (si composant UI) | ⬜ |
 
 ---
 Item Type: US · Parent: F… / EN… · Module: {x} · Phase: … · Size: … · Priority: …
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog
 Dépendances: …
 ```
 
@@ -132,22 +128,22 @@ Dépendances: …
 ## 5. Cycle de vie d'un item
 
 ```text
-Backlog ──(Claude : rédaction AC + DoR)──► Ready ──(mainteneur : human-validated)──► In progress
-                                                                                           │
-                                                                                      (Claude : implémentation + autoloop PR)
-                                                                                           │
-Done ◄──(mainteneur : merge PR)──────────── Review ◄────────────────────────────────────────┘
+Backlog ──(PO Agent : DoR + Gate 1 ≥ 70)──► Ready ──(Dev Agent)──► In progress
+                                                                          │
+                                                                     (implémentation + autoloop PR)
+                                                                          │
+Done ◄──(mainteneur : merge PR)────────────── Review ◄───────────────────┘
 ```
 
 | Transition | Qui | Condition |
 |------------|-----|-----------|
-| `Backlog → Ready` | **Claude** | Definition of Ready §8.2 satisfaite |
-| `Ready → In progress` | **Claude** | Après `Human Gate = human-validated` par le mainteneur |
+| `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 ≥ 70 |
+| `Ready → In progress` | **Claude** (Dev Agent) | Immédiat |
 | `In progress → Review` | **Claude** | PR autoloop terminé (Gate 4 vert, CI verte, max 10 boucles) |
 | `Review → Done` | **Mainteneur** | Merge PR — **jamais Claude** |
 
 - US bloquée → retour `Backlog` + note dans SPRINTS.md.
-- Mise à jour du frontmatter (`Stage`, `Human Gate`) dans le fichier US à chaque transition — commit sur la branche de l'US.
+- Mise à jour du frontmatter (`Stage`) dans le fichier US à chaque transition — commit sur la branche de l'US.
 
 ---
 
@@ -155,8 +151,8 @@ Done ◄──(mainteneur : merge PR)──────────── Review
 
 **La phase active reste `MVP` tant que le mainteneur n'a pas explicitement déclaré le MVP terminé.**
 
-- Seuls les items `Phase: MVP` sont éligibles à `Ready`, `human-validated` et à l'implémentation.
-- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`, `needs-human-valid` — **non travaillés**.
+- Seuls les items `Phase: MVP` sont éligibles à `Ready` et à l'implémentation.
+- Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`, `Backlog` — **non travaillés**.
 - Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »).
 
 ---
@@ -179,9 +175,9 @@ Done ◄──(mainteneur : merge PR)──────────── Review
 1. **EPIC** — on part de la capacité (module ou axe transverse). On décrit intention, valeur, périmètre, hors-périmètre.
 2. **Décomposition Epic → FEATURE + ENABLER** : une Feature par fonctionnalité à valeur utilisateur ; un Enabler par brique technique nécessaire.
 3. **Décomposition Feature/Enabler → US** : chaque US est un incrément implémentable et testable, avec AC + notes d'implémentation.
-4. Chaque US naît `Stage: Backlog` · `Human Gate: needs-human-valid`.
+4. Chaque US naît `Stage: Backlog`.
 
-### 8.2 Definition of Ready (avant `human-validated`)
+### 8.2 Definition of Ready (Gate 1 — avant `In progress`)
 
 | Niveau | Doit contenir |
 |--------|---------------|
@@ -190,7 +186,7 @@ Done ◄──(mainteneur : merge PR)──────────── Review
 | **Enabler** | type, objectif technique, justification, critères de complétion |
 | **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), hors-périmètre, notes d'implémentation, champs frontmatter renseignés |
 
-> Le mainteneur ne passe `needs-human-valid → human-validated` que si la Definition of Ready est satisfaite (= Breaking Point 1 / ACDD Gate 1).
+> Le PO Agent vérifie la DoR et calcule Gate 1. Score ≥ 70 → `Stage: Ready` → implémentation immédiate.
 
 ### 8.3 Ordre de construction (vagues)
 
@@ -225,7 +221,7 @@ pivot-docs/backlog/
 **Règles de fichiers :**
 - 1 fichier par US / Enabler — nommage `us-{slug}.md` ou `en-{slug}.md`
 - Frontmatter en pied de fichier (champs §2)
-- Mise à jour `Stage` et `Human Gate` dans le fichier à chaque transition, committée sur la branche de l'US
+- Mise à jour `Stage` dans le fichier à chaque transition, committée sur la branche de l'US
 
 ---
 
@@ -233,11 +229,11 @@ pivot-docs/backlog/
 
 Au démarrage de chaque session, Claude :
 
-1. Lit `pivot-docs/backlog/SPRINTS.md` — identifie le sprint courant et les US `In progress` ou `Ready`
-2. Lit les fichiers US du sprint courant — vérifie `Human Gate` et `Stage`
-3. Pour chaque US `human-validated` + `Stage: Ready` → lance l'implémentation (branche `feat/{us-id}-{slug}`)
-4. Pour chaque US `Stage: In progress` → reprend la branche existante, vérifie l'état de la PR
-5. Ne travaille pas les US `needs-human-valid` — attend la validation mainteneur
+1. Lit `pivot-docs/docs/backlog/SPRINTS.md` — identifie le sprint courant
+2. Lit les fichiers US du sprint courant — vérifie `Stage` et `Phase`
+3. Pour chaque US `Stage: In progress` → reprend la branche existante, vérifie l'état de la PR
+4. Pour chaque US `Stage: Ready` → lance l'implémentation (branche `feat/{us-id}-{slug}`)
+5. Pour chaque US `Stage: Backlog` éligible (Phase MVP, priorité) → PO Agent vérifie DoR + Gate 1 → passe `Ready` → implémente
 
 **Priorité :** Critical → High → Medium → Low. Phase MVP uniquement tant que verrou actif (§6).
 
@@ -263,5 +259,5 @@ Après implémentation d'une US sur `feat/{us-id}-{slug}` :
 
 | Acteur | Responsabilité |
 |--------|----------------|
-| **Mainteneur** | pose `human-validated` dans le frontmatter US · merge PR (`Review → Done`) · déclare « MVP terminé » |
-| **Claude** | rédige/affine les items · implémente · ouvre PR · autoloop review+CI · met à jour `Stage` dans frontmatter · **jamais `Done`** |
+| **Mainteneur** | merge PR (`Review → Done`) · déclare « MVP terminé » |
+| **Claude** | rédige/affine items · challenge ACs (PO Agent) · implémente · ouvre PR · autoloop review+CI · met à jour `Stage` dans frontmatter · **jamais `Done`** |

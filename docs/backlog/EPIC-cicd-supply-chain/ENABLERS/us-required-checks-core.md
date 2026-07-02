@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Branch protection `main` : required checks = build, test, sonar, gitleaks, semgrep | ⬜ | ⬜ |
-| Force push désactivé sur `main` | ⬜ | ⬜ |
-| PR obligatoire avant merge (min 1 review) | ⬜ | ⬜ |
-| Status checks configurés dans les settings GitHub repo | ⬜ | ⬜ |
+| Branch protection `main` : required checks = build, test, sonar, gitleaks, semgrep | ⬜ |
+| Force push désactivé sur `main` | ⬜ |
+| PR obligatoire avant merge (min 1 review) | ⬜ |
+| Status checks configurés dans les settings GitHub repo | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

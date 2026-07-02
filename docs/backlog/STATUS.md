@@ -42,44 +42,44 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ### Sprint 1 — Auth & Shell (MVP) — ✅ Terminé sauf contact
 
-| US | Titre | 🤖 Dev | ✅ PO |
+| US | Titre | 🤖 Dev |
 |----|-------|--------|-------|
-| US01.1.1 | Connexion email + mot de passe | ✅ | ✅ |
-| US01.1.2 | Déconnexion | ✅ | ✅ |
-| US01.1.3 | Rester connecté (remember-me) | ✅ | ✅ |
-| US01.2.1 | Inscription | ✅ | ✅ |
-| US01.2.2 | Vérification email | ✅ | ✅ |
-| US01.2.3 | Renvoi lien activation | ✅ | ✅ |
-| US01.3.1 | Demande de réinitialisation | ✅ | ✅ |
-| US01.3.2 | Réinitialisation par token | ✅ | ✅ |
-| US01.4.1 | OTP appareil inconnu | ✅ | ✅ |
-| F01.6 | Connexion Google OAuth2 | ✅ | ✅ |
-| F01.7/F01.8 | OIDC enterprise + JIT + session restore | ✅ | ✅ |
-| US16.1.1 | Navigation principale | ✅ | ✅ |
-| US16.1.2 | Menu utilisateur | ✅ | ✅ |
-| US16.2.1 | Page d'accueil (grille modules) | ✅ | ✅ |
-| US16.4.1 | Thème clair/sombre | ✅ | ✅ |
-| Pages légales | ML + PC + CGU | ✅ | ✅ |
-| Footer + i18n | Footer + Transloco FR/EN | ✅ | ✅ |
-| **US16.3.1** | **Formulaire de contact** | 🔄 | ⬜ |
+| US01.1.1 | Connexion email + mot de passe | ✅ |
+| US01.1.2 | Déconnexion | ✅ |
+| US01.1.3 | Rester connecté (remember-me) | ✅ |
+| US01.2.1 | Inscription | ✅ |
+| US01.2.2 | Vérification email | ✅ |
+| US01.2.3 | Renvoi lien activation | ✅ |
+| US01.3.1 | Demande de réinitialisation | ✅ |
+| US01.3.2 | Réinitialisation par token | ✅ |
+| US01.4.1 | OTP appareil inconnu | ✅ |
+| F01.6 | Connexion Google OAuth2 | ✅ |
+| F01.7/F01.8 | OIDC enterprise + JIT + session restore | ✅ |
+| US16.1.1 | Navigation principale | ✅ |
+| US16.1.2 | Menu utilisateur | ✅ |
+| US16.2.1 | Page d'accueil (grille modules) | ✅ |
+| US16.4.1 | Thème clair/sombre | ✅ |
+| Pages légales | ML + PC + CGU | ✅ |
+| Footer + i18n | Footer + Transloco FR/EN | ✅ |
+| **US16.3.1** | **Formulaire de contact** | 🔄 |
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
 ### Sprint 2 — Système de modules + Auth manquant (MVP)
 
-| US | Titre | 🤖 Dev | ✅ PO |
+| US | Titre | 🤖 Dev |
 |----|-------|--------|-------|
-| EN03.1 | PivotModule interface + registre backend | ⬜ | ⬜ |
-| EN03.2 | Guard Angular moduleGuard + status API | ⬜ | ⬜ |
-| EN03.3 | Cache Redis statut modules TTL 60s | ⬜ | ⬜ |
-| EN03.4 | Contrat module frontend (TypeScript) | ⬜ | ⬜ |
-| US03.1.1 | Admin active un module | ⬜ | ⬜ |
-| US03.1.2 | Admin désactive un module | ⬜ | ⬜ |
-| US03.2.1 | UI liste modules avec statut | ⬜ | ⬜ |
-| US03.2.2 | Guard Angular bloque module désactivé | ⬜ | ⬜ |
-| US01.1.4 | Redirection post-login | ⬜ | ⬜ |
-| US01.1.5 | Expiration session + auto-logout | ⬜ | ⬜ |
-| US01.2.4 | Politique robustesse mot de passe | ⬜ | ⬜ |
+| EN03.1 | PivotModule interface + registre backend | ⬜ |
+| EN03.2 | Guard Angular moduleGuard + status API | ⬜ |
+| EN03.3 | Cache Redis statut modules TTL 60s | ⬜ |
+| EN03.4 | Contrat module frontend (TypeScript) | ⬜ |
+| US03.1.1 | Admin active un module | ⬜ |
+| US03.1.2 | Admin désactive un module | ⬜ |
+| US03.2.1 | UI liste modules avec statut | ⬜ |
+| US03.2.2 | Guard Angular bloque module désactivé | ⬜ |
+| US01.1.4 | Redirection post-login | ⬜ |
+| US01.1.5 | Expiration session + auto-logout | ⬜ |
+| US01.2.4 | Politique robustesse mot de passe | ⬜ |
 
 ---
 
@@ -88,7 +88,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 **Phase active : MVP.** Seuls les items `Phase: MVP` sont implémentables.
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
-- E08 Whiteboard = MVP mais Human Gate `needs-human-valid` → **bloqué**
+- E08 Whiteboard = MVP mais Gate 1 PO Agent pending → **bloqué**
 - E02/E04/E06/E07 = MVP mais non démarré
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
@@ -101,14 +101,14 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 |----------|------|-------|--------|
 | Critical | US16.3.1 Formulaire de contact | MVP | 🔄 En cours |
 | Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | ⬜ Sprint 2 |
-| Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ needs-human-valid |
+| Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
 | High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ⬜ Sprint 2 |
 | High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
 | Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
 | Medium | US16.2.2 Section modules à venir | MVP | ⬜ À planifier |
-| — | E08 Whiteboard | MVP | ⏸️ needs-human-valid |
+| — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 
 ---

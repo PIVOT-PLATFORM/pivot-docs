@@ -1,0 +1,73 @@
+skill:
+  id: pivot-docs-skills-index
+  version: "1.0"
+  name: "Skills Index — pivot-docs"
+  description: >
+    Index de toutes les skills PIVOT-DOCS et leurs règles de chargement.
+    Claude lit cet index pour déterminer quelles skills injecter avant
+    de lire le backlog, rédiger une US, ou effectuer une review de PR.
+
+---
+
+skills:
+
+  # ── BACKLOG & WORKFLOW ────────────────────────────────────────────────────────
+
+  - id: pivot-backlog-workflow
+    file: .project/skills/skill-backlog-workflow.yaml
+    priority: 1
+    load_when:
+      agents: [PO_Agent, Dev_Agent, Scrum_Master]
+      triggers:
+        - "démarrage de session — lecture SPRINTS.md"
+        - "sélection d'une US à implémenter"
+        - "mise à jour Stage d'une US"
+        - "création ou modification d'un fichier backlog US/Enabler/Feature"
+
+  # ── TRAÇABILITÉ AC ────────────────────────────────────────────────────────────
+
+  - id: pivot-ac-traceability
+    file: .project/skills/skill-ac-traceability.yaml
+    priority: 1
+    load_when:
+      agents: [Dev_Agent, QA_Agent, PR_Review_Agent]
+      triggers:
+        - "toujours — chargé pour toute implémentation d'US"
+        - "calcul Gate 2"
+        - "vérification traçabilité Gate 4"
+
+  # ── REVIEW PR ────────────────────────────────────────────────────────────────
+
+  - id: pivot-pr-reviewer
+    file: .project/skills/skill-pr-reviewer.yaml
+    priority: 1
+    load_when:
+      agents: [PR_Review_Agent, Expert_PR_Review]
+      triggers:
+        - "Gate 3 — vérification qualité CI"
+        - "Gate 4 — décision de merge"
+        - "signal 'prêt pour review' d'un Dev_Agent"
+        - "autoloop PR — itération review + corrections"
+
+---
+
+loading_protocol:
+
+  description: >
+    Claude injecte les skills dans son contexte avant d'agir sur pivot-docs.
+    La skill pivot-backlog-workflow est chargée à chaque démarrage de session.
+    pivot-ac-traceability et pivot-pr-reviewer sont chargées pour toute review.
+
+  priority_levels:
+    1: "Toujours chargée sur trigger — standards fondamentaux"
+
+---
+
+skill_update_protocol:
+
+  rule: >
+    Les skills sont des documents vivants. Quand une règle manque ou qu'un
+    faux positif est documenté, la skill est mise à jour dans le même PR.
+
+  ownership: >
+    Modifications de skills → même processus ACDD que tout autre code.

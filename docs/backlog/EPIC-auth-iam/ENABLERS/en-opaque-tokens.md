@@ -17,4 +17,4 @@
 
 ---
 Item Type: Enabler · Parent: E01 · Type: architecture · Module: auth · Phase: MVP
-Human Gate: human-validated · Stage: Done
+Stage: Done

@@ -1,4 +1,4 @@
-@startuml PIVOT Platform Architecture Enterprise
+@startuml
 !pragma layout smetana
 
 skinparam backgroundColor #FAFAFA

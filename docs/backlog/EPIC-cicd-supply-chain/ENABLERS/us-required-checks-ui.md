@@ -6,12 +6,12 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Branch protection `main` : required checks = build, test, lint, playwright, lighthouse | ⬜ | ⬜ |
-| Force push désactivé sur `main` | ⬜ | ⬜ |
-| PR obligatoire avant merge (min 1 review) | ⬜ | ⬜ |
+| Branch protection `main` : required checks = build, test, lint, playwright, lighthouse | ⬜ |
+| Force push désactivé sur `main` | ⬜ |
+| PR obligatoire avant merge (min 1 review) | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

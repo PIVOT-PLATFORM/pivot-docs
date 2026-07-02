@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Workflow `dast-full.yml` déclenché manuellement (workflow_dispatch) | ⬜ | ⬜ |
-| ZAP full scan (actif) sur staging avec auth configurée | ⬜ | ⬜ |
-| Rapport publié en GitHub Pages ou artefact | ⬜ | ⬜ |
-| Issue GitHub créée automatiquement si nouvelles alertes High+ | ⬜ | ⬜ |
+| Workflow `dast-full.yml` déclenché manuellement (workflow_dispatch) | ⬜ |
+| ZAP full scan (actif) sur staging avec auth configurée | ⬜ |
+| Rapport publié en GitHub Pages ou artefact | ⬜ |
+| Issue GitHub créée automatiquement si nouvelles alertes High+ | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: M · Priority: Medium
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

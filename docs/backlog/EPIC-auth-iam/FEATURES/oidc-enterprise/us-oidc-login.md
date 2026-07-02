@@ -6,18 +6,18 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| `GET /auth/oidc/config?tenantSlug=xxx` → retourne `{ issuerUri, clientId, scopes }` | ✅ | ✅ |
-| Angular PKCE S256 : génération `code_verifier` + `code_challenge`, redirect IdP | ✅ | ✅ |
-| Callback IdP → `POST /auth/oidc/exchange` avec `{ tenantSlug, accessToken, deviceInfo }` | ✅ | ✅ |
-| Backend valide JWT IdP via JWKS (spring-security-oauth2-jose) | ✅ | ✅ |
-| Claims mappés vers `User` (email, nom, sub = OIDC subject) | ✅ | ✅ |
-| Session opaque créée (même mécanisme que login classique) | ✅ | ✅ |
-| Access token IdP jamais stocké — session PIVOT uniquement | ✅ | ✅ |
-| Device confirmation OTP si nouvel appareil | ✅ | ✅ |
-| Azure AD : validation `tid` (tenant ID) si configuré | ✅ | ✅ |
-| Test `OidcAuthControllerTest`, `OidcAuthServiceTest` | ✅ | ✅ |
+| `GET /auth/oidc/config?tenantSlug=xxx` → retourne `{ issuerUri, clientId, scopes }` | ✅ |
+| Angular PKCE S256 : génération `code_verifier` + `code_challenge`, redirect IdP | ✅ |
+| Callback IdP → `POST /auth/oidc/exchange` avec `{ tenantSlug, accessToken, deviceInfo }` | ✅ |
+| Backend valide JWT IdP via JWKS (spring-security-oauth2-jose) | ✅ |
+| Claims mappés vers `User` (email, nom, sub = OIDC subject) | ✅ |
+| Session opaque créée (même mécanisme que login classique) | ✅ |
+| Access token IdP jamais stocké — session PIVOT uniquement | ✅ |
+| Device confirmation OTP si nouvel appareil | ✅ |
+| Azure AD : validation `tid` (tenant ID) si configuré | ✅ |
+| Test `OidcAuthControllerTest`, `OidcAuthServiceTest` | ✅ |
 
 ## Notes d'implémentation
 - `TenantOidcConfig` : `issuerUri`, `clientId`, `scopes`, `claimsMapping`, `jitEnabled`, `azureTenantId`, `jwksOverride`
@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F01.7 · Module: oidc · Phase: v1-enterprise · Size: L · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

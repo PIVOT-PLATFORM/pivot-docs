@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Composite action `.github/actions/setup/action.yml` dans pivot-platform (ou repo dédié) | ⬜ | ⬜ |
-| Paramètres : `java-version`, `node-version`, `cache-key` | ⬜ | ⬜ |
-| Utilisée dans les workflows pivot-core ET pivot-ui | ⬜ | ⬜ |
-| Cache Maven + npm partagé via `actions/cache` | ⬜ | ⬜ |
+| Composite action `.github/actions/setup/action.yml` dans pivot-platform (ou repo dédié) | ⬜ |
+| Paramètres : `java-version`, `node-version`, `cache-key` | ⬜ |
+| Utilisée dans les workflows pivot-core ET pivot-ui | ⬜ |
+| Cache Maven + npm partagé via `actions/cache` | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: ? · Stage: Backlog
+Stage: Backlog

@@ -6,14 +6,14 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Workflow GitHub Actions `dast-baseline.yml` déclenché nightly (cron) | ⬜ | ⬜ |
-| ZAP baseline scan contre l'URL staging pivot-ui | ⬜ | ⬜ |
-| Rapport HTML + JSON archivé en artefact GitHub Actions | ⬜ | ⬜ |
-| Alertes Medium+ bloquantes (fail CI si nouvelles alertes) | ⬜ | ⬜ |
-| Faux positifs gérés via fichier de règles ZAP (`.zap/rules.tsv`) | ⬜ | ⬜ |
+| Workflow GitHub Actions `dast-baseline.yml` déclenché nightly (cron) | ⬜ |
+| ZAP baseline scan contre l'URL staging pivot-ui | ⬜ |
+| Rapport HTML + JSON archivé en artefact GitHub Actions | ⬜ |
+| Alertes Medium+ bloquantes (fail CI si nouvelles alertes) | ⬜ |
+| Faux positifs gérés via fichier de règles ZAP (`.zap/rules.tsv`) | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: needs-human-valid · Stage: Backlog
+Stage: Backlog

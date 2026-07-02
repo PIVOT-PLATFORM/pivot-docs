@@ -6,12 +6,12 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Route `/home` — accessible uniquement après authentification | ✅ | ✅ |
-| `HomeComponent` rendu avec le shell (navbar + footer) | ✅ | ✅ |
-| Redirection automatique `/` → `/home` pour les utilisateurs connectés | ✅ | ✅ |
-| Tests `home.component.spec.ts` | ✅ | ✅ |
+| Route `/home` — accessible uniquement après authentification | ✅ |
+| `HomeComponent` rendu avec le shell (navbar + footer) | ✅ |
+| Redirection automatique `/` → `/home` pour les utilisateurs connectés | ✅ |
+| Tests `home.component.spec.ts` | ✅ |
 
 ## Notes d'implémentation
 - `HomeComponent` : `src/app/features/home/`
@@ -19,4 +19,4 @@
 
 ---
 Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

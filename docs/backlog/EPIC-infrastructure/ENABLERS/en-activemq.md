@@ -13,4 +13,4 @@
 
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: MVP
-Human Gate: human-validated · Stage: Backlog · Priority: High
+Stage: Backlog · Priority: High

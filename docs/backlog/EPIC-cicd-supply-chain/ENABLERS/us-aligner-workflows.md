@@ -6,13 +6,13 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Nommage des jobs identique (build, test, lint, security) | ⬜ | ⬜ |
-| Composite action setup partagée (US05.15.1) utilisée | ⬜ | ⬜ |
-| Même structure de rapports (artefacts, annotations) | ⬜ | ⬜ |
-| Plumber compliance check présent dans pivot-ui CI | ⬜ | ⬜ |
+| Nommage des jobs identique (build, test, lint, security) | ⬜ |
+| Composite action setup partagée (US05.15.1) utilisée | ⬜ |
+| Même structure de rapports (artefacts, annotations) | ⬜ |
+| Plumber compliance check présent dans pivot-ui CI | ⬜ |
 
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: MVP · Size: S · Priority: Medium
-Human Gate: human-validated · Stage: Backlog
+Stage: Backlog

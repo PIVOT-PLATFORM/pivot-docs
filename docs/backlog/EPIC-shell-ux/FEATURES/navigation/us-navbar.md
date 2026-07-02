@@ -6,15 +6,15 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| Liens de navigation : Accueil, Modules, Mes équipes (avec indicateur page active) | ✅ | ✅ |
-| Basculeur thème clair/sombre (icône lune/soleil) | ✅ | ✅ |
-| Sélecteur langue FR/EN (pilule, langue active mise en évidence) | ✅ | ✅ |
-| Boutons ? (aide) et bug (email pré-rempli i18n) | ✅ | ✅ |
-| Menu utilisateur : avatar coloré, nom, email, raccourcis Coming soon, Déconnexion | ✅ | ✅ |
-| Design : dégradé indigo→violet (thème clair) / noir teinté violet (thème sombre) | ✅ | ✅ |
-| A11y : `role="banner"`, `aria-label`, `aria-current="page"`, focus visible, WCAG AA | ✅ | ✅ |
+| Liens de navigation : Accueil, Modules, Mes équipes (avec indicateur page active) | ✅ |
+| Basculeur thème clair/sombre (icône lune/soleil) | ✅ |
+| Sélecteur langue FR/EN (pilule, langue active mise en évidence) | ✅ |
+| Boutons ? (aide) et bug (email pré-rempli i18n) | ✅ |
+| Menu utilisateur : avatar coloré, nom, email, raccourcis Coming soon, Déconnexion | ✅ |
+| Design : dégradé indigo→violet (thème clair) / noir teinté violet (thème sombre) | ✅ |
+| A11y : `role="banner"`, `aria-label`, `aria-current="page"`, focus visible, WCAG AA | ✅ |
 
 ## Notes d'implémentation
 - `NavbarComponent` : `src/app/core/layout/navbar/`
@@ -23,4 +23,4 @@
 
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: L · Priority: High
-Human Gate: human-validated · Stage: Done
+Stage: Done

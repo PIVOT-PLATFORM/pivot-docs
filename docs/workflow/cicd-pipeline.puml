@@ -1,0 +1,99 @@
+@startuml
+!pragma layout smetana
+
+skinparam backgroundColor #FAFAFA
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.5
+skinparam ArrowColor #546E7A
+skinparam SequenceBoxBorderColor #90A4AE
+skinparam SequenceBoxFontSize 11
+skinparam SequenceBoxFontStyle bold
+
+skinparam participant {
+  BackgroundColor #FFFFFF
+  BorderColor #546E7A
+  FontSize 10
+}
+
+skinparam note {
+  BackgroundColor #FFFFF8
+  BorderColor #90A4AE
+  FontSize 9
+}
+
+title PIVOT — Pipeline CI/CD (GitHub Actions)
+
+participant "Dev Agent\n(Claude)" as dev #E3F2FD
+participant "GitHub\n(PR)" as gh #ECEFF1
+participant "CI — pivot-core\n(quality-backend\ntests-backend)" as ci_core #E8F5E9
+participant "CI — pivot-ui\n(quality · tests\nbuild)" as ci_ui #E8F5E9
+participant "CI — pivot-docs\n(lint-and-build)" as ci_docs #E8F5E9
+participant "Security\n(Gitleaks · Semgrep\nPlumber · SBOM)" as sec #FCE4EC
+participant "Semantic Release\n(main)" as sr #FFF9C4
+participant "Mainteneur" as human #EFEBE9
+
+dev -> gh : git push feat/{us-id}-{slug}\nouvre PR (draft)
+
+gh -> ci_core : trigger on: pull_request
+gh -> ci_ui : trigger on: pull_request
+gh -> ci_docs : trigger on: pull_request (si pivot-docs)
+
+note over ci_core
+  mvn verify -q
+  • compile --release 24
+  • Checkstyle + SpotBugs
+  • JUnit 5 + Testcontainers
+  coverage ≥ 85 %
+end note
+
+note over ci_ui
+  npx tsc --noEmit
+  npm run lint (ESLint)
+  npm run test:ci (Vitest)
+  npm run build --prod
+end note
+
+ci_core -> sec : artefacts JAR
+ci_ui -> sec : bundle dist/
+
+note over sec
+  Gitleaks — pas de secret
+  Semgrep — OWASP rules
+  Plumber — compliance
+  SBOM — CycloneDX
+end note
+
+sec -> gh : checks verts / labels
+
+gh -> dev : Gate 3 — résultats CI + Security
+dev -> gh : fix commits si échec\n(autoloop × 10 max)
+
+human -> gh : approve (1 reviewer requis\nbranch protection)
+
+gh -> gh : required_status_checks\n✅ quality-backend\n✅ tests-backend\n✅ quality / tests / build\n✅ lint-and-build
+
+human -> gh : merge PR → main
+
+gh -> sr : trigger on: push main\n[skip ci] si chore(release)
+
+note over sr
+  Semantic Release :
+  • analyse commits conventionnels
+  • bump version (major/minor/patch)
+  • génère CHANGELOG
+  • tag git + GitHub Release
+  • push chore(release): X.Y.Z
+  (enforce_admins: false — bypass admin)
+end note
+
+sr -> gh : tag vX.Y.Z + Release GitHub
+
+gh -> dev : branche feat/… supprimée
+
+note over human
+  Stage: Done posé après merge.
+  Jamais par Claude.
+end note
+
+@enduml

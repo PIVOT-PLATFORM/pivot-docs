@@ -10,8 +10,8 @@
 - [ ] Rollback automatique si smoke test échoue
 - [ ] Notification Slack/email sur succès/échec
 
-**Statut** : ⬜ À faire — Gate: needs-human-valid
+**Statut** : ⬜ À faire — Gate: Backlog
 
 ---
 Item Type: Enabler · Parent: E07 · Type: CI/CD · Module: core · Phase: MVP
-Human Gate: needs-human-valid · Stage: Backlog · Priority: Critical
+Stage: Backlog · Priority: Critical

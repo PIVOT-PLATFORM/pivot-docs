@@ -6,14 +6,14 @@
 
 ## Critères d'acceptation
 
-| Critère | 🤖 Dev | ✅ PO |
+| Critère | 🤖 Dev |
 |---------|--------|-------|
-| `ComingSoonComponent` affiché sur : `/teams`, `/faq`, `/plan-du-site`, `/legal/accessibilite` | ✅ | ✅ |
-| Message i18n FR/EN "Bientôt disponible / Coming soon" | ✅ | ✅ |
-| Bouton "Retour" ou lien vers `/home` | ✅ | ✅ |
-| Accessible connecté ET non connecté (selon la route) | ✅ | ✅ |
-| Tests `coming-soon.component.spec.ts` | ✅ | ✅ |
+| `ComingSoonComponent` affiché sur : `/teams`, `/faq`, `/plan-du-site`, `/legal/accessibilite` | ✅ |
+| Message i18n FR/EN "Bientôt disponible / Coming soon" | ✅ |
+| Bouton "Retour" ou lien vers `/home` | ✅ |
+| Accessible connecté ET non connecté (selon la route) | ✅ |
+| Tests `coming-soon.component.spec.ts` | ✅ |
 
 ---
 Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: MVP · Size: XS · Priority: Low
-Human Gate: human-validated · Stage: Done
+Stage: Done

@@ -22,4 +22,4 @@
 
 ---
 Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: MVP
-Human Gate: needs-human-valid · Stage: Backlog · Priority: High
+Stage: Backlog · Priority: High
