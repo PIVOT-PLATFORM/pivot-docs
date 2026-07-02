@@ -11,8 +11,8 @@
 - [ ] Tests TI ModuleRegistry avec Testcontainers
 - [ ] **Interface et registre packagés dans `fr.pivot:pivot-core-starter`** — vérification : un repo module externe peut enregistrer son implémentation `PivotModule` via `@Bean` Spring sans modifier pivot-core
 
-**Statut** : ⬜ À faire
+**Statut** : 🔄 En cours
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
-Stage: Backlog · Priority: High
+Stage: In progress · Priority: High
