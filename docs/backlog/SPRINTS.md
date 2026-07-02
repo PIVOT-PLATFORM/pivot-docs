@@ -6,7 +6,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-## Sprint 1 — Auth & Shell MVP ✅ Terminé (sauf US16.3.1)
+## Sprint 1 — Auth & Shell MVP ✅ Terminé
 
 **Branche :** `feat/us16-3-1-contact`
 
@@ -44,7 +44,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | EN03.1 | PivotModule interface + registre backend | S | Critical | ⬜ |
 | EN03.2 | Guard Angular moduleGuard + status API | S | Critical | ⬜ |
 | EN03.3 | Cache Redis statut modules TTL 60s | S | Critical | ⬜ |
-| EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ⬜ |
+| EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ✅ |
 | US03.1.1 | Admin active un module pour son tenant | M | Critical | ⬜ |
 | US03.1.2 | Admin désactive un module pour son tenant | M | Critical | ⬜ |
 | US03.2.1 | UI liste modules disponibles avec statut | M | High | ⬜ |

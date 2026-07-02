@@ -19,7 +19,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 |------|-----|----------|----------|----|------------|
 | [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
-| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ⬜ Sprint 2 |
+| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | 🔄 EN03.4 ✅ · Sprint 2 |
 | [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
@@ -32,7 +32,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
-| [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 contact 🔄 |
+| [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | ✅ Sprint 1 Done |
 | [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
 | [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 7 (F18.1–7) | 2 (EN18.1–2) | 16 | ⬜ phase-3 |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
@@ -102,8 +102,8 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
-| Critical | US16.3.1 Formulaire de contact | MVP | 🔄 En cours |
-| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | ⬜ Sprint 2 |
+| Critical | US16.3.1 Formulaire de contact | MVP | ✅ Done |
+| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.4 ✅ · Sprint 2 |
 | Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
 | High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ⬜ Sprint 2 |
