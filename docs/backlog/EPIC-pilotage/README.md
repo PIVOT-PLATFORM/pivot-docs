@@ -21,9 +21,9 @@ Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt,
   - US18.1.1 : Créer un projet sur la roadmap
   - US18.1.2 : Visualiser la roadmap en vue Gantt
   - US18.1.3 : Ajouter des jalons et dépendances entre projets
-- **F18.2 — Portefeuille projets** — vue multi-projets, statut, filtres
-  - US18.2.1 : Vue portefeuille multi-projets avec filtres et statut
-  - US18.2.2 : Modifier le statut d'un projet (planning / in progress / done / on hold)
+- **F18.2 — Portefeuille projets** — tableau de bord multi-projets, indicateurs RAG, export
+  - US18.2.1 : Tableau de bord portefeuille (KPIs, indicateurs RAG Rouge/Amber/Vert)
+  - US18.2.2 : Rapport d'avancement export JSON/CSV
 - **F18.3 — ADR projet** — Architecture Decision Records par projet
   - US18.3.1 : Créer un ADR dans un projet (titre, contexte, décision, conséquences)
   - US18.3.2 : Lister et filtrer les ADR d'un projet (statut : proposed / accepted / deprecated)
@@ -60,12 +60,25 @@ Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt,
 | EN18.1 — Schéma Flyway `pilotage` + entités JPA | ⬜ |
 | EN18.2 — Guard Angular module pilotage | ⬜ |
 | **F18.1 — Roadmap / Gantt** | |
-| [US18.1.1 — Créer un projet sur la roadmap](FEATURES/roadmap-gantt/us-creer-projet.md) | ⬜ |
-| [US18.1.2 — Visualiser la roadmap en vue Gantt](FEATURES/roadmap-gantt/us-vue-gantt.md) | ⬜ |
-| [US18.1.3 — Jalons et dépendances](FEATURES/roadmap-gantt/us-jalons-dependances.md) | ⬜ |
+| [US18.1.1 — Créer un projet sur la roadmap](FEATURES/roadmap/us-creer-projet-roadmap.md) | ⬜ |
+| [US18.1.2 — Vue Gantt](FEATURES/roadmap/us-vue-gantt.md) | ⬜ |
+| [US18.1.3 — Jalons et dépendances](FEATURES/roadmap/us-jalons-dependances.md) | ⬜ |
 | **F18.2 — Portefeuille projets** | |
-| [US18.2.1 — Vue portefeuille multi-projets](FEATURES/portefeuille/us-vue-portefeuille.md) | ⬜ |
-| [US18.2.2 — Modifier statut d'un projet](FEATURES/portefeuille/us-statut-projet.md) | ⬜ |
+| [US18.2.1 — Tableau de bord portefeuille (RAG)](FEATURES/portfolio/us-tableau-bord-portfolio.md) | ⬜ |
+| [US18.2.2 — Rapport d'avancement export CSV](FEATURES/portfolio/us-rapport-avancement.md) | ⬜ |
 | **F18.3 — ADR projet** | |
-| [US18.3.1 — Créer un ADR](FEATURES/adr-projet/us-creer-adr.md) | ⬜ |
-| [US18.3.2 — Lister et filtrer les ADR](FEATURES/adr-projet/us-liste-adr.md) | ⬜ |
+| [US18.3.1 — Créer un ADR projet](FEATURES/adr/us-creer-adr-projet.md) | ⬜ |
+| [US18.3.2 — Consulter et rechercher les ADRs](FEATURES/adr/us-consulter-adrs.md) | ⬜ |
+| **F18.4 — Commande publique** | |
+| [US18.4.1 — Créer une consultation](FEATURES/commande-publique/us-creer-consultation.md) | ⬜ |
+| [US18.4.2 — Suivi candidats + grille critères](FEATURES/commande-publique/us-suivi-candidats.md) | ⬜ |
+| [US18.4.3 — Attribution marché + rapport](FEATURES/commande-publique/us-attribution-notification.md) | ⬜ |
+| **F18.5 — Budget & suivi financier** | |
+| [US18.5.1 — Saisir le budget projet](FEATURES/budget/us-saisir-budget.md) | ⬜ |
+| [US18.5.2 — Suivi consommation budgétaire](FEATURES/budget/us-suivi-consommation.md) | ⬜ |
+| **F18.6 — OKR** | |
+| [US18.6.1 — Créer objectifs et Key Results](FEATURES/okr/us-creer-objectif.md) | ⬜ |
+| [US18.6.2 — Suivre l'avancement des KR](FEATURES/okr/us-suivre-kr.md) | ⬜ |
+| **F18.7 — Gestion des risques** | |
+| [US18.7.1 — Registre des risques (matrice 5x5)](FEATURES/risques/us-registre-risques.md) | ⬜ |
+| [US18.7.2 — Plan de mitigation + risque résiduel](FEATURES/risques/us-plan-mitigation.md) | ⬜ |

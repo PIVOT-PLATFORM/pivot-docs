@@ -64,7 +64,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | US16.4.1 | Thème clair/sombre | ✅ |
 | Pages légales | ML + PC + CGU | ✅ |
 | Footer + i18n | Footer + Transloco FR/EN | ✅ |
-| **US16.3.1** | **Formulaire de contact** | 🔄 |
+| **US16.3.1** | **Formulaire de contact** | ✅ |
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 

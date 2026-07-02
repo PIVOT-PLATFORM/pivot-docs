@@ -15,6 +15,7 @@ Gestion de la capacité d'équipe : événements (PI Planning, Sprint, Release, 
 - F11.1 : Événements capacité — US11.1.1, US11.1.2
 - F11.2 : Membres et absences — US11.2.1, US11.2.2
 - F11.3 : Hiérarchie événements (Sprint sous PI) — US11.3.1
+- F11.4 : Velocity tracking — US11.4.1 (saisir vélocité réelle), US11.4.2 (burndown chart)
 
 ## Dépendances
 - Dépend de : E03 Système de modules
