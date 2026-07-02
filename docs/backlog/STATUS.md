@@ -28,14 +28,15 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
-| E12 — Module MeetOps | E12 | — | — | — | ⏸️ Non documenté |
-| E13 — Module Cahiers de tests | E13 | — | — | — | ⏸️ Non documenté |
+| [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 3 (F12.1–3) | 2 (EN12.1–2) | 4 | ⬜ phase-3 · collaboratif |
+| [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 contact 🔄 |
 | [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
-| [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 3 (F18.1–3) | 2 (EN18.1–2) | 7 | ⬜ phase-3 |
-| [E19 — Module Session](EPIC-module-session/README.md) | E19 | 4 (F19.1–4) | 3 (EN19.1–3) | 11 | ⬜ phase-3 |
+| [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 7 (F18.1–7) | 2 (EN18.1–2) | 16 | ⬜ phase-3 |
+| [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
+| [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 
 ---
@@ -113,8 +114,12 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
-| High | E18 Module Pilotage (roadmap/Gantt, portefeuille, ADR projet) | phase-3 | ⬜ Backlog |
-| High | E19 Module Session (QUIZ/POLL/WORDCLOUD/BRAINSTORM/QA) | phase-3 | ⬜ Backlog |
+| High | E18 Module Pilotage (roadmap, portefeuille, ADR, budget, OKR, risques, commande publique) | phase-3 | ⬜ Backlog |
+| High | E19 Module Session (QUIZ multijoueur/POLL/WORDCLOUD/BRAINSTORM/QA/VOTE) | phase-3 | ⬜ Backlog |
+| High | E20 Module Retrospective (formats rétro, dot-voting, plan action) | phase-3 · agilite | ⬜ Backlog |
+| Medium | E12 MeetOps (agenda, animation reunions, compte-rendu) | phase-3 · collaboratif | ⬜ Backlog |
+| Medium | E13 Cahiers de tests (cas test, campagnes, reporting qualite) | phase-3 · pilotage | ⬜ Backlog |
+| Medium | E11 + velocity tracking (burndown chart, veloicte sprint) | phase-3 · agilite | ⬜ Backlog |
 
 ---
 
