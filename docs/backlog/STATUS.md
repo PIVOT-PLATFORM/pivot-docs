@@ -119,7 +119,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | High | E20 Module Retrospective (formats rétro, dot-voting, plan action) | phase-3 · agilite | ⬜ Backlog |
 | Medium | E12 MeetOps (agenda, animation reunions, compte-rendu) | phase-3 · collaboratif | ⬜ Backlog |
 | Medium | E13 Cahiers de tests (cas test, campagnes, reporting qualite) | phase-3 · pilotage | ⬜ Backlog |
-| Medium | E11 + velocity tracking (burndown chart, veloicte sprint) | phase-3 · agilite | ⬜ Backlog |
+| Medium | E11 + velocity tracking (burndown chart, velocite sprint) | phase-3 · agilite | ⬜ Backlog |
 
 ---
 
