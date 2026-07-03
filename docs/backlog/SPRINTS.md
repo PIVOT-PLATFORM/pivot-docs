@@ -45,9 +45,9 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | EN03.2 | Guard Angular moduleGuard + status API | S | Critical | 🔎 Review |
 | EN03.3 | Cache Redis statut modules TTL 60s | S | Critical | ✅ |
 | EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ✅ |
-| US03.1.1 | Admin active un module pour son tenant | M | Critical | ⬜ |
-| US03.1.2 | Admin désactive un module pour son tenant | M | Critical | ⬜ |
-| US03.2.1 | UI liste modules disponibles avec statut | M | High | ⬜ |
+| US03.1.1 | Admin active un module pour son tenant | M | Critical | 🔎 Review |
+| US03.1.2 | Admin désactive un module pour son tenant | M | Critical | 🔎 Review |
+| US03.2.1 | UI liste modules disponibles avec statut | M | High | 🔎 Review |
 | US03.2.2 | Guard Angular bloque accès module désactivé | S | Critical | 🔎 Review |
 | US01.1.4 | Redirection post-login | S | High | 🔎 Review |
 | US01.1.5 | Expiration session + auto-logout | M | High | 🔎 Review |
