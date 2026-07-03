@@ -3,14 +3,19 @@
 **Type d'enabler** : performance · infrastructure
 
 **Critères de complétion** :
-- [ ] Statut modules mis en cache Redis par tenant (clé : `module:status:{tenantId}:{moduleId}`)
-- [ ] TTL 60 secondes (configurable via `modules.cache.ttl-seconds`)
-- [ ] Invalidation cache sur changement d'activation (event ApplicationEventPublisher)
-- [ ] Fallback BDD si Redis indisponible (pas de 500)
-- [ ] Métrique Micrometer : cache hit/miss ratio
+- [x] Statut modules mis en cache Redis par tenant (clé : `module:status:{tenantId}:{moduleId}`)
+- [x] TTL 60 secondes (configurable via `modules.cache.ttl-seconds`)
+- [x] Invalidation cache sur changement d'activation (event ApplicationEventPublisher)
+- [x] Fallback BDD si Redis indisponible (pas de 500)
+- [x] Métrique Micrometer : cache hit/miss ratio
 
-**Statut** : ⬜ À faire
+**Implémentation** : `fr.pivot.core.modules.cache.ModuleActivationCacheService` (pivot-core, branche
+`feat/en03-3-module-cache-redis`, base `feat/en03-1-module-registry`) — enveloppe cache-aside de
+`ModuleActivationService#isEnabled(Long, String)`. Livré en standalone, à raccorder par EN03.2
+(status API) lors du rebase.
+
+**Statut** : ✅ Fait (implémentation backend — TU + TI Testcontainers Redis)
 
 ---
 Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: MVP
-Stage: Backlog · Priority: Medium
+Stage: Review · Priority: Medium
