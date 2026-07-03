@@ -10,7 +10,7 @@
 - [x] Cache navigateur TTL court (ou sans cache) sur l'endpoint status — `Cache-Control: no-store` côté backend + `Cache-Control: no-cache` sur la requête Angular
 - [x] Tests Vitest moduleGuard
 
-### Décision de sémantique HTTP (documentée EN03.2 / US03.2.2)
+## Décision de sémantique HTTP (documentée EN03.2 / US03.2.2)
 
 Après analyse, le couple **200/404** a été retenu plutôt que 403, pour rester cohérent avec
 la règle transversale « ne pas confirmer l'existence d'une ressource cross-tenant/inconnue » :
