@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: S · Priority: High
-Stage: In progress
+Stage: Review
