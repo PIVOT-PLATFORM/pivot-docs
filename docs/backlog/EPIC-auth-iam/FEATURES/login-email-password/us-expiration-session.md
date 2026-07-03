@@ -19,6 +19,7 @@
 
 ## Notes d'implémentation
 
+- Implémentation : pivot-ui [#63](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/63)
 - Pas de silent refresh : l'ancien flux « 401 → /auth/refresh → retry » du TokenInterceptor a été retiré — le 401 backend est le seul signal d'expiration (modèle opaque tokens).
 - `SessionExpiryService` (pivot-ui `core/auth/service/`) orchestre : purge mémoire (`AuthService.clearSession()`), toast (variante remember-me), BroadcastChannel `pivot-session`, redirection `/auth/login?returnUrl=…`.
 - Validation returnUrl locale (`core/auth/util/return-url.ts`) — à fusionner avec le validateur returnUrl de l'US01.1.4 au merge (suppression du doublon).
