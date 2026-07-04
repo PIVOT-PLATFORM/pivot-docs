@@ -23,6 +23,13 @@ Roadmap projets et vue Gantt : création de projets, jalons, dépendances et tim
   - US22.1.1 : Créer et gérer un projet sur la roadmap
   - US22.1.2 : Visualiser la roadmap en vue Gantt
   - US22.1.3 : Gérer les jalons et dépendances entre projets
+- **F22.2 — Planification (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](../BENCHMARK.md))
+  - US22.2.1 : Gantt, dépendances, jalons
+  - US22.2.2 : Chemin critique
+  - US22.2.3 : Vues multiples
+  - US22.2.4 : Modèles de projets
+  - US22.2.5 : Baselines et historisation
+  - US22.2.6 : Hybride cascade/agile
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
@@ -52,3 +59,10 @@ Roadmap projets et vue Gantt : création de projets, jalons, dépendances et tim
 | [US22.1.1 — Créer et gérer un projet sur la roadmap](FEATURES/roadmap/us-creer-projet-roadmap.md) | ⬜ |
 | [US22.1.2 — Visualiser la roadmap en vue Gantt](FEATURES/roadmap/us-vue-gantt.md) | ⬜ |
 | [US22.1.3 — Gérer les jalons et dépendances entre projets](FEATURES/roadmap/us-jalons-dependances.md) | ⬜ |
+| **F22.2 — Planification (benchmark PPM)** | |
+| [US22.2.1 — Gantt, dépendances, jalons](FEATURES/planification/us-gantt-dependances-jalons.md) | ⬜ |
+| [US22.2.2 — Chemin critique](FEATURES/planification/us-chemin-critique.md) | ⬜ |
+| [US22.2.3 — Vues multiples](FEATURES/planification/us-vues-multiples.md) | ⬜ |
+| [US22.2.4 — Modèles de projets](FEATURES/planification/us-modeles-projets.md) | ⬜ |
+| [US22.2.5 — Baselines et historisation](FEATURES/planification/us-baselines-historisation.md) | ⬜ |
+| [US22.2.6 — Hybride cascade/agile](FEATURES/planification/us-hybride-cascade-agile.md) | ⬜ |

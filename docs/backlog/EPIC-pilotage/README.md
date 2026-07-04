@@ -21,8 +21,19 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 | OKR | [E27](../EPIC-okr/README.md) | pivot-pilotage-core · `pilotage` |
 | Cahiers de tests | [E13](../EPIC-cahiers-tests/README.md) | pivot-pilotage-core · `pilotage` |
 | **Gestion des risques** | [E21](../EPIC-risk/README.md) | pivot-risk-core · `risk` |
+| Demande & arbitrage *(benchmark)* | [E31](../EPIC-demande-arbitrage/README.md) | pivot-pilotage-core · `pilotage` |
+| Ressources & temps *(benchmark)* | [E32](../EPIC-ressources-temps/README.md) | pivot-pilotage-core · `pilotage` |
+| Collaboration & tâches *(benchmark)* | [E33](../EPIC-pilotage-taches/README.md) | pivot-pilotage-core · `pilotage` |
+| IA & agents *(benchmark)* | [E34](../EPIC-pilotage-ia/README.md) | pivot-pilotage-core · `pilotage` |
+| Gouvernance & sécurité *(benchmark)* | [E35](../EPIC-pilotage-gouvernance/README.md) | pivot-pilotage-core · `pilotage` |
+| Intégration SI *(benchmark)* | [E36](../EPIC-pilotage-integration-si/README.md) | pivot-pilotage-core · `pilotage` |
+| Licences & réversibilité *(benchmark)* | [E37](../EPIC-pilotage-licences/README.md) | pivot-pilotage-core · `pilotage` |
+| Innovation *(benchmark)* | [E38](../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
+| Chantiers SI *(benchmark)* | [E39](../EPIC-pilotage-chantiers/README.md) | pivot-pilotage-core · `pilotage` |
 
 > La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
+>
+> Les modules *benchmark* (E31–E39) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](../BENCHMARK.md). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
 
 ## Cockpits par persona
 
@@ -34,6 +45,12 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 
 - **EN18.1** — Schéma Flyway `pilotage` + entités JPA (Project, Milestone, PortfolioView, Adr, Consultation, Candidate)
 - **EN18.2** — Guard Angular module pilotage (moduleGuard `moduleId: 'pilotage'`)
+- **EN18.3** — Cloud/SaaS et RGPD *(benchmark)*
+- **EN18.4** — Localisation FR et RGAA *(benchmark)*
+- **EN18.5** — Performance de consolidation *(benchmark)*
+- **EN18.6** — Administration sans code *(benchmark)*
+- **EN18.7** — Hébergement France/UE *(benchmark)*
+- **EN18.8** — Option on-premise *(benchmark)*
 
 ## Phase
 
@@ -58,6 +75,12 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | **Enablers partagés** | |
 | EN18.1 — Schéma Flyway `pilotage` + entités JPA | ⬜ |
 | EN18.2 — Guard Angular module pilotage | ⬜ |
+| [EN18.3 — Cloud/SaaS et RGPD](ENABLERS/en-cloud-saas-rgpd.md) | ⬜ |
+| [EN18.4 — Localisation FR et RGAA](ENABLERS/en-localisation-fr-rgaa.md) | ⬜ |
+| [EN18.5 — Performance de consolidation](ENABLERS/en-performance-consolidation.md) | ⬜ |
+| [EN18.6 — Administration sans code](ENABLERS/en-administration-sans-code.md) | ⬜ |
+| [EN18.7 — Hébergement France/UE](ENABLERS/en-hebergement-france-ue.md) | ⬜ |
+| [EN18.8 — Option on-premise](ENABLERS/en-option-on-premise.md) | ⬜ |
 | **Modules (EPICs dédiés)** | |
 | [E22 — Roadmap / Gantt](../EPIC-roadmap/README.md) | ⬜ |
 | [E23 — Portefeuille projets](../EPIC-portefeuille/README.md) | ⬜ |
@@ -66,3 +89,13 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [E26 — Budget & suivi financier](../EPIC-budget/README.md) | ⬜ |
 | [E27 — OKR](../EPIC-okr/README.md) | ⬜ |
 | [E21 — Gestion des risques](../EPIC-risk/README.md) | ⬜ |
+| **Modules benchmark PPM (E31–E39)** | |
+| [E31 — Demande & arbitrage](../EPIC-demande-arbitrage/README.md) | ⬜ |
+| [E32 — Ressources & temps](../EPIC-ressources-temps/README.md) | ⬜ |
+| [E33 — Collaboration & tâches](../EPIC-pilotage-taches/README.md) | ⬜ |
+| [E34 — IA & agents](../EPIC-pilotage-ia/README.md) | ⬜ |
+| [E35 — Gouvernance & sécurité](../EPIC-pilotage-gouvernance/README.md) | ⬜ |
+| [E36 — Intégration SI](../EPIC-pilotage-integration-si/README.md) | ⬜ |
+| [E37 — Licences & réversibilité](../EPIC-pilotage-licences/README.md) | ⬜ |
+| [E38 — Innovation](../EPIC-pilotage-innovation/README.md) | ⬜ |
+| [E39 — Chantiers SI](../EPIC-pilotage-chantiers/README.md) | ⬜ |

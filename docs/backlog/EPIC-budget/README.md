@@ -22,6 +22,10 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
 - **F26.1 — Budget & suivi financier**
   - US26.1.1 : Saisir le budget d'un projet
   - US26.1.2 : Suivre la consommation budgétaire en temps réel
+- **F26.2 — Budgets & finances (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](../BENCHMARK.md))
+  - US26.2.1 : Coûts au niveau projet
+  - US26.2.2 : Budgets pluriannuels (PPI)
+  - US26.2.3 : Flux de trésorerie
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
@@ -51,3 +55,7 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
 | **F26.1 — Budget & suivi financier** | |
 | [US26.1.1 — Saisir le budget d'un projet](FEATURES/budget/us-saisir-budget.md) | ⬜ |
 | [US26.1.2 — Suivre la consommation budgétaire en temps réel](FEATURES/budget/us-suivi-consommation.md) | ⬜ |
+| **F26.2 — Budgets & finances (benchmark PPM)** | |
+| [US26.2.1 — Coûts au niveau projet](FEATURES/budgets-finances/us-couts-projet.md) | ⬜ |
+| [US26.2.2 — Budgets pluriannuels (PPI)](FEATURES/budgets-finances/us-budgets-pluriannuels-ppi.md) | ⬜ |
+| [US26.2.3 — Flux de trésorerie](FEATURES/budgets-finances/us-flux-tresorerie.md) | ⬜ |

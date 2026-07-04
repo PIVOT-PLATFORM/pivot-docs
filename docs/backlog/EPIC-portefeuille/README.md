@@ -22,6 +22,13 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 - **F23.1 — Portefeuille projets**
   - US23.1.1 : Tableau de bord portefeuille projets
   - US23.1.2 : Générer un rapport d'avancement du portefeuille
+- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](../BENCHMARK.md))
+  - US23.2.1 : Vue portefeuille consolidée
+  - US23.2.2 : Tableaux de bord personnalisables
+  - US23.2.3 : Revues et comités outillés
+  - US23.2.4 : Météo et indicateurs normalisés
+  - US23.2.5 : Gestion de programmes
+  - US23.2.6 : Pilotage des plans stratégiques
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
@@ -51,3 +58,10 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 | **F23.1 — Portefeuille projets** | |
 | [US23.1.1 — Tableau de bord portefeuille projets](FEATURES/portfolio/us-tableau-bord-portfolio.md) | ⬜ |
 | [US23.1.2 — Générer un rapport d'avancement du portefeuille](FEATURES/portfolio/us-rapport-avancement.md) | ⬜ |
+| **F23.2 — Portefeuille & comités (benchmark PPM)** | |
+| [US23.2.1 — Vue portefeuille consolidée](FEATURES/portefeuille-comites/us-vue-portefeuille-consolidee.md) | ⬜ |
+| [US23.2.2 — Tableaux de bord personnalisables](FEATURES/portefeuille-comites/us-tableaux-bord-personnalisables.md) | ⬜ |
+| [US23.2.3 — Revues et comités outillés](FEATURES/portefeuille-comites/us-revues-comites-outilles.md) | ⬜ |
+| [US23.2.4 — Météo et indicateurs normalisés](FEATURES/portefeuille-comites/us-meteo-indicateurs-normalises.md) | ⬜ |
+| [US23.2.5 — Gestion de programmes](FEATURES/portefeuille-comites/us-gestion-programmes.md) | ⬜ |
+| [US23.2.6 — Pilotage des plans stratégiques](FEATURES/portefeuille-comites/us-plans-strategiques.md) | ⬜ |
