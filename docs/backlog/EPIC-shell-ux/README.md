@@ -40,10 +40,10 @@ Shell de l'application Angular : navigation principale, page d'accueil (grille m
 | [i18n FR/EN (hors GitHub)](FEATURES/navigation/us-i18n.md) | ✅ |
 | **F16.2 — Page d'accueil** | |
 | [US16.2.1 — Grille des modules actifs](FEATURES/accueil/us-accueil-grille.md) | ✅ |
-| [US16.2.2 — Section modules à venir](FEATURES/accueil/us-accueil-modules-avenir.md) | ⬜ |
+| [US16.2.2 — Section modules à venir](FEATURES/accueil/us-accueil-modules-avenir.md) | 🔄 |
 | [Dashboard utilisateur (hors GitHub)](FEATURES/accueil/us-dashboard.md) | ✅ |
 | **F16.3 — Page contact** | |
-| [US16.3.1 — Formulaire de contact](FEATURES/contact/us-formulaire-contact.md) | 🔄 |
+| [US16.3.1 — Formulaire de contact](FEATURES/contact/us-formulaire-contact.md) | 🔎 Review |
 | **F16.4 — Charte graphique & thèmes** | |
 | [US16.4.1 — Sélection et persistance du thème](FEATURES/charte-themes/us-theme.md) | ✅ |
 | **Extras hors GitHub** | |

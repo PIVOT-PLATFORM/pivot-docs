@@ -104,7 +104,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
-| Critical | US16.3.1 Formulaire de contact | MVP | 🔎 Review |
+| Critical | US16.3.1 Formulaire de contact | MVP | ⬜ Review |
 | Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.1-3 + US03.x en Review · EN03.4 backlog · Sprint 2 |
 | Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
