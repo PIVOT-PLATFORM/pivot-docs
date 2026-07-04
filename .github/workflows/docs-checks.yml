@@ -71,45 +71,14 @@ jobs:
           path: build
 
   preview-deploy:
-    name: Déployer l'aperçu PR sur GitHub Pages
     needs: lint-and-build
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # Le lien de preview apparaît nativement dans l'onglet "Environments" de la
+    # PR (grâce à `environment:` dans le workflow appelé) — pas besoin de token
+    # issues:write supplémentaire pour poster un commentaire.
+    uses: ./.github/workflows/_deploy-pages-retry.yml
     permissions:
       pages: write
       id-token: write
-    # Le lien de preview apparaît nativement dans l'onglet "Environments" de la
-    # PR (grâce à `environment:` ci-dessous) — pas besoin de token issues:write
-    # supplémentaire pour poster un commentaire.
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
-
-    steps:
-      - name: Deploy preview to GitHub Pages
-        id: deployment
-        continue-on-error: true
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
-
-      # L'API Pages renvoie parfois "Deployment failed, try again later" quand un
-      # deploiement precedent vient tout juste de se terminer. Wiring et backoff
-      # valides en conditions reelles (echecs forces) sur pivot-docs#31.
-      - name: Attendre avant nouvelle tentative (1)
-        if: steps.deployment.outcome == 'failure'
-        run: sleep 20
-
-      - name: Deploy preview to GitHub Pages (retry 1)
-        id: deployment_retry
-        if: steps.deployment.outcome == 'failure'
-        continue-on-error: true
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
-
-      - name: Attendre avant nouvelle tentative (2)
-        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
-        run: sleep 40
-
-      - name: Deploy preview to GitHub Pages (retry 2)
-        id: deployment_retry2
-        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+    with:
+      job_label: "Déployer l'aperçu PR sur GitHub Pages"
