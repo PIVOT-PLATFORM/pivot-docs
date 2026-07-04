@@ -1,4 +1,4 @@
-# US18.5.1 — Saisir le budget d'un projet
+# US26.1.1 — Saisir le budget d'un projet
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -17,6 +17,6 @@
 | Test : budget avec poste négatif → 400 | ⬜ |
 
 ---
-Item Type: US · Parent: F18.5 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F26.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
-Dépendances: US18.1.1
+Dépendances: US22.1.1

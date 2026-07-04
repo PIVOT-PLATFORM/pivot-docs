@@ -1,4 +1,4 @@
-# US18.6.2 — Mettre à jour et suivre l'avancement des Key Results
+# US27.1.2 — Mettre à jour et suivre l'avancement des Key Results
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -17,6 +17,6 @@
 | Test : valeur actuelle > valeur cible → KR 100% (non > 100%) | ⬜ |
 
 ---
-Item Type: US · Parent: F18.6 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F27.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
-Dépendances: US18.6.1
+Dépendances: US27.1.1

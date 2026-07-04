@@ -89,7 +89,7 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface)
 - Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3 + EN17.5 + EN17.6)
-- Dépend de : E18 Domaine Pilotage (projet corrélé par `project_ref` via bus ; entités Vendor/Contract pour les jonctions CLM)
+- Dépend de : domaine Pilotage (E18) — projet corrélé par `project_ref` via bus (entité Project portée par E22 Roadmap ; entités Vendor/Contract pour les jonctions CLM)
 - Dépend de : E15 Équipes transverses (rattachement d'un risque à une équipe)
 - Consomme le **bus d'événements PIVOT** (boucle vivante F21.4, intégration cockpit F21.9)
 - Cadré par [ADR-008 — Domaines composables & cockpits par persona](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits)

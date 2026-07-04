@@ -2,74 +2,52 @@
 
 ## Objectif
 
-Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt, gestion multi-projets, Architecture Decision Records (ADR) par projet, et suivi de la commande publique (consultations, appels d'offres, attribution marchés).
-
-## Pilotage : un domaine, plusieurs modules
+**Pilotage n'est pas un module mais un domaine** : un ensemble de **modules de capacité** autonomes, partageant le repo `pivot-pilotage-core` (schéma `pilotage`), chacun activable indépendamment et **composable dans les cockpits des personas** concernés.
 
 > **Décision structurante — [ADR-008 Domaines composables & cockpits par persona](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).**
+> L'intégration entre modules passe par le **bus d'événements PIVOT** et des **deep-links** — jamais de FK inter-modules (cf. ADR-006).
 
-« Pilotage » n'est pas un module monolithique : c'est un **domaine** qui regroupe plusieurs **modules de capacité** autonomes. Chaque module est activable indépendamment et **composable dans les cockpits des personas** concernés — l'intégration passe par le **bus d'événements PIVOT** et des **deep-links** (jamais de FK inter-modules, cf. ADR-006).
+## Modules du domaine
 
-| Module de capacité | Feature | Statut |
-|--------------------|---------|--------|
-| Roadmap / Gantt | F18.1 | dans ce domaine |
-| Portefeuille projets | F18.2 | dans ce domaine |
-| ADR projet | F18.3 | dans ce domaine |
-| Commande publique | F18.4 | dans ce domaine |
-| Budget & suivi financier | F18.5 | dans ce domaine |
-| OKR | F18.6 | dans ce domaine |
-| **Gestion des risques** | ~~F18.7~~ | **→ module dédié [E21](../EPIC-risk/README.md)** (retiré du domaine Pilotage) |
+Chaque module de capacité est désormais **un EPIC dédié** :
 
-Un **cockpit** est une vue composée, propre à un persona, qui agrège les widgets/vues des modules pertinents. Les personas et leurs compositions sont **à définir** — proposition de départ dans [ADR-008](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
+| Module | EPIC | Repo / schéma |
+|--------|------|---------------|
+| Roadmap / Gantt | [E22](../EPIC-roadmap/README.md) | pivot-pilotage-core · `pilotage` |
+| Portefeuille projets | [E23](../EPIC-portefeuille/README.md) | pivot-pilotage-core · `pilotage` |
+| ADR projet | [E24](../EPIC-adr-projet/README.md) | pivot-pilotage-core · `pilotage` |
+| Commande publique | [E25](../EPIC-commande-publique/README.md) | pivot-pilotage-core · `pilotage` |
+| Budget & suivi financier | [E26](../EPIC-budget/README.md) | pivot-pilotage-core · `pilotage` |
+| OKR | [E27](../EPIC-okr/README.md) | pivot-pilotage-core · `pilotage` |
+| Cahiers de tests | [E13](../EPIC-cahiers-tests/README.md) | pivot-pilotage-core · `pilotage` |
+| **Gestion des risques** | [E21](../EPIC-risk/README.md) | pivot-risk-core · `risk` |
 
-> La décomposition physique (un EPIC/repo par module) est **incrémentale** : E18 reste l'ombrelle du domaine tant que la migration n'est pas actée module par module.
+> La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
 
-## Repo cible (architecture multi-repo)
+## Cockpits par persona
 
-- Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage`, FK → `public.teams.id`)
-- Frontend : **`pivot-pilotage-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
-- **Pré-requis EN17 :** pivot-core-starter + @pivot/ui-core publiés avant implémentation
+Un **cockpit** est une vue composée, propre à un persona, qui agrège les widgets/vues des modules pertinents (via bus PIVOT + deep-links). Personas et compositions **à définir** — proposition de départ dans [ADR-008](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
+
+## Enablers partagés du domaine
+
+Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E13) :
+
+- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (Project, Milestone, PortfolioView, Adr, Consultation, Candidate)
+- **EN18.2** — Guard Angular module pilotage (moduleGuard `moduleId: 'pilotage'`)
 
 ## Phase
 
 ⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
-
-## Périmètre GitHub (phase-3)
-
-### Features
-- **F18.1 — Roadmap / Gantt** — projets, jalons, dépendances, vue temporelle
-  - US18.1.1 : Créer un projet sur la roadmap
-  - US18.1.2 : Visualiser la roadmap en vue Gantt
-  - US18.1.3 : Ajouter des jalons et dépendances entre projets
-- **F18.2 — Portefeuille projets** — tableau de bord multi-projets, indicateurs RAG, export
-  - US18.2.1 : Tableau de bord portefeuille (KPIs, indicateurs RAG Rouge/Amber/Vert)
-  - US18.2.2 : Rapport d'avancement export JSON/CSV
-- **F18.3 — ADR projet** — Architecture Decision Records par projet
-  - US18.3.1 : Créer un ADR dans un projet (titre, contexte, décision, conséquences)
-  - US18.3.2 : Lister et filtrer les ADR d'un projet (statut : proposed / accepted / deprecated)
-- **F18.4 — Commande publique** — consultations, appels d'offres, attribution marchés
-  - US18.4.1 : Créer et gérer une consultation (appel d'offres, marché négocié, accord cadre)
-  - US18.4.2 : Suivre les candidats et analyser les offres (grille critères pondérés)
-  - US18.4.3 : Attribuer le marché et générer le rapport d'attribution
-
-### Enablers
-- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (Project, Milestone, PortfolioView, Adr, Consultation, Candidate)
-- **EN18.2** — Guard Angular module pilotage (moduleGuard `moduleId: 'pilotage'`)
-
-## Modules impactés
-
-`pilotage` (pivot-pilotage-core + pivot-pilotage-ui)
 
 ## Dépendances
 
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface)
 - Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3 + EN17.5 + EN17.6)
 - Dépend de : E15 Équipes transverses (pour associer un projet à une équipe)
-- En lien avec : E21 Gestion des risques — intégration cockpit projet (onglet + widget), voir F21.9
 
 ## Statut global
 
-⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint
+⬜ Backlog — domaine décomposé en modules (E22–E27 + E21 + E13). Gate 1 PO Agent par module au démarrage du sprint.
 
 ---
 
@@ -77,28 +55,14 @@ Un **cockpit** est une vue composée, propre à un persona, qui agrège les widg
 
 | Élément | 🤖 Dev |
 |---------|--------|
-| **Enablers** | |
+| **Enablers partagés** | |
 | EN18.1 — Schéma Flyway `pilotage` + entités JPA | ⬜ |
 | EN18.2 — Guard Angular module pilotage | ⬜ |
-| **F18.1 — Roadmap / Gantt** | |
-| [US18.1.1 — Créer un projet sur la roadmap](FEATURES/roadmap/us-creer-projet-roadmap.md) | ⬜ |
-| [US18.1.2 — Vue Gantt](FEATURES/roadmap/us-vue-gantt.md) | ⬜ |
-| [US18.1.3 — Jalons et dépendances](FEATURES/roadmap/us-jalons-dependances.md) | ⬜ |
-| **F18.2 — Portefeuille projets** | |
-| [US18.2.1 — Tableau de bord portefeuille (RAG)](FEATURES/portfolio/us-tableau-bord-portfolio.md) | ⬜ |
-| [US18.2.2 — Rapport d'avancement export CSV](FEATURES/portfolio/us-rapport-avancement.md) | ⬜ |
-| **F18.3 — ADR projet** | |
-| [US18.3.1 — Créer un ADR projet](FEATURES/adr/us-creer-adr-projet.md) | ⬜ |
-| [US18.3.2 — Consulter et rechercher les ADRs](FEATURES/adr/us-consulter-adrs.md) | ⬜ |
-| **F18.4 — Commande publique** | |
-| [US18.4.1 — Créer une consultation](FEATURES/commande-publique/us-creer-consultation.md) | ⬜ |
-| [US18.4.2 — Suivi candidats + grille critères](FEATURES/commande-publique/us-suivi-candidats.md) | ⬜ |
-| [US18.4.3 — Attribution marché + rapport](FEATURES/commande-publique/us-attribution-notification.md) | ⬜ |
-| **F18.5 — Budget & suivi financier** | |
-| [US18.5.1 — Saisir le budget projet](FEATURES/budget/us-saisir-budget.md) | ⬜ |
-| [US18.5.2 — Suivi consommation budgétaire](FEATURES/budget/us-suivi-consommation.md) | ⬜ |
-| **F18.6 — OKR** | |
-| [US18.6.1 — Créer objectifs et Key Results](FEATURES/okr/us-creer-objectif.md) | ⬜ |
-| [US18.6.2 — Suivre l'avancement des KR](FEATURES/okr/us-suivre-kr.md) | ⬜ |
-| **Gestion des risques** (ex-F18.7) | |
-| → Module dédié **[E21 — Gestion des risques](../EPIC-risk/README.md)** | 🔗 |
+| **Modules (EPICs dédiés)** | |
+| [E22 — Roadmap / Gantt](../EPIC-roadmap/README.md) | ⬜ |
+| [E23 — Portefeuille projets](../EPIC-portefeuille/README.md) | ⬜ |
+| [E24 — ADR projet](../EPIC-adr-projet/README.md) | ⬜ |
+| [E25 — Commande publique](../EPIC-commande-publique/README.md) | ⬜ |
+| [E26 — Budget & suivi financier](../EPIC-budget/README.md) | ⬜ |
+| [E27 — OKR](../EPIC-okr/README.md) | ⬜ |
+| [E21 — Gestion des risques](../EPIC-risk/README.md) | ⬜ |

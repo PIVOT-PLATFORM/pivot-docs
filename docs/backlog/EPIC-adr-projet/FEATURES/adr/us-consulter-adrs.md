@@ -1,4 +1,4 @@
-# US18.3.2 — Consulter et rechercher les ADRs d'un projet
+# US24.1.2 — Consulter et rechercher les ADRs d'un projet
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -18,6 +18,6 @@
 | Test : recherche full-text retourne résultats pertinents | ⬜ |
 
 ---
-Item Type: US · Parent: F18.3 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Medium
+Item Type: US · Parent: F24.1 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Medium
 Stage: Backlog
-Dépendances: US18.3.1
+Dépendances: US24.1.1

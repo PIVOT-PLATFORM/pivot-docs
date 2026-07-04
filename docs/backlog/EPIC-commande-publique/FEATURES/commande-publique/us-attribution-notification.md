@@ -1,4 +1,4 @@
-# US18.4.3 — Attribuer le marché et notifier les candidats
+# US25.1.3 — Attribuer le marché et notifier les candidats
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -17,6 +17,6 @@
 | Test : attribution sur consultation non ouverte → 409 · attribution sans candidats → 400 | ⬜ |
 
 ---
-Item Type: US · Parent: F18.4 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
+Item Type: US · Parent: F25.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
-Dépendances: US18.4.2
+Dépendances: US25.1.2

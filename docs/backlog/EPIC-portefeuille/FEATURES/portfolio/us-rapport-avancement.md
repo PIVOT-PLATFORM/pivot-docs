@@ -1,4 +1,4 @@
-# US18.2.2 — Générer un rapport d'avancement du portefeuille
+# US23.1.2 — Générer un rapport d'avancement du portefeuille
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -17,6 +17,6 @@
 | Test : rapport CSV correctement formaté avec entêtes | ⬜ |
 
 ---
-Item Type: US · Parent: F18.2 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
+Item Type: US · Parent: F23.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
-Dépendances: US18.2.1
+Dépendances: US23.1.1

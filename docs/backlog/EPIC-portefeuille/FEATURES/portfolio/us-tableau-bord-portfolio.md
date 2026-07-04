@@ -1,4 +1,4 @@
-# US18.2.1 — Tableau de bord portefeuille projets
+# US23.1.1 — Tableau de bord portefeuille projets
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -18,6 +18,6 @@
 | Test : projet en retard → RAG rouge automatiquement | ⬜ |
 
 ---
-Item Type: US · Parent: F18.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
+Item Type: US · Parent: F23.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
-Dépendances: US18.1.1
+Dépendances: US22.1.1

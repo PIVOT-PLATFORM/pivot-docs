@@ -1,4 +1,4 @@
-# US18.3.1 — Créer un ADR (Architecture Decision Record) projet
+# US24.1.1 — Créer un ADR (Architecture Decision Record) projet
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -18,6 +18,6 @@
 | Test : ADR SUPERSEDED sans ADR successeur → 400 | ⬜ |
 
 ---
-Item Type: US · Parent: F18.3 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F24.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
-Dépendances: US18.1.1
+Dépendances: US22.1.1

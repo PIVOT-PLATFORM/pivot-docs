@@ -1,4 +1,4 @@
-# US18.6.1 — Créer des objectifs et résultats-clés (OKR)
+# US27.1.1 — Créer des objectifs et résultats-clés (OKR)
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -17,5 +17,5 @@
 | Test : objectif sans KR → 400 | ⬜ |
 
 ---
-Item Type: US · Parent: F18.6 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F27.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog

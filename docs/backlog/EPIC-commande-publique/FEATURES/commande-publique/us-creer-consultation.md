@@ -1,4 +1,4 @@
-# US18.4.1 — Créer et gérer une consultation (appel d'offres)
+# US25.1.1 — Créer et gérer une consultation (appel d'offres)
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -18,5 +18,5 @@
 | Test TI : consultation autre tenant → 404 | ⬜ |
 
 ---
-Item Type: US · Parent: F18.4 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
+Item Type: US · Parent: F25.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog

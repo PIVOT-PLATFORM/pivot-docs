@@ -148,7 +148,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
 - E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
 - E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
-- E18 Domaine Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, commande publique
+- Domaine Pilotage (E18 ombrelle, phase-3 — pivot-pilotage-core/ui) décomposé en modules-EPICs : E22 Roadmap/Gantt · E23 Portefeuille · E24 ADR projet · E25 Commande publique · E26 Budget · E27 OKR
 - E21 Gestion des risques (phase-3 — pivot-risk-core/ui) : profil adaptatif, scoring, traitement 4T, boucle vivante, portefeuille, quantitatif & conformité, IA gouvernée, cockpit
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
 - E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)

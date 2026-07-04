@@ -1,4 +1,4 @@
-# US18.1.3 — Gérer les jalons et dépendances entre projets
+# US22.1.3 — Gérer les jalons et dépendances entre projets
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -17,6 +17,6 @@
 | Test : cycle dépendance rejeté · jalon visuel sur timeline | ⬜ |
 
 ---
-Item Type: US · Parent: F18.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
+Item Type: US · Parent: F22.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
-Dépendances: US18.1.2
+Dépendances: US22.1.2

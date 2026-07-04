@@ -1,4 +1,4 @@
-# US18.1.2 — Visualiser la roadmap en vue Gantt
+# US22.1.2 — Visualiser la roadmap en vue Gantt
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -19,6 +19,6 @@
 | Test : chevauchement projets détecté et signalé visuellement | ⬜ |
 
 ---
-Item Type: US · Parent: F18.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
+Item Type: US · Parent: F22.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
-Dépendances: US18.1.1
+Dépendances: US22.1.1

@@ -1,4 +1,4 @@
-# US18.5.2 — Suivre la consommation budgétaire en temps réel
+# US26.1.2 — Suivre la consommation budgétaire en temps réel
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -18,6 +18,6 @@
 | Test : dépense dépassant budget total → warning (non bloquant) | ⬜ |
 
 ---
-Item Type: US · Parent: F18.5 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
+Item Type: US · Parent: F26.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
-Dépendances: US18.5.1
+Dépendances: US26.1.1

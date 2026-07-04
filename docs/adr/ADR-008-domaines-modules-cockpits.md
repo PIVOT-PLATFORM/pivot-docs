@@ -24,19 +24,20 @@ La vision Pivot (suite data-centric, les applications sont des **vues** d'un gra
 
 ### 1. « Pilotage » est un domaine, pas un module
 
-Le domaine **Pilotage** regroupe plusieurs **modules de capacité** autonomes, chacun activable indépendamment :
+Le domaine **Pilotage** regroupe plusieurs **modules de capacité** autonomes, chacun activable indépendamment et porté par **son propre EPIC** :
 
-| Module de capacité | Origine | Schéma / repo |
-|--------------------|---------|---------------|
-| Roadmap / Gantt | F18.1 | `pilotage` — pivot-pilotage-core/ui |
-| Portefeuille projets | F18.2 | `pilotage` — pivot-pilotage-core/ui |
-| ADR projet | F18.3 | `pilotage` — pivot-pilotage-core/ui |
-| Commande publique | F18.4 | `pilotage` — pivot-pilotage-core/ui |
-| Budget & suivi financier | F18.5 | `pilotage` — pivot-pilotage-core/ui |
-| OKR | F18.6 | `pilotage` — pivot-pilotage-core/ui |
+| Module de capacité | EPIC | Schéma / repo |
+|--------------------|------|---------------|
+| Roadmap / Gantt | E22 (ex-F18.1) | `pilotage` — pivot-pilotage-core/ui |
+| Portefeuille projets | E23 (ex-F18.2) | `pilotage` — pivot-pilotage-core/ui |
+| ADR projet | E24 (ex-F18.3) | `pilotage` — pivot-pilotage-core/ui |
+| Commande publique | E25 (ex-F18.4) | `pilotage` — pivot-pilotage-core/ui |
+| Budget & suivi financier | E26 (ex-F18.5) | `pilotage` — pivot-pilotage-core/ui |
+| OKR | E27 (ex-F18.6) | `pilotage` — pivot-pilotage-core/ui |
+| Cahiers de tests | E13 | `pilotage` — pivot-pilotage-core/ui |
 | **Gestion des risques** | **E21** (ex-F18.7) | `risk` — pivot-risk-core/ui |
 
-La **gestion des risques « légère » (F18.7) est supprimée** : elle est entièrement remplacée par le module dédié **E21**.
+**E18** devient l'**EPIC ombrelle du domaine** (page de landing + enablers partagés EN18.1/EN18.2), sans features propres. La **gestion des risques « légère » (F18.7) est supprimée** : entièrement remplacée par le module dédié **E21**.
 
 ### 2. Intégration inter-modules : bus + deep-links, jamais de FK
 
@@ -92,7 +93,7 @@ Composition proposée — **personas et périmètres à définir / valider** :
 ### Contraintes
 - La corrélation projet ↔ risque par `project_ref`/bus offre une **cohérence éventuelle**, pas d'intégrité référentielle SGBD — à gérer (événements manqués, `project_ref` orphelin).
 - La composition des cockpits doit être portée par le shell (E16) → nouvelle responsabilité à cadrer.
-- Décomposition physique (un EPIC/repo par module) **incrémentale** : E18 reste l'ombrelle du domaine tant que la migration n'est pas actée module par module.
+- Décomposition en EPICs **actée** : un EPIC par module (E22–E27 + E21 + E13), E18 devient l'ombrelle du domaine. La séparation **physique en repos distincts** reste incrémentale (les modules `pilotage` partagent `pivot-pilotage-core` / schéma `pilotage` tant que la scission repo n'est pas actée).
 - Personas et cockpits **restent à définir** — cet ADR pose le modèle, pas la liste finale.
 
 ### Liens

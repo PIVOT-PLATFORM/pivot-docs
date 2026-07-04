@@ -1,4 +1,4 @@
-# US18.4.2 — Suivre les candidats et analyser les offres
+# US25.1.2 — Suivre les candidats et analyser les offres
 
 > Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
@@ -18,6 +18,6 @@
 | Test : grille avec poids total ≠ 100% → 400 | ⬜ |
 
 ---
-Item Type: US · Parent: F18.4 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
+Item Type: US · Parent: F25.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
-Dépendances: US18.4.1
+Dépendances: US25.1.1
