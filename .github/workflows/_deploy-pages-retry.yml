@@ -1,0 +1,60 @@
+name: Déploiement GitHub Pages avec retry (réutilisable)
+
+on:
+  workflow_call:
+    inputs:
+      job_label:
+        description: "Libellé affiché pour le job (preview PR vs prod)"
+        required: true
+        type: string
+    outputs:
+      page_url:
+        description: "URL de la page deployee"
+        value: ${{ jobs.deploy.outputs.page_url }}
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    name: ${{ inputs.job_label }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+      # L'API Pages renvoie parfois "Deployment failed, try again later" quand un
+      # deploiement precedent vient tout juste de se terminer. Wiring et backoff
+      # valides en conditions reelles (echecs forces) sur pivot-docs#31, y
+      # compris apres factorisation dans ce fichier (run du 2026-07-04 10:02-10:03 UTC).
+      - name: Attendre avant nouvelle tentative (1)
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 20
+
+      - name: Deploy to GitHub Pages (retry 1)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+      - name: Attendre avant nouvelle tentative (2)
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        run: sleep 40
+
+      - name: Deploy to GitHub Pages (retry 2)
+        id: deployment_retry2
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

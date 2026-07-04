@@ -71,22 +71,14 @@ jobs:
           path: build
 
   preview-deploy:
-    name: Déployer l'aperçu PR sur GitHub Pages
     needs: lint-and-build
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # Le lien de preview apparaît nativement dans l'onglet "Environments" de la
+    # PR (grâce à `environment:` dans le workflow appelé) — pas besoin de token
+    # issues:write supplémentaire pour poster un commentaire.
+    uses: ./.github/workflows/_deploy-pages-retry.yml
     permissions:
       pages: write
       id-token: write
-    # Le lien de preview apparaît nativement dans l'onglet "Environments" de la
-    # PR (grâce à `environment:` ci-dessous) — pas besoin de token issues:write
-    # supplémentaire pour poster un commentaire.
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy preview to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+    with:
+      job_label: "Déployer l'aperçu PR sur GitHub Pages"
