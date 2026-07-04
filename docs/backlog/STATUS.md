@@ -37,6 +37,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 7 (F18.1–7) | 2 (EN18.1–2) | 16 | ⬜ phase-3 |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
+| [E23 — Intégration open source](EPIC-integration-open-source/README.md) | E23 | 5 (F23.1–5) | 13 (EN23.1–13) | 17 | ⏸️ Proposé — bloqué tant qu'ADR-008 n'est pas Accepté |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 
 ---
@@ -122,6 +123,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | E12 MeetOps (agenda, animation reunions, compte-rendu) | phase-3 · collaboratif | ⬜ Backlog |
 | Medium | E13 Cahiers de tests (cas test, campagnes, reporting qualite) | phase-3 · pilotage | ⬜ Backlog |
 | Medium | E11 + velocity tracking (burndown chart, velocite sprint) | phase-3 · agilite | ⬜ Backlog |
+| — | E23 Intégration open source (adaptateurs Plane/n8n/Documenso, contrat PivotAdapter) | phase-3 | ⏸️ Bloqué — dépend de l'acceptation d'[ADR-008](../adr/ADR-008-cadre-integration-open-source.md) |
 
 ---
 

@@ -152,6 +152,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
 - E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
 - E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
+- E23 Intégration open source (phase-3 — bloqué tant qu'ADR-008 n'est pas Accepté) : contrat PivotAdapter, adaptateurs Plane/n8n/Documenso/Baserow/BookStack/Docs/Kestra/Metabase/Matomo/Element-Matrix
 
 ---
 
@@ -170,6 +171,32 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL | Critical | ⬜ |
 
 > **Parallélisable :** EN17.1 ‖ EN17.2 (indépendants) → EN17.3 (dépend de EN17.2) → EN17.4 ‖ EN17.5 → EN17.6 (dépend de EN17.2+3) · EN17.7 peut démarrer dès EN17.4 stable
+
+---
+
+## Backlog phase-3 — Intégration open source (E23)
+
+**Pré-requis :** [ADR-008](../adr/ADR-008-cadre-integration-open-source.md) Accepté (statut actuel : Proposé — rien ne démarre avant)
+
+| Enabler | Titre | Priority | 🤖 Dev |
+|---------|-------|----------|--------|
+| EN23.1 | Portail Backstage | Highest | ⬜ |
+| EN23.2 | Catalogue d'entités étendu | Highest | ⬜ |
+| EN23.3 | Contrat d'intégration PivotAdapter | Highest | ⬜ |
+| EN23.4 | Bus d'événements | Highest | ⬜ |
+| EN23.5 | Design-system et thème pour adaptateurs | Highest | ⬜ |
+| EN23.6 | Endpoint santé unifié | High | ⬜ |
+| EN23.7 | Critère de décision adaptateur vs natif | Highest | ⬜ |
+| EN23.8 | Veille Excalidraw | Low | ⬜ |
+| EN23.9 | ADR-009 — règle de licences amont/aval | Highest | ⬜ |
+| EN23.10 | ADR-011 — modèle d'entités | High | ⬜ |
+| EN23.11 | ADR-012 — stratégie de forks | High | ⬜ |
+| EN23.12 | Intendance upstream | Medium | ⬜ |
+| EN23.13 | Veille licences & versions | Medium | ⬜ |
+
+> **Exclu de E23** (déjà couvert ailleurs — voir [EPIC-integration-open-source/README.md](EPIC-integration-open-source/README.md#hors-périmètre--déjà-couvert-par-dautres-epic)) : SSO/rôles (E01), secrets/déploiement (E07), pilotage PPM/OpenProject (E18), whiteboard/Excalidraw (E08), formulaires-quiz/Formbricks (E19), rétrospectives/Scrumlr (E20), planning poker (E09).
+>
+> **Parallélisable :** EN23.1 → EN23.2 → EN23.3 (contrat) → EN23.4 ‖ EN23.5 ‖ EN23.6 ‖ EN23.7 → F23.1–5 (adaptateurs, indépendants entre eux) · EN23.9/10/11 (ADR) peuvent démarrer dès ADR-008 accepté, en parallèle du reste
 
 ---
 
