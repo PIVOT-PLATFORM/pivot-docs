@@ -32,6 +32,29 @@ L'activation des features par profil est gérée par **PP-A02** (E40).
 
 Couvert par F22.4–F22.7 : **WBS** (indent/outdent), tâches récapitulatives/périodiques, **dépendances typées FS/SS/FF/SF + retard/avance**, **contraintes** (ASAP/ALAP/MSO/MFO/SNET…) & échéances, **calendriers** ouvrés/exceptions, **planification auto/manuelle**, **chemin critique & marges**, fractionnement, **suivi d'avancement**, **baselines multiples & écarts**, **ressources** (affectation, charge, sur-affectation, **nivellement**, coûts), **vues multiples** (Gantt/chronologie/calendrier/réseau PERT/feuilles), filtres/regroupements, **import/export MS Project (.mpp/.xml MSPDI)** + Excel/PDF + **format ouvert**. Le web-native est garanti par **[EN22.2](ENABLERS/en-performance-gantt-web.md)** (rendu virtualisé 10 000+ tâches, recalcul incrémental, co-édition temps réel).
 
+## Interopérabilité — formats supportés (F22.7)
+
+| Famille | Formats | Import | Export |
+|---|---|:---:|:---:|
+| MS Project | `.mpp`, `.mpx`, `.mpt`, `.xml` (MSPDI) | ✅ | ✅ |
+| Oracle Primavera | `.xer`, P6 XML | ✅ | ✅ |
+| Tableur & données | CSV, XLSX, JSON, **API REST** | ✅ | ✅ |
+| Calendrier | iCalendar `.ics` (+ abonnement URL) | — | ✅ |
+| Agile & gestion de travail | Jira, Azure DevOps, Asana, Trello, monday, GitHub/GitLab | ✅ (sync) | ✅ (sync) |
+| PM open source | GanttProject `.gan`, ProjectLibre, OpenProject, TaskJuggler, GNOME Planner `.planner` | ✅ | ✅ |
+| Documents & présentation | PDF, PNG, SVG, PowerPoint `.pptx` | — | ✅ |
+| Format ouvert PIVOT | JSON documenté & versionné (réversibilité) | ✅ | ✅ |
+
+## Interfaces inter-modules & SI externes (F22.8)
+
+Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inter-modules** (ADR-006/008), socle [EN22.3](ENABLERS/en-connecteurs-calendrier-disponibilite.md) :
+
+- **Sprints agiles → roadmap** (US22.8.1) : bandes de sprint superposées à la timeline, alignement jalons/sprints.
+- **Versions applicatives → timeline** (US22.8.2) : chaque `Projet` = une version d'`Application` (EN18.9), affichée en bande de release + jalon de mise en production.
+- **Weekends & jours fériés par pays/localité** (US22.8.3) : calendriers légaux importés, weekend configurable par région (ex. vendredi–samedi).
+- **SI d'absences / RH** (US22.8.4) : SAP SuccessFactors / HCM, Workday, Lucca, ADP… → indisponibilités ressources (RGPD-minimisé) pour l'ordonnancement & le nivellement.
+- **Overlays inter-modules** (US22.8.5) : risques (E21), budget (E26), décisions/ADR (E24), échéances de marché (E25) positionnés sur la roadmap/Gantt.
+
 ## Repo cible (architecture multi-repo)
 
 - Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage` partagé du domaine, FK → `public.teams.id`)
@@ -51,11 +74,13 @@ Couvert par F22.4–F22.7 : **WBS** (indent/outdent), tâches récapitulatives/p
 - **F22.4 — Planification Gantt (parité MS Project)** — US22.4.1 WBS · US22.4.2 durées/effort/auto-manuel · US22.4.3 dépendances typées · US22.4.4 contraintes & échéances · US22.4.5 calendriers · US22.4.6 jalons & tâches périodiques · US22.4.7 chemin critique/marges/split · US22.4.8 suivi d'avancement · US22.4.9 baselines & écarts · US22.4.10 interactions Gantt
 - **F22.5 — Ressources dans le plan** — US22.5.1 affectation · US22.5.2 charge & sur-affectation · US22.5.3 nivellement · US22.5.4 coûts
 - **F22.6 — Vues & restitutions** — US22.6.1 vues multiples · US22.6.2 colonnes/filtres/groupes · US22.6.3 mise en forme/impression · US22.6.4 export & rapports
-- **F22.7 — Interopérabilité MS Project** — US22.7.1 import (.mpp/.xml) · US22.7.2 export (.xml MSPDI/Excel) · US22.7.3 format ouvert
+- **F22.7 — Interopérabilité (formats)** — US22.7.1 import MS Project (.mpp/.xml) · US22.7.2 export MS Project (.xml MSPDI/Excel) · US22.7.3 format ouvert · US22.7.4 Primavera P6 (XER/P6 XML) · US22.7.5 tableur & données (CSV/XLSX/JSON/API) · US22.7.6 iCalendar (.ics) · US22.7.7 outils agiles (Jira/Azure DevOps/Asana…) · US22.7.8 PM open source (GanttProject/ProjectLibre/OpenProject/TaskJuggler/Planner) · US22.7.9 documents (PDF/PNG/SVG/PowerPoint)
+- **F22.8 — Interfaces inter-modules & SI** — US22.8.1 sprints sur la roadmap · US22.8.2 versions applicatives (releases) · US22.8.3 weekends & jours fériés par pays/localité · US22.8.4 interconnexion SI d'absences/RH (SAP, Workday…) · US22.8.5 overlays inter-modules (risques/budget/décisions/marchés)
 
 ### Enablers
 - **[EN22.1](ENABLERS/en-modele-temporel-unique.md)** — Modèle temporel unique & moteur d'ordonnancement (roadmap & Gantt = deux vues)
 - **[EN22.2](ENABLERS/en-performance-gantt-web.md)** — Performance & collaboration web du Gantt (10 000+ tâches)
+- **[EN22.3](ENABLERS/en-connecteurs-calendrier-disponibilite.md)** — Connecteurs calendrier & disponibilité (fériés par pays, absences SI RH type SAP) + socle interfaces inter-modules
 - Partagés domaine : **EN18.1** (schéma `pilotage`) · **EN18.2** (guard) · **EN18.9** (Application→Projet)
 
 ## Modules impactés
@@ -81,6 +106,7 @@ Couvert par F22.4–F22.7 : **WBS** (indent/outdent), tâches récapitulatives/p
 | **Enablers** | |
 | [EN22.1 — Modèle temporel unique & ordonnancement](ENABLERS/en-modele-temporel-unique.md) | ⬜ |
 | [EN22.2 — Performance & collaboration web du Gantt](ENABLERS/en-performance-gantt-web.md) | ⬜ |
+| [EN22.3 — Connecteurs calendrier & disponibilité](ENABLERS/en-connecteurs-calendrier-disponibilite.md) | ⬜ |
 | **F22.1 — Roadmap / Gantt (socle)** | |
 | [US22.1.1 — Créer et gérer un projet sur la roadmap](FEATURES/roadmap/us-creer-projet-roadmap.md) | ⬜ |
 | [US22.1.2 — Visualiser la roadmap en vue Gantt](FEATURES/roadmap/us-vue-gantt.md) | ⬜ |
@@ -123,3 +149,15 @@ Couvert par F22.4–F22.7 : **WBS** (indent/outdent), tâches récapitulatives/p
 | [US22.7.1 — Import de plannings MS Project](FEATURES/interop-msproject/us-import-msproject.md) | ⬜ |
 | [US22.7.2 — Export MS Project & Excel](FEATURES/interop-msproject/us-export-msproject.md) | ⬜ |
 | [US22.7.3 — Format d'échange ouvert (réversibilité)](FEATURES/interop-msproject/us-format-echange-ouvert.md) | ⬜ |
+| [US22.7.4 — Import/export Primavera P6 (XER / P6 XML)](FEATURES/interop-msproject/us-primavera-p6.md) | ⬜ |
+| [US22.7.5 — Formats tableur & données (CSV, XLSX, JSON, API)](FEATURES/interop-msproject/us-tableur-donnees-api.md) | ⬜ |
+| [US22.7.6 — Export iCalendar (.ics)](FEATURES/interop-msproject/us-icalendar.md) | ⬜ |
+| [US22.7.7 — Interop outils agiles & de travail (Jira, Azure DevOps, Asana…)](FEATURES/interop-msproject/us-outils-agiles-travail.md) | ⬜ |
+| [US22.7.8 — Interop outils PM open source](FEATURES/interop-msproject/us-outils-pm-open-source.md) | ⬜ |
+| [US22.7.9 — Export documents & présentation (PDF, PNG/SVG, PowerPoint)](FEATURES/interop-msproject/us-documents-presentation.md) | ⬜ |
+| **F22.8 — Interfaces inter-modules & SI** | |
+| [US22.8.1 — Afficher les sprints sur la roadmap](FEATURES/interfaces-modules-si/us-sprints-sur-roadmap.md) | ⬜ |
+| [US22.8.2 — Afficher les versions applicatives (releases)](FEATURES/interfaces-modules-si/us-versions-applicatives.md) | ⬜ |
+| [US22.8.3 — Weekends & jours fériés par pays / localité](FEATURES/interfaces-modules-si/us-feries-weekends-pays.md) | ⬜ |
+| [US22.8.4 — Interconnexion SI d'absences / RH (SAP, Workday…)](FEATURES/interfaces-modules-si/us-si-absences-rh-sap.md) | ⬜ |
+| [US22.8.5 — Overlays inter-modules Pilotage](FEATURES/interfaces-modules-si/us-overlays-inter-modules.md) | ⬜ |
