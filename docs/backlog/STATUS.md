@@ -17,26 +17,26 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 | EPIC | Clé | Features | Enablers | US | Avancement |
 |------|-----|----------|----------|----|------------|
-| [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
-| [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
-| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | 🔄 EN03.4 ✅ · Sprint 2 |
-| [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
-| [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
-| [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
-| [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
-| [E08 — Module Whiteboard](EPIC-whiteboard/README.md) | E08 | 4 | 2 | 7 | ⏸️ Gate MVP |
-| [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
-| [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
-| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
-| [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 3 (F12.1–3) | 2 (EN12.1–2) | 4 | ⬜ phase-3 · collaboratif |
-| [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
-| [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
-| [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
-| [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | ✅ Sprint 1 Done |
-| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
-| [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 7 (F18.1–7) | 2 (EN18.1–2) | 16 | ⬜ phase-3 |
-| [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
-| [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
+| [E01 — Auth & IAM](portail/EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
+| [E02 — Espace compte](portail/EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
+| [E03 — Système de modules](portail/EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | 🔄 EN03.4 ✅ · Sprint 2 |
+| [E04 — Observabilité](technique/EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
+| [E05 — CI/CD & Supply-chain](technique/EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
+| [E06 — Administration](portail/EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
+| [E07 — Infrastructure & Déploiement](technique/EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
+| [E08 — Module Whiteboard](collaboratif/EPIC-whiteboard/README.md) | E08 | 4 | 2 | 7 | ⏸️ Gate MVP |
+| [E09 — Module Scrum Poker](agilite/EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
+| [E10 — Module Daily Standup](agilite/EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
+| [E11 — Module Capacity Planning](agilite/EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
+| [E12 — Module MeetOps](collaboratif/EPIC-meetops/README.md) | E12 | 3 (F12.1–3) | 2 (EN12.1–2) | 4 | ⬜ phase-3 · collaboratif |
+| [E13 — Module Cahiers de tests](pilotage/EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
+| [E14 — Module La Roue](agilite/EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
+| [E15 — Équipes transverses](portail/EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
+| [E16 — Shell applicatif & UX](portail/EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | ✅ Sprint 1 Done |
+| [E17 — Infrastructure multi-repo](technique/EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
+| [E18 — Module Pilotage](pilotage/EPIC-pilotage/README.md) | E18 | 7 (F18.1–7) | 2 (EN18.1–2) | 16 | ⬜ phase-3 |
+| [E19 — Module Session](collaboratif/EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
+| [E20 — Module Retrospective](agilite/EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 
 ---

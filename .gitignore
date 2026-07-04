@@ -12,3 +12,5 @@ desktop.ini
 
 # ===== Claude Code =====
 .claude/settings.local.json
+docs/architecture/diagrams/*.png
+docs/workflow/*.png

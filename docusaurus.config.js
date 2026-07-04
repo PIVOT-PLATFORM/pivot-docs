@@ -27,6 +27,7 @@ const sections = [
   { id: 'adr', label: 'ADR', path: 'docs/adr', versioned: true },
   { id: 'cicd', label: 'CI/CD', path: 'docs/cicd' },
   { id: 'audits', label: 'Audits', path: 'docs/audits' },
+  { id: 'benchmark', label: 'Benchmark', path: 'docs/benchmark' },
   { id: 'backlog', label: 'Backlog', path: 'docs/backlog' },
   { id: 'workflow', label: 'Workflow', path: 'docs/workflow' },
 ];

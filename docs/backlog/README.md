@@ -202,18 +202,36 @@ Done ◄──(mainteneur : merge PR)────────────── 
 
 ## 9. Structure des fichiers markdown
 
+Le backlog est découpé en **6 produits**, chacun regroupant ses EPICs :
+
+| Produit | Dossier | Repos cibles | EPICs |
+|---------|---------|--------------|-------|
+| PIVOT — Portail | `portail/` | `pivot-core` · `pivot-ui` | E01 Auth & IAM · E02 Espace compte · E03 Système de modules · E06 Administration · E15 Équipes transverses · E16 Shell & UX |
+| Technique transverse | `technique/` | tous | E04 Observabilité · E05 CI/CD & Supply-chain · E07 Infrastructure · E17 Infra multi-repo |
+| Outils collaboratifs | `collaboratif/` | `pivot-collaboratif-core` · `pivot-collaboratif-ui` | E08 Whiteboard · E12 MeetOps · E19 Session |
+| Outils d'agilité | `agilite/` | `pivot-agilite-core` · `pivot-agilite-ui` | E09 Scrum Poker · E10 Daily Standup · E11 Capacity Planning · E14 La Roue · E20 Retrospective |
+| Pilotage de projet | `pilotage/` | `pivot-pilotage-core` · `pivot-pilotage-ui` | E13 Cahiers de tests · E18 Pilotage |
+| Création de workflows | `workflows/` | à définir | À définir |
+
 ```text
 pivot-docs/backlog/
 ├── SPRINTS.md              ← état des sprints, assignation US, avancement
+├── STATUS.md               ← avancement consolidé par EPIC
 ├── README.md               ← ce fichier — modèle & conventions
-├── EPIC-auth-iam/
-│   ├── README.md           ← description de l'epic
-│   └── FEATURES/
-│       ├── login/
-│       │   ├── us-connexion-email.md
-│       │   └── us-deconnexion.md
-│       └── ...
-├── EPIC-whiteboard/
+├── portail/                ← produit
+│   ├── README.md           ← vue produit
+│   ├── EPIC-auth-iam/
+│   │   ├── README.md       ← description de l'epic
+│   │   └── FEATURES/
+│   │       ├── login-email-password/
+│   │       │   ├── us-connexion.md
+│   │       │   └── us-deconnexion.md
+│   │       └── ...
+│   └── ...
+├── collaboratif/           ← produit
+│   ├── README.md
+│   ├── EPIC-whiteboard/
+│   │   └── ...
 │   └── ...
 └── ...
 ```

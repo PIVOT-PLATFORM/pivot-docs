@@ -39,20 +39,41 @@ function checkAdr() {
   });
 }
 
-// --- Backlog : EPIC-slug/{README.md, ENABLERS/, FEATURES/} ---
-function checkBacklog() {
+// --- Backlog : <produit>/EPIC-slug/{README.md, ENABLERS/, FEATURES/} ---
+// Le backlog est découpé en produits (docs/backlog/README.md §9) : chaque
+// dossier racine est un produit en kebab-case contenant les EPICs.
+let epicDirsCache;
+function listEpicDirs() {
+  if (epicDirsCache) return epicDirsCache;
   const root = 'docs/backlog';
-  const entries = readdirSync(root);
+  const epics = [];
 
-  for (const entry of entries) {
-    const full = join(root, entry);
-    if (!isDir(full)) continue;
+  for (const product of readdirSync(root)) {
+    const productPath = join(root, product);
+    if (!isDir(productPath)) continue;
 
-    if (!/^EPIC-[a-z0-9-]+$/.test(entry)) {
-      fail(`${full}: dossier EPIC attendu au format \`EPIC-slug-kebab-case\``);
+    if (!/^[a-z0-9-]+$/.test(product)) {
+      fail(`${productPath}: dossier produit attendu en kebab-case`);
       continue;
     }
 
+    for (const entry of readdirSync(productPath)) {
+      const full = join(productPath, entry);
+      if (!isDir(full)) continue;
+      if (!/^EPIC-[a-z0-9-]+$/.test(entry)) {
+        fail(`${full}: dossier EPIC attendu au format \`EPIC-slug-kebab-case\``);
+        continue;
+      }
+      epics.push(full);
+    }
+  }
+
+  epicDirsCache = epics;
+  return epics;
+}
+
+function checkBacklog() {
+  for (const full of listEpicDirs()) {
     const children = readdirSync(full);
     if (!children.includes('README.md')) {
       fail(`${full}: README.md manquant (page d'accueil de l'EPIC)`);
@@ -111,9 +132,7 @@ function checkIdFormat() {
   const files = [
     'docs/backlog/STATUS.md',
     'docs/backlog/SPRINTS.md',
-    ...readdirSync('docs/backlog')
-      .filter((e) => /^EPIC-/.test(e))
-      .map((e) => join('docs/backlog', e, 'README.md')),
+    ...listEpicDirs().map((d) => join(d, 'README.md')),
   ];
 
   // Grammaire réelle observée dans docs/backlog (STATUS.md, SPRINTS.md, EPIC READMEs) :
