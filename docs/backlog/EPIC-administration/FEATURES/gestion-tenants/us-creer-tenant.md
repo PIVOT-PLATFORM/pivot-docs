@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/superadmin/tenants crée un tenant avec : nom, slug, plan, auth_mode | ⬜ |
 | Requiert ROLE_SUPER_ADMIN | ⬜ |
 | Slug unique (409 si doublon) | ⬜ |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Section "À venir" visible sur /home sous la grille des modules actifs | ✅ |
 | Affiche les modules désactivés ou phase-3 avec label "Bientôt disponible" | ✅ |
 | Pas de lien cliquable vers les modules à venir | ✅ |

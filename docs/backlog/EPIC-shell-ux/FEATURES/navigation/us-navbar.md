@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Liens de navigation : Accueil, Modules, Mes équipes (avec indicateur page active) | ✅ |
 | Basculeur thème clair/sombre (icône lune/soleil) | ✅ |
 | Sélecteur langue FR/EN (pilule, langue active mise en évidence) | ✅ |

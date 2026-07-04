@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/admin/users retourne la liste paginée des utilisateurs du tenant courant | ⬜ |
 | Requiert ROLE_ADMIN | ⬜ |
 | Champs : id, email, firstName, lastName, role, status, createdAt | ⬜ |

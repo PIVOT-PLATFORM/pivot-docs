@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Première connexion OIDC → `User` créé avec `AuthMethod.OIDC`, `oidcSubject = sub` | ✅ |
 | Claims mappés : email, prénom/nom selon `TenantOidcConfig.claimsMapping` | ✅ |
 | JIT provisionnement configurable par tenant (`jitEnabled: true/false`) | ✅ |

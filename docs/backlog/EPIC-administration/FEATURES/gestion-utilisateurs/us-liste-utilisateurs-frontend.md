@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Page `/admin/users` accessible uniquement aux ROLE_ADMIN | ⬜ |
 | Tableau des utilisateurs : nom, email, rôle (badge), statut, date création | ⬜ |
 | Recherche et filtres (rôle, statut) | ⬜ |

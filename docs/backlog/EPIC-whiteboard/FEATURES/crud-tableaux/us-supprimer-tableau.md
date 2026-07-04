@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | DELETE /api/whiteboard/boards/{boardId} supprime le tableau et toutes ses données | ⬜ |
 | Vérification que boardId appartient au tenant courant. Cross-tenant → 404 | ⬜ |
 | Seul l'OWNER peut supprimer (EDITOR/VIEWER → 403) | ⬜ |

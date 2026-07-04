@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | PATCH /api/admin/users/{userId}/status avec body { status: "ACTIVE" } réactive le compte | ⬜ |
 | Vérification que userId appartient au tenant courant (TenantContext). Cross-tenant → 404 | ⬜ |
 | Seule la valeur ACTIVE acceptée via cet endpoint (symétrique avec US06.1.4) | ⬜ |

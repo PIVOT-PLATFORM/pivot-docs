@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/whiteboard/join?token={token} ajoute l'utilisateur au tableau avec le rôle du token | ⬜ |
 | 401 si non authentifié → redirection login puis retour au lien | ⬜ |
 | 404/410 si token expiré ou invalide | ⬜ |

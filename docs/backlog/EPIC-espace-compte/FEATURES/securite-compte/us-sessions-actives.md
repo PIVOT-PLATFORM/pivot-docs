@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/account/sessions retourne la liste des tokens actifs (appareil, IP, créé le, expire le) | ⬜ |
 | DELETE /api/account/sessions/{tokenId} révoque un token spécifique | ⬜ |
 | DELETE /api/account/sessions révoque toutes les sessions sauf la courante | ⬜ |

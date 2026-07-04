@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Email + password corrects → token opaque posé en cookie HttpOnly, redirection `/home` | ✅ |
 | Email inexistant → message générique "Identifiants invalides" (anti-énumération) | ✅ |
 | Mot de passe incorrect → même message générique (anti-énumération) | ✅ |

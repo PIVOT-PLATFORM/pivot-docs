@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/account/password exige mot de passe actuel (vérification) | ⬜ |
 | Nouveau mot de passe validé selon politique de robustesse (US01.2.4) | ⬜ |
 | Tous les tokens de session existants révoqués après changement | ⬜ |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | `GET /auth/session` avec cookie valide → 200 + données utilisateur | ✅ |
 | `GET /auth/session` sans cookie ou token expiré → 401 (pas de redirect serveur) | ✅ |
 | Angular : `AuthService` appelle `GET /auth/session` à l'init → signal `isAuthenticated` mis à jour | ✅ |

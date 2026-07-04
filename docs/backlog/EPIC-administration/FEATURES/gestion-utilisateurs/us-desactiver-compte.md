@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | PATCH /api/admin/users/{userId}/status accepte `{ status: "INACTIVE" }` | ⬜ |
 | Utilisateur désactivé → 401 à la prochaine requête (tokens révoqués) | ⬜ |
 | Un admin ne peut pas se désactiver lui-même | ⬜ |

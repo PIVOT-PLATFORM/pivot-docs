@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Workflow `dast-full.yml` déclenché manuellement (workflow_dispatch) | ⬜ |
 | ZAP full scan (actif) sur staging avec auth configurée | ⬜ |
 | Rapport publié en GitHub Pages ou artefact | ⬜ |

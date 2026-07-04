@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Bulle avatar (initiales ou photo de profil) visible dans la navbar | ✅ |
 | Clic sur la bulle ouvre un dropdown : nom complet, email, lien profil, déconnexion | ✅ |
 | Déconnexion appelle DELETE /api/auth/logout (révocation token) | ✅ |

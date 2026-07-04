@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | PATCH /api/admin/users/{userId}/role accepte `{ role: "ROLE_ADMIN" \| "ROLE_USER" }` | ⬜ |
 | Requiert ROLE_ADMIN | ⬜ |
 | Un admin ne peut pas se rétrograder lui-même | ⬜ |

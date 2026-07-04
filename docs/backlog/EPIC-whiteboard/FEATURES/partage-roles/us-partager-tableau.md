@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/whiteboard/boards/{id}/share génère un token d'invitation (TTL configurable) | ⬜ |
 | Rôle assigné au token : EDITOR ou VIEWER | ⬜ |
 | Lien : `{baseUrl}/whiteboard/join?token={token}` | ⬜ |

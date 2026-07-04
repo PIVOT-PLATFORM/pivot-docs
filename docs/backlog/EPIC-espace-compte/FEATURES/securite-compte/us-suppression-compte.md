@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | DELETE /api/account confirme suppression avec mot de passe actuel | ⬜ |
 | Données personnelles anonymisées ou supprimées selon politique RGPD | ⬜ |
 | Tous les tokens de session révoqués immédiatement | ⬜ |

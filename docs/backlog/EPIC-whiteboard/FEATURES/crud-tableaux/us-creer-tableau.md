@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/whiteboard/boards crée un tableau (titre requis) | ⬜ |
 | Créateur = owner automatique | ⬜ |
 | Tableau lié au tenant courant | ⬜ |

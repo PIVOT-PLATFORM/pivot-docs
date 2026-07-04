@@ -36,34 +36,34 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 ## Suivi d'avancement
 
 | Élément | 🤖 Dev |
-|---------|--------|-------|
-| **F01.1 — Connexion / session** | | |
+|---------|--------|
+| **F01.1 — Connexion / session** | |
 | [US01.1.1 — Connexion email + mot de passe](FEATURES/login-email-password/us-connexion.md) | ✅ |
 | [US01.1.2 — Déconnexion](FEATURES/login-email-password/us-deconnexion.md) | ✅ |
 | [US01.1.3 — Rester connecté (remember-me)](FEATURES/login-email-password/us-remember-me.md) | ✅ |
 | [US01.1.4 — Redirection post-login](FEATURES/login-email-password/us-redirection-post-login.md) | ⬜ |
 | [US01.1.5 — Expiration de session (front) + auto-logout](FEATURES/login-email-password/us-expiration-session.md) | ⬜ |
-| **F01.2 — Inscription & vérification e-mail** | | |
+| **F01.2 — Inscription & vérification e-mail** | |
 | [US01.2.1 — Inscription](FEATURES/inscription-verification/us-inscription.md) | ✅ |
 | [US01.2.2 — Vérification e-mail](FEATURES/inscription-verification/us-verification-email.md) | ✅ |
 | [US01.2.3 — Renvoi du lien de vérification](FEATURES/inscription-verification/us-renvoi-lien-activation.md) | ✅ |
 | [US01.2.4 — Politique de robustesse du mot de passe](FEATURES/inscription-verification/us-politique-password.md) | ⬜ |
-| **F01.3 — Réinitialisation mot de passe** | | |
+| **F01.3 — Réinitialisation mot de passe** | |
 | [US01.3.1 — Demande de réinitialisation](FEATURES/reset-password/us-mot-de-passe-oublie.md) | ✅ |
 | [US01.3.2 — Réinitialisation par token](FEATURES/reset-password/us-reset-password.md) | ✅ |
-| **F01.4 — MFA par appareil** | | |
+| **F01.4 — MFA par appareil** | |
 | [US01.4.1 — OTP depuis un appareil inconnu](FEATURES/device-confirmation/us-device-confirm-otp.md) | ✅ |
 | [US01.4.2 — Gestion des appareils de confiance](FEATURES/device-confirmation/us-appareils-confiance.md) | ⬜ |
 | [US01.4.3a — Alerte connexion suspecte (appareil inconnu)](FEATURES/device-confirmation/us-alerte-connexion-suspecte.md) | ⬜ |
 | [US01.4.3b — Alerte connexion depuis IP/pays inhabituel](FEATURES/device-confirmation/us-alerte-ip-suspecte.md) *(v1-enterprise)* | ⬜ |
-| **F01.5 — Notifications de sécurité** | | |
+| **F01.5 — Notifications de sécurité** | |
 | [US01.5.1 — E-mail de confirmation d'action sensible](FEATURES/notifications-securite/us-email-action-sensible.md) | ⬜ |
-| **Extras hors GitHub** | | |
+| **Extras hors GitHub** | |
 | [F01.6 — Google OAuth2](FEATURES/google-oauth/us-google-oauth.md) | ✅ |
 | [F01.7 — OIDC Enterprise login](FEATURES/oidc-enterprise/us-oidc-login.md) | ✅ |
 | [F01.7 — OIDC provisionnement JIT](FEATURES/oidc-enterprise/us-oidc-jit.md) | ✅ |
 | [F01.8 — Restauration de session](FEATURES/session-restore/us-session-restore.md) | ✅ |
-| **Enablers** | | |
+| **Enablers** | |
 | [EN01.1 — Opaque tokens + TTL BDD](ENABLERS/en-opaque-tokens.md) | ✅ |
 | [EN01.2 — Spring Security config](ENABLERS/en-spring-security.md) | ✅ |
 | [EN01.3 — Service email transactionnel](ENABLERS/en-email-service.md) | ✅ |

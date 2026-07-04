@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/superadmin/tenants retourne la liste paginée des tenants | ⬜ |
 | Requiert ROLE_SUPER_ADMIN | ⬜ |
 | Champs : id, slug, name, plan, auth_mode, is_active, userCount, createdAt | ⬜ |

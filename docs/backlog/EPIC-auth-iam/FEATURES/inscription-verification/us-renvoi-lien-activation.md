@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Page `/auth/resend-activation` avec champ email | ✅ |
 | Email connu + compte PENDING → nouveau token généré, ancien invalidé, email envoyé | ✅ |
 | Email inconnu ou compte déjà ACTIVE → réponse générique (anti-énumération) | ✅ |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/whiteboard/templates liste les templates disponibles | ⬜ |
 | POST /api/whiteboard/boards avec `templateId` initialise le canvas depuis le template | ⬜ |
 | Templates disponibles : Vierge, Brainstorm, Retrospective, User Story Map | ⬜ |

@@ -111,7 +111,7 @@ Afin de [bénéfice]
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Given [contexte], when [action], then [résultat observable] | ⬜ |
 | Error : given [input invalide], system retourne [erreur / status code] | ⬜ |
 | Security : [propriété de sécurité garantie] | ⬜ |

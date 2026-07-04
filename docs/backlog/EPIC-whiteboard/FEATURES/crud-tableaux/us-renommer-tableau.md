@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | PATCH /api/whiteboard/boards/{boardId} avec body { title: "nouveau titre" } renomme le tableau | ⬜ |
 | Vérification que boardId appartient au tenant courant. Cross-tenant → 404 | ⬜ |
 | Seul l'OWNER peut renommer (EDITOR/VIEWER → 403) | ⬜ |

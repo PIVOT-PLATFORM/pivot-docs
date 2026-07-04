@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/admin/modules/{id}/activate active le module pour le tenant courant | ✅ |
 | Requiert ROLE_ADMIN | ✅ |
 | Invalidation immédiate du cache Redis (EN03.3) | ⬜ *(déféré — dépend d'EN03.3, cache Redis non encore mergé sur main)* |

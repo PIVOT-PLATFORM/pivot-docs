@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | `ComingSoonComponent` affiché sur : `/teams`, `/faq`, `/plan-du-site`, `/legal/accessibilite` | ✅ |
 | Message i18n FR/EN "Bientôt disponible / Coming soon" | ✅ |
 | Bouton "Retour" ou lien vers `/home` | ✅ |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | DELETE /api/admin/modules/{id}/activate désactive le module pour le tenant courant | ✅ |
 | Requiert ROLE_ADMIN | ✅ |
 | Guard Angular retourne 403 immédiatement après désactivation (cache invalidé) | ⬜ *(déféré — dépend du endpoint status d'EN03.2 (`/api/modules/{id}/status`) + invalidation cache d'EN03.3, aucun des deux mergé)* |

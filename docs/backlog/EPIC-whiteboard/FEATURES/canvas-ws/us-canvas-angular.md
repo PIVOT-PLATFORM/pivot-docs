@@ -15,7 +15,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Route `/whiteboard/{boardId}` (lazy-loaded) | ⬜ |
 | Canvas HTML5 ou SVG avec outils : crayon, formes de base, texte, effacement | ⬜ |
 | Curseurs des autres participants visibles en temps réel | ⬜ |

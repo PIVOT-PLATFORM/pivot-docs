@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Route `/home` — accessible uniquement après authentification | ✅ |
 | `HomeComponent` rendu avec le shell (navbar + footer) | ✅ |
 | Redirection automatique `/` → `/home` pour les utilisateurs connectés | ✅ |

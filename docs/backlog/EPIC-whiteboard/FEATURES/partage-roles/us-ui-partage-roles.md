@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Panneau "Partager" : génération lien + liste membres + rôles | ⬜ |
 | Copier le lien d'invitation (clipboard API) | ⬜ |
 | Modifier le rôle d'un membre (select EDITOR/VIEWER) | ⬜ |

@@ -35,7 +35,7 @@ Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité
 ## Suivi d'avancement
 
 | Élément | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | EN05.1 — Pipelines CI (build/test/lint/coverage) | ✅ |
 | EN05.2 — Quality gate SonarCloud | ✅ |
 | EN05.3 — SAST (CodeQL + Semgrep) | ✅ |
@@ -48,13 +48,13 @@ Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité
 | EN05.10 — Release automatisée (Semantic Release + GHCR) | ✅ |
 | EN05.11 — Gate E2E (Playwright) | ✅ |
 | EN05.12 — Gate Lighthouse (a11y) | ✅ |
-| **EN05.13 — DAST (ZAP)** | | |
+| **EN05.13 — DAST (ZAP)** | |
 | [US05.13.1 — ZAP baseline planifié](ENABLERS/us-zap-baseline.md) | ⬜ |
 | [US05.13.2 — ZAP full scan + rapport](ENABLERS/us-zap-full-scan.md) | ⬜ |
-| **EN05.14 — Protection de branche + required checks** | | |
+| **EN05.14 — Protection de branche + required checks** | |
 | [US05.14.1 — Required checks pivot-core](ENABLERS/us-required-checks-core.md) | ⬜ |
 | [US05.14.2 — Required checks pivot-ui](ENABLERS/us-required-checks-ui.md) | ⬜ |
 | [US05.14.3 — Required checks pivot-docs](ENABLERS/us-required-checks-docs.md) | ⬜ |
-| **EN05.15 — Standardisation CI core ↔ ui** | | |
+| **EN05.15 — Standardisation CI core ↔ ui** | |
 | [US05.15.1 — Composite action setup partagée](ENABLERS/us-composite-action.md) | ⬜ |
 | [US05.15.2 — Aligner workflows ui sur conventions core](ENABLERS/us-aligner-workflows.md) | ⬜ |

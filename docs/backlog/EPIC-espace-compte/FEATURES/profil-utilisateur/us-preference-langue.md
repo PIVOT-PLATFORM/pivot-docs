@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Champ `preferredLanguage` (FR/EN) sauvegardé en BDD sur l'entité User | ⬜ |
 | PATCH /api/account/profile accepte `preferredLanguage` | ⬜ |
 | Au login, la langue préférée est chargée et appliquée dans Transloco | ⬜ |

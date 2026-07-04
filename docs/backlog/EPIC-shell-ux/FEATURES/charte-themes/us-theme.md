@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Icône lune (clair) / soleil (sombre) dans la navbar — bascule au clic | ✅ |
 | Thème persisté en `localStorage` entre sessions | ✅ |
 | Thème par défaut : préférence système (`prefers-color-scheme`) | ✅ |

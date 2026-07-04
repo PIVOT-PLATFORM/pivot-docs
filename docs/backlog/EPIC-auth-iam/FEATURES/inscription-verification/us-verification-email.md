@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | `GET /api/auth/verify?token=xxx` → compte passé à `ACTIVE` | ✅ |
 | Token valide → redirection `/auth/login` avec banner succès "Compte activé !" | ✅ |
 | Token expiré (> 24h) → page d'erreur avec bouton "Renvoyer un lien" | ✅ |

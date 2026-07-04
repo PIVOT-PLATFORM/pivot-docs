@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Endpoint STOMP : `/ws/whiteboard/{boardId}` avec isolation room (EN08.1) | ⬜ |
 | Authentification token opaque sur le handshake WS | ⬜ |
 | Messages : JOIN, LEAVE, DRAW, CURSOR_MOVE, UNDO | ⬜ |

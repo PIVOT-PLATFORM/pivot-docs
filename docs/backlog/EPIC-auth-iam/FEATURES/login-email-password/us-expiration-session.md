@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Token interceptor Angular détecte 401 → déclenche logout et redirection /login | ✅ |
 | Toast "Session expirée, veuillez vous reconnecter" affiché | ✅ |
 | Si remember-me actif : tentative de refresh token silencieuse avant logout | ❌ supprimé |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Ctrl+Z annule la dernière action de l'utilisateur courant (undo local — n'annule pas les actions des autres participants) | ⬜ |
 | Ctrl+Y ou Ctrl+Shift+Z rétablit l'action annulée | ⬜ |
 | Stack undo : côté client uniquement (MVP). Chaque participant gère sa propre stack — stratégie collaborative (undo partagé) hors scope MVP | ⬜ |

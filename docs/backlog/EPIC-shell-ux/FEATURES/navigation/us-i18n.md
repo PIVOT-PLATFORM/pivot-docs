@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Sélecteur FR/EN en navbar (pilule, langue active visible) | ✅ |
 | Changement de langue → toute l'interface mise à jour instantanément | ✅ |
 | Langue persistée en `localStorage` entre sessions | ✅ |

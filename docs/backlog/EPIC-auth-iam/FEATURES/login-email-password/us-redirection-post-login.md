@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | L'URL d'origine est conservée dans un `returnUrl` query param ou en session Angular | ✅ |
 | Après login réussi, redirection vers `returnUrl` si valide (même domaine) | ✅ |
 | Si pas de `returnUrl`, redirection vers /home | ✅ |

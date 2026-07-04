@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/superadmin/tenants/{tenantId}/modules/{moduleId}/override active ou désactive en override | ⬜ |
 | Requiert ROLE_SUPER_ADMIN | ⬜ |
 | Override enregistré en BDD (priorité sur le plan) | ⬜ |

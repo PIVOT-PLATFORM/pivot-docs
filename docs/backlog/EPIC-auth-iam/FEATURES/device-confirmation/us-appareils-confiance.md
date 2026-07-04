@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/auth/devices liste les appareils de confiance (nom, IP, date) | ⬜ |
 | DELETE /api/auth/devices/{deviceId} révoque un appareil | ⬜ |
 | Page Angular dans l'espace compte affiche la liste | ⬜ |

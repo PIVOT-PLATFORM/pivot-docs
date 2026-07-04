@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Email envoyé après : changement mdp, changement email, suppression compte, révocation session | ⬜ |
 | Email contient : action effectuée, date/heure, IP, lien "Pas moi → sécuriser mon compte" | ⬜ |
 | Envoi asynchrone (pas de blocage de la requête API) | ⬜ |

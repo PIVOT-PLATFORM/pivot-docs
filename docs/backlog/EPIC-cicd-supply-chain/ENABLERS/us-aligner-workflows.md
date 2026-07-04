@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Nommage des jobs identique (build, test, lint, security) | ⬜ |
 | Composite action setup partagée (US05.15.1) utilisée | ⬜ |
 | Même structure de rapports (artefacts, annotations) | ⬜ |

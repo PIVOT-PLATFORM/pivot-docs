@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Liens : Mentions légales, Confidentialité, CGU, Contact, FAQ, Plan du site | ✅ |
 | Copyright PIVOT + version | ✅ |
 | Design identique navbar (dégradé indigo→violet / thème sombre) | ✅ |

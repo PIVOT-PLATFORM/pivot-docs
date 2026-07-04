@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Branch protection `main` : required checks = build, test, lint, playwright, lighthouse | ⬜ |
 | Force push désactivé sur `main` | ⬜ |
 | PR obligatoire avant merge (min 1 review) | ⬜ |

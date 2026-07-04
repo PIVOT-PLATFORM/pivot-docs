@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Route `/dashboard` — accessible uniquement après authentification | ✅ |
 | `DashboardComponent` rendu avec le shell (navbar + footer) | ✅ |
 | Tests `dashboard.component.spec.ts` | ✅ |
