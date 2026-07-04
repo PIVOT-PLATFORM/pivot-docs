@@ -1,5 +1,7 @@
 # E31 — Demande & arbitrage
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.20).*
+
 ## Objectif
 Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Demande & arbitrage » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
 

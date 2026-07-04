@@ -1,5 +1,7 @@
 # E19 — Module Session live
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.8).*
+
 ## Objectif
 
 Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL, WORDCLOUD, BRAINSTORM, Q&A. Participants rejoignent via code — avec ou sans compte (ROLE_GUEST). Inspiration : Klaxoon.

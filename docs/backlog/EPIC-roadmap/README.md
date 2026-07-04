@@ -1,5 +1,7 @@
 # E22 — Roadmap & Planification (Gantt)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.11).*
+
 > Module de capacité du **domaine Pilotage** (E18) — cf. [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits) et **[ADR-010 Roadmap & Gantt : modèle temporel unique](pathname:///pivot-docs/adr/ADR-010-roadmap-gantt-modele-temporel)**.
 
 ## Objectif

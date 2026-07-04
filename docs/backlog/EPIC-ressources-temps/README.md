@@ -1,5 +1,7 @@
 # E32 — Ressources & temps
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.21).*
+
 ## Objectif
 Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Ressources & temps » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
 

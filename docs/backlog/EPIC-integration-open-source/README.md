@@ -1,5 +1,7 @@
 # E28 — Intégration open source (mycélium)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.17).*
+
 ## Objectif
 
 Construire le socle qui permet à PIVOT d'intégrer des outils open source matures via adaptateurs, en complément — pas en remplacement — des modules natifs. Voir [ADR-009](pathname:///pivot-docs/adr/ADR-009-cadre-integration-open-source) pour le cadre complet (quatre modes, critère adaptateur/natif, règle de licences, contrat à six capacités).

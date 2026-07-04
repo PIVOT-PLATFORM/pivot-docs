@@ -1,5 +1,7 @@
 # E30 — Collaboration
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.19).*
+
 ## Objectif
 
 Suite de collaboration visuelle (whiteboard collaboratif temps réel, ateliers d'équipe, facilitation) benchmarkée contre **Miro**, **Klaxoon**, **FigJam** et **Microsoft Whiteboard**. L'épique couvre l'exigence marché complète : du socle commoditisé (canevas, pense-bêtes, co-édition) jusqu'aux différenciants (IA de facilitation, souveraineté, séquençage d'atelier) et aux chantiers SI d'adoption. Module `collaboratif`.

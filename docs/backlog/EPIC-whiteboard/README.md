@@ -1,5 +1,7 @@
 # E08 — Module Whiteboard
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.1).*
+
 ## Objectif
 Tableau blanc collaboratif temps réel : CRUD tableaux, partage par lien/rôles, canvas WebSocket, présence, undo/redo, templates. Inspiré de Miro / Klaxoon Whiteboard.
 

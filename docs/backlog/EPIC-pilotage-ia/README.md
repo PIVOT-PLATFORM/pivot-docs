@@ -1,5 +1,7 @@
 # E34 — IA & agents (pilotage)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.23).*
+
 ## Objectif
 Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « IA & agents (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
 

@@ -1,5 +1,7 @@
 # E40 — Profil & adaptation
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.29).*
+
 ## Objectif
 
 Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **couche adaptative** issue de la synthèse v2 du backlog PPM. Le **profil d'organisation** (TPE, PME, Grand groupe, Privée sous droit public, Publique, État) pilote l'**activation des modules**, la **classe de souveraineté** et le **niveau de rigueur**, pour éviter la sur-ingénierie (TPE) comme le sous-équipement (État).

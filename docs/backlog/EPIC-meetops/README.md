@@ -1,5 +1,7 @@
 # E12 — Module MeetOps (Collaboration)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.5).*
+
 ## Objectif
 
 Gestion des réunions : préparation d'agenda, animation en temps réel, compte-rendus structurés et suivi des décisions / actions issues des réunions.

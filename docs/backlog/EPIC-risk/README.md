@@ -1,5 +1,7 @@
 # E21 — Module Gestion des risques
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.10).*
+
 ## Objectif
 
 Module de gestion des risques projet et portefeuille, **data-centric et gouverné** : profil de projet adaptatif, taxonomie universelle 12 familles, scoring multidimensionnel, cycle de vie & traitement (4 T), boucle vivante branchée sur le bus d'événements PIVOT, consolidation portefeuille, analyse quantitative (EMV, Monte Carlo) et packs de conformité (RGPD, AI Act, EBIOS RM, RGAA), IA gouvernée à validation humaine, restitutions par rôle.

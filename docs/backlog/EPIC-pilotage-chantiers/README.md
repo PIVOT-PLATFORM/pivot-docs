@@ -1,5 +1,7 @@
 # E39 — Chantiers SI (pilotage)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.28).*
+
 ## Objectif
 Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Chantiers SI (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
 

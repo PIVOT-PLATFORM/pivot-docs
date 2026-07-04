@@ -1,5 +1,7 @@
 # E29 — Workflows & Automatisation
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.18).*
+
 ## Objectif
 
 Plateforme d'automatisation no-code / low-code : construction visuelle de workflows multi-étapes (déclencheur → actions), catalogue de connecteurs, étapes IA et agents outillés, gouvernance et souveraineté. Le périmètre est issu d'un benchmark comparatif face à **n8n, Zapier, Power Automate, Activepieces, Gumloop et IFTTT**. L'ambition : offrir la profondeur des acteurs pro tout en garantissant souveraineté, réversibilité et gouvernance de l'IA.
