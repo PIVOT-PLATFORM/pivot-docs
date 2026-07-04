@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | `GET /auth/oidc/config?tenantSlug=xxx` → retourne `{ issuerUri, clientId, scopes }` | ✅ |
 | Angular PKCE S256 : génération `code_verifier` + `code_challenge`, redirect IdP | ✅ |
 | Callback IdP → `POST /auth/oidc/exchange` avec `{ tenantSlug, accessToken, deviceInfo }` | ✅ |

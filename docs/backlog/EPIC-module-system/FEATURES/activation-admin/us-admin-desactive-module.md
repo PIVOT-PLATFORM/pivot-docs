@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | DELETE /api/admin/modules/{id}/activate désactive le module pour le tenant courant | ✅ |
 | Requiert ROLE_ADMIN | ✅ |
 | Guard Angular retourne 403 immédiatement après désactivation (cache invalidé) | ⬜ *(déféré — dépend du endpoint status d'EN03.2 (`/api/modules/{id}/status`) + invalidation cache d'EN03.3, aucun des deux mergé)* |
@@ -29,6 +29,6 @@
 - Tests E2E Playwright différés (environnement E2E indisponible lors de l'implémentation) — à compléter en suivi.
 
 ---
-Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: M · Priority: Critical
 Stage: Review
 Dépendances : EN03.2 (guard Angular + status API), EN03.3 (invalidation cache Redis) — non mergées, suivi requis avant clôture définitive.

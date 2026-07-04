@@ -1,4 +1,4 @@
-# EN01.10 — En-têtes de sécurité (CSP, HSTS)
+# EN01.9 — En-têtes de sécurité (CSP, HSTS)
 
 **Type d'enabler** : sécurité
 

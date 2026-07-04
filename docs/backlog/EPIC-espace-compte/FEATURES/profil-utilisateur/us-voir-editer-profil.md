@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/account/profile retourne les infos du compte (prénom, nom, email, avatar) | ⬜ |
 | PATCH /api/account/profile met à jour prénom et nom | ⬜ |
 | Upload avatar (multipart/form-data) stocké, URL retournée | ⬜ |

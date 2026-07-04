@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | PATCH /api/superadmin/tenants/{tenantId}/status accepte `{ status: "INACTIVE" }` | ⬜ |
 | Requiert ROLE_SUPER_ADMIN | ⬜ |
 | Tous les utilisateurs du tenant → 401 immédiat (sessions révoquées) | ⬜ |

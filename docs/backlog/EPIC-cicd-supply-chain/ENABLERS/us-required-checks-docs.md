@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Branch protection `main` : required check = gitleaks (secrets scan) | ⬜ |
 | Force push désactivé sur `main` | ⬜ |
 

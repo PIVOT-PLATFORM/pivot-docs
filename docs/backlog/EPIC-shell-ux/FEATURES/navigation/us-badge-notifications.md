@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Badge numérique sur l'icône cloche dans la navbar | ⬜ |
 | GET /api/notifications/unread-count retourne le nombre | ⬜ |
 | Badge masqué si 0 notifications | ⬜ |

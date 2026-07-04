@@ -9,7 +9,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Décision service GeoIP documentée dans un ADR avant implémentation | ⬜ |
 | Algorithme de détection défini : baseline construite sur les 30 derniers jours de connexions | ⬜ |
 | Détection IP inhabituelle : pays ou ASN significativement différent de l'historique | ⬜ |

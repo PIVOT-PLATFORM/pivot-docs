@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/admin/modules/{id}/activate active le module pour le tenant courant | ✅ |
 | Requiert ROLE_ADMIN | ✅ |
 | Invalidation immédiate du cache Redis (EN03.3) | ⬜ *(déféré — dépend d'EN03.3, cache Redis non encore mergé sur main)* |
@@ -31,6 +31,6 @@
 - Tests E2E Playwright différés (environnement E2E indisponible lors de l'implémentation) — à compléter en suivi.
 
 ---
-Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: M · Priority: Critical
 Stage: Review
 Dépendances : EN03.3 (invalidation cache Redis) — non mergée, suivi requis avant clôture définitive.

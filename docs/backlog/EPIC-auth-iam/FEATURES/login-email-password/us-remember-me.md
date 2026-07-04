@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Case "Se souvenir de moi" visible sur le formulaire de connexion | ✅ |
 | Case cochée → TTL token = 30 jours (vs 24h par défaut) | ✅ |
 | Case non cochée → TTL token = 24h | ✅ |

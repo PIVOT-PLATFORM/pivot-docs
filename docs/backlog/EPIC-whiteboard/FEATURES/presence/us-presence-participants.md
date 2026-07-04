@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Panneau de présence affiché en haut du canvas : avatars (ou initiales) des participants connectés | ⬜ |
 | À chaque JOIN/LEAVE, message PARTICIPANTS_UPDATE émis sur /topic/whiteboard/{boardId}/presence avec liste complète des connectés | ⬜ |
 | Chaque participant a une couleur unique attribuée par le serveur au JOIN (parmi une palette de 12 couleurs distinctes) | ⬜ |

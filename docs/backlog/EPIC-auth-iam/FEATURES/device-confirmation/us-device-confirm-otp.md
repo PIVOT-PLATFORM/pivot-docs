@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Empreinte d'appareil inconnue détectée à la connexion → envoi OTP 6 chiffres | ✅ |
 | Page `/auth/device-confirm` avec champ OTP et timer | ✅ |
 | OTP correct (5 min TTL) → appareil enregistré, connexion finalisée | ✅ |

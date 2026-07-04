@@ -10,7 +10,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Page `/contact` avec champs email et message | ✅ |
 | Validation email (requis + format) et message (requis) avec messages d'erreur i18n | ✅ |
 | Soumission → `POST /api/contact` avec `{ email, message, lang }` | ✅ |

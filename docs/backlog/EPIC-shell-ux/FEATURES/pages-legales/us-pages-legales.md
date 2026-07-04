@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | `/legal/mentions-legales`, `/legal/confidentialite`, `/legal/cgu` accessibles | ✅ |
 | Contenu intégralement en français (obligation légale) — titres et corps hardcodés FR | ✅ |
 | Banner jaune "⚠ This document is legally binding in French only." quand lang=EN uniquement | ✅ |

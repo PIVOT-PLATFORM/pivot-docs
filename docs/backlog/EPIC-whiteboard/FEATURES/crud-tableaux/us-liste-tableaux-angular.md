@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Route `/whiteboard` (lazy-loaded, bloquée par moduleGuard) | ⬜ |
 | Grille de cards : titre, rôle (badge owner/editor/viewer), date modif | ⬜ |
 | Bouton "Nouveau tableau" → modal titre → POST | ⬜ |

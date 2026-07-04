@@ -1,4 +1,4 @@
-# F02.5 — Pages "Bientôt disponible"
+# Pages "Bientôt disponible" — hors périmètre GitHub E16
 
 **Description** : Pages placeholder pour les fonctionnalités en cours de développement : Mes équipes, FAQ, Plan du site, Accessibilité. Rendu via `ComingSoonComponent`.
 

@@ -6,12 +6,12 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-## Sprint 1 — Auth & Shell MVP ✅ Terminé
+## Sprint 1 — Auth & Shell MVP ✅ Terminé sauf contact
 
 **Branche :** `feat/us16-3-1-contact`
 
 | US | Titre | 🤖 Dev |
-|----|-------|--------|-------|
+|----|-------|--------|
 | US01.1.1 | Connexion email + mot de passe | ✅ |
 | US01.1.2 | Déconnexion | ✅ |
 | US01.1.3 | Rester connecté (remember-me) | ✅ |
@@ -29,7 +29,9 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US16.4.1 | Thème clair / sombre | ✅ |
 | Pages légales | ML + PC + CGU | ✅ |
 | Footer + i18n | Footer + Transloco FR/EN | ✅ |
-| **US16.3.1** | **Formulaire de contact** | ✅ |
+| Dashboard utilisateur | Accueil connecté | ✅ |
+| Pages Bientôt disponible | Modules non activés | ✅ |
+| **US16.3.1** | **Formulaire de contact** | 🔎 Review |
 
 ---
 
@@ -40,11 +42,11 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 **Priorité :** Critical — débloque tous les modules E08–E15
 
 | US | Titre | Size | Priorité | 🤖 Dev |
-|----|-------|------|----------|--------|-------|
-| EN03.1 | PivotModule interface + registre backend | S | Critical | ✅ |
+|----|-------|------|----------|--------|
+| EN03.1 | PivotModule interface + registre backend | S | Critical | 🔎 Review |
 | EN03.2 | Guard Angular moduleGuard + status API | S | Critical | 🔎 Review |
-| EN03.3 | Cache Redis statut modules TTL 60s | S | Critical | ✅ |
-| EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ✅ |
+| EN03.3 | Cache Redis statut modules TTL 60s | S | Critical | 🔎 Review |
+| EN03.4 | Contrat de module frontend TypeScript | XS | Critical | ⬜ |
 | US03.1.1 | Admin active un module pour son tenant | M | Critical | 🔎 Review |
 | US03.1.2 | Admin désactive un module pour son tenant | M | Critical | 🔎 Review |
 | US03.2.1 | UI liste modules disponibles avec statut | M | High | 🔎 Review |
@@ -63,14 +65,14 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 **Scope :** E02 (espace compte utilisateur) + E06 (administration tenant/superadmin)
 
 | US | Titre | Size | Priorité | 🤖 Dev |
-|----|-------|------|----------|--------|-------|
+|----|-------|------|----------|--------|
 | US02.1.1 | Voir et éditer son profil | M | High | ⬜ |
 | US02.1.2 | Préférence de langue | S | Medium | ⬜ |
 | US02.2.1 | Changer son mot de passe | M | High | ⬜ |
 | US02.2.2 | Changer son adresse email | M | High | ⬜ |
-| US02.3.1 | Voir ses sessions actives | M | Medium | ⬜ |
-| US02.3.2 | Demander la suppression de son compte | M | High | ⬜ |
-| US02.3.3 | Exporter ses données personnelles | M | High | ⬜ |
+| US02.2.3 | Voir et révoquer ses sessions actives | M | Medium | ⬜ |
+| US02.2.4 | Suppression de compte (RGPD) | M | High | ⬜ |
+| US02.3.1 | Export de ses données personnelles | M | High | ⬜ |
 | US06.1.1 | Liste des utilisateurs du tenant (backend) | M | High | ⬜ |
 | US06.1.2 | Liste des utilisateurs du tenant (Angular) | M | High | ⬜ |
 | US06.1.3 | Modifier le rôle d'un utilisateur | M | High | ⬜ |
@@ -80,7 +82,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US06.2.2 | Désactiver un tenant | M | High | ⬜ |
 | US06.2.3 | Liste des tenants | M | Medium | ⬜ |
 
-> **Parallélisable :** US02.x ‖ US06.x — dépendances : US06.1.5 après US06.1.4 ; US02.3.2 après US02.2.1
+> **Parallélisable :** US02.x ‖ US06.x — dépendances : US06.1.5 après US06.1.4 ; US02.2.4 après US02.2.1
 
 ---
 
@@ -90,16 +92,16 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 **Scope :** E07 (infra déploiement) + US01 sécurité avancée + EN-NOTIF + US16 restants + US03 SUPER_ADMIN
 
 | US | Titre | Size | Priorité | 🤖 Dev |
-|----|-------|------|----------|--------|-------|
+|----|-------|------|----------|--------|
 | EN07.1 | Docker Compose production | M | Critical | ⬜ |
-| EN07.2 | Nginx proxy + SSL/TLS | M | Critical | ⬜ |
-| EN07.5 | Health checks + readiness probes | S | Critical | ⬜ |
+| EN07.2 | Secret management Docker secrets | M | Critical | ⬜ |
+| EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | ⬜ |
 | US01.4.2 | Gérer ses appareils de confiance | M | High | ⬜ |
 | US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | ⬜ |
 | US01.5.1 | Notification email action sensible | M | High | ⬜ |
 | EN-NOTIF | Infrastructure notifications in-app | L | High | ⬜ |
 | US16.1.3 | Badge notifications | S | Medium | ⬜ |
-| US16.2.2 | Section modules à venir | S | Medium | ⬜ |
+| US16.2.2 | Section modules à venir | S | Medium | 🔄 |
 | US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | ⬜ |
 | US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | ⬜ |
 | US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | ⬜ |
@@ -119,7 +121,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 **Pré-requis :** Sprint 2 terminé + Sprint 4 EN07.x validé + Gate 1 US08.x validé par PO Agent
 
 | US | Titre | Size | Priorité | 🤖 Dev |
-|----|-------|------|----------|--------|-------|
+|----|-------|------|----------|--------|
 | EN08.1 | Isolation WebSocket room par board | M | Critical | ⬜ |
 | EN08.2 | Guard Angular module whiteboard | S | Critical | ⬜ |
 | US08.1.1 | Utilisateur crée un tableau (backend) | M | Critical | ⬜ |
@@ -182,4 +184,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-07-02*
+*Dernière mise à jour : 2026-07-04*

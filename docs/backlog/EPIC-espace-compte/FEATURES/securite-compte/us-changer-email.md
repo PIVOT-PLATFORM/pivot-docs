@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/account/email envoie lien de confirmation vers la nouvelle adresse | ⬜ |
 | L'email actuel est conservé jusqu'à confirmation depuis la nouvelle adresse | ⬜ |
 | Lien de confirmation à usage unique, TTL 24h | ⬜ |

@@ -38,5 +38,5 @@ tests Vitest/Playwright) sur la branche `feat/en03-2-module-guard` (pivot-ui) �
 `feat/en03-2-module-guard` (pivot-core) pour l'endpoint.
 
 ---
-Item Type: US · Parent: F03.2 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F03.2 · Module: core · Phase: MVP · Size: S · Priority: Critical
 Stage: Review

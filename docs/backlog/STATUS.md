@@ -19,7 +19,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 |------|-----|----------|----------|----|------------|
 | [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
-| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | 🔄 EN03.4 ✅ · Sprint 2 |
+| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | 🔄 EN03.1-3 + US03.x en Review · EN03.4 backlog · Sprint 2 |
 | [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
@@ -46,7 +46,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 ### Sprint 1 — Auth & Shell (MVP) — ✅ Terminé sauf contact
 
 | US | Titre | 🤖 Dev |
-|----|-------|--------|-------|
+|----|-------|--------|
 | US01.1.1 | Connexion email + mot de passe | ✅ |
 | US01.1.2 | Déconnexion | ✅ |
 | US01.1.3 | Rester connecté (remember-me) | ✅ |
@@ -64,18 +64,20 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | US16.4.1 | Thème clair/sombre | ✅ |
 | Pages légales | ML + PC + CGU | ✅ |
 | Footer + i18n | Footer + Transloco FR/EN | ✅ |
-| **US16.3.1** | **Formulaire de contact** | ✅ |
+| Dashboard utilisateur | Accueil connecté | ✅ |
+| Pages Bientôt disponible | Modules non activés | ✅ |
+| **US16.3.1** | **Formulaire de contact** | ⬜ |
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
 ### Sprint 2 — Système de modules + Auth manquant (MVP)
 
 | US | Titre | 🤖 Dev |
-|----|-------|--------|-------|
-| EN03.1 | PivotModule interface + registre backend | ✅ |
+|----|-------|--------|
+| EN03.1 | PivotModule interface + registre backend | ⬜ |
 | EN03.2 | Guard Angular moduleGuard + status API | ⬜ |
 | EN03.3 | Cache Redis statut modules TTL 60s | ⬜ |
-| EN03.4 | Contrat module frontend (TypeScript) | ✅ |
+| EN03.4 | Contrat module frontend (TypeScript) | ⬜ |
 | US03.1.1 | Admin active un module | ⬜ |
 | US03.1.2 | Admin désactive un module | ⬜ |
 | US03.2.1 | UI liste modules avec statut | ⬜ |
@@ -102,15 +104,15 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
-| Critical | US16.3.1 Formulaire de contact | MVP | ✅ Done |
-| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.1 ✅ · EN03.4 ✅ · Sprint 2 |
+| Critical | US16.3.1 Formulaire de contact | MVP | 🔎 Review |
+| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.1-3 + US03.x en Review · EN03.4 backlog · Sprint 2 |
 | Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
-| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ⬜ Sprint 2 |
+| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | 🔎 En Review · Sprint 2 |
 | High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
 | Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
-| Medium | US16.2.2 Section modules à venir | MVP | ⬜ À planifier |
+| Medium | US16.2.2 Section modules à venir | MVP | 🔄 En cours |
 | — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
@@ -123,4 +125,4 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 ---
 
-*Dernière mise à jour : 2026-07-02*
+*Dernière mise à jour : 2026-07-04*

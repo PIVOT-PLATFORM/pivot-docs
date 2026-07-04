@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Composite action `.github/actions/setup/action.yml` dans pivot-platform (ou repo dédié) | ⬜ |
 | Paramètres : `java-version`, `node-version`, `cache-key` | ⬜ |
 | Utilisée dans les workflows pivot-core ET pivot-ui | ⬜ |

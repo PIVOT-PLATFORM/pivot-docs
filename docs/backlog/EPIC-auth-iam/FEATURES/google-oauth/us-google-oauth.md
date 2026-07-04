@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Bouton "Se connecter avec Google" sur la page login | ✅ |
 | Click → Google OAuth2 consent screen → Google ID token retourné au client | ✅ |
 | `POST /auth/google` avec ID token → vérification côté backend (`GoogleAuthService`) | ✅ |

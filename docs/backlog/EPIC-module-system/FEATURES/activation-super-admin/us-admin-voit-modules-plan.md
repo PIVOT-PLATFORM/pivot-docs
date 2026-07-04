@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/admin/modules filtre par plan du tenant (+ overrides SUPER_ADMIN) | ⬜ |
 | Modules hors plan invisibles (pas 403, juste absents de la liste) | ⬜ |
 | Override SUPER_ADMIN visible si actif | ⬜ |

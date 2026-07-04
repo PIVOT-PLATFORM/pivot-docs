@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/whiteboard/boards retourne les tableaux accessibles par l'utilisateur | ⬜ |
 | Inclut : tableaux owned + tableaux partagés avec l'user | ⬜ |
 | Champs : id, title, role, createdAt, updatedAt, thumbnailUrl | ⬜ |

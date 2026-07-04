@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/superadmin/plans/{planId}/modules configure la liste des modules d'un plan | ⬜ |
 | Requiert ROLE_SUPER_ADMIN | ⬜ |
 | Entité `Plan` avec association M-N modules | ⬜ |

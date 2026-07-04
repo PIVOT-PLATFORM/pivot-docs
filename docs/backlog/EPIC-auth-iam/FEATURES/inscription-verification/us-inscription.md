@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Formulaire : email, password, confirm password | ✅ |
 | Email déjà utilisé → réponse générique "Un email vous a été envoyé" (anti-énumération) | ✅ |
 | Inscription réussie → email de vérification envoyé, compte en état `PENDING` | ✅ |

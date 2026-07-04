@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Détection basée sur le fingerprint d'appareil inconnu (hors géolocalisation IP — périmètre MVP uniquement) | ⬜ |
 | Email d'alerte envoyé avec : appareil, date/heure, lien "Pas moi" (OTP à usage unique TTL 1h) | ⬜ |
 | Pas d'alerte si appareil de confiance déjà connu | ⬜ |

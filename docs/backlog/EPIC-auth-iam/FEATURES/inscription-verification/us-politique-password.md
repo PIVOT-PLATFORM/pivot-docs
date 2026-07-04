@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Validation backend : min 12 chars, 1 majuscule, 1 chiffre, 1 spécial | ✅ |
 | Composant Angular `PasswordStrengthComponent` : indicateur visuel (faible/moyen/fort) | ✅ |
 | Validation temps réel côté Angular (pas d'appel API) | ✅ |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Page `/auth/forgot-password` avec champ email | ✅ |
 | Email connu → token reset généré (TTL 1h), email envoyé avec lien | ✅ |
 | Email inconnu → réponse générique "Si un compte existe, un email vous a été envoyé" (anti-énumération) | ✅ |

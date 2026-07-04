@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Workflow GitHub Actions `dast-baseline.yml` déclenché nightly (cron) | ⬜ |
 | ZAP baseline scan contre l'URL staging pivot-ui | ⬜ |
 | Rapport HTML + JSON archivé en artefact GitHub Actions | ⬜ |

@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | GET /api/admin/modules retourne liste avec `id`, `name`, `enabled`, `description` | ✅ |
 | Page Angular `/admin/modules` accessible uniquement aux ROLE_ADMIN | ✅ |
 | Grille de modules avec statut visuel (actif = badge vert, inactif = gris) | ✅ |

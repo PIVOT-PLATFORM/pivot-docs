@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | POST /api/account/export déclenche génération d'une archive (JSON ou ZIP) | ⬜ |
 | Archive contient : profil, sessions, audit events, données modules | ⬜ |
 | Lien de téléchargement envoyé par email (TTL 24h) | ⬜ |

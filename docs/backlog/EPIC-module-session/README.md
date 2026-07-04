@@ -29,6 +29,7 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
   - US19.3.3 : Activité WORDCLOUD — contributions texte + nuage de mots temps réel
   - US19.3.4 : Activité BRAINSTORM — post-its temps réel (texte libre)
   - US19.3.5 : Activité Q&A — questions posées par participants + upvote
+  - US19.3.6 : Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré)
 - **F19.4 — Résultats et diffusion**
   - US19.4.1 : Diffusion résultats temps réel aux participants (WebSocket STOMP)
   - US19.4.2 : Export résultats session (PDF ou JSON) après clôture
@@ -74,6 +75,7 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
 | [US19.3.3 — Activité WORDCLOUD](FEATURES/activites/us-wordcloud.md) | ⬜ |
 | [US19.3.4 — Activité BRAINSTORM](FEATURES/activites/us-brainstorm.md) | ⬜ |
 | [US19.3.5 — Activité Q&A](FEATURES/activites/us-qa.md) | ⬜ |
+| [US19.3.6 — Activité VOTE](FEATURES/activites/us-vote-decision.md) | ⬜ |
 | **F19.4 — Résultats** | |
 | [US19.4.1 — Diffusion résultats temps réel](FEATURES/resultats/us-resultats-temps-reel.md) | ⬜ |
 | [US19.4.2 — Export résultats session](FEATURES/resultats/us-export-resultats.md) | ⬜ |

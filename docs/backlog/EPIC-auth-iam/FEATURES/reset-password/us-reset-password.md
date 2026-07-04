@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Page `/auth/reset-password?token=xxx` avec champs nouveau password + confirm | ✅ |
 | Token valide → password mis à jour (BCrypt-12), token invalidé, redirection login | ✅ |
 | Token expiré (> 1h) → message d'erreur + lien "Demander un nouveau lien" | ✅ |

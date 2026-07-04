@@ -7,7 +7,7 @@
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
-|---------|--------|-------|
+|---------|--------|
 | Clic "Déconnexion" → `POST /api/auth/logout` → token révoqué en BDD | ✅ |
 | Cookie `pivot_session` supprimé après déconnexion | ✅ |
 | Redirection vers `/auth/login` après déconnexion | ✅ |
