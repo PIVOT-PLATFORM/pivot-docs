@@ -31,23 +31,26 @@ jobs:
       page_url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
 
     steps:
+      # TEST TEMPORAIRE (a retirer avant merge) — echec force pour re-valider le
+      # wiring retry apres deplacement dans ce fichier reutilisable (finding #6,
+      # re-review pivot-docs#31).
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+        run: echo "::error::[TEST] simulation echec tentative 1 (re-validation post-refactor)"; exit 1
 
       # L'API Pages renvoie parfois "Deployment failed, try again later" quand un
-      # deploiement precedent vient tout juste de se terminer. Wiring et backoff
-      # valides en conditions reelles (echecs forces) sur pivot-docs#31.
+      # deploiement precedent vient tout juste de se terminer.
       - name: Attendre avant nouvelle tentative (1)
         if: steps.deployment.outcome == 'failure'
         run: sleep 20
 
+      # TEST TEMPORAIRE (a retirer avant merge) — idem.
       - name: Deploy to GitHub Pages (retry 1)
         id: deployment_retry
         if: steps.deployment.outcome == 'failure'
         continue-on-error: true
-        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+        run: echo "::error::[TEST] simulation echec tentative 2 (re-validation post-refactor)"; exit 1
 
       - name: Attendre avant nouvelle tentative (2)
         if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
