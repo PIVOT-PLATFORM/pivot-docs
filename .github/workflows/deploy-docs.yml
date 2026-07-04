@@ -55,7 +55,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
@@ -64,13 +64,23 @@ jobs:
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
 
       # L'API Pages renvoie parfois "Deployment failed, try again later" quand un
-      # deploiement precedent vient tout juste de se terminer. Une seule
-      # nouvelle tentative suffit dans la quasi-totalite des cas observes.
-      - name: Attendre avant nouvelle tentative
+      # deploiement precedent vient tout juste de se terminer. Wiring valide
+      # en conditions reelles sur pivot-docs#31 (docs-checks.yml).
+      - name: Attendre avant nouvelle tentative (1)
         if: steps.deployment.outcome == 'failure'
         run: sleep 20
 
-      - name: Deploy to GitHub Pages (retry)
+      - name: Deploy to GitHub Pages (retry 1)
         id: deployment_retry
         if: steps.deployment.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+      - name: Attendre avant nouvelle tentative (2)
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        run: sleep 40
+
+      - name: Deploy to GitHub Pages (retry 2)
+        id: deployment_retry2
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
