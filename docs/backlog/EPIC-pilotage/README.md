@@ -32,10 +32,19 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 | Licences & réversibilité *(benchmark)* | [E37](../EPIC-pilotage-licences/README.md) | pivot-pilotage-core · `pilotage` |
 | Innovation *(benchmark)* | [E38](../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
 | Chantiers SI *(benchmark)* | [E39](../EPIC-pilotage-chantiers/README.md) | pivot-pilotage-core · `pilotage` |
+| **Profil & adaptation *(v2)*** | [E40](../EPIC-profil-adaptation/README.md) | pivot-pilotage-core · `pilotage` |
 
 > La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
 >
 > Les modules *benchmark* (E31–E39) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](../BENCHMARK.md). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
+
+### Couche adaptative v2 (`Profils_applicables`)
+
+La **v2 adaptative** du backlog PPM introduit **[E40 — Profil & adaptation](../EPIC-profil-adaptation/README.md)** : le **profil d'organisation** (TPE / PME / Grand groupe / Privée sous droit public / Publique / État) pilote l'activation des modules, la classe de souveraineté et le niveau de rigueur. Chaque US du domaine porte désormais un champ **`Profils:`** indiquant les profils applicables. Changements v2 notables :
+
+- **E31 Demande & arbitrage dissoute** : what-if / business cases → E23 ; demande / scoring / capacité à faire / tout-est-projet → *hors v2* (conservés, à confirmer).
+- **PP-017b Interface ERP finance** (variante privée) ajouté à E26 Budget (US26.2.4).
+- MoSCoW « conditionnel » selon le profil (ex. interface comptable publique, RGAA, on-premise).
 
 ## Cockpits (vues composées)
 
@@ -93,6 +102,8 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [E26 — Budget & suivi financier](../EPIC-budget/README.md) | ⬜ |
 | [E27 — OKR](../EPIC-okr/README.md) | ⬜ |
 | [E21 — Gestion des risques](../EPIC-risk/README.md) | ⬜ |
+| **Couche adaptative v2 (E40)** | |
+| [E40 — Profil & adaptation](../EPIC-profil-adaptation/README.md) | ⬜ |
 | **Modules benchmark PPM (E31–E39)** | |
 | [E31 — Demande & arbitrage](../EPIC-demande-arbitrage/README.md) | ⬜ |
 | [E32 — Ressources & temps](../EPIC-ressources-temps/README.md) | ⬜ |

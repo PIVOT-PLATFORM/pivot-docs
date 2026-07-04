@@ -1,4 +1,4 @@
-# US37.1.4 — Offre d'entrée incluse
+# US37.1.4 — Offre d'entrée incluse / gratuite
 
 **En tant que** acheteur
 **Je veux** un niveau basique inclus dans une suite existante (coût d'entrée nul) avec montée en gamme par profil
@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F37.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
-Source: PP-050 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant MS
+Source: PP-050 · MoSCoW: Should · Lot: Lot 3 · Origine: Différenciant MS
+Profils: TPE, PME
 Justification: Dossier §6.3
 Dépendances: —

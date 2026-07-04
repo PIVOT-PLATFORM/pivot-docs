@@ -17,5 +17,6 @@
 Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
 Source: PP-055 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B3
+Profils: Publique, État
 Justification: Dossier §7-B3 : 'décaler un projet' doit recalculer les CP
 Dépendances: —

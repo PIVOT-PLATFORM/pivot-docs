@@ -17,5 +17,6 @@
 Item Type: US · Parent: F32.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
 Source: PP-019 · MoSCoW: Must · Lot: Lot 2 · Origine: PM + Sciforma
+Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §5.1/§6.1 : approche 'tout est projet'
 Dépendances: —

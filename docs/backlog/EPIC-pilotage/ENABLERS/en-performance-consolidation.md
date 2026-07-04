@@ -13,4 +13,5 @@
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
 Source: PP-032 · MoSCoW: Must · Lot: Lot 2 · Origine: Cahiers PM/Sciforma
+Profils: Grand groupe, Publique, État
 Justification: Cahiers ENF ; témoignages consolidations

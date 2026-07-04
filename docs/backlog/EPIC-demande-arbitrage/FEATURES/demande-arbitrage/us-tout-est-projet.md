@@ -4,6 +4,8 @@
 **Je veux** suivre de façon unifiée les projets, la maintenance et les activités récurrentes
 **Afin de** disposer d'une vision complète de l'allocation et fiabiliser la capacité à faire (cf. US31.1.3)
 
+> ⚠️ **Hors v2 adaptative** — non repris dans la mise à jour du backlog PPM v2 ; conservé pour mémoire, à confirmer.
+
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
@@ -17,5 +19,6 @@
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
 Source: PP-049 · MoSCoW: Should · Lot: Lot 2 · Origine: Différenciant PM
+Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §6.1 ; conditionne la fiabilité de la capacité à faire (PP-015)
 Dépendances: —

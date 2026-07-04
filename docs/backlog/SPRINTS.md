@@ -150,6 +150,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
 - Domaine Pilotage (E18 ombrelle, phase-3 — pivot-pilotage-core/ui) décomposé en modules-EPICs : E22 Roadmap/Gantt · E23 Portefeuille · E24 ADR projet · E25 Commande publique · E26 Budget · E27 OKR
 - **Domaine Pilotage — modules benchmark PPM (phase-3)** : E31 Demande & arbitrage · E32 Ressources & temps · E33 Collaboration & tâches · E34 IA & agents · E35 Gouvernance & sécurité · E36 Intégration SI · E37 Licences & réversibilité · E38 Innovation · E39 Chantiers SI (+ extensions F22.2/F23.2/F26.2)
+- **Domaine Pilotage — v2 adaptative (phase-3)** : **E40 Profil & adaptation** (profil d'organisation, activation modules par profil, classe de souveraineté A/B/C) + champ `Profils:` sur chaque US · PP-017b Interface ERP finance (E26) · E31 dissoute (hors-v2 conservés). Cf. [BENCHMARK.md](BENCHMARK.md).
 - E21 Gestion des risques (phase-3 — pivot-risk-core/ui) : profil adaptatif, scoring, traitement 4T, boucle vivante, portefeuille, quantitatif & conformité, IA gouvernée, cockpit
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
 - E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)

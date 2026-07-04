@@ -17,5 +17,6 @@
 Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
 Source: PP-058 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B6
+Profils: Privée sous droit public, Publique, État
 Justification: Dossier §7-B6 : contrôles de légalité et CRC
 Dépendances: —

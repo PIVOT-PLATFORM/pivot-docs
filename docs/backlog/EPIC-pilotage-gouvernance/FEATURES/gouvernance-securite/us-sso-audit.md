@@ -17,5 +17,6 @@
 Item Type: US · Parent: F35.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
 Source: PP-027 · MoSCoW: Must · Lot: Lot 2 · Origine: Cahiers des 3
+Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Cahiers ADM/SEC/GOV
 Dépendances: —

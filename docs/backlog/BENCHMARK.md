@@ -93,6 +93,15 @@ dans les modules existants là où c'est pertinent, nouveaux modules-EPIC sinon.
 | E12 Innovation | **E38** (nouveau) | net-new |
 | E13 Chantiers SI | **E39** (nouveau) | net-new |
 
+### Mise à jour v2 « adaptative » (backlog PPM)
+
+La **v2** du backlog PPM ajoute une **couche d'adaptation par profil d'organisation** :
+
+- **[E40 — Profil & adaptation](EPIC-profil-adaptation/README.md)** (nouveau, `PP-A01…A06`) : le profil (TPE / PME / Grand groupe / Privée sous droit public / Publique / État) pilote l'activation des modules, la **classe de souveraineté (A/B/C)** et le niveau de rigueur.
+- **Dimension `Profils_applicables`** portée par **chaque US** du domaine Pilotage (champ `Profils:` en frontmatter) + MoSCoW « conditionnel » selon le profil.
+- **PP-017b Interface ERP finance** (variante privée) → E26 Budget (US26.2.4).
+- **E31 Demande & arbitrage dissoute** : what-if / business cases → E23 ; demande / scoring / capacité à faire / tout-est-projet → *hors v2* (conservés, annotés « à confirmer »).
+
 ---
 
 ## 5. Workflows (WF) → E29 (net-new)

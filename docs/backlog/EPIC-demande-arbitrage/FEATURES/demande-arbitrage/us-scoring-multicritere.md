@@ -4,6 +4,8 @@
 **Je veux** noter les demandes selon des critères configurables (alignement, coût, risque, impact) avec des votes indépendants des décideurs
 **Afin de** objectiver la priorisation et comparer les demandes entre elles
 
+> ⚠️ **Hors v2 adaptative** — non repris dans la mise à jour du backlog PPM v2 ; conservé pour mémoire, à confirmer.
+
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
@@ -17,5 +19,6 @@
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
 Source: PP-014 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma)
+Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §5.1 + §6.2
 Dépendances: —

@@ -17,5 +17,6 @@
 Item Type: US · Parent: F34.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
 Source: PP-047 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant PM (VIA)
+Profils: Publique, État
 Justification: Dossier §6.1 + §8-I7
 Dépendances: —

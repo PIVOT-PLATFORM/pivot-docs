@@ -17,5 +17,6 @@
 Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
 Source: PP-056 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B4
+Profils: Publique, État
 Justification: Dossier §7-B4
 Dépendances: —

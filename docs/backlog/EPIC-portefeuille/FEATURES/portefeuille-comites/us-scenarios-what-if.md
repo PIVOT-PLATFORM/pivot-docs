@@ -1,4 +1,4 @@
-# US31.1.4 — Scénarios what-if
+# US23.2.7 — Scénarios what-if
 
 **En tant que** direction
 **Je veux** simuler sur plusieurs portefeuilles des ajouts, reports ou abandons de projets avec leurs impacts charge, budget et trésorerie, et comparer les scénarios
@@ -14,8 +14,9 @@
 | Security/Gouvernance : les simulations n'impactent pas les données de référence tant qu'elles ne sont pas validées (traçabilité) | ⬜ |
 
 ---
-Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
+Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
 Source: PP-036 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Sciforma
+Profils: Grand groupe, État
 Justification: Dossier §6.2 : la fonction reine de l'arbitrage
 Dépendances: —

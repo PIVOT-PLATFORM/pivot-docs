@@ -12,5 +12,6 @@
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
-Source: PP-035 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I4 + différenciant PM
+Source: PP-035 · MoSCoW: Must (conditionnel) · Lot: Lot 1 · Origine: Insight I4 + différenciant PM
+Profils: Privée sous droit public, Publique, État
 Justification: Dossier §8-I4

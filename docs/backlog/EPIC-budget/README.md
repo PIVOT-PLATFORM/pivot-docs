@@ -26,6 +26,7 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
   - US26.2.1 : Coûts au niveau projet
   - US26.2.2 : Budgets pluriannuels (PPI)
   - US26.2.3 : Flux de trésorerie
+  - US26.2.4 : Interface ERP finance *(v2 — variante privée)*
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
@@ -59,3 +60,4 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
 | [US26.2.1 — Coûts au niveau projet](FEATURES/budgets-finances/us-couts-projet.md) | ⬜ |
 | [US26.2.2 — Budgets pluriannuels (PPI)](FEATURES/budgets-finances/us-budgets-pluriannuels-ppi.md) | ⬜ |
 | [US26.2.3 — Flux de trésorerie](FEATURES/budgets-finances/us-flux-tresorerie.md) | ⬜ |
+| [US26.2.4 — Interface ERP finance](FEATURES/budgets-finances/us-interface-erp-finance.md) | ⬜ |

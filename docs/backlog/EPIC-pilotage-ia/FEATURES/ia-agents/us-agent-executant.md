@@ -17,5 +17,6 @@
 Item Type: US · Parent: F34.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
 Source: PP-041 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant MS (Project Manager agent)
+Profils: PME, Grand groupe
 Justification: Dossier §6.3 : le plus abouti de la catégorie généraliste
 Dépendances: —

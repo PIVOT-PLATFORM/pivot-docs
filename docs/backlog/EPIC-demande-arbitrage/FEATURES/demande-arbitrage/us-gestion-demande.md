@@ -4,6 +4,8 @@
 **Je veux** recueillir les demandes et idées via des formulaires typés, les qualifier et les faire suivre un circuit de validation
 **Afin de** tracer la frontière PPM/outil de tâches et instruire les demandes avant tout lancement
 
+> ⚠️ **Hors v2 adaptative** — non repris dans la mise à jour du backlog PPM v2 ; conservé pour mémoire, à confirmer.
+
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
@@ -18,5 +20,6 @@
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
 Source: PP-013 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma) — cœur PPM
+Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §5.1 : la frontière PPM/outil de tâches
 Dépendances: —

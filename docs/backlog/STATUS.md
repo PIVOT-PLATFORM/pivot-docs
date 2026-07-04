@@ -39,10 +39,10 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | [E21 — Gestion des risques](EPIC-risk/README.md) | E21 | 9 (F21.1–9) | 3 (EN21.1–3) | 47 | ⬜ phase-3 · pilotage |
 | [E22 — Roadmap / Gantt](EPIC-roadmap/README.md) | E22 | 2 (F22.1–2) | — (EN18.*) | 9 | ⬜ phase-3 · pilotage · +benchmark |
-| [E23 — Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 (F23.1–2) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · +benchmark |
+| [E23 — Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 (F23.1–2) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
 | [E24 — ADR projet](EPIC-adr-projet/README.md) | E24 | 1 (F24.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
 | [E25 — Commande publique](EPIC-commande-publique/README.md) | E25 | 1 (F25.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage |
-| [E26 — Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 (F26.1–2) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · +benchmark |
+| [E26 — Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 (F26.1–2) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
 | [E27 — OKR](EPIC-okr/README.md) | E27 | 1 (F27.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 5 (F28.1–5) | 13 (EN28.1–13) | 17 | ⏸️ phase-3 · dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 (F29.1–14) | 6 (EN29.1–6) | 78 | ⬜ phase-3 · benchmark WF |
@@ -56,8 +56,9 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E37 — Licences & réversibilité (pilotage)](EPIC-pilotage-licences/README.md) | E37 | 1 (F37.1) | — (EN18.*) | 4 | ⬜ phase-3 · pilotage · benchmark |
 | [E38 — Innovation (pilotage)](EPIC-pilotage-innovation/README.md) | E38 | 1 (F38.1) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · benchmark |
 | [E39 — Chantiers SI (pilotage)](EPIC-pilotage-chantiers/README.md) | E39 | 1 (F39.1) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · benchmark |
+| [E40 — Profil & adaptation](EPIC-profil-adaptation/README.md) | E40 | 1 (F40.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · **v2 adaptative** |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
-| **Total benchmark** | **E29 + E30 + PP distribués + E28** | **~40** | **24** | **252** | ⬜ phase-3 · voir [BENCHMARK.md](BENCHMARK.md) |
+| **Total benchmark** | **E29 + E30 + PP distribués + E28 + v2** | **~41** | **24** | **260** | ⬜ phase-3 · voir [BENCHMARK.md](BENCHMARK.md) |
 
 ---
 

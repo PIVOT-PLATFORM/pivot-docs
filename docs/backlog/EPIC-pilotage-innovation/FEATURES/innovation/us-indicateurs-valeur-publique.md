@@ -17,5 +17,6 @@
 Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
 Source: PP-059 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B7
+Profils: Publique, État
 Justification: Dossier §7-B7 : le 'triple bilan' du portefeuille public
 Dépendances: —

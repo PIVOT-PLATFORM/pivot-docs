@@ -13,4 +13,5 @@
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
 Source: PP-033 · MoSCoW: Should · Lot: Lot 2 · Origine: PM généralisé
+Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §6.1 : autonomie = maîtrise du TCO

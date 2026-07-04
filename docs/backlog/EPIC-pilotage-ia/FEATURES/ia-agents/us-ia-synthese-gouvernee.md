@@ -17,5 +17,6 @@
 Item Type: US · Parent: F34.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
 Source: PP-031 · MoSCoW: Should · Lot: Lot 3 · Origine: 2/3 (VIA, Copilot) + Insight I7
+Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §5.2 + §8-I7
 Dépendances: —

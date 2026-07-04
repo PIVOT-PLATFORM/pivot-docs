@@ -17,5 +17,6 @@
 Item Type: US · Parent: F22.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
 Source: PP-039 · MoSCoW: Could · Lot: Lot 3 · Origine: Sciforma + MS
+Profils: Grand groupe, État
 Justification: Dossier §5.2
 Dépendances: —

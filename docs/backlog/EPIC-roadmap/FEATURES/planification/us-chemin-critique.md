@@ -17,5 +17,6 @@
 Item Type: US · Parent: F22.2 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
 Source: PP-002 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 3/3
+Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §4
 Dépendances: —

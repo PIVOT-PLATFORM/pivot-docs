@@ -29,6 +29,8 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
   - US23.2.4 : Météo et indicateurs normalisés
   - US23.2.5 : Gestion de programmes
   - US23.2.6 : Pilotage des plans stratégiques
+  - US23.2.7 : Scénarios what-if *(déplacé depuis E31 en v2)*
+  - US23.2.8 : Business cases dynamiques *(déplacé depuis E31 en v2)*
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
@@ -65,3 +67,5 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 | [US23.2.4 — Météo et indicateurs normalisés](FEATURES/portefeuille-comites/us-meteo-indicateurs-normalises.md) | ⬜ |
 | [US23.2.5 — Gestion de programmes](FEATURES/portefeuille-comites/us-gestion-programmes.md) | ⬜ |
 | [US23.2.6 — Pilotage des plans stratégiques](FEATURES/portefeuille-comites/us-plans-strategiques.md) | ⬜ |
+| [US23.2.7 — Scénarios what-if](FEATURES/portefeuille-comites/us-scenarios-what-if.md) | ⬜ |
+| [US23.2.8 — Business cases dynamiques](FEATURES/portefeuille-comites/us-business-cases-dynamiques.md) | ⬜ |
