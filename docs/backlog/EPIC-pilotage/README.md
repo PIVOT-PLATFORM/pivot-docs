@@ -1,8 +1,28 @@
-# E18 — Module Pilotage
+# E18 — Domaine Pilotage
 
 ## Objectif
 
 Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt, gestion multi-projets, Architecture Decision Records (ADR) par projet, et suivi de la commande publique (consultations, appels d'offres, attribution marchés).
+
+## Pilotage : un domaine, plusieurs modules
+
+> **Décision structurante — [ADR-008 Domaines composables & cockpits par persona](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).**
+
+« Pilotage » n'est pas un module monolithique : c'est un **domaine** qui regroupe plusieurs **modules de capacité** autonomes. Chaque module est activable indépendamment et **composable dans les cockpits des personas** concernés — l'intégration passe par le **bus d'événements PIVOT** et des **deep-links** (jamais de FK inter-modules, cf. ADR-006).
+
+| Module de capacité | Feature | Statut |
+|--------------------|---------|--------|
+| Roadmap / Gantt | F18.1 | dans ce domaine |
+| Portefeuille projets | F18.2 | dans ce domaine |
+| ADR projet | F18.3 | dans ce domaine |
+| Commande publique | F18.4 | dans ce domaine |
+| Budget & suivi financier | F18.5 | dans ce domaine |
+| OKR | F18.6 | dans ce domaine |
+| **Gestion des risques** | ~~F18.7~~ | **→ module dédié [E21](../EPIC-risk/README.md)** (retiré du domaine Pilotage) |
+
+Un **cockpit** est une vue composée, propre à un persona, qui agrège les widgets/vues des modules pertinents. Les personas et leurs compositions sont **à définir** — proposition de départ dans [ADR-008](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
+
+> La décomposition physique (un EPIC/repo par module) est **incrémentale** : E18 reste l'ombrelle du domaine tant que la migration n'est pas actée module par module.
 
 ## Repo cible (architecture multi-repo)
 
@@ -45,6 +65,7 @@ Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt,
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface)
 - Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3 + EN17.5 + EN17.6)
 - Dépend de : E15 Équipes transverses (pour associer un projet à une équipe)
+- En lien avec : E21 Gestion des risques — intégration cockpit projet (onglet + widget), voir F21.9
 
 ## Statut global
 
@@ -79,6 +100,5 @@ Suite de pilotage de projets et de portefeuille : visualisation roadmap / Gantt,
 | **F18.6 — OKR** | |
 | [US18.6.1 — Créer objectifs et Key Results](FEATURES/okr/us-creer-objectif.md) | ⬜ |
 | [US18.6.2 — Suivre l'avancement des KR](FEATURES/okr/us-suivre-kr.md) | ⬜ |
-| **F18.7 — Gestion des risques** | |
-| [US18.7.1 — Registre des risques (matrice 5x5)](FEATURES/risques/us-registre-risques.md) | ⬜ |
-| [US18.7.2 — Plan de mitigation + risque résiduel](FEATURES/risques/us-plan-mitigation.md) | ⬜ |
+| **Gestion des risques** (ex-F18.7) | |
+| → Module dédié **[E21 — Gestion des risques](../EPIC-risk/README.md)** | 🔗 |

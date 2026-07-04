@@ -4,11 +4,11 @@
 
 Module de gestion des risques projet et portefeuille, **data-centric et gouverné** : profil de projet adaptatif, taxonomie universelle 12 familles, scoring multidimensionnel, cycle de vie & traitement (4 T), boucle vivante branchée sur le bus d'événements PIVOT, consolidation portefeuille, analyse quantitative (EMV, Monte Carlo) et packs de conformité (RGPD, AI Act, EBIOS RM, RGAA), IA gouvernée à validation humaine, restitutions par persona.
 
-> **Note** — Ce module étend et remplace la feature stub `F18.7 — Gestion des risques` du module Pilotage (E18). L'entité `Risk` reste rattachable à `Project`, `Portfolio`, `Vendor`, `Contract`, `Decision`.
+> **Note** — Module de capacité du **domaine Pilotage** (E18), autonome et composable dans les cockpits des personas — cf. [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits). Il **remplace l'ex-feature `F18.7 — Gestion des risques`** (« risque léger »), désormais supprimée du domaine Pilotage. Le risque se corrèle à son projet par un `project_ref` via le bus PIVOT (**pas de FK inter-modules**, cf. ADR-006). L'entité `Risk` reste reliable à `Portfolio`, `Vendor`, `Contract`, `Decision`.
 
 ## Repo cible (architecture multi-repo)
 
-- Backend : **`pivot-risk-core`** (schéma Flyway `risk`, FK → `pilotage.projects.id`, `public.teams.id`)
+- Backend : **`pivot-risk-core`** (schéma Flyway `risk`, FK → `public.teams.id` ; corrélation projet par `project_ref` via bus PIVOT — pas de FK inter-modules, cf. ADR-006)
 - Frontend : **`pivot-risk-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
 - **Pré-requis EN17 :** pivot-core-starter + @pivot/ui-core publiés avant implémentation
 
@@ -71,6 +71,10 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
   - US21.8.4 : Vue Contract Manager
   - US21.8.5 : Export et rapport de risques
   - US21.8.6 : Accessibilité RGAA des vues
+- **F21.9 — Intégration cockpit projet** — chaînon Pilotage ↔ Risque (bus + deep-links, cf. ADR-008)
+  - US21.9.1 : Corréler un risque à son projet via le bus PIVOT (`project_ref`, sans FK)
+  - US21.9.2 : Ouvrir les risques depuis la fiche projet (onglet + deep-link)
+  - US21.9.3 : Widget « Top risques » composable dans un cockpit
 
 ### Enablers
 - **EN21.1** — Schéma Flyway `risk` + entités JPA (Risk, RiskProfile, Typology, RiskFamily, ImpactWeight, Mitigation, RiskEvent, PortfolioRisk)
@@ -85,9 +89,10 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface)
 - Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3 + EN17.5 + EN17.6)
-- Dépend de : E18 Module Pilotage (entité Project, entités Vendor/Contract pour les jonctions CLM)
+- Dépend de : E18 Domaine Pilotage (projet corrélé par `project_ref` via bus ; entités Vendor/Contract pour les jonctions CLM)
 - Dépend de : E15 Équipes transverses (rattachement d'un risque à une équipe)
-- Consomme le **bus d'événements PIVOT** (boucle vivante F21.4)
+- Consomme le **bus d'événements PIVOT** (boucle vivante F21.4, intégration cockpit F21.9)
+- Cadré par [ADR-008 — Domaines composables & cockpits par persona](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits)
 
 ## Statut global
 
@@ -155,3 +160,7 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 | [US21.8.4 — Vue Contract Manager](FEATURES/restitutions/us-vue-contract-manager.md) | ⬜ |
 | [US21.8.5 — Export et rapport de risques](FEATURES/restitutions/us-export-et-rapport-de-risques.md) | ⬜ |
 | [US21.8.6 — Accessibilité RGAA des vues](FEATURES/restitutions/us-accessibilite-rgaa-des-vues.md) | ⬜ |
+| **F21.9 — Intégration cockpit projet** | |
+| [US21.9.1 — Corréler un risque à son projet via le bus](FEATURES/integration-cockpit/us-correlation-projet-bus.md) | ⬜ |
+| [US21.9.2 — Onglet Risques dans la fiche projet](FEATURES/integration-cockpit/us-onglet-risques-fiche-projet.md) | ⬜ |
+| [US21.9.3 — Widget Top risques composable](FEATURES/integration-cockpit/us-widget-top-risques.md) | ⬜ |
