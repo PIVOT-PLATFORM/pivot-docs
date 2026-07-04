@@ -24,7 +24,7 @@ Shell de l'application Angular : navigation principale, page d'accueil (grille m
 - Dépend de : E03 Système de modules (statut modules pour la grille)
 
 ## Statut global
-🔄 En cours — navigation ✅, accueil ✅, thèmes ✅, contact 🔄, badge notifs ⬜
+🔄 En cours — navigation ✅, accueil 🔄 (modules à venir en cours), thèmes ✅, contact 🔎 Review, badge notifs ⬜
 
 ---
 

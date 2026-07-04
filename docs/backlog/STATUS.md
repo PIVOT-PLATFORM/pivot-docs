@@ -104,11 +104,11 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
-| Critical | US16.3.1 Formulaire de contact | MVP | ⬜ Review |
+| Critical | US16.3.1 Formulaire de contact | MVP | 🔎 Review |
 | Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.1-3 + US03.x en Review · EN03.4 backlog · Sprint 2 |
 | Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
-| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ⬜ Sprint 2 |
+| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | 🔎 En Review · Sprint 2 |
 | High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
 | Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
@@ -125,4 +125,4 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 ---
 
-*Dernière mise à jour : 2026-07-02*
+*Dernière mise à jour : 2026-07-04*

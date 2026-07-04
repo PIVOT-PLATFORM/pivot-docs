@@ -26,5 +26,5 @@
 - Le flag remember-me vit en mémoire uniquement : perdu après reload (le refresh cookie ne le renvoie pas) → toast générique dans ce cas.
 
 ---
-Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: High
 Stage: Review

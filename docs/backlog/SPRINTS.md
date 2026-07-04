@@ -184,4 +184,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-07-02*
+*Dernière mise à jour : 2026-07-04*

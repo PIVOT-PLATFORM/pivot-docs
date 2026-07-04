@@ -29,6 +29,6 @@
 - Tests E2E Playwright différés (environnement E2E indisponible lors de l'implémentation) — à compléter en suivi.
 
 ---
-Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: M · Priority: Critical
 Stage: Review
 Dépendances : EN03.2 (guard Angular + status API), EN03.3 (invalidation cache Redis) — non mergées, suivi requis avant clôture définitive.

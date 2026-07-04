@@ -21,5 +21,5 @@
 | Spinner/loader de redirection a role="status" et aria-label="Chargement en cours..." annoncé aux lecteurs d'écran | ✅ |
 
 ---
-Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: S · Priority: High
 Stage: Review
