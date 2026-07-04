@@ -26,9 +26,11 @@ Gestion des réunions : préparation d'agenda, animation en temps réel, compte-
 - **F12.3 — Compte-rendu**
   - US12.3.1 : Générer et partager le compte-rendu post-réunion
   - US12.3.2 : Suivre les actions issues des réunions passées
+- **F12.4 — Planification & créneaux** — pré-réservation depuis une plage roadmap, meilleur créneau, validation
+  - US12.4.1 : Pré-réservation depuis une plage & proposition du meilleur créneau *(interface ← E22 Roadmap, cf. US22.8.6)*
 
 ### Enablers
-- **EN12.1** — Schéma Flyway `collaboratif` — tables `meetings`, `agenda_items`, `meeting_decisions`, `meeting_actions`
+- **EN12.1** — Schéma Flyway `collaboratif` — tables `meetings` (statut `PRE_RESERVED` / `CONFIRMED`, `booking_window`, `event_ref`, `project_ref`), `agenda_items`, `meeting_decisions`, `meeting_actions`, `proposed_slots`
 - **EN12.2** — Guard Angular module meetops + STOMP room `/topic/collaboratif/meeting/{meetingId}`
 
 ## Modules impactés
@@ -40,6 +42,7 @@ Gestion des réunions : préparation d'agenda, animation en temps réel, compte-
 - Dépend de : E03 Système de modules
 - Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3 + EN17.5 + EN17.6)
 - Dépend de : E15 Équipes transverses
+- Interface avec : **E22 Roadmap** — plage d'événement → pré-réservation & meilleur créneau (via bus PIVOT, US22.8.6 ↔ US12.4.1) ; disponibilités via EN22.3
 
 ## Statut global
 
