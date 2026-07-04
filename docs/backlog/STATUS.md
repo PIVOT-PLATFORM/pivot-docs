@@ -43,7 +43,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E24 — ADR projet](EPIC-adr-projet/README.md) | E24 | 1 (F24.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
 | [E25 — Commande publique](EPIC-commande-publique/README.md) | E25 | 1 (F25.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage |
 | [E26 — Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 (F26.1–2) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
-| [E27 — OKR](EPIC-okr/README.md) | E27 | 1 (F27.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
+| [E27 — OKR](EPIC-okr/README.md) | E27 | 10 (F27.1–10) | 1 (EN27.1) | 25 | ⬜ phase-3 · pilotage · **état de l'art** (alignement, check-ins, scoring, CFR) |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 5 (F28.1–5) | 13 (EN28.1–13) | 17 | ⏸️ phase-3 · dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 (F29.1–14) | 6 (EN29.1–6) | 78 | ⬜ phase-3 · benchmark WF |
 | [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 15 (F30.1–15) | 12 (EN30.1–12) | 86 | ⬜ phase-3 · benchmark BL |
