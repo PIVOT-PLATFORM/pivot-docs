@@ -54,6 +54,7 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 - **Weekends & jours fériés par pays/localité** (US22.8.3) : calendriers légaux importés, weekend configurable par région (ex. vendredi–samedi).
 - **SI d'absences / RH** (US22.8.4) : SAP SuccessFactors / HCM, Workday, Lucca, ADP… → indisponibilités ressources (RGPD-minimisé) pour l'ordonnancement & le nivellement.
 - **Overlays inter-modules** (US22.8.5) : risques (E21), budget (E26), décisions/ADR (E24), échéances de marché (E25) positionnés sur la roadmap/Gantt.
+- **Plage → MeetOps** (US22.8.6) : une **plage d'événement** posée sur la roadmap crée une **pré-réservation MeetOps** (E12) *à valider* ; à la validation, MeetOps propose et envoie le **meilleur créneau** dans la période (selon disponibilités, calendriers & absences EN22.3).
 
 ## Repo cible (architecture multi-repo)
 
@@ -75,7 +76,7 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 - **F22.5 — Ressources dans le plan** — US22.5.1 affectation · US22.5.2 charge & sur-affectation · US22.5.3 nivellement · US22.5.4 coûts
 - **F22.6 — Vues & restitutions** — US22.6.1 vues multiples · US22.6.2 colonnes/filtres/groupes · US22.6.3 mise en forme/impression · US22.6.4 export & rapports
 - **F22.7 — Interopérabilité (formats)** — US22.7.1 import MS Project (.mpp/.xml) · US22.7.2 export MS Project (.xml MSPDI/Excel) · US22.7.3 format ouvert · US22.7.4 Primavera P6 (XER/P6 XML) · US22.7.5 tableur & données (CSV/XLSX/JSON/API) · US22.7.6 iCalendar (.ics) · US22.7.7 outils agiles (Jira/Azure DevOps/Asana…) · US22.7.8 PM open source (GanttProject/ProjectLibre/OpenProject/TaskJuggler/Planner) · US22.7.9 documents (PDF/PNG/SVG/PowerPoint)
-- **F22.8 — Interfaces inter-modules & SI** — US22.8.1 sprints sur la roadmap · US22.8.2 versions applicatives (releases) · US22.8.3 weekends & jours fériés par pays/localité · US22.8.4 interconnexion SI d'absences/RH (SAP, Workday…) · US22.8.5 overlays inter-modules (risques/budget/décisions/marchés)
+- **F22.8 — Interfaces inter-modules & SI** — US22.8.1 sprints sur la roadmap · US22.8.2 versions applicatives (releases) · US22.8.3 weekends & jours fériés par pays/localité · US22.8.4 interconnexion SI d'absences/RH (SAP, Workday…) · US22.8.5 overlays inter-modules (risques/budget/décisions/marchés) · US22.8.6 plage → pré-réservation MeetOps (meilleur créneau à valider)
 
 ### Enablers
 - **[EN22.1](ENABLERS/en-modele-temporel-unique.md)** — Modèle temporel unique & moteur d'ordonnancement (roadmap & Gantt = deux vues)
@@ -161,3 +162,4 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 | [US22.8.3 — Weekends & jours fériés par pays / localité](FEATURES/interfaces-modules-si/us-feries-weekends-pays.md) | ⬜ |
 | [US22.8.4 — Interconnexion SI d'absences / RH (SAP, Workday…)](FEATURES/interfaces-modules-si/us-si-absences-rh-sap.md) | ⬜ |
 | [US22.8.5 — Overlays inter-modules Pilotage](FEATURES/interfaces-modules-si/us-overlays-inter-modules.md) | ⬜ |
+| [US22.8.6 — Plage d'événement → pré-réservation MeetOps](FEATURES/interfaces-modules-si/us-plage-evenement-meetops.md) | ⬜ |

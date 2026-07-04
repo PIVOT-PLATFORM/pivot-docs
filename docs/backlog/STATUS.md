@@ -38,7 +38,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | [E21 — Gestion des risques](EPIC-risk/README.md) | E21 | 9 (F21.1–9) | 3 (EN21.1–3) | 47 | ⬜ phase-3 · pilotage |
-| [E22 — Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 (F22.1–8) | 3 (EN22.1–3) | 46 | ⬜ phase-3 · pilotage · **parité MS Project (web)** · interop + interfaces SI |
+| [E22 — Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 (F22.1–8) | 3 (EN22.1–3) | 47 | ⬜ phase-3 · pilotage · **parité MS Project (web)** · interop + interfaces SI (dont MeetOps) |
 | [E23 — Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 (F23.1–2) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
 | [E24 — ADR projet](EPIC-adr-projet/README.md) | E24 | 1 (F24.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
 | [E25 — Commande publique](EPIC-commande-publique/README.md) | E25 | 1 (F25.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage |
