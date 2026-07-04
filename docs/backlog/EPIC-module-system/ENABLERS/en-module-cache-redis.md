@@ -18,4 +18,4 @@
 
 ---
 Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: MVP
-Stage: Review · Priority: Medium
+Stage: Review · Priority: Critical

@@ -29,7 +29,7 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 - Bloque : E16 Shell (authMatchGuard), E06 Administration (accès admin)
 
 ## Statut global
-✅ Partiellement Done — F01.1 (3/5 US), F01.2 (3/4 US), F01.3 ✅, F01.4 (1/3 US), F01.5-F01.7 extras ✅
+✅ Partiellement Done — F01.1 (3/5 US), F01.2 (3/4 US), F01.3 ✅, F01.4 (1/3 US), F01.5 (0/1 US), F01.6-F01.8 extras ✅
 
 ---
 

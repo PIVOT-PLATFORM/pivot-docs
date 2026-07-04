@@ -1,4 +1,4 @@
-# EN01.8 — Infrastructure Auth Frontend (Angular)
+# EN01.10 — Infrastructure Auth Frontend (Angular)
 
 **Type d'enabler** : architecture · sécurité
 
