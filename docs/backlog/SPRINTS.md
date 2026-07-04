@@ -148,10 +148,14 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
 - E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
 - E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
-- E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique
+- E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique — **étendu benchmark PPM** (F18.8–19, EN18.3–8 : demande/arbitrage, capacité à faire, PPI, M57, subventions, AP/CP)
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
 - E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
+- E21 Workflows & Automatisation (phase-3 — pivot-automatisation-core/ui) : **benchmark WF** (84 items) — éditeur no-code, connecteurs/HTTP, IA & agents, gouvernance, souveraineté self-host
+- E22 Collaboration (phase-3 — pivot-collaboratif-core/ui) : **benchmark BL** (98 items) — canevas & objets, temps réel, facilitation, IA, diagrammes, sécurité/gouvernance, plateformes, innovation
 - E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
+
+> Backlog benchmark (E18 ext. + E21 + E22 = 252 items) : voir la rationalisation dans [`BENCHMARK.md`](BENCHMARK.md).
 
 ---
 
