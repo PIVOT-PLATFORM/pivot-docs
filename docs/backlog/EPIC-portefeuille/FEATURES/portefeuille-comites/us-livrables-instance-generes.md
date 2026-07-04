@@ -1,4 +1,4 @@
-# US38.1.4 — Livrables d'instance générés
+# US23.2.9 — Livrables d'instance générés
 
 **En tant que** PMO
 **Je veux** générer depuis le portefeuille les documents normés (rapports d'orientation budgétaire, annexes PPI, délibérations types, rapports d'activité)
@@ -14,7 +14,7 @@
 | A11y : les documents générés (versions consultables) respectent les exigences d'accessibilité RGAA | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
+Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
 Source: PP-056 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B4
 Profils: Publique, État

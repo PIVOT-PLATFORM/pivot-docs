@@ -71,3 +71,5 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 | [US23.2.6 — Pilotage des plans stratégiques](FEATURES/portefeuille-comites/us-plans-strategiques.md) | ⬜ |
 | [US23.2.7 — Scénarios what-if](FEATURES/portefeuille-comites/us-scenarios-what-if.md) | ⬜ |
 | [US23.2.8 — Business cases dynamiques](FEATURES/portefeuille-comites/us-business-cases-dynamiques.md) | ⬜ |
+| [US23.2.9 — Livrables d'instance générés](FEATURES/portefeuille-comites/us-livrables-instance-generes.md) *(ex-E38)* | ⬜ |
+| [US23.2.10 — Indicateurs de valeur publique](FEATURES/portefeuille-comites/us-indicateurs-valeur-publique.md) *(ex-E38)* | ⬜ |

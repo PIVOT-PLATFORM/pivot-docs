@@ -1,4 +1,4 @@
-# US38.1.5 — Portail de transparence
+# US35.1.7 — Portail de transparence
 
 **En tant que** direction
 **Je veux** publier vers les citoyens l'avancement des projets (carte, jalons, budgets consommés, open data)
@@ -14,7 +14,7 @@
 | A11y : le portail public est conforme RGAA 4 / WCAG 2.1 AA (obligation secteur public) | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
+Item Type: US · Parent: F35.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
 Source: PP-057 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B5
 Profils: Publique, État

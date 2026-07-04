@@ -39,10 +39,10 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | [E21 — Gestion des risques](EPIC-risk/README.md) | E21 | 9 (F21.1–9) | 3 (EN21.1–3) | 47 | ⬜ phase-3 · pilotage |
 | [E22 — Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 (F22.1–8) | 3 (EN22.1–3) | 47 | ⬜ phase-3 · pilotage · **parité MS Project (web)** · interop + interfaces SI (dont MeetOps) |
-| [E23 — Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 (F23.1–2) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
+| [E23 — Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 (F23.1–2) | — (EN18.*) | 12 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
 | [E24 — ADR projet](EPIC-adr-projet/README.md) | E24 | 1 (F24.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
-| [E25 — Commande publique](EPIC-commande-publique/README.md) | E25 | 1 (F25.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage |
-| [E26 — Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 (F26.1–2) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
+| [E25 — Commande publique](EPIC-commande-publique/README.md) | E25 | 1 (F25.1) | — (EN18.*) | 4 | ⬜ phase-3 · pilotage |
+| [E26 — Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 (F26.1–2) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
 | [E27 — OKR](EPIC-okr/README.md) | E27 | 10 (F27.1–10) | 1 (EN27.1) | 25 | ⬜ phase-3 · pilotage · **état de l'art** (alignement, check-ins, scoring, CFR) |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 5 (F28.1–5) | 13 (EN28.1–13) | 17 | ⏸️ phase-3 · dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 (F29.1–14) | 6 (EN29.1–6) | 78 | ⬜ phase-3 · benchmark WF |
@@ -51,10 +51,10 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 (F32.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage · benchmark |
 | [E33 — Collaboration & tâches](EPIC-pilotage-taches/README.md) | E33 | 1 (F33.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage · benchmark |
 | [E34 — IA & agents (pilotage)](EPIC-pilotage-ia/README.md) | E34 | 1 (F34.1) | — (EN18.*) | 4 | ⬜ phase-3 · pilotage · benchmark |
-| [E35 — Gouvernance & sécurité (pilotage)](EPIC-pilotage-gouvernance/README.md) | E35 | 1 (F35.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · benchmark |
+| [E35 — Gouvernance & sécurité (pilotage)](EPIC-pilotage-gouvernance/README.md) | E35 | 1 (F35.1) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · benchmark |
 | [E36 — Intégration SI (pilotage)](EPIC-pilotage-integration-si/README.md) | E36 | 1 (F36.1) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · benchmark |
-| [E37 — Licences & réversibilité (pilotage)](EPIC-pilotage-licences/README.md) | E37 | 1 (F37.1) | — (EN18.*) | 4 | ⬜ phase-3 · pilotage · benchmark |
-| [E38 — Innovation (pilotage)](EPIC-pilotage-innovation/README.md) | E38 | 1 (F38.1) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · benchmark |
+| [E37 — Licences & réversibilité (pilotage)](EPIC-pilotage-licences/README.md) | E37 | 1 (F37.1) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · benchmark |
+| [E38 — Management de l'innovation (SMI)](EPIC-pilotage-innovation/README.md) | E38 | 10 (F38.1–10) | 1 (EN38.1) | 23 | ⬜ phase-3 · pilotage · **SMI ISO 56002** |
 | [E39 — Chantiers SI (pilotage)](EPIC-pilotage-chantiers/README.md) | E39 | 1 (F39.1) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · benchmark |
 | [E40 — Profil & adaptation](EPIC-profil-adaptation/README.md) | E40 | 1 (F40.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · **v2 adaptative** |
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 (F41.1–6) | 1 (EN41.1) | 42 | ⬜ phase-3 · transverse · **onboarding in-app + présentiel** (catalogue 29 modules) |

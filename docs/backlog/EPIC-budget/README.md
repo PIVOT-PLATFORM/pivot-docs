@@ -63,3 +63,5 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
 | [US26.2.2 — Budgets pluriannuels (PPI)](FEATURES/budgets-finances/us-budgets-pluriannuels-ppi.md) | ⬜ |
 | [US26.2.3 — Flux de trésorerie](FEATURES/budgets-finances/us-flux-tresorerie.md) | ⬜ |
 | [US26.2.4 — Interface ERP finance](FEATURES/budgets-finances/us-interface-erp-finance.md) | ⬜ |
+| [US26.2.5 — Suivi des subventions](FEATURES/budgets-finances/us-suivi-subventions.md) *(ex-E38)* | ⬜ |
+| [US26.2.6 — Simulation AP/CP](FEATURES/budgets-finances/us-simulation-ap-cp.md) *(ex-E38)* | ⬜ |

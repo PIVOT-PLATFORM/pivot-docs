@@ -1,4 +1,4 @@
-# US38.1.7 — Indicateurs de valeur publique
+# US23.2.10 — Indicateurs de valeur publique
 
 **En tant que** direction
 **Je veux** rattacher aux projets des indicateurs d'impact (transition écologique, égalité territoriale, qualité de service) consolidés en portefeuille
@@ -14,7 +14,7 @@
 | A11y : les restitutions d'indicateurs sont conformes RGAA 4 / WCAG 2.1 AA | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
+Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
 Source: PP-059 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B7
 Profils: Publique, État

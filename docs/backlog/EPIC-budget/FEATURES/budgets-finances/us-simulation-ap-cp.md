@@ -1,4 +1,4 @@
-# US38.1.3 — Simulation AP/CP
+# US26.2.6 — Simulation AP/CP
 
 **En tant que** contrôleur de gestion
 **Je veux** simuler des scénarios budgétaires aux règles publiques (autorisations de programme / crédits de paiement, annualité, M57, virements d'enveloppes)
@@ -14,7 +14,7 @@
 | Security/Gouvernance : les simulations n'altèrent pas les données budgétaires de référence (traçabilité) | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
+Item Type: US · Parent: F26.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
 Source: PP-055 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B3
 Profils: Publique, État

@@ -1,4 +1,4 @@
-# US38.1.1 — Lien commande publique
+# US25.1.4 — Lien commande publique
 
 **En tant que** acheteur
 **Je veux** rattacher le cycle des marchés aux projets (consultations, notifications, ordres de service, avenants, pénalités, échéances contractuelles), consolidé au portefeuille
@@ -14,7 +14,7 @@
 | Security/Gouvernance : le cycle des marchés est historisé et tracé (traçabilité opposable) | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
+Item Type: US · Parent: F25.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
 Source: PP-053 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B1
 Profils: Privée sous droit public, Publique, État

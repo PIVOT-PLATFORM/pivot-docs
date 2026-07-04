@@ -1,4 +1,4 @@
-# US38.1.8 — Format d'échange ouvert
+# US37.1.5 — Format d'échange ouvert
 
 **En tant que** acheteur
 **Je veux** un standard d'export/import de portefeuilles entre PPM (projets, jalons, budgets, décisions)
@@ -14,7 +14,7 @@
 | Security/Gouvernance : les décisions exportées conservent leur horodatage et traçabilité | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
+Item Type: US · Parent: F37.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
 Source: PP-060 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B8
 Profils: Grand groupe, Privée sous droit public, Publique, État

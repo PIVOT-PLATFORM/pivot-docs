@@ -30,7 +30,7 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 | Gouvernance & sécurité *(benchmark)* | [E35](../EPIC-pilotage-gouvernance/README.md) | pivot-pilotage-core · `pilotage` |
 | Intégration SI *(benchmark)* | [E36](../EPIC-pilotage-integration-si/README.md) | pivot-pilotage-core · `pilotage` |
 | Licences & réversibilité *(benchmark)* | [E37](../EPIC-pilotage-licences/README.md) | pivot-pilotage-core · `pilotage` |
-| Innovation *(benchmark)* | [E38](../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
+| Management de l'innovation — SMI | [E38](../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
 | Chantiers SI *(benchmark)* | [E39](../EPIC-pilotage-chantiers/README.md) | pivot-pilotage-core · `pilotage` |
 | **Profil & adaptation *(v2)*** | [E40](../EPIC-profil-adaptation/README.md) | pivot-pilotage-core · `pilotage` |
 
@@ -112,5 +112,5 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [E35 — Gouvernance & sécurité](../EPIC-pilotage-gouvernance/README.md) | ⬜ |
 | [E36 — Intégration SI](../EPIC-pilotage-integration-si/README.md) | ⬜ |
 | [E37 — Licences & réversibilité](../EPIC-pilotage-licences/README.md) | ⬜ |
-| [E38 — Innovation](../EPIC-pilotage-innovation/README.md) | ⬜ |
+| [E38 — Management de l'innovation (SMI)](../EPIC-pilotage-innovation/README.md) | ⬜ |
 | [E39 — Chantiers SI](../EPIC-pilotage-chantiers/README.md) | ⬜ |

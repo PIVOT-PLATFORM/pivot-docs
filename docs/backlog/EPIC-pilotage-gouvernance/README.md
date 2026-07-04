@@ -29,6 +29,8 @@ Généré depuis le CSV benchmark (famille Pilotage, items `PP-###`). Voir la ra
 | [US35.1.5 — Classification des portefeuilles](FEATURES/gouvernance-securite/us-classification-portefeuilles.md) | ⬜ |
 | [US35.1.1 — Droits par rôle et périmètre](FEATURES/gouvernance-securite/us-droits-role-perimetre.md) | ⬜ |
 | [US35.1.6 — Étiquettes et DLP sur tâches](FEATURES/gouvernance-securite/us-etiquettes-dlp-taches.md) | ⬜ |
+| [US35.1.7 — Portail de transparence](FEATURES/gouvernance-securite/us-portail-transparence.md) *(ex-E38)* | ⬜ |
+| [US35.1.8 — Archivage probant](FEATURES/gouvernance-securite/us-archivage-probant.md) *(ex-E38)* | ⬜ |
 | [US35.1.2 — Registre des risques](FEATURES/gouvernance-securite/us-registre-risques.md) | ⬜ |
 | [US35.1.4 — SSO et audit](FEATURES/gouvernance-securite/us-sso-audit.md) | ⬜ |
 | [US35.1.3 — Traçabilité des décisions](FEATURES/gouvernance-securite/us-tracabilite-decisions.md) | ⬜ |

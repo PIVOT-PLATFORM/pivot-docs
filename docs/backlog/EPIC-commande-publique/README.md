@@ -54,3 +54,4 @@ Commande publique : consultations et appels d'offres, suivi des candidats, analy
 | [US25.1.1 — Créer et gérer une consultation (appel d'offres)](FEATURES/commande-publique/us-creer-consultation.md) | ⬜ |
 | [US25.1.2 — Suivre les candidats et analyser les offres](FEATURES/commande-publique/us-suivi-candidats.md) | ⬜ |
 | [US25.1.3 — Attribuer le marché et notifier les candidats](FEATURES/commande-publique/us-attribution-notification.md) | ⬜ |
+| [US25.1.4 — Lien commande publique](FEATURES/commande-publique/us-lien-commande-publique.md) *(ex-E38, secteur public)* | ⬜ |

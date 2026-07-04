@@ -28,5 +28,6 @@ Généré depuis le CSV benchmark (famille Pilotage, items `PP-###`). Voir la ra
 | **F37.1 — Licences & réversibilité (pilotage)** | |
 | [US37.1.2 — Garanties de pérennité](FEATURES/licences-reversibilite/us-garanties-perennite.md) | ⬜ |
 | [US37.1.4 — Offre d'entrée incluse](FEATURES/licences-reversibilite/us-offre-entree-incluse.md) | ⬜ |
+| [US37.1.5 — Format d'échange ouvert](FEATURES/licences-reversibilite/us-format-echange-ouvert.md) *(ex-E38)* | ⬜ |
 | [US37.1.1 — Réversibilité contractuelle](FEATURES/licences-reversibilite/us-reversibilite-contractuelle.md) | ⬜ |
 | [US37.1.3 — Segmentation des licences](FEATURES/licences-reversibilite/us-segmentation-licences.md) | ⬜ |

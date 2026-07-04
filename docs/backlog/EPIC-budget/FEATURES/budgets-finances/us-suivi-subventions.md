@@ -1,4 +1,4 @@
-# US38.1.2 — Suivi des subventions
+# US26.2.5 — Suivi des subventions
 
 **En tant que** contrôleur de gestion
 **Je veux** gérer les plans de financement par projet (FEDER, DSIL, fonds vert), les échéances de justification, les taux de réalisation exigés et le risque de reversement
@@ -14,7 +14,7 @@
 | Security/Gouvernance : les pièces justificatives sont tracées et horodatées | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
+Item Type: US · Parent: F26.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
 Source: PP-054 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B2
 Profils: Privée sous droit public, Publique, État

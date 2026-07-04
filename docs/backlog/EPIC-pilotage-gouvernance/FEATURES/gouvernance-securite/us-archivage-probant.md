@@ -1,4 +1,4 @@
-# US38.1.6 — Archivage probant
+# US35.1.8 — Archivage probant
 
 **En tant que** PMO
 **Je veux** un archivage normalisé (type SEDA) des décisions, versions et pièces d'arbitrage, à valeur probante
@@ -14,7 +14,7 @@
 | Security/Gouvernance : les archives sont inaltérables et opposables (contrôle de légalité, CRC) | ⬜ |
 
 ---
-Item Type: US · Parent: F38.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
+Item Type: US · Parent: F35.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
 Source: PP-058 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B6
 Profils: Privée sous droit public, Publique, État
