@@ -1,4 +1,4 @@
-# F02.2 — Pages légales
+# Pages légales — hors périmètre GitHub E16
 
 **Description** : Mentions légales, Politique de confidentialité, CGU. Contenu en français (obligation légale). Accessible connecté (avec shell) et non connecté (standalone). Banner EN quand langue=anglais.
 

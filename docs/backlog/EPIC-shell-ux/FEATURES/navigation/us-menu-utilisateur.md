@@ -15,7 +15,7 @@
 | Tests Vitest UserMenuComponent | ✅ |
 
 ## Notes
-Couvert par l'implémentation existante de la NavbarComponent (US02.1.1 legacy).
+Couvert par l'implémentation existante de la NavbarComponent (US16.1.1 legacy).
 
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: High

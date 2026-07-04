@@ -10,7 +10,7 @@
 - [x] i18n FR/EN sur tous les templates
 - [x] Configuration SMTP via `application.yml` (host, port, credentials en env vars)
 - [x] Fallback : log en dev si pas de SMTP configuré (profil `dev`)
-- [x] Contact form email (US02.3.1 — en cours)
+- [x] Contact form email (US16.3.1 — en cours)
 
 **Statut** : ✅ Fait (template contact en cours)
 
