@@ -27,7 +27,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E08 — Module Whiteboard](EPIC-whiteboard/README.md) | E08 | 4 | 2 | 7 | ⏸️ Gate MVP |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
-| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
+| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 8 (F11.1–8) | 1 (EN11.1) | 16 | ⏸️ phase-3 · agilite · **capacité sprint/PI** (absences, ouvrés, focus, vélocité, RGPD) |
 | [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 4 (F12.1–4) | 2 (EN12.1–2) | 5 | ⬜ phase-3 · collaboratif · +interface E22 |
 | [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
@@ -146,7 +146,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | High | E21 Gestion des risques (profil adaptatif, scoring, 4T, portefeuille, EMV/conformité, IA gouvernée, cockpit) | phase-3 · pilotage | ⬜ Backlog |
 | Medium | E12 MeetOps (agenda, animation reunions, compte-rendu) | phase-3 · collaboratif | ⬜ Backlog |
 | Medium | E13 Cahiers de tests (cas test, campagnes, reporting qualite) | phase-3 · pilotage | ⬜ Backlog |
-| Medium | E11 + velocity tracking (burndown chart, velocite sprint) | phase-3 · agilite | ⬜ Backlog |
+| Medium | E11 Capacity Planning (capacité sprint/incrément/PI SAFe : absences auto+manuel, jours ouvrés, focus factor, vélocité N-1, maturité agile, RGPD/éthique) | phase-3 · agilite | ⬜ Backlog |
 
 ---
 
