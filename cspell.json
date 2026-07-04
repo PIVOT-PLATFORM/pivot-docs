@@ -1,8 +1,20 @@
 {
   "version": "0.2",
   "language": "fr,en",
-  "import": ["@cspell/dict-fr-fr/cspell-ext.json"],
-  "dictionaries": ["fr-fr", "en_US", "softwareTerms", "node", "npm", "html", "css", "typescript", "misc"],
+  "import": [
+    "@cspell/dict-fr-fr/cspell-ext.json"
+  ],
+  "dictionaries": [
+    "fr-fr",
+    "en_US",
+    "softwareTerms",
+    "node",
+    "npm",
+    "html",
+    "css",
+    "typescript",
+    "misc"
+  ],
   "ignorePaths": [
     "node_modules/**",
     "build/**",
@@ -213,6 +225,11 @@
     "Talktrack",
     "thémé",
     "workback",
-    "Wrike"
+    "Wrike",
+    "ALAP",
+    "FNLT",
+    "MSPDI",
+    "recalcul",
+    "SNET"
   ]
 }
