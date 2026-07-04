@@ -2,9 +2,9 @@
 
 ## Objectif
 
-Module de gestion des risques projet et portefeuille, **data-centric et gouverné** : profil de projet adaptatif, taxonomie universelle 12 familles, scoring multidimensionnel, cycle de vie & traitement (4 T), boucle vivante branchée sur le bus d'événements PIVOT, consolidation portefeuille, analyse quantitative (EMV, Monte Carlo) et packs de conformité (RGPD, AI Act, EBIOS RM, RGAA), IA gouvernée à validation humaine, restitutions par persona.
+Module de gestion des risques projet et portefeuille, **data-centric et gouverné** : profil de projet adaptatif, taxonomie universelle 12 familles, scoring multidimensionnel, cycle de vie & traitement (4 T), boucle vivante branchée sur le bus d'événements PIVOT, consolidation portefeuille, analyse quantitative (EMV, Monte Carlo) et packs de conformité (RGPD, AI Act, EBIOS RM, RGAA), IA gouvernée à validation humaine, restitutions par rôle.
 
-> **Note** — Module de capacité du **domaine Pilotage** (E18), autonome et composable dans les cockpits des personas — cf. [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits). Il **remplace l'ex-feature `F18.7 — Gestion des risques`** (« risque léger »), désormais supprimée du domaine Pilotage. Le risque se corrèle à son projet par un `project_ref` via le bus PIVOT (**pas de FK inter-modules**, cf. ADR-006). L'entité `Risk` reste reliable à `Portfolio`, `Vendor`, `Contract`, `Decision`.
+> **Note** — Module de capacité du **domaine Pilotage** (E18), autonome et composable dans les cockpits du domaine — cf. [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits). Il **remplace l'ex-feature `F18.7 — Gestion des risques`** (« risque léger »), désormais supprimée du domaine Pilotage. Le risque se corrèle à son projet par un `project_ref` via le bus PIVOT (**pas de FK inter-modules**, cf. ADR-006). L'entité `Risk` reste reliable à `Portfolio`, `Vendor`, `Contract`, `Decision`.
 
 ## Repo cible (architecture multi-repo)
 
@@ -92,7 +92,7 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 - Dépend de : domaine Pilotage (E18) — projet corrélé par `project_ref` via bus (entité Project portée par E22 Roadmap ; entités Vendor/Contract pour les jonctions CLM)
 - Dépend de : E15 Équipes transverses (rattachement d'un risque à une équipe)
 - Consomme le **bus d'événements PIVOT** (boucle vivante F21.4, intégration cockpit F21.9)
-- Cadré par [ADR-008 — Domaines composables & cockpits par persona](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits)
+- Cadré par [ADR-008 — Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits)
 
 ## Statut global
 

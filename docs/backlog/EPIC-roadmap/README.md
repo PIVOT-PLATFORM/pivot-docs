@@ -4,7 +4,7 @@
 
 ## Objectif
 
-Roadmap projets et vue Gantt : création de projets, jalons, dépendances et timeline du portefeuille. Porte l'entité **Project** du domaine Pilotage.
+Roadmap projets et vue Gantt : création de projets, jalons, dépendances et timeline du portefeuille. Porte l'entité **Project** du domaine Pilotage — chaque **Projet** (version d'application, ou autre unité) est rattaché à une **Application** parente (1 Application → 1..n Projet, cf. [EN18.9](../EPIC-pilotage/ENABLERS/en-modele-application-projet.md)).
 
 ## Repo cible (architecture multi-repo)
 

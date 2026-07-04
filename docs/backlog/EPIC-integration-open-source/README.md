@@ -60,7 +60,7 @@ Le brouillon initial (`backlog_integration_pivot.csv`) proposait aussi les items
 
 | Retiré | Couvert par |
 |---|---|
-| Fournisseur d'identité SSO (Keycloak), modèle de rôles/personas | [E01 — Auth & IAM](../EPIC-auth-iam/README.md) |
+| Fournisseur d'identité SSO (Keycloak), modèle de rôles | [E01 — Auth & IAM](../EPIC-auth-iam/README.md) |
 | Gestion des secrets (OpenBao), distribution déployable (Coolify) | [E07 — Infrastructure & Déploiement](../EPIC-infrastructure/README.md) |
 | Adaptateur OpenProject (pilotage de portefeuille, PPM, Gantt) | [E18 — Module Pilotage](../EPIC-pilotage/README.md) (natif, F18.1 Roadmap/Gantt, F18.2 Portefeuille) |
 | Whiteboard Excalidraw embarqué | [E08 — Module Whiteboard](../EPIC-whiteboard/README.md) (natif — cf. [ADR-009 §5](pathname:///pivot-docs/adr/ADR-009-cadre-integration-open-source)) |

@@ -11,7 +11,7 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Adaptateur `adapter-metabase` conforme au contrat PivotAdapter (EN28.3), embed signé | ⬜ |
-| Un dashboard Metabase s'affiche dans le portail pour le bon persona | ⬜ |
+| Un dashboard Metabase s'affiche dans le portail pour le bon rôle | ⬜ |
 
 ---
 Item Type: US · Parent: F28.4 · Module: mesure · Phase: phase-3 · Size: M · Priority: High

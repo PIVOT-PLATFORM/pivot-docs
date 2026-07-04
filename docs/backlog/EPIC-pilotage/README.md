@@ -2,10 +2,12 @@
 
 ## Objectif
 
-**Pilotage n'est pas un module mais un domaine** : un ensemble de **modules de capacité** autonomes, partageant le repo `pivot-pilotage-core` (schéma `pilotage`), chacun activable indépendamment et **composable dans les cockpits des personas** concernés.
+**Pilotage n'est pas un module mais un domaine** : un ensemble de **modules de capacité** autonomes, partageant le repo `pivot-pilotage-core` (schéma `pilotage`), chacun activable indépendamment et **composable dans les cockpits (vues composées)** du domaine.
 
-> **Décision structurante — [ADR-008 Domaines composables & cockpits par persona](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).**
+> **Décision structurante — [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).**
 > L'intégration entre modules passe par le **bus d'événements PIVOT** et des **deep-links** — jamais de FK inter-modules (cf. ADR-006).
+
+**Modèle de données du domaine** — une **Application** possède **1..n Projet** (Projet = version d'application, ou autre unité), et **relie toutes les données de chaque Projet** (jalons, budget, risques, décisions…). Voir [EN18.9 — Modèle Application → Projet](ENABLERS/en-modele-application-projet.md).
 
 ## Modules du domaine
 
@@ -35,16 +37,17 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 >
 > Les modules *benchmark* (E31–E39) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](../BENCHMARK.md). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
 
-## Cockpits par persona
+## Cockpits (vues composées)
 
-Un **cockpit** est une vue composée, propre à un persona, qui agrège les widgets/vues des modules pertinents (via bus PIVOT + deep-links). Personas et compositions **à définir** — proposition de départ dans [ADR-008](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
+Un **cockpit** est une vue composée qui agrège les widgets/vues des modules pertinents (via bus PIVOT + deep-links). Les **compositions concrètes restent à définir après une étude UX réelle** — proposition de départ dans [ADR-008](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
 
 ## Enablers partagés du domaine
 
 Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E13) :
 
-- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (Project, Milestone, PortfolioView, Adr, Consultation, Candidate)
+- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (**Application**, Project, Milestone, PortfolioView, Adr, Consultation, Candidate) — hiérarchie **Application 1..n Projet** (cf. EN18.9)
 - **EN18.2** — Guard Angular module pilotage (moduleGuard `moduleId: 'pilotage'`)
+- **EN18.9** — [Modèle Application → Projet](ENABLERS/en-modele-application-projet.md) : Application possède 1..n Projet, relie toutes les données de chaque Projet
 - **EN18.3** — Cloud/SaaS et RGPD *(benchmark)*
 - **EN18.4** — Localisation FR et RGAA *(benchmark)*
 - **EN18.5** — Performance de consolidation *(benchmark)*
@@ -81,6 +84,7 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [EN18.6 — Administration sans code](ENABLERS/en-administration-sans-code.md) | ⬜ |
 | [EN18.7 — Hébergement France/UE](ENABLERS/en-hebergement-france-ue.md) | ⬜ |
 | [EN18.8 — Option on-premise](ENABLERS/en-option-on-premise.md) | ⬜ |
+| [EN18.9 — Modèle Application → Projet](ENABLERS/en-modele-application-projet.md) | ⬜ |
 | **Modules (EPICs dédiés)** | |
 | [E22 — Roadmap / Gantt](../EPIC-roadmap/README.md) | ⬜ |
 | [E23 — Portefeuille projets](../EPIC-portefeuille/README.md) | ⬜ |

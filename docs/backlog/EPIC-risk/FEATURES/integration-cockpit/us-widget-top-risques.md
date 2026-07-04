@@ -2,13 +2,13 @@
 
 > Stub (Lot 2 · MoSCoW Should) — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
 
-**En tant que** chef de projet (et autres personas)
+**En tant que** chef de projet (et autres rôles)
 **Je veux** un widget « Top 3 risques » exposé par le module Risque, intégrable dans mon cockpit
 **Afin de** voir mes risques majeurs sans quitter ma vue projet / portefeuille
 
 ## Contexte
 
-Brique de composition des **cockpits par persona** (ADR-008). Le module Risque expose un widget autonome (top risques par criticité pour un `project_ref` ou un portefeuille) que le shell (E16) compose dans le cockpit du persona. Le widget est alimenté par le bus / l'API Risque, jamais par accès direct au schéma.
+Brique de composition des **cockpits** (ADR-008). Le module Risque expose un widget autonome (top risques par criticité pour un `project_ref` ou un portefeuille) que le shell (E16) compose dans le cockpit du rôle concerné. Le widget est alimenté par le bus / l'API Risque, jamais par accès direct au schéma.
 
 ## Critères d'acceptation (outline — Gate 1 PO Agent)
 

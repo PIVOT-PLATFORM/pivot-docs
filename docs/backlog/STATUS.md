@@ -34,7 +34,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | ✅ Sprint 1 Done |
 | [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
-| [E18 — Domaine Pilotage](EPIC-pilotage/README.md) | E18 | — (ombrelle) | 8 (EN18.1–8) | — | ⬜ phase-3 · domaine |
+| [E18 — Domaine Pilotage](EPIC-pilotage/README.md) | E18 | — (ombrelle) | 9 (EN18.1–9) | — | ⬜ phase-3 · domaine · modèle Application→Projet |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | [E21 — Gestion des risques](EPIC-risk/README.md) | E21 | 9 (F21.1–9) | 3 (EN21.1–3) | 47 | ⬜ phase-3 · pilotage |

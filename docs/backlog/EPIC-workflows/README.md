@@ -108,7 +108,7 @@ Généré depuis le CSV de benchmark (84 items `WF-###` couvrant les 6 cahiers n
   - US29.13.7 : Pile souveraine certifiée
   - US29.13.8 : Packs conformité France
 - **F29.14 — Chantiers SI** — US29.14.1, US29.14.2, US29.14.3, US29.14.4, US29.14.5, US29.14.6, US29.14.7, US29.14.8, US29.14.9, US29.14.10, US29.14.11
-  - US29.14.1 : Segmentation par persona
+  - US29.14.1 : Segmentation par profil d'usage
   - US29.14.2 : Projection des volumes
   - US29.14.3 : Classification souveraineté
   - US29.14.4 : Stratégie socle + exception
@@ -217,7 +217,7 @@ Généré depuis le CSV de benchmark (84 items `WF-###` couvrant les 6 cahiers n
 | [US29.13.7 — Pile souveraine certifiée](FEATURES/innovation/us-pile-souveraine-certifiee.md) | ⬜ |
 | [US29.13.8 — Packs conformité France](FEATURES/innovation/us-packs-conformite-france.md) | ⬜ |
 | **F29.14 — Chantiers SI** | |
-| [US29.14.1 — Segmentation par persona](FEATURES/chantiers-si/us-segmentation-par-persona.md) | ⬜ |
+| [US29.14.1 — Segmentation par profil d'usage](FEATURES/chantiers-si/us-segmentation-par-profil.md) | ⬜ |
 | [US29.14.2 — Projection des volumes](FEATURES/chantiers-si/us-projection-volumes.md) | ⬜ |
 | [US29.14.3 — Classification souveraineté](FEATURES/chantiers-si/us-classification-souverainete.md) | ⬜ |
 | [US29.14.4 — Stratégie socle + exception](FEATURES/chantiers-si/us-strategie-socle-exception.md) | ⬜ |
