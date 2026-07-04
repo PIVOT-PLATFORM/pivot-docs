@@ -23,7 +23,19 @@ Outil d'aide à la **planification de capacité pour le sprint, l'incrément (lo
 - **Facteur de concentration** (US11.6.2) : % max de temps productif par jour moyen (ex. 70 %), paramétrable.
 - **Absences** : **saisie manuelle** (US11.2.2) **et/ou import automatique** depuis un SI RH/absence (SAP, Workday, Lucca…) (US11.7.1).
 - **Période de sprint** : **récupérée automatiquement** via une API agile préconfigurée (Jira, Azure DevOps…) **ou** durée saisie manuellement (US11.5.2).
-- **Vélocité N-1** (US11.6.3) & **maturité agile** (US11.6.4) : ajustent la capacité prévisionnelle et la marge d'incertitude.
+- **Vélocité N-1** (US11.6.3) : moyenne glissante des **3 derniers sprints** ; intervalle élargi si coefficient de variation > 25 %.
+- **Maturité agile** (US11.6.4) : ajuste focus factor et marge.
+
+### Valeurs par défaut (surchargeables)
+
+| Maturité agile | Focus factor | Marge de sécurité | Engagement recommandé |
+|---|:---:|:---:|:---:|
+| Peu mature (forming) | 60 % | 20 % | capacité nette × 0,80 |
+| En cours (norming) | 70 % | 10 % | capacité nette × 0,90 |
+| Performante (performing) | 80 % | 5 % | capacité nette × 0,95 |
+| **Non renseignée (défaut)** | **70 %** | **15 %** | capacité nette × 0,85 |
+
+> **Engagement recommandé = capacité nette × (1 − marge).** Ces valeurs sont des **défauts**, toujours **surchargeables** manuellement par équipe/membre/rôle. Premier sprint sans historique : capacité en jours-homme × focus × (1 − marge), sans vélocité.
 
 ## RGPD & éthique (transverse — US11.8.1)
 

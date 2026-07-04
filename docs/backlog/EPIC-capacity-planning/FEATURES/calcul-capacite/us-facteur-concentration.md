@@ -8,7 +8,8 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un facteur de concentration (ex. 70 %), when la capacité se calcule, then **capacité nette = jours ouvrés × quotité × facteur** | ⬜ |
+| Given un facteur de concentration, when la capacité se calcule, then **capacité nette = jours ouvrés × quotité × facteur** | ⬜ |
+| Given aucun facteur saisi, when la capacité se calcule, then le **facteur par défaut = 70 %** (ou dérivé de la maturité : **60 %** peu mature / **70 %** en cours / **80 %** performante — cf. US11.6.4) | ⬜ |
 | Given un facteur défini au niveau équipe / membre / rôle, when ils diffèrent, then le plus spécifique s'applique | ⬜ |
 | Error : given un facteur > 100 % ou < 0, then il est refusé (garde-fou) | ⬜ |
 
