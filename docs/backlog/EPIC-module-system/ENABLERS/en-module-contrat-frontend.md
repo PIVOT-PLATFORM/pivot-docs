@@ -13,4 +13,4 @@
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
-Stage: Backlog · Priority: High
+Stage: Backlog · Priority: Critical

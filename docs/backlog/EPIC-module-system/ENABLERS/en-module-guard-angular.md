@@ -33,4 +33,4 @@ US03.2.2 (même guard, mêmes tests).
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
-Stage: Review · Priority: High
+Stage: Review · Priority: Critical

@@ -112,7 +112,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
 | Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
-| Medium | US16.2.2 Section modules à venir | MVP | ⬜ À planifier |
+| Medium | US16.2.2 Section modules à venir | MVP | 🔄 En cours |
 | — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
