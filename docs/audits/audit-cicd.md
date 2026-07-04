@@ -14,8 +14,8 @@
 ## Décisions notables
 
 - **2026-07-03 — Mutation testing (Stryker, pivot-ui) déplacé en exécution hebdomadaire** :
-  le job `Mutation Testing (Stryker)` dans `pr-checks.yml` timeoutait régulièrement à 30min
-  sur les PR touchant l'auth (gros volume de tests), affichant un "fail" trompeur alors que
+  le job `Mutation Testing (Stryker)` dans `pr-checks.yml` dépassait régulièrement le délai
+  de 30min sur les PR touchant l'auth (gros volume de tests), affichant un "fail" trompeur alors que
   le score de mutation est un indicateur qualité non bloquant, jamais un gate de merge
   (`continue-on-error`, voir CLAUDE.md Gate 3). Déplacé dans un workflow dédié
   `mutation-testing.yml` — cron lundi 06:00 UTC + `workflow_dispatch` manuel, timeout porté
