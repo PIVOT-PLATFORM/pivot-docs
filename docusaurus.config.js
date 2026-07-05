@@ -33,11 +33,6 @@ const sections = [
 
 const editUrl = `https://github.com/${organizationName}/${projectName}/edit/main/`;
 
-// En build de preview PR (voir .github/workflows/docs-checks.yml), un bandeau
-// avertit que le site déployé n'est pas la production tant que main n'a pas
-// redéployé par-dessus.
-const previewPr = process.env.DOCS_PREVIEW_PR;
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'PIVOT Docs',
@@ -98,15 +93,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      ...(previewPr && {
-        announcementBar: {
-          id: 'pr-preview-banner',
-          content: `⚠️ Aperçu de la PR #${previewPr} — ceci remplace temporairement le site de production, jusqu'au prochain déploiement de <code>main</code>.`,
-          backgroundColor: '#fbbf24',
-          textColor: '#1f2937',
-          isCloseable: false,
-        },
-      }),
       navbar: {
         title: 'PIVOT Docs',
         logo: {
