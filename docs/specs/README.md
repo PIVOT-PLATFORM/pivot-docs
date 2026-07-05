@@ -7,7 +7,7 @@ sidebar_label: "Vue d'ensemble"
 # Specs techniques figées
 
 Contrats techniques **tels que livrés**, générés automatiquement par le Doc Agent après le merge
-d'une US (Gate 5 — SPEC FREEZE, voir [`docs/workflow/README.md`](../workflow/README.md)).
+d'une US (Gate 5 — SPEC FREEZE, voir [`docs/workflow/README.md`](pathname:///pivot-docs/workflow)).
 
 ## Pourquoi
 

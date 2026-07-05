@@ -29,6 +29,7 @@ const sections = [
   { id: 'audits', label: 'Audits', path: 'docs/audits' },
   { id: 'backlog', label: 'Backlog', path: 'docs/backlog' },
   { id: 'workflow', label: 'Workflow', path: 'docs/workflow' },
+  { id: 'specs', label: 'Specs', path: 'docs/specs' },
 ];
 
 const editUrl = `https://github.com/${organizationName}/${projectName}/edit/main/`;
