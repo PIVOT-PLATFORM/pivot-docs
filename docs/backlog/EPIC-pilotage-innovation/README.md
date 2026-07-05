@@ -37,6 +37,9 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 - **F38.12 — Communautés & profils d'innovateurs** : communautés · profils (compétences/intérêts) · constitution d'équipes · mentorat
 - **F38.13 — Corporate venturing & intrapreneuriat** : studio/incubateur interne · **venture board & financement par paliers** · spin-off/spin-in · **lien écosystème start-up & CVC**
 - **F38.14 — Intelligence collective avancée** : **marché de prédiction d'idées** · **graphe d'innovation & moteur de sérendipité** · combinaison d'idées · valorisation par options réelles & momentum
+- **F38.15 — Événements, parcours & formulaires d'innovation** : **événements internes** (hackathons, ateliers, demo days, awards) · **parcours d'innovation orchestré par Pivot Workflow (E29)** · **challenges & dépôt d'idée par formulaire (Forms)** · schéma d'idée extensible
+
+> **Note « Pivot Forms ».** Il n'existe pas encore d'EPIC *Forms* dédié : les formulaires s'appuient aujourd'hui sur les **interfaces no-code** du module **Workflow (E29)** et les activités *sondage/quiz* du module **Session (E19)**. Un module **Forms** dédié pourrait être créé ultérieurement ; les dépendances de F38.15 se re-cibleront alors.
 
 ### Enablers
 - **[EN38.1](ENABLERS/en-modele-smi-moteur.md)** — Modèle SMI & moteur (entonnoir, stage-gate, scoring, portefeuille, KPIs)
@@ -45,7 +48,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 ## Dépendances
 
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E18 Domaine Pilotage
-- Interface avec : **E22 Roadmap** / **E23 Portefeuille** (conversion innovation → projet), **E19 Session** (vote/idéation), **E21 Risque** (grilles de scoring) — via bus PIVOT + deep-links
+- Interface avec : **E22 Roadmap** / **E23 Portefeuille** (conversion innovation → projet), **E29 Workflows** (parcours d'innovation orchestré, F38.15), **module Forms** (dépôt d'idée, F38.15), **E19 Session** (vote/idéation, événements), **E12 MeetOps** (logistique événements), **E21 Risque** (grilles de scoring) — via bus PIVOT + deep-links
 
 ## Statut global
 
@@ -115,3 +118,8 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 | [US38.14.2 — Graphe d'innovation & moteur de sérendipité](FEATURES/intelligence-collective/us-graphe-innovation-serendipite.md) | ⬜ |
 | [US38.14.3 — Combinaison & recombinaison d'idées](FEATURES/intelligence-collective/us-combinaison-idees.md) | ⬜ |
 | [US38.14.4 — Valorisation par options réelles & momentum](FEATURES/intelligence-collective/us-options-reelles-momentum.md) | ⬜ |
+| **F38.15 — Événements, parcours & formulaires d'innovation** | |
+| [US38.15.1 — Organisation d'événements internes d'innovation](FEATURES/evenements-parcours-forms/us-evenements-innovation.md) | ⬜ |
+| [US38.15.2 — Parcours d'innovation orchestré (Pivot Workflow, E29)](FEATURES/evenements-parcours-forms/us-parcours-innovation-workflow.md) | ⬜ |
+| [US38.15.3 — Challenges & dépôt d'idée par formulaire (Forms)](FEATURES/evenements-parcours-forms/us-challenges-depot-idee-forms.md) | ⬜ |
+| [US38.15.4 — Schéma d'idée extensible (champs personnalisés)](FEATURES/evenements-parcours-forms/us-schema-idee-extensible.md) | ⬜ |

@@ -54,7 +54,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E35 — Gouvernance & sécurité (pilotage)](EPIC-pilotage-gouvernance/README.md) | E35 | 1 (F35.1) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · benchmark |
 | [E36 — Intégration SI (pilotage)](EPIC-pilotage-integration-si/README.md) | E36 | 1 (F36.1) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · benchmark |
 | [E37 — Licences & réversibilité (pilotage)](EPIC-pilotage-licences/README.md) | E37 | 1 (F37.1) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · benchmark |
-| [E38 — Management de l'innovation (SMI)](EPIC-pilotage-innovation/README.md) | E38 | 14 (F38.1–14) | 2 (EN38.1–2) | 41 | ⬜ phase-3 · pilotage · **SMI ISO 56002** + IA/venturing |
+| [E38 — Management de l'innovation (SMI)](EPIC-pilotage-innovation/README.md) | E38 | 15 (F38.1–15) | 2 (EN38.1–2) | 45 | ⬜ phase-3 · pilotage · **SMI ISO 56002** + IA/venturing/événements |
 | [E39 — Chantiers SI (pilotage)](EPIC-pilotage-chantiers/README.md) | E39 | 1 (F39.1) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · benchmark |
 | [E40 — Profil & adaptation](EPIC-profil-adaptation/README.md) | E40 | 1 (F40.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · **v2 adaptative** |
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 (F41.1–6) | 1 (EN41.1) | 42 | ⬜ phase-3 · transverse · **onboarding in-app + présentiel** (catalogue 29 modules) |
