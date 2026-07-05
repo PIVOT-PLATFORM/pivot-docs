@@ -32,8 +32,15 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 - **F38.9 — KPIs, maturité & conformité ISO 56000** (ISO 56004/56008)
 - **F38.10 — Culture, participation & reconnaissance**
 
+#### Fonctionnalités innovantes
+- **F38.11 — Innovation augmentée par l'IA** (gouvernée) : assistant d'idéation · **ponts entre idées ressemblantes** (clustering sémantique) · évaluation assistée · **fail-fast assisté** · matchmaking IA · gouvernance IA (humain dans la boucle, non-entraînement, AI Act)
+- **F38.12 — Communautés & profils d'innovateurs** : communautés · profils (compétences/intérêts) · constitution d'équipes · mentorat
+- **F38.13 — Corporate venturing & intrapreneuriat** : studio/incubateur interne · **venture board & financement par paliers** · spin-off/spin-in · **lien écosystème start-up & CVC**
+- **F38.14 — Intelligence collective avancée** : **marché de prédiction d'idées** · **graphe d'innovation & moteur de sérendipité** · combinaison d'idées · valorisation par options réelles & momentum
+
 ### Enablers
 - **[EN38.1](ENABLERS/en-modele-smi-moteur.md)** — Modèle SMI & moteur (entonnoir, stage-gate, scoring, portefeuille, KPIs)
+- **[EN38.2](ENABLERS/en-moteur-ia-graphe.md)** — Moteur IA & graphe d'innovation **gouverné** (embeddings/similarité, LLM, graphe, sérendipité, prédiction)
 
 ## Dépendances
 
@@ -52,6 +59,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 |---------|--------|
 | **Enablers** | |
 | [EN38.1 — Modèle SMI & moteur](ENABLERS/en-modele-smi-moteur.md) | ⬜ |
+| [EN38.2 — Moteur IA & graphe d'innovation (gouverné)](ENABLERS/en-moteur-ia-graphe.md) | ⬜ |
 | **F38.1 — Stratégie & politique d'innovation** | |
 | [US38.1.1 — Politique & ambition d'innovation](FEATURES/strategie-innovation/us-politique-ambition.md) | ⬜ |
 | [US38.1.2 — Gouvernance de l'innovation](FEATURES/strategie-innovation/us-gouvernance-innovation.md) | ⬜ |
@@ -85,3 +93,25 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 | **F38.10 — Culture, participation & reconnaissance** | |
 | [US38.10.1 — Engagement & participation](FEATURES/culture-reconnaissance/us-engagement-participation.md) | ⬜ |
 | [US38.10.2 — Reconnaissance des contributeurs](FEATURES/culture-reconnaissance/us-reconnaissance-contributeurs.md) | ⬜ |
+| **F38.11 — Innovation augmentée par l'IA** | |
+| [US38.11.1 — Assistant IA d'idéation](FEATURES/ia-augmentee/us-assistant-ia-ideation.md) | ⬜ |
+| [US38.11.2 — Ponts entre idées ressemblantes (clustering sémantique)](FEATURES/ia-augmentee/us-ponts-idees-ressemblantes.md) | ⬜ |
+| [US38.11.3 — Évaluation & pré-tri assistés par IA](FEATURES/ia-augmentee/us-evaluation-assistee-ia.md) | ⬜ |
+| [US38.11.4 — Fail-fast assisté](FEATURES/ia-augmentee/us-fail-fast-assiste.md) | ⬜ |
+| [US38.11.5 — Matchmaking IA (experts, mentors, financeurs)](FEATURES/ia-augmentee/us-matchmaking-ia.md) | ⬜ |
+| [US38.11.6 — Gouvernance de l'IA d'innovation](FEATURES/ia-augmentee/us-gouvernance-ia-innovation.md) | ⬜ |
+| **F38.12 — Communautés & profils d'innovateurs** | |
+| [US38.12.1 — Communautés d'innovation](FEATURES/communautes-innovateurs/us-communautes-innovation.md) | ⬜ |
+| [US38.12.2 — Profils d'innovateurs (compétences & intérêts)](FEATURES/communautes-innovateurs/us-profils-innovateurs.md) | ⬜ |
+| [US38.12.3 — Constitution d'équipes par compétences](FEATURES/communautes-innovateurs/us-matchmaking-equipes.md) | ⬜ |
+| [US38.12.4 — Mentorat & coaching](FEATURES/communautes-innovateurs/us-mentorat-coaching.md) | ⬜ |
+| **F38.13 — Corporate venturing & intrapreneuriat** | |
+| [US38.13.1 — Studio / incubateur interne](FEATURES/corporate-venturing/us-studio-incubateur-interne.md) | ⬜ |
+| [US38.13.2 — Venture board & financement par paliers](FEATURES/corporate-venturing/us-venture-board-financement.md) | ⬜ |
+| [US38.13.3 — Spin-off / spin-in & essaimage](FEATURES/corporate-venturing/us-spinoff-spinin-essaimage.md) | ⬜ |
+| [US38.13.4 — Lien écosystème start-up & CVC](FEATURES/corporate-venturing/us-ecosysteme-startup-cvc.md) | ⬜ |
+| **F38.14 — Intelligence collective avancée** | |
+| [US38.14.1 — Marché de prédiction d'idées](FEATURES/intelligence-collective/us-marche-prediction-idees.md) | ⬜ |
+| [US38.14.2 — Graphe d'innovation & moteur de sérendipité](FEATURES/intelligence-collective/us-graphe-innovation-serendipite.md) | ⬜ |
+| [US38.14.3 — Combinaison & recombinaison d'idées](FEATURES/intelligence-collective/us-combinaison-idees.md) | ⬜ |
+| [US38.14.4 — Valorisation par options réelles & momentum](FEATURES/intelligence-collective/us-options-reelles-momentum.md) | ⬜ |
