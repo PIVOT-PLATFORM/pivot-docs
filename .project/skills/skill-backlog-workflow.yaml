@@ -73,6 +73,7 @@ us_file_format:
     ready_to_in_progress: "Dev Agent démarre immédiatement → Stage: In progress"
     in_progress_to_review: "Après Gate 4 ≥ 85 → Stage: Review + signal mainteneur"
     review_to_done: "Mainteneur merge la PR"
+    done_to_spec_frozen: "Doc Agent (autonome, non-bloquant) → Gate 5 → docs/specs/{epic}/{us-id}-{slug}.md figé"
 
 ---
 
@@ -101,3 +102,24 @@ gate_1_readiness:
   thresholds:
     proceed: "≥ 70 → Stage: Ready → implémentation immédiate"
     rewrite: "< 70 → PO Agent réécrit/complète les ACs → recalculer → procéder dès ≥ 70"
+
+---
+
+gate_5_spec_freeze:
+
+  trigger: "Juste après que le mainteneur pose Stage: Done (post-merge, Doc Agent, autonome)"
+  non_blocking: >
+    Un échec du Doc Agent n'affecte jamais le Stage déjà posé par le mainteneur —
+    reproductible à la prochaine session si manqué.
+  output_path: "pivot-docs/docs/specs/{EPIC}/{us-id}-{slug}.md"
+  content:
+    - "Contexte : lien US source, PR, commit SHA de merge"
+    - "Contrat technique final (endpoints, payloads, schémas DB, événements socket) tel qu'implémenté"
+    - "Écarts vs ACs initiaux, avec justification"
+    - "Scores finaux Gate 2 (coverage) et Gate 4 (merge confidence)"
+    - "Statut : Figé le {date}"
+  immutability_rule: >
+    Une spec figée n'est jamais réécrite. Un changement de comportement ultérieur crée
+    une nouvelle US référençant la spec existante, et ajoute un
+    "## Addendum {date} — US-{id}" en fin de fichier — jamais une édition silencieuse
+    de la section figée initiale.

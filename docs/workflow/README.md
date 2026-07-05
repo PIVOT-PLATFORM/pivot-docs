@@ -33,6 +33,7 @@ Principes fondateurs :
 | **QA Agent** | Rédige specs E2E, valide coverage, challenge A11y | Gate 1 + Gate 2 |
 | **Dev Agent** | Implémente sur branche dédiée, auto-évalue via gates | Gate 2 |
 | **PR Review Agent** | Exécute Gate 3 + Gate 4, merge ou escalade | Gate 3 + Gate 4 |
+| **Doc Agent** | Génère la SPEC technique figée post-merge | Gate 5 |
 
 ---
 
@@ -75,6 +76,11 @@ PO Agent (autonome)
        │ [merge mainteneur]
        ▼
   Stage: Done (mainteneur uniquement — jamais Claude)
+       │
+       ▼
+  Doc Agent — Gate 5 SPEC FREEZE (autonome, non-bloquant)
+  └─ Génère docs/specs/{epic}/{us-id}-{slug}.md (figé)
+       └─ Contrat technique final + écarts vs ACs + liens US/PR/commit
 ```
 
 ---
@@ -89,6 +95,7 @@ Scores continus 0–100 — postés en **commentaire de PR** (aucun fichier comm
 | **2 — COVERAGE** | Par commit | ≥ 85 → continuer · 70–84 → compléter · < 70 → stop |
 | **3 — QUALITY** | Après CI | Hard blocks : Gitleaks · `security` · `breaking-change` · contrat module |
 | **4 — MERGE CONFIDENCE** | Avant merge | ≥ 85 → merge autonome · 60–84 → merge documenté · < 60 → escalade |
+| **5 — SPEC FREEZE** | Après merge (Stage: Done) | Doc Agent génère la spec figée · non-bloquant, ne repasse jamais l'US en Done |
 
 Format commentaire :
 ```yaml
@@ -136,6 +143,41 @@ Chaque AC mappe à au moins un test nommé avec son identifiant :
 | `AC-42-SEC-01` | `@PreAuthorize` | `ac42_sec01_returns403WhenModuleDisabled()` |
 
 AC sans test = non implémenté, peu importe le code présent.
+
+---
+
+## Gate 5 — SPEC technique figée
+
+**Problème résolu :** une fois `Stage: Done`, le fichier US backlog continue de vivre (relecture,
+reformulation, découpage en US enfants) et perd sa valeur de référence technique. Sans figeage,
+aucune source de vérité stable ne décrit le contrat « tel que livré » — ce qui pénalise les US
+futures qui en dépendent (ex. un contrat WebSocket de session dont dépend le canvas whiteboard).
+
+**Déclencheur :** juste après que le mainteneur a posé `Stage: Done` (post-merge, asynchrone,
+**non-bloquant** — un échec du Doc Agent n'affecte jamais le statut Done déjà posé par le
+mainteneur).
+
+**Agent :** Doc Agent — lit l'US mergée (ACs cochés, Stage: Done) + le diff de la PR, puis génère
+un document figé :
+
+```text
+docs/specs/{EPIC}/{us-id}-{slug}.md
+```
+
+**Contenu :**
+
+| Section | Détail |
+|---------|--------|
+| Contexte | Lien US source, PR, commit SHA de merge |
+| Contrat technique final | Endpoints, payloads, schémas DB/migrations, événements socket — **tels qu'implémentés**, pas tels qu'imaginés dans les ACs initiaux |
+| Écarts vs ACs | Différences entre AC et implémentation réelle, avec justification |
+| Scores | Gate 2 (coverage) et Gate 4 (merge confidence) finaux |
+| Statut | `Figé le {date}` |
+
+**Règle d'immutabilité :** une spec figée n'est **jamais réécrite**. Un changement de comportement
+ultérieur crée une nouvelle US qui référence la spec existante et ajoute un
+`## Addendum {date} — US-{id}` en fin de fichier — jamais une édition silencieuse de la section
+figée initiale.
 
 ---
 
