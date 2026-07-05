@@ -11,7 +11,7 @@
 | Given un type d'événement (hackathon, atelier, demo day, pitch, awards), when je le crée, then format, dates, inscriptions, constitution d'équipes, jury et prix sont paramétrés | ⬜ |
 | Given un événement, when il se déroule, then l'animation live s'appuie sur le module **Session (E19)** et la logistique/créneaux sur **MeetOps (E12)** | ⬜ |
 | Given la clôture, when elle a lieu, then les livrables/idées primés entrent dans l'**entonnoir** (F38.3) et l'adoption/participation est mesurée | ⬜ |
-| Généralise et complète le hackathon (US38.8.3) | ⬜ |
+| Given un événement ouvert à l'écosystème externe (US38.8.3), when il est organisé, then il réutilise ce moteur d'événements interne pour inscription/équipes/jury/prix | ⬜ |
 
 ---
 Item Type: US · Parent: F38.15 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium

@@ -89,7 +89,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 | **F38.8 — Open innovation & écosystème** | |
 | [US38.8.1 — Partenaires, startups & appels à projets](FEATURES/open-innovation/us-partenaires-appels-projets.md) | ⬜ |
 | [US38.8.2 — Veille & scouting technologique](FEATURES/open-innovation/us-veille-scouting.md) | ⬜ |
-| [US38.8.3 — Hackathons & événements d'innovation](FEATURES/open-innovation/us-hackathons-evenements.md) | ⬜ |
+| [US38.8.3 — Hackathons & challenges avec l'écosystème externe](FEATURES/open-innovation/us-hackathons-evenements.md) | ⬜ |
 | **F38.9 — KPIs, maturité & conformité ISO 56000** | |
 | [US38.9.1 — KPIs & tableau de bord de l'innovation](FEATURES/kpis-maturite-iso/us-kpis-tableau-bord.md) | ⬜ |
 | [US38.9.2 — Évaluation de maturité (ISO 56002/56004)](FEATURES/kpis-maturite-iso/us-maturite-iso-56002.md) | ⬜ |
