@@ -26,11 +26,20 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url || steps.deployment_retry3.outputs.page_url }}
     outputs:
-      page_url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url }}
+      page_url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_retry2.outputs.page_url || steps.deployment_retry3.outputs.page_url }}
 
     steps:
+      # Ce job est gate par la concurrency "pages" du workflow appelant : quand il
+      # demarre apres avoir ete mis en file, c'est generalement parce qu'un
+      # deploiement precedent vient tout juste de liberer le verrou — pile la
+      # fenetre ou l'API Pages renvoie "try again later" (settling backend cote
+      # GitHub, independant de notre concurrency). Ce delai initial evite de
+      # consommer une tentative pour rien dans ce cas frequent.
+      - name: Attendre le settling d'un déploiement précédent
+        run: sleep 10
+
       - name: Deploy to GitHub Pages
         id: deployment
         continue-on-error: true
@@ -40,6 +49,8 @@ jobs:
       # deploiement precedent vient tout juste de se terminer. Wiring et backoff
       # valides en conditions reelles (echecs forces) sur pivot-docs#31, y
       # compris apres factorisation dans ce fichier (run du 2026-07-04 10:02-10:03 UTC).
+      # Un 3e retry a ete ajoute le 2026-07-05 apres un echec des 2 tentatives
+      # (20s/40s) suite a 3 push rapproches sur une meme PR (pivot-docs#55).
       - name: Attendre avant nouvelle tentative (1)
         if: steps.deployment.outcome == 'failure'
         run: sleep 20
@@ -57,4 +68,14 @@ jobs:
       - name: Deploy to GitHub Pages (retry 2)
         id: deployment_retry2
         if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure'
+        continue-on-error: true
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+      - name: Attendre avant nouvelle tentative (3)
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure' && steps.deployment_retry2.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (retry 3)
+        id: deployment_retry3
+        if: steps.deployment.outcome == 'failure' && steps.deployment_retry.outcome == 'failure' && steps.deployment_retry2.outcome == 'failure'
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
