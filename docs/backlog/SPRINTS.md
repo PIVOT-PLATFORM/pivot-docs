@@ -144,36 +144,219 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-## Backlog sprint 6+ (non planifié)
+## Sprint 6 — Durcissement & recette MVP 🏁
 
-- US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP)
-- E05 CI/CD Supply-chain restants (EN05.13-15 + 7 US)
-- E04 Observabilité — EN04.1–4 planifiés Sprint 4
-- E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
-- E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
-- E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
-- E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique
-- E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
-- E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
-- E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
+**Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
+**Scope :** clôture du périmètre MVP — reliquats, dette, recette
+**Jalon de sortie :** déclaration **« MVP terminé »** par le mainteneur → déverrouille les sprints 7+
+
+| Item | Titre | Priorité | 🤖 Dev |
+|------|-------|----------|--------|
+| US16.3.1 | Formulaire de contact (en review depuis Sprint 1 — à sortir) | Critical | 🔎 Review |
+| EN05.13-15 | CI/CD Supply-chain restants | High | ⬜ |
+| E05 US restantes | 7 US supply-chain | High | ⬜ |
+| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ |
+| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ⬜ |
+| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ |
+| Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ |
+| Recette | Bug bash MVP complet + recette PO des US `Review` | Critical | ⬜ |
+
+> **Pré-requis du jalon :** rédiger la **Definition of Done MVP** (checklist explicite features/prod/recette) — voir §Zones d'ombre n°1. Sans elle, le verrou §6 du modèle backlog reste une déclaration sans critère.
 
 ---
 
-## Backlog phase-3 — Infrastructure multi-repo (E17)
+## Sprints 7–12 — Plan phase-3 (conditionnel au jalon « MVP terminé »)
 
-**Pré-requis :** E03 Système de modules terminé · E07 infra prod validée
+> ⏸️ **Verrou :** ces sprints ne démarrent qu'après la déclaration « MVP terminé » (Sprint 6). Séquencement fondé sur 3 goulots : E17 (aucun module phase-3 ne peut démarrer sans les templates multi-repo), la gouvernance ADR (bus d'événements non spécifié = chemin critique invisible de S9+), et le principe « piloter petit avant de piloter gros » (valider les templates sur l'agilité avant d'engager le domaine Pilotage).
+> **Hypothèse de capacité :** ~11-19 items/sprint (vélocité observée S1-S3, agents parallèles).
 
-| Enabler | Titre | Priority | 🤖 Dev |
-|---------|-------|----------|--------|
+### Sprint 7 — Fondations phase-3 (E17 + gouvernance ADR)
+
+**Scope :** infrastructure multi-repo complète + mise à jour de la gouvernance d'architecture
+**Pré-requis :** E03 terminé · E07 infra prod validée (S4)
+
+| Item | Titre | Priority | 🤖 Dev |
+|------|-------|----------|--------|
 | EN17.4 | Convention BDD multi-schéma + Flyway baseline | Critical | ⬜ |
 | EN17.1 | Publication pivot-core-starter (Maven) | High | ⬜ |
-| EN17.2 | Publication @pivot/design-system (npm) | High | ⬜ |
+| EN17.2 | Publication @pivot/design-system (npm) — **création du repo `pivot-design-system`** | High | ⬜ |
 | EN17.3 | Publication @pivot/ui-core (npm) | High | ⬜ |
 | EN17.5 | Template repo pivot-xxx-core | High | ⬜ |
 | EN17.6 | Template repo pivot-xxx-ui | High | ⬜ |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL | Critical | ⬜ |
+| ADR | Passage ADR-008→016 de « Proposé » à « Accepté » (décision mainteneur actée) | Critical | ⬜ |
+| ADR | Rédaction ADR-017 (modèle d'entités catalogue) · ADR-018 (stratégie forks) · **ADR-019 (bus d'événements — bloquant E21/E29/E42/E43)** · ADR-020 (briques natives) | Critical | ⬜ |
 
-> **Parallélisable :** EN17.1 ‖ EN17.2 (indépendants) → EN17.3 (dépend de EN17.2) → EN17.4 ‖ EN17.5 → EN17.6 (dépend de EN17.2+3) · EN17.7 peut démarrer dès EN17.4 stable
+> **Parallélisable :** EN17.1 ‖ EN17.2 → EN17.3 → EN17.4 ‖ EN17.5 → EN17.6 · EN17.7 dès EN17.4 stable · rédaction ADR en parallèle de tout le reste.
+
+### Sprint 8 — Pilote multi-repo (agilité) + enforcement taxonomie
+
+**Scope :** premiers modules satellites sur `pivot-agilite-*` — périmètres volontairement petits pour valider les templates EN17.5/6 avant d'engager le domaine Pilotage
+**Sortie :** 1er repo satellite en prod + retour d'expérience sur les templates
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| US09.1.1 | Créer une room de planning poker | M | High | ⬜ |
+| US09.1.2 | Rejoindre une room via code | S | High | ⬜ |
+| US09.2.1 | Voter sur un ticket en temps réel | M | High | ⬜ |
+| US09.2.2 | Révéler les votes et calculer le consensus | S | High | ⬜ |
+| US09.3.1 | Participer anonymement (sans compte) | M | Medium | ⬜ |
+| US14.1.1 | Créer et gérer une roue de tirage | M | High | ⬜ |
+| US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
+| US14.3.1 | Diffusion du résultat en temps réel (WebSocket) | M | High | ⬜ |
+| US20.1.1 | Créer une session de rétrospective | M | High | ⬜ |
+| US20.1.2 | Animer la rétrospective en temps réel *(XL → décomposer avant impl.)* | XL | High | ⬜ |
+| US20.2.1 | Formats de rétro prédéfinis + custom | M | Medium | ⬜ |
+| US20.3.1 | Créer et assigner des actions de rétro | M | High | ⬜ |
+| US20.3.2 | Revoir les actions de la rétro précédente | S | Medium | ⬜ |
+| TAXO-1 | Merge `check-taxonomie.mjs` + câblage `lint:taxonomie` en CI | S | High | ⬜ |
+| TAXO-2 | Backfill champ `Rôle:` sur ~700 US/EN (résolution vers le référentiel) | M | High | ⬜ |
+
+> **Parallélisable :** E09 ‖ E14 ‖ E20 (trois agents, trois périmètres du même repo `pivot-agilite-*`) ‖ TAXO (pivot-docs).
+
+### Sprint 9 — Socle domaine Pilotage
+
+**Scope :** la colonne vertébrale du domaine, pas ses satellites
+**Sortie :** une roadmap simple créable de bout en bout
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| EN18.1 | Schéma Flyway `pilotage` + entités JPA (Application, Project, Milestone…) | M | Critical | ⬜ |
+| EN18.2 | Guard Angular module pilotage | S | Critical | ⬜ |
+| EN18.9 | Modèle Application → Projet | M | High | ⬜ |
+| US40.1.1 | Profil d'organisation | M | Critical | ⬜ |
+| US40.1.2 | Activation des modules par profil | L | Critical | ⬜ |
+| US40.1.3 | Classe de souveraineté par profil | M | Critical | ⬜ |
+| US40.1.4 | Modularité & montée en gamme | M | High | ⬜ |
+| US40.1.5 | Articulation capillarité + pilotage | L | High | ⬜ |
+| US40.1.6 | Pack double contrainte | L | High | ⬜ |
+| EN22.1 | Modèle temporel unique & moteur d'ordonnancement | XL | Critical | ⬜ |
+| EN22.2 | Performance & collaboration web du Gantt | XL | High | ⬜ |
+| US22.3.1 | Créer une roadmap rapide | M | High | ⬜ |
+| US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ⬜ |
+| US22.3.3 | Vue Now / Next / Later | M | Should | ⬜ |
+| US22.3.4 | Jalons stratégiques | S | High | ⬜ |
+| US22.3.5 | Partage & export de la roadmap | S | Should | ⬜ |
+
+> **Blocker :** EN18.1 précède tout · EN22.1 précède F22.3 et tout le Sprint 10 · E40 parallélisable (schéma `core`).
+
+### Sprint 10 — Pilotage cœur PPM
+
+**Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé)
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| US22.4.1 | WBS : tâches & tâches récapitulatives *(XL → décomposer avant impl.)* | XL | Critical | ⬜ |
+| US22.4.2 | Durées, effort, planification auto vs manuelle | L | Critical | ⬜ |
+| US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ⬜ |
+| US22.4.4 | Contraintes de date & échéances | M | High | ⬜ |
+| US22.4.5 | Calendriers ouvrés & exceptions | L | High | ⬜ |
+| US22.4.6 | Jalons & tâches périodiques | M | Medium | ⬜ |
+| US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ |
+| US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ⬜ |
+| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ⬜ |
+| US22.4.10 | Interactions Gantt directes *(XL → décomposer avant impl.)* | XL | Critical | ⬜ |
+| US22.6.1 | Vues multiples (Gantt, chronologie, calendrier, réseau) *(XL → décomposer)* | XL | High | ⬜ |
+| US22.6.2 | Colonnes, filtres, regroupements & tri | L | High | ⬜ |
+| US23.1.1 | Tableau de bord portefeuille projets | L | High | ⬜ |
+| US23.1.2 | Générer un rapport d'avancement du portefeuille | M | Medium | ⬜ |
+| US23.2.1 | Vue portefeuille consolidée | L | Critical | ⬜ |
+| US23.2.2 | Tableaux de bord personnalisables | L | Critical | ⬜ |
+| US23.2.4 | Météo et indicateurs normalisés | S | High | ⬜ |
+
+> **E23 vague 2 → post-S12** (US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques, US23.2.7/23.2.8 what-if & business cases, US23.2.9/23.2.10 livrables & valeur publique). US22.6.3/22.6.4 (mise en forme, exports) en fin de sprint si capacité.
+
+### Sprint 11 — Risques + plan de contrôle sécurité
+
+**Sortie :** registre de risques opérationnel + socle Zero Trust posé
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| US21.1.1 | Questionnaire de cadrage | M | Critical | ⬜ |
+| US21.1.2 | Bibliothèque de typologies | M | Critical | ⬜ |
+| US21.1.3 | Taxonomie universelle 12 familles | S | Critical | ⬜ |
+| US21.1.4 | Matrice de pondération des impacts | M | Critical | ⬜ |
+| US21.1.5 | Bibliothèque de risques pré-suggérés | M | Critical | ⬜ |
+| US21.1.6 | Entité Risk au catalogue | M | Critical | ⬜ |
+| US21.2.1 | Score probabilité × gravité | M | Critical | ⬜ |
+| US21.2.2 | Gravité multidimensionnelle | M | Critical | ⬜ |
+| US21.2.3 | Seuils d'appétence | S | High | ⬜ |
+| US21.2.4 | Matrice de risques visuelle | M | High | ⬜ |
+| US21.3.1 | Cycle de vie du risque | M | Critical | ⬜ |
+| US21.3.2 | Stratégies de traitement (4 T) | M | Critical | ⬜ |
+| US21.3.3 | Plan d'action | M | High | ⬜ |
+| US21.3.4 | Plan de contingence | S | Medium | ⬜ |
+| US21.3.5 | Revues de risques | M | High | ⬜ |
+| EN43.5 | Plan de contrôle : Identité | L | Critical | ⬜ |
+| EN43.6 | Plan de contrôle : Secrets (OpenBao) | L | Critical | ⬜ |
+| EN43.7 | Autorisation externalisée (policy-as-code) | XL | Critical | ⬜ |
+
+> **US21.2.5/21.2.6 (mode AMDEC, exposition & vélocité — Medium) → post-S12.** EN43.5-7 = prérequis de tout module manipulant des données sensibles (checklist EN43.13). F21.4 boucle vivante dépend d'ADR-019 (bus) → post-S12.
+
+### Sprint 12 — Forms (cœur) + framework onboarding
+
+**Sortie :** form-builder cœur livré + premier tour guidé actif sur les modules en prod (S8-S11)
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| EN42.1 | Moteur & schéma de formulaire *(XL → décomposer avant impl.)* | XL | Critical | ⬜ |
+| US42.1.1 | Éditeur no-code drag-and-drop | M | Critical | ⬜ |
+| US42.1.2 | Types de champs variés | L | Critical | ⬜ |
+| US42.1.3 | Validation des saisies | M | Critical | ⬜ |
+| US42.1.4 | Multi-pages et sections | M | High | ⬜ |
+| US42.2.1 | Logique conditionnelle | L | Critical | ⬜ |
+| US42.2.2 | Calculs et scoring (quiz) | M | High | ⬜ |
+| US42.2.3 | Champs masqués et pré-remplissage | M | High | ⬜ |
+| US42.2.4 | Thème PIVOT | M | High | ⬜ |
+| US42.3.1 | Lien partageable | S | Critical | ⬜ |
+| US42.3.2 | Intégration embarquée dans le portail | M | High | ⬜ |
+| US42.4.1 | Collecte et tableau de réponses | M | Critical | ⬜ |
+| US42.4.2 | Restitution visuelle | M | Critical | ⬜ |
+| US42.5.1 | Webhooks sortants | S | Critical | ⬜ |
+| US42.5.4 | Émission d'événement de soumission (`form.submitted` — dépend ADR-019) | S | Critical | ⬜ |
+| EN41.1 | Framework d'onboarding in-app *(XL → décomposer avant impl.)* | XL | High | ⬜ |
+| US41.1.1 | Tour guidé au premier accès | M | High | ⬜ |
+
+> **E42 vague 2 → post-S12** (US42.2.5 multilingue, US42.3.3 enquêtes in-app, US42.4.3 réponses partielles, US42.5.2/42.5.3 API & MCP, F42.6 IA, F42.7 gouvernance, F42.8 souveraineté + EN42.2, F42.9-11). US41.1.2-4 (tooltips, checklist, quoi de neuf) suivent EN41.1.
+
+---
+
+## Backlog post-S12 (non planifié)
+
+- US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP) + 4 autres items v1-enterprise
+- E10 Daily Standup · E11 Capacity Planning (+ velocity tracking US11.4.1-2) · E12 MeetOps · E13 Cahiers de tests · E15 Équipes (phase-3, `pivot-agilite-*`/`pivot-collaboratif-*`/`pivot-pilotage-*`)
+- E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : ⚠️ dépendance de E41 F41.4 (sessions live) et E38 F38.15
+- E21 vagues 2+ : US21.2.5/21.2.6 (AMDEC, exposition & vélocité), F21.4 boucle vivante (dépend ADR-019 bus), F21.5 portefeuille, F21.6 quantitatif/conformité, F21.7 IA gouvernée, F21.8/21.9 restitutions & cockpit
+- E22 vagues 2+ : US22.6.3/22.6.4 (mise en forme, exports), F22.5 ressources dans le plan, F22.7 interop MS Project, F22.8 interfaces inter-modules & SI, EN22.3 connecteurs calendrier
+- E23 vague 2 : US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques, US23.2.7/23.2.8 what-if & business cases (ex-E31), US23.2.9/23.2.10 livrables & valeur publique
+- E24 ADR projet · E25 Commande publique · E26 Budget · E27 OKR (satellites Pilotage, après la v0 S10)
+- E28 Intégration open source (dépend ADR-009 accepté S7 + gouvernance forks ADR-018)
+- E29 Workflows & Automatisation (78 US — passe DoR à faire au sprint précédant son implémentation)
+- E30 Collaboration (86 US — **bloqué par l'arbitrage E08/E30**, voir §Zones d'ombre n°2 ; passe DoR à faire)
+- E32–E37, E39 satellites Pilotage (ressources, tâches, IA, gouvernance, intégration SI, licences, chantiers)
+- E38 Management de l'innovation (45 US — dépend E42 Forms pour le dépôt d'idée)
+- E41 suites : US41.1.2-4 (tooltips, checklist, quoi de neuf), F41.2 centre d'aide, F41.3 supports, F41.4 présentiel (dépend E19), F41.5 catalogue par module (au fil des livraisons), F41.6 mesure d'adoption
+- E42 vague 2 : US42.2.5 multilingue, US42.3.3 enquêtes in-app, US42.4.3 réponses partielles, US42.5.2/42.5.3 API & MCP, F42.6 IA, F42.7 gouvernance, F42.8 souveraineté + EN42.2, F42.9-11
+- E43 vagues 2+ : EN43.1-4 topologie (BFF/Gateway/Mesh/Egress), EN43.8-13 observabilité & gouvernance
+
+---
+
+## Zones d'ombre à raffiner
+
+Décisions produit / cadrages à traiter **avant** le sprint qui en dépend :
+
+| # | Sujet | Échéance | Détail |
+|---|-------|----------|--------|
+| 1 | **Definition of Done MVP** | avant S6 | Le jalon « MVP terminé » n'a aucun critère écrit — rédiger la checklist (features, prod, recette PO) qui déclenche le déverrouillage phase-3 |
+| 2 | **Arbitrage E08 ↔ E30** | avant S5 | E08 Whiteboard (7 US MVP) recouvre E30 Collaboration (86 US benchmark, canevas inclus) — E08 devient-il le noyau incrémental de E30, ou un MVP jetable ? Construire S5 sans trancher = risque de double travail |
+| 3 | **ADR-019 bus d'événements** | avant S9 | Référencé partout (boucle vivante E21, `form.submitted` E42, EN43.8, E29, ADR-008/009) mais aucune ADR ne le spécifie — chemin critique invisible de tout le plan phase-3 |
+| 4 | **Statuts ADR-008→016** | S7 | Toutes « Proposé » alors que la décision d'acceptation a été prise (merge E43) — acter dans `docs/adr/` |
+| 5 | **Enforcement taxonomie** | S8 | Référentiel mergé mais 0/700 US ne porte de champ `Rôle:`, script et CI exclus volontairement de la PR #65 |
+| 6 | **Champ `Profils:` officieux** | S9 | Présent sur 228 US (Pilotage, E41), absent d'E42, non déclaré dans le modèle §2 du README backlog — officialiser ou retirer |
+| 7 | **Cockpits sans porteur** | avant S10 | ADR-008 : composition portée par le shell (E16), « à définir après étude UX réelle » — aucune US ne porte ni l'étude ni la composition |
+| 8 | **US39.1.7** | S9 | Dernier vestige « hors v2 adaptative, à confirmer » de la dissolution E31 — trancher |
+| 9 | **Gate 1 à l'échelle** | continu | 558 US phase-3 devront passer DoR + Gate 1 — prévoir la passe DoR par EPIC au sprint précédant l'implémentation (comme fait sur pilotage/forms/onboarding), pas au fil de l'eau. E29/E30/E21 partiel restent à niveau inégal |
+| 10 | **Hygiène repo** | S6 | 3 vulnérabilités Dependabot (1 high) · branche `fix/pages-deploy-settling-delay` en suspens (probablement couverte par #57) · PNG PlantUML cassent le build local |
 
 ---
 
@@ -188,4 +371,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-07-04*
+*Dernière mise à jour : 2026-07-06 — plan des sprints 6-12 (durcissement MVP → fondations phase-3 → pilote agilité → domaine Pilotage → risques/sécurité → Forms/onboarding) + backlog post-S12 + zones d'ombre à raffiner*
