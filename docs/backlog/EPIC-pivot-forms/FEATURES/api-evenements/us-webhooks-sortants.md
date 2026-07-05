@@ -1,15 +1,26 @@
 # US42.5.1 — Webhooks sortants
 
-**En tant que** Dev
-**Je veux** Émission d'un webhook à chaque réponse (JSON complet) vers une URL configurée.
-**Afin de** répondre au besoin « Webhooks sortants » de la suite Forms
+**En tant que** développeur intégrateur
+**Je veux** configurer un webhook sortant qui reçoit le JSON complet de chaque réponse soumise
+**Afin de** connecter Forms à un système tiers sans passer par le bus PIVOT
 
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Chaque soumission déclenche un webhook. | ⬜ |
-| Given le module Forms, when la fonctionnalité est activée, then elle est utilisable sans code, intégrée au portail (thème `--pv-*`) et i18n FR/EN | ⬜ |
+| Given un webhook configuré avec une URL cible, when une réponse est soumise, then le JSON complet de la réponse est envoyé en POST à cette URL | ⬜ |
+| Given un webhook dont l'URL cible répond en erreur ou timeout, when l'envoi échoue, then il est retenté selon une politique de backoff, puis journalisé comme échec définitif après épuisement des tentatives | ⬜ |
+| Error : given une URL de webhook invalide ou non joignable configurée par erreur, when le concepteur l'enregistre, then une validation de base (format, résolution DNS) le signale avant d'attendre la première soumission réelle | ⬜ |
+| Security : l'URL cible doit être HTTPS ; chaque envoi est signé (secret partagé ou HMAC) pour que le récepteur vérifie l'authenticité de l'origine | ⬜ |
+
+## Hors périmètre
+
+- Webhooks entrants (déclencher une action dans Forms depuis un système tiers) — hors périmètre, cette US couvre uniquement l'émission sortante
+- Transformation/filtrage du payload avant envoi — le JSON envoyé est complet, pas de mapping personnalisé dans cette US
+
+## Notes d'implémentation
+
+- Distinct de l'émission `form.submitted` sur le bus PIVOT (US42.5.4) : le webhook est un canal point-à-point vers un système externe, le bus est le canal interne à la plateforme — les deux coexistent sans dépendre l'un de l'autre
 
 ---
 Item Type: US · Parent: F42.5 · Module: forms · Phase: phase-3 · Size: S · Priority: Critical

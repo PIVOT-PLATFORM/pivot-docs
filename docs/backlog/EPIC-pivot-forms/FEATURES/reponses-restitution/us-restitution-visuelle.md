@@ -1,15 +1,26 @@
 # US42.4.2 — Restitution visuelle
 
-**En tant que** BA
-**Je veux** Graphiques agrégés par question, tableaux de bord simples propres au formulaire.
-**Afin de** répondre au besoin « Restitution visuelle » de la suite Forms
+**En tant que** concepteur de formulaire
+**Je veux** une restitution graphique agrégée par question (répartition des choix, moyenne des échelles, nuage de mots pour le texte libre)
+**Afin de** lire les tendances d'un formulaire sans exporter les données vers un autre outil
 
 ## Critères d'acceptation
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Chaque question a une restitution graphique agrégée. | ⬜ |
-| Given le module Forms, when la fonctionnalité est activée, then elle est utilisable sans code, intégrée au portail (thème `--pv-*`) et i18n FR/EN | ⬜ |
+| Given un formulaire ayant reçu des réponses, when j'ouvre la restitution, then chaque type de champ affiche une visualisation adaptée (barres pour choix unique/multiple, moyenne+distribution pour échelle/NPS, liste pour texte libre) | ⬜ |
+| Given un filtre de période ou de segment appliqué sur le tableau de réponses (US42.4.1), when la restitution est consultée, then elle reflète le même sous-ensemble filtré | ⬜ |
+| Error : given un formulaire sans aucune réponse encore reçue, when la restitution est ouverte, then un état vide explicite s'affiche (pas de graphique cassé ni de division par zéro) | ⬜ |
+| Security : la restitution respecte le même RBAC que le tableau de réponses (US42.4.1) — pas de vue publique de la restitution sans configuration explicite | ⬜ |
+
+## Hors périmètre
+
+- Tableaux de bord croisant plusieurs formulaires ou d'autres sources de données PIVOT — relève d'un outil BI (cf. E28 Intégration open source, Metabase), pas de Forms
+- Restitution en temps réel pendant que le répondant saisit — hors périmètre
+
+## Notes d'implémentation
+
+- Le seuil au-delà duquel un texte libre bascule en nuage de mots plutôt qu'en liste brute est à définir avec le design-system, pas figé dans cette US
 
 ---
 Item Type: US · Parent: F42.4 · Module: forms · Phase: phase-3 · Size: M · Priority: Critical

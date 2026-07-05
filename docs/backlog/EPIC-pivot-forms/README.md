@@ -37,6 +37,14 @@
 - **[EN42.1](ENABLERS/en-moteur-schema-formulaire.md)** — Moteur & schéma de formulaire (logique, scoring, thème, événements bus)
 - **[EN42.2](ENABLERS/en-deploiement-souverain-forms.md)** — Déploiement souverain & sécurité (self-host/UE, SSO, RGPD)
 
+## Hors périmètre
+
+- **Orchestration aval** d'une soumission (créer une tâche, un risque, un contrat à partir d'une réponse) — reste portée par le module **Workflow (E29)** ou le consommateur de `form.submitted`, jamais par Forms lui-même
+- **BI cross-formulaires / cross-modules** (tableaux de bord agrégeant plusieurs formulaires ou d'autres données PIVOT) — relève d'un outil BI dédié (cf. E28 Intégration open source, Metabase), pas de la restitution native de Forms qui reste mono-formulaire
+- **Registre des traitements RGPD au niveau plateforme** (Art. 30) et **gestion des demandes d'accès/rectification/effacement** — Forms alimente ces processus via sa classification (US42.7.1) mais ne les remplace pas
+- **Marketplace de modèles inter-organisations** — seuls les modèles internes à un même tenant sont couverts (US42.9.1)
+- **Conformité RGAA de niveau AAA** — seul le niveau AA, réglementairement requis, est couvert (US42.10.1)
+
 ## Dépendances
 
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E01 Auth & IAM (SSO)
