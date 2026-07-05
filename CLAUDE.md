@@ -41,7 +41,7 @@ Concise et directe. Techniquement précise. Pas de récapitulatifs inutiles.
 
 ## Structure du dépôt
 
-```
+```text
 pivot-docs/
 ├── docs/
 │   ├── backlog/          # Backlog opérationnel — un fichier par US/Enabler/Feature/Epic
