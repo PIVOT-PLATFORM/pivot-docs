@@ -2,7 +2,9 @@
 
 **Type d'enabler** : architecture · sécurité
 
-**Contexte** : Couche entre le shell/portail et l'API Gateway. Agrège les appels pour le frontend et **ne stocke rien de sensible** — le frontend ne touche jamais un module directement.
+**Objectif technique** : Couche entre le shell/portail et l'API Gateway qui agrège les appels pour le frontend, sans jamais laisser le frontend toucher un module directement.
+
+**Justification** : Un frontend qui appelle les modules directement disperse la logique d'agrégation et multiplie les points où une donnée sensible pourrait transiter ou être mise en cache côté client. Le BFF centralise cette responsabilité et garantit qu'il ne stocke rien de sensible.
 
 **Critères de complétion** :
 - [ ] BFF déployé, agrège les réponses de plusieurs modules pour une vue frontend
@@ -14,5 +16,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3
+Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3 · Size: M
 Stage: Backlog · Priority: High

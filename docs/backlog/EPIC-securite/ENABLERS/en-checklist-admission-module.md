@@ -2,7 +2,9 @@
 
 **Type d'enabler** : gouvernance · sécurité
 
-**Contexte** : Étend le **contrat d'intégration à six capacités** (ADR-009 §4, EN28.3) d'un socle de sécurité. Aucun module — interne ou externe — n'entre sans satisfaire cette baseline ; un module qui ne la coche pas reste en mode Lien (isolé, sans accès aux données sensibles) jusqu'à mise en conformité.
+**Objectif technique** : Étend le **contrat d'intégration à six capacités** (ADR-009 §4, EN28.3) d'un socle de sécurité à 9 points. Aucun module — interne ou externe — n'entre sans satisfaire cette baseline ; un module qui ne la coche pas reste en mode Lien (isolé, sans accès aux données sensibles) jusqu'à mise en conformité.
+
+**Justification** : Sans porte d'entrée unique, chaque nouvel adaptateur OSS (E28) ou module natif pourrait satisfaire certains enablers de sécurité (EN43.3, .6, .7…) et pas d'autres, sans qu'aucun mécanisme ne le bloque. La checklist d'admission rend la conformité sécurité vérifiable et opposable avant qu'un module ne touche des données sensibles — pas une bonne pratique déclarative.
 
 **Critères de complétion** — la checklist à 9 points :
 - [ ] Identité : accepte le SSO PIVOT (OIDC/SAML), aucun compte local
@@ -20,5 +22,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E43 · Type: gouvernance · Module: securite · Phase: phase-3
-Stage: Backlog · Priority: Highest
+Item Type: Enabler · Parent: E43 · Type: gouvernance · Module: securite · Phase: phase-3 · Size: M
+Stage: Backlog · Priority: Critical

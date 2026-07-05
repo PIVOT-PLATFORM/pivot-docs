@@ -2,7 +2,9 @@
 
 **Type d'enabler** : architecture · résilience
 
-**Contexte** : Avec des dizaines de modules, quelque chose est toujours en panne. La disponibilité du portail ne doit jamais dépendre de la disponibilité de chaque module.
+**Objectif technique** : Circuit breakers, retries, bulkheads et timeouts systématiques sur les appels inter-modules/externes, avec dégradation gracieuse — un module indisponible affiche une tuile « indisponible », le reste du portail continue de fonctionner.
+
+**Justification** : Avec des dizaines de modules, quelque chose est toujours en panne. Sans isolation des pannes, la disponibilité du portail entier finirait par dépendre du module le plus fragile — un défaut d'un adaptateur OSS ne doit jamais devenir un incident plateforme.
 
 **Critères de complétion** :
 - [ ] Circuit breaker sur chaque appel inter-module/externe (coupe plutôt que d'attendre)
@@ -16,5 +18,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3
+Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3 · Size: L
 Stage: Backlog · Priority: High

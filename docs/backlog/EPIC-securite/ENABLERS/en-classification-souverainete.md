@@ -2,7 +2,9 @@
 
 **Type d'enabler** : gouvernance · souveraineté
 
-**Contexte** : Modèle de classification transverse, absent jusqu'ici du repo (les mentions « souverain » existantes — Zitadel, Forgejo, Rocket.Chat… — étaient ponctuelles, sans modèle structuré). Aligne les zones réseau sur trois classes de sensibilité, pour contenir le rayon d'explosion d'une compromission.
+**Objectif technique** : Modèle de classification transverse alignant les zones réseau sur trois classes de sensibilité (A souveraine / B contrôlée / C DMZ externe), pour contenir le rayon d'explosion d'une compromission.
+
+**Justification** : Les mentions « souverain » déjà présentes dans le backlog (Zitadel, Forgejo, Rocket.Chat…) étaient ponctuelles, sans modèle structuré — chaque équipe module aurait fini par inventer sa propre notion de souveraineté. Un modèle unique à trois classes est le prérequis pour qu'EN43.7 (autorisation) et EN43.4 (egress) puissent appliquer une règle commune plutôt que des exceptions ad hoc.
 
 **Critères de complétion** :
 - [ ] Zone A — souveraine : modules/données sensibles, self-host, air-gap possible ; aucun flux sortant vers B/C
@@ -17,5 +19,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E43 · Type: gouvernance · Module: securite · Phase: phase-3
-Stage: Backlog · Priority: Highest
+Item Type: Enabler · Parent: E43 · Type: gouvernance · Module: securite · Phase: phase-3 · Size: M
+Stage: Backlog · Priority: Critical

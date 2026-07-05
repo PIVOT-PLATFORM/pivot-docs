@@ -2,7 +2,9 @@
 
 **Type d'enabler** : architecture · sécurité
 
-**Contexte** : Le point le plus négligé et le plus dangereux du trafic. Aucun module (adaptateur) n'a le droit d'ouvrir une connexion sortante directe vers une API externe — tout passe par cette passerelle.
+**Objectif technique** : Point de sortie unique et contrôlé du trafic vers les API externes — aucun module (adaptateur) n'a le droit d'ouvrir une connexion sortante directe.
+
+**Justification** : Le trafic sortant est le point le plus négligé et le plus dangereux : c'est la voie de la SSRF, de l'exfiltration de données et des credentials codés en dur dans un adaptateur. Sans passerelle unique, chaque nouvel adaptateur OSS (E28) rouvre la même surface d'attaque.
 
 **Critères de complétion** :
 - [ ] Allowlist d'endpoints externes (aucun appel libre) — ferme la classe d'attaques SSRF
@@ -16,5 +18,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3
-Stage: Backlog · Priority: Highest
+Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3 · Size: L
+Stage: Backlog · Priority: Critical
