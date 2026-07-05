@@ -13,3 +13,4 @@
 ---
 Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: MVP
 Stage: Backlog · Priority: High
+Rôle: architecte-technique

@@ -31,6 +31,7 @@ Jalon = objet **partagé** entre la vue roadmap (macro) et la vue Gantt (détail
 ---
 Item Type: Enabler · Parent: E22 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Critical
 Stage: Backlog
+Rôle: architecte-technique
 Profils: Tous
 Justification: Fondation « roadmap & Gantt = deux vues d'un modèle temporel unique » (ADR-010)
 Dépendances: EN18.1 (schéma pilotage) · EN18.9 (Application→Projet)

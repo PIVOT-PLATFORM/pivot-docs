@@ -20,3 +20,4 @@
 ---
 Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: High
 Stage: Done
+Rôle: utilisateur-final

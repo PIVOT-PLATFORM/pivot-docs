@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.12 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-080 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant FigJam/Miro (Miroverse)
 Justification: Dossier §6.4
 Dépendances: —

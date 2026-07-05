@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.13 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-050 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I3 + différenciant FigJam généralisé
 Justification: Dossier §8-I3 : 'le modèle à exiger partout'
 Dépendances: —

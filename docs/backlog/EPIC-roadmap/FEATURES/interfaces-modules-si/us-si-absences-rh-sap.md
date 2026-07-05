@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F22.8 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: chef-de-projet
 Profils: PME, Grand groupe, Privée sous droit public
 Justification: Interopérabilité / interfaces inter-modules & SI (ADR-010, bus PIVOT + deep-links ADR-006/008)
 Dépendances: EN22.1 · EN22.3 · E03 Ressources & temps

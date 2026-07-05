@@ -18,6 +18,7 @@
 ---
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Source: PP-049 · MoSCoW: Should · Lot: Lot 2 · Origine: Différenciant PM
 Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §6.1 ; conditionne la fiabilité de la capacité à faire (PP-015)

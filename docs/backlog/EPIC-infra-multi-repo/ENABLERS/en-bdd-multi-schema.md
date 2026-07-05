@@ -15,3 +15,4 @@
 ---
 Item Type: Enabler · Parent: E17 · Type: architecture · Module: core · Phase: phase-3
 Stage: Backlog · Priority: Critical
+Rôle: architecte-technique

@@ -23,4 +23,5 @@ Brique de composition des **cockpits** (ADR-008). Le module Risque expose un wid
 ---
 Item Type: US · Parent: F21.9 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: chef-de-projet
 Dépendances: US21.9.1, US21.2.4

@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.11 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: WF-022 · MoSCoW: Should · Lot: Lot 3 · Origine: 4/6 (AP pionnier, Zapier, PA, n8n)
 Justification: Dossier §5.2 : nouveau standard d'interopérabilité IA
 Dépendances: —

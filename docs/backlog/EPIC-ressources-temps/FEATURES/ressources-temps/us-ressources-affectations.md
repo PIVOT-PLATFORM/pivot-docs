@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F32.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Critical
 Stage: Backlog
+Rôle: chef-de-projet
 Source: PP-007 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 3/3
 Profils: Tous
 Justification: Dossier §4

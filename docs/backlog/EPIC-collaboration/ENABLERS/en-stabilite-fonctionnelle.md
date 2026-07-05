@@ -12,5 +12,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: High
 Stage: Backlog
+Rôle: architecte-technique
 Source: BL-060 · MoSCoW: Should · Lot: Lot 2 · Origine: Leçon MSW (développement irrégulier)
 Justification: Cahier MSW ENF-DIS-03

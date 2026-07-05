@@ -19,4 +19,5 @@ Calcul de criticité de base P(1-5) × G(1-5) → 1-25 avec échelles paramétra
 ---
 Item Type: US · Parent: F21.2 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: chef-de-projet
 Dépendances: US21.1.6

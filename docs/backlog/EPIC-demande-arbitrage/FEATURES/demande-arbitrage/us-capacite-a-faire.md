@@ -18,6 +18,7 @@
 ---
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Source: PP-015 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma) + Insight I3
 Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §8-I3 : 'le vrai arbitre en période de contrainte'

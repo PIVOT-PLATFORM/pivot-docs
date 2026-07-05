@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: responsable-de-la-securite-si
 Source: BL-018 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4 (plans sup.)
 Justification: Dossier §4 ; insight I2
 Dépendances: —

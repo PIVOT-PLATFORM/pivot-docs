@@ -17,3 +17,4 @@
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: MVP
 Stage: Backlog · Priority: Medium
+Rôle: ingenieur-observabilite

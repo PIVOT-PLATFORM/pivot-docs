@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F26.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
+Rôle: controleur-de-gestion-si
 Source: PP-054 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B2
 Profils: Privée sous droit public, Publique, État
 Justification: Dossier §7-B2 : conditionne la trésorerie réelle

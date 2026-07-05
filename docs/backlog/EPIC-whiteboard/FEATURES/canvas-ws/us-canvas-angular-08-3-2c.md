@@ -23,4 +23,5 @@
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Dépendances: US08.3.2b (sync STOMP), US08.5.1 (présence backend)

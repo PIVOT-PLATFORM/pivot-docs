@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.8 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: WF-044 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Gumloop
 Justification: Dossier §6.6 : classe B de souveraineté
 Dépendances: —

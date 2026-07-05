@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F41.5 · Module: core · Phase: phase-3 · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Profils: Tous
 Justification: Formation & onboarding — adoption de Pivot (in-app, supports, présentiel) ; cf. Insight I8 (réseau de référents)
 Dépendances: EN41.1 · E13

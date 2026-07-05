@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F37.1 · Module: pilotage · Phase: phase-3 · Size: S · Priority: High
 Stage: Backlog
+Rôle: acheteur-informatique
 Source: PP-030 · MoSCoW: Must (conditionnel) · Lot: Lot 1 · Origine: Insight I5 (rachat Sciforma, retraite Project Online)
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §8-I5

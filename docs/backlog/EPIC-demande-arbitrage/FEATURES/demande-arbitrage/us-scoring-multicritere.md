@@ -18,6 +18,7 @@
 ---
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: macro:direction-pilotage
 Source: PP-014 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma)
 Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §5.1 + §6.2

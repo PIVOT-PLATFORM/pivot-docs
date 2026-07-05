@@ -10,5 +10,6 @@
 ---
 Item Type: Enabler · Parent: E29 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Critical
 Stage: Backlog
+Rôle: responsable-de-la-securite-si
 Source: WF-012 · MoSCoW: Must · Lot: Lot 1 · Origine: NFR des 6 cahiers
 Justification: Cahiers ENF

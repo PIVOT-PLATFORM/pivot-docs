@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.1 · Module: delivery-agile · Phase: phase-3 · Size: M · Priority: Highest
 Stage: Backlog
+Rôle: scrum-master
 Dépendances: US28.1.1, EN28.4

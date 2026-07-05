@@ -11,5 +11,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: ingenieur-performance
 Source: BL-058 · MoSCoW: Should · Lot: Lot 2 · Origine: NFR MSW généralisé
 Justification: Cahier MSW ENF-PRF-01

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.14 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-089 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B7
 Justification: Dossier §7-B7 : intersection 'IA + air-gap' couverte par personne
 Dépendances: —

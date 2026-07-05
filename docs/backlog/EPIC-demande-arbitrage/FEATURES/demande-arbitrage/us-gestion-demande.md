@@ -19,6 +19,7 @@
 ---
 Item Type: US · Parent: F31.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Source: PP-013 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma) — cœur PPM
 Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §5.1 : la frontière PPM/outil de tâches

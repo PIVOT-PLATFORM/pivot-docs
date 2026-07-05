@@ -14,3 +14,4 @@
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: XS · Priority: Medium
 Stage: Backlog
+Rôle: mainteneur-produit

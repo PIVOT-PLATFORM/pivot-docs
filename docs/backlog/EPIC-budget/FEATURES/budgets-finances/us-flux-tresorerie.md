@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F26.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: controleur-de-gestion-si
 Source: PP-040 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Sciforma
 Profils: Grand groupe, État
 Justification: Dossier §6.2

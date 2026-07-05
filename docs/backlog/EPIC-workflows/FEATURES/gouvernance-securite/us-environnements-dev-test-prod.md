@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: WF-027 · MoSCoW: Should · Lot: Lot 2 · Origine: 3/6 (n8n, AP, PA)
 Justification: Dossier §5.2 : prérequis d'industrialisation
 Dépendances: —

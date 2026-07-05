@@ -25,3 +25,4 @@
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
 Stage: Backlog
+Rôle: utilisateur-final

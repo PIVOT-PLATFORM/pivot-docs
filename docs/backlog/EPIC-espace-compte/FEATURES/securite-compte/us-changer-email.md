@@ -30,3 +30,4 @@
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final

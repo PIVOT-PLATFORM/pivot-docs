@@ -18,6 +18,7 @@
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: PP-067 · MoSCoW: Should · Lot: Lot 2 · Origine: Insight I7
 Profils: — (hors v2 adaptative — à confirmer)
 Justification: Dossier §8-I7

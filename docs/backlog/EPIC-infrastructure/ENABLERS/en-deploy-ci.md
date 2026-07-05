@@ -15,3 +15,4 @@
 ---
 Item Type: Enabler · Parent: E07 · Type: CI/CD · Module: core · Phase: MVP
 Stage: Backlog · Priority: Critical
+Rôle: macro:ingenierie-developpement

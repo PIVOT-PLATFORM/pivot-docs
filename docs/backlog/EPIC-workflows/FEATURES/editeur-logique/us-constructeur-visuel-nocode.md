@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.1 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Critical
 Stage: Backlog
+Rôle: utilisateur-final
 Source: WF-002 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 6/6
 Justification: Dossier §4
 Dépendances: —

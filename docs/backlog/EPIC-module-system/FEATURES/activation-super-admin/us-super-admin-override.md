@@ -19,3 +19,4 @@
 ---
 Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: S · Priority: High
 Stage: Backlog
+Rôle: administrateur-plateforme

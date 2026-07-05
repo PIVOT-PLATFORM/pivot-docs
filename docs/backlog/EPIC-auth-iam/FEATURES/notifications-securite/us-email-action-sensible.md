@@ -20,3 +20,4 @@
 ---
 Item Type: US · Parent: F01.5 · Module: auth · Phase: MVP · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final

@@ -17,3 +17,4 @@
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: responsable-de-la-securite-si

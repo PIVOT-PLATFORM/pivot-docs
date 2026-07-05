@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Dépendances: —

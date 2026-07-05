@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.2 · Module: collaboration · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: utilisateur-final
 Dépendances: EN28.3

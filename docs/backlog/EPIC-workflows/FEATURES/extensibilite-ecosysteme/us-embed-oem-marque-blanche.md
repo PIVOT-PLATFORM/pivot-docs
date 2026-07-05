@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.11 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: developpeur
 Source: WF-061 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Activepieces (+IFTTT Connect)
 Justification: Dossier §5.3
 Dépendances: —

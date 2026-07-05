@@ -20,4 +20,5 @@
 ---
 Item Type: US · Parent: F19.2 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: utilisateur-final
 Dépendances: US19.1.1

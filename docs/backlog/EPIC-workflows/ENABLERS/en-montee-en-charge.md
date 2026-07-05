@@ -10,5 +10,6 @@
 ---
 Item Type: Enabler · Parent: E29 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: ingenieur-performance
 Source: WF-037 · MoSCoW: Should · Lot: Lot 2 · Origine: NFR des 6 cahiers
 Justification: Cahiers EXP

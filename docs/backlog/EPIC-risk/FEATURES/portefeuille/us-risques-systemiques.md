@@ -19,4 +19,5 @@ Détecter les concentrations (même fournisseur, compétence rare, échéance co
 ---
 Item Type: US · Parent: F21.5 · Module: risk · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: groupe:gouvernance-si
 Dépendances: US21.5.1, US21.4.5

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.14 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-083 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B1
 Justification: Dossier §7-B1 : 'la valeur se joue après l'atelier ; personne ne l'outille'
 Dépendances: —

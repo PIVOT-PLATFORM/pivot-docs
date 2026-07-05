@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F11.2 · Module: agilite · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: scrum-master
 Dépendances: US11.2.1

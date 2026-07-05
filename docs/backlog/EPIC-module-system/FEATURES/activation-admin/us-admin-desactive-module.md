@@ -31,4 +31,5 @@
 ---
 Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: M · Priority: Critical
 Stage: Review
+Rôle: administrateur-plateforme
 Dépendances : EN03.2 (guard Angular + status API), EN03.3 (invalidation cache Redis) — non mergées, suivi requis avant clôture définitive.

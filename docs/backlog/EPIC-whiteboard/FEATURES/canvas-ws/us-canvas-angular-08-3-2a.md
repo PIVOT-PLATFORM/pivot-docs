@@ -32,4 +32,5 @@
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: L · Priority: High
 Stage: Backlog
+Rôle: utilisateur-final
 Dépendances: EN08.1 (isolation WS room), US08.3.1 (connexion WS)

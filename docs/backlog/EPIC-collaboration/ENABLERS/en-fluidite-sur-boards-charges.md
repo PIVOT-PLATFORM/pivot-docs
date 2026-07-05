@@ -11,5 +11,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: ingenieur-performance
 Source: BL-055 · MoSCoW: Must · Lot: Lot 2 · Origine: NFR + faiblesses Miro/MSW documentées
 Justification: Dossier §4 : les écarts se jouent sur l'exécution

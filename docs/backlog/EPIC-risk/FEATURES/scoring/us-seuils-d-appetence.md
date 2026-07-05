@@ -19,4 +19,5 @@ Définir les seuils (acceptable/à surveiller/à traiter) par projet ou portefeu
 ---
 Item Type: US · Parent: F21.2 · Module: risk · Phase: phase-3 · Size: S · Priority: High
 Stage: Backlog
+Rôle: groupe:instances-decision
 Dépendances: US21.2.1

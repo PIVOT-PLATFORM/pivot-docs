@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F35.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
+Rôle: macro:direction-pilotage
 Source: PP-057 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B5
 Profils: Publique, État
 Justification: Dossier §7-B5 : redevabilité démocratique outillée

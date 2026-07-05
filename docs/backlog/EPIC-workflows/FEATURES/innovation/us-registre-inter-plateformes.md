@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: WF-067 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B2
 Justification: Dossier §7-B2
 Dépendances: —

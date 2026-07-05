@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.12 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: WF-063 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Power Automate
 Justification: Dossier §6.3 : adoption sans friction
 Dépendances: —

@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F40.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: responsable-de-la-securite-si
 Source: PP-A03 · MoSCoW: Must · Lot: Lot 1 · Origine: Synthèse v2
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Synthèse v2 §6-I3 + ADR souveraineté

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: High
 Stage: Backlog
+Rôle: responsable-de-la-securite-si
 Source: BL-041 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I4
 Justification: Dossier §8-I4 : arbitrage sécurité/fluidité explicite
 Dépendances: —

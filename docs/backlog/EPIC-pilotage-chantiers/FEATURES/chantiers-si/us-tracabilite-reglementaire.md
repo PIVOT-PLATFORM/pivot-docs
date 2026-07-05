@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Source: PP-069 · MoSCoW: Must (conditionnel) · Lot: Lot 1 · Origine: Insight I9
 Profils: Privée sous droit public, Publique, État
 Justification: Dossier §8-I9

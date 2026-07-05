@@ -19,4 +19,5 @@ Heat map multi-projets et agrégation des risques par famille et par entité.
 ---
 Item Type: US · Parent: F21.5 · Module: risk · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: groupe:instances-decision
 Dépendances: US21.2.1

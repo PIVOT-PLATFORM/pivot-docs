@@ -16,3 +16,4 @@
 ---
 Item Type: Enabler · Parent: E01 · Type: sécurité · Module: auth · Phase: MVP
 Stage: Done
+Rôle: responsable-de-la-securite-si

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.14 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Low
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-085 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B3
 Justification: Dossier §7-B3 ; aucun des 4 malgré le ciblage multinationales
 Dépendances: —

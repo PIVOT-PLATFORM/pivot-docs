@@ -22,3 +22,4 @@
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final

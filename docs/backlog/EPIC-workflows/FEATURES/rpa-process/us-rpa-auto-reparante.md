@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.10 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: ingenieur-d-exploitation-pilote
 Source: WF-048 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Power Automate 2026
 Justification: Dossier §6.3 ; répond à la fragilité RPA documentée
 Dépendances: —

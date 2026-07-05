@@ -20,3 +20,4 @@
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: MVP
 Stage: Backlog · Priority: High
+Rôle: ingenieur-plateforme

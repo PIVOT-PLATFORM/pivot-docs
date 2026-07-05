@@ -14,3 +14,4 @@
 ---
 Item Type: Enabler · Parent: E07 · Type: performance · Module: core · Phase: MVP
 Stage: Backlog · Priority: High
+Rôle: ingenieur-performance

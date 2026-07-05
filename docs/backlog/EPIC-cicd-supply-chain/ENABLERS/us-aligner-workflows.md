@@ -16,3 +16,4 @@
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: MVP · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: developpeur

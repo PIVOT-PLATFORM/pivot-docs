@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: WF-025 · MoSCoW: Must · Lot: Lot 2 · Origine: 4/6 (PA DLP, Zapier, Gumloop, AP) + I3/I5
 Justification: Dossier §5.2 + §8-I3 : par politique outillée, pas par circulaire
 Dépendances: —

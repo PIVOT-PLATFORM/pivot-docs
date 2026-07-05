@@ -17,3 +17,4 @@
 ---
 Item Type: Enabler (hors GitHub) · Parent: E01 · Type: architecture · Module: auth · Phase: MVP
 Stage: Done · Priority: High
+Rôle: architecte-technique

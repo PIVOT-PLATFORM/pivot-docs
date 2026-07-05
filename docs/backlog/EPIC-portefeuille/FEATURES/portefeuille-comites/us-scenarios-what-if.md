@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: macro:direction-pilotage
 Source: PP-036 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Sciforma
 Profils: Grand groupe, État
 Justification: Dossier §6.2 : la fonction reine de l'arbitrage

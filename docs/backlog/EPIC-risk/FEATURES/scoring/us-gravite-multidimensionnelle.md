@@ -19,4 +19,5 @@ Gravité = somme pondérée des 6 dimensions d'impact selon le profil.
 ---
 Item Type: US · Parent: F21.2 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Dépendances: US21.1.4, US21.2.1

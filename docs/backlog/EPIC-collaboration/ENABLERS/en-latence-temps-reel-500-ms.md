@@ -11,5 +11,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Critical
 Stage: Backlog
+Rôle: ingenieur-performance
 Source: BL-021 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4 (NFR)
 Justification: Cahiers ENF-PRF

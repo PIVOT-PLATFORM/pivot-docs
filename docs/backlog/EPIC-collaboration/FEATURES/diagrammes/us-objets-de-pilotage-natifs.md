@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.5 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-065 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Miro
 Justification: Dossier §6.1 : le board devient l'outil de pilotage
 Dépendances: —

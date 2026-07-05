@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F22.7 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Profils: Tous
 Justification: Interopérabilité / interfaces inter-modules & SI (ADR-010, bus PIVOT + deep-links ADR-006/008)
 Dépendances: EN22.1 (modèle temporel unique)

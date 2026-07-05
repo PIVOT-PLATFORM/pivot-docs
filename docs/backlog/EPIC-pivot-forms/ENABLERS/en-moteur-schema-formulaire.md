@@ -20,5 +20,6 @@
 ---
 Item Type: Enabler · Parent: E42 · Module: forms · Phase: phase-3 · Size: XL · Priority: Critical
 Stage: Backlog
+Rôle: architecte-technique
 Justification: Moteur commun du form-builder (schéma, logique, scoring, thème, événements)
 Dépendances: E03 Système de modules · E17 Infrastructure multi-repo · bus PIVOT (ADR-008)

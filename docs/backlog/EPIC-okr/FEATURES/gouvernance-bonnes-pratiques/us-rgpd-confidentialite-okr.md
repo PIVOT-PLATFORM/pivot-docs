@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F27.10 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: delegue-a-la-protection-des-donnees
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Raffinage OKR état de l'art (Doerr/Google ; Quantive/Workboard/Viva Goals/Perdoo)
 Dépendances: EN27.1 (modèle OKR & moteur)

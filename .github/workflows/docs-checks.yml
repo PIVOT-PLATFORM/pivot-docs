@@ -53,6 +53,9 @@ jobs:
       - name: Lint nomenclature backlog/ADR
         run: npm run lint:naming
 
+      - name: Lint taxonomie des rôles
+        run: npm run lint:taxonomie
+
       - name: "Build (échoue sur lien cassé — onBrokenLinks: throw)"
         run: npm run build
         env:

@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.2 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Source: WF-059 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant IFTTT
 Justification: Dossier §6.5 : sans équivalent chez les acteurs pro — pertinent si cas d'usage terrain/bâtiment
 Dépendances: —

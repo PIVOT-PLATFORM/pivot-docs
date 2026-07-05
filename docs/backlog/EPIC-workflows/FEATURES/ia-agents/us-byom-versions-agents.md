@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: WF-053 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Zapier
 Justification: Dossier §6.4
 Dépendances: —

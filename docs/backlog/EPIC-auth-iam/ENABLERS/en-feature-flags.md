@@ -17,3 +17,4 @@
 ---
 Item Type: Enabler · Parent: E01 · Type: architecture · Module: auth · Phase: MVP
 Stage: Done
+Rôle: architecte-technique

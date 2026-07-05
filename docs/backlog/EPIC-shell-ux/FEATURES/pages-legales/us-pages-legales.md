@@ -27,3 +27,4 @@
 ---
 Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: MVP · Size: M · Priority: High
 Stage: Done
+Rôle: utilisateur-final

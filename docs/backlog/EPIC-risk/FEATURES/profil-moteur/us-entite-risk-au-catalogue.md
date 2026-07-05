@@ -19,4 +19,5 @@ Déclarer l'entité Risk (YAML versionnable) rattachée à Project, Portfolio, V
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Dépendances: US21.1.3

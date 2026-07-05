@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.5 · Module: contrats · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: contract-manager
 Dépendances: EN28.2

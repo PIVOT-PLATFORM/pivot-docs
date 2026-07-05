@@ -11,5 +11,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: Critical
 Stage: Backlog
+Rôle: architecte-technique
 Source: BL-024 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4 (NFR)
 Justification: Cahiers ENF-CMP

@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: citizen-developer
 Source: WF-056 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Gumloop (+PA AI Builder)
 Justification: Dossier §6.6 : ce que les autres ne savent pas faire
 Dépendances: —

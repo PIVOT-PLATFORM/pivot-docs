@@ -22,3 +22,4 @@
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: XS · Priority: Critical
 Stage: Done
+Rôle: utilisateur-final

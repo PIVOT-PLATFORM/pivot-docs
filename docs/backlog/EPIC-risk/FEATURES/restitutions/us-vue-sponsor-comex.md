@@ -19,4 +19,5 @@ Top 5, tendance, provision recommandée, décisions attendues.
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: groupe:instances-decision
 Dépendances: US21.5.1, US21.6.2

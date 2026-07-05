@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F37.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: acheteur-informatique
 Source: PP-029 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I5 + B8
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §8-I5 : la vie d'un marché dépasse la stabilité des produits

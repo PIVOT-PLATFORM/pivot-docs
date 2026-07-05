@@ -26,3 +26,4 @@
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: MVP · Size: XS · Priority: Low
 Stage: Backlog
+Rôle: utilisateur-final

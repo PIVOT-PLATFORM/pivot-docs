@@ -19,4 +19,5 @@ Classer le niveau de risque du système IA et injecter explicabilité et exigenc
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: delegue-a-la-protection-des-donnees
 Dépendances: US21.1.5

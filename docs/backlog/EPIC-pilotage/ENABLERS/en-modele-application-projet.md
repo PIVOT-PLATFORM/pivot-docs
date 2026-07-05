@@ -42,6 +42,7 @@ produit à travers ses versions, relier budget/risques/roadmap d'une même appli
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: architecte-technique
 Source: — · Modèle Application → Projet (Projet = version d'application)
 Justification: Structuration des données du domaine Pilotage autour de l'entité Application
 Dépendances: EN18.1 (schéma `pilotage`)

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F35.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: PP-028 · MoSCoW: Must (conditionnel) · Lot: Lot 2 · Origine: Insight I4
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §8-I4 : doctrine 'cloud au centre'

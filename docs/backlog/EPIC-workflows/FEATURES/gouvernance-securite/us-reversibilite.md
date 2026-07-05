@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: WF-035 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I9 + Zapier (Documentation)
 Justification: Dossier §8-I9
 Dépendances: —

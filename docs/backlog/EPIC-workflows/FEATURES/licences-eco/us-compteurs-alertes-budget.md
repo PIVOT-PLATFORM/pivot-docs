@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.12 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: WF-033 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I2 + Gumloop/Zapier
 Justification: Dossier §8-I2 : trois pathologies économiques documentées
 Dépendances: —

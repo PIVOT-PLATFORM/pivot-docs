@@ -20,3 +20,4 @@ Couvert par l'implémentation existante de la NavbarComponent (US16.1.1 legacy).
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: High
 Stage: Done
+Rôle: utilisateur-final

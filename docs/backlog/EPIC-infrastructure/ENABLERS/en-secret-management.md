@@ -14,3 +14,4 @@
 ---
 Item Type: Enabler · Parent: E07 · Type: sécurité · Module: core · Phase: MVP
 Stage: Backlog · Priority: Critical
+Rôle: responsable-de-la-securite-si

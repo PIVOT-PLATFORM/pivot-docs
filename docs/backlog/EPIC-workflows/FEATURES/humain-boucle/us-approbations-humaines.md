@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.6 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: ingenieur-d-exploitation-pilote
 Source: WF-023 · MoSCoW: Must · Lot: Lot 2 · Origine: 4/6 (PA, AP Todos, Zapier HITL, n8n)
 Justification: Dossier §5.2 : maturité pour processus à enjeu
 Dépendances: —

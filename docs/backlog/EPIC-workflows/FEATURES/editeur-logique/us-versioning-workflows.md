@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.1 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: citizen-developer
 Source: WF-026 · MoSCoW: Should · Lot: Lot 2 · Origine: 3/6 (n8n Git, AP diff, PA ALM)
 Justification: Dossier §5.2
 Dépendances: —

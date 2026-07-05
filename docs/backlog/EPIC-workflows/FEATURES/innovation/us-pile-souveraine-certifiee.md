@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: WF-072 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B7 + contexte FR
 Justification: Dossier §7-B7 : l'intersection 'IA + souveraineté certifiée' est vide
 Dépendances: —

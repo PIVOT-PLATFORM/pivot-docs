@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F42.7 · Module: forms · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: delegue-a-la-protection-des-donnees
 Source: FRM-703 · MoSCoW: Should · Origine: Vide de marché + gouvernance données
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

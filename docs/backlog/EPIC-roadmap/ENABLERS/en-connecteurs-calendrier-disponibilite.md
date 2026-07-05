@@ -20,6 +20,7 @@ Sert aussi de socle aux **interfaces inter-modules** (F22.8) : consommation via 
 ---
 Item Type: Enabler · Parent: E22 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: ingenieur-plateforme
 Profils: Tous
 Justification: Temps ouvré réel (fériés/weekends/absences) + socle interfaces inter-modules (F22.8)
 Dépendances: EN22.1 (moteur d'ordonnancement) · E03 Ressources & temps · bus PIVOT (ADR-008)

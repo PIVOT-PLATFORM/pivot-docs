@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.2 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: citizen-developer
 Source: WF-011 · MoSCoW: Must · Lot: Lot 1 · Origine: Quasi-socle (n8n, AP, Zapier, PA, IFTTT)
 Justification: Cahiers : compense tout connecteur manquant
 Dépendances: —

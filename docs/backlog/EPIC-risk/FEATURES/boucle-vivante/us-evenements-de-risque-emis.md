@@ -19,4 +19,5 @@ Publier risk.raised, risk.threshold.exceeded, risk.mitigation.due sur le bus.
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: developpeur
 Dépendances: US21.1.6

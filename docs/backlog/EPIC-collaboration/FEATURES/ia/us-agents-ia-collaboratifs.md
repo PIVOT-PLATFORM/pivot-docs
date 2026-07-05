@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.6 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-081 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Miro
 Justification: Dossier §5.2/§6.1 : frontière 2026 de la catégorie
 Dépendances: —

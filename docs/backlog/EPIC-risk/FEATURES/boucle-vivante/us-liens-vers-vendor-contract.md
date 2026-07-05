@@ -19,4 +19,5 @@ Rattacher un risque à un fournisseur et un contrat (jonction CLM).
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: contract-manager
 Dépendances: US21.1.6

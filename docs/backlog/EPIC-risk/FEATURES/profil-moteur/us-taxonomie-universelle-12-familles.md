@@ -19,4 +19,5 @@ Référentiel unique de familles (Technique, Données, Sécurité, Compétences,
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: S · Priority: Critical
 Stage: Backlog
+Rôle: macro:ingenierie-developpement
 Dépendances: —

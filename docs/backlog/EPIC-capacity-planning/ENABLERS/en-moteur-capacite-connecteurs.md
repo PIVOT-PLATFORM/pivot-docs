@@ -22,4 +22,5 @@ Connecteurs :
 ---
 Item Type: Enabler · Parent: E11 · Module: agilite · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: architecte-technique
 Dépendances: EN22.3 (calendriers/absences) · bus PIVOT (ADR-008)

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: acheteur-informatique
 Source: PP-062 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I2
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §8-I2 : critère n°1

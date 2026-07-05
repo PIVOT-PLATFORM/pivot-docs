@@ -19,4 +19,5 @@ Un obstacle non levé en 2 sprints devient un risque candidat.
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: scrum-master
 Dépendances: US21.4.1

@@ -12,5 +12,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: architecte-technique
 Source: BL-059 · MoSCoW: Should · Lot: Lot 2 · Origine: NFR des 4 cahiers
 Justification: Cahiers ENF-CMP

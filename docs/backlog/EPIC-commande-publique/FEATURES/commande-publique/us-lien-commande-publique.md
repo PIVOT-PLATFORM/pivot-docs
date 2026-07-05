@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F25.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Low
 Stage: Backlog
+Rôle: acheteur-informatique
 Source: PP-053 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B1
 Profils: Privée sous droit public, Publique, État
 Justification: Dossier §7-B1 : pour un adjudicateur, le projet EST souvent des marchés

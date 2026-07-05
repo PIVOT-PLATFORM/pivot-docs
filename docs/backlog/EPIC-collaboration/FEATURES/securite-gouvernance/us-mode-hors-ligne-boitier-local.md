@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: BL-075 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Klaxoon
 Justification: Dossier §6.3 : 'exclusivité absolue du marché'
 Dépendances: —

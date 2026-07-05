@@ -19,4 +19,5 @@ Courbe d'évolution du niveau de risque par projet et portefeuille.
 ---
 Item Type: US · Parent: F21.5 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: groupe:instances-decision
 Dépendances: US21.5.1

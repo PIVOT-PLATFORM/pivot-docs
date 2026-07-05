@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: chef-de-projet
 Dépendances: US21.3.3, US21.4.1

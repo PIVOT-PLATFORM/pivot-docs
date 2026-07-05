@@ -29,3 +29,4 @@ les autres restent disponibles. nginx retourne 503 uniquement sur le préfixe du
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: MVP
 Stage: Backlog · Priority: Critical
+Rôle: ingenieur-plateforme

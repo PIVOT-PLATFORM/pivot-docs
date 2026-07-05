@@ -24,4 +24,5 @@
 ---
 Item Type: US · Parent: F12.4 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: animateur-facilitateur
 Dépendances: US22.8.6 (plage roadmap → MeetOps) · EN22.3 (disponibilité/calendriers) · EN12.1 (schéma `collaboratif`) · bus PIVOT (ADR-008)

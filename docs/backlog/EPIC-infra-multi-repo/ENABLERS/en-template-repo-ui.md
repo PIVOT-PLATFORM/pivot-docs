@@ -21,3 +21,4 @@
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: ui · Phase: phase-3
 Stage: Backlog · Priority: High
+Rôle: ingenieur-plateforme

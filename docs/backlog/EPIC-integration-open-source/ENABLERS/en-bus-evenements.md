@@ -16,3 +16,4 @@
 ---
 Item Type: Enabler · Parent: E28 · Type: plateforme · Module: mycelium · Phase: phase-3
 Stage: Backlog · Priority: Highest
+Rôle: ingenieur-plateforme

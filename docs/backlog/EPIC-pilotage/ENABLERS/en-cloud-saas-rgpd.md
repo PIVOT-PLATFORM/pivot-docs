@@ -12,6 +12,7 @@
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Critical
 Stage: Backlog
+Rôle: responsable-conformite
 Source: PP-011 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 3/3 + NFR des 3 cahiers
 Profils: Tous
 Justification: Cahiers ENF

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: High
 Stage: Backlog
+Rôle: groupe:gouvernance-si
 Source: BL-092 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I1
 Justification: Dossier §8-I1 : 'payer deux fois : la licence et la friction'
 Dépendances: —

@@ -17,3 +17,4 @@
 ---
 Item Type: Enabler · Parent: E01 · Type: infrastructure · Module: auth · Phase: MVP
 Stage: Done
+Rôle: ingenieur-plateforme

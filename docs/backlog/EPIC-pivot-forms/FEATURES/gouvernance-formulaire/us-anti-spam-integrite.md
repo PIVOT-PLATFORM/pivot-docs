@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F42.7 · Module: forms · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: FRM-704 · MoSCoW: Should · Origine: Jotform, Qualtrics
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

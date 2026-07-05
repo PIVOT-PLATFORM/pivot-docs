@@ -16,3 +16,4 @@
 ---
 Item Type: Enabler · Parent: E28 · Type: veille · Module: collaboration · Phase: phase-3
 Stage: Backlog · Priority: Low
+Rôle: macro:ingenierie-developpement

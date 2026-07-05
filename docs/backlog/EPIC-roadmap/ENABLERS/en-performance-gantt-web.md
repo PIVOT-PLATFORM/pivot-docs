@@ -15,6 +15,7 @@
 ---
 Item Type: Enabler · Parent: E22 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: ingenieur-performance
 Profils: Grand groupe, Publique, État
 Justification: Parité MS Project en web sur de grands plannings (NFR PP-032)
 Dépendances: EN22.1 (modèle temporel unique)

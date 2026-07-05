@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: administrateur-plateforme
 Source: BL-069 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant MSW
 Justification: Dossier §6.2 : 'aucun autre outil n'offre cela' ; fort si écosystème unifié
 Dépendances: —

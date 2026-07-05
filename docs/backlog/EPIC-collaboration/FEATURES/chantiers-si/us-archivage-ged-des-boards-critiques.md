@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: groupe:gouvernance-si
 Source: BL-097 · MoSCoW: Could · Lot: Lot 3 · Origine: Insight I9
 Justification: Dossier §8-I9 ; parade au lock-in en attendant B6
 Dépendances: —

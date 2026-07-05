@@ -37,3 +37,4 @@ le backend correspondant selon son préfixe URL. C'est le mécanisme de fault is
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: phase-3
 Stage: Backlog · Priority: High
+Rôle: ingenieur-plateforme

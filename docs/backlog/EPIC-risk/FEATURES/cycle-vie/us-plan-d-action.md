@@ -19,4 +19,5 @@ Actions de mitigation avec suivi d'avancement et échéances.
 ---
 Item Type: US · Parent: F21.3 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: chef-de-projet
 Dépendances: US21.3.2

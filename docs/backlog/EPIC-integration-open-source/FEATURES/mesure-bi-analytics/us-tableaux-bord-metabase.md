@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.4 · Module: mesure · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Dépendances: EN28.3

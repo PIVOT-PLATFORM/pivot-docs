@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.6 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-079 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant FigJam (agent Figma)
 Justification: Dossier §6.4 ; frontière 2026 avec les agents Miro
 Dépendances: —

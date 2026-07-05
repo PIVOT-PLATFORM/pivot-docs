@@ -21,4 +21,5 @@
 ---
 Item Type: US · Parent: F22.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Dépendances: US22.1.1

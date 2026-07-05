@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F42.9 · Module: forms · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: business-analyst
 Source: FRM-902 · MoSCoW: Should · Origine: Formbricks (seats illimités), Tally
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

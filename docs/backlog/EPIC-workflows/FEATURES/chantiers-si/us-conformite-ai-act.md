@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: architecte-d-entreprise
 Source: WF-083 · MoSCoW: Should · Lot: Lot 2 · Origine: Contexte UE (AI Act)
 Justification: Dossier §2/§3 ; obligation réglementaire applicable
 Dépendances: —

@@ -11,5 +11,6 @@
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: ingenieur-plateforme
 Source: BL-057 · MoSCoW: Should · Lot: Lot 2 · Origine: NFR Klaxoon généralisé
 Justification: Cahier Klaxoon ENF-PRF-02

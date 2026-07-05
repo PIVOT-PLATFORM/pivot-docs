@@ -28,3 +28,4 @@
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: High
 Stage: Review
+Rôle: utilisateur-final

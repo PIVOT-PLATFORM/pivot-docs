@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: groupe:gouvernance-si
 Source: BL-093 · MoSCoW: Must · Lot: Lot 1 · Origine: Insights I2, I6, I9
 Justification: Dossier §8
 Dépendances: —

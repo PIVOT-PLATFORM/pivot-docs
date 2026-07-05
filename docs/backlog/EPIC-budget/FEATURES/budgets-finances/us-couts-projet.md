@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F26.2 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Critical
 Stage: Backlog
+Rôle: controleur-de-gestion-si
 Source: PP-008 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 3/3
 Profils: Tous
 Justification: Dossier §4

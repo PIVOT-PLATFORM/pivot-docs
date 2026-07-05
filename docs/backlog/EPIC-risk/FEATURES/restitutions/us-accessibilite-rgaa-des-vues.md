@@ -19,4 +19,5 @@ Vues et matrices conformes RGAA 4 / WCAG 2.1 AA.
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: macro:ingenierie-developpement
 Dépendances: US21.8.1

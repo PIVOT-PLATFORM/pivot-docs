@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F42.3 · Module: forms · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: developpeur
 Source: FRM-202 · MoSCoW: Must · Origine: Typeform, Tally, Formbricks
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

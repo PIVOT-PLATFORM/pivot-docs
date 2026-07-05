@@ -13,6 +13,7 @@
 ---
 Item Type: US · Parent: F38.12 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Low
 Stage: Backlog
+Rôle: responsable-innovation
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: SMI — fonctionnalités innovantes (IA gouvernée, intelligence collective, corporate venturing)
 Dépendances: EN38.1 · EN38.2 (moteur IA & graphe)

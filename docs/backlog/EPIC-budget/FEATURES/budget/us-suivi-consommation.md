@@ -20,4 +20,5 @@
 ---
 Item Type: US · Parent: F26.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: responsable-financier-si-finops
 Dépendances: US26.1.1

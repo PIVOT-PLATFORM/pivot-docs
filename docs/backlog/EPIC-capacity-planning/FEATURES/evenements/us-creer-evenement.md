@@ -19,3 +19,4 @@
 ---
 Item Type: US · Parent: F11.1 · Module: agilite · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: release-train-engineer

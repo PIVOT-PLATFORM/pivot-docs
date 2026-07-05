@@ -12,6 +12,7 @@
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: ingenieur-plateforme
 Source: PP-046 · MoSCoW: Could (Must si sensible) · Lot: Lot 4 · Origine: Différenciant PM
 Profils: Privée sous droit public, Publique, État
 Justification: Dossier §6.1 ; devient Must si portefeuilles sensibles (cf. PP-028)

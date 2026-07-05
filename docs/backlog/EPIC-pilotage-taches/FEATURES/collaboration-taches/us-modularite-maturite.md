@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F33.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Source: PP-051 · MoSCoW: Should · Lot: Lot 2 · Origine: Différenciant Sciforma
 Profils: TPE, PME, Grand groupe, Privée sous droit public
 Justification: Dossier §6.2

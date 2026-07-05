@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F35.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: PP-043 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant MS
 Profils: Grand groupe, Privée sous droit public, État
 Justification: Dossier §6.3 : marqueur de conformité rare

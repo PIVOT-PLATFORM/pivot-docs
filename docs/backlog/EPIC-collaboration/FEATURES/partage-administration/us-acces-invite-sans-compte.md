@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.8 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: Backlog
+Rôle: utilisateur-final
 Source: BL-040 · MoSCoW: Must · Lot: Lot 2 · Origine: Intersection 2/4 (Klaxoon Go, Miro) + Insight I4
 Justification: Dossier §8-I4 : LE point de friction ; friction MSW = contre-exemple
 Dépendances: —

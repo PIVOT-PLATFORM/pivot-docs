@@ -1,0 +1,32 @@
+@startmindmap
+title Taxonomie des rôles PIVOT — macro-rôles & domaines
+* Taxonomie DSI (145 rôles · 14 domaines · 13 macro-rôles)
+** M1 · Direction & pilotage SI
+*** §1 Direction & gouvernance SI
+** M2 · Gestion de projet & portefeuille
+*** §2 Gouvernance, PMO & pilotage
+** M3 · Produit & agilité
+*** §3 Produit & agilité
+** M4 · Ingénierie & développement
+*** §4 Études, développement & ingénierie
+** M5 · Architecture & urbanisation
+*** §5 Architecture & urbanisation
+** M6 · Infrastructure & exploitation
+*** §6 Infrastructure, production & exploitation
+** M7 · Support & services (ITSM)
+*** §7 Support, service desk & services
+** M8 · Cybersécurité & continuité
+*** §8 Cybersécurité & continuité
+** M9 · Données & IA
+*** §9 Données & intelligence artificielle
+left side
+** M10 · Relation métier & changement
+*** §10 Relation métier, MOA & changement
+** M11 · Achats, contrats & fournisseurs
+*** §11 Achats, contrats & fournisseurs
+** M12 · Qualité, conformité & audit
+*** §12 Qualité, conformité, audit & risques
+** M13 · Transverses & externes
+*** §13 Transverses, émergents & innovation
+*** §14 Externes intervenant dans la DSI
+@endmindmap

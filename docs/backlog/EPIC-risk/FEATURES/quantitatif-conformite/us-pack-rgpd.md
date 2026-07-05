@@ -19,4 +19,5 @@ Injecter les risques RGPD obligatoires et le lien au registre des traitements.
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: delegue-a-la-protection-des-donnees
 Dépendances: US21.1.5

@@ -19,4 +19,5 @@ Matrice P × G interactive et top risques du projet.
 ---
 Item Type: US · Parent: F21.2 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: chef-de-projet
 Dépendances: US21.2.1

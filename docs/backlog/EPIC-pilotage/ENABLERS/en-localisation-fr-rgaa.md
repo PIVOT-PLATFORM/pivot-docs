@@ -12,6 +12,7 @@
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Critical
 Stage: Backlog
+Rôle: responsable-conformite
 Source: PP-012 · MoSCoW: Must (conditionnel) · Lot: Lot 1 · Origine: NFR + contexte public FR
 Profils: Privée sous droit public, Publique, État
 Justification: Cahiers ENF ; obligation pour les organismes publics

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F34.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: chef-de-projet
 Source: PP-042 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant MS (Facilitator)
 Profils: PME, Grand groupe
 Justification: Dossier §6.3

@@ -13,3 +13,4 @@
 ---
 Item Type: Enabler · Parent: E02 · Type: infrastructure · Module: auth · Phase: v1-enterprise
 Stage: Backlog · Priority: Low
+Rôle: responsable-conformite

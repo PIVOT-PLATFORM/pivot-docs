@@ -21,4 +21,5 @@
 ---
 Item Type: US · Parent: F13.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: ingenieur-test-qa
 Dépendances: US13.1.1

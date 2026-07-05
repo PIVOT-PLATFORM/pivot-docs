@@ -23,3 +23,4 @@
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
 Stage: Backlog
+Rôle: administrateur-plateforme

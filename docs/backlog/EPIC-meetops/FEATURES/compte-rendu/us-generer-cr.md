@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F12.3 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: animateur-facilitateur
 Dépendances: US12.2.1

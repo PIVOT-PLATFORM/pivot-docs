@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F36.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
+Rôle: directeur-des-systemes-d-information
 Source: PP-045 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant MS (Power Platform)
 Profils: Grand groupe, État
 Justification: Dossier §6.3

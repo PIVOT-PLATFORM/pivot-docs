@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F27.5 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: officier-responsable-pmo
 Profils: Tous
 Justification: Raffinage OKR état de l'art (Doerr/Google ; Quantive/Workboard/Viva Goals/Perdoo)
 Dépendances: US27.2.1 · US27.5.1

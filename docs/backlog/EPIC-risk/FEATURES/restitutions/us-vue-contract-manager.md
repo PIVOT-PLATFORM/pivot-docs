@@ -19,4 +19,5 @@ Risques fournisseurs, lock-in, pénalités, risques transférés par contrat.
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: Backlog
+Rôle: contract-manager
 Dépendances: US21.4.5

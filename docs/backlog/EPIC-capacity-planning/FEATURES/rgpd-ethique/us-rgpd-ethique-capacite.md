@@ -17,4 +17,5 @@
 ---
 Item Type: US · Parent: F11.8 · Module: agilite · Phase: phase-3 · Size: M · Priority: High
 Stage: Backlog
+Rôle: delegue-a-la-protection-des-donnees
 Dépendances: EN11.1
