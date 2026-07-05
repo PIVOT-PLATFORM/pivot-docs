@@ -8,23 +8,29 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Page `/admin/users` accessible uniquement aux ROLE_ADMIN | ⬜ |
-| Tableau des utilisateurs : nom, email, rôle (badge), statut, date création | ⬜ |
-| Recherche et filtres (rôle, statut) | ⬜ |
-| Pagination (20 par page) | ⬜ |
-| Tests Vitest AdminUsersComponent | ⬜ |
-| Consomme GET /api/admin/users défini dans US06.1.1 (contrat pagination Spring Page) | ⬜ |
-| État "loading" : skeleton de tableau affiché pendant le chargement | ⬜ |
-| État "empty state" : message "Aucun utilisateur correspondant à vos filtres" + bouton "Réinitialiser les filtres" | ⬜ |
-| État "error" réseau : message + bouton "Réessayer" | ⬜ |
-| La pagination affiche le total ("Utilisateurs 1-20 sur 47") ; boutons Précédent/Suivant désactivés aux bornes | ⬜ |
-| Tableau a <caption> ou aria-label="Liste des utilisateurs du tenant" | ⬜ |
-| Badges de rôle et de statut ne sont pas uniquement différenciés par couleur — texte du statut/rôle inclus dans le badge | ⬜ |
-| Champ de recherche a label associé via for/id ou aria-label ; résultat de filtrage annoncé via aria-live="polite" ("X utilisateurs affichés") | ⬜ |
-| Pagination : nav avec aria-label="Pagination" ; boutons Précédent/Suivant ont aria-label explicites | ⬜ |
-| En-têtes de colonnes, labels de filtres, statuts, badges internalisés dans admin.users.list.* (fr.json / en.json) | ⬜ |
-| Sur mobile (< 768px), tableau affiche uniquement nom + statut + action ; colonnes secondaires accessibles via ligne expandable | ⬜ |
+| Page `/admin/users` accessible uniquement aux ROLE_ADMIN | ✅ |
+| Tableau des utilisateurs : nom, email, rôle (badge), statut, date création | ✅ |
+| Recherche et filtres (rôle, statut) | ✅ |
+| Pagination (20 par page) | ✅ |
+| Tests Vitest AdminUsersComponent | ✅ |
+| Consomme GET /api/admin/users défini dans US06.1.1 (contrat pagination Spring Page) | ✅ |
+| État "loading" : skeleton de tableau affiché pendant le chargement | ✅ |
+| État "empty state" : message "Aucun utilisateur correspondant à vos filtres" + bouton "Réinitialiser les filtres" | ✅ |
+| État "error" réseau : message + bouton "Réessayer" | ✅ |
+| La pagination affiche le total ("Utilisateurs 1-20 sur 47") ; boutons Précédent/Suivant désactivés aux bornes | ✅ |
+| Tableau a <caption> ou aria-label="Liste des utilisateurs du tenant" | ✅ |
+| Badges de rôle et de statut ne sont pas uniquement différenciés par couleur — texte du statut/rôle inclus dans le badge | ✅ |
+| Champ de recherche a label associé via for/id ou aria-label ; résultat de filtrage annoncé via aria-live="polite" ("X utilisateurs affichés") | ✅ |
+| Pagination : nav avec aria-label="Pagination" ; boutons Précédent/Suivant ont aria-label explicites | ✅ |
+| En-têtes de colonnes, labels de filtres, statuts, badges internalisés dans admin.users.list.* (fr.json / en.json) | ✅ |
+| Sur mobile (< 768px), tableau affiche uniquement nom + statut + action ; colonnes secondaires accessibles via ligne expandable | ✅ |
+
+## Notes de livraison
+
+- Implémenté : `pivot-ui` PR [#82](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/82) (Gate 2 self-évalué : ~92/100, draft, CI verte). Consomme le contrat déjà mergé de US06.1.1 (`pivot-core` #127).
+- Structure conçue pour extension par les US suivantes (US06.1.3, US06.1.4/US06.1.5) : cellule d'actions dédiée par ligne (`.admin-users__col--actions`) — ces US empilent leur branche directement sur celle-ci pour éviter toute collision de fichier.
+- Gap signalé : le point de rupture responsive mobile n'a pas de test automatisé (limitation jsdom), vérification visuelle manuelle recommandée.
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
-Stage: Backlog
+Stage: In progress
