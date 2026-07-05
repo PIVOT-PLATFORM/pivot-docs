@@ -128,6 +128,14 @@ note right
   Claude ne pose JAMAIS Done.
 end note
 
+|#E0F2F1| Doc Agent |
+:**Gate 5 — SPEC FREEZE** (autonome, non-bloquant)\nGénère docs/specs/{EPIC}/{us-id}-{slug}.md;
+note right
+  Contrat technique final figé.
+  Jamais réécrit — modifications
+  ultérieures via Addendum daté.
+end note
+
 stop
 
 @enduml
