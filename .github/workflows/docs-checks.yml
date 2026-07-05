@@ -8,10 +8,6 @@ on:
 
 permissions: read-all
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   lint-and-build:
     name: Lint + build docs site
@@ -55,30 +51,3 @@ jobs:
 
       - name: "Build (échoue sur lien cassé — onBrokenLinks: throw)"
         run: npm run build
-        env:
-          # Injecte le bandeau d'avertissement "preview" uniquement pour une PR.
-          # Sur push main, DOCS_PREVIEW_PR est vide → build de production normal.
-          DOCS_PREVIEW_PR: ${{ github.event_name == 'pull_request' && github.event.pull_request.number || '' }}
-
-      - name: Setup Pages
-        if: github.event_name == 'pull_request'
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
-      - name: Upload artifact
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        with:
-          path: build
-
-  preview-deploy:
-    needs: lint-and-build
-    if: github.event_name == 'pull_request'
-    # Le lien de preview apparaît nativement dans l'onglet "Environments" de la
-    # PR (grâce à `environment:` dans le workflow appelé) — pas besoin de token
-    # issues:write supplémentaire pour poster un commentaire.
-    uses: ./.github/workflows/_deploy-pages-retry.yml
-    permissions:
-      pages: write
-      id-token: write
-    with:
-      job_label: "Déployer l'aperçu PR sur GitHub Pages"
