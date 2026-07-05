@@ -1,5 +1,7 @@
 # E13 — Module Cahiers de Tests (Pilotage qualité)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.6).*
+
 ## Objectif
 
 Gestion des tests manuels et de recette : création de cas de test, organisation en campagnes, exécution guidée, traçabilité des résultats et reporting qualité par projet.

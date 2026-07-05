@@ -1,5 +1,7 @@
 # E08 — Module Whiteboard
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.1).*
+
 ## Objectif
 Tableau blanc collaboratif temps réel : CRUD tableaux, partage par lien/rôles, canvas WebSocket, présence, undo/redo, templates. Inspiré de Miro / Klaxoon Whiteboard.
 
@@ -57,3 +59,23 @@ PouetPouet (tableau blanc collaboratif open-source)
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ⬜ |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ⬜ |
+
+---
+
+## Couverture benchmark (E30 — Collaboration)
+
+E08 est l'implémentation MVP du socle whiteboard. Il concrétise une partie des exigences
+marché portées par le backlog benchmark [`E30 — Collaboration`](pathname:///pivot-docs/backlog/EPIC-collaboration/)
+(source : benchmark Miro / Klaxoon / FigJam / Microsoft Whiteboard, détaillé dans le README d'E30).
+Correspondances :
+
+| Exigence benchmark (E30) | Portée par E08 | Écart / reste à faire |
+|--------------------------|----------------|-----------------------|
+| F30.1 Canevas & objets (BL-001…007) | F08.3 Canvas WS | formes/connecteurs, dessin main levée, images, frames = à étendre |
+| F30.2 Collaboration temps réel (BL-008…011) | F08.3 + F08.5 Présence + EN08.1 | commentaires ancrés, historique de versions = à étendre |
+| F30.4 Modèles (BL-012…013) | F08.4 Templates | modèles d'organisation chartés = à étendre |
+| F30.8 Partage & administration (BL-014…016) | F08.2 Partage & rôles | hiérarchie d'espaces, export PNG/PDF = à étendre |
+
+Les autres Features d'E30 (facilitation, IA, diagrammes, sécurité/gouvernance, plateformes,
+engagement, extensibilité, licences, innovation) sont **net-new** et hébergées dans
+[`EPIC-collaboration`](pathname:///pivot-docs/backlog/EPIC-collaboration/).
