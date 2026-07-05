@@ -1,6 +1,6 @@
 # E23 — Portefeuille projets
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.12).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.12).*
 
 > Module de capacité du **domaine Pilotage** (E18) — cf. [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
 
@@ -24,7 +24,7 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 - **F23.1 — Portefeuille projets**
   - US23.1.1 : Tableau de bord portefeuille projets
   - US23.1.2 : Générer un rapport d'avancement du portefeuille
-- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](../BENCHMARK.md))
+- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK))
   - US23.2.1 : Vue portefeuille consolidée
   - US23.2.2 : Tableaux de bord personnalisables
   - US23.2.3 : Revues et comités outillés

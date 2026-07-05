@@ -8,7 +8,7 @@
 Connecteurs :
 - **Période de sprint** : API agile préconfigurée (Jira, Azure DevOps…) → dates de sprint, sinon durée manuelle.
 - **Absences** : SI RH/absence (SAP, Workday, Lucca…) — périodes seules (RGPD).
-- **Calendriers & jours fériés** : réutilise [EN22.3](../../EPIC-roadmap/ENABLERS/en-connecteurs-calendrier-disponibilite.md) via le bus PIVOT (pas de FK inter-modules — ADR-006/008).
+- **Calendriers & jours fériés** : réutilise [EN22.3](pathname:///pivot-docs/backlog/EPIC-roadmap/) via le bus PIVOT (pas de FK inter-modules — ADR-006/008).
 
 **RGPD-by-design** : minimisation (indisponibilités, pas les motifs), agrégation équipe par défaut, traçabilité, base légale.
 

@@ -1,6 +1,6 @@
 # US12.4.1 — Pré-réservation depuis une plage & proposition du meilleur créneau
 
-**En tant que** organisateur de réunion (à partir d'une plage posée sur la roadmap Pilotage, cf. [US22.8.6](../../../EPIC-roadmap/FEATURES/interfaces-modules-si/us-plage-evenement-meetops.md))
+**En tant que** organisateur de réunion (à partir d'une plage posée sur la roadmap Pilotage, cf. [US22.8.6](pathname:///pivot-docs/backlog/EPIC-roadmap/))
 **Je veux** que MeetOps reçoive une **pré-réservation** couvrant une période, calcule le **meilleur créneau** selon les disponibilités des participants, me le propose pour **validation**, puis envoie l'invitation
 **Afin de** transformer une intention de planning (roadmap) en réunion réelle, au meilleur moment, sans ressaisie
 
@@ -10,7 +10,7 @@
 |---------|--------|
 | Réception : à réception de l'événement bus `roadmap.event.window.created` `{event_ref, project_ref, titre, participants, période [début, fin], durée}`, MeetOps crée une réunion en statut **`PRE_RESERVED`** (brouillon), sans envoyer d'invitation | ⬜ |
 | Meilleur créneau : le moteur propose **N créneaux classés** dans la période selon (a) disponibilités des participants, (b) heures ouvrées, weekends & jours fériés de la localité, (c) durée demandée + tampon ; le meilleur est proposé par défaut | ⬜ |
-| Disponibilités : les créneaux occupés/libres proviennent des connecteurs calendrier/absences ([EN22.3](../../../EPIC-roadmap/ENABLERS/en-connecteurs-calendrier-disponibilite.md)) ; un participant sans agenda connecté est **considéré disponible** par défaut (paramétrable) | ⬜ |
+| Disponibilités : les créneaux occupés/libres proviennent des connecteurs calendrier/absences ([EN22.3](pathname:///pivot-docs/backlog/EPIC-roadmap/)) ; un participant sans agenda connecté est **considéré disponible** par défaut (paramétrable) | ⬜ |
 | Validation humaine : la réunion **reste `PRE_RESERVED`** tant que l'organisateur n'a pas validé ; il peut retenir un autre créneau proposé ou ajuster manuellement | ⬜ |
 | Envoi : à la validation → statut **`CONFIRMED`**, l'invitation est envoyée aux participants et l'événement `meetops.booking.confirmed` `{event_ref, créneau}` est publié (la roadmap reflète alors la date retenue) | ⬜ |
 | Cohérence : sur `roadmap.event.window.updated` / `deleted`, une pré-réservation **non confirmée** est recalculée / annulée ; une réunion **déjà confirmée** déclenche une **demande de reprogrammation** (pas d'annulation silencieuse) | ⬜ |

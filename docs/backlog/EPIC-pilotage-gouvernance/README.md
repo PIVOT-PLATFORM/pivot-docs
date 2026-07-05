@@ -1,6 +1,6 @@
 # E35 — Gouvernance & sécurité (pilotage)
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.24).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.24).*
 
 ## Objectif
 Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Gouvernance & sécurité (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
@@ -14,7 +14,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capa
 ⏸️ **phase-3** — VERROUILLÉ · AC issus du benchmark, à affiner au Gate 1 PO Agent
 
 ## Origine
-Généré depuis le CSV benchmark (famille Pilotage, items `PP-###`). Voir la rationalisation dans [`BENCHMARK.md`](../BENCHMARK.md).
+Généré depuis le CSV benchmark (famille Pilotage, items `PP-###`). Voir la rationalisation dans [`BENCHMARK.md`](pathname:///pivot-docs/backlog/BENCHMARK).
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E18 Domaine Pilotage (ombrelle)

@@ -1,6 +1,6 @@
 # E26 — Budget & suivi financier
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.15).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.15).*
 
 > Module de capacité du **domaine Pilotage** (E18) — cf. [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).
 
@@ -24,7 +24,7 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
 - **F26.1 — Budget & suivi financier**
   - US26.1.1 : Saisir le budget d'un projet
   - US26.1.2 : Suivre la consommation budgétaire en temps réel
-- **F26.2 — Budgets & finances (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](../BENCHMARK.md))
+- **F26.2 — Budgets & finances (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK))
   - US26.2.1 : Coûts au niveau projet
   - US26.2.2 : Budgets pluriannuels (PPI)
   - US26.2.3 : Flux de trésorerie

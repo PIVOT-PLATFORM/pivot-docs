@@ -1,6 +1,6 @@
 # E08 — Module Whiteboard
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.1).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.1).*
 
 ## Objectif
 Tableau blanc collaboratif temps réel : CRUD tableaux, partage par lien/rôles, canvas WebSocket, présence, undo/redo, templates. Inspiré de Miro / Klaxoon Whiteboard.
@@ -65,9 +65,9 @@ PouetPouet (tableau blanc collaboratif open-source)
 ## Couverture benchmark (E30 — Collaboration)
 
 E08 est l'implémentation MVP du socle whiteboard. Il concrétise une partie des exigences
-marché portées par le backlog benchmark [`E30 — Collaboration`](../EPIC-collaboration/README.md)
+marché portées par le backlog benchmark [`E30 — Collaboration`](pathname:///pivot-docs/backlog/EPIC-collaboration/)
 (source : dossier benchmark Miro / Klaxoon / FigJam / Microsoft Whiteboard — voir
-[`BENCHMARK.md`](../BENCHMARK.md)). Correspondances :
+[`BENCHMARK.md`](pathname:///pivot-docs/backlog/BENCHMARK)). Correspondances :
 
 | Exigence benchmark (E30) | Portée par E08 | Écart / reste à faire |
 |--------------------------|----------------|-----------------------|
@@ -78,4 +78,4 @@ marché portées par le backlog benchmark [`E30 — Collaboration`](../EPIC-coll
 
 Les autres Features d'E30 (facilitation, IA, diagrammes, sécurité/gouvernance, plateformes,
 engagement, extensibilité, licences, innovation) sont **net-new** et hébergées dans
-[`EPIC-collaboration`](../EPIC-collaboration/README.md).
+[`EPIC-collaboration`](pathname:///pivot-docs/backlog/EPIC-collaboration/).

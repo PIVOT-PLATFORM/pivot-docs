@@ -1,6 +1,6 @@
 # E28 — Intégration open source (mycélium)
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.17).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.17).*
 
 ## Objectif
 
@@ -64,7 +64,7 @@ Le brouillon initial (`backlog_integration_pivot.csv`) proposait aussi les items
 |---|---|
 | Fournisseur d'identité SSO (Keycloak), modèle de rôles | [E01 — Auth & IAM](../EPIC-auth-iam/README.md) |
 | Gestion des secrets (OpenBao), distribution déployable (Coolify) | [E07 — Infrastructure & Déploiement](../EPIC-infrastructure/README.md) |
-| Adaptateur OpenProject (pilotage de portefeuille, PPM, Gantt) | [E18 — Module Pilotage](../EPIC-pilotage/README.md) (natif, F18.1 Roadmap/Gantt, F18.2 Portefeuille) |
+| Adaptateur OpenProject (pilotage de portefeuille, PPM, Gantt) | [E18 — Module Pilotage](pathname:///pivot-docs/backlog/EPIC-pilotage/) (natif, F18.1 Roadmap/Gantt, F18.2 Portefeuille) |
 | Whiteboard Excalidraw embarqué | [E08 — Module Whiteboard](../EPIC-whiteboard/README.md) (natif — cf. [ADR-009 §5](pathname:///pivot-docs/adr/ADR-009-cadre-integration-open-source)) |
 | Formulaires / quiz / sondages (Formbricks) | [E19 — Module Session](../EPIC-module-session/README.md) (natif : QUIZ, POLL, WORDCLOUD, BRAINSTORM, QA) |
 | Rétrospectives (Scrumlr) | [E20 — Module Retrospective](../EPIC-retrospective/README.md) (natif) |

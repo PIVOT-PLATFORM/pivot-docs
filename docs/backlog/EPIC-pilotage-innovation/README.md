@@ -1,6 +1,6 @@
 # E38 — Management de l'innovation (SMI)
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.27).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.27).*
 
 ## Objectif
 
@@ -39,7 +39,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 - **F38.14 — Intelligence collective avancée** : **marché de prédiction d'idées** · **graphe d'innovation & moteur de sérendipité** · combinaison d'idées · valorisation par options réelles & momentum
 - **F38.15 — Événements, parcours & formulaires d'innovation** : **événements internes** (hackathons, ateliers, demo days, awards) · **parcours d'innovation orchestré par Pivot Workflow (E29)** · **challenges & dépôt d'idée par formulaire (Forms)** · schéma d'idée extensible
 
-> **Note.** Le module **[E42 — Pivot Forms](../EPIC-pivot-forms/README.md)** fournit le form-builder ; F38.15 le consomme pour le **dépôt d'idée** (`form.submitted` → idée). Le **parcours** d'innovation s'appuie sur **Workflow (E29)**, l'animation d'événements sur **Session (E19)** / **MeetOps (E12)**.
+> **Note.** Le module **[E42 — Pivot Forms](pathname:///pivot-docs/backlog/EPIC-pivot-forms/)** fournit le form-builder ; F38.15 le consomme pour le **dépôt d'idée** (`form.submitted` → idée). Le **parcours** d'innovation s'appuie sur **Workflow (E29)**, l'animation d'événements sur **Session (E19)** / **MeetOps (E12)**.
 
 ### Enablers
 - **[EN38.1](ENABLERS/en-modele-smi-moteur.md)** — Modèle SMI & moteur (entonnoir, stage-gate, scoring, portefeuille, KPIs)

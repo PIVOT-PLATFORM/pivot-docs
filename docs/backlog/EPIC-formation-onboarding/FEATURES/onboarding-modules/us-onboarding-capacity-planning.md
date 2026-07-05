@@ -8,7 +8,7 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un premier accès au module **Capacity Planning** ([E11](../../../EPIC-capacity-planning/README.md)), when je l'ouvre, then un tour guidé présente ses fonctions clés (via EN41.1) | ⬜ |
+| Given un premier accès au module **Capacity Planning** ([E11](pathname:///pivot-docs/backlog/EPIC-capacity-planning/)), when je l'ouvre, then un tour guidé présente ses fonctions clés (via EN41.1) | ⬜ |
 | Given le parcours, when je le complète/passe, then l'état est mémorisé et la complétion est mesurée (F41.6) | ⬜ |
 | Given mon rôle (taxonomie) et le profil d'organisation (E40), when le contenu s'affiche, then il est adapté ; i18n FR/EN + a11y WCAG 2.1 AA | ⬜ |
 

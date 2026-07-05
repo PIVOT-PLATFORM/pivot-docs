@@ -36,7 +36,7 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 
 > La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
 >
-> Les modules *benchmark* (E31–E39) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](../BENCHMARK.md). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
+> Les modules *benchmark* (E31–E39) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
 
 ### Couche adaptative v2 (`Profils_applicables`)
 

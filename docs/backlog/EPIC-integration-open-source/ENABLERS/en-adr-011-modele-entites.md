@@ -2,7 +2,7 @@
 
 **Type d'enabler** : gouvernance · architecture
 
-**Contexte** : Documenter le modèle d'entités étendu (**Application**, Project, Portfolio, Contract, Vendor, Team, Capacity, Decision, Requirement, Epic — ADR-009 §4) et le réconcilier avec le schéma `public.teams` déjà existant (ADR-006), pour éviter deux modèles d'équipe divergents. La hiérarchie **Application 1..n Projet** (Projet = version d'application) et le rattachement des données projet à l'Application sont posés par [EN18.9](../../EPIC-pilotage/ENABLERS/en-modele-application-projet.md).
+**Contexte** : Documenter le modèle d'entités étendu (**Application**, Project, Portfolio, Contract, Vendor, Team, Capacity, Decision, Requirement, Epic — ADR-009 §4) et le réconcilier avec le schéma `public.teams` déjà existant (ADR-006), pour éviter deux modèles d'équipe divergents. La hiérarchie **Application 1..n Projet** (Projet = version d'application) et le rattachement des données projet à l'Application sont posés par [EN18.9](pathname:///pivot-docs/backlog/EPIC-pilotage/).
 
 **Critères de complétion** :
 - [ ] Modèle d'entités figé et documenté

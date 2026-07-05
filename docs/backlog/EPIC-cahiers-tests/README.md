@@ -1,6 +1,6 @@
 # E13 — Module Cahiers de Tests (Pilotage qualité)
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.6).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.6).*
 
 ## Objectif
 

@@ -1,6 +1,6 @@
 # E11 — Module Capacity Planning
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.4).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.4).*
 
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-agilite-core`** (schéma Flyway `agilite`, FK → `public.teams.id`)

@@ -1,6 +1,6 @@
 # E40 — Profil & adaptation
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.29).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.29).*
 
 ## Objectif
 
@@ -19,7 +19,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **co
 ## Origine
 
 Nouveau dans la **v2 adaptative** du backlog PPM (`PP-A01…A06`). Introduit la dimension
-**`Profils_applicables`** portée par chaque US du domaine Pilotage. Voir [`BENCHMARK.md`](../BENCHMARK.md).
+**`Profils_applicables`** portée par chaque US du domaine Pilotage. Voir [`BENCHMARK.md`](pathname:///pivot-docs/backlog/BENCHMARK).
 
 ## Dépendances
 
