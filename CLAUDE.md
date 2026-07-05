@@ -10,7 +10,8 @@
 
 pivot-docs ne contient **aucun code applicatif** — backend dans `pivot-core`, frontend dans `pivot-ui`, modules métier dans les repos `pivot-xxx-core`/`pivot-xxx-ui`.
 
-**Setup environnement complet (clone, Docker Compose, dev natif)** → voir `SETUP.md` à la racine.
+**Setup environnement complet (WSL, clone, Docker Compose, dev natif, commits signés)** → `docs/setup/` (publié : <https://pivot-platform.github.io/pivot-docs/setup/>).
+**Modèle de `CLAUDE.md` racine multi-repo** (orchestration multi-repo uniquement, sans rien dupliquer des CLAUDE.md de repo) → `docs/setup/pivot-platform-claude-template.md`.
 
 ---
 
@@ -44,6 +45,8 @@ Concise et directe. Techniquement précise. Pas de récapitulatifs inutiles.
 ```text
 pivot-docs/
 ├── docs/
+│   ├── setup/             # Setup environnement (WSL, clone, Docker Compose, commits signés)
+│   │   └── pivot-platform-claude-template.md  # Modèle CLAUDE.md racine multi-repo
 │   ├── backlog/          # Backlog opérationnel — un fichier par US/Enabler/Feature/Epic
 │   │   └── README.md     # Source de vérité : hiérarchie, champs, templates, DoR
 │   ├── architecture/      # Architecture cible (vue d'ensemble, modules, auth) + diagrammes
@@ -56,7 +59,6 @@ pivot-docs/
 ├── scripts/               # check-docs-naming.mjs — validation nomenclature fichiers
 ├── .github/workflows/
 ├── .plumber.yaml
-├── SETUP.md               # Setup environnement complet (clone, Docker Compose, dev natif)
 └── docusaurus.config.js
 ```
 
@@ -147,14 +149,13 @@ attendre le mainteneur.
 Travail organisé par sprint. Référence : **`docs/backlog/SPRINTS.md`**.
 Protocole complet de démarrage de session → skill `pivot-backlog-workflow`.
 
-**Démarrage de session (full autonome) :**
-1. `git pull origin main` dans les repos concernés par le sprint (toujours pivot-core, pivot-ui,
-   pivot-docs ; + repos module si le sprint en touche un)
-2. Lire `SPRINTS.md` — identifier le sprint courant (pas de ✅ complet)
-3. Pour chaque US du sprint : lire le fichier markdown dans `docs/backlog/`
-4. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase MVP uniquement
-5. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si ≥ 70
-6. Lancer un agent par US éligible **simultanément** — chaque agent crée sa branche `feat/{us-id}-{slug}`
+**Démarrage de session (full autonome) :** procédure multi-repo complète (synchronisation des
+repos, lancement des agents en parallèle) → `docs/setup/pivot-platform-claude-template.md`.
+Côté lecture du backlog spécifiquement :
+1. Lire `SPRINTS.md` — identifier le sprint courant (pas de ✅ complet)
+2. Pour chaque US du sprint : lire le fichier markdown dans `docs/backlog/`
+3. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase MVP uniquement
+4. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si ≥ 70
 
 **Principes :**
 - **Une branche par US / Enabler** — `feat/{us-id}-{slug}` ou `feat/{en-id}-{slug}`

@@ -17,6 +17,7 @@ Le contenu source vit sous [`docs/`](docs/) et est publié via [Docusaurus](http
 
 | Dossier | Description |
 |---------|-------------|
+| [`docs/setup/`](docs/setup/) | Setup environnement (WSL, clone, Docker Compose, commits signés) + modèle de `CLAUDE.md` racine multi-repo |
 | [`docs/architecture/`](docs/architecture/) | Architecture cible de la plateforme (vue d'ensemble, modules, auth) |
 | [`docs/adr/`](docs/adr/) | Architecture Decision Records |
 | [`docs/cicd/`](docs/cicd/) | Documentation des pipelines CI/CD (pivot-core + pivot-ui) |
@@ -37,8 +38,14 @@ npm run build  # génère build/
 | Repo | Rôle |
 |------|------|
 | [pivot-core](https://github.com/PIVOT-PLATFORM/pivot-core) | Backend Java 25 · Spring Boot 4.x · PostgreSQL 18 · Flyway · Redis |
+| [pivot-design-system](https://github.com/PIVOT-PLATFORM/pivot-design-system) | Angular CDK + SCSS BEM, composants UI, Storybook |
 | [pivot-ui](https://github.com/PIVOT-PLATFORM/pivot-ui) | Frontend Angular 22 · TypeScript strict · Vitest · Playwright |
 | [pivot-docs](https://github.com/PIVOT-PLATFORM/pivot-docs) | Ce repo — documentation plateforme |
+| pivot-pilotage-core / -ui | Domaine Pilotage — roadmap, portefeuille projets |
+| pivot-agilite-core / -ui | Domaine Agilité — capacity planning, standup, scrum poker |
+| pivot-collaboratif-core / -ui | Domaine Collaboratif — whiteboard, quiz, session live, formulaire |
+
+Détail complet des dépôts et de leurs relations → [`docs/setup/pivot-platform-claude-template.md`](docs/setup/pivot-platform-claude-template.md).
 
 ## Backlog opérationnel
 

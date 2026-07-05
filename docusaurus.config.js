@@ -23,6 +23,7 @@ function hasCutVersions(id) {
  * l'état courant du sprint/produit — versionner leur contenu n'aurait pas de sens.
  */
 const sections = [
+  { id: 'setup', label: 'Setup', path: 'docs/setup' },
   { id: 'architecture', label: 'Architecture', path: 'docs/architecture', versioned: true },
   { id: 'adr', label: 'ADR', path: 'docs/adr', versioned: true },
   { id: 'cicd', label: 'CI/CD', path: 'docs/cicd' },
