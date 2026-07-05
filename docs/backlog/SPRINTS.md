@@ -152,10 +152,32 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 - E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
 - E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
 - E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
-- E18 Module Pilotage (phase-3 — pivot-pilotage-core/ui) : roadmap, portefeuille, ADR, budget, OKR, risques, commande publique
+- E18 Domaine Pilotage (phase-3 — pivot-pilotage-core/ui) : ombrelle (ADR-008), éclatée en modules E21-E30 + E32-E40 ci-dessous
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
 - E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
 - E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
+- E21 Gestion des risques (phase-3 — pivot-risk-core/ui) : profil adaptatif, scoring, cycle de vie 4T, boucle vivante, IA gouvernée
+- E22 Roadmap & Planification (phase-3 — pivot-pilotage-core/ui) : roadmap rapide + Gantt, parité MS Project web
+- E23 Portefeuille projets (phase-3 — pivot-pilotage-core/ui)
+- E24 ADR projet (phase-3 — pivot-pilotage-core/ui)
+- E25 Commande publique (phase-3 — pivot-pilotage-core/ui)
+- E26 Budget & suivi financier (phase-3 — pivot-pilotage-core/ui)
+- E27 OKR (phase-3 — pivot-pilotage-core/ui) : alignement, check-ins, scoring, CFR
+- E28 Intégration open source (phase-3 — adaptateurs, cf. ADR-009) : dépend de l'acceptation d'ADR-009
+- E29 Workflows & Automatisation (phase-3 — pivot-automatisation-core/ui)
+- E30 Collaboration (phase-3 — pivot-collaboratif-core/ui) : whiteboard, ateliers, facilitation
+- E32 Ressources & temps (phase-3 — pivot-pilotage-core/ui)
+- E33 Collaboration & tâches, pilotage (phase-3 — pivot-pilotage-core/ui)
+- E34 IA & agents, pilotage (phase-3 — pivot-pilotage-core/ui)
+- E35 Gouvernance & sécurité, pilotage (phase-3 — pivot-pilotage-core/ui)
+- E36 Intégration SI, pilotage (phase-3 — pivot-pilotage-core/ui)
+- E37 Licences & réversibilité, pilotage (phase-3 — pivot-pilotage-core/ui)
+- E38 Management de l'innovation (SMI, ISO 56002), pilotage (phase-3 — pivot-pilotage-core/ui)
+- E39 Chantiers SI, pilotage (phase-3 — pivot-pilotage-core/ui)
+- E40 Profil & adaptation (phase-3 — pivot-pilotage-core/ui) : profil d'organisation, PPM v2 adaptative
+- E41 Formation & Onboarding (phase-3 — pivot-core, schéma `core` + `@pivot/ui-core`) : tours guidés, supports, présentiel, mesure d'adoption
+- E42 Pivot Forms (phase-3 — pivot-forms-core/ui) : form-builder no-code souverain
+- E43 Sécurité & Zero Trust (phase-3 — transverse, dépend de l'acceptation d'ADR-015 à ADR-020) : BFF/Gateway/Mesh, secrets, autorisation externalisée, SIEM, checklist d'admission module
 
 ---
 
@@ -188,4 +210,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-07-04*
+*Dernière mise à jour : 2026-07-06 — ajout E21-E43 (sauf E31, dissous) au backlog non planifié suite aux merges de la session*
