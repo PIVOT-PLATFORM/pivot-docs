@@ -11,6 +11,16 @@
 | Given un kit de formation, when je prépare une session, then j'ai un déroulé minuté, des exercices et un tenant/jeu de données de démonstration | ⬜ |
 | Given une session live, when je l'anime, then je m'appuie sur le module **Session (E19)** (quiz, sondage, vote) pour l'interactivité | ⬜ |
 | Given une session terminée, when elle se clôt, then la présence et la complétion sont enregistrées (F41.6) | ⬜ |
+| Error : given un jeu de données de démonstration corrompu ou désynchronisé de la version courante du module (ex. champs renommés), when le référent l'utilise en session, then l'incohérence est détectée avant la session (validation du kit), pas découverte en direct devant les participants | ⬜ |
+| Security : le tenant/jeu de données de démonstration est isolé des données réelles des tenants clients — jamais de mélange entre données de démo et données de production | ⬜ |
+
+## Hors périmètre
+
+- Outil de visioconférence propre à Pivot — la session live s'appuie sur le module Session (E19) existant, pas un nouveau moteur
+
+## Notes d'implémentation
+
+- Le kit doit être versionné en cohérence avec le module concerné, pour éviter la dérive décrite dans l'AC Error à chaque montée de version
 
 ---
 Item Type: US · Parent: F41.4 · Module: core · Phase: phase-3 · Size: M · Priority: Medium

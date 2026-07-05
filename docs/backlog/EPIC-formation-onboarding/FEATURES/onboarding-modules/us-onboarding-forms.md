@@ -10,7 +10,18 @@
 |---------|--------|
 | Given un premier accès au module **Pivot Forms** ([E42](../../../EPIC-pivot-forms/README.md)), when je l'ouvre, then un tour guidé présente ses fonctions clés — éditeur no-code, logique conditionnelle, diffusion, restitution (via EN41.1) | ⬜ |
 | Given le parcours, when je le complète/passe, then l'état est mémorisé et la complétion est mesurée (F41.6) | ⬜ |
-| Given mon rôle (taxonomie) et le profil d'organisation (E40), when le contenu s'affiche, then il est adapté ; i18n FR/EN + a11y WCAG 2.1 AA | ⬜ |
+| Given mon rôle (taxonomie) et le profil d'organisation (E40), when le contenu s'affiche, then il est adapté ; i18n FR/EN | ⬜ |
+| Error : given le module Pivot Forms désactivé sur le tenant après la mise en place du parcours, when un utilisateur y accède malgré tout, then le parcours ne se déclenche pas (pas de tour orphelin sur un module inaccessible) | ⬜ |
+| Security : le parcours n'est proposé qu'aux utilisateurs ayant effectivement accès au module Forms (RBAC), jamais un aperçu de contenu d'un module non activé sur le tenant | ⬜ |
+| A11y : navigation clavier + lecteur d'écran (WCAG 2.1 AA) | ⬜ |
+
+## Hors périmètre
+
+- Documentation exhaustive du module Pivot Forms — ce parcours reste un tour guidé d'introduction, pas un substitut au centre d'aide (F41.2) ou aux supports de formation (F41.3)
+
+## Notes d'implémentation
+
+- Le tour cible le concepteur de formulaire (créateur), pas le répondant qui remplit un formulaire diffusé — cohérent avec le renvoi 🎓 déjà présent dans le README E42 (US41.5.30)
 
 ---
 Item Type: US · Parent: F41.5 · Module: core · Phase: phase-3 · Size: S · Priority: Medium

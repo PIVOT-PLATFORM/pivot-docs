@@ -29,6 +29,16 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 ### Enablers
 - **[EN41.1](ENABLERS/en-framework-onboarding.md)** — Framework d'onboarding in-app (moteur réutilisable, ciblage rôle/module/étape/profil, i18n, a11y, analytics RGPD)
 
+## Hors périmètre
+
+- **Rédaction et maintenance éditoriale du contenu** (articles du centre d'aide, tours par module, supports) — cet EPIC porte les mécanismes et le framework, pas la production continue de contenu qui reste un processus éditorial de chaque équipe module
+- **Évaluation de performance individuelle** à partir des données d'adoption ou de complétion — exclu par principe (cf. éthique E11/E27, non-surveillance individuelle)
+- **LMS complet hébergé par Pivot** — seul l'export SCORM/xAPI vers un LMS tiers est couvert (F41.3), pas un LMS de substitution
+- **Certification externe/officielle reconnue** — seule la certification interne au tenant est couverte (F41.4)
+- **Relances hors canal in-app/e-mail** (SMS, appel) — hors périmètre du funnel d'activation (F41.6)
+
+> ⚠️ **Deux items du catalogue F41.5 nécessitent une réconciliation avec `split/pilotage` avant Gate 1** : US41.5.20 (E31 Demande & arbitrage, dissous) et US41.5.27 (E38, renommé Innovation → SMI). Voir l'avertissement en tête de chaque fichier.
+
 ## Modules impactés
 
 `core` + **tous les modules fonctionnels** (chacun expose son parcours via EN41.1)

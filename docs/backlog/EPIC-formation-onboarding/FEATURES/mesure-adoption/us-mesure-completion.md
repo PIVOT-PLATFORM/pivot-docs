@@ -10,7 +10,16 @@
 |---------|--------|
 | Given les parcours d'onboarding, when des utilisateurs les suivent, then complétion et abandon sont mesurés par module/équipe/rôle | ⬜ |
 | Given un tableau de bord d'adoption, when je l'ouvre, then taux d'activation, complétion et usage réel sont affichés | ⬜ |
+| Error : given une équipe ou un segment trop petit pour agréger sans risque de ré-identification (ex. moins de 5 personnes), when le tableau de bord est ouvert, then le segment est masqué ou regroupé plutôt qu'affiché en clair | ⬜ |
 | Security/RGPD : mesures **agrégées** par défaut, minimisation, pas de surveillance individuelle (cf. éthique E11/E27) | ⬜ |
+
+## Hors périmètre
+
+- Évaluation de performance individuelle à partir des données d'adoption — exclue par principe (cf. éthique E11/E27, non-surveillance individuelle)
+
+## Notes d'implémentation
+
+- Le seuil minimal d'agrégation (AC Error) doit être cohérent avec celui déjà retenu pour les mesures agrégées de capacité (E11) — pas un seuil réinventé pour l'onboarding
 
 ---
 Item Type: US · Parent: F41.6 · Module: core · Phase: phase-3 · Size: M · Priority: Medium
