@@ -17,9 +17,9 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 | EPIC | Clé | Features | Enablers | US | Avancement |
 |------|-----|----------|----------|----|------------|
-| [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 13+6pending | 🔄 Partiellement Done |
+| [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 16+4pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
-| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | 🔄 EN03.1-3 + US03.x en Review · EN03.4 backlog · Sprint 2 |
+| [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ✅ Sprint 2 terminé — EN03.1-4 + US03.x mergés |
 | [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
@@ -70,21 +70,27 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
-### Sprint 2 — Système de modules + Auth manquant (MVP)
+### Sprint 2 — Système de modules + Auth manquant (MVP) — ✅ Terminé
 
 | US | Titre | 🤖 Dev |
 |----|-------|--------|
-| EN03.1 | PivotModule interface + registre backend | ⬜ |
-| EN03.2 | Guard Angular moduleGuard + status API | ⬜ |
-| EN03.3 | Cache Redis statut modules TTL 60s | ⬜ |
-| EN03.4 | Contrat module frontend (TypeScript) | ⬜ |
-| US03.1.1 | Admin active un module | ⬜ |
-| US03.1.2 | Admin désactive un module | ⬜ |
-| US03.2.1 | UI liste modules avec statut | ⬜ |
-| US03.2.2 | Guard Angular bloque module désactivé | ⬜ |
-| US01.1.4 | Redirection post-login | ⬜ |
-| US01.1.5 | Expiration session + auto-logout | ⬜ |
-| US01.2.4 | Politique robustesse mot de passe | ⬜ |
+| EN03.1 | PivotModule interface + registre backend | ✅ |
+| EN03.2 | Guard Angular moduleGuard + status API | ✅ |
+| EN03.3 | Cache Redis statut modules TTL 60s | ✅ |
+| EN03.4 | Contrat module frontend (TypeScript) | ✅ |
+| US03.1.1 | Admin active un module | ✅ |
+| US03.1.2 | Admin désactive un module | ✅ |
+| US03.2.1 | UI liste modules avec statut | ✅ |
+| US03.2.2 | Guard Angular bloque module désactivé | ✅ |
+| US01.1.4 | Redirection post-login | ✅ |
+| US01.1.5 | Expiration session + auto-logout | ✅ |
+| US01.2.4 | Politique robustesse mot de passe | ✅ |
+
+> Statuts resynchronisés le 2026-07-05 après audit du code sur `main` (pivot-core + pivot-ui) —
+> voir `SPRINTS.md` pour le détail. Gaps techniques restants (non bloquants) : cache Redis EN03.3
+> non raccordé au chemin de lecture du statut module ; champ `description` de l'API modules non
+> aligné avec `PivotModule` (US03.2.1, hard block Gate 4 documenté) ; doublon `sanitizeReturnUrl`
+> entre US01.1.4/US01.1.5 côté pivot-ui.
 
 ---
 
@@ -105,10 +111,10 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
 | Critical | US16.3.1 Formulaire de contact | MVP | 🔎 Review |
-| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | 🔄 EN03.1-3 + US03.x en Review · EN03.4 backlog · Sprint 2 |
+| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | ✅ Sprint 2 terminé |
 | Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
 | High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
-| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | 🔎 En Review · Sprint 2 |
+| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ✅ Sprint 2 terminé |
 | High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
 | Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
@@ -125,4 +131,4 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 ---
 
-*Dernière mise à jour : 2026-07-04*
+*Dernière mise à jour : 2026-07-05*

@@ -3,14 +3,25 @@
 **Type d'enabler** : architecture
 
 **Critères de complétion** :
-- [ ] Interface TypeScript `PivotModuleConfig` : `id`, `name`, `route`, `icon`, `enabled`
-- [ ] `MODULE_REGISTRY` token d'injection Angular (InjectionToken)
-- [ ] Chaque feature module exporte un objet de configuration conforme
-- [ ] `ModuleStatusService` : cache local (Signal) du statut des modules pour la session
-- [ ] Tests Vitest ModuleStatusService
+- [x] Interface TypeScript `PivotModuleConfig` : `id`, `name`, `route`, `icon`, `enabled`
+  *(livré sous la forme `PivotModuleDto` + `PivotModuleUi` dans `module.model.ts` — superset des
+  champs demandés : `PivotModuleUi` porte `id`, `name`, `route`, `icon`, `enabled` et davantage)*
+- [x] `MODULE_REGISTRY` token d'injection Angular (InjectionToken)
+  *(livré sous la forme `ModuleRegistryService`, `@Injectable({providedIn: 'root'})` — singleton
+  Angular idiomatique équivalent, pas de `InjectionToken` explicite car une seule implémentation)*
+- [x] Chaque feature module exporte un objet de configuration conforme — `MODULE_METADATA`
+  (`module-metadata.ts`) : métadonnées statiques par module (icône, route, couleur, description)
+- [x] `ModuleStatusService` : cache local (Signal) du statut des modules pour la session
+  *(livré sous la forme `ModuleRegistryService` — signal `_modules` + signals calculés
+  `enrichedModules`/`activeModules`/`comingSoonModules`)*
+- [x] Tests Vitest ModuleStatusService — `module-registry.service.spec.ts`, 9 tests (signaux
+  calculés + appel API)
 
-**Statut** : ⬜ À faire
+**Statut** : ✅ Fait — mergé sur `main` (pivot-core PR #111/#118, pivot-ui PR #45/#62,
+`feat/en03-4-module-api` / `feat/en03-4-module-contract`). Contrat livré sous des noms différents
+de ceux de l'AC d'origine (voir notes ci-dessus) — équivalence fonctionnelle vérifiée par lecture
+du code, décision documentée dans SPRINTS.md.
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
-Stage: Backlog · Priority: Critical
+Stage: Done · Priority: Critical

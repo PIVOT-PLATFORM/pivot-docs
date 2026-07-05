@@ -11,8 +11,8 @@
 - [x] Tests TI ModuleRegistry avec Testcontainers (`ModuleRegistryIntegrationTest`) + TU registre/service/entité/auto-configuration
 - [x] **Interface et registre packagés dans `fr.pivot:pivot-core-starter`** — auto-configuration Spring Boot `PivotModulesAutoConfiguration` (`AutoConfiguration.imports`) : un repo module externe enregistre son `PivotModule` via `@Bean` sans modifier pivot-core (prouvé par `PivotModulesAutoConfigurationTest` + TI)
 
-**Statut** : 🔄 Review — PR pivot-core `feat/en03-1-module-registry`
+**Statut** : ✅ Fait — mergé sur `main` (pivot-core PR #119, `feat/en03-1-module-registry`)
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
-Stage: Review · Priority: Critical
+Stage: Done · Priority: Critical

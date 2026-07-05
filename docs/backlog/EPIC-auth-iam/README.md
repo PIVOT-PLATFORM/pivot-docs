@@ -29,7 +29,7 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 - Bloque : E16 Shell (authMatchGuard), E06 Administration (accès admin)
 
 ## Statut global
-✅ Partiellement Done — F01.1 (3/5 US), F01.2 (3/4 US), F01.3 ✅, F01.4 (1/3 US), F01.5 (0/1 US), F01.6-F01.8 extras ✅
+✅ Partiellement Done — F01.1 ✅ (5/5 US), F01.2 ✅ (4/4 US), F01.3 ✅, F01.4 (1/3 US), F01.5 (0/1 US), F01.6-F01.8 extras ✅
 
 ---
 
@@ -41,13 +41,13 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 | [US01.1.1 — Connexion email + mot de passe](FEATURES/login-email-password/us-connexion.md) | ✅ |
 | [US01.1.2 — Déconnexion](FEATURES/login-email-password/us-deconnexion.md) | ✅ |
 | [US01.1.3 — Rester connecté (remember-me)](FEATURES/login-email-password/us-remember-me.md) | ✅ |
-| [US01.1.4 — Redirection post-login](FEATURES/login-email-password/us-redirection-post-login.md) | 🔎 Review |
-| [US01.1.5 — Expiration de session (front) + auto-logout](FEATURES/login-email-password/us-expiration-session.md) | 🔎 Review |
+| [US01.1.4 — Redirection post-login](FEATURES/login-email-password/us-redirection-post-login.md) | ✅ |
+| [US01.1.5 — Expiration de session (front) + auto-logout](FEATURES/login-email-password/us-expiration-session.md) | ✅ |
 | **F01.2 — Inscription & vérification e-mail** | |
 | [US01.2.1 — Inscription](FEATURES/inscription-verification/us-inscription.md) | ✅ |
 | [US01.2.2 — Vérification e-mail](FEATURES/inscription-verification/us-verification-email.md) | ✅ |
 | [US01.2.3 — Renvoi du lien de vérification](FEATURES/inscription-verification/us-renvoi-lien-activation.md) | ✅ |
-| [US01.2.4 — Politique de robustesse du mot de passe](FEATURES/inscription-verification/us-politique-password.md) | 🔎 Review |
+| [US01.2.4 — Politique de robustesse du mot de passe](FEATURES/inscription-verification/us-politique-password.md) | ✅ |
 | **F01.3 — Réinitialisation mot de passe** | |
 | [US01.3.1 — Demande de réinitialisation](FEATURES/reset-password/us-mot-de-passe-oublie.md) | ✅ |
 | [US01.3.2 — Réinitialisation par token](FEATURES/reset-password/us-reset-password.md) | ✅ |

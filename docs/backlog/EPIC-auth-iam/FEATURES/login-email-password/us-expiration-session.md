@@ -22,9 +22,14 @@
 - Implémentation : pivot-ui [#63](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/63)
 - Pas de silent refresh : l'ancien flux « 401 → /auth/refresh → retry » du TokenInterceptor a été retiré — le 401 backend est le seul signal d'expiration (modèle opaque tokens).
 - `SessionExpiryService` (pivot-ui `core/auth/service/`) orchestre : purge mémoire (`AuthService.clearSession()`), toast (variante remember-me), BroadcastChannel `pivot-session`, redirection `/auth/login?returnUrl=…`.
-- Validation returnUrl locale (`core/auth/util/return-url.ts`) — à fusionner avec le validateur returnUrl de l'US01.1.4 au merge (suppression du doublon).
+- Validation returnUrl locale (`core/auth/util/return-url.ts`) — **US01.1.4 et US01.1.5 sont
+  toutes deux mergées sur `main` et le doublon annoncé n'a pas été résolu** : `core/auth/return-url.ts`
+  (US01.1.4) et `core/auth/util/return-url.ts` (US01.1.5) coexistent toujours, avec des contrats
+  légèrement différents (l'un retourne `string` avec fallback par défaut, l'autre `string | null`
+  et bloque en plus les chemins `/auth/*`). Dette technique à traiter dans `pivot-ui` — hors
+  périmètre de ce fichier backlog (pivot-docs), suivi requis côté `pivot-ui`.
 - Le flag remember-me vit en mémoire uniquement : perdu après reload (le refresh cookie ne le renvoie pas) → toast générique dans ce cas.
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: High
-Stage: Review
+Stage: Done

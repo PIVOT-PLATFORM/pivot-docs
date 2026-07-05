@@ -34,5 +34,5 @@
 
 ---
 Item Type: US · Parent: F03.2 · Module: core · Phase: MVP · Size: M · Priority: High
-Stage: Review
+Stage: Done
 Dépendances : alignement `description`/`PivotModule` à statuer (coordination EN03.1 + repos modules) ; E2E Playwright en suivi.
