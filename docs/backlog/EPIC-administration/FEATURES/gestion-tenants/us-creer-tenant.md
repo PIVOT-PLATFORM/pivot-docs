@@ -34,7 +34,8 @@
 - **Point d'attention restant (frontend)** : PR#76 est rebasée sur la branche non mergée de PR#69 (US06.2.3) et inclut son commit — fusionner #69 en premier ou ensemble avec #76.
 - Réutilise `tenants.auth_mode` pour une sémantique différente (LOCAL/OIDC/GOOGLE, création) de celle déjà en place (SAAS/ENTERPRISE/HYBRID, mode de déploiement) — élargissement additif de la contrainte CHECK via migration V6 (renumérotée depuis V4 lors de la fusion). Décision produit à valider par le mainteneur.
 - Incohérence mineure de nommage i18n signalée : `admin.tenants.create.*` (cette US, texte AC littéral) vs `superadmin.tenants.*` (US06.2.3) — à harmoniser plus tard.
+- **Statut réel vérifié (2026-07-05) :** `pivot-core` PR #134 est **mergée**, mais `pivot-ui` PR #76 — qui porte les critères Angular de cette US (formulaire `/superadmin/tenants/new`) — est encore **draft**, empilée sur la branche non mergée de PR#69. `Stage: Review` prématuré tant que le volet Angular n'est pas sorti de draft, repassé à `In progress`.
 
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
-Stage: Review
+Stage: In progress
