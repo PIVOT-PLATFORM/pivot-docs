@@ -66,8 +66,8 @@ PouetPouet (tableau blanc collaboratif open-source)
 
 E08 est l'implémentation MVP du socle whiteboard. Il concrétise une partie des exigences
 marché portées par le backlog benchmark [`E30 — Collaboration`](pathname:///pivot-docs/backlog/EPIC-collaboration/)
-(source : dossier benchmark Miro / Klaxoon / FigJam / Microsoft Whiteboard — voir
-[`BENCHMARK.md`](pathname:///pivot-docs/backlog/BENCHMARK)). Correspondances :
+(source : benchmark Miro / Klaxoon / FigJam / Microsoft Whiteboard, détaillé dans le README d'E30).
+Correspondances :
 
 | Exigence benchmark (E30) | Portée par E08 | Écart / reste à faire |
 |--------------------------|----------------|-----------------------|

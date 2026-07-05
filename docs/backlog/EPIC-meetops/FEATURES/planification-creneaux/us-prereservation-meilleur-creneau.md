@@ -21,6 +21,17 @@
 
 > **Modèle** : étend `meetings` (statut `PRE_RESERVED` / `CONFIRMED`, `booking_window`, `event_ref`, `project_ref`) et ajoute `proposed_slots` (cf. EN12.1). Le **moteur de créneaux** (best-slot) est porté par MeetOps ; la roadmap (E22) n'émet que la plage et l'intention.
 
+## Hors périmètre
+
+- L'émission de la plage côté roadmap (création/édition, statut affiché) — portée par [US22.8.6](pathname:///pivot-docs/backlog/EPIC-roadmap/) (E22)
+- Les connecteurs calendrier/absences eux-mêmes — portés par EN22.3, cette US n'en consomme que le résultat agrégé
+- La replanification d'une réunion confirmée hors du flux roadmap (reprogrammation manuelle classique) — cycle de vie MeetOps standard
+
+## Notes d'implémentation
+
+- Pendant symétrique de US22.8.6 : les deux US forment le contrat de l'interface E22 ↔ E12 (`roadmap.event.window.*` / `meetops.booking.confirmed`) — toute évolution du schéma d'événements doit être répercutée des deux côtés
+- Le moteur best-slot doit être déterministe à disponibilités égales (classement reproductible) pour que les tests de classement soient stables
+
 ---
 Item Type: US · Parent: F12.4 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
 Stage: Backlog
