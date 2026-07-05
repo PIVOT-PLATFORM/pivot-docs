@@ -144,58 +144,127 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-## Backlog sprint 6+ (non planifié)
+## Sprint 6 — Durcissement & recette MVP 🏁
 
-- US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP)
-- E05 CI/CD Supply-chain restants (EN05.13-15 + 7 US)
-- E04 Observabilité — EN04.1–4 planifiés Sprint 4
-- E09–E15 Modules phase-3 (verrouillés — migreront vers `pivot-agilite-*` / `pivot-collaboratif-*`)
-- E12 MeetOps (phase-3 — pivot-collaboratif-core/ui)
-- E13 Cahiers de tests (phase-3 — pivot-pilotage-core/ui)
-- E18 Domaine Pilotage (phase-3 — pivot-pilotage-core/ui) : ombrelle (ADR-008), éclatée en modules E21-E30 + E32-E40 ci-dessous
-- E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : QUIZ multijoueur, POLL, WORDCLOUD, BRAINSTORM, QA, VOTE
-- E20 Module Retrospective (phase-3 — pivot-agilite-core/ui)
-- E11 velocity tracking : US11.4.1-2 (burndown, velocite) a planifier avec E11
-- E21 Gestion des risques (phase-3 — pivot-risk-core/ui) : profil adaptatif, scoring, cycle de vie 4T, boucle vivante, IA gouvernée
-- E22 Roadmap & Planification (phase-3 — pivot-pilotage-core/ui) : roadmap rapide + Gantt, parité MS Project web
-- E23 Portefeuille projets (phase-3 — pivot-pilotage-core/ui)
-- E24 ADR projet (phase-3 — pivot-pilotage-core/ui)
-- E25 Commande publique (phase-3 — pivot-pilotage-core/ui)
-- E26 Budget & suivi financier (phase-3 — pivot-pilotage-core/ui)
-- E27 OKR (phase-3 — pivot-pilotage-core/ui) : alignement, check-ins, scoring, CFR
-- E28 Intégration open source (phase-3 — adaptateurs, cf. ADR-009) : dépend de l'acceptation d'ADR-009
-- E29 Workflows & Automatisation (phase-3 — pivot-automatisation-core/ui)
-- E30 Collaboration (phase-3 — pivot-collaboratif-core/ui) : whiteboard, ateliers, facilitation
-- E32 Ressources & temps (phase-3 — pivot-pilotage-core/ui)
-- E33 Collaboration & tâches, pilotage (phase-3 — pivot-pilotage-core/ui)
-- E34 IA & agents, pilotage (phase-3 — pivot-pilotage-core/ui)
-- E35 Gouvernance & sécurité, pilotage (phase-3 — pivot-pilotage-core/ui)
-- E36 Intégration SI, pilotage (phase-3 — pivot-pilotage-core/ui)
-- E37 Licences & réversibilité, pilotage (phase-3 — pivot-pilotage-core/ui)
-- E38 Management de l'innovation (SMI, ISO 56002), pilotage (phase-3 — pivot-pilotage-core/ui)
-- E39 Chantiers SI, pilotage (phase-3 — pivot-pilotage-core/ui)
-- E40 Profil & adaptation (phase-3 — pivot-pilotage-core/ui) : profil d'organisation, PPM v2 adaptative
-- E41 Formation & Onboarding (phase-3 — pivot-core, schéma `core` + `@pivot/ui-core`) : tours guidés, supports, présentiel, mesure d'adoption
-- E42 Pivot Forms (phase-3 — pivot-forms-core/ui) : form-builder no-code souverain
-- E43 Sécurité & Zero Trust (phase-3 — transverse, dépend de l'acceptation d'ADR-015 à ADR-020) : BFF/Gateway/Mesh, secrets, autorisation externalisée, SIEM, checklist d'admission module
+**Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir §Règles d'utilisation)
+**Scope :** clôture du périmètre MVP — reliquats, dette, recette
+**Jalon de sortie :** déclaration **« MVP terminé »** par le mainteneur → déverrouille les sprints 7+
+
+| Item | Titre | Priorité | 🤖 Dev |
+|------|-------|----------|--------|
+| US16.3.1 | Formulaire de contact (en review depuis Sprint 1 — à sortir) | Critical | 🔎 Review |
+| EN05.13-15 | CI/CD Supply-chain restants | High | ⬜ |
+| E05 US restantes | 7 US supply-chain | High | ⬜ |
+| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ |
+| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ⬜ |
+| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ |
+| Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ |
+| Recette | Bug bash MVP complet + recette PO des US `Review` | Critical | ⬜ |
+
+> **Pré-requis du jalon :** rédiger la **Definition of Done MVP** (checklist explicite features/prod/recette) — voir §Zones d'ombre n°1. Sans elle, le verrou §6 du modèle backlog reste une déclaration sans critère.
 
 ---
 
-## Backlog phase-3 — Infrastructure multi-repo (E17)
+## Sprints 7–12 — Plan phase-3 (conditionnel au jalon « MVP terminé »)
 
-**Pré-requis :** E03 Système de modules terminé · E07 infra prod validée
+> ⏸️ **Verrou :** ces sprints ne démarrent qu'après la déclaration « MVP terminé » (Sprint 6). Séquencement fondé sur 3 goulots : E17 (aucun module phase-3 ne peut démarrer sans les templates multi-repo), la gouvernance ADR (bus d'événements non spécifié = chemin critique invisible de S9+), et le principe « piloter petit avant de piloter gros » (valider les templates sur l'agilité avant d'engager le domaine Pilotage).
+> **Hypothèse de capacité :** ~11-19 items/sprint (vélocité observée S1-S3, agents parallèles).
 
-| Enabler | Titre | Priority | 🤖 Dev |
-|---------|-------|----------|--------|
+### Sprint 7 — Fondations phase-3 (E17 + gouvernance ADR)
+
+**Scope :** infrastructure multi-repo complète + mise à jour de la gouvernance d'architecture
+**Pré-requis :** E03 terminé · E07 infra prod validée (S4)
+
+| Item | Titre | Priority | 🤖 Dev |
+|------|-------|----------|--------|
 | EN17.4 | Convention BDD multi-schéma + Flyway baseline | Critical | ⬜ |
 | EN17.1 | Publication pivot-core-starter (Maven) | High | ⬜ |
-| EN17.2 | Publication @pivot/design-system (npm) | High | ⬜ |
+| EN17.2 | Publication @pivot/design-system (npm) — **création du repo `pivot-design-system`** | High | ⬜ |
 | EN17.3 | Publication @pivot/ui-core (npm) | High | ⬜ |
 | EN17.5 | Template repo pivot-xxx-core | High | ⬜ |
 | EN17.6 | Template repo pivot-xxx-ui | High | ⬜ |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL | Critical | ⬜ |
+| ADR | Passage ADR-008→016 de « Proposé » à « Accepté » (décision mainteneur actée) | Critical | ⬜ |
+| ADR | Rédaction ADR-017 (modèle d'entités catalogue) · ADR-018 (stratégie forks) · **ADR-019 (bus d'événements — bloquant E21/E29/E42/E43)** · ADR-020 (briques natives) | Critical | ⬜ |
 
-> **Parallélisable :** EN17.1 ‖ EN17.2 (indépendants) → EN17.3 (dépend de EN17.2) → EN17.4 ‖ EN17.5 → EN17.6 (dépend de EN17.2+3) · EN17.7 peut démarrer dès EN17.4 stable
+> **Parallélisable :** EN17.1 ‖ EN17.2 → EN17.3 → EN17.4 ‖ EN17.5 → EN17.6 · EN17.7 dès EN17.4 stable · rédaction ADR en parallèle de tout le reste.
+
+### Sprint 8 — Pilote multi-repo (agilité) + enforcement taxonomie
+
+**Scope :** premiers modules satellites sur `pivot-agilite-*` — périmètres volontairement petits pour valider les templates EN17.5/6 avant d'engager le domaine Pilotage
+**Sortie :** 1er repo satellite en prod + retour d'expérience sur les templates
+
+- E09 Scrum Poker (3 features, 5 US) — rooms, votes temps réel
+- E14 La Roue (3 features, 3 US) — tirage pondéré
+- E20 Rétrospective (3 features + 2 EN, 5 US) — formats rétro, plan d'action
+- Enforcement taxonomie : merge `check-taxonomie.mjs` + câblage `lint:taxonomie` CI + backfill `Rôle:` sur ~700 US/EN (le référentiel mergé n'est appliqué par rien aujourd'hui)
+
+### Sprint 9 — Socle domaine Pilotage
+
+**Scope :** la colonne vertébrale du domaine, pas ses satellites
+**Sortie :** une roadmap simple créable de bout en bout
+
+- EN18.1 (schéma `pilotage`) + EN18.9 (modèle Application→Projet)
+- E40 Profil & adaptation (6 US) — conditionne le contenu de tous les modules du domaine
+- EN22.1 (modèle temporel unique + moteur d'ordonnancement) + EN22.2 (performance Gantt web)
+- F22.3 Roadmap rapide (lanes, Now/Next/Later, jalons stratégiques)
+
+### Sprint 10 — Pilotage cœur PPM
+
+**Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé)
+
+- E22 F22.4 Gantt (WBS, dépendances typées, chemin critique) + F22.6 Vues & restitutions
+- E23 Portefeuille projets (12 US — tableau de bord RAG, rapports, what-if/business cases ex-E31)
+
+### Sprint 11 — Risques + plan de contrôle sécurité
+
+**Sortie :** registre de risques opérationnel + socle Zero Trust posé
+
+- E21 vague 1 (~28 US) : F21.1 profil & moteur adaptatif, F21.2 scoring, F21.3 cycle de vie & 4T
+- E43 vague 1 : EN43.5 (identité), EN43.6 (secrets OpenBao), EN43.7 (autorisation externalisée) — prérequis de tout module manipulant des données sensibles (EN43.13)
+
+### Sprint 12 — Forms + Onboarding
+
+**Sortie :** form-builder livré + onboarding actif sur les modules déjà en prod (S8-S11)
+
+- E42 Pivot Forms (32 US) — brique transverse consommée par E38 (dépôt d'idée) et E29
+- EN41.1 Framework d'onboarding in-app + F41.1 (tours guidés, tooltips, checklists)
+
+---
+
+## Backlog post-S12 (non planifié)
+
+- US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP) + 4 autres items v1-enterprise
+- E10 Daily Standup · E11 Capacity Planning (+ velocity tracking US11.4.1-2) · E12 MeetOps · E13 Cahiers de tests · E15 Équipes (phase-3, `pivot-agilite-*`/`pivot-collaboratif-*`/`pivot-pilotage-*`)
+- E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : ⚠️ dépendance de E41 F41.4 (sessions live) et E38 F38.15
+- E21 vagues 2+ : F21.4 boucle vivante (dépend ADR-019 bus), F21.5 portefeuille, F21.6 quantitatif/conformité, F21.7 IA gouvernée, F21.8/21.9 restitutions & cockpit
+- E24 ADR projet · E25 Commande publique · E26 Budget · E27 OKR (satellites Pilotage, après la v0 S10)
+- E28 Intégration open source (dépend ADR-009 accepté S7 + gouvernance forks ADR-018)
+- E29 Workflows & Automatisation (78 US — passe DoR à faire au sprint précédant son implémentation)
+- E30 Collaboration (86 US — **bloqué par l'arbitrage E08/E30**, voir §Zones d'ombre n°2 ; passe DoR à faire)
+- E32–E37, E39 satellites Pilotage (ressources, tâches, IA, gouvernance, intégration SI, licences, chantiers)
+- E38 Management de l'innovation (45 US — dépend E42 Forms pour le dépôt d'idée)
+- E41 suites : F41.2 centre d'aide, F41.3 supports, F41.4 présentiel (dépend E19), F41.5 catalogue par module (au fil des livraisons), F41.6 mesure d'adoption
+- E43 vagues 2+ : EN43.1-4 topologie (BFF/Gateway/Mesh/Egress), EN43.8-13 observabilité & gouvernance
+
+---
+
+## Zones d'ombre à raffiner
+
+Décisions produit / cadrages à traiter **avant** le sprint qui en dépend :
+
+| # | Sujet | Échéance | Détail |
+|---|-------|----------|--------|
+| 1 | **Definition of Done MVP** | avant S6 | Le jalon « MVP terminé » n'a aucun critère écrit — rédiger la checklist (features, prod, recette PO) qui déclenche le déverrouillage phase-3 |
+| 2 | **Arbitrage E08 ↔ E30** | avant S5 | E08 Whiteboard (7 US MVP) recouvre E30 Collaboration (86 US benchmark, canevas inclus) — E08 devient-il le noyau incrémental de E30, ou un MVP jetable ? Construire S5 sans trancher = risque de double travail |
+| 3 | **ADR-019 bus d'événements** | avant S9 | Référencé partout (boucle vivante E21, `form.submitted` E42, EN43.8, E29, ADR-008/009) mais aucune ADR ne le spécifie — chemin critique invisible de tout le plan phase-3 |
+| 4 | **Statuts ADR-008→016** | S7 | Toutes « Proposé » alors que la décision d'acceptation a été prise (merge E43) — acter dans `docs/adr/` |
+| 5 | **Enforcement taxonomie** | S8 | Référentiel mergé mais 0/700 US ne porte de champ `Rôle:`, script et CI exclus volontairement de la PR #65 |
+| 6 | **Champ `Profils:` officieux** | S9 | Présent sur 228 US (Pilotage, E41), absent d'E42, non déclaré dans le modèle §2 du README backlog — officialiser ou retirer |
+| 7 | **Cockpits sans porteur** | avant S10 | ADR-008 : composition portée par le shell (E16), « à définir après étude UX réelle » — aucune US ne porte ni l'étude ni la composition |
+| 8 | **US39.1.7** | S9 | Dernier vestige « hors v2 adaptative, à confirmer » de la dissolution E31 — trancher |
+| 9 | **Gate 1 à l'échelle** | continu | 558 US phase-3 devront passer DoR + Gate 1 — prévoir la passe DoR par EPIC au sprint précédant l'implémentation (comme fait sur pilotage/forms/onboarding), pas au fil de l'eau. E29/E30/E21 partiel restent à niveau inégal |
+| 10 | **Hygiène repo** | S6 | 3 vulnérabilités Dependabot (1 high) · branche `fix/pages-deploy-settling-delay` en suspens (probablement couverte par #57) · PNG PlantUML cassent le build local |
 
 ---
 
@@ -210,4 +279,4 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 ---
 
-*Dernière mise à jour : 2026-07-06 — ajout E21-E43 (sauf E31, dissous) au backlog non planifié suite aux merges de la session*
+*Dernière mise à jour : 2026-07-06 — plan des sprints 6-12 (durcissement MVP → fondations phase-3 → pilote agilité → domaine Pilotage → risques/sécurité → Forms/onboarding) + backlog post-S12 + zones d'ombre à raffiner*
