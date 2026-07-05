@@ -135,7 +135,7 @@ Fork : `git subtree` par défaut (submodule pour les très gros amonts). Cycle d
 | ADR-019 | Bus d'événements et schéma d'événements inter-briques | P1 |
 | ADR-020 | Briques natives à construire (planning poker, CLM) et périmètre | P2 |
 
-*(Pas d'ADR-010 : le choix du fournisseur d'identité reste couvert par ADR-004. ADR-011 à ADR-016 : famille Sécurité & Zero Trust, cf. `docs/adr/README.md`.)*
+*(ADR-010 : attribuée entre-temps à un sujet indépendant, roadmap/Gantt — sans lien avec cette section ; le choix du fournisseur d'identité reste couvert par ADR-004. ADR-011 à ADR-016 : famille Sécurité & Zero Trust, cf. `docs/adr/README.md`.)*
 
 ## Historique
 
@@ -143,3 +143,4 @@ Fork : `git subtree` par défaut (submodule pour les très gros amonts). Cycle d
 |---------|------|-----------|
 | v1 | 2026-07-04 | Décision initiale |
 | v1.1 | 2026-07-05 | Retrait des noms « mycélium » et « Backstage » (titre, §4, §5) ; principe de coexistence natif/OSS explicité (§5, Alternatives écartées) ; Points ouverts résolus (Pilotage/Session-Forms/Rétrospective/Whiteboard coexistent avec leurs adaptateurs) ; ajout d'une colonne Alternative en §5 ; SCM & CI/CD (GitLab CE) déjà présent, désormais concrétisé au backlog (F28.10) |
+| v1.2 | 2026-07-05 | Correction de la note « ADR à produire » : la mention « Pas d'ADR-010 » était devenue fausse une fois ADR-010 attribué au modèle temporel roadmap/Gantt (sujet indépendant) — reformulée pour lever l'ambiguïté |
