@@ -16,7 +16,6 @@ Application (1) ───────< (1..n) Projet          Projet = version d
      │  toutes les données      ├─ Portefeuille & comités ...... E23
      │  de ses Projets          ├─ Budget & finances ........... E26
      │                          ├─ Risques ..................... E21
-     │                          ├─ Demande & arbitrage ......... E31
      │                          ├─ Décisions / ADR ............. E24
      └──────────────────────────┴─ … toute entité portant un projet
 ```
@@ -37,7 +36,7 @@ produit à travers ses versions, relier budget/risques/roadmap d'une même appli
 - [ ] Entité `Application` au schéma `pilotage`, relation `Application 1 — 1..n Projet`
 - [ ] FK `projet.application_id` ; contrainte « un Projet = une Application »
 - [ ] Toute donnée projet (jalon, budget, risque, décision, demande…) traçable jusqu'à l'Application
-- [ ] Vue/consolidation « par Application » exposée aux modules du domaine (E21–E27, E31–E39)
+- [ ] Vue/consolidation « par Application » exposée aux modules du domaine (E21–E27, E32–E39)
 
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High

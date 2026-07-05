@@ -3,7 +3,7 @@
 *🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.28).*
 
 ## Objectif
-Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Chantiers SI (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
+Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)), issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project). Pilotage des grands chantiers SI d'un organisme : **cadrage SI financier**, **TCO par population** d'utilisateurs, **classification et hébergement** des données, **articulation des familles** de chantiers entre elles, **conduite du changement**, **clauses de pérennité**, **traçabilité réglementaire**, **audit RGAA**, **gouvernance de l'IA de pilotage** et **processus demande-arbitrage** propre aux grands chantiers.
 
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage`, FK → `public.teams.id`)

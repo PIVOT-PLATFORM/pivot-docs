@@ -3,7 +3,7 @@
 *🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.22).*
 
 ## Objectif
-Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Collaboration & tâches (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
+Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)), issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project). Fait le pont entre le pilotage de portefeuille et l'exécution opérationnelle : **continuum tâches ↔ projets** (une tâche s'inscrit dans son projet sans double saisie), **collaboration contextuelle** autour d'une tâche, et **modularité par maturité** (une petite structure n'active pas la même profondeur de suivi qu'un grand groupe).
 
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage`, FK → `public.teams.id`)

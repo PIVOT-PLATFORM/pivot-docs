@@ -3,7 +3,7 @@
 *🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.24).*
 
 ## Objectif
-Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Gouvernance & sécurité (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
+Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)), issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project). Contrôles transverses de gouvernance sur les données de pilotage : **droits par rôle et périmètre**, **SSO et audit**, **traçabilité des décisions**, **classification des portefeuilles**, **étiquettes et DLP** sur les tâches sensibles, **archivage probant** et **portail de transparence** (registre des risques exposé aux parties prenantes).
 
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage`, FK → `public.teams.id`)

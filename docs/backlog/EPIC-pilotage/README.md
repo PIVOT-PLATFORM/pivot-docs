@@ -23,7 +23,6 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 | OKR | [E27](../EPIC-okr/README.md) | pivot-pilotage-core · `pilotage` |
 | Cahiers de tests | [E13](../EPIC-cahiers-tests/README.md) | pivot-pilotage-core · `pilotage` |
 | **Gestion des risques** | [E21](../EPIC-risk/README.md) | pivot-risk-core · `risk` |
-| Demande & arbitrage *(benchmark)* | [E31](../EPIC-demande-arbitrage/README.md) | pivot-pilotage-core · `pilotage` |
 | Ressources & temps *(benchmark)* | [E32](../EPIC-ressources-temps/README.md) | pivot-pilotage-core · `pilotage` |
 | Collaboration & tâches *(benchmark)* | [E33](../EPIC-pilotage-taches/README.md) | pivot-pilotage-core · `pilotage` |
 | IA & agents *(benchmark)* | [E34](../EPIC-pilotage-ia/README.md) | pivot-pilotage-core · `pilotage` |
@@ -36,13 +35,13 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 
 > La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
 >
-> Les modules *benchmark* (E31–E39) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
+> Les modules *benchmark* (E32–E39, E31 dissoute) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
 
 ### Couche adaptative v2 (`Profils_applicables`)
 
 La **v2 adaptative** du backlog PPM introduit **[E40 — Profil & adaptation](../EPIC-profil-adaptation/README.md)** : le **profil d'organisation** (TPE / PME / Grand groupe / Privée sous droit public / Publique / État) pilote l'activation des modules, la classe de souveraineté et le niveau de rigueur. Chaque US du domaine porte désormais un champ **`Profils:`** indiquant les profils applicables. Changements v2 notables :
 
-- **E31 Demande & arbitrage dissoute** : what-if / business cases → E23 ; demande / scoring / capacité à faire / tout-est-projet → *hors v2* (conservés, à confirmer).
+- **E31 Demande & arbitrage dissoute** (nettoyage backlog du 2026-07-05) : what-if / business cases → E23 (US23.2.7/US23.2.8) ; demande / scoring multicritère / capacité à faire / « tout est projet » → **supprimés** (non retenus par la v2, jamais réactivés depuis leur mise en attente).
 - **PP-017b Interface ERP finance** (variante privée) ajouté à E26 Budget (US26.2.4).
 - MoSCoW « conditionnel » selon le profil (ex. interface comptable publique, RGAA, on-premise).
 
@@ -104,8 +103,7 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [E21 — Gestion des risques](../EPIC-risk/README.md) | ⬜ |
 | **Couche adaptative v2 (E40)** | |
 | [E40 — Profil & adaptation](../EPIC-profil-adaptation/README.md) | ⬜ |
-| **Modules benchmark PPM (E31–E39)** | |
-| [E31 — Demande & arbitrage](../EPIC-demande-arbitrage/README.md) | ⬜ |
+| **Modules benchmark PPM (E32–E39, E31 dissoute)** | |
 | [E32 — Ressources & temps](../EPIC-ressources-temps/README.md) | ⬜ |
 | [E33 — Collaboration & tâches](../EPIC-pilotage-taches/README.md) | ⬜ |
 | [E34 — IA & agents](../EPIC-pilotage-ia/README.md) | ⬜ |

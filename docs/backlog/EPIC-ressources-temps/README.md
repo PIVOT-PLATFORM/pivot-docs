@@ -3,7 +3,7 @@
 *🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.21).*
 
 ## Objectif
-Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Ressources & temps » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
+Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)), issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project). Gestion des **ressources humaines et du temps** à l'échelle du portefeuille : affectation des personnes aux projets, saisie des temps passés, et **plan de charge en temps réel** pour arbitrer les surcharges/sous-charges entre projets.
 
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage`, FK → `public.teams.id`)

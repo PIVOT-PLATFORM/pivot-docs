@@ -3,7 +3,7 @@
 *🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.26).*
 
 ## Objectif
-Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — capacité « Licences & réversibilité (pilotage) » issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project).
+Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)), issue du benchmark PPM secteur public (Project Monitor / Sciforma / Microsoft Project). Modèle commercial et garanties anti-lock-in du domaine Pilotage : **segmentation des licences** par taille d'organisation, **offre d'entrée incluse/gratuite**, **réversibilité contractuelle**, **format d'échange ouvert** pour la portabilité des données, et **garanties de pérennité** de l'éditeur.
 
 ## Repo cible (architecture multi-repo)
 - Backend : **`pivot-pilotage-core`** (schéma Flyway `pilotage`, FK → `public.teams.id`)
