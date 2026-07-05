@@ -8,7 +8,7 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un premier accès au module **MeetOps** ([E12](../../../EPIC-meetops/README.md)), when je l'ouvre, then un tour guidé présente ses fonctions clés — préparation d'agenda, animation en temps réel, compte-rendu et suivi des décisions/actions (via EN41.1) | ⬜ |
+| Given un premier accès au module **MeetOps** ([E12](pathname:///pivot-docs/backlog/EPIC-meetops/)), when je l'ouvre, then un tour guidé présente ses fonctions clés — préparation d'agenda, animation en temps réel, compte-rendu et suivi des décisions/actions (via EN41.1) | ⬜ |
 | Given le parcours, when je le complète/passe, then l'état est mémorisé et la complétion est mesurée (F41.6) | ⬜ |
 | Given mon rôle (taxonomie) et le profil d'organisation (E40), when le contenu s'affiche, then il est adapté ; i18n FR/EN | ⬜ |
 | Error : given le module MeetOps désactivé sur le tenant après la mise en place du parcours, when un utilisateur y accède malgré tout, then le parcours ne se déclenche pas (pas de tour orphelin sur un module inaccessible) | ⬜ |
