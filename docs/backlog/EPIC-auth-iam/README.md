@@ -27,6 +27,7 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 ## Dépendances
 - Aucune — EPIC fondateur
 - Bloque : E16 Shell (authMatchGuard), E06 Administration (accès admin)
+- Interface avec : [E43 — Sécurité & Zero Trust](../EPIC-securite/README.md) (EN01.13 Token Exchange, consommé par le plan de contrôle Identité EN43.5)
 
 ## Statut global
 ✅ Partiellement Done — F01.1 ✅ (5/5 US), F01.2 ✅ (4/4 US), F01.3 ✅, F01.4 (1/3 US), F01.5 (0/1 US), F01.6-F01.8 extras ✅
@@ -76,3 +77,4 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 | [EN01.10 — Auth frontend infra (Angular)](ENABLERS/en-frontend-auth-infra.md) | ✅ |
 | EN01.11 — OIDC multi-tenant PKCE S256 *(v1-enterprise, couvert F01.7)* | ✅ |
 | [EN01.12 — Infrastructure Multi-tenant (Tenant, TenantOidcConfig)](ENABLERS/en-tenant-infrastructure.md) *(hors GitHub)* | ✅ |
+| [EN01.13 — Token Exchange & identité propagée](ENABLERS/en-token-exchange.md) *(phase-3)* | ⬜ |
