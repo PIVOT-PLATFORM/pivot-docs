@@ -1,3 +1,9 @@
+---
+slug: /
+sidebar_position: 1
+sidebar_label: "Vue d'ensemble"
+---
+
 # Setup — Environnement de développement PIVOT
 
 ## Prérequis
@@ -94,12 +100,13 @@ git commit --allow-empty -m "test: signature" && git log --show-signature -1
 `pivot-platform/` n'étant pas un repo, un `CLAUDE.md` placé à sa racine n'est **jamais
 versionné** — c'est une commodité locale, pas une source de vérité. La source de vérité vit dans
 le `CLAUDE.md` de chaque repo (`pivot-core/CLAUDE.md`, `pivot-ui/CLAUDE.md`,
-`pivot-docs/CLAUDE.md`), qui reste complet et autonome même en ouvrant le repo seul, hors du
+`pivot-docs/CLAUDE.md`…), qui reste complet et autonome même en ouvrant le repo seul, hors du
 dossier `pivot-platform/`.
 
-Un `CLAUDE.md` racine reste utile pour donner une vue d'ensemble multi-repo à un agent qui
-travaille depuis `pivot-platform/` — mais toute règle qui doit être fiable et partagée par
-l'équipe doit vivre dans le `CLAUDE.md` du repo concerné, jamais uniquement à la racine.
+Un modèle minimal (uniquement l'orchestration multi-repo, sans rien dupliquer des CLAUDE.md de
+repo) est fourni dans `docs/setup/pivot-platform-claude-template.md` (page "CLAUDE.md racine
+(modèle)" dans le menu de cette section). À copier tel quel à la racine de votre
+`pivot-platform/` local.
 
 ## Démarrage full stack
 
