@@ -19,7 +19,7 @@ sidebar_label: "CLAUDE.md racine (modèle)"
 | Dépôt | Rôle | Règles détaillées |
 |-------|------|--------------------|
 | **pivot-core** | Backend shell — auth, tenant, équipes, API commune · publie `fr.pivot:pivot-core-starter` (Maven) | `pivot-core/CLAUDE.md` |
-| **pivot-design-system** | Angular CDK (comportement/a11y) + SCSS BEM, composants UI, Storybook · publie `@pivot/design-system` (npm) | — |
+| **pivot-design-system** | Angular CDK (comportement/a11y) + SCSS BEM, composants UI, Storybook · publie `@pivot/design-system` (npm) | à créer avec le repo — pas de dépendance réelle aujourd'hui (vérifié : absent de `pivot-ui/package.json`) |
 | **pivot-ui** | Frontend shell — header/footer, OIDC client, portail admin · publie `@pivot/ui-core` (npm) | `pivot-ui/CLAUDE.md` |
 | **pivot-docs** | Documentation, ADR, backlog, audits, workflow — **source de vérité du backlog** | `pivot-docs/CLAUDE.md` |
 | **pivot-pilotage-core** / **-ui** | Domaine Pilotage — roadmap/Gantt, portefeuille projets, ADR projet | à créer avec le repo |
