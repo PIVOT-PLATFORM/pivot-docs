@@ -1,0 +1,2666 @@
+{
+  "version": "1.0",
+  "source": "docs/taxonomie/README.md (Taxonomie des intervenants d'une DSI v1.0)",
+  "perimetres": [
+    "DSI",
+    "Métier",
+    "Externe"
+  ],
+  "paradigmes": [
+    "ITIL",
+    "Projet",
+    "Produit",
+    "DevOps",
+    "Architecture"
+  ],
+  "domaines": [
+    {
+      "num": 1,
+      "label_fr": "Direction & gouvernance SI"
+    },
+    {
+      "num": 2,
+      "label_fr": "Gouvernance, PMO & pilotage"
+    },
+    {
+      "num": 3,
+      "label_fr": "Produit & agilité"
+    },
+    {
+      "num": 4,
+      "label_fr": "Études, développement & ingénierie logicielle"
+    },
+    {
+      "num": 5,
+      "label_fr": "Architecture & urbanisation"
+    },
+    {
+      "num": 6,
+      "label_fr": "Infrastructure, production & exploitation"
+    },
+    {
+      "num": 7,
+      "label_fr": "Support, service desk & services (ITSM)"
+    },
+    {
+      "num": 8,
+      "label_fr": "Cybersécurité & continuité"
+    },
+    {
+      "num": 9,
+      "label_fr": "Données & intelligence artificielle"
+    },
+    {
+      "num": 10,
+      "label_fr": "Relation métier, MOA & conduite du changement"
+    },
+    {
+      "num": 11,
+      "label_fr": "Achats, contrats & fournisseurs"
+    },
+    {
+      "num": 12,
+      "label_fr": "Qualité, conformité, audit & risques"
+    },
+    {
+      "num": 13,
+      "label_fr": "Transverses, émergents & innovation"
+    },
+    {
+      "num": 14,
+      "label_fr": "Externes intervenant dans la DSI"
+    }
+  ],
+  "macro_roles": [
+    {
+      "id": "direction-pilotage",
+      "num": 1,
+      "label_fr": "Direction & pilotage SI",
+      "label_en": "IT Leadership & Governance",
+      "domaines": [
+        1
+      ]
+    },
+    {
+      "id": "gestion-projet-portefeuille",
+      "num": 2,
+      "label_fr": "Gestion de projet & portefeuille",
+      "label_en": "Project & Portfolio Management",
+      "domaines": [
+        2
+      ]
+    },
+    {
+      "id": "produit-agilite",
+      "num": 3,
+      "label_fr": "Produit & agilité",
+      "label_en": "Product & Agile",
+      "domaines": [
+        3
+      ]
+    },
+    {
+      "id": "ingenierie-developpement",
+      "num": 4,
+      "label_fr": "Ingénierie & développement",
+      "label_en": "Engineering & Development",
+      "domaines": [
+        4
+      ]
+    },
+    {
+      "id": "architecture-urbanisation",
+      "num": 5,
+      "label_fr": "Architecture & urbanisation",
+      "label_en": "Architecture & Urban Planning",
+      "domaines": [
+        5
+      ]
+    },
+    {
+      "id": "infrastructure-exploitation",
+      "num": 6,
+      "label_fr": "Infrastructure & exploitation",
+      "label_en": "Infrastructure & Operations",
+      "domaines": [
+        6
+      ]
+    },
+    {
+      "id": "support-services",
+      "num": 7,
+      "label_fr": "Support & services (ITSM)",
+      "label_en": "Support & Services (ITSM)",
+      "domaines": [
+        7
+      ]
+    },
+    {
+      "id": "cybersecurite-continuite",
+      "num": 8,
+      "label_fr": "Cybersécurité & continuité",
+      "label_en": "Cybersecurity & Continuity",
+      "domaines": [
+        8
+      ]
+    },
+    {
+      "id": "donnees-ia",
+      "num": 9,
+      "label_fr": "Données & IA",
+      "label_en": "Data & AI",
+      "domaines": [
+        9
+      ]
+    },
+    {
+      "id": "relation-metier-changement",
+      "num": 10,
+      "label_fr": "Relation métier & changement",
+      "label_en": "Business Relationship & Change",
+      "domaines": [
+        10
+      ]
+    },
+    {
+      "id": "achats-contrats-fournisseurs",
+      "num": 11,
+      "label_fr": "Achats, contrats & fournisseurs",
+      "label_en": "Procurement, Contracts & Vendors",
+      "domaines": [
+        11
+      ]
+    },
+    {
+      "id": "qualite-conformite-audit",
+      "num": 12,
+      "label_fr": "Qualité, conformité & audit",
+      "label_en": "Quality, Compliance & Audit",
+      "domaines": [
+        12
+      ]
+    },
+    {
+      "id": "transverses-externes",
+      "num": 13,
+      "label_fr": "Transverses & externes",
+      "label_en": "Cross-functional & External",
+      "domaines": [
+        13,
+        14
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "directeur-des-systemes-d-information",
+      "label_fr": "Directeur des systèmes d'information",
+      "appellations": [
+        "DSI",
+        "CIO"
+      ],
+      "aliases_en": [
+        "CIO"
+      ],
+      "mission": "Dirige la fonction SI et son alignement stratégique",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "dsi-adjoint",
+      "label_fr": "DSI adjoint",
+      "appellations": [
+        "Deputy CIO"
+      ],
+      "aliases_en": [
+        "Deputy CIO"
+      ],
+      "mission": "Seconde le DSI, pilote une partie du périmètre",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-technique",
+      "label_fr": "Directeur technique",
+      "appellations": [
+        "CTO"
+      ],
+      "aliases_en": [
+        "CTO"
+      ],
+      "mission": "Porte la vision et les choix technologiques",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "chief-digital-officer",
+      "label_fr": "Chief Digital Officer",
+      "appellations": [
+        "CDO (digital)"
+      ],
+      "aliases_en": [
+        "CDO (digital)"
+      ],
+      "mission": "Pilote la transformation numérique de l'entreprise",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-de-la-production-des-operations-si",
+      "label_fr": "Directeur de la production / des opérations SI",
+      "appellations": [
+        "Head of IT Operations"
+      ],
+      "aliases_en": [
+        "Head of IT Operations"
+      ],
+      "mission": "Garantit le fonctionnement des services en exploitation",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-des-etudes-du-developpement",
+      "label_fr": "Directeur des études / du développement",
+      "appellations": [
+        "Head of Delivery"
+      ],
+      "aliases_en": [
+        "Head of Delivery"
+      ],
+      "mission": "Pilote la construction des applications",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-infrastructure",
+      "label_fr": "Directeur infrastructure",
+      "appellations": [
+        "Head of Infrastructure"
+      ],
+      "aliases_en": [
+        "Head of Infrastructure"
+      ],
+      "mission": "Pilote socles techniques, réseau, datacenter, cloud",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-de-programme-portefeuille",
+      "label_fr": "Directeur de programme / portefeuille",
+      "appellations": [
+        "Program Director",
+        "Head of PMO"
+      ],
+      "aliases_en": [
+        "Program Director",
+        "Head of PMO"
+      ],
+      "mission": "Pilote un ensemble de projets liés à un objectif",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-de-la-relation-metier",
+      "label_fr": "Directeur de la relation métier",
+      "appellations": [
+        "Head of Business Relationship"
+      ],
+      "aliases_en": [
+        "Head of Business Relationship"
+      ],
+      "mission": "Anime le lien entre DSI et directions métier",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "responsable-de-la-strategie-si",
+      "label_fr": "Responsable de la stratégie SI",
+      "appellations": [
+        "IT Strategy Lead"
+      ],
+      "aliases_en": [
+        "IT Strategy Lead"
+      ],
+      "mission": "Définit le schéma directeur et la trajectoire SI",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 1,
+      "macro_role": "direction-pilotage"
+    },
+    {
+      "id": "directeur-de-projet",
+      "label_fr": "Directeur de projet",
+      "appellations": [
+        "Project Director"
+      ],
+      "aliases_en": [
+        "Project Director"
+      ],
+      "mission": "Porte la responsabilité d'un projet majeur",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "chef-de-projet",
+      "label_fr": "Chef de projet",
+      "appellations": [
+        "Project Manager",
+        "CP MOE"
+      ],
+      "aliases_en": [
+        "Project Manager"
+      ],
+      "mission": "Planifie et pilote un projet au quotidien",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "chef-de-projet-moa",
+      "label_fr": "Chef de projet MOA",
+      "appellations": [
+        "AMOA",
+        "Business Project Manager"
+      ],
+      "aliases_en": [
+        "Business Project Manager"
+      ],
+      "mission": "Porte le besoin métier et la recette",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "officier-responsable-pmo",
+      "label_fr": "Officier / responsable PMO",
+      "appellations": [
+        "Project Management Officer"
+      ],
+      "aliases_en": [
+        "Project Management Officer"
+      ],
+      "mission": "Outille, normalise et consolide les projets",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "gestionnaire-de-portefeuille",
+      "label_fr": "Gestionnaire de portefeuille",
+      "appellations": [
+        "Portfolio Manager (PPM)"
+      ],
+      "aliases_en": [
+        "Portfolio Manager (PPM)"
+      ],
+      "mission": "Arbitre et priorise l'ensemble des projets",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "planificateur",
+      "label_fr": "Planificateur",
+      "appellations": [
+        "Planning Manager",
+        "Planner"
+      ],
+      "aliases_en": [
+        "Planning Manager",
+        "Planner"
+      ],
+      "mission": "Construit et maintient les plannings",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "controleur-de-gestion-si",
+      "label_fr": "Contrôleur de gestion SI",
+      "appellations": [
+        "IT Controller",
+        "Cost Controller"
+      ],
+      "aliases_en": [
+        "IT Controller",
+        "Cost Controller"
+      ],
+      "mission": "Suit budgets, coûts et refacturation",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "responsable-financier-si-finops",
+      "label_fr": "Responsable financier SI / FinOps",
+      "appellations": [
+        "IT Finance Manager",
+        "FinOps"
+      ],
+      "aliases_en": [
+        "IT Finance Manager",
+        "FinOps"
+      ],
+      "mission": "Optimise les coûts (cloud à l'usage inclus)",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "responsable-methodes-qualite-projet",
+      "label_fr": "Responsable méthodes & qualité projet",
+      "appellations": [
+        "Delivery Methods Lead"
+      ],
+      "aliases_en": [
+        "Delivery Methods Lead"
+      ],
+      "mission": "Garantit méthode et qualité de gestion de projet",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 2,
+      "macro_role": "gestion-projet-portefeuille"
+    },
+    {
+      "id": "product-owner",
+      "label_fr": "Product Owner",
+      "appellations": [
+        "PO"
+      ],
+      "aliases_en": [
+        "PO"
+      ],
+      "mission": "Porte le backlog et la valeur d'un produit",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "product-manager",
+      "label_fr": "Product Manager",
+      "appellations": [
+        "PM"
+      ],
+      "aliases_en": [
+        "PM"
+      ],
+      "mission": "Porte la vision et la stratégie produit",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "proxy-product-owner",
+      "label_fr": "Proxy Product Owner",
+      "appellations": [
+        "Proxy PO"
+      ],
+      "aliases_en": [
+        "Proxy PO"
+      ],
+      "mission": "Relaie le PO au plus près de l'équipe",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "scrum-master",
+      "label_fr": "Scrum Master",
+      "appellations": [
+        "SM"
+      ],
+      "aliases_en": [
+        "SM"
+      ],
+      "mission": "Facilite l'équipe agile et lève les obstacles",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "coach-agile",
+      "label_fr": "Coach agile",
+      "appellations": [
+        "Agile Coach"
+      ],
+      "aliases_en": [
+        "Agile Coach"
+      ],
+      "mission": "Accompagne la montée en maturité agile",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "release-train-engineer",
+      "label_fr": "Release Train Engineer",
+      "appellations": [
+        "RTE (SAFe)"
+      ],
+      "aliases_en": [
+        "RTE (SAFe)"
+      ],
+      "mission": "Coordonne un train de livraison multi-équipes",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "delivery-manager",
+      "label_fr": "Delivery Manager",
+      "appellations": [
+        "Delivery Lead"
+      ],
+      "aliases_en": [
+        "Delivery Lead"
+      ],
+      "mission": "Garantit la livraison de bout en bout",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "responsable-de-squad-tribu-chapitre",
+      "label_fr": "Responsable de squad / tribu / chapitre",
+      "appellations": [
+        "Squad/Tribe/Chapter Lead"
+      ],
+      "aliases_en": [
+        "Squad/Tribe/Chapter Lead"
+      ],
+      "mission": "Anime une unité du modèle produit",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "business-analyst",
+      "label_fr": "Business Analyst",
+      "appellations": [
+        "BA",
+        "Analyste fonctionnel"
+      ],
+      "aliases_en": [
+        "BA",
+        "Analyste fonctionnel"
+      ],
+      "mission": "Formalise et modélise les exigences métier",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "designer-produit-ux-ui",
+      "label_fr": "Designer produit / UX-UI",
+      "appellations": [
+        "Product Designer",
+        "UX/UI"
+      ],
+      "aliases_en": [
+        "Product Designer",
+        "UX/UI"
+      ],
+      "mission": "Conçoit l'expérience et les interfaces",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "chercheur-ux",
+      "label_fr": "Chercheur UX",
+      "appellations": [
+        "UX Researcher"
+      ],
+      "aliases_en": [
+        "UX Researcher"
+      ],
+      "mission": "Étudie les usages et besoins utilisateurs",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 3,
+      "macro_role": "produit-agilite"
+    },
+    {
+      "id": "referent-technique",
+      "label_fr": "Référent technique",
+      "appellations": [
+        "Tech Lead",
+        "Lead Dev"
+      ],
+      "aliases_en": [
+        "Tech Lead",
+        "Lead Dev"
+      ],
+      "mission": "Guide techniquement l'équipe de développement",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "developpeur",
+      "label_fr": "Développeur",
+      "appellations": [
+        "Software Engineer",
+        "dev front/back/full-stack"
+      ],
+      "aliases_en": [
+        "Software Engineer"
+      ],
+      "mission": "Conçoit et code les applications",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "developpeur-mobile",
+      "label_fr": "Développeur mobile",
+      "appellations": [
+        "Mobile Developer"
+      ],
+      "aliases_en": [
+        "Mobile Developer"
+      ],
+      "mission": "Développe les applications mobiles",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "developpeur-embarque-firmware",
+      "label_fr": "Développeur embarqué / firmware",
+      "appellations": [
+        "Embedded Engineer"
+      ],
+      "aliases_en": [
+        "Embedded Engineer"
+      ],
+      "mission": "Développe le logiciel bas niveau / matériel",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "developpeur-d-integration-api",
+      "label_fr": "Développeur d'intégration / API",
+      "appellations": [
+        "Integration Developer"
+      ],
+      "aliases_en": [
+        "Integration Developer"
+      ],
+      "mission": "Conçoit les interfaces et échanges inter-applicatifs",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "developpeur-rpa",
+      "label_fr": "Développeur RPA",
+      "appellations": [
+        "RPA Developer"
+      ],
+      "aliases_en": [
+        "RPA Developer"
+      ],
+      "mission": "Automatise des tâches par robots logiciels",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "developpeur-low-code-no-code",
+      "label_fr": "Développeur low-code / no-code",
+      "appellations": [
+        "Citizen Developer"
+      ],
+      "aliases_en": [
+        "Citizen Developer"
+      ],
+      "mission": "Construit des applications sans code",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "ingenieur-test-qa",
+      "label_fr": "Ingénieur test / QA",
+      "appellations": [
+        "QA Engineer",
+        "Testeur"
+      ],
+      "aliases_en": [
+        "QA Engineer",
+        "Testeur"
+      ],
+      "mission": "Vérifie la qualité, manuelle et automatisée",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "responsable-des-tests",
+      "label_fr": "Responsable des tests",
+      "appellations": [
+        "QA Lead",
+        "Test Manager"
+      ],
+      "aliases_en": [
+        "QA Lead",
+        "Test Manager"
+      ],
+      "mission": "Pilote la stratégie et la recette",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "ingenieur-performance",
+      "label_fr": "Ingénieur performance",
+      "appellations": [
+        "Performance Engineer"
+      ],
+      "aliases_en": [
+        "Performance Engineer"
+      ],
+      "mission": "Teste la charge et la tenue en montée",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement"
+    },
+    {
+      "id": "architecte-d-entreprise",
+      "label_fr": "Architecte d'entreprise",
+      "appellations": [
+        "Enterprise Architect"
+      ],
+      "aliases_en": [
+        "Enterprise Architect"
+      ],
+      "mission": "Aligne SI et stratégie sur toutes les couches",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "urbaniste-si",
+      "label_fr": "Urbaniste SI",
+      "appellations": [
+        "IT Town Planner"
+      ],
+      "aliases_en": [
+        "IT Town Planner"
+      ],
+      "mission": "Cartographie et cadre l'évolution du SI",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-fonctionnel",
+      "label_fr": "Architecte fonctionnel",
+      "appellations": [
+        "Functional Architect"
+      ],
+      "aliases_en": [
+        "Functional Architect"
+      ],
+      "mission": "Structure les fonctions et processus cibles",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-applicatif",
+      "label_fr": "Architecte applicatif",
+      "appellations": [
+        "Application Architect"
+      ],
+      "aliases_en": [
+        "Application Architect"
+      ],
+      "mission": "Conçoit la structure des applications",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-technique",
+      "label_fr": "Architecte technique",
+      "appellations": [
+        "Technical Architect"
+      ],
+      "aliases_en": [
+        "Technical Architect"
+      ],
+      "mission": "Définit les choix techniques d'une solution",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-solution",
+      "label_fr": "Architecte solution",
+      "appellations": [
+        "Solution Architect"
+      ],
+      "aliases_en": [
+        "Solution Architect"
+      ],
+      "mission": "Conçoit la solution d'un projet donné",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-cloud",
+      "label_fr": "Architecte cloud",
+      "appellations": [
+        "Cloud Architect"
+      ],
+      "aliases_en": [
+        "Cloud Architect"
+      ],
+      "mission": "Conçoit les architectures cloud",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-donnees",
+      "label_fr": "Architecte données",
+      "appellations": [
+        "Data Architect"
+      ],
+      "aliases_en": [
+        "Data Architect"
+      ],
+      "mission": "Conçoit les modèles et flux de données",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-securite",
+      "label_fr": "Architecte sécurité",
+      "appellations": [
+        "Security Architect"
+      ],
+      "aliases_en": [
+        "Security Architect"
+      ],
+      "mission": "Intègre la sécurité dès la conception",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "architecte-d-integration",
+      "label_fr": "Architecte d'intégration",
+      "appellations": [
+        "Integration Architect"
+      ],
+      "aliases_en": [
+        "Integration Architect"
+      ],
+      "mission": "Conçoit les échanges et l'interopérabilité",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 5,
+      "macro_role": "architecture-urbanisation"
+    },
+    {
+      "id": "ingenieur-administrateur-systeme",
+      "label_fr": "Ingénieur / administrateur système",
+      "appellations": [
+        "Sysadmin",
+        "SysEng"
+      ],
+      "aliases_en": [
+        "Sysadmin"
+      ],
+      "mission": "Administre serveurs et systèmes d'exploitation",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-administrateur-reseau",
+      "label_fr": "Ingénieur / administrateur réseau",
+      "appellations": [
+        "Network Engineer"
+      ],
+      "aliases_en": [
+        "Network Engineer"
+      ],
+      "mission": "Administre réseaux et connectivité",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-telecom",
+      "label_fr": "Ingénieur télécom",
+      "appellations": [
+        "Telecom Engineer"
+      ],
+      "aliases_en": [
+        "Telecom Engineer"
+      ],
+      "mission": "Gère la téléphonie et les liens opérateurs",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "administrateur-base-de-donnees",
+      "label_fr": "Administrateur base de données",
+      "appellations": [
+        "DBA"
+      ],
+      "aliases_en": [
+        "DBA"
+      ],
+      "mission": "Administre et optimise les bases de données",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-stockage-sauvegarde",
+      "label_fr": "Ingénieur stockage / sauvegarde",
+      "appellations": [
+        "Storage/Backup Engineer"
+      ],
+      "aliases_en": [
+        "Storage/Backup Engineer"
+      ],
+      "mission": "Gère stockage, sauvegarde et restauration",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-cloud",
+      "label_fr": "Ingénieur cloud",
+      "appellations": [
+        "Cloud Engineer"
+      ],
+      "aliases_en": [
+        "Cloud Engineer"
+      ],
+      "mission": "Déploie et exploite les ressources cloud",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-devops",
+      "label_fr": "Ingénieur DevOps",
+      "appellations": [
+        "DevOps Engineer"
+      ],
+      "aliases_en": [
+        "DevOps Engineer"
+      ],
+      "mission": "Automatise build, déploiement et exploitation",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-sre",
+      "label_fr": "Ingénieur SRE",
+      "appellations": [
+        "Site Reliability Engineer"
+      ],
+      "aliases_en": [
+        "Site Reliability Engineer"
+      ],
+      "mission": "Garantit fiabilité et résilience des services",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-plateforme",
+      "label_fr": "Ingénieur plateforme",
+      "appellations": [
+        "Platform Engineer"
+      ],
+      "aliases_en": [
+        "Platform Engineer"
+      ],
+      "mission": "Construit la plateforme interne pour les devs",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-ci-cd",
+      "label_fr": "Ingénieur CI/CD",
+      "appellations": [
+        "Build/Release Engineer"
+      ],
+      "aliases_en": [
+        "Build/Release Engineer"
+      ],
+      "mission": "Outille l'intégration et la livraison continues",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-observabilite",
+      "label_fr": "Ingénieur observabilité",
+      "appellations": [
+        "Monitoring/Observability Eng."
+      ],
+      "aliases_en": [
+        "Monitoring/Observability Eng."
+      ],
+      "mission": "Instrumente supervision, logs et métriques",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "ingenieur-d-exploitation-pilote",
+      "label_fr": "Ingénieur d'exploitation / pilote",
+      "appellations": [
+        "IT Operator",
+        "Ops Pilot"
+      ],
+      "aliases_en": [
+        "IT Operator"
+      ],
+      "mission": "Surveille et pilote la production au quotidien",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "technicien-datacenter",
+      "label_fr": "Technicien datacenter",
+      "appellations": [
+        "Datacenter Technician"
+      ],
+      "aliases_en": [
+        "Datacenter Technician"
+      ],
+      "mission": "Intervient sur le matériel physique",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 6,
+      "macro_role": "infrastructure-exploitation"
+    },
+    {
+      "id": "technicien-support-n1",
+      "label_fr": "Technicien support N1",
+      "appellations": [
+        "Service Desk",
+        "Helpdesk"
+      ],
+      "aliases_en": [
+        "Service Desk"
+      ],
+      "mission": "Traite les demandes et incidents de premier niveau",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "technicien-support-n2",
+      "label_fr": "Technicien support N2",
+      "appellations": [
+        "Support N2"
+      ],
+      "aliases_en": [
+        "Support N2"
+      ],
+      "mission": "Traite les incidents nécessitant une expertise",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "expert-support-n3",
+      "label_fr": "Expert support N3",
+      "appellations": [
+        "Support N3",
+        "expert applicatif"
+      ],
+      "aliases_en": [
+        "Support N3"
+      ],
+      "mission": "Résout les incidents complexes / éditeurs",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "technicien-de-proximite",
+      "label_fr": "Technicien de proximité",
+      "appellations": [
+        "Onsite Support",
+        "VIP Support"
+      ],
+      "aliases_en": [
+        "Onsite Support",
+        "VIP Support"
+      ],
+      "mission": "Assiste physiquement les utilisateurs",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-d-incidents",
+      "label_fr": "Gestionnaire d'incidents",
+      "appellations": [
+        "Incident Manager"
+      ],
+      "aliases_en": [
+        "Incident Manager"
+      ],
+      "mission": "Pilote la résolution et la communication d'incident",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-de-problemes",
+      "label_fr": "Gestionnaire de problèmes",
+      "appellations": [
+        "Problem Manager"
+      ],
+      "aliases_en": [
+        "Problem Manager"
+      ],
+      "mission": "Traite les causes racines récurrentes",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-des-changements",
+      "label_fr": "Gestionnaire des changements",
+      "appellations": [
+        "Change Manager"
+      ],
+      "aliases_en": [
+        "Change Manager"
+      ],
+      "mission": "Encadre les changements en production",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-des-mises-en-production",
+      "label_fr": "Gestionnaire des mises en production",
+      "appellations": [
+        "Release Manager"
+      ],
+      "aliases_en": [
+        "Release Manager"
+      ],
+      "mission": "Orchestre les livraisons en production",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-des-configurations",
+      "label_fr": "Gestionnaire des configurations",
+      "appellations": [
+        "Configuration Manager (CMDB)"
+      ],
+      "aliases_en": [
+        "Configuration Manager (CMDB)"
+      ],
+      "mission": "Maintient le référentiel des actifs et liens",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-des-niveaux-de-service",
+      "label_fr": "Gestionnaire des niveaux de service",
+      "appellations": [
+        "Service Level Manager"
+      ],
+      "aliases_en": [
+        "Service Level Manager"
+      ],
+      "mission": "Négocie et suit les SLA",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "responsable-disponibilite-capacite",
+      "label_fr": "Responsable disponibilité / capacité",
+      "appellations": [
+        "Availability/Capacity Manager"
+      ],
+      "aliases_en": [
+        "Availability/Capacity Manager"
+      ],
+      "mission": "Garantit disponibilité et dimensionnement",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "responsable-du-catalogue-de-services",
+      "label_fr": "Responsable du catalogue de services",
+      "appellations": [
+        "Service Catalog Manager"
+      ],
+      "aliases_en": [
+        "Service Catalog Manager"
+      ],
+      "mission": "Définit et publie l'offre de services SI",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-des-demandes",
+      "label_fr": "Gestionnaire des demandes",
+      "appellations": [
+        "Request Manager"
+      ],
+      "aliases_en": [
+        "Request Manager"
+      ],
+      "mission": "Traite les demandes de service standard",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-de-la-connaissance",
+      "label_fr": "Gestionnaire de la connaissance",
+      "appellations": [
+        "Knowledge Manager"
+      ],
+      "aliases_en": [
+        "Knowledge Manager"
+      ],
+      "mission": "Capitalise et diffuse la base de connaissances",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "gestionnaire-de-parc-d-actifs",
+      "label_fr": "Gestionnaire de parc / d'actifs",
+      "appellations": [
+        "IT Asset Manager"
+      ],
+      "aliases_en": [
+        "IT Asset Manager"
+      ],
+      "mission": "Gère le cycle de vie du matériel et des licences",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "technicien-poste-de-travail-deploiement",
+      "label_fr": "Technicien poste de travail / déploiement",
+      "appellations": [
+        "Desktop/Deployment Technician"
+      ],
+      "aliases_en": [
+        "Desktop/Deployment Technician"
+      ],
+      "mission": "Prépare et déploie les postes et masters",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services"
+    },
+    {
+      "id": "responsable-de-la-securite-si",
+      "label_fr": "Responsable de la sécurité SI",
+      "appellations": [
+        "RSSI",
+        "CISO"
+      ],
+      "aliases_en": [
+        "CISO"
+      ],
+      "mission": "Définit et pilote la stratégie de sécurité",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "analyste-soc",
+      "label_fr": "Analyste SOC",
+      "appellations": [
+        "SOC Analyst"
+      ],
+      "aliases_en": [
+        "SOC Analyst"
+      ],
+      "mission": "Surveille et qualifie les alertes de sécurité",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "ingenieur-securite",
+      "label_fr": "Ingénieur sécurité",
+      "appellations": [
+        "Security Engineer"
+      ],
+      "aliases_en": [
+        "Security Engineer"
+      ],
+      "mission": "Déploie et exploite les dispositifs de sécurité",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "testeur-d-intrusion",
+      "label_fr": "Testeur d'intrusion",
+      "appellations": [
+        "Pentester",
+        "Ethical Hacker"
+      ],
+      "aliases_en": [
+        "Pentester"
+      ],
+      "mission": "Éprouve la sécurité par des tests offensifs",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "analyste-de-la-menace",
+      "label_fr": "Analyste de la menace",
+      "appellations": [
+        "Threat Intelligence Analyst"
+      ],
+      "aliases_en": [
+        "Threat Intelligence Analyst"
+      ],
+      "mission": "Analyse le paysage des menaces",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "ingenieur-iam",
+      "label_fr": "Ingénieur IAM",
+      "appellations": [
+        "Identity & Access Engineer"
+      ],
+      "aliases_en": [
+        "Identity & Access Engineer"
+      ],
+      "mission": "Gère identités, accès et habilitations",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "analyste-reponse-a-incident",
+      "label_fr": "Analyste réponse à incident",
+      "appellations": [
+        "CSIRT/CERT",
+        "Forensic Analyst"
+      ],
+      "aliases_en": [
+        "Forensic Analyst"
+      ],
+      "mission": "Investigue et traite les incidents de sécurité",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "gestionnaire-des-risques-ssi",
+      "label_fr": "Gestionnaire des risques SSI",
+      "appellations": [
+        "Security Risk Manager"
+      ],
+      "aliases_en": [
+        "Security Risk Manager"
+      ],
+      "mission": "Évalue et traite les risques de sécurité",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "responsable-continuite-reprise",
+      "label_fr": "Responsable continuité / reprise",
+      "appellations": [
+        "PCA/PRA Manager",
+        "BCP/DRP"
+      ],
+      "aliases_en": [
+        "PCA/PRA Manager"
+      ],
+      "mission": "Prépare la continuité et la reprise d'activité",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "correspondant-securite",
+      "label_fr": "Correspondant sécurité",
+      "appellations": [
+        "Security Champion"
+      ],
+      "aliases_en": [
+        "Security Champion"
+      ],
+      "mission": "Relaie la sécurité dans les équipes",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "responsable-conformite-securite",
+      "label_fr": "Responsable conformité sécurité",
+      "appellations": [
+        "Security Compliance Officer"
+      ],
+      "aliases_en": [
+        "Security Compliance Officer"
+      ],
+      "mission": "Vérifie l'adhérence aux référentiels (ISO, ANSSI)",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 8,
+      "macro_role": "cybersecurite-continuite"
+    },
+    {
+      "id": "chief-data-officer",
+      "label_fr": "Chief Data Officer",
+      "appellations": [
+        "CDO (data)"
+      ],
+      "aliases_en": [
+        "CDO (data)"
+      ],
+      "mission": "Dirige la stratégie et la gouvernance des données",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "ingenieur-donnees",
+      "label_fr": "Ingénieur données",
+      "appellations": [
+        "Data Engineer"
+      ],
+      "aliases_en": [
+        "Data Engineer"
+      ],
+      "mission": "Construit les pipelines et entrepôts de données",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "analyste-de-donnees",
+      "label_fr": "Analyste de données",
+      "appellations": [
+        "Data Analyst"
+      ],
+      "aliases_en": [
+        "Data Analyst"
+      ],
+      "mission": "Analyse et restitue la donnée pour la décision",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "data-scientist",
+      "label_fr": "Data scientist",
+      "appellations": [
+        "Data Scientist"
+      ],
+      "aliases_en": [
+        "Data Scientist"
+      ],
+      "mission": "Modélise et prédit à partir des données",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "ingenieur-ml-mlops",
+      "label_fr": "Ingénieur ML / MLOps",
+      "appellations": [
+        "ML Engineer",
+        "MLOps"
+      ],
+      "aliases_en": [
+        "ML Engineer",
+        "MLOps"
+      ],
+      "mission": "Industrialise et exploite les modèles d'IA",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "developpeur-decisionnel",
+      "label_fr": "Développeur décisionnel",
+      "appellations": [
+        "BI Developer"
+      ],
+      "aliases_en": [
+        "BI Developer"
+      ],
+      "mission": "Développe rapports et tableaux de bord",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "intendant-de-donnees",
+      "label_fr": "Intendant de données",
+      "appellations": [
+        "Data Steward"
+      ],
+      "aliases_en": [
+        "Data Steward"
+      ],
+      "mission": "Garantit qualité et définition des données",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "proprietaire-de-donnees",
+      "label_fr": "Propriétaire de données",
+      "appellations": [
+        "Data Owner"
+      ],
+      "aliases_en": [
+        "Data Owner"
+      ],
+      "mission": "Répond de la donnée d'un domaine",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "responsable-gouvernance-des-donnees",
+      "label_fr": "Responsable gouvernance des données",
+      "appellations": [
+        "Data Governance Manager"
+      ],
+      "aliases_en": [
+        "Data Governance Manager"
+      ],
+      "mission": "Cadre politiques, catalogue et qualité",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "ingenieur-qualite-des-donnees",
+      "label_fr": "Ingénieur qualité des données",
+      "appellations": [
+        "Data Quality Engineer"
+      ],
+      "aliases_en": [
+        "Data Quality Engineer"
+      ],
+      "mission": "Mesure et améliore la qualité des données",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "responsable-ethique-de-l-ia",
+      "label_fr": "Responsable éthique de l'IA",
+      "appellations": [
+        "AI Ethics / Responsible AI Lead"
+      ],
+      "aliases_en": [
+        "AI Ethics / Responsible AI Lead"
+      ],
+      "mission": "Encadre conformité et éthique de l'IA (AI Act)",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 9,
+      "macro_role": "donnees-ia"
+    },
+    {
+      "id": "responsable-de-la-relation-metier",
+      "label_fr": "Responsable de la relation métier",
+      "appellations": [
+        "Business Relationship Manager"
+      ],
+      "aliases_en": [
+        "Business Relationship Manager"
+      ],
+      "mission": "Fait le pont entre DSI et une direction métier",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "assistance-a-maitrise-d-ouvrage",
+      "label_fr": "Assistance à maîtrise d'ouvrage",
+      "appellations": [
+        "AMOA"
+      ],
+      "aliases_en": [
+        "AMOA"
+      ],
+      "mission": "Aide le métier à exprimer et cadrer le besoin",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "maitrise-d-ouvrage",
+      "label_fr": "Maîtrise d'ouvrage",
+      "appellations": [
+        "MOA",
+        "Product Owner métier"
+      ],
+      "aliases_en": [
+        "Product Owner métier"
+      ],
+      "mission": "Porte le besoin et valide la solution",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "utilisateur-cle-referent-metier",
+      "label_fr": "Utilisateur clé / référent métier",
+      "appellations": [
+        "Key User",
+        "Power User"
+      ],
+      "aliases_en": [
+        "Key User",
+        "Power User"
+      ],
+      "mission": "Relaie et teste au sein du métier",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "responsable-conduite-du-changement",
+      "label_fr": "Responsable conduite du changement",
+      "appellations": [
+        "Change Management Lead"
+      ],
+      "aliases_en": [
+        "Change Management Lead"
+      ],
+      "mission": "Prépare l'adoption et accompagne les usages",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "formateur-ingenieur-pedagogique",
+      "label_fr": "Formateur / ingénieur pédagogique",
+      "appellations": [
+        "Trainer",
+        "Instructional Designer"
+      ],
+      "aliases_en": [
+        "Trainer",
+        "Instructional Designer"
+      ],
+      "mission": "Conçoit et anime la formation aux outils",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "redacteur-technique",
+      "label_fr": "Rédacteur technique",
+      "appellations": [
+        "Technical Writer"
+      ],
+      "aliases_en": [
+        "Technical Writer"
+      ],
+      "mission": "Produit la documentation utilisateur et technique",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement"
+    },
+    {
+      "id": "acheteur-informatique",
+      "label_fr": "Acheteur informatique",
+      "appellations": [
+        "IT Buyer",
+        "Category Manager"
+      ],
+      "aliases_en": [
+        "IT Buyer",
+        "Category Manager"
+      ],
+      "mission": "Achète biens et services informatiques",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "contract-manager",
+      "label_fr": "Contract Manager",
+      "appellations": [
+        "Gestionnaire de contrats"
+      ],
+      "aliases_en": [
+        "Gestionnaire de contrats"
+      ],
+      "mission": "Pilote le cycle de vie des contrats",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "gestionnaire-de-la-relation-fournisseur",
+      "label_fr": "Gestionnaire de la relation fournisseur",
+      "appellations": [
+        "Vendor Manager"
+      ],
+      "aliases_en": [
+        "Vendor Manager"
+      ],
+      "mission": "Pilote la performance des fournisseurs",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "responsable-sourcing-partenariats",
+      "label_fr": "Responsable sourcing / partenariats",
+      "appellations": [
+        "Sourcing Manager"
+      ],
+      "aliases_en": [
+        "Sourcing Manager"
+      ],
+      "mission": "Sélectionne et développe les partenaires",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "gestionnaire-des-logiciels-licences",
+      "label_fr": "Gestionnaire des logiciels / licences",
+      "appellations": [
+        "Software Asset Manager (SAM)"
+      ],
+      "aliases_en": [
+        "Software Asset Manager (SAM)"
+      ],
+      "mission": "Optimise et met en conformité les licences",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "juriste-si",
+      "label_fr": "Juriste SI",
+      "appellations": [
+        "IT Legal Counsel"
+      ],
+      "aliases_en": [
+        "IT Legal Counsel"
+      ],
+      "mission": "Sécurise juridiquement contrats et usages",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "responsable-des-marches",
+      "label_fr": "Responsable des marchés",
+      "appellations": [
+        "Public Procurement Officer"
+      ],
+      "aliases_en": [
+        "Public Procurement Officer"
+      ],
+      "mission": "Conduit les marchés publics (secteur public)",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 11,
+      "macro_role": "achats-contrats-fournisseurs"
+    },
+    {
+      "id": "responsable-qualite-si",
+      "label_fr": "Responsable qualité SI",
+      "appellations": [
+        "IT Quality Manager"
+      ],
+      "aliases_en": [
+        "IT Quality Manager"
+      ],
+      "mission": "Anime la démarche qualité de la DSI",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "auditeur-si",
+      "label_fr": "Auditeur SI",
+      "appellations": [
+        "IT Auditor"
+      ],
+      "aliases_en": [
+        "IT Auditor"
+      ],
+      "mission": "Contrôle conformité et maîtrise du SI",
+      "perimetre": [
+        "DSI",
+        "Externe"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "responsable-conformite",
+      "label_fr": "Responsable conformité",
+      "appellations": [
+        "Compliance Officer"
+      ],
+      "aliases_en": [
+        "Compliance Officer"
+      ],
+      "mission": "Assure l'adhérence aux obligations réglementaires",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "delegue-a-la-protection-des-donnees",
+      "label_fr": "Délégué à la protection des données",
+      "appellations": [
+        "DPO"
+      ],
+      "aliases_en": [
+        "DPO"
+      ],
+      "mission": "Veille au respect du RGPD et des données personnelles",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "gestionnaire-des-risques-si",
+      "label_fr": "Gestionnaire des risques SI",
+      "appellations": [
+        "IT Risk Manager"
+      ],
+      "aliases_en": [
+        "IT Risk Manager"
+      ],
+      "mission": "Identifie et traite les risques du SI",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "responsable-referentiels-normes",
+      "label_fr": "Responsable référentiels & normes",
+      "appellations": [
+        "Frameworks Lead (ITIL/COBIT/ISO)"
+      ],
+      "aliases_en": [
+        "Frameworks Lead (ITIL/COBIT/ISO)"
+      ],
+      "mission": "Maintient méthodes et référentiels",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "responsable-accessibilite-numerique",
+      "label_fr": "Responsable accessibilité numérique",
+      "appellations": [
+        "Accessibility Lead (RGAA)"
+      ],
+      "aliases_en": [
+        "Accessibility Lead (RGAA)"
+      ],
+      "mission": "Garantit l'accessibilité des services numériques",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "responsable-amelioration-continue",
+      "label_fr": "Responsable amélioration continue",
+      "appellations": [
+        "Continuous Improvement Manager"
+      ],
+      "aliases_en": [
+        "Continuous Improvement Manager"
+      ],
+      "mission": "Pilote l'optimisation des processus",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 12,
+      "macro_role": "qualite-conformite-audit"
+    },
+    {
+      "id": "responsable-innovation",
+      "label_fr": "Responsable innovation",
+      "appellations": [
+        "Innovation Manager"
+      ],
+      "aliases_en": [
+        "Innovation Manager"
+      ],
+      "mission": "Anime l'exploration et l'expérimentation",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "responsable-transformation-numerique",
+      "label_fr": "Responsable transformation numérique",
+      "appellations": [
+        "Digital Transformation Lead"
+      ],
+      "aliases_en": [
+        "Digital Transformation Lead"
+      ],
+      "mission": "Pilote la mutation numérique de l'organisation",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "responsable-numerique-responsable",
+      "label_fr": "Responsable numérique responsable",
+      "appellations": [
+        "Green IT / Sustainable IT Lead"
+      ],
+      "aliases_en": [
+        "Green IT / Sustainable IT Lead"
+      ],
+      "mission": "Réduit l'empreinte environnementale du SI",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "responsable-digital-workplace",
+      "label_fr": "Responsable digital workplace",
+      "appellations": [
+        "Digital Workplace Manager"
+      ],
+      "aliases_en": [
+        "Digital Workplace Manager"
+      ],
+      "mission": "Pilote l'environnement de travail numérique",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "responsable-staffing-ressources",
+      "label_fr": "Responsable staffing / ressources",
+      "appellations": [
+        "Resource Manager"
+      ],
+      "aliases_en": [
+        "Resource Manager"
+      ],
+      "mission": "Affecte les compétences aux projets",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "developpeur-citoyen",
+      "label_fr": "Développeur citoyen",
+      "appellations": [
+        "Citizen Developer"
+      ],
+      "aliases_en": [
+        "Citizen Developer"
+      ],
+      "mission": "Métier qui automatise en low-code sous gouvernance",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "alternant-stagiaire-apprenti",
+      "label_fr": "Alternant / stagiaire / apprenti",
+      "appellations": [
+        "Trainee",
+        "Intern"
+      ],
+      "aliases_en": [
+        "Trainee",
+        "Intern"
+      ],
+      "mission": "Contribue en formation",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 13,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "consultant-cabinet-conseil",
+      "label_fr": "Consultant / cabinet conseil",
+      "appellations": [
+        "Consultant"
+      ],
+      "aliases_en": [
+        "Consultant"
+      ],
+      "mission": "Apporte expertise et renfort ponctuel",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "prestataire-de-developpement",
+      "label_fr": "Prestataire de développement",
+      "appellations": [
+        "ESN",
+        "SSII",
+        "Contractor"
+      ],
+      "aliases_en": [
+        "Contractor"
+      ],
+      "mission": "Réalise tout ou partie du développement",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "prestataire-tma",
+      "label_fr": "Prestataire TMA",
+      "appellations": [
+        "Tierce Maintenance Applicative"
+      ],
+      "aliases_en": [
+        "Tierce Maintenance Applicative"
+      ],
+      "mission": "Maintient les applications en conditions op.",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "prestataire-tra",
+      "label_fr": "Prestataire TRA",
+      "appellations": [
+        "Tierce Recette Applicative"
+      ],
+      "aliases_en": [
+        "Tierce Recette Applicative"
+      ],
+      "mission": "Réalise la recette pour le compte du client",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "infogerant-msp",
+      "label_fr": "Infogérant / MSP",
+      "appellations": [
+        "Managed Service Provider"
+      ],
+      "aliases_en": [
+        "Managed Service Provider"
+      ],
+      "mission": "Exploite tout ou partie du SI",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "editeur-logiciel",
+      "label_fr": "Éditeur logiciel",
+      "appellations": [
+        "Software Vendor"
+      ],
+      "aliases_en": [
+        "Software Vendor"
+      ],
+      "mission": "Fournit et supporte un produit (support N3)",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "hebergeur-fournisseur-cloud",
+      "label_fr": "Hébergeur / fournisseur cloud",
+      "appellations": [
+        "Cloud/Hosting Provider"
+      ],
+      "aliases_en": [
+        "Cloud/Hosting Provider"
+      ],
+      "mission": "Héberge les infrastructures et services",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "auditeur-externe",
+      "label_fr": "Auditeur externe",
+      "appellations": [
+        "External Auditor"
+      ],
+      "aliases_en": [
+        "External Auditor"
+      ],
+      "mission": "Certifie ou contrôle indépendamment",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "regulateur-organisme-de-certification",
+      "label_fr": "Régulateur / organisme de certification",
+      "appellations": [
+        "Regulator",
+        "Certification Body"
+      ],
+      "aliases_en": [
+        "Regulator",
+        "Certification Body"
+      ],
+      "mission": "Contrôle la conformité réglementaire",
+      "perimetre": [
+        "Externe"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "utilisateur-final-beneficiaire",
+      "label_fr": "Utilisateur final / bénéficiaire",
+      "appellations": [
+        "End User"
+      ],
+      "aliases_en": [
+        "End User"
+      ],
+      "mission": "Utilise les services fournis par la DSI",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 14,
+      "macro_role": "transverses-externes"
+    },
+    {
+      "id": "utilisateur-final",
+      "label_fr": "Utilisateur final / bénéficiaire",
+      "appellations": [
+        "End User"
+      ],
+      "aliases_en": [
+        "End User"
+      ],
+      "mission": "Utilise les services fournis par la plateforme",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement",
+      "contexte": "produit"
+    },
+    {
+      "id": "administrateur-plateforme",
+      "label_fr": "Administrateur de la plateforme / tenant",
+      "appellations": [
+        "Admin",
+        "Platform Admin",
+        "Tenant Admin"
+      ],
+      "aliases_en": [
+        "Platform/Tenant Admin"
+      ],
+      "mission": "Administre la plateforme et les tenants (activation modules, utilisateurs)",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 7,
+      "macro_role": "support-services",
+      "contexte": "produit"
+    },
+    {
+      "id": "animateur-facilitateur",
+      "label_fr": "Animateur / facilitateur d'atelier",
+      "appellations": [
+        "Facilitateur",
+        "Animateur"
+      ],
+      "aliases_en": [
+        "Workshop Facilitator"
+      ],
+      "mission": "Anime les ateliers collaboratifs et sessions live",
+      "perimetre": [
+        "DSI",
+        "Métier"
+      ],
+      "domaine": 10,
+      "macro_role": "relation-metier-changement",
+      "contexte": "produit"
+    },
+    {
+      "id": "citizen-developer",
+      "label_fr": "Développeur citoyen (maker)",
+      "appellations": [
+        "Maker",
+        "Citizen Developer"
+      ],
+      "aliases_en": [
+        "Citizen Developer"
+      ],
+      "mission": "Construit des automatisations/apps en low-code sous gouvernance",
+      "perimetre": [
+        "Métier"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement",
+      "contexte": "produit"
+    },
+    {
+      "id": "mainteneur-produit",
+      "label_fr": "Mainteneur du produit / open source",
+      "appellations": [
+        "Mainteneur",
+        "Maintainer"
+      ],
+      "aliases_en": [
+        "Product Maintainer"
+      ],
+      "mission": "Maintient le produit et arbitre les contributions (merge PR)",
+      "perimetre": [
+        "DSI"
+      ],
+      "domaine": 4,
+      "macro_role": "ingenierie-developpement",
+      "contexte": "produit"
+    }
+  ],
+  "groupes": [
+    {
+      "id": "gouvernance-si",
+      "label": "Gouvernance SI (DSI + RSSI + PMO)",
+      "membres": [
+        "directeur-des-systemes-d-information",
+        "responsable-de-la-securite-si",
+        "officier-responsable-pmo"
+      ]
+    },
+    {
+      "id": "instances-decision",
+      "label": "Instances de décision (direction, sponsor, COMEX)",
+      "membres": [
+        "directeur-des-systemes-d-information",
+        "directeur-de-programme-portefeuille"
+      ]
+    }
+  ],
+  "archetypes": [
+    {
+      "id": "grand-groupe-prive",
+      "label_fr": "Grand groupe privé",
+      "roles_renforces": "EA/urbanistes, PMO, BRM, FinOps, gestion fournisseurs, tous les process ITIL"
+    },
+    {
+      "id": "secteur-public-adjudicateur",
+      "label_fr": "Secteur public / adjudicateur",
+      "roles_renforces": "Responsable des marchés, DPO, accessibilité RGAA, AMOA, conformité"
+    },
+    {
+      "id": "editeur-logiciel-tech",
+      "label_fr": "Éditeur logiciel / tech",
+      "roles_renforces": "PO/PM, SRE, Platform Engineers, DevOps, coaches agiles, modèle produit"
+    },
+    {
+      "id": "banque-assurance-regule",
+      "label_fr": "Banque / assurance (régulé)",
+      "roles_renforces": "RSSI, conformité, risk managers, audit, PCA/PRA, IAM"
+    },
+    {
+      "id": "industrie-sante",
+      "label_fr": "Industrie / santé",
+      "roles_renforces": "Sécurité OT, embarqué, continuité, souveraineté des données sensibles"
+    },
+    {
+      "id": "pme-scale-up",
+      "label_fr": "PME / scale-up",
+      "roles_renforces": "Rôles cumulés (profils « couteau suisse »), forte externalisation"
+    }
+  ]
+}
