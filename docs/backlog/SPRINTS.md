@@ -56,7 +56,7 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 | US01.2.4 | Politique robustesse mot de passe | S | High | ✅ |
 
 > **Sprint 2 terminé.** Statuts resynchronisés le 2026-07-04 après audit du code sur `main` (pivot-core + pivot-ui) : les 11 items étaient déjà mergés, testés et déployés — le tableau affichait encore `🔎 Review`/`⬜` par retard de mise à jour. EN03.2 et US03.2.2 partagent la même implémentation (`module.guard.ts`, un seul guard pour les deux IDs de backlog).
-
+>
 > **Parallélisable :** EN03.1+EN03.3 (backend) ‖ EN03.2+EN03.4 (frontend) ‖ US01.x (auth, indépendants de E03 côté code)
 
 ---
