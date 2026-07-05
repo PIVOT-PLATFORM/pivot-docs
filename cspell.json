@@ -1,8 +1,20 @@
 {
   "version": "0.2",
   "language": "fr,en",
-  "import": ["@cspell/dict-fr-fr/cspell-ext.json"],
-  "dictionaries": ["fr-fr", "en_US", "softwareTerms", "node", "npm", "html", "css", "typescript", "misc"],
+  "import": [
+    "@cspell/dict-fr-fr/cspell-ext.json"
+  ],
+  "dictionaries": [
+    "fr-fr",
+    "en_US",
+    "softwareTerms",
+    "node",
+    "npm",
+    "html",
+    "css",
+    "typescript",
+    "misc"
+  ],
   "ignorePaths": [
     "node_modules/**",
     "build/**",
@@ -11,6 +23,19 @@
     "static/**"
   ],
   "words": [
+    "SPIFFE",
+    "auditables",
+    "Rego",
+    "ABAC",
+    "CMDB",
+    "Zitadel",
+    "Forgejo",
+    "Proje",
+    "tldraw",
+    "Noco",
+    "Activepieces",
+    "Docuseal",
+    "Infisical",
     "accessibilite",
     "adversariale",
     "alice",
@@ -148,6 +173,19 @@
     "upvote",
     "upvotes",
     "velocite",
-    "wordcloud"
+    "wordcloud",
+    "Baserow",
+    "COMEX",
+    "Documenso",
+    "Excalidraw",
+    "Formbricks",
+    "Kestra",
+    "MSPDI",
+    "Metabase",
+    "RSSI",
+    "SGBD",
+    "Scrumlr",
+    "recalcul",
+    "redéveloppement"
   ]
 }
