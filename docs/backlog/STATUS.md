@@ -27,17 +27,40 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E08 — Module Whiteboard](EPIC-whiteboard/README.md) | E08 | 4 | 2 | 7 | ⏸️ Gate MVP |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
-| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
-| [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 3 (F12.1–3) | 2 (EN12.1–2) | 4 | ⬜ phase-3 · collaboratif |
+| [E11 — Module Capacity Planning](pathname:///pivot-docs/backlog/EPIC-capacity-planning/) | E11 | 8 (F11.1–8) | 1 (EN11.1) | 16 | ⏸️ phase-3 · agilite · **capacité sprint/PI** (absences, ouvrés, focus, vélocité, RGPD) |
+| [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 4 (F12.1–4) | 2 (EN12.1–2) | 5 | ⬜ phase-3 · collaboratif · +interface E22 |
 | [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | ✅ Sprint 1 Done |
 | [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
-| [E18 — Module Pilotage](EPIC-pilotage/README.md) | E18 | 7 (F18.1–7) | 2 (EN18.1–2) | 16 | ⬜ phase-3 |
+| [E18 — Domaine Pilotage](pathname:///pivot-docs/backlog/EPIC-pilotage/) | E18 | — (ombrelle) | 9 (EN18.1–9) | — | ⬜ phase-3 · domaine · modèle Application→Projet |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
+| [E21 — Gestion des risques](pathname:///pivot-docs/backlog/EPIC-risk/) | E21 | 9 (F21.1–9) | 3 (EN21.1–3) | 47 | ⬜ phase-3 · pilotage |
+| [E22 — Roadmap & Planification](pathname:///pivot-docs/backlog/EPIC-roadmap/) | E22 | 8 (F22.1–8) | 3 (EN22.1–3) | 47 | ⬜ phase-3 · pilotage · **parité MS Project (web)** · interop + interfaces SI (dont MeetOps) |
+| [E23 — Portefeuille projets](pathname:///pivot-docs/backlog/EPIC-portefeuille/) | E23 | 2 (F23.1–2) | — (EN18.*) | 12 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
+| [E24 — ADR projet](pathname:///pivot-docs/backlog/EPIC-adr-projet/) | E24 | 1 (F24.1) | — (EN18.*) | 2 | ⬜ phase-3 · pilotage |
+| [E25 — Commande publique](pathname:///pivot-docs/backlog/EPIC-commande-publique/) | E25 | 1 (F25.1) | — (EN18.*) | 4 | ⬜ phase-3 · pilotage |
+| [E26 — Budget & suivi financier](pathname:///pivot-docs/backlog/EPIC-budget/) | E26 | 2 (F26.1–2) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · +benchmark · +v2 |
+| [E27 — OKR](pathname:///pivot-docs/backlog/EPIC-okr/) | E27 | 10 (F27.1–10) | 1 (EN27.1) | 25 | ⬜ phase-3 · pilotage · **état de l'art** (alignement, check-ins, scoring, CFR) |
+| [E28 — Intégration open source](pathname:///pivot-docs/backlog/EPIC-integration-open-source/) | E28 | 5 (F28.1–5) | 13 (EN28.1–13) | 17 | ⏸️ phase-3 · dépend ADR-009 |
+| [E29 — Workflows & Automatisation](pathname:///pivot-docs/backlog/EPIC-workflows/) | E29 | 14 (F29.1–14) | 6 (EN29.1–6) | 78 | ⬜ phase-3 · benchmark WF |
+| [E30 — Collaboration](pathname:///pivot-docs/backlog/EPIC-collaboration/) | E30 | 15 (F30.1–15) | 12 (EN30.1–12) | 86 | ⬜ phase-3 · benchmark BL |
+| [E31 — Demande & arbitrage](pathname:///pivot-docs/backlog/EPIC-demande-arbitrage/) | E31 | 1 (F31.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · benchmark |
+| [E32 — Ressources & temps](pathname:///pivot-docs/backlog/EPIC-ressources-temps/) | E32 | 1 (F32.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage · benchmark |
+| [E33 — Collaboration & tâches](pathname:///pivot-docs/backlog/EPIC-pilotage-taches/) | E33 | 1 (F33.1) | — (EN18.*) | 3 | ⬜ phase-3 · pilotage · benchmark |
+| [E34 — IA & agents (pilotage)](pathname:///pivot-docs/backlog/EPIC-pilotage-ia/) | E34 | 1 (F34.1) | — (EN18.*) | 4 | ⬜ phase-3 · pilotage · benchmark |
+| [E35 — Gouvernance & sécurité (pilotage)](pathname:///pivot-docs/backlog/EPIC-pilotage-gouvernance/) | E35 | 1 (F35.1) | — (EN18.*) | 8 | ⬜ phase-3 · pilotage · benchmark |
+| [E36 — Intégration SI (pilotage)](pathname:///pivot-docs/backlog/EPIC-pilotage-integration-si/) | E36 | 1 (F36.1) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · benchmark |
+| [E37 — Licences & réversibilité (pilotage)](pathname:///pivot-docs/backlog/EPIC-pilotage-licences/) | E37 | 1 (F37.1) | — (EN18.*) | 5 | ⬜ phase-3 · pilotage · benchmark |
+| [E38 — Management de l'innovation (SMI)](pathname:///pivot-docs/backlog/EPIC-pilotage-innovation/) | E38 | 15 (F38.1–15) | 2 (EN38.1–2) | 45 | ⬜ phase-3 · pilotage · **SMI ISO 56002** + IA/venturing/événements |
+| [E39 — Chantiers SI (pilotage)](pathname:///pivot-docs/backlog/EPIC-pilotage-chantiers/) | E39 | 1 (F39.1) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · benchmark |
+| [E40 — Profil & adaptation](pathname:///pivot-docs/backlog/EPIC-profil-adaptation/) | E40 | 1 (F40.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · **v2 adaptative** |
+| [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) | E41 | 6 (F41.1–6) | 1 (EN41.1) | 43 | ⬜ phase-3 · transverse · **onboarding in-app + présentiel** (catalogue 30 modules) |
+| [E42 — Pivot Forms](pathname:///pivot-docs/backlog/EPIC-pivot-forms/) | E42 | 11 (F42.1–11) | 2 (EN42.1–2) | 32 | ⬜ phase-3 · **module Forms** (no-code souverain, net-new) |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
+| **Total benchmark** | **E29 + E30 + PP distribués + E28 + v2** | **~41** | **24** | **260** | ⬜ phase-3 · voir [BENCHMARK.md](BENCHMARK.md) |
 
 ---
 
@@ -116,12 +139,16 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | — | E08 Whiteboard | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
-| High | E18 Module Pilotage (roadmap, portefeuille, ADR, budget, OKR, risques, commande publique) | phase-3 | ⬜ Backlog |
+| High | Domaine Pilotage (E18 ombrelle) → E22 Roadmap · E23 Portefeuille · E24 ADR projet · E25 Commande publique · E26 Budget · E27 OKR + **modules benchmark E31–E39** | phase-3 · pilotage | ⬜ Backlog |
 | High | E19 Module Session (QUIZ multijoueur/POLL/WORDCLOUD/BRAINSTORM/QA/VOTE) | phase-3 | ⬜ Backlog |
+| High | E29 Workflows & Automatisation (**benchmark WF** : éditeur no-code, connecteurs, IA/agents, gouvernance, souveraineté) | phase-3 · automatisation | ⬜ Backlog |
+| High | E30 Collaboration (**benchmark BL** : canevas, temps réel, facilitation, IA, sécurité/gouvernance, plateformes) | phase-3 · collaboratif | ⬜ Backlog |
+| Medium | E28 Intégration open source (adaptateurs Plane/n8n/Documenso, contrat PivotAdapter) | phase-3 | ⏸️ dépend ADR-009 |
 | High | E20 Module Retrospective (formats rétro, dot-voting, plan action) | phase-3 · agilite | ⬜ Backlog |
+| High | E21 Gestion des risques (profil adaptatif, scoring, 4T, portefeuille, EMV/conformité, IA gouvernée, cockpit) | phase-3 · pilotage | ⬜ Backlog |
 | Medium | E12 MeetOps (agenda, animation reunions, compte-rendu) | phase-3 · collaboratif | ⬜ Backlog |
 | Medium | E13 Cahiers de tests (cas test, campagnes, reporting qualite) | phase-3 · pilotage | ⬜ Backlog |
-| Medium | E11 + velocity tracking (burndown chart, velocite sprint) | phase-3 · agilite | ⬜ Backlog |
+| Medium | E11 Capacity Planning (capacité sprint/incrément/PI SAFe : absences auto+manuel, jours ouvrés, focus factor, vélocité N-1, maturité agile, RGPD/éthique) | phase-3 · agilite | ⬜ Backlog |
 
 ---
 
