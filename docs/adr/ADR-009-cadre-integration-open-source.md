@@ -1,4 +1,4 @@
-# ADR-009 — Cadre d'intégration open source « mycélium »
+# ADR-009 — Cadre d'intégration open source
 
 **Date :** 2026-07-04
 **Statut :** Proposé
@@ -65,34 +65,35 @@ export interface PivotAdapter {
 }
 ```
 
-Modèle d'entités (extension type Backstage) : `Project · Portfolio · Contract · Vendor · Team · Capacity · Decision(ADR) · Requirement · Epic`.
+Modèle d'entités du catalogue : `Project · Portfolio · Contract · Vendor · Team · Capacity · Decision(ADR) · Requirement · Epic`.
 
 ### 5. Sélection par domaine (illustrative)
 
 > ⚠️ Licences à vérifier au dépôt avant industrialisation (règle de fond en §3, indépendante du domaine).
+> **Natif et OSS coexistent** : la colonne *Alternative* n'est pas un choix exclusif du *Retenu* — chaque instanciation active, dans son portail, le ou les outils dont elle a besoin (cf. « Alternatives écartées » et backlog `EPIC-integration-open-source`).
 
-| Domaine | Retenu | Licence | Mode |
-|---|---|---|---|
-| Portail / catalogue | Backstage | Apache-2.0 | Natif+Fork |
-| Identité & SSO | Keycloak (défaut — ADR-004 inchangée) | Apache-2.0 | Lien |
-| Secrets | OpenBao | MPL-2.0 | Lien |
-| SCM & CI/CD | GitLab CE | MIT | Adaptateur |
-| Pilotage de portefeuille (PPM, Gantt) | OpenProject | GPL-3.0 | Adaptateur |
-| Delivery agile (backlog, sprints) | Plane | AGPL-3.0 | Adaptateur |
-| Rétrospectives | Scrumlr | — | Lien |
-| **Planning poker** | **PIVOT natif** | — | Natif |
-| **Whiteboard** | **PIVOT natif** (module existant) | — | Natif — Excalidraw en veille, moins mature pour l'instant |
-| Documents collaboratifs | Docs (La Suite numérique) | MIT | Adaptateur |
-| Formulaires / quiz / sondages | Formbricks | AGPL-3.0 | Adaptateur |
-| Base de données no-code | Baserow | MIT | Adaptateur |
-| Wiki | BookStack | MIT | Lien |
-| Workflows | n8n | fair-code (SUL) | Adaptateur |
-| Orchestration data | Kestra | Apache-2.0 | Adaptateur |
-| BI | Metabase | AGPL-3.0 | Adaptateur |
-| Analytics d'usage | Matomo | GPL-3.0 | Lien |
-| Messagerie | Element / Matrix | AGPL-3.0 | Lien |
-| Signature électronique | Documenso | AGPL-3.0 | Adaptateur |
-| **CLM (cycle de vie contractuel)** | **PIVOT natif** | — | Natif — vide côté OSS |
+| Domaine | Retenu | Licence | Mode | Alternative (également intégrable) |
+|---|---|---|---|---|
+| Portail / catalogue | PIVOT natif | — | Natif | — |
+| Identité & SSO | Keycloak (défaut — ADR-004 inchangée) | Apache-2.0 | Lien | Zitadel (souverain) |
+| Secrets | OpenBao | MPL-2.0 | Lien | Infisical |
+| SCM & CI/CD | GitLab CE | MIT | Adaptateur | Forgejo (souverain-léger) |
+| Pilotage de portefeuille (PPM, Gantt) | OpenProject | GPL-3.0 | Adaptateur | ProjeQtOr (🇫🇷) — coexiste avec le module natif `pilotage` |
+| Delivery agile (backlog, sprints) | Plane | AGPL-3.0 | Adaptateur | Taiga (mature UE) |
+| Rétrospectives | Scrumlr | — | Lien | — coexiste avec le module natif `retrospective` |
+| **Planning poker** | **PIVOT natif** | — | Natif | — (marché OSS vide) |
+| **Whiteboard** | **PIVOT natif** (module existant) | — | Natif | Excalidraw, tldraw (adaptateurs embed) — coexistent avec le natif |
+| Documents collaboratifs | Docs (La Suite numérique) | MIT | Adaptateur | Nextcloud |
+| Formulaires / quiz / sondages | Formbricks | AGPL-3.0 | Adaptateur | LimeSurvey — coexiste avec les modules natifs `session`/`forms` |
+| Base de données no-code | Baserow | MIT | Adaptateur | NocoDB |
+| Wiki | BookStack | MIT | Lien | — (Outline écarté : licence BSL non-OSI) |
+| Workflows | n8n | fair-code (SUL) | Adaptateur | Activepieces (MIT, MCP natif) |
+| Orchestration data | Kestra | Apache-2.0 | Adaptateur | Apache Airflow |
+| BI | Metabase | AGPL-3.0 | Adaptateur | Apache Superset |
+| Analytics d'usage | Matomo | GPL-3.0 | Lien | Plausible |
+| Messagerie | Element / Matrix | AGPL-3.0 | Lien | Rocket.Chat |
+| Signature électronique | Documenso | AGPL-3.0 | Adaptateur | Docuseal |
+| **CLM (cycle de vie contractuel)** | **PIVOT natif** | — | Natif | — vide côté OSS |
 
 ### 6. Organisation des dépôts (cible illustrative)
 
@@ -112,7 +113,7 @@ Fork : `git subtree` par défaut (submodule pour les très gros amonts). Cycle d
 
 - Tout réécrire en natif : coût prohibitif, réinvention de fonctionnalités déjà matures ailleurs.
 - Forker et diverger sans discipline : dette mortelle à trois ans.
-- Remplacer systématiquement le natif dès qu'un équivalent OSS existe : le whiteboard reste l'exemple à ne pas suivre — la maturité produit prime sur la seule disponibilité d'une brique tierce.
+- Exclure par défaut un adaptateur au seul motif qu'un module natif existe déjà pour le même besoin : natif et OSS **coexistent** (§5) — c'est l'instanciation qui choisit, dans son portail, quel(s) outil(s) activer. Le whiteboard illustre ce principe : le natif PIVOT reste la référence, mais Excalidraw/tldraw sont des adaptateurs disponibles en complément, pas des concurrents à exclure.
 
 ## Conséquences
 
@@ -122,7 +123,7 @@ Fork : `git subtree` par défaut (submodule pour les très gros amonts). Cycle d
 
 ## Points ouverts
 
-Le domaine « Pilotage de portefeuille » (OpenProject) recoupe le module natif `pilotage` déjà planifié au backlog (roadmap/Gantt/portefeuille). Le domaine « Formulaires/quiz/sondages » (Formbricks) recoupe le module natif `session`. Contrairement au whiteboard, ces deux recoupements n'ont pas reçu d'arbitrage explicite — à trancher avant tout démarrage de ces adaptateurs (cf. backlog `EPIC-integration-open-source`, où ils sont exclus par défaut au profit du natif déjà planifié).
+**Résolu (revue PO du backlog, 2026-07-05).** Les recoupements entre adaptateur OSS et module natif — Pilotage/OpenProject, Session-Forms/Formbricks, Rétrospective/Scrumlr, Whiteboard/Excalidraw — ne sont plus arbitrés au niveau plateforme par exclusion par défaut : natif et OSS **coexistent**, chaque instanciation active ce dont elle a besoin dans son portail (§5). Concrétisé au backlog par les features F28.6–F28.9 de `EPIC-integration-open-source`.
 
 ## ADR à produire
 
@@ -141,3 +142,4 @@ Le domaine « Pilotage de portefeuille » (OpenProject) recoupe le module natif 
 | Version | Date | Évolution |
 |---------|------|-----------|
 | v1 | 2026-07-04 | Décision initiale |
+| v1.1 | 2026-07-05 | Retrait des noms « mycélium » et « Backstage » (titre, §4, §5) ; principe de coexistence natif/OSS explicité (§5, Alternatives écartées) ; Points ouverts résolus (Pilotage/Session-Forms/Rétrospective/Whiteboard coexistent avec leurs adaptateurs) ; ajout d'une colonne Alternative en §5 ; SCM & CI/CD (GitLab CE) déjà présent, désormais concrétisé au backlog (F28.10) |

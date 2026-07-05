@@ -16,5 +16,5 @@ sidebar_label: "Vue d'ensemble"
 | [ADR-006](ADR-006-multi-repo-architecture.md) | Architecture multi-repo avec librairies partagées | Accepté |
 | [ADR-007](ADR-007-design-system-angular-cdk.md) | Design system (Angular CDK + SCSS BEM) | Accepté |
 | [ADR-008](ADR-008-domaines-modules-cockpits.md) | Domaines composables & cockpits | Proposé |
-| [ADR-009](ADR-009-cadre-integration-open-source.md) | Cadre d'intégration open source « mycélium » | Proposé |
+| [ADR-009](ADR-009-cadre-integration-open-source.md) | Cadre d'intégration open source | Proposé |
 | [ADR-010](ADR-010-roadmap-gantt-modele-temporel.md) | Roadmap & Gantt : modèle temporel unique, parité MS Project en web | Proposé |
