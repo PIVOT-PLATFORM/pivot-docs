@@ -32,11 +32,11 @@
 
 ## Notes de livraison
 
-- Implémenté : `pivot-core` PR [#129](https://github.com/PIVOT-PLATFORM/pivot-core/pull/129) (Gate 2 self-évalué : 92/100 — détail dans la PR) · `pivot-ui` PR [#71](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/71) (Gate 2 self-évalué : 92/100 — détail dans la PR).
+- Implémenté : `pivot-core` PR [#129](https://github.com/PIVOT-PLATFORM/pivot-core/pull/129) **mergée** (Gate 2 self-évalué : 92/100) · `pivot-ui` PR [#71](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/71) **ouverte, non mergée** (Gate 2 self-évalué : 92/100 — détail dans la PR).
 - Stockage avatar : filesystem local, chemin configurable (`pivot.storage.avatars.base-path` / `PIVOT_AVATAR_STORAGE_PATH`) — choix MVP justifié pour une plateforme auto-hébergeable ; à revoir pour un déploiement multi-instance sans volume partagé.
 - Bug corrigé en cours de revue : un test unitaire (`TokenAuthenticationFilterTest`) polluait `SecurityContextHolder` entre tests, masquant un 403 attendu sur l'upload avatar sans token — corrigé (`@AfterEach SecurityContextHolder.clearContext()`), plus un correctif CodeQL (regex `HtmlStripper` en temps linéaire, était potentiellement O(n²) sur entrée adversariale).
 - Tests E2E Playwright différés (environnement E2E indisponible lors de l'implémentation) — à compléter en suivi.
 
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: MVP · Size: S · Priority: Medium
-Stage: Review
+Stage: In progress
