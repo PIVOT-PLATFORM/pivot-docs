@@ -1,5 +1,7 @@
 # E20 — Module Retrospective (Agilité)
 
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.9).*
+
 ## Objectif
 
 Animer des rétrospectives d'équipe structurées avec formats multiples (Start/Stop/Continue, KIF/KAF, 4L, Mad/Sad/Glad), plan d'action intégré et suivi des engagements entre sprints.
