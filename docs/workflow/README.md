@@ -79,7 +79,7 @@ PO Agent (autonome)
        │
        ▼
   Doc Agent — Gate 5 SPEC FREEZE (autonome, non-bloquant)
-  └─ Génère docs/specs/{epic}/{us-id}-{slug}.md (figé)
+  └─ Génère docs/specs/{EPIC}/{us-id}-{slug}.md (figé)
        └─ Contrat technique final + écarts vs ACs + liens US/PR/commit
 ```
 
