@@ -23,7 +23,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 - **F41.2 — Centre d'aide & base de connaissances** : centre d'aide in-app, aide contextuelle par écran
 - **F41.3 — Supports de formation** : bibliothèque (guides/vidéos/tutoriels), parcours e-learning & export SCORM/LMS
 - **F41.4 — Formation présentielle & réseau de référents** : réseau de référents & parcours formateur, kit + **sessions live (E19)**, certification & communauté
-- **F41.5 — Onboarding par module (catalogue)** : un parcours d'onboarding in-app **par module fonctionnel** (29 modules, US41.5.1–29), branché sur EN41.1
+- **F41.5 — Onboarding par module (catalogue)** : un parcours d'onboarding in-app **par module fonctionnel** (30 modules, US41.5.1–30), branché sur EN41.1
 - **F41.6 — Mesure de l'adoption** : complétion & taux d'adoption, funnel d'activation & relances
 
 ### Enablers
@@ -95,6 +95,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 | [US41.5.27 — Onboarding Innovation (pilotage) (E38)](FEATURES/onboarding-modules/us-onboarding-pilotage-innovation.md) | ⬜ |
 | [US41.5.28 — Onboarding Chantiers SI (pilotage) (E39)](FEATURES/onboarding-modules/us-onboarding-pilotage-chantiers.md) | ⬜ |
 | [US41.5.29 — Onboarding Profil & adaptation (E40)](FEATURES/onboarding-modules/us-onboarding-profil-adaptation.md) | ⬜ |
+| [US41.5.30 — Onboarding Pivot Forms (E42)](FEATURES/onboarding-modules/us-onboarding-forms.md) | ⬜ |
 | **F41.6 — Mesure de l'adoption** | |
 | [US41.6.1 — Mesure de complétion & taux d'adoption](FEATURES/mesure-adoption/us-mesure-completion.md) | ⬜ |
 | [US41.6.2 — Funnel d'activation & relances](FEATURES/mesure-adoption/us-funnel-activation.md) | ⬜ |

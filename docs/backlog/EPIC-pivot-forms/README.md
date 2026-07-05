@@ -1,6 +1,6 @@
 # E42 — Pivot Forms (formulaires & enquêtes)
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](../EPIC-formation-onboarding/README.md) (US41.5.30).*
 
 ## Objectif
 
