@@ -8,7 +8,7 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un premier accès au module **Portefeuille projets** ([E23](pathname:///pivot-docs/backlog/EPIC-portefeuille/)), when je l'ouvre, then un tour guidé présente ses fonctions clés — tableau de bord consolidé multi-projets, indicateurs RAG, rapports d'avancement (via EN41.1) | ⬜ |
+| Given un premier accès au module **Portefeuille projets** ([E23](pathname:///pivot-docs/backlog/EPIC-portefeuille/)), when je l'ouvre, then un tour guidé présente ses fonctions clés — tableau de bord consolidé multi-projets, indicateurs RAG, rapports d'avancement, scénarios what-if et business cases dynamiques (US23.2.7/23.2.8, ex-E31) (via EN41.1) | ⬜ |
 | Given le parcours, when je le complète/passe, then l'état est mémorisé et la complétion est mesurée (F41.6) | ⬜ |
 | Given mon rôle (taxonomie) et le profil d'organisation (E40), when le contenu s'affiche, then il est adapté ; i18n FR/EN | ⬜ |
 | Error : given le module Portefeuille désactivé sur le tenant après la mise en place du parcours, when un utilisateur y accède malgré tout, then le parcours ne se déclenche pas (pas de tour orphelin sur un module inaccessible) | ⬜ |
@@ -22,6 +22,7 @@
 ## Notes d'implémentation
 
 - Le tour cible d'abord le PMO ou le sponsor consultant la vue consolidée, distinct du chef de projet déjà couvert par l'onboarding Roadmap (US41.5.11)
+- Couvre désormais les scénarios what-if et business cases dynamiques, hérités de l'ex-EPIC E31 « Demande & arbitrage » (dissous, migré vers E23 — cf. `split/pilotage`) : pas de US41.5 dédiée pour un EPIC qui n'existe plus
 
 ---
 Item Type: US · Parent: F41.5 · Module: core · Phase: phase-3 · Size: S · Priority: Medium

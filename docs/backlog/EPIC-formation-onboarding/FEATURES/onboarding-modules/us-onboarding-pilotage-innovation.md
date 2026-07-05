@@ -1,9 +1,7 @@
-# US41.5.27 — Onboarding in-app — Innovation / SMI (pilotage) (E38)
-
-> ⚠️ **Renommage à réconcilier.** La branche `split/pilotage` a recentré E38 en **Système de Management de l'Innovation (SMI)** aligné ISO 56002 (commit `4735426`), avec redistribution des items secteur public vers E23/E25/E26/E35/E37. Le titre et le contenu ci-dessous sont mis à jour en conséquence ; à vérifier au moment du merge que le numéro E38 et le nom SMI sont toujours ceux retenus.
+# US41.5.27 — Onboarding in-app — Management de l'innovation (SMI, pilotage) (E38)
 
 **En tant que** nouvel utilisateur du module
-**Je veux** un **parcours d'onboarding in-app propre au module Innovation / SMI (pilotage)** (tour guidé, points clés, checklist, empty states), branché sur le framework EN41.1
+**Je veux** un **parcours d'onboarding in-app propre au module SMI (Système de Management de l'Innovation)** (tour guidé, points clés, checklist, empty states), branché sur le framework EN41.1
 **Afin de** comprendre et adopter le Système de Management de l'Innovation directement dans l'outil
 
 ## Critères d'acceptation
@@ -24,11 +22,11 @@
 
 ## Notes d'implémentation
 
-- **Action requise avant Gate 1** : confirmer avec le mainteneur que le renommage Innovation→SMI (split/pilotage) est acté avant d'implémenter ce tour, pour ne pas documenter un nom qui change entre-temps
+- Nom et périmètre confirmés sur `main` (E38 recentré en SMI pur, items secteur public redistribués vers E23/E25/E26/E35/E37 — cf. `split/pilotage`)
 
 ---
 Item Type: US · Parent: F41.5 · Module: core · Phase: phase-3 · Size: S · Priority: Medium
 Stage: Backlog
 Profils: Tous
 Justification: Formation & onboarding — adoption de Pivot (in-app, supports, présentiel) ; cf. Insight I8 (réseau de référents)
-Dépendances: EN41.1 · E38 (SMI — nom à reconfirmer au merge de split/pilotage)
+Dépendances: EN41.1 · E38 (SMI)

@@ -23,7 +23,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 - **F41.2 — Centre d'aide & base de connaissances** : centre d'aide in-app, aide contextuelle par écran
 - **F41.3 — Supports de formation** : bibliothèque (guides/vidéos/tutoriels), parcours e-learning & export SCORM/LMS
 - **F41.4 — Formation présentielle & réseau de référents** : réseau de référents & parcours formateur, kit + **sessions live (E19)**, certification & communauté
-- **F41.5 — Onboarding par module (catalogue)** : un parcours d'onboarding in-app **par module fonctionnel** (30 modules, US41.5.1–30), branché sur EN41.1
+- **F41.5 — Onboarding par module (catalogue)** : un parcours d'onboarding in-app **par module fonctionnel** (29 modules, US41.5.1–19 · 21–30 — numérotation conservée avec un trou en US41.5.20, cf. Notes ci-dessous), branché sur EN41.1
 - **F41.6 — Mesure de l'adoption** : complétion & taux d'adoption, funnel d'activation & relances
 
 ### Enablers
@@ -37,7 +37,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 - **Certification externe/officielle reconnue** — seule la certification interne au tenant est couverte (F41.4)
 - **Relances hors canal in-app/e-mail** (SMS, appel) — hors périmètre du funnel d'activation (F41.6)
 
-> ⚠️ **Deux items du catalogue F41.5 nécessitent une réconciliation avec `split/pilotage` avant Gate 1** : US41.5.20 (E31 Demande & arbitrage, dissous) et US41.5.27 (E38, renommé Innovation → SMI). Voir l'avertissement en tête de chaque fichier.
+> **Note (réconciliation post-merge `split/pilotage`)** : US41.5.20 (onboarding dédié à l'ex-EPIC E31 « Demande & arbitrage ») a été supprimée — E31 a été dissous et son contenu (scénarios what-if, business cases) migré vers E23 Portefeuille, désormais couvert par US41.5.12. La numérotation US41.5.1–30 conserve donc un trou en 20 plutôt que d'être renumérotée. US41.5.27 a été mise à jour : E38 est le Système de Management de l'Innovation (SMI), pas « Innovation ».
 
 ## Modules impactés
 
@@ -95,14 +95,14 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 | [US41.5.17 — Onboarding Intégration open source (E28)](FEATURES/onboarding-modules/us-onboarding-integration-open-source.md) | ⬜ |
 | [US41.5.18 — Onboarding Workflows & Automatisation (E29)](FEATURES/onboarding-modules/us-onboarding-workflows.md) | ⬜ |
 | [US41.5.19 — Onboarding Collaboration (E30)](FEATURES/onboarding-modules/us-onboarding-collaboration.md) | ⬜ |
-| [US41.5.20 — Onboarding Demande & arbitrage (E31)](FEATURES/onboarding-modules/us-onboarding-demande-arbitrage.md) | ⬜ |
+| ~~US41.5.20 — Onboarding Demande & arbitrage (E31)~~ | *supprimée — E31 dissous, cf. US41.5.12* |
 | [US41.5.21 — Onboarding Ressources & temps (E32)](FEATURES/onboarding-modules/us-onboarding-ressources-temps.md) | ⬜ |
 | [US41.5.22 — Onboarding Collaboration & tâches (pilotage) (E33)](FEATURES/onboarding-modules/us-onboarding-pilotage-taches.md) | ⬜ |
 | [US41.5.23 — Onboarding IA & agents (pilotage) (E34)](FEATURES/onboarding-modules/us-onboarding-pilotage-ia.md) | ⬜ |
 | [US41.5.24 — Onboarding Gouvernance & sécurité (pilotage) (E35)](FEATURES/onboarding-modules/us-onboarding-pilotage-gouvernance.md) | ⬜ |
 | [US41.5.25 — Onboarding Intégration SI (pilotage) (E36)](FEATURES/onboarding-modules/us-onboarding-pilotage-integration-si.md) | ⬜ |
 | [US41.5.26 — Onboarding Licences & réversibilité (pilotage) (E37)](FEATURES/onboarding-modules/us-onboarding-pilotage-licences.md) | ⬜ |
-| [US41.5.27 — Onboarding Innovation (pilotage) (E38)](FEATURES/onboarding-modules/us-onboarding-pilotage-innovation.md) | ⬜ |
+| [US41.5.27 — Onboarding Management de l'innovation (SMI, pilotage) (E38)](FEATURES/onboarding-modules/us-onboarding-pilotage-innovation.md) | ⬜ |
 | [US41.5.28 — Onboarding Chantiers SI (pilotage) (E39)](FEATURES/onboarding-modules/us-onboarding-pilotage-chantiers.md) | ⬜ |
 | [US41.5.29 — Onboarding Profil & adaptation (E40)](FEATURES/onboarding-modules/us-onboarding-profil-adaptation.md) | ⬜ |
 | [US41.5.30 — Onboarding Pivot Forms (E42)](FEATURES/onboarding-modules/us-onboarding-forms.md) | ⬜ |
