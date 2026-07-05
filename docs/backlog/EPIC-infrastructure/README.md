@@ -16,8 +16,14 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 - EN07.9 : PostgreSQL TLS prod sslmode=require
 - EN07.10 : Scaling N instances pivot-core configuration
 
+## Périmètre GitHub (phase-3)
+- EN07.11 : mTLS interne & intégration Service Mesh (socle infra pour E43 EN43.3)
+
 ## Modules impactés
 `core`
+
+## Dépendances
+- Interface avec : [E43 — Sécurité & Zero Trust](../EPIC-securite/README.md) (EN07.11 socle du Service Mesh EN43.3 ; EN07.2 étendu par les secrets dynamiques EN43.6)
 
 ## Statut global
 ⬜ À planifier — tous les items Critical/High en Backlog, Gate: Backlog sur EN07.1/2/5/7-9
