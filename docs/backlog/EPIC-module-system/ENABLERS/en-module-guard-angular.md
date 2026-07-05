@@ -28,9 +28,9 @@ HTTP (200/enabled:false, 404, 401, erreur réseau) : toute réponse autre que 20
 est traitée de façon identique (refus + redirection `/home` + toast), ce qui garde la logique
 403-vs-404 entièrement côté contrat API/backend.
 
-**Statut** : ✅ Fait — implémenté sur `feat/en03-2-module-guard`, couvert conjointement avec
-US03.2.2 (même guard, mêmes tests).
+**Statut** : ✅ Fait — mergé sur `main` (pivot-core PR #123, pivot-ui PR #67, `feat/en03-2-module-guard`),
+couvert conjointement avec US03.2.2 (même guard, mêmes tests).
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
-Stage: Review · Priority: Critical
+Stage: Done · Priority: Critical

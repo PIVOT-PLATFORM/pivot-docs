@@ -9,13 +9,20 @@
 - [x] Fallback BDD si Redis indisponible (pas de 500)
 - [x] Métrique Micrometer : cache hit/miss ratio
 
-**Implémentation** : `fr.pivot.core.modules.cache.ModuleActivationCacheService` (pivot-core, branche
-`feat/en03-3-module-cache-redis`, base `feat/en03-1-module-registry`) — enveloppe cache-aside de
-`ModuleActivationService#isEnabled(Long, String)`. Livré en standalone, à raccorder par EN03.2
-(status API) lors du rebase.
+**Implémentation** : `fr.pivot.core.modules.cache.ModuleActivationCacheService` (pivot-core, mergé
+sur `main` via PR #121, `feat/en03-3-module-cache-redis`, base `feat/en03-1-module-registry`) —
+enveloppe cache-aside de `ModuleActivationService#isEnabled(Long, String)`.
 
-**Statut** : ✅ Fait (implémentation backend — TU + TI Testcontainers Redis)
+**Non raccordé** : le endpoint `GET /api/modules/{id}/status` livré par EN03.2 (PR pivot-core #123)
+n'utilise pas ce cache — la description de la PR #123 le confirme explicitement (« le cache Redis
+EN03.3 est un sujet séparé, non traité ici »), et ce endpoint répond `Cache-Control: no-store`
+sans passer par Redis. Le service de cache existe et est testé en standalone, mais son branchement
+sur le chemin de lecture réel du statut module reste un gap technique à traiter (item de suivi
+technique, hors périmètre de re-synchronisation de ce fichier).
+
+**Statut** : ✅ Fait (implémentation backend standalone — TU + TI Testcontainers Redis) — ⚠️ non
+consommé par l'API status en production
 
 ---
 Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: MVP
-Stage: Review · Priority: Critical
+Stage: Done · Priority: Critical

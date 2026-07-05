@@ -10,7 +10,7 @@
 |---------|--------|
 | POST /api/admin/modules/{id}/activate active le module pour le tenant courant | ✅ |
 | Requiert ROLE_ADMIN | ✅ |
-| Invalidation immédiate du cache Redis (EN03.3) | ⬜ *(déféré — dépend d'EN03.3, cache Redis non encore mergé sur main)* |
+| Invalidation immédiate du cache Redis (EN03.3) | ⬜ *(EN03.3 est mergée sur `main` (pivot-core PR #121), mais son cache n'est pas raccordé au chemin de lecture du statut module — voir notes EN03.3 ; invalidation non vérifiable tant que ce raccordement n'est pas fait, suivi technique requis)* |
 | Audit event `ModuleActivated` enregistré | ✅ |
 | 409 si le module est déjà actif | ✅ |
 | 403 si module non disponible dans le plan du tenant | ✅ *(simplification documentée : pas de système plan/entitlement en base, "hors plan" = module non enregistré dans le `ModuleRegistry`)* |
@@ -27,10 +27,10 @@
 ## Notes de livraison
 
 - Implémenté : `pivot-core` PR [#122](https://github.com/PIVOT-PLATFORM/pivot-core/pull/122) (Gate 4 : 92/100 — MERGE_AUTONOMOUS) · `pivot-ui` PR [#66](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/66) (Gate 4 : 92/100 — MERGE_AUTONOMOUS).
-- Déféré (cross-dépendance, non bloquant pour cette US) : invalidation cache Redis à l'activation dépend d'**EN03.3** (cache Redis TTL 60s), pas encore mergé sur `main`. À vérifier/fermer une fois EN03.3 mergé.
+- Déféré (cross-dépendance, non bloquant pour cette US) : invalidation cache Redis à l'activation dépend d'**EN03.3** (cache Redis TTL 60s) — EN03.3 est mergée sur `main` (PR #121) mais son cache n'est pas encore raccordé au chemin de lecture réel du statut module (voir notes EN03.3). Suivi technique à rouvrir/clore une fois ce raccordement fait.
 - Tests E2E Playwright différés (environnement E2E indisponible lors de l'implémentation) — à compléter en suivi.
 
 ---
 Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: M · Priority: Critical
-Stage: Review
-Dépendances : EN03.3 (invalidation cache Redis) — non mergée, suivi requis avant clôture définitive.
+Stage: Done
+Dépendances : EN03.3 (invalidation cache Redis) — mergée (PR #121), mais non raccordée au chemin de lecture réel du statut module ; suivi technique requis avant clôture définitive de cet AC.
