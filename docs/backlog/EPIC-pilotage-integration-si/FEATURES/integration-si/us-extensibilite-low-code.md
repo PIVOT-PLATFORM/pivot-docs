@@ -12,6 +12,17 @@
 | Des bases de données et rapports personnalisés peuvent être ajoutés en low-code | ⬜ |
 | Error : given une extension accédant à des données hors périmètre, system la bloque | ⬜ |
 | Security/Gouvernance : les extensions low-code respectent les droits par périmètre et sont tracées | ⬜ |
+| A11y : l'éditeur low-code (constructeur de workflow/reporting) est utilisable au clavier et conforme WCAG 2.1 AA | ⬜ |
+
+## Hors périmètre
+- La plateforme low-code ne couvre pas le développement de code custom (scripts, plugins compilés) : uniquement configuration par workflows et bases de données low-code.
+- Les connecteurs BI et le datamart standard sont couverts par US36.1.2, pas ici : cette US porte sur les extensions propres à un organisme, pas sur l'offre décisionnelle de référence.
+- La marketplace ou le partage d'extensions entre organisations n'est pas incluse (isolation par tenant stricte).
+
+## Notes d'implémentation
+- Les workflows et rapports low-code s'exécutent sur les données du schéma `pilotage` ; le contrôle d'accès aux données hors périmètre doit s'appuyer sur les mêmes règles d'autorisation par équipe/tenant que le reste du module (FK `public.teams.id`).
+- La traçabilité des extensions (création, exécution) doit être journalisée pour audit, cohérent avec les exigences de gouvernance du domaine Pilotage.
+- Frontend `pivot-pilotage-ui` pour l'éditeur low-code, en s'appuyant sur `@pivot/ui-core` + `@pivot/design-system` pour les composants d'interface.
 
 ---
 Item Type: US · Parent: F36.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
