@@ -62,7 +62,7 @@ us_file_format:
   frontmatter_fields:
     Item Type: "US | Enabler | Feature | Epic"
     Parent: "clé du parent (ex. F01.1)"
-    Module: "core | auth | admin | whiteboard | session | ..."
+    Module: "core | auth | admin | oidc | pilotage | agilite | collaboratif"
     Phase: "MVP | v1-enterprise | phase-3"
     Size: "XS | S | M | L | XL"
     Priority: "Critical | High | Medium | Low"

@@ -49,7 +49,7 @@ Dépendances: …
 | **Parent** | Clé du parent (ex. `E01`, `F01.1`) |
 | **Stage** | `Backlog` · `Ready` · `In progress` · `Review` · `Done` |
 | **Priority** | `Critical` · `High` · `Medium` · `Low` |
-| **Module** | `core` · `auth` · `admin` · `oidc` · `whiteboard` · `session` · `roadmap` · `survey` · `quiz` |
+| **Module** | `core` · `auth` · `admin` · `oidc` · `pilotage` · `agilite` · `collaboratif` (extensible par domaine) |
 | **Phase** | `MVP` · `v1-enterprise` · `phase-3` |
 | **Size** | `XS` · `S` · `M` · `L` · `XL` |
 

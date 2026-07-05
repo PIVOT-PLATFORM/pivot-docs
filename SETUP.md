@@ -4,16 +4,102 @@
 
 - Docker Desktop (avec Compose v2)
 - Git
-- Les trois repos clonés **côte à côte** dans le même répertoire parent (`pivot-core/` et `pivot-ui/` doivent être adjacents — requis par `compose.yml`)
+- GitHub CLI (`gh`) — recommandé pour les PR/reviews en autonomie agentique
+- Les repos clonés **côte à côte** dans le même répertoire parent (`pivot-core/` et `pivot-ui/` doivent être adjacents — requis par `compose.yml`)
+
+## WSL (Windows)
+
+Sur Windows, le développement se fait **dans WSL2**, jamais directement en PowerShell/CMD pour
+les commandes Git/Docker/build — évite les problèmes de fins de ligne, permissions et perf I/O.
+
+```powershell
+# PowerShell administrateur — installation WSL2 + Ubuntu (une fois)
+wsl --install -d Ubuntu
+```
+
+Redémarrer, puis dans le terminal Ubuntu (WSL) :
+
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git curl build-essential
+```
+
+**Docker** : installer Docker Desktop côté Windows avec l'intégration WSL2 activée
+(Settings → Resources → WSL Integration → cocher la distro Ubuntu) — le daemon Docker est alors
+utilisable directement depuis le terminal WSL, pas besoin de Docker séparé dans WSL.
+
+**Travailler dans le filesystem Linux**, pas `/mnt/c/...` — clone les repos sous `~/` (ex.
+`~/pivot-platform/`), jamais sous `/mnt/c/Users/...` (perf I/O très dégradée + problèmes de
+permissions Git).
 
 ## Clonage
 
+Dépôts socle (toujours nécessaires) :
+
 ```bash
-mkdir pivot-platform && cd pivot-platform
+mkdir -p pivot-platform && cd pivot-platform
 git clone https://github.com/PIVOT-PLATFORM/pivot-core.git
 git clone https://github.com/PIVOT-PLATFORM/pivot-ui.git
 git clone https://github.com/PIVOT-PLATFORM/pivot-docs.git
+git clone https://github.com/PIVOT-PLATFORM/pivot-design-system.git
 ```
+
+Dépôts modules (selon le(s) domaine(s) sur lequel vous travaillez) :
+
+```bash
+# Pilotage
+git clone https://github.com/PIVOT-PLATFORM/pivot-pilotage-core.git
+git clone https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui.git
+
+# Agilité
+git clone https://github.com/PIVOT-PLATFORM/pivot-agilite-core.git
+git clone https://github.com/PIVOT-PLATFORM/pivot-agilite-ui.git
+
+# Collaboratif
+git clone https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core.git
+git clone https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui.git
+```
+
+`pivot-platform/` lui-même **n'est pas un repo** — c'est un simple dossier de travail qui
+regroupe les clones ci-dessus. Chaque sous-dossier est versionné indépendamment sur son propre
+remote GitHub.
+
+## Commits signés
+
+Chaque commit doit être signé (badge "Verified" sur GitHub). Signature SSH (plus simple que GPG,
+supportée nativement par Git ≥ 2.34) :
+
+```bash
+# 1. Générer une clé SSH dédiée à la signature (ou réutiliser une clé d'authentification existante)
+ssh-keygen -t ed25519 -C "signing key" -f ~/.ssh/id_ed25519_signing
+
+# 2. Configurer Git pour signer avec SSH
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519_signing.pub
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+```
+
+Ajouter la **clé publique** (`~/.ssh/id_ed25519_signing.pub`) sur GitHub :
+**Settings → SSH and GPG keys → New SSH key → type "Signing Key"** (distinct du type
+"Authentication Key" si une clé d'auth SSH séparée existe déjà).
+
+Vérifier :
+```bash
+git commit --allow-empty -m "test: signature" && git log --show-signature -1
+```
+
+## CLAUDE.md racine (optionnel)
+
+`pivot-platform/` n'étant pas un repo, un `CLAUDE.md` placé à sa racine n'est **jamais
+versionné** — c'est une commodité locale, pas une source de vérité. La source de vérité vit dans
+le `CLAUDE.md` de chaque repo (`pivot-core/CLAUDE.md`, `pivot-ui/CLAUDE.md`,
+`pivot-docs/CLAUDE.md`), qui reste complet et autonome même en ouvrant le repo seul, hors du
+dossier `pivot-platform/`.
+
+Un `CLAUDE.md` racine reste utile pour donner une vue d'ensemble multi-repo à un agent qui
+travaille depuis `pivot-platform/` — mais toute règle qui doit être fiable et partagée par
+l'équipe doit vivre dans le `CLAUDE.md` du repo concerné, jamais uniquement à la racine.
 
 ## Démarrage full stack
 
