@@ -68,23 +68,24 @@ Source de vérité pour l'organisation des sprints et l'assignation des US aux b
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|
-| US02.1.1 | Voir et éditer son profil | M | High | ⬜ |
+| US02.1.1 | Voir et éditer son profil | M | High | 🔄 |
 | US02.1.2 | Préférence de langue | S | Medium | ⬜ |
-| US02.2.1 | Changer son mot de passe | M | High | ⬜ |
+| US02.2.1 | Changer son mot de passe | M | High | 🔄 |
 | US02.2.2 | Changer son adresse email | M | High | ⬜ |
 | US02.2.3 | Voir et révoquer ses sessions actives | M | Medium | ⬜ |
 | US02.2.4 | Suppression de compte (RGPD) | M | High | ⬜ |
 | US02.3.1 | Export de ses données personnelles | M | High | ⬜ |
-| US06.1.1 | Liste des utilisateurs du tenant (backend) | M | High | ⬜ |
+| US06.1.1 | Liste des utilisateurs du tenant (backend) | M | High | 🔎 Review |
 | US06.1.2 | Liste des utilisateurs du tenant (Angular) | M | High | ⬜ |
 | US06.1.3 | Modifier le rôle d'un utilisateur | M | High | ⬜ |
 | US06.1.4 | Désactiver un compte | S | High | ⬜ |
 | US06.1.5 | Réactiver un compte désactivé | S | High | ⬜ |
 | US06.2.1 | Créer un tenant | L | Critical | ⬜ |
 | US06.2.2 | Désactiver un tenant | M | High | ⬜ |
-| US06.2.3 | Liste des tenants | M | Medium | ⬜ |
+| US06.2.3 | Liste des tenants | M | Medium | 🔄 |
 
-> **Parallélisable :** US02.x ‖ US06.x — dépendances : US06.1.5 après US06.1.4 ; US02.2.4 après US02.2.1
+> **Parallélisable :** US02.x ‖ US06.x — dépendances : US06.1.5 après US06.1.4 (et US06.1.2, le bouton vit dans la liste Angular) ; US02.2.4 après US02.2.1 ; US06.1.3/US06.1.4+US06.1.5 après US06.1.2 (UI partagée).
+> **Vague 1 (2026-07-05) :** US06.1.1 en Review (`pivot-core` #127 mergée, backend seul — pas de composant `pivot-ui`). US02.1.1, US02.2.1, US06.2.3 en In progress : `pivot-core` mergé (#129, #128, #126) mais `pivot-ui` encore ouvert non mergé (#71, #70, #69 — voir fichiers US pour détail des gates).
 
 ---
 
