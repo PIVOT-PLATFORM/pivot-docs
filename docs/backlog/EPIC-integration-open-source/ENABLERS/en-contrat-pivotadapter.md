@@ -2,7 +2,7 @@
 
 **Type d'enabler** : plateforme · contrat
 
-**Contexte** : Interface commune (ADR-009 §4) à six capacités — identité, entités, événements, santé, liens profonds, thème. C'est le même contrat, que la brique candidate se traduise en adaptateur ou reste native (cf. EN28.7).
+**Contexte** : Interface commune (ADR-009 §4) à six capacités — identité, entités, événements, santé, liens profonds, thème. C'est le même contrat, que la brique candidate se traduise en adaptateur ou reste native (cf. EN28.7). Étendu d'un socle de sécurité par la checklist d'admission de module (E43 — Sécurité & Zero Trust, EN43.13) : un module qui ne la satisfait pas reste en mode Lien.
 
 **Critères de complétion** :
 - [ ] Interface `PivotAdapter` définie et publiée (identité, entités, événements, santé, liens profonds, thème)

@@ -8,6 +8,7 @@
 - [ ] Bus interne (publication/consommation) en place
 - [ ] Schéma d'événement normalisé documenté
 - [ ] Un événement publié par un adaptateur est reçu par un autre abonné
+- [ ] Événements **signés et idempotents** (durcissement sécurité — cf. E43 EN43.8, tracés par l'observabilité/SIEM)
 
 **Dépendances** : EN28.3 (contrat PivotAdapter)
 

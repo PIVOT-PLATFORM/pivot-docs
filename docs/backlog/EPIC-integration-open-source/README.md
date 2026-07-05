@@ -100,6 +100,7 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface — un adaptateur s'active/désactive comme un module natif)
 - Dépend de : E17 Infrastructure multi-repo (si les adaptateurs sont un jour extraits en repos dédiés)
 - Interface avec : E08 Whiteboard, E09 Scrum Poker, E18 Pilotage, E19 Session, E20 Retrospective, E42 Pivot Forms (coexistence natif/OSS, F28.6–F28.9)
+- Interface avec : [E43 — Sécurité & Zero Trust](pathname:///pivot-docs/backlog/EPIC-securite/) (checklist d'admission EN43.13 étend EN28.3 ; EN43.11 souveraineté consommée par EN28.2 ; EN43.8 observabilité durcit EN28.4 ; SBOM/artefacts signés enrichissent EN28.12)
 
 ## Statut global
 

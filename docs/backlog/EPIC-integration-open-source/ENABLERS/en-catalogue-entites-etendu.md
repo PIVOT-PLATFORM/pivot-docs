@@ -9,6 +9,7 @@
 - [ ] Chaque entité est déclarable via un fichier YAML versionné
 - [ ] Les entités déclarées s'affichent au catalogue
 - [ ] Le modèle est réconcilié avec le schéma `public.teams` déjà existant (ADR-006) — cf. EN28.10 (ADR-011)
+- [ ] Chaque entité porte un attribut de classe de souveraineté A/B/C (cf. E43 — Sécurité & Zero Trust, EN43.11)
 
 **Dépendances** : EN28.1 (portail catalogue)
 
