@@ -58,6 +58,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E39 — Chantiers SI (pilotage)](EPIC-pilotage-chantiers/README.md) | E39 | 1 (F39.1) | — (EN18.*) | 10 | ⬜ phase-3 · pilotage · benchmark |
 | [E40 — Profil & adaptation](EPIC-profil-adaptation/README.md) | E40 | 1 (F40.1) | — (EN18.*) | 6 | ⬜ phase-3 · pilotage · **v2 adaptative** |
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 (F41.1–6) | 1 (EN41.1) | 42 | ⬜ phase-3 · transverse · **onboarding in-app + présentiel** (catalogue 29 modules) |
+| [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 (F42.1–11) | 2 (EN42.1–2) | 32 | ⬜ phase-3 · **module Forms** (no-code souverain, net-new) |
 | **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
 | **Total benchmark** | **E29 + E30 + PP distribués + E28 + v2** | **~41** | **24** | **260** | ⬜ phase-3 · voir [BENCHMARK.md](BENCHMARK.md) |
 

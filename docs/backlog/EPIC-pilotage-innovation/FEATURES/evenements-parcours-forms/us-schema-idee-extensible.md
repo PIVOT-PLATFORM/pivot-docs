@@ -17,4 +17,4 @@ Item Type: US · Parent: F38.15 · Module: pilotage · Phase: phase-3 · Size: M
 Stage: Backlog
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: SMI — événements internes d'innovation, parcours orchestré (Workflow E29), dépôt d'idée par formulaire (Forms)
-Dépendances: EN38.1 · module Forms
+Dépendances: EN38.1 · E42 Pivot Forms

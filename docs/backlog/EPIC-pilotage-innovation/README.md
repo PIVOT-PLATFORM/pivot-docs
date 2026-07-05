@@ -39,7 +39,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 - **F38.14 — Intelligence collective avancée** : **marché de prédiction d'idées** · **graphe d'innovation & moteur de sérendipité** · combinaison d'idées · valorisation par options réelles & momentum
 - **F38.15 — Événements, parcours & formulaires d'innovation** : **événements internes** (hackathons, ateliers, demo days, awards) · **parcours d'innovation orchestré par Pivot Workflow (E29)** · **challenges & dépôt d'idée par formulaire (Forms)** · schéma d'idée extensible
 
-> **Note « Pivot Forms ».** Il n'existe pas encore d'EPIC *Forms* dédié : les formulaires s'appuient aujourd'hui sur les **interfaces no-code** du module **Workflow (E29)** et les activités *sondage/quiz* du module **Session (E19)**. Un module **Forms** dédié pourrait être créé ultérieurement ; les dépendances de F38.15 se re-cibleront alors.
+> **Note.** Le module **[E42 — Pivot Forms](../EPIC-pivot-forms/README.md)** fournit le form-builder ; F38.15 le consomme pour le **dépôt d'idée** (`form.submitted` → idée). Le **parcours** d'innovation s'appuie sur **Workflow (E29)**, l'animation d'événements sur **Session (E19)** / **MeetOps (E12)**.
 
 ### Enablers
 - **[EN38.1](ENABLERS/en-modele-smi-moteur.md)** — Modèle SMI & moteur (entonnoir, stage-gate, scoring, portefeuille, KPIs)
@@ -48,7 +48,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Sy
 ## Dépendances
 
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E18 Domaine Pilotage
-- Interface avec : **E22 Roadmap** / **E23 Portefeuille** (conversion innovation → projet), **E29 Workflows** (parcours d'innovation orchestré, F38.15), **module Forms** (dépôt d'idée, F38.15), **E19 Session** (vote/idéation, événements), **E12 MeetOps** (logistique événements), **E21 Risque** (grilles de scoring) — via bus PIVOT + deep-links
+- Interface avec : **E22 Roadmap** / **E23 Portefeuille** (conversion innovation → projet), **E29 Workflows** (parcours d'innovation orchestré, F38.15), **E42 Pivot Forms** (dépôt d'idée, F38.15), **E19 Session** (vote/idéation, événements), **E12 MeetOps** (logistique événements), **E21 Risque** (grilles de scoring) — via bus PIVOT + deep-links
 
 ## Statut global
 
