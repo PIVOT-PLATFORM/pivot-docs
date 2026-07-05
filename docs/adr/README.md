@@ -18,3 +18,11 @@ sidebar_label: "Vue d'ensemble"
 | [ADR-008](ADR-008-domaines-modules-cockpits.md) | Domaines composables & cockpits | Proposé |
 | [ADR-009](ADR-009-cadre-integration-open-source.md) | Cadre d'intégration open source | Proposé |
 | [ADR-010](ADR-010-roadmap-gantt-modele-temporel.md) | Roadmap & Gantt : modèle temporel unique, parité MS Project en web | Proposé |
+| [ADR-011](ADR-011-zero-trust-mtls-token-exchange.md) | Zero Trust : mTLS est-ouest, token exchange | Proposé |
+| [ADR-012](ADR-012-plan-trafic-gateway-mesh-egress.md) | Plan de trafic : API Gateway + Service Mesh + Egress Gateway | Proposé |
+| [ADR-013](ADR-013-autorisation-externalisee-policy-as-code.md) | Autorisation externalisée (policy-as-code) | Proposé |
+| [ADR-014](ADR-014-secrets-credentials-externes-openbao.md) | Secrets & credentials externes (OpenBao, rotation) | Proposé |
+| [ADR-015](ADR-015-zones-souverainete-segmentation.md) | Zones de souveraineté A/B/C & segmentation réseau | Proposé |
+| [ADR-016](ADR-016-baseline-supply-chain-admission-modules.md) | Baseline supply-chain & gouvernance d'admission des modules | Proposé |
+
+> **Numérotation ADR-017 à ADR-020** : réservées textuellement par ADR-009 §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives) — non encore rédigées. Renumérotées depuis ADR-011–014 pour laisser la place aux 6 ADR Sécurité (ADR-011–016), qui occupaient la première tranche disponible après ADR-010.

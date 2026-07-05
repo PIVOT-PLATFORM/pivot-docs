@@ -130,12 +130,12 @@ Fork : `git subtree` par défaut (submodule pour les très gros amonts). Cycle d
 | ADR | Objet | Priorité |
 |---|---|---|
 | ADR-009 | Règle de licences amont/aval (formalisation de §3) | P0 |
-| ADR-011 | Modèle d'entités du catalogue, réconcilié avec le schéma `public.teams` (ADR-006) | P0 |
-| ADR-012 | Stratégie Git des forks (submodule vs subtree vs package) | P1 |
-| ADR-013 | Bus d'événements et schéma d'événements inter-briques | P1 |
-| ADR-014 | Briques natives à construire (planning poker, CLM) et périmètre | P2 |
+| ADR-017 | Modèle d'entités du catalogue, réconcilié avec le schéma `public.teams` (ADR-006) | P0 |
+| ADR-018 | Stratégie Git des forks (submodule vs subtree vs package) | P1 |
+| ADR-019 | Bus d'événements et schéma d'événements inter-briques | P1 |
+| ADR-020 | Briques natives à construire (planning poker, CLM) et périmètre | P2 |
 
-*(Pas d'ADR-010 : le choix du fournisseur d'identité reste couvert par ADR-004.)*
+*(Pas d'ADR-010 : le choix du fournisseur d'identité reste couvert par ADR-004. ADR-011 à ADR-016 : famille Sécurité & Zero Trust, cf. `docs/adr/README.md`.)*
 
 ## Historique
 

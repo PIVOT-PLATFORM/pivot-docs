@@ -23,6 +23,11 @@
     "static/**"
   ],
   "words": [
+    "SPIFFE",
+    "auditables",
+    "Rego",
+    "ABAC",
+    "CMDB",
     "Zitadel",
     "Forgejo",
     "Proje",
