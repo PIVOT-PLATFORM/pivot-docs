@@ -23,7 +23,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 Socle + 2 v1-ent | — | ⬜ Sprint 4 |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | 🔎 Sprint 3 — US mergées, en attente de recette |
-| [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
+| [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | 🔄 EN07.1/2 en cours (Vague 1) |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
@@ -122,7 +122,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
 - E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle mais Gate 1 PO Agent pending → **bloqué**
-- E02/E06 = Sprint 3, mergés, en attente de recette · E04/E07 = Socle mais non démarré
+- E02/E06 = Sprint 3, mergés, en attente de recette · E04 = Socle mais non démarré · E07 = EN07.1/2 démarrés (Vague 1), EN07.5 non démarré
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
@@ -134,13 +134,13 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 |----------|------|-------|--------|
 | Critical | US16.3.1 Formulaire de contact | Socle | 🔎 Review |
 | Critical | E03 Système de modules (EN03.1-4 + US03.x) | Socle | ✅ Sprint 2 terminé |
-| Critical | E07 Infrastructure prod (EN07.1/2/5) | Socle | ⬜ Backlog |
+| Critical | E07 Infrastructure prod (EN07.1/2/5) | Socle | 🔄 EN07.1/2 en cours, EN07.5 Backlog |
 | High | E06 Administration (F06.1/F06.2) | Socle | 🔎 Sprint 3 — mergé, en attente de recette |
 | High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | Socle | ✅ Sprint 2 terminé |
 | High | E02 Espace compte (F02.1/F02.2) | Socle | 🔎 Sprint 3 — mergé, en attente de recette |
 | Medium | E04 Observabilité | Socle | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | Socle | ⬜ À planifier |
-| Medium | US16.2.2 Section modules à venir | Socle | 🔄 En cours |
+| Medium | US16.2.2 Section modules à venir | Socle | 🔎 Review |
 | — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
