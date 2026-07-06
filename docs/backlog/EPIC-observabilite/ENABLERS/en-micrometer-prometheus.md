@@ -41,7 +41,7 @@
   stack de supervision plateforme).
 
 **Statut** : ✅ Fait — Gate 4 = 100/100, `pivot-core` PR [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) sortie du mode draft (label `auto-approved`). Spec figée (Gate 5) :
-[`docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus.md`](../../specs/EPIC-observabilite/en04-3-micrometer-prometheus.md).
+[`docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus.md`](pathname:///pivot-docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus).
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle

@@ -8,7 +8,7 @@ ultérieur ajoute un `## Addendum` en fin de fichier plutôt qu'une édition sil
 
 | Champ | Valeur |
 |-------|--------|
-| Enabler | [EN04.3](../../backlog/EPIC-observabilite/ENABLERS/en-micrometer-prometheus.md) — Micrometer → export Prometheus |
+| Enabler | [EN04.3](pathname:///pivot-docs/backlog/EPIC-observabilite/ENABLERS/en-micrometer-prometheus) — Micrometer → export Prometheus |
 | Parent | E04 (Observabilité) |
 | Repo | `pivot-core` |
 | PR | [PIVOT-PLATFORM/pivot-core#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) |
