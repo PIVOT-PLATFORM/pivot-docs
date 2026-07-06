@@ -151,6 +151,8 @@
     "trivy",
     "uploadé",
     "VARCHAR",
+    "BIGSERIAL",
+    "TIMESTAMPTZ",
     "vérif",
     "WORDCLOUD",
     "Échap",
