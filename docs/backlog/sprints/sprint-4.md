@@ -33,11 +33,16 @@
 > **EN04.3 :** Gate 4 = 100/100, `pivot-core` PR
 > [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) (`feat/en04-3-micrometer-prometheus`)
 > sortie du mode draft (label `auto-approved`). Spec figée (Gate 5) :
-> `docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus.md`. Deux points de coordination
-> ouverts, faute de PR EN04.2 existante au moment de l'implémentation :
-> - **EN04.2** : `management.server.port: 8081` posé directement par EN04.3 (valeur déjà actée
->   par l'AC d'EN04.2) — à réconcilier dès qu'EN04.2 a sa propre PR, pas de second
->   `management.server.port` différent.
+> `docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus.md`. Points de coordination
+> ouverts :
+> - **EN04.2** (PR [#158](https://github.com/PIVOT-PLATFORM/pivot-core/pull/158), ouverte après
+>   coup côté EN04.3) : même valeur `management.server.port: 8081` des deux côtés — pas de
+>   conflit là. En revanche les deux PR modifient la **même ligne**
+>   `management.endpoints.web.exposure.include` (EN04.3 : `health,info,prometheus` · EN04.2 :
+>   `health,info,metrics`) — à fusionner en `health,info,metrics,prometheus` (union, pas le
+>   contenu d'un seul des deux côtés) au merge de la seconde des deux PR, sous peine de faire
+>   disparaître silencieusement un endpoint (404, aucun test/build ne le détecte). Commentaire
+>   posé sur les deux PR (#157 et #158).
 > - **EN07.1** (PR [#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149)) : le
 >   healthcheck Docker de `pivot-core` (`http://localhost:8080/api/actuator/health`) doit passer
 >   à `http://localhost:8081/actuator/health` une fois EN04.3 et EN07.1 fusionnées — Actuator
