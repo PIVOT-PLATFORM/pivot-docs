@@ -11,7 +11,7 @@
 | US01.4.2 | Gérer ses appareils de confiance | M | High | 🔄 In progress |
 | US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | 🔄 In progress |
 | US01.5.1 | Notification email action sensible | M | High | 🔄 In progress |
-| EN-NOTIF | Infrastructure notifications in-app | L | High | ⬜ |
+| EN-NOTIF | Infrastructure notifications in-app | L | High | 🔎 Review |
 | US16.1.3 | Badge notifications | S | Medium | ⬜ |
 | US16.2.2 | Section modules à venir | S | Medium | 🔎 Review |
 | US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | 🔎 Review |
@@ -53,3 +53,9 @@
 > [#101](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/101), Gate 4 = 100/100 sur les deux,
 > CI verte, PR ouvertes et prêtes pour review (pas encore mergées) — `Stage` passé à `Review`
 > dans le fichier US.
+>
+> **EN-NOTIF (2026-07-06) :** `pivot-core` PR [#160](https://github.com/PIVOT-PLATFORM/pivot-core/pull/160)
+> ouverte (draft), autoloop en cours. Producteurs US06.1.3/US06.1.4 câblés réellement (déjà
+> fusionnés) ; US01.5.1/US01.4.3a définis (type + i18n) mais pas câblés — leurs PR (#154/#151) ne
+> sont pas fusionnées et ne publient encore aucun événement consommable. Débloque US16.1.3 dès
+> Gate 4 = 100/100.
