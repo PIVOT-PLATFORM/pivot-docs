@@ -111,7 +111,7 @@ gate_5_spec_freeze:
     100/100 — avant merge, au même moment que la sortie du mode draft et le passage
     Stage: Review. Le Doc Agent agit de façon autonome, indépendamment de la recette humaine
     du mainteneur (Stage: Done) : la PR peut encore attendre une review humaine (ex. Breaking
-    Point 2) que la spec est déjà figée.
+    Point 2) alors que la spec est déjà figée.
   non_blocking: >
     Un échec du Doc Agent n'affecte jamais la sortie du mode draft ni le Gate 4 déjà validé —
     reproductible à la prochaine itération de l'Autoloop si manqué.

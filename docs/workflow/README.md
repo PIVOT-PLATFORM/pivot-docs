@@ -157,7 +157,7 @@ futures qui en dépendent (ex. un contrat WebSocket de session dont dépend le c
 **Déclencheur :** dans l'Autoloop du repo qui implémente l'US (`pivot-core`/`pivot-ui`), dès que
 Gate 4 atteint 100/100 — **avant merge**, au même moment que la sortie du mode draft et le passage
 `Stage: Review`. Ne dépend pas de la recette humaine du mainteneur (`Stage: Done`) : la PR peut
-encore être en attente de review humaine (ex. Breaking Point 2) que la spec est déjà figée.
+encore être en attente de review humaine (ex. Breaking Point 2) alors que la spec est déjà figée.
 
 **Agent :** Doc Agent — lit la PR à Gate 4 = 100/100 (ACs cochés, diff de la PR), puis génère un
 document figé **dans une branche/PR dédiée sur `pivot-docs`** (jamais de commit cross-repo) :
