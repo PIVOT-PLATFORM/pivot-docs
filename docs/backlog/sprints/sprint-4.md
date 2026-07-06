@@ -7,7 +7,7 @@
 |----|-------|------|----------|--------|
 | EN07.1 | Docker Compose production | M | Critical | 🔎 Review |
 | EN07.2 | Secret management Docker secrets | M | Critical | 🔎 Review |
-| EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | ⬜ |
+| EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | 🔎 Review |
 | US01.4.2 | Gérer ses appareils de confiance | M | High | 🔎 Review |
 | US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | 🔎 Review |
 | US01.5.1 | Notification email action sensible | M | High | 🔎 Review |
@@ -72,3 +72,5 @@
 > avec EN07.5 ([#155](https://github.com/PIVOT-PLATFORM/pivot-core/pull/155)) : son
 > `deploy.yml` vérifie `localhost/api/actuator/health`, chemin qui disparaît une fois #158
 > mergée — commentaire posté sur #155.
+>
+> **EN07.5 (2026-07-06) :** Gate 4 = 100/100, `pivot-core` PR [#155](https://github.com/PIVOT-PLATFORM/pivot-core/pull/155) sortie du mode draft. Dépend de `docker-compose.prod.yml` (EN07.1, PR [#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149)) et référence son service `pivot-core` — ni EN07.1 ni EN07.2 ne sont mergées à ce jour, rebase de la PR #155 nécessaire une fois l'une des deux mergée (non bloquant, écrit contre `main` normalement). Secrets `PROD_SSH_HOST/USER/KEY/PORT`, `PROD_DEPLOY_PATH`, `SLACK_WEBHOOK_URL` à créer par le mainteneur (gap externe, aucun n'existe dans l'organisation aujourd'hui).
