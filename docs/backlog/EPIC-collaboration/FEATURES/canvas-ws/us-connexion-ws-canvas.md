@@ -54,6 +54,12 @@
   chaque `JOIN`/`LEAVE` avec la liste complète des participants.
 - **Dépend de EN08.1** (isolation WebSocket room par board) pour la vérification d'appartenance à
   la souscription.
+- Le champ `payload` de `DRAW` reste **opaque et spécifique à l'outil** pour le transport (pas de
+  schéma STOMP rigide par type) : il porte notamment les attributs de style ajoutés côté canvas
+  (`strokeColor`/`fillColor`/`groupId`, cf. US08.3.2a) sans qu'aucune évolution du contrat
+  WebSocket ci-dessus ne soit nécessaire — seule la validation de schéma JSON côté serveur (whitelist
+  des champs acceptés par `type`) doit suivre les évolutions de payload décidées par les US
+  consommatrices.
 - **Ambiguïté ouverte (non tranchée ici)** : persistance des événements `DRAW` — historique complet
   rejouable événement par événement, ou snapshot périodique + delta ? Impacte le modèle de données
   du schéma `collaboratif` (table d'événements vs table de snapshots). À arbitrer par l'Architect

@@ -9,7 +9,7 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | STOMP client connecté au board room via `@stomp/rx-stomp` (sujet `/topic/whiteboard/{boardId}`) | ⬜ |
-| Chaque action locale (DRAW, ERASE, MOVE, RESIZE) publiée sur STOMP avec `boardId` + `userId` + `payload` | ⬜ |
+| Chaque action locale (trait, forme, effacement, déplacement, redimensionnement) publiée sur STOMP comme message `DRAW` unique avec `boardId` + `userId` + sous-champ `type` + `payload` (jamais de type STOMP distinct par action, cf. Notes d'implémentation) | ⬜ |
 | Actions reçues des autres participants appliquées au canvas local sans écraser l'état local en cours | ⬜ |
 | Reconnexion automatique STOMP — backoff exponentiel (1s · 2s · 4s · max 30s) | ⬜ |
 | À la navigation vers `/whiteboard/{boardId}` : `GET /api/collaboratif/whiteboard/boards/{boardId}` vérifie appartenance avant init canvas — 403 ou 404 → redirection `/whiteboard` + toast erreur | ⬜ |

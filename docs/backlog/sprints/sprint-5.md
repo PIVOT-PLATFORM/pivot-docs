@@ -17,7 +17,7 @@
 | US08.2.2 | Utilisateur rejoint un tableau via token | M | High | ⬜ |
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | ⬜ |
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | ⬜ |
-| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | L | High | ⬜ |
+| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ⬜ |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ⬜ |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ⬜ |
@@ -40,3 +40,12 @@
 > Sprint 5 reste non démarré côté implémentation : le second volet du prérequis (Sprint 4 EN07.x
 > **validé** au sens recette, pas seulement mergé) dépend de la recette manuelle du mainteneur, pas
 > d'un agent.
+>
+> **Revue de parité concurrentielle (2026-07-07, suite du Gate 1) :** benchmark Miro/Klaxoon/
+> Microsoft Whiteboard sur les fonctionnalités déjà planifiées. Décision du mainteneur : ne pas
+> rouvrir le verrou Socle (sticky notes, connecteurs, commentaires, vote, réactions restent
+> `phase-3` — voir `zones-ombre.md` #11). US08.3.2a enrichie en conséquence (couleur, sélection
+> multiple, duplication, copier/coller, groupement, guides d'alignement) sans nouveau type d'objet
+> — Size relevé L → XL, l'Architect Agent devra juger d'une décomposition avant Gate 2. Incohérence
+> corrigée au passage sur US08.3.2b (AC citait encore DRAW/ERASE/MOVE/RESIZE comme 4 types STOMP
+> distincts, contredisant le contrat unique déjà posé en Notes d'implémentation).
