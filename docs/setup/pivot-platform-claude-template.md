@@ -46,7 +46,7 @@ Procédure à exécuter **depuis `pivot-platform/`**, avant de basculer dans un 
 
 1. `git pull origin main` dans les repos concernés par le sprint courant — toujours `pivot-core`,
    `pivot-ui`, `pivot-docs` ; + les repos module concernés si le sprint en touche un
-2. Lire `pivot-docs/docs/backlog/SPRINTS.md` — identifier le sprint courant et les US éligibles
+2. Lire `pivot-docs/docs/backlog/sprints/README.md` — identifier le sprint courant et les US éligibles
    (protocole détaillé : `pivot-docs/CLAUDE.md`, skill `pivot-backlog-workflow`)
 3. Lancer **un agent par US éligible, en parallèle** — chaque agent :
    - Se place dans **le repo concerné par son US** (`pivot-core` pour du backend, `pivot-ui`

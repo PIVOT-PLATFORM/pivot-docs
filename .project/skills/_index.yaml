@@ -19,7 +19,7 @@ skills:
     load_when:
       agents: [PO_Agent, Dev_Agent, Scrum_Master]
       triggers:
-        - "démarrage de session — lecture SPRINTS.md"
+        - "démarrage de session — lecture docs/backlog/sprints/"
         - "sélection d'une US à implémenter"
         - "mise à jour Stage d'une US"
         - "création ou modification d'un fichier backlog US/Enabler/Feature"

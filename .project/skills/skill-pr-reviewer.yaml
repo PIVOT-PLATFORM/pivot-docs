@@ -16,7 +16,7 @@ review_dimensions:
 
   backlog_consistency:
     rules:
-      - "Stage du frontmatter cohérent avec SPRINTS.md"
+      - "Stage du frontmatter cohérent avec sprints/sprint-{N}.md"
       - "Pas d'US en Stage: Done sans PR mergée"
       - "Pas d'US en Stage: Review sans Gate 4 posté en commentaire PR"
 
@@ -46,7 +46,7 @@ gate_scoring:
     - "markdownlint ou cspell rouge → corriger avant Gate 4"
 
   gate_4_breakdown:
-    backlog_consistency_25pts: "Frontmatter cohérent, SPRINTS.md synchronisé"
+    backlog_consistency_25pts: "Frontmatter cohérent, sprints/sprint-{N}.md synchronisé"
     ac_coverage_25pts: "ACs complets, Given/When/Then, 🤖 Dev tracé"
     markdown_quality_25pts: "markdownlint + cspell verts, nomenclature ok"
     links_and_refs_25pts: "Liens inter-fichiers valides, ADR/audits référencés"
@@ -66,7 +66,7 @@ review_template: |
   ### Breakdown
   | Dimension | Score | Détail |
   |-----------|-------|--------|
-  | Cohérence backlog (frontmatter + SPRINTS.md) | /25 | |
+  | Cohérence backlog (frontmatter + sprints/sprint-{N}.md) | /25 | |
   | Couverture AC (Given/When/Then, 🤖 Dev tracé) | /25 | |
   | Qualité markdown (lint, cspell, nomenclature) | /25 | |
   | Liens & références (ADR, audits, inter-fichiers) | /25 | |
@@ -102,7 +102,7 @@ artifact_format: |
 
 gate_checklist:
   gate_4:
-    - "Frontmatter Stage cohérent avec SPRINTS.md"
+    - "Frontmatter Stage cohérent avec sprints/sprint-{N}.md"
     - "Tous les ACs Given/When/Then complets"
     - "markdownlint + cspell verts"
     - "Nomenclature fichiers respectée"
