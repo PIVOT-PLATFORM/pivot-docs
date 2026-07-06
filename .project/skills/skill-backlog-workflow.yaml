@@ -71,7 +71,7 @@ us_file_format:
   stage_transitions:
     backlog_to_ready: "PO Agent vérifie DoR + Gate 1 ≥ 70 → Stage: Ready (autonome)"
     ready_to_in_progress: "Dev Agent démarre immédiatement → Stage: In progress"
-    in_progress_to_review: "Après Gate 4 ≥ 85 → Stage: Review + signal mainteneur"
+    in_progress_to_review: "Après Gate 4 = 100/100 → Stage: Review + signal mainteneur"
     review_to_done: "Mainteneur merge la PR"
     done_to_spec_frozen: "Doc Agent (autonome, non-bloquant) → Gate 5 → docs/specs/{EPIC}/{us-id}-{slug}.md figé"
 

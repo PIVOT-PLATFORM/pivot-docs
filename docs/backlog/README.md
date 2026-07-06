@@ -139,7 +139,7 @@ Done ◄──(mainteneur : merge PR)────────────── 
 |------------|-----|-----------|
 | `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 ≥ 70 |
 | `Ready → In progress` | **Claude** (Dev Agent) | Immédiat |
-| `In progress → Review` | **Claude** | PR autoloop terminé (Gate 4 vert, CI verte, max 10 boucles) |
+| `In progress → Review` | **Claude** | PR autoloop terminé (Gate 4 = 100/100, CI verte, max 20 boucles) |
 | `Review → Done` | **Mainteneur** | Merge PR — **jamais Claude** |
 
 - US bloquée → retour `Backlog` + note dans SPRINTS.md.
@@ -244,14 +244,14 @@ Au démarrage de chaque session, Claude :
 Après implémentation d'une US sur `feat/{us-id}-{slug}` :
 
 1. Ouvrir une PR (ou draft PR)
-2. **Autoloop** (10 itérations max) :
+2. **Autoloop** (20 itérations max) :
    - **Review neutre** — Expert PR Review : cohérence architecture, AC couverts, sécurité, dette, a11y
    - **Corrections** — appliquées sur la branche, commit `fix({scope}): ...`
    - **CI** — `mvn verify -q` + `npx tsc --noEmit` + `npm run lint` + `npm run test:ci` + build prod = 0 erreur
    - **Corrections CI** — si échec, corriger et relancer
-   - **Convergence** — Gate 4 ≥ 85 ET CI verte → sortir de la boucle
-3. **Gate 4 vert** → mettre `Stage: Review` dans le frontmatter US + signal mainteneur "PR prête"
-4. **Blocage 10 boucles** → Breaking Point 2 (label `needs-human-review`, escalade mainteneur)
+   - **Convergence** — Gate 4 = 100/100 ET CI verte → sortir de la boucle
+3. **Gate 4 = 100/100** → mettre `Stage: Review` dans le frontmatter US + signal mainteneur "PR prête"
+4. **Blocage 20 boucles** → Breaking Point 2 (label `needs-human-review`, escalade mainteneur)
 
 ---
 
