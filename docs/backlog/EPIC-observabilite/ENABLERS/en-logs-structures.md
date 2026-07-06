@@ -10,10 +10,10 @@
 - [x] Log de démarrage : version du service, port, profil Spring actif — `StartupLogListener` (`event=APPLICATION_STARTED`)
 - [x] Aucune donnée personnelle dans les logs (email, mot de passe, token) — `userId` en MDC reste l'id numérique `public.users.id` non haché, cohérent avec tous les logs structurés existants du repo (clé de substitution interne, pas une donnée personnelle au sens des exemples de l'AC) ; email/mot de passe/token ne sont jamais journalisés
 - [x] `// NOSONAR` interdit — aucune occurrence ajoutée
-- [x] Tests TU : vérification MDC propagé (Logback test appender) — `RequestMdcFilterTest` (10 tests, `ListAppender`) + `StartupLogListenerTest` (6 tests), 100 % couverture instructions
+- [x] Tests TU : vérification MDC propagé (Logback test appender) — `RequestMdcFilterTest` (12 tests, `ListAppender`) + `StartupLogListenerTest` (6 tests), 100 % couverture instructions
 
-**Statut** : 🔄 En cours de revue — PR pivot-core [#156](https://github.com/PIVOT-PLATFORM/pivot-core/pull/156) (`feat/en04-1-logs-structures`)
+**Statut** : 🔎 Gate 4 = 100/100 — PR pivot-core [#156](https://github.com/PIVOT-PLATFORM/pivot-core/pull/156) (`feat/en04-1-logs-structures`) prête pour revue (`gh pr ready`), en attente de merge. Spec figée (Gate 5) : [EN04.1 — Logs structurés JSON + MDC](pathname:///pivot-docs/specs/E04/en04-1-logs-structures-json-mdc)
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
-Stage: In progress · Priority: High
+Stage: Review · Priority: High
