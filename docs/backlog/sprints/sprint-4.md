@@ -17,7 +17,7 @@
 | US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | 🔄 In progress |
 | US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | ⬜ |
 | US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | ⬜ |
-| EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | ⬜ |
+| EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | 🔄 |
 | EN04.2 | Spring Actuator (management port :8081, non routé nginx) | S | Medium | ⬜ |
 | EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | ⬜ |
 | EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | ⬜ |
