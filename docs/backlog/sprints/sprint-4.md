@@ -14,7 +14,7 @@
 | EN-NOTIF | Infrastructure notifications in-app | L | High | ⬜ |
 | US16.1.3 | Badge notifications | S | Medium | ⬜ |
 | US16.2.2 | Section modules à venir | S | Medium | 🔎 Review |
-| US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | 🔄 In progress |
+| US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | 🔎 Review |
 | US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | ⬜ |
 | US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | ⬜ |
 | EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | 🔄 |
@@ -47,3 +47,9 @@
 >   healthcheck Docker de `pivot-core` (`http://localhost:8080/api/actuator/health`) doit passer
 >   à `http://localhost:8081/actuator/health` une fois EN04.3 et EN07.1 fusionnées — Actuator
 >   quitte le port principal.
+>
+> **US03.3.1 (2026-07-06) :** implémentation terminée — `pivot-core` PR
+> [#153](https://github.com/PIVOT-PLATFORM/pivot-core/pull/153) et `pivot-ui` PR
+> [#101](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/101), Gate 4 = 100/100 sur les deux,
+> CI verte, PR ouvertes et prêtes pour review (pas encore mergées) — `Stage` passé à `Review`
+> dans le fichier US.
