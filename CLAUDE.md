@@ -176,6 +176,13 @@ Après modification (backlog, ADR, audit, workflow) sur une branche dédiée :
 3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · `Stage: Review` dans frontmatter US + `sprints/sprint-{N}.md` + signal mainteneur
 4. Blocage 20 boucles → Breaking Point 2
 
+**Merge toujours humain, quel que soit le score.** Contrairement à `pivot-core`/`pivot-ui`/aux
+repos modules, une PR `pivot-docs` à Gate 4 = 100/100 sort du mode draft mais n'est **jamais**
+fusionnée par Claude — `pivot-docs` est la source de vérité du backlog, sa fusion reste une
+décision du mainteneur dans tous les cas. (Ceci recoupe une contrainte technique déjà réelle :
+le compte GitHub authentifié ne peut pas s'auto-approuver sa propre review — mais la règle vaut
+même si cette contrainte technique disparaissait un jour.)
+
 ---
 
 ## Workflow — Vérifications avant push autonome
@@ -289,7 +296,7 @@ AC ambigu à l'implémentation → **stopper, PO Agent clarifie, jamais d'interp
 | `security` | Impact sécurité — hard block Gate 4, review humaine |
 | `breaking-change` | Changement de contrat — hard block Gate 4, review humaine |
 | `needs-human-review` | Gate 4 < 60 ou hard block — décision humaine requise |
-| `auto-approved` | Gate 4 = 100/100 — mergé automatiquement |
+| `auto-approved` | Gate 4 = 100/100 — sortie de draft, mais **merge toujours humain** sur ce repo (voir *Workflow — Autoloop PR (docs)*) |
 | `chore` | Maintenance, CI, dépendances |
 | `docs` | Documentation uniquement |
 
