@@ -367,7 +367,7 @@ Décisions produit / cadrages à traiter **avant** le sprint qui en dépend :
 2. **US en cours :** commits atomiques sur `feat/{us-id}-{slug}` — backlog + code dans chaque commit
 3. **Actions parallèles :** plusieurs US du sprint lancées simultanément — **une branche par US/Enabler**, agents séparés
 4. **Mise à jour SPRINTS.md :** à chaque changement d'état d'une US (commit sur la branche de l'US)
-5. **Fin d'US :** PR `feat/{us-id}-{slug} → main`, autoloop review + CI, Gate 4 ≥ 85
+5. **Fin d'US :** PR `feat/{us-id}-{slug} → main`, autoloop review + CI, Gate 4 = 100/100
 6. **US bloquée :** retour Backlog + note dans ce fichier + commit sur la branche de l'US courante
 
 ---
