@@ -5,24 +5,29 @@
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|
-| EN07.1 | Docker Compose production | M | Critical | 🔎 Review |
-| EN07.2 | Secret management Docker secrets | M | Critical | 🔎 Review |
-| EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | 🔎 Review |
-| US01.4.2 | Gérer ses appareils de confiance | M | High | 🔎 Review |
-| US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | 🔎 Review |
-| US01.5.1 | Notification email action sensible | M | High | 🔎 Review |
-| EN-NOTIF | Infrastructure notifications in-app | L | High | 🔎 Review |
-| US16.1.3 | Badge notifications | S | Medium | 🔎 Review |
-| US16.2.2 | Section modules à venir | S | Medium | 🔎 Review |
-| US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | 🔎 Review |
-| US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | 🔎 Review |
-| US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | 🔎 Review |
-| EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | 🔄 |
-| EN04.2 | Spring Actuator (management port :8081, non routé nginx) | S | Medium | 🔎 Review |
-| EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | 🔎 Review |
-| EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | 🔎 Review |
+| EN07.1 | Docker Compose production | M | Critical | ✅ [core#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149) |
+| EN07.2 | Secret management Docker secrets | M | Critical | ✅ [core#150](https://github.com/PIVOT-PLATFORM/pivot-core/pull/150) |
+| EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | ✅ [core#155](https://github.com/PIVOT-PLATFORM/pivot-core/pull/155) |
+| US01.4.2 | Gérer ses appareils de confiance | M | High | ✅ [core#152](https://github.com/PIVOT-PLATFORM/pivot-core/pull/152) · [ui#100](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/100) |
+| US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | ✅ [core#151](https://github.com/PIVOT-PLATFORM/pivot-core/pull/151) |
+| US01.5.1 | Notification email action sensible | M | High | ✅ [core#154](https://github.com/PIVOT-PLATFORM/pivot-core/pull/154) |
+| EN-NOTIF | Infrastructure notifications in-app | L | High | ✅ [core#160](https://github.com/PIVOT-PLATFORM/pivot-core/pull/160) |
+| US16.1.3 | Badge notifications | S | Medium | ✅ [ui#103](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/103) |
+| US16.2.2 | Section modules à venir | S | Medium | ✅ déjà livré avant ce sprint ([ui#47](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/47)) |
+| US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | ✅ [core#153](https://github.com/PIVOT-PLATFORM/pivot-core/pull/153) · [ui#101](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/101) |
+| US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | ✅ [core#159](https://github.com/PIVOT-PLATFORM/pivot-core/pull/159) |
+| US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | ✅ [core#161](https://github.com/PIVOT-PLATFORM/pivot-core/pull/161) · [ui#102](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/102) |
+| EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | ✅ [core#156](https://github.com/PIVOT-PLATFORM/pivot-core/pull/156) |
+| EN04.2 | Spring Actuator (management port :8081, non routé nginx) | S | Medium | ✅ [core#158](https://github.com/PIVOT-PLATFORM/pivot-core/pull/158) |
+| EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | ✅ [core#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) |
+| EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | ✅ [core#162](https://github.com/PIVOT-PLATFORM/pivot-core/pull/162) · [ui#104](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/104) |
 
-> **Blocker :** EN-NOTIF doit précéder US16.1.3. EN07.x validé avant toute release prod. EN04.x parallélisables entre eux.
+> **Sprint clos (2026-07-07) :** 16/16 items mergés sur `main` (pivot-core + pivot-ui), Gate 4 =
+> 100/100 sur chacun. Statuts resynchronisés après audit direct des PR mergées
+> (`gh pr list --state merged`) — le tableau ci-dessus et les notes historiques ci-dessous
+> (conservées pour traçabilité) étaient restés au dernier état connu avant fusion complète.
+>
+> **Blocker (historique) :** EN-NOTIF doit précéder US16.1.3. EN07.x validé avant toute release prod. EN04.x parallélisables entre eux.
 >
 > **Démarrage (2026-07-06) :** US16.2.2 était déjà implémentée et mergée (`pivot-ui` #47) — statut resynchronisé, pas relancée. Vague 1 (max 6 agents en parallèle) lancée sur EN07.1, EN07.2, US01.4.2, US01.4.3a, US01.5.1, US03.3.1 — `Stage: In progress` dans les fichiers US concernés dès le démarrage de chaque agent. **Note EN07.1 :** l'AC d'origine référence `pivot-pilotage-core`/`pivot-agilite-core`/`pivot-collaboratif-core` — repos pas encore créés ; scope clarifié (Gate 1 autonome) pour couvrir uniquement les services existants (nginx, pivot-core, pivot-ui, postgres, redis), le reste documenté comme différé plutôt que fabriqué.
 >

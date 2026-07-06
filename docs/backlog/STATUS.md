@@ -20,10 +20,10 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 16+4pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | 🔎 Sprint 3 — US Socle mergées, en attente de recette |
 | [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ✅ Sprint 2 terminé — EN03.1-4 + US03.x mergés |
-| [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 Socle + 2 v1-ent | — | ⬜ Sprint 4 |
+| [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 Socle + 2 v1-ent | — | ✅ Sprint 4 terminé (EN04.1-4) |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | 🔎 Sprint 3 — US mergées, en attente de recette |
-| [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | 🔄 EN07.1/2 en cours (Vague 1) |
+| [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ✅ Sprint 4 terminé (EN07.1/2/5) |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
@@ -31,7 +31,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
-| [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | ✅ Sprint 1 Done |
+| [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 Sprint 1 Done + badge notifs/modules à venir (Sprint 4, 🔎 Review) |
 | [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
 | [E18 — Domaine Pilotage (ombrelle)](EPIC-pilotage/README.md) | E18 | — | 7 (EN18.1–9) | — | ⬜ phase-3 — éclaté en modules E21–E30 + E32–E40 (ADR-008) |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
@@ -122,7 +122,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
 - E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle mais Gate 1 PO Agent pending → **bloqué**
-- E02/E06 = Sprint 3, mergés, en attente de recette · E04 = Socle mais non démarré · E07 = EN07.1/2 démarrés (Vague 1), EN07.5 non démarré
+- E02/E06 = Sprint 3, mergés, en attente de recette · E04/E07 = Sprint 4, mergés, en attente de recette
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
@@ -134,12 +134,14 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 |----------|------|-------|--------|
 | Critical | US16.3.1 Formulaire de contact | Socle | 🔎 Review |
 | Critical | E03 Système de modules (EN03.1-4 + US03.x) | Socle | ✅ Sprint 2 terminé |
-| Critical | E07 Infrastructure prod (EN07.1/2/5) | Socle | 🔄 EN07.1/2 en cours, EN07.5 Backlog |
+| Critical | E07 Infrastructure prod (EN07.1/2/5) | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
 | High | E06 Administration (F06.1/F06.2) | Socle | 🔎 Sprint 3 — mergé, en attente de recette |
 | High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | Socle | ✅ Sprint 2 terminé |
+| High | US01.4.2/1.4.3a/1.5.1 (Auth avancé — appareils, alertes, notif e-mail) | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
 | High | E02 Espace compte (F02.1/F02.2) | Socle | 🔎 Sprint 3 — mergé, en attente de recette |
-| Medium | E04 Observabilité | Socle | ⬜ Sprint 3/4 |
-| Medium | US16.1.3 Badge notifications | Socle | ⬜ À planifier |
+| Medium | E04 Observabilité | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
+| Medium | EN-NOTIF + US03.3.1/3.2/3.3 (notifications in-app + SUPER_ADMIN plans) | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
+| Medium | US16.1.3 Badge notifications | Socle | 🔎 Review |
 | Medium | US16.2.2 Section modules à venir | Socle | 🔎 Review |
 | — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
@@ -166,3 +168,5 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 ---
 
 *Dernière mise à jour : 2026-07-06 — ajout E21–E43 (sauf E31, dissous) suite au merge des branches split/pilotage, split/integration-oss, split/workflows, split/collaboration, split/agilite, split/onboarding, split/pivot-forms, split/securite et docs/taxonomie-referentiel-roles*
+
+*Resync 2026-07-07 : Sprint 4 (E04/E07 + auth avancé + EN-NOTIF + US03.3.x + US16.1.3/16.2.2) — 16/16 items mergés sur `pivot-core`/`pivot-ui`, `Stage: Review` en attente de recette. Voir `docs/backlog/sprints/sprint-4.md` pour le détail PR par item.*

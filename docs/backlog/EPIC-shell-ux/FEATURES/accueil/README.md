@@ -4,5 +4,5 @@
 
 **US rattachées** :
 - [US16.2.1 — Grille des modules actifs](us-accueil-grille.md) ✅
-- [US16.2.2 — Section modules à venir](us-accueil-modules-avenir.md) ⬜
+- [US16.2.2 — Section modules à venir](us-accueil-modules-avenir.md) 🔎 Review
 - [Dashboard utilisateur (hors GitHub)](us-dashboard.md) ✅

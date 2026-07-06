@@ -24,7 +24,7 @@ Shell de l'application Angular : navigation principale, page d'accueil (grille m
 - Dépend de : E03 Système de modules (statut modules pour la grille)
 
 ## Statut global
-🔄 En cours — navigation ✅, accueil 🔄 (modules à venir en cours), thèmes ✅, contact 🔎 Review, badge notifs ⬜
+🔄 En cours — navigation ✅ (badge notifs 🔎 Review), accueil 🔎 Review (modules à venir), thèmes ✅, contact 🔎 Review
 
 ---
 
@@ -35,12 +35,12 @@ Shell de l'application Angular : navigation principale, page d'accueil (grille m
 | **F16.1 — Navigation principale** | |
 | [US16.1.1 — Navigation (logo, liens, responsive)](FEATURES/navigation/us-navbar.md) | ✅ |
 | [US16.1.2 — Menu utilisateur (avatar, nom, déconnexion)](FEATURES/navigation/us-menu-utilisateur.md) | ✅ |
-| [US16.1.3 — Badge notifications](FEATURES/navigation/us-badge-notifications.md) | ⬜ |
+| [US16.1.3 — Badge notifications](FEATURES/navigation/us-badge-notifications.md) | 🔎 Review |
 | [Footer (hors GitHub)](FEATURES/navigation/us-footer.md) | ✅ |
 | [i18n FR/EN (hors GitHub)](FEATURES/navigation/us-i18n.md) | ✅ |
 | **F16.2 — Page d'accueil** | |
 | [US16.2.1 — Grille des modules actifs](FEATURES/accueil/us-accueil-grille.md) | ✅ |
-| [US16.2.2 — Section modules à venir](FEATURES/accueil/us-accueil-modules-avenir.md) | 🔄 |
+| [US16.2.2 — Section modules à venir](FEATURES/accueil/us-accueil-modules-avenir.md) | 🔎 Review |
 | [Dashboard utilisateur (hors GitHub)](FEATURES/accueil/us-dashboard.md) | ✅ |
 | **F16.3 — Page contact** | |
 | [US16.3.1 — Formulaire de contact](FEATURES/contact/us-formulaire-contact.md) | 🔎 Review |
