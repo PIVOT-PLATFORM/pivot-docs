@@ -41,7 +41,7 @@ Principes fondateurs :
 
 ```text
 PO Agent (autonome)
-  └─ Lit SPRINTS.md → US Stage: Backlog + Phase MVP
+  └─ Lit docs/backlog/sprints/ (sprint courant) → US Stage: Backlog + Phase MVP
        │
        ▼
   Gate 1 — READINESS (PO Agent self-challenge)
@@ -200,7 +200,7 @@ Session start
 
 Contraintes :
 - **Isolation** : une branche par US — pas de conflit inter-US
-- **Backlog** : SPRINTS.md mis à jour sur chaque branche (pas de conflit si US différentes)
+- **Backlog** : `docs/backlog/sprints/sprint-{N}.md` mis à jour sur chaque branche — un fichier par sprint limite la contention aux US du même sprint
 - **Rollback** : Gate 4 < 60 → Breaking Point 2 sur l'US concernée uniquement
 
 ---
@@ -230,7 +230,7 @@ le RUN PROD.
 
 | Élément du modèle IT4IT | Correspondance PIVOT |
 |-------------------------|----------------------|
-| Portail web de dépôt | `pivot-docs` — backlog markdown + SPRINTS.md |
+| Portail web de dépôt | `pivot-docs` — backlog markdown + `docs/backlog/sprints/` |
 | Plateforme Agentique dev | Claude Code — agents ACDD (PO · Dev · QA · Security · PR Review) |
 | Agents spécialisés | Skills PIVOT (skill-spring-architecture, skill-angular-architecture, …) |
 | Moteurs agents | Claude Code (Sonnet 4.6 / Opus 4.8) |

@@ -4,7 +4,7 @@
 
 **PIVOT-DOCS** — documentation générale de la suite collaborative PIVOT. Rôle :
 
-1. **Source de vérité du backlog** : fichiers markdown (`docs/backlog/`) + `SPRINTS.md` — hiérarchie EPIC → FEATURE/ENABLER → US, état d'avancement.
+1. **Source de vérité du backlog** : fichiers markdown (`docs/backlog/`) + `docs/backlog/sprints/` (un fichier par sprint) — hiérarchie EPIC → FEATURE/ENABLER → US, état d'avancement.
 2. **Documentation technique** : architecture cible, ADR, audits par domaine, pipelines CI/CD.
 3. **Site publié** : [Docusaurus](https://docusaurus.io/) sur GitHub Pages — <https://pivot-platform.github.io/pivot-docs/>.
 
@@ -82,7 +82,7 @@ Toute contribution mobilise les experts concernés — les mentionner explicitem
 | Type de tâche | Expert(s) |
 |---------------|-----------|
 | Rédaction/revue US, Epic, critères d'acceptation | **Product Owner** |
-| SPRINTS.md, coordination multi-repo | **Scrum Master** |
+| Sprints (`docs/backlog/sprints/`), coordination multi-repo | **Scrum Master** |
 | Review finale PR (après "prêt pour review") | **Expert PR Review** |
 | ADR, architecture cible, diagrammes | **Architecte Modules** + expert du domaine concerné |
 | Audit RGPD, registre traitements | **Expert RGPD** |
@@ -97,7 +97,7 @@ Toute contribution mobilise les experts concernés — les mentionner explicitem
 
 > **pivot-docs est la source de vérité du backlog.**
 > - Hiérarchie backlog + conventions : `docs/backlog/README.md`
-> - Sprints, assignation US, état avancement : **`docs/backlog/SPRINTS.md`**
+> - Sprints, assignation US, état avancement : **`docs/backlog/sprints/`** (un fichier par sprint, index dans `sprints/README.md`)
 > - Backlog opérationnel : un fichier par US/Enabler/Feature/Epic avec frontmatter (`Stage`, `Priority`, `Phase`, `Module`)
 > - Protocole de lecture/mise à jour détaillé : skill `pivot-backlog-workflow` (`.project/skills/skill-backlog-workflow.yaml`)
 
@@ -146,13 +146,13 @@ attendre le mainteneur.
 
 ## Workflow — Organisation par sprint
 
-Travail organisé par sprint. Référence : **`docs/backlog/SPRINTS.md`**.
+Travail organisé par sprint. Référence : **`docs/backlog/sprints/`** (un fichier par sprint).
 Protocole complet de démarrage de session → skill `pivot-backlog-workflow`.
 
 **Démarrage de session (full autonome) :** procédure multi-repo complète (synchronisation des
 repos, lancement des agents en parallèle) → `docs/setup/pivot-platform-claude-template.md`.
 Côté lecture du backlog spécifiquement :
-1. Lire `SPRINTS.md` — identifier le sprint courant (pas de ✅ complet)
+1. Lire `docs/backlog/sprints/README.md` — identifier le sprint courant (pas de ✅ complet), ouvrir son `sprint-{N}.md`
 2. Pour chaque US du sprint : lire le fichier markdown dans `docs/backlog/`
 3. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase MVP uniquement
 4. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si ≥ 70
@@ -160,7 +160,7 @@ Côté lecture du backlog spécifiquement :
 **Principes :**
 - **Une branche par US / Enabler** — `feat/{us-id}-{slug}` ou `feat/{en-id}-{slug}`
 - **Agents en parallèle** — un agent par item, branches séparées, pas de conflit inter-US
-- **Mise à jour Stage + SPRINTS.md committée sur la branche de l'US concernée** (pas de branche docs séparée)
+- **Mise à jour Stage + `sprints/sprint-{N}.md` committée sur la branche de l'US concernée** (pas de branche docs séparée)
 
 ## Workflow — Autoloop PR (docs)
 
@@ -173,7 +173,7 @@ Après modification (backlog, ADR, audit, workflow) sur une branche dédiée :
      - **CI** — `npm run lint` (markdownlint + cspell + naming) = 0 erreur
    - **Corrections** — tous les findings résolus, commit `fix(docs): ...` ou `fix(backlog): ...`
    - **Convergence** — Gate 4 = 100/100 (ou convergence confirmée sans finding restant) ET CI verte → sortir
-3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · `Stage: Review` dans frontmatter US + SPRINTS.md + signal mainteneur
+3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · `Stage: Review` dans frontmatter US + `sprints/sprint-{N}.md` + signal mainteneur
 4. Blocage 20 boucles → Breaking Point 2
 
 ---
@@ -224,7 +224,7 @@ Format **Conventional Commits** (`type(scope): message`).
 
 | Commit | Contenu |
 |--------|---------|
-| `docs(backlog):` | nouvelle US/Enabler/Feature, mise à jour Stage, SPRINTS.md |
+| `docs(backlog):` | nouvelle US/Enabler/Feature, mise à jour Stage, `sprints/sprint-{N}.md` |
 | `fix(backlog):` | correction fichier backlog existant (lien brisé, frontmatter invalide) |
 | `docs(adr):` | nouvel ADR ou mise à jour |
 | `docs(audit):` | audit par domaine (mis à jour en place, jamais de fichier daté) |
@@ -370,7 +370,7 @@ Index : `.project/skills/_index.yaml`
 
 | Skill | Fichier | Charger quand |
 |-------|---------|---------------|
-| `pivot-backlog-workflow` | `skill-backlog-workflow.yaml` | **Toujours** — démarrage de session, lecture SPRINTS.md, sélection US, mise à jour Stage |
+| `pivot-backlog-workflow` | `skill-backlog-workflow.yaml` | **Toujours** — démarrage de session, lecture `sprints/`, sélection US, mise à jour Stage |
 | `pivot-ac-traceability` | `skill-ac-traceability.yaml` | **Toujours** — toute implémentation d'US, Gate 2, Gate 4 |
 | `pivot-pr-reviewer` | `skill-pr-reviewer.yaml` | Gate 3 (qualité CI), Gate 4 (décision merge), review PR |
 

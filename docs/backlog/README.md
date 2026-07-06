@@ -8,7 +8,7 @@ sidebar_label: "Vue d'ensemble"
 
 > Source de vérité du **modèle** de backlog. Le backlog opérationnel vit dans les fichiers
 > markdown de **`pivot-docs/backlog/`**. L'état des sprints et l'avancement des US sont dans
-> **`SPRINTS.md`**. Toute mise à jour d'état se commit sur la branche de l'US en cours.
+> **`docs/backlog/sprints/`** (un fichier par sprint). Toute mise à jour d'état se commit sur la branche de l'US en cours.
 
 ---
 
@@ -142,7 +142,7 @@ Done ◄──(mainteneur : merge PR)────────────── 
 | `In progress → Review` | **Claude** | PR autoloop terminé (Gate 4 = 100/100, CI verte, max 20 boucles) |
 | `Review → Done` | **Mainteneur** | Merge PR — **jamais Claude** |
 
-- US bloquée → retour `Backlog` + note dans SPRINTS.md.
+- US bloquée → retour `Backlog` + note dans `docs/backlog/sprints/sprint-{N}.md`.
 - Mise à jour du frontmatter (`Stage`) dans le fichier US à chaque transition — commit sur la branche de l'US.
 
 ---
@@ -204,7 +204,9 @@ Done ◄──(mainteneur : merge PR)────────────── 
 
 ```text
 pivot-docs/backlog/
-├── SPRINTS.md              ← état des sprints, assignation US, avancement
+├── sprints/                ← état des sprints, assignation US, avancement (1 fichier par sprint)
+│   ├── README.md           ← index + règles d'utilisation
+│   └── sprint-{N}.md
 ├── README.md               ← ce fichier — modèle & conventions
 ├── EPIC-auth-iam/
 │   ├── README.md           ← description de l'epic
@@ -229,7 +231,7 @@ pivot-docs/backlog/
 
 Au démarrage de chaque session, Claude :
 
-1. Lit `pivot-docs/docs/backlog/SPRINTS.md` — identifie le sprint courant
+1. Lit `pivot-docs/docs/backlog/sprints/README.md` — identifie le sprint courant, ouvre son fichier `sprint-{N}.md`
 2. Lit les fichiers US du sprint courant — vérifie `Stage` et `Phase`
 3. Pour chaque US `Stage: In progress` → reprend la branche existante, vérifie l'état de la PR
 4. Pour chaque US `Stage: Ready` → lance l'implémentation (branche `feat/{us-id}-{slug}`)

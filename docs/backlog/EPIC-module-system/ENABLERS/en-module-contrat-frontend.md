@@ -20,7 +20,7 @@
 **Statut** : ✅ Fait — mergé sur `main` (pivot-core PR #111/#118, pivot-ui PR #45/#62,
 `feat/en03-4-module-api` / `feat/en03-4-module-contract`). Contrat livré sous des noms différents
 de ceux de l'AC d'origine (voir notes ci-dessus) — équivalence fonctionnelle vérifiée par lecture
-du code, décision documentée dans SPRINTS.md.
+du code, décision documentée dans `docs/backlog/sprints/sprint-2.md`.
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP

@@ -47,6 +47,7 @@ function checkBacklog() {
   for (const entry of entries) {
     const full = join(root, entry);
     if (!isDir(full)) continue;
+    if (entry === 'sprints') continue; // pas un EPIC — voir checkSprints()
 
     if (!/^EPIC-[a-z0-9-]+$/.test(entry)) {
       fail(`${full}: dossier EPIC attendu au format \`EPIC-slug-kebab-case\``);
@@ -106,17 +107,27 @@ function checkBacklog() {
   }
 }
 
+// --- Sprints : docs/backlog/sprints/{README,sprint-N,backlog-post-s12,zones-ombre}.md ---
+function checkSprints() {
+  const dir = 'docs/backlog/sprints';
+  for (const f of readdirSync(dir)) {
+    if (!/^(README|sprint-\d+|backlog-post-s12|zones-ombre)\.md$/.test(f)) {
+      fail(`${join(dir, f)}: fichier attendu au format \`sprint-N.md\`, \`README.md\`, \`backlog-post-s12.md\` ou \`zones-ombre.md\``);
+    }
+  }
+}
+
 // --- IDs E01 / F01.1 / EN01.1 / US01.1.1 : format strict partout où ils apparaissent ---
 function checkIdFormat() {
   const files = [
     'docs/backlog/STATUS.md',
-    'docs/backlog/SPRINTS.md',
+    ...readdirSync('docs/backlog/sprints').map((f) => join('docs/backlog/sprints', f)),
     ...readdirSync('docs/backlog')
       .filter((e) => /^EPIC-/.test(e))
       .map((e) => join('docs/backlog', e, 'README.md')),
   ];
 
-  // Grammaire réelle observée dans docs/backlog (STATUS.md, SPRINTS.md, EPIC READMEs) :
+  // Grammaire réelle observée dans docs/backlog (STATUS.md, sprints/, EPIC READMEs) :
   // - E01 (epic, toujours seul)
   // - F01.1 / F01.x (feature, éventuellement wildcard ".x" = "toute la feature")
   // - EN01.1 / EN01 / EN01.x (enabler, avec ou sans sous-numéro, wildcard possible)
@@ -148,6 +159,7 @@ function checkIdFormat() {
 
 checkAdr();
 checkBacklog();
+checkSprints();
 checkIdFormat();
 
 if (errors.length > 0) {

@@ -26,9 +26,10 @@ session_start_protocol:
 
   step_2_read_sprint:
     description: "Lire le sprint courant"
-    file: "pivot-docs/docs/backlog/SPRINTS.md"
+    file: "pivot-docs/docs/backlog/sprints/README.md"
     action: >
-      Identifier le sprint dont le titre ne contient pas ✅ (non terminé).
+      Lire l'index pour identifier le sprint courant (statut ≠ ✅ Terminé / ⏸️ Verrouillé),
+      puis ouvrir son fichier dédié pivot-docs/docs/backlog/sprints/sprint-{N}.md.
       Lister toutes les US du sprint avec leur état 🤖 Dev.
 
   step_3_read_us:
@@ -81,11 +82,11 @@ update_protocol:
   when_to_update:
     - "À chaque changement d'état Stage"
     - "Commit sur la branche de l'US concernée"
-    - "SPRINTS.md mis à jour en même temps que le fichier US"
+    - "sprints/sprint-{N}.md (sprint courant de l'US) mis à jour en même temps que le fichier US"
 
   how_to_update:
     - "Modifier le frontmatter (dernière ligne du fichier) : Stage: X → Stage: Y"
-    - "Modifier la colonne 🤖 Dev dans SPRINTS.md"
+    - "Modifier la colonne 🤖 Dev dans sprints/sprint-{N}.md"
     - "Commit atomique : doc(backlog): US{id} Stage {old} → {new}"
 
 ---

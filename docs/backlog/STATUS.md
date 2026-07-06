@@ -110,7 +110,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | US01.2.4 | Politique robustesse mot de passe | ✅ |
 
 > Statuts resynchronisés le 2026-07-05 après audit du code sur `main` (pivot-core + pivot-ui) —
-> voir `SPRINTS.md` pour le détail. Gaps techniques restants (non bloquants) : cache Redis EN03.3
+> voir `docs/backlog/sprints/sprint-2.md` pour le détail. Gaps techniques restants (non bloquants) : cache Redis EN03.3
 > non raccordé au chemin de lecture du statut module ; champ `description` de l'API modules non
 > aligné avec `PivotModule` (US03.2.1, hard block Gate 4 documenté) ; doublon `sanitizeReturnUrl`
 > entre US01.1.4/US01.1.5 côté pivot-ui.
