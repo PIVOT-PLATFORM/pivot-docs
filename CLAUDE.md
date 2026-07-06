@@ -173,7 +173,7 @@ Après modification (backlog, ADR, audit, workflow) sur une branche dédiée :
      - **CI** — `npm run lint` (markdownlint + cspell + naming) = 0 erreur
    - **Corrections** — tous les findings résolus, commit `fix(docs): ...` ou `fix(backlog): ...`
    - **Convergence** — Gate 4 ≥ 85 ET CI verte → sortir
-3. Gate 4 vert → `Stage: Review` dans frontmatter US + SPRINTS.md + signal mainteneur
+3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · `Stage: Review` dans frontmatter US + SPRINTS.md + signal mainteneur
 4. Blocage 20 boucles → Breaking Point 2
 
 ---
