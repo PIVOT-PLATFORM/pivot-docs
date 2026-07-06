@@ -32,7 +32,7 @@
 
 ## Notes de livraison
 
-- Implémenté : `pivot-core` PR [#140](https://github.com/PIVOT-PLATFORM/pivot-core/pull/140) (Gate 2 self-évalué : 98/100) · `pivot-ui` PR [#83](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/83) (Gate 2 self-évalué : 98/100). Toutes deux draft, CI verte. **Revue Sécurité + RGPD obligatoire avant merge** (action irréversible, anonymisation de données) — label `needs-human-review` posé sur les deux PR.
+- Implémenté : `pivot-core` PR [#140](https://github.com/PIVOT-PLATFORM/pivot-core/pull/140) (Gate 2 self-évalué : 98/100) · `pivot-ui` PR [#83](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/83) (Gate 2 self-évalué : 98/100). CI verte des deux côtés. **Revue Sécurité + RGPD obligatoire avant merge** (action irréversible, anonymisation de données) — label `needs-human-review` posé sur les deux PR. *(Point de situation 2026-07-06 : `pivot-core` #140 est sortie de draft — prête pour revue — mais pas encore mergée ; `pivot-ui` #83 reste draft. Aucune des deux mergée à ce jour.)*
 - Confirmation LOCAL (mot de passe) vs OIDC (OTP 6 chiffres, TTL 10 min) — les deux convergent vers un `403` uniforme en cas d'échec.
 - Trouvaille sécurité proactive lors de l'implémentation : la réactivation JIT Google/OIDC contre un compte soft-supprimé (email anonymisé) provoquait un crash 500 non contrôlé plutôt qu'un rejet propre — corrigé dans le même PR (`security(auth): ...`), signalé pour revue Security Agent (non testé automatiquement, nécessiterait de mocker un IdP complet).
 - Purge des audit events après 1 an : documentée comme TODO de suivi, non implémentée (jugement de proportionnalité assumé dans la PR).
