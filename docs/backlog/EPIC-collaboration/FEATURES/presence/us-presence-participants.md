@@ -21,7 +21,32 @@
 | Labels "en ligne", "Lecteur", "Éditeur", tooltip noms internalisés dans whiteboard.presence.* (fr.json / en.json) | ⬜ |
 | Tests TI : JOIN émis → PARTICIPANTS_UPDATE contient le nouvel user ; LEAVE émis → PARTICIPANTS_UPDATE le retire | ⬜ |
 | Tests Vitest PresencePanelComponent (1 user, 5 users, overflow, déconnexion) | ⬜ |
+| Error : reconnexion réseau (<30s) → même userId retrouve sa présence sans doublon d'avatar ni nouveau JOIN dupliqué, couleur conservée | ⬜ |
+| Error : JOIN dupliqué du même userId (ex. multi-onglets) → un seul avatar affiché dans le panneau, dernière connexion active prioritaire | ⬜ |
+| Error : rupture WebSocket sans LEAVE propre (crash client) → timeout heartbeat 30s (cf. ci-dessus) retire le participant, jamais de présence fantôme persistante | ⬜ |
+| Security : le topic `/topic/whiteboard/{boardId}/presence` est isolé par room WS (EN08.1) — un utilisateur non membre du board ne peut pas s'y abonner (souscription STOMP refusée) | ⬜ |
+| Security : PARTICIPANTS_UPDATE n'expose que `userId`, `displayName`, `role`, `color` — jamais l'email ou d'autres données du profil utilisateur | ⬜ |
+| Security : isolation tenant — un participant d'un autre tenant ne peut ni apparaître dans, ni recevoir, le flux de présence d'un board qui ne lui appartient pas | ⬜ |
+| Tests TI : souscription au topic presence par un utilisateur non membre du board → refusée (aucun PARTICIPANTS_UPDATE reçu) | ⬜ |
+
+## Hors périmètre
+
+- Rendu des curseurs de dessin en temps réel sur le canvas (position x/y, déplacement pendant l'édition) : relève de **US08.3.2c**, qui consomme le backend de présence défini ici (voir sa section `Dépendances: US08.5.1`).
+- **Panneau de présence (liste des participants) : porté exclusivement par cette US** (`PresencePanelComponent`, avatars en haut du canvas, `aria-label="Participants en ligne"`, overflow "+N"). US08.3.2c ne rend que l'overlay de curseurs sur le canvas — pas de panneau participants dupliqué de son côté (chevauchement identifié et tranché au Gate 1 du 2026-07-07).
+- Audio/vidéo natif au board (US30.2.6, phase-3).
+- Statistiques/historique de présence (EN30.11, phase-3).
+- Montée en charge > 200 participants simultanés (US30.2.7, phase-3) — le panneau de présence ici cible les charges Socle usuelles.
+
+## Notes d'implémentation
+
+- Topic STOMP : `/topic/whiteboard/{boardId}/presence`, message `PARTICIPANTS_UPDATE` (liste complète des connectés à chaque JOIN/LEAVE et à la connexion initiale).
+- Isolation de la room WS par board : dépend de **EN08.1** (isolation WebSocket room par board) — le refus de souscription pour un non-membre est un effet direct de cet enabler.
+- Attribution de couleur : côté serveur au JOIN, choisie dans une palette fixe de 12 couleurs, allouée par `boardId` (libérée au LEAVE définitif, pas au timeout de 30s pour éviter un changement de couleur lors d'une reconnexion rapide).
+- Heartbeat : ping client périodique (< 30s) ; tâche serveur planifiée marquant "déconnecté" après 30s sans heartbeat reçu.
+- Composant Angular : `PresencePanelComponent` (dépend du guard **EN08.2**).
+- Parent fonctionnel : F08.3 Canvas collaboratif temps réel.
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Backlog
+Stage: Ready
+Dépendances: EN08.1 (isolation WS room), EN08.2 (guard Angular)

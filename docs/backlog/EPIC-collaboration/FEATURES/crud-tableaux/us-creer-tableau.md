@@ -27,6 +27,20 @@
 | Modal "Nouveau tableau" : role="dialog", aria-modal="true", aria-labelledby sur titre, focus trap, fermeture par Échap, focus retourné sur déclencheur | ⬜ |
 | Tous les libellés de la modal internalisés dans whiteboard.board.create.* (fr.json / en.json) | ⬜ |
 
+## Hors périmètre
+- Partage et gestion des rôles (owner invite editor/viewer) — couvert par US08.2.1/US08.2.2/US08.2.3
+- Création depuis un template — couverte par US08.4.1
+- Génération de thumbnail à la création — hors scope Socle (voir US08.1.2 : `thumbnailUrl` nullable)
+- Quota / limite du nombre de tableaux par tenant ou par utilisateur — pas de limite dans cette US
+
+## Notes d'implémentation
+- Backend `pivot-collaboratif-core` (schéma Flyway `collaboratif`), endpoint `POST /api/whiteboard/boards` → `BoardController.create()` → `BoardService.create()`
+- Entités : `Board` (id UUID v4, title, tenantId, visibility, createdAt) + `BoardMember` (boardId, userId, role) créée en même transaction
+- tenantId résolu exclusivement depuis le SecurityContext (token opaque) — jamais accepté en body/query, cohérent avec le modèle d'auth opaque tokens de `pivot-core`
+- Vérification module actif avant création : `ModuleAccessService.isEnabled(tenantId, "whiteboard")` → 403 sinon
+- Frontend `pivot-collaboratif-ui`, `BoardCreateModalComponent`, consomme `@pivot/ui-core` (toast, spinner) + `@pivot/design-system` (modal, focus trap)
+- **Convention transverse d'accès** (réutilisée par US08.1.4/US08.1.5) : accès à un board d'un autre tenant ou dont l'utilisateur n'est pas membre → 404 (anti-énumération/IDOR) ; membre existant avec rôle insuffisant pour l'action → 403
+
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
-Stage: Backlog
+Stage: Ready

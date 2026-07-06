@@ -17,9 +17,34 @@
 | Boutons Undo/Redo dans la toolbar : <button aria-label="Annuler (Ctrl+Z)" aria-disabled="true" si stack vide> | ⬜ |
 | Boutons désactivés (aria-disabled="true") quand stack vide (undo) ou stack redo vide (redo) | ⬜ |
 | Viewer (role: viewer) ne peut pas envoyer de UNDO (backend rejette avec 403 STOMP ERROR) | ⬜ |
+| Connexion WS perdue (mode lecture seule, cf. US08.3.2b) → Ctrl+Z/Ctrl+Y et boutons toolbar désactivés (`aria-disabled="true"`), aucune opération locale possible tant que la reconnexion n'a pas abouti | ⬜ |
 | Tests Vitest UndoRedoService (push, undo, redo, limit 50, reset on disconnect) | ⬜ |
 | Labels et raccourcis internalisés dans whiteboard.canvas.undo.* (fr.json / en.json) | ⬜ |
 
+## Hors périmètre
+
+- Undo/redo collaboratif (annulation partagée entre participants, résolution de conflits sur
+  l'historique commun) : explicitement hors scope Socle — portée strictement locale/par
+  utilisateur retenue pour cette phase (voir AC stack ci-dessus). Ce choix pourra être revisité en
+  phase-3 si le besoin produit émerge.
+- Persistance de la stack undo entre sessions (reprise après rechargement de page) : hors scope,
+  la stack est réinitialisée à la déconnexion.
+- Undo/redo "global board" (rejouer/annuler les actions d'un autre participant) : hors scope.
+
+## Notes d'implémentation
+
+- **Service** : `UndoRedoService` (Angular, `pivot-collaboratif-ui`), boutons/raccourcis câblés
+  depuis la toolbar de US08.3.2a.
+- **Modèle d'événements WebSocket (contrat partagé F08.3, cf. US08.3.1/US08.3.2b)** : `UNDO
+  { userId, eventId }` publié sur `/app/whiteboard/{boardId}/action` et diffusé sur
+  `/topic/whiteboard/{boardId}` — un message par action annulée (même granularité que `DRAW`), pas
+  de rejeu de plusieurs actions en un seul message.
+- Le rejet backend (403, rôle viewer) est un cas déjà couvert par la vérification d'appartenance
+  générique de US08.3.1 — pas de logique d'autorisation dupliquée côté client.
+- Dépend de US08.3.1 (message `UNDO`, whitelist des types), US08.3.2a (boutons toolbar) et
+  US08.3.2b (service de synchronisation STOMP, état lecture seule).
+
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Backlog
+Stage: Ready
+Dépendances: US08.3.1 (message UNDO), US08.3.2a (toolbar boutons), US08.3.2b (service de synchronisation STOMP)
