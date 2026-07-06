@@ -33,7 +33,7 @@ Principes fondateurs :
 | **QA Agent** | Rédige specs E2E, valide coverage, challenge A11y | Gate 1 + Gate 2 |
 | **Dev Agent** | Implémente sur branche dédiée, auto-évalue via gates | Gate 2 |
 | **PR Review Agent** | Exécute Gate 3 + Gate 4, merge ou escalade | Gate 3 + Gate 4 |
-| **Doc Agent** | Génère la SPEC technique figée post-merge | Gate 5 |
+| **Doc Agent** | Génère la SPEC fonctionnelle et technique figée, dès Gate 4 = 100/100 (avant merge) | Gate 5 |
 
 ---
 
@@ -65,22 +65,23 @@ PO Agent (autonome)
 
        │
        ▼
-  PR Review Agent — autoloop × 10
+  PR Review Agent — autoloop × 20
   ├─ Gate 3 — QUALITY (CI verte, Gitleaks, Semgrep)
   │    └─ Hard blocks : secret, label security, breaking-change contrat module
   └─ Gate 4 — MERGE CONFIDENCE
-       ├─ ≥ 85 → merge autonome → Stage: Review + signal mainteneur
-       ├─ 60–84 → merge documenté (commentaire breakdown)
+       ├─ = 100/100 → sortie du mode draft + Stage: Review + Gate 5 SPEC FREEZE + signal mainteneur
+       ├─ 60–99 → merge documenté (commentaire breakdown)
        └─ < 60 → Breaking Point 2 (escalade mainteneur)
+
+       │
+       ▼
+  Doc Agent — Gate 5 SPEC FREEZE (autonome, dans l'Autoloop, avant merge)
+  └─ Génère docs/specs/{EPIC}/{us-id}-{slug}.md (figé) — branche/PR pivot-docs dédiée
+       └─ Spec fonctionnelle + contrat technique final + écarts vs ACs + liens US/PR/commit
 
        │ [merge mainteneur]
        ▼
   Stage: Done (mainteneur uniquement — jamais Claude)
-       │
-       ▼
-  Doc Agent — Gate 5 SPEC FREEZE (autonome, non-bloquant)
-  └─ Génère docs/specs/{EPIC}/{us-id}-{slug}.md (figé)
-       └─ Contrat technique final + écarts vs ACs + liens US/PR/commit
 ```
 
 ---
@@ -94,8 +95,8 @@ Scores continus 0–100 — postés en **commentaire de PR** (aucun fichier comm
 | **1 — READINESS** | Avant implémentation | ≥ 70 → PO Agent valide → procéder · < 70 → PO Agent réécrit ACs |
 | **2 — COVERAGE** | Par commit | ≥ 85 → continuer · 70–84 → compléter · < 70 → stop |
 | **3 — QUALITY** | Après CI | Hard blocks : Gitleaks · `security` · `breaking-change` · contrat module |
-| **4 — MERGE CONFIDENCE** | Avant merge | ≥ 85 → merge autonome · 60–84 → merge documenté · < 60 → escalade |
-| **5 — SPEC FREEZE** | Après merge (Stage: Done) | Doc Agent génère la spec figée · non-bloquant, ne repasse jamais l'US en Done |
+| **4 — MERGE CONFIDENCE** | Avant merge | = 100/100 → sortie du mode draft (merge autonome) · 60–99 → merge documenté · < 60 → Breaking Point 2 (escalade) |
+| **5 — SPEC FREEZE** | Gate 4 = 100/100, dans l'Autoloop (avant merge) | Doc Agent génère la spec fonctionnelle et technique figée · indépendant de la recette humaine du mainteneur |
 
 Format commentaire :
 ```yaml
@@ -146,19 +147,20 @@ AC sans test = non implémenté, peu importe le code présent.
 
 ---
 
-## Gate 5 — SPEC technique figée
+## Gate 5 — SPEC fonctionnelle et technique figée
 
 **Problème résolu :** une fois `Stage: Done`, le fichier US backlog continue de vivre (relecture,
 reformulation, découpage en US enfants) et perd sa valeur de référence technique. Sans figeage,
 aucune source de vérité stable ne décrit le contrat « tel que livré » — ce qui pénalise les US
 futures qui en dépendent (ex. un contrat WebSocket de session dont dépend le canvas whiteboard).
 
-**Déclencheur :** juste après que le mainteneur a posé `Stage: Done` (post-merge, asynchrone,
-**non-bloquant** — un échec du Doc Agent n'affecte jamais le statut Done déjà posé par le
-mainteneur).
+**Déclencheur :** dans l'Autoloop du repo qui implémente l'US (`pivot-core`/`pivot-ui`), dès que
+Gate 4 atteint 100/100 — **avant merge**, au même moment que la sortie du mode draft et le passage
+`Stage: Review`. Ne dépend pas de la recette humaine du mainteneur (`Stage: Done`) : la PR peut
+encore être en attente de review humaine (ex. Breaking Point 2) alors que la spec est déjà figée.
 
-**Agent :** Doc Agent — lit l'US mergée (ACs cochés, Stage: Done) + le diff de la PR, puis génère
-un document figé :
+**Agent :** Doc Agent — lit la PR à Gate 4 = 100/100 (ACs cochés, diff de la PR), puis génère un
+document figé **dans une branche/PR dédiée sur `pivot-docs`** (jamais de commit cross-repo) :
 
 ```text
 docs/specs/{EPIC}/{us-id}-{slug}.md
@@ -168,14 +170,16 @@ docs/specs/{EPIC}/{us-id}-{slug}.md
 
 | Section | Détail |
 |---------|--------|
-| Contexte | Lien US source, PR, commit SHA de merge |
+| Contexte | Lien US source, PR, dernier commit au moment du figeage (Gate 4 = 100/100) |
+| Spec fonctionnelle | Comportement et flux **tels qu'implémentés**, en langage clair — au-delà des ACs bruts : parcours utilisateur, cas d'erreur, effets de bord observables |
 | Contrat technique final | Endpoints, payloads, schémas DB/migrations, événements socket — **tels qu'implémentés**, pas tels qu'imaginés dans les ACs initiaux |
 | Écarts vs ACs | Différences entre AC et implémentation réelle, avec justification |
 | Scores | Gate 2 (coverage) et Gate 4 (merge confidence) finaux |
 | Statut | `Figé le {date}` |
 
 **Règle d'immutabilité :** une spec figée n'est **jamais réécrite**. Un changement de comportement
-ultérieur crée une nouvelle US qui référence la spec existante et ajoute un
+ultérieur — y compris une modification demandée pendant une revue humaine post-figeage (ex. Breaking
+Point 2) — crée une nouvelle US qui référence la spec existante et ajoute un
 `## Addendum {date} — US-{id}` en fin de fichier — jamais une édition silencieuse de la section
 figée initiale.
 
@@ -238,7 +242,7 @@ le RUN PROD.
 **Limites actuelles vs vision cible :**
 - Portail = fichiers markdown (pas encore un vrai portail web de dépôt)
 - FinOps / monitoring coût-token : non implémenté (roadmap)
-- Autocorrection CI → agents : partiel (autoloop × 10 push)
+- Autocorrection CI → agents : partiel (autoloop × 20 push)
 
 ![IT4IT Vision cible](it4it-vision.png)
 

@@ -172,8 +172,8 @@ Après modification (backlog, ADR, audit, workflow) sur une branche dédiée :
      - **Review neutre** — Expert PR Review : cohérence backlog, traçabilité AC, qualité markdown (voir skill `pivot-pr-reviewer`)
      - **CI** — `npm run lint` (markdownlint + cspell + naming) = 0 erreur
    - **Corrections** — tous les findings résolus, commit `fix(docs): ...` ou `fix(backlog): ...`
-   - **Convergence** — Gate 4 ≥ 85 ET CI verte → sortir
-3. Gate 4 vert → `Stage: Review` dans frontmatter US + SPRINTS.md + signal mainteneur
+   - **Convergence** — Gate 4 = 100/100 (ou convergence confirmée sans finding restant) ET CI verte → sortir
+3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · `Stage: Review` dans frontmatter US + SPRINTS.md + signal mainteneur
 4. Blocage 20 boucles → Breaking Point 2
 
 ---
@@ -249,7 +249,7 @@ dans le champ **Stage** du frontmatter US.
 | **1 — READINESS** | Avant implémentation | PO Agent self-challenge · ≥ 70 → Stage: Ready → procéder · < 70 → PO Agent réécrit ACs |
 | **2 — COVERAGE** | Par commit (pivot-core/pivot-ui) | ≥ 85 → continuer · 70–84 → compléter tests · < 70 → stop |
 | **3 — QUALITY** | Après CI verte | Hard blocks : secret Gitleaks, label `security`/`breaking-change`, structure backlog non coordonnée |
-| **4 — MERGE CONFIDENCE** | Avant merge | ≥ 85 → merge autonome · 60–84 → merge documenté · < 60 → Breaking Point 2 |
+| **4 — MERGE CONFIDENCE** | Avant merge | = 100/100 → sortie du mode draft (merge autonome) · 60–99 → merge documenté · < 60 → Breaking Point 2 |
 
 Détail scoring Gate 3/4 pour pivot-docs → skill `pivot-pr-reviewer` (`.project/skills/skill-pr-reviewer.yaml`).
 
@@ -289,7 +289,7 @@ AC ambigu à l'implémentation → **stopper, PO Agent clarifie, jamais d'interp
 | `security` | Impact sécurité — hard block Gate 4, review humaine |
 | `breaking-change` | Changement de contrat — hard block Gate 4, review humaine |
 | `needs-human-review` | Gate 4 < 60 ou hard block — décision humaine requise |
-| `auto-approved` | Gate 4 ≥ 85 — mergé automatiquement |
+| `auto-approved` | Gate 4 = 100/100 — mergé automatiquement |
 | `chore` | Maintenance, CI, dépendances |
 | `docs` | Documentation uniquement |
 

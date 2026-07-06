@@ -71,9 +71,8 @@ us_file_format:
   stage_transitions:
     backlog_to_ready: "PO Agent vérifie DoR + Gate 1 ≥ 70 → Stage: Ready (autonome)"
     ready_to_in_progress: "Dev Agent démarre immédiatement → Stage: In progress"
-    in_progress_to_review: "Après Gate 4 ≥ 85 → Stage: Review + signal mainteneur"
+    in_progress_to_review: "Après Gate 4 = 100/100 → Stage: Review + signal mainteneur + Gate 5 SPEC FREEZE (Doc Agent, dans l'Autoloop, avant merge) → docs/specs/{EPIC}/{us-id}-{slug}.md figé"
     review_to_done: "Mainteneur merge la PR"
-    done_to_spec_frozen: "Doc Agent (autonome, non-bloquant) → Gate 5 → docs/specs/{EPIC}/{us-id}-{slug}.md figé"
 
 ---
 
@@ -107,13 +106,19 @@ gate_1_readiness:
 
 gate_5_spec_freeze:
 
-  trigger: "Juste après que le mainteneur pose Stage: Done (post-merge, Doc Agent, autonome)"
+  trigger: >
+    Dans l'Autoloop du repo qui implémente l'US (pivot-core/pivot-ui), dès que Gate 4 atteint
+    100/100 — avant merge, au même moment que la sortie du mode draft et le passage
+    Stage: Review. Le Doc Agent agit de façon autonome, indépendamment de la recette humaine
+    du mainteneur (Stage: Done) : la PR peut encore attendre une review humaine (ex. Breaking
+    Point 2) alors que la spec est déjà figée.
   non_blocking: >
-    Un échec du Doc Agent n'affecte jamais le Stage déjà posé par le mainteneur —
-    reproductible à la prochaine session si manqué.
+    Un échec du Doc Agent n'affecte jamais la sortie du mode draft ni le Gate 4 déjà validé —
+    reproductible à la prochaine itération de l'Autoloop si manqué.
   output_path: "docs/specs/{EPIC}/{us-id}-{slug}.md"
   content:
-    - "Contexte : lien US source, PR, commit SHA de merge"
+    - "Contexte : lien US source, PR, dernier commit au moment du figeage (Gate 4 = 100/100)"
+    - "Spec fonctionnelle : comportement et flux tels qu'implémentés, en langage clair — au-delà des ACs bruts"
     - "Contrat technique final (endpoints, payloads, schémas DB, événements socket) tel qu'implémenté"
     - "Écarts vs ACs initiaux, avec justification"
     - "Scores finaux Gate 2 (coverage) et Gate 4 (merge confidence)"

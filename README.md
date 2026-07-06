@@ -24,7 +24,7 @@ Le contenu source vit sous [`docs/`](docs/) et est publié via [Docusaurus](http
 | [`docs/audits/`](docs/audits/) | Audits par domaine (cyber, QA, RGPD, UX…) |
 | [`docs/backlog/`](docs/backlog/) | Modèle de backlog — hiérarchie, champs Project, workflow draft→Issue |
 | [`docs/workflow/`](docs/workflow/) | Workflow agentique PIVOT (ACDD) |
-| [`docs/specs/`](docs/specs/) | Specs techniques figées post-merge (Gate 5, contrat « tel que livré ») |
+| [`docs/specs/`](docs/specs/) | Specs fonctionnelles et techniques figées dès Gate 4 = 100/100, avant merge (Gate 5, contrat « tel qu'implémenté ») |
 
 ### Développer le site localement
 
