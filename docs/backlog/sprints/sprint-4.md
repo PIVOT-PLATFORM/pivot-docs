@@ -12,7 +12,7 @@
 | US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | 🔎 Review |
 | US01.5.1 | Notification email action sensible | M | High | 🔎 Review |
 | EN-NOTIF | Infrastructure notifications in-app | L | High | 🔎 Review |
-| US16.1.3 | Badge notifications | S | Medium | ⬜ |
+| US16.1.3 | Badge notifications | S | Medium | 🔎 Review |
 | US16.2.2 | Section modules à venir | S | Medium | 🔎 Review |
 | US03.3.1 | SUPER_ADMIN définit modules disponibles par plan | M | Medium | 🔎 Review |
 | US03.3.2 | SUPER_ADMIN active/désactive module par tenant (override) | M | Medium | 🔎 Review |
@@ -74,3 +74,13 @@
 > mergée — commentaire posté sur #155.
 >
 > **EN07.5 (2026-07-06) :** Gate 4 = 100/100, `pivot-core` PR [#155](https://github.com/PIVOT-PLATFORM/pivot-core/pull/155) sortie du mode draft. Dépend de `docker-compose.prod.yml` (EN07.1, PR [#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149)) et référence son service `pivot-core` — ni EN07.1 ni EN07.2 ne sont mergées à ce jour, rebase de la PR #155 nécessaire une fois l'une des deux mergée (non bloquant, écrit contre `main` normalement). Secrets `PROD_SSH_HOST/USER/KEY/PORT`, `PROD_DEPLOY_PATH`, `SLACK_WEBHOOK_URL` à créer par le mainteneur (gap externe, aucun n'existe dans l'organisation aujourd'hui).
+>
+> **US16.1.3 (2026-07-06) :** dépendance EN-NOTIF considérée résolue au niveau du contrat — lu
+> directement dans le diff `pivot-core` PR [#160](https://github.com/PIVOT-PLATFORM/pivot-core/pull/160)
+> (`feat/en-notif-infrastructure`, Gate 4 = 100/100, CI verte), **non fusionnée sur `main`** au
+> moment de l'implémentation. PR `pivot-ui` [#103](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/103)
+> (`feat/us16-1-3-badge-notifications`) : Gate 4 = 100/100, CI complète verte (build, lint, tests,
+> Lighthouse Accessibilité, sécurité), sortie du mode draft. Point de coordination cross-repo : le
+> badge ne sera fonctionnel en intégration réelle qu'après fusion de #160 sur `pivot-core` — non
+> bloquant pour la review/le merge de la PR `pivot-ui` (contrat déjà figé côté #160, simulé côté
+> `pivot-ui`).
