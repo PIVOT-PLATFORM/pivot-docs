@@ -27,10 +27,11 @@
 
 ## Notes de livraison
 
-- Implémenté : `pivot-ui` PR [#82](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/82) (Gate 2 self-évalué : ~92/100, draft, CI verte). Consomme le contrat déjà mergé de US06.1.1 (`pivot-core` #127).
+- Implémenté : `pivot-ui` PR [#82](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/82) **mergée** (Gate 2 self-évalué : ~92/100, Gate 4 = 100/100). Consomme le contrat déjà mergé de US06.1.1 (`pivot-core` #127).
+- **Statut réel vérifié (2026-07-06) :** mergée sur `main` — resynchronisé de `In progress` à `Review`.
 - Structure conçue pour extension par les US suivantes (US06.1.3, US06.1.4/US06.1.5) : cellule d'actions dédiée par ligne (`.admin-users__col--actions`) — ces US empilent leur branche directement sur celle-ci pour éviter toute collision de fichier.
 - Gap signalé : le point de rupture responsive mobile n'a pas de test automatisé (limitation jsdom), vérification visuelle manuelle recommandée.
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
-Stage: In progress
+Stage: Review
