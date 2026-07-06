@@ -14,7 +14,7 @@
 - [x] Métriques JDBC : pool connections (HikariCP metrics, autoconfiguration Spring Boot)
 - [x] Prometheus scrape config (`prometheus.yml`) — voir note d'implémentation (emplacement)
 
-**Note d'implémentation — `pivot-core`** (PR `feat/en04-3-micrometer-prometheus`) :
+**Note d'implémentation — `pivot-core`** (PR [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157), branche `feat/en04-3-micrometer-prometheus`) :
 
 - **Dépendance EN04.2 non résolue au moment de l'implémentation** : EN04.2 (Spring Actuator,
   même sprint) n'avait pas encore de PR ouverte. `management.server.port: 8081` a donc été
@@ -40,7 +40,7 @@
   stade ; ce fichier est prêt à être monté dans un futur serveur Prometheus (Enabler dédié ou
   stack de supervision plateforme).
 
-**Statut** : 🔄 En cours — implémentation complète côté `pivot-core`, PR en cours d'Autoloop
+**Statut** : 🔄 En cours — implémentation complète côté `pivot-core`, PR [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) en cours d'Autoloop
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
