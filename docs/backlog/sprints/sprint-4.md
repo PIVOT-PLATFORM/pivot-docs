@@ -5,7 +5,7 @@
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|
-| EN07.1 | Docker Compose production | M | Critical | 🔄 In progress |
+| EN07.1 | Docker Compose production | M | Critical | 🔎 Review |
 | EN07.2 | Secret management Docker secrets | M | Critical | 🔎 Review |
 | EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | ⬜ |
 | US01.4.2 | Gérer ses appareils de confiance | M | High | 🔎 Review |

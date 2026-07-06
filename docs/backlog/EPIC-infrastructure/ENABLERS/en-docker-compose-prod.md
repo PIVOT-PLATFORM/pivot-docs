@@ -52,11 +52,13 @@ les autres restent disponibles. nginx retourne 503 uniquement sur le préfixe du
 *(Comportement documenté pour quand les module-cores existeront — non observable aujourd'hui
 puisqu'aucun n'est encore déployé.)*
 
-**PR** : [pivot-core#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149) (draft — Autoloop Gate 4 en cours)
+**PR** : [pivot-core#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149) (Gate 4 = 100/100, `MERGE_AUTONOMOUS`, sortie de draft — en attente de recette mainteneur)
 
-**Statut** : 🔎 Implémenté, en revue (Autoloop PR pivot-core en cours — périmètre clarifié,
-module-cores/activemq/pgbouncer différés, voir note ci-dessus) — Gate: In progress
+**Spec figée (Gate 5)** : [`docs/specs/EPIC-infrastructure/en07-1-docker-compose-prod.md`](pathname:///pivot-docs/specs/EPIC-infrastructure/en07-1-docker-compose-prod)
+
+**Statut** : 🔎 Autoloop convergée (Gate 4 = 100/100) — périmètre clarifié,
+module-cores/activemq/pgbouncer différés, voir note ci-dessus — Gate: Review
 
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: Socle
-Stage: In progress · Priority: Critical
+Stage: Review · Priority: Critical
