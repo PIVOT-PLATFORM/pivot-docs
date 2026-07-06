@@ -40,8 +40,9 @@
   stade ; ce fichier est prêt à être monté dans un futur serveur Prometheus (Enabler dédié ou
   stack de supervision plateforme).
 
-**Statut** : 🔄 En cours — implémentation complète côté `pivot-core`, PR [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) en cours d'Autoloop
+**Statut** : ✅ Fait — Gate 4 = 100/100, `pivot-core` PR [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) sortie du mode draft (label `auto-approved`). Spec figée (Gate 5) :
+[`docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus.md`](../../specs/EPIC-observabilite/en04-3-micrometer-prometheus.md).
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
-Stage: In progress · Priority: Medium
+Stage: Review · Priority: Medium

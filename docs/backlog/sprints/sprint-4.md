@@ -19,7 +19,7 @@
 | US03.3.3 | Admin tenant voit uniquement modules de son plan | S | Medium | ⬜ |
 | EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | 🔄 |
 | EN04.2 | Spring Actuator (management port :8081, non routé nginx) | S | Medium | 🔎 Review |
-| EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | 🔄 |
+| EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | 🔎 Review |
 | EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | ⬜ |
 
 > **Blocker :** EN-NOTIF doit précéder US16.1.3. EN07.x validé avant toute release prod. EN04.x parallélisables entre eux.
@@ -30,10 +30,11 @@
 >
 > **EN04.2 (2026-07-06) :** Gate 4 en cours, `pivot-core` PR [#158](https://github.com/PIVOT-PLATFORM/pivot-core/pull/158). Point de coordination ouvert avec EN07.1 (PR [#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149)) sur le chemin du healthcheck Docker (`:8080/api/actuator/health` → `:8081/actuator/health` une fois les deux fusionnées) — commentaire posté sur PR#149, à réconcilier avant fusion.
 >
-> **EN04.3 :** implémentation `pivot-core` complète, PR
-> [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) (`feat/en04-3-micrometer-prometheus`),
-> Autoloop en cours. Deux points de coordination ouverts, faute de PR EN04.2 existante au
-> moment de l'implémentation :
+> **EN04.3 :** Gate 4 = 100/100, `pivot-core` PR
+> [#157](https://github.com/PIVOT-PLATFORM/pivot-core/pull/157) (`feat/en04-3-micrometer-prometheus`)
+> sortie du mode draft (label `auto-approved`). Spec figée (Gate 5) :
+> `docs/specs/EPIC-observabilite/en04-3-micrometer-prometheus.md`. Deux points de coordination
+> ouverts, faute de PR EN04.2 existante au moment de l'implémentation :
 > - **EN04.2** : `management.server.port: 8081` posé directement par EN04.3 (valeur déjà actée
 >   par l'AC d'EN04.2) — à réconcilier dès qu'EN04.2 a sa propre PR, pas de second
 >   `management.server.port` différent.
