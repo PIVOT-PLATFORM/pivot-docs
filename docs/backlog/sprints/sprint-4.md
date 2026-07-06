@@ -8,7 +8,7 @@
 | EN07.1 | Docker Compose production | M | Critical | 🔄 In progress |
 | EN07.2 | Secret management Docker secrets | M | Critical | 🔎 Review |
 | EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | ⬜ |
-| US01.4.2 | Gérer ses appareils de confiance | M | High | 🔄 In progress |
+| US01.4.2 | Gérer ses appareils de confiance | M | High | 🔎 Review |
 | US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | 🔎 Review |
 | US01.5.1 | Notification email action sensible | M | High | 🔄 In progress |
 | EN-NOTIF | Infrastructure notifications in-app | L | High | 🔎 Review |
