@@ -69,8 +69,16 @@
   sprint) — couverture Vitest complète à la place (`notification.service.spec.ts` +
   `navbar.component.spec.ts` étendu).
 
+## Gate 4 MERGE_CONFIDENCE
+
+**Score : 100/100** — Autoloop `pivot-ui` PR [#103](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/103)
+convergé en 1 itération (1 correctif mineur `aria-atomic` appliqué en auto-review). CI complète
+verte (build, lint, tests Vitest 867/867, Lighthouse Accessibilité, CodeQL, Semgrep, Gitleaks,
+SonarCloud, Trivy, SCA, Plumber). PR sortie du mode draft. Détail complet du scoring : commentaire
+de revue sur la PR + spec Gate 5 (`docs/specs/EPIC-shell-ux/us16-1-3-badge-notifications.md`).
+
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: Socle · Size: S · Priority: Medium
-Stage: In progress
+Stage: Review
 Dépendances: EN-NOTIF (`pivot-core` PR #160, Gate 4 = 100/100, CI verte — non fusionnée sur `main`,
 coordination cross-repo documentée ci-dessus)
