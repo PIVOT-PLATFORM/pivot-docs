@@ -51,8 +51,8 @@ gate_scoring:
     markdown_quality_25pts: "markdownlint + cspell verts, nomenclature ok"
     links_and_refs_25pts: "Liens inter-fichiers valides, ADR/audits référencés"
     thresholds:
-      merge_autonome: "≥ 85 — merge sans intervention humaine"
-      merge_documente: "60–84 — merge avec commentaire breakdown obligatoire"
+      merge_autonome: "= 100/100 — sortie du mode draft, merge sans intervention humaine"
+      merge_documente: "60–99 — merge avec commentaire breakdown obligatoire"
       breaking_point_2: "< 60 — label needs-human-review + escalade mainteneur"
 
 ---

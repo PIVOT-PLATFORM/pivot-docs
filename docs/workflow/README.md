@@ -95,7 +95,7 @@ Scores continus 0–100 — postés en **commentaire de PR** (aucun fichier comm
 | **1 — READINESS** | Avant implémentation | ≥ 70 → PO Agent valide → procéder · < 70 → PO Agent réécrit ACs |
 | **2 — COVERAGE** | Par commit | ≥ 85 → continuer · 70–84 → compléter · < 70 → stop |
 | **3 — QUALITY** | Après CI | Hard blocks : Gitleaks · `security` · `breaking-change` · contrat module |
-| **4 — MERGE CONFIDENCE** | Avant merge | ≥ 85 → merge autonome · 60–84 → merge documenté · < 60 → escalade |
+| **4 — MERGE CONFIDENCE** | Avant merge | = 100/100 → sortie du mode draft (merge autonome) · 60–99 → merge documenté · < 60 → Breaking Point 2 (escalade) |
 | **5 — SPEC FREEZE** | Gate 4 = 100/100, dans l'Autoloop (avant merge) | Doc Agent génère la spec fonctionnelle et technique figée · indépendant de la recette humaine du mainteneur |
 
 Format commentaire :
@@ -242,7 +242,7 @@ le RUN PROD.
 **Limites actuelles vs vision cible :**
 - Portail = fichiers markdown (pas encore un vrai portail web de dépôt)
 - FinOps / monitoring coût-token : non implémenté (roadmap)
-- Autocorrection CI → agents : partiel (autoloop × 10 push)
+- Autocorrection CI → agents : partiel (autoloop × 20 push)
 
 ![IT4IT Vision cible](it4it-vision.png)
 
