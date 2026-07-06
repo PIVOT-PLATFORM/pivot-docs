@@ -390,6 +390,9 @@
     "exposables",
     "BIGSERIAL",
     "IDOR",
-    "différable"
+    "différable",
+    "TIMESTAMPTZ",
+    "redéclenchent",
+    "redéclenchera"
   ]
 }
