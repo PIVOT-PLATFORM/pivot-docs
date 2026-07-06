@@ -10,7 +10,7 @@
 | EN07.5 | deploy.yml GitHub Actions CI/CD vers prod | S | Critical | ⬜ |
 | US01.4.2 | Gérer ses appareils de confiance | M | High | 🔎 Review |
 | US01.4.3a | Alerte connexion depuis nouvel appareil | M | High | 🔎 Review |
-| US01.5.1 | Notification email action sensible | M | High | 🔄 In progress |
+| US01.5.1 | Notification email action sensible | M | High | 🔎 Review |
 | EN-NOTIF | Infrastructure notifications in-app | L | High | 🔎 Review |
 | US16.1.3 | Badge notifications | S | Medium | ⬜ |
 | US16.2.2 | Section modules à venir | S | Medium | 🔎 Review |
