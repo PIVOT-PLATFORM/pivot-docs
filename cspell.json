@@ -66,6 +66,8 @@
     "hardcodé",
     "hardcodés",
     "hashé",
+    "healthcheck",
+    "healthchecks",
     "hébergeable",
     "jacoco",
     "jose",
@@ -368,6 +370,7 @@
     "referentiel",
     "Dédupliquer",
     "créable",
-    "TAXO"
+    "TAXO",
+    "exposables"
   ]
 }
