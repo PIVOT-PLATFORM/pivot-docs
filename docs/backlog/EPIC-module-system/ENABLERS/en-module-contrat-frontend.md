@@ -23,5 +23,5 @@ de ceux de l'AC d'origine (voir notes ci-dessus) — équivalence fonctionnelle 
 du code, décision documentée dans `docs/backlog/sprints/sprint-2.md`.
 
 ---
-Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: Socle
 Stage: Done · Priority: Critical

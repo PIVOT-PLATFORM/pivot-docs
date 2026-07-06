@@ -180,7 +180,7 @@ Chaque module est activable indépendamment par les admins tenant. Les modules s
 | **Scaling horizontal par module** | nginx upstream pool dédié par module · round-robin REST · ip_hash WS |
 | **State partagé** | Opaque tokens en PostgreSQL (partagés entre instances d'un même module) |
 | **STOMP multi-instance** | `enableStompBrokerRelay()` → ActiveMQ · topics isolés par domaine |
-| **Redis** | Cache module status partagé (TTL 60s) · compteurs rate limiting [gap MVP] |
+| **Redis** | Cache module status partagé (TTL 60s) · compteurs rate limiting [gap Socle] |
 | **Migrations Flyway** | Verrou DB par module au démarrage (advisory lock PostgreSQL — une seule migration active par schéma) |
 
 ## Gaps — Enablers backlog

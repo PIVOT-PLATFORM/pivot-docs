@@ -3,7 +3,7 @@
 ## Objectif
 Système d'authentification complet et sécurisé : connexion email/password, inscription avec vérification email, réinitialisation de mot de passe, MFA par appareil (OTP), restauration de session. Opaque tokens SHA-256 stockés en BDD (pas de JWT). Multi-tenant ready.
 
-## Périmètre GitHub (MVP)
+## Périmètre GitHub (Socle)
 - Feature F01.1 : Connexion / session
 - Feature F01.2 : Inscription & vérification e-mail
 - Feature F01.3 : Réinitialisation mot de passe
@@ -18,7 +18,7 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 - Feature F01.7 : OIDC enterprise login + provisionnement JIT
 
 ## Hors périmètre
-- Social login hors Google (Apple, GitHub…) → post-MVP
+- Social login hors Google (Apple, GitHub…) → post-Socle
 - SAML → hors périmètre
 
 ## Modules impactés

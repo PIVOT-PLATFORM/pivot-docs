@@ -25,7 +25,7 @@
 ## Notes d'implémentation
 - La classe de sensibilité est un attribut du projet dans `pivot-pilotage-core` (schéma Flyway `pilotage`) ; son évaluation doit être branchée sur le moteur de contrôle d'accès par périmètre défini en US35.1.1 plutôt que dupliquée
 - La doctrine "cloud au centre" (Dossier §8-I4) suppose un référentiel d'hébergements avec un niveau de conformité par offre — à minima un mapping simple classe→hébergement(s) conforme(s) doit exister pour permettre la détection d'écart
-- Priorité Must conditionnel : vérifier au Gate 1 si le mapping hébergement fait partie du MVP de cette US ou peut être simplifié à une classification déclarative sans vérification automatique d'hébergement dans un premier temps
+- Priorité Must conditionnel : vérifier au Gate 1 si le mapping hébergement fait partie du Socle de cette US ou peut être simplifié à une classification déclarative sans vérification automatique d'hébergement dans un premier temps
 - Le journal des changements de classification peut réutiliser le format d'événement d'audit commun défini pour US35.1.4 (SSO et audit)
 
 ---

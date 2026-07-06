@@ -39,5 +39,5 @@
 - Lien d'annulation par email : volontairement une page nécessitant un clic explicite (POST), jamais un lien GET auto-déclenché (anti-scan par bots email).
 
 ---
-Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: In progress

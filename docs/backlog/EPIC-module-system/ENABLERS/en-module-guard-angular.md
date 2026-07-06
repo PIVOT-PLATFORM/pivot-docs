@@ -32,5 +32,5 @@ est traitée de façon identique (refus + redirection `/home` + toast), ce qui g
 couvert conjointement avec US03.2.2 (même guard, mêmes tests).
 
 ---
-Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: Socle
 Stage: Done · Priority: Critical

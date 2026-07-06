@@ -24,5 +24,5 @@ technique, hors périmètre de re-synchronisation de ce fichier).
 consommé par l'API status en production
 
 ---
-Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: Socle
 Stage: Done · Priority: Critical

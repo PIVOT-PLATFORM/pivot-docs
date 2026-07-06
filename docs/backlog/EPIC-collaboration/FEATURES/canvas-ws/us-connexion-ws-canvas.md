@@ -23,9 +23,9 @@
 | Heartbeat STOMP : serveur envoie ping toutes les 25s. Client sans heartbeat pendant 30s = connexion perdue → reconnexion | ⬜ |
 | Les événements DRAW sont persistés en BDD pour qu'un utilisateur rejoignant plus tard voie le canvas existant (à valider : persistance complète ou snapshot périodique) | ⬜ |
 | UNDO : hors scope de cette US — délégué à US08.3.3 (US dédiée à créer) | ⬜ |
-| Stratégie de conflit en cas de modification simultanée : Last-Write-Wins (MVP) | ⬜ |
+| Stratégie de conflit en cas de modification simultanée : Last-Write-Wins (Socle) | ⬜ |
 | Métrique messages_throttled_total exposée via Micrometer | ⬜ |
 
 ---
-Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
+Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: Backlog

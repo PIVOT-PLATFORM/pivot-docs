@@ -15,8 +15,8 @@
 
 ## Notes d'implémentation
 - `HomeComponent` : `src/app/features/home/`
-- Page stub MVP — contenu enrichi dans sprints suivants (modules dashboard, quick access)
+- Page stub Socle — contenu enrichi dans sprints suivants (modules dashboard, quick access)
 
 ---
-Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F16.2 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: Done

@@ -19,5 +19,5 @@
 | Dépendance explicite : un appareil devient "de confiance" uniquement après confirmation OTP via US01.4.1 | ⬜ |
 
 ---
-Item Type: US · Parent: F01.4 · Module: auth · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F01.4 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Backlog

@@ -3,7 +3,7 @@
 ## Objectif
 Infrastructure d'activation/désactivation de modules par tenant : registre backend, guard Angular, cache Redis, contrat TypeScript, interface admin.
 
-## Périmètre GitHub (MVP)
+## Périmètre GitHub (Socle)
 
 ### Enablers
 - EN03.1 : PivotModule interface + registre backend

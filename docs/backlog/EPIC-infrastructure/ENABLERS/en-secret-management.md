@@ -12,5 +12,5 @@
 **Statut** : ⬜ À faire — Gate: Backlog
 
 ---
-Item Type: Enabler · Parent: E07 · Type: sécurité · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E07 · Type: sécurité · Module: core · Phase: Socle
 Stage: Backlog · Priority: Critical

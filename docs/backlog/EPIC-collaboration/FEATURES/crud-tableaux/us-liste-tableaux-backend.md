@@ -13,14 +13,14 @@
 | Champs : id, title, role, createdAt, updatedAt, thumbnailUrl | ⬜ |
 | Paginé (20 par page), trié par updatedAt DESC | ⬜ |
 | Tests TI GET /api/whiteboard/boards | ⬜ |
-| thumbnailUrl = null acceptable en MVP — valeur null retournée si aucune miniature générée | ⬜ |
+| thumbnailUrl = null acceptable en Socle — valeur null retournée si aucune miniature générée | ⬜ |
 | Valeurs du champ role : "owner" \| "editor" \| "viewer" | ⬜ |
 | activeParticipantCount (entier) inclus dans la réponse : nombre de participants actuellement connectés au board | ⬜ |
 | Réponse inclut totalElements, totalPages, currentPage, hasNext pour pagination côté Angular | ⬜ |
 | Taille de page plafonnée côté backend à 50 ; size négatif ou nul → 400 Bad Request | ⬜ |
 | Requête filtre double obligatoire : (owner_id = :userId OR membre actif) AND tenant_id = :tenantId — test TI avec deux tenants distincts vérifiant l'isolation | ⬜ |
-| Recherche par titre : hors scope MVP (note explicite) | ⬜ |
+| Recherche par titre : hors scope Socle (note explicite) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

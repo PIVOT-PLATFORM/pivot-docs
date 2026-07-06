@@ -21,5 +21,5 @@
 **Statut** : ⬜ À planifier — priorité Medium (débloque US16.1.3)
 
 ---
-Item Type: Enabler · Parent: E03 (transversal) · Type: architecture · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E03 (transversal) · Type: architecture · Module: core · Phase: Socle
 Stage: Backlog · Priority: Medium

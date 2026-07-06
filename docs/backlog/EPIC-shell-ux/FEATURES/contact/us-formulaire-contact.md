@@ -35,5 +35,5 @@
 - Rate limiting (à valider : 5 req/15min par IP) → EN02.x ou règle SecurityConfig
 
 ---
-Item Type: US · Parent: F16.3 · Module: core · Phase: MVP · Size: M · Priority: Low
+Item Type: US · Parent: F16.3 · Module: core · Phase: Socle · Size: M · Priority: Low
 Stage: Review

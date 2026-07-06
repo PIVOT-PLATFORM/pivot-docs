@@ -19,5 +19,5 @@
 | Audit event BoardShared enregistré avec boardId, inviterId, role, expiresAt | ⬜ |
 
 ---
-Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

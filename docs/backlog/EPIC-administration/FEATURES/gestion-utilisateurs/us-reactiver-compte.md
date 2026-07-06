@@ -28,5 +28,5 @@
 - Voir US06.1.4 pour l'ordre de fusion recommandé et la déviation 403/401.
 
 ---
-Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: In progress

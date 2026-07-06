@@ -17,5 +17,5 @@
 | Clés i18n dans l'espace `auth.resendActivation.*` (fr.json / en.json) | ⬜ |
 
 ---
-Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: XS · Priority: High
+Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: XS · Priority: High
 Stage: Done

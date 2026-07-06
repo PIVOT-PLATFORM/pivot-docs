@@ -50,7 +50,7 @@ Dépendances: …
 | **Stage** | `Backlog` · `Ready` · `In progress` · `Review` · `Done` |
 | **Priority** | `Critical` · `High` · `Medium` · `Low` |
 | **Module** | `core` · `auth` · `admin` · `oidc` · `pilotage` · `agilite` · `collaboratif` (extensible par domaine) |
-| **Phase** | `MVP` · `v1-enterprise` · `phase-3` |
+| **Phase** | `Socle` · `v1-enterprise` · `phase-3` |
 | **Size** | `XS` · `S` · `M` · `L` · `XL` |
 
 ---
@@ -147,13 +147,13 @@ Done ◄──(mainteneur : merge PR)────────────── 
 
 ---
 
-## 6. Phase active — verrou MVP
+## 6. Phase active — verrou Socle
 
-**La phase active reste `MVP` tant que le mainteneur n'a pas explicitement déclaré le MVP terminé.**
+**La phase active reste `Socle` tant que le mainteneur n'a pas explicitement déclaré le Socle terminé.**
 
-- Seuls les items `Phase: MVP` sont éligibles à `Ready` et à l'implémentation.
+- Seuls les items `Phase: Socle` sont éligibles à `Ready` et à l'implémentation.
 - Les items `v1-enterprise` et `phase-3` existent dans le backlog mais restent en `Backlog`, `Backlog` — **non travaillés**.
-- Passage à la phase suivante = **décision explicite du mainteneur** (« MVP terminé »).
+- Passage à la phase suivante = **décision explicite du mainteneur** (« Socle terminé »).
 
 ---
 
@@ -161,10 +161,10 @@ Done ◄──(mainteneur : merge PR)────────────── 
 
 | Axe | Epics (indicatif) | Phase |
 |-----|-------------------|-------|
-| Plateforme | Système de modules, Observabilité, CI/CD & supply-chain | MVP → v1 |
-| Auth & IAM | Auth opaque tokens, OIDC multi-tenant, Rôles & permissions | MVP → v1-enterprise |
-| Admin | Activation modules, Gestion utilisateurs, Gestion tenants | MVP → v1-enterprise |
-| Modules | whiteboard, session, quiz, survey, roadmap | MVP (1 module) → phase-3 |
+| Plateforme | Système de modules, Observabilité, CI/CD & supply-chain | Socle → v1 |
+| Auth & IAM | Auth opaque tokens, OIDC multi-tenant, Rôles & permissions | Socle → v1-enterprise |
+| Admin | Activation modules, Gestion utilisateurs, Gestion tenants | Socle → v1-enterprise |
+| Modules | whiteboard, session, quiz, survey, roadmap | Socle (1 module) → phase-3 |
 
 ---
 
@@ -195,7 +195,7 @@ Done ◄──(mainteneur : merge PR)────────────── 
 | **1** | E01 Auth & IAM · E02 Espace compte · E05 CI/CD & supply-chain | ✅ seedé |
 | **2** | Plateforme — Système de modules, Observabilité (surtout Enablers) | ⬜ |
 | **3** | Admin — Activation modules, Gestion utilisateurs, Gestion tenants | ⬜ |
-| **4** | 1er module MVP (whiteboard **ou** session) — Features + US | ⬜ |
+| **4** | 1er module Socle (whiteboard **ou** session) — Features + US | ⬜ |
 | **ult.** | Autres modules, OIDC multi-tenant, RGPD (`v1-enterprise` / `phase-3`, **verrouillés**) | ⬜ |
 
 ---
@@ -235,9 +235,9 @@ Au démarrage de chaque session, Claude :
 2. Lit les fichiers US du sprint courant — vérifie `Stage` et `Phase`
 3. Pour chaque US `Stage: In progress` → reprend la branche existante, vérifie l'état de la PR
 4. Pour chaque US `Stage: Ready` → lance l'implémentation (branche `feat/{us-id}-{slug}`)
-5. Pour chaque US `Stage: Backlog` éligible (Phase MVP, priorité) → PO Agent vérifie DoR + Gate 1 → passe `Ready` → implémente
+5. Pour chaque US `Stage: Backlog` éligible (Phase Socle, priorité) → PO Agent vérifie DoR + Gate 1 → passe `Ready` → implémente
 
-**Priorité :** Critical → High → Medium → Low. Phase MVP uniquement tant que verrou actif (§6).
+**Priorité :** Critical → High → Medium → Low. Phase Socle uniquement tant que verrou actif (§6).
 
 ---
 
@@ -261,5 +261,5 @@ Après implémentation d'une US sur `feat/{us-id}-{slug}` :
 
 | Acteur | Responsabilité |
 |--------|----------------|
-| **Mainteneur** | merge PR (`Review → Done`) · déclare « MVP terminé » |
+| **Mainteneur** | merge PR (`Review → Done`) · déclare « Socle terminé » |
 | **Claude** | rédige/affine items · challenge ACs (PO Agent) · implémente · ouvre PR · autoloop review+CI · met à jour `Stage` dans frontmatter · **jamais `Done`** |

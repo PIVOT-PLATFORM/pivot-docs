@@ -34,5 +34,5 @@
 - `pivot-core` a refactoré `resolveAdmin()` → `resolveActor()` pour que US06.1.4/US06.1.5 (empilée ensuite) puisse le réutiliser tel quel.
 
 ---
-Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: In progress

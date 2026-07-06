@@ -19,5 +19,5 @@
 | La comparaison du token d'invitation hashé utilise une comparaison à temps constant (MessageDigest.isEqual en Java) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

@@ -14,5 +14,5 @@
 **Statut** : ✅ Fait — mergé sur `main` (pivot-core PR #119, `feat/en03-1-module-registry`)
 
 ---
-Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: Socle
 Stage: Done · Priority: Critical

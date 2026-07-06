@@ -21,5 +21,5 @@
 - TTL configuré dans `application.yml` : `pivot.auth.token.ttl.short` / `pivot.auth.token.ttl.long`
 
 ---
-Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: XS · Priority: High
+Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: XS · Priority: High
 Stage: Done

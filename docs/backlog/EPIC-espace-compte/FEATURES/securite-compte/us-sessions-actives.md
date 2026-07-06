@@ -38,5 +38,5 @@
 - Point à confirmer par le PO : `DELETE /{tokenId}` sur un token déjà révoqué/expiré retourne 404 plutôt qu'un 204 idempotent — choix de design à valider.
 
 ---
-Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Review

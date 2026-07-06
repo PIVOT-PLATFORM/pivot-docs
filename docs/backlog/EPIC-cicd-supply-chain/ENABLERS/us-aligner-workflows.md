@@ -14,5 +14,5 @@
 | Plumber compliance check présent dans pivot-ui CI | ⬜ |
 
 ---
-Item Type: US · Parent: EN05.15 · Module: core · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: EN05.15 · Module: core · Phase: Socle · Size: S · Priority: Medium
 Stage: Backlog

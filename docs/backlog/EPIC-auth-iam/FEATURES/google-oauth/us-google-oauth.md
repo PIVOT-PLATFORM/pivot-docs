@@ -25,5 +25,5 @@
 - `UserRepository.findByGoogleId(googleId)` pour lookup
 
 ---
-Item Type: US · Parent: F01.6 · Module: auth · Phase: MVP · Size: M · Priority: High
+Item Type: US · Parent: F01.6 · Module: auth · Phase: Socle · Size: M · Priority: High
 Stage: Done

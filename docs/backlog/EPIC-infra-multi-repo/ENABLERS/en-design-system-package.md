@@ -9,7 +9,7 @@
 - [ ] Dépendance : `@angular/cdk` uniquement (pas d'Angular Material, pas de Taiga, pas de PrimeNG)
 - [ ] Exports comportement (CDK wrappers) : overlay, focus trap, a11y, keyboard navigation
 - [ ] Exports visuels (SCSS BEM) : tokens CSS vars (couleurs, spacing, typo, radius, shadows), mixins
-- [ ] Composants MVP : Button, Input, Card, Modal, Toast, Badge, Avatar
+- [ ] Composants Socle : Button, Input, Card, Modal, Toast, Badge, Avatar
 - [ ] Storybook configuré et déployé (GitHub Pages)
 - [ ] Tests a11y automatisés (axe-core) dans la CI — WCAG 2.1 AA
 - [ ] Package publié dans GitHub Packages : `@pivot/design-system`

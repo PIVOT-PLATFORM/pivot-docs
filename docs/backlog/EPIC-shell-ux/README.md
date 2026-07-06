@@ -3,7 +3,7 @@
 ## Objectif
 Shell de l'application Angular : navigation principale, page d'accueil (grille modules), page contact, charte graphique et thèmes utilisateur.
 
-## Périmètre GitHub (MVP)
+## Périmètre GitHub (Socle)
 - Feature F16.1 : Barre de navigation principale
 - Feature F16.2 : Page d'accueil (greeting + grille modules)
 - Feature F16.3 : Page contact

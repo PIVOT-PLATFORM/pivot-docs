@@ -3,7 +3,7 @@
 ## Objectif
 Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité SonarCloud, SAST/SCA, secrets scanning, SBOM, SLSA, Scorecard, Semantic Release, protection de branche et standardisation CI.
 
-## Périmètre GitHub (MVP)
+## Périmètre GitHub (Socle)
 
 ### Enablers Done ✅
 - EN05.1 — Pipelines CI (build/test/lint/coverage)

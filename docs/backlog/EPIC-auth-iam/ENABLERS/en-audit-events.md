@@ -15,5 +15,5 @@
 **Statut** : ✅ Fait — Stage: Done
 
 ---
-Item Type: Enabler · Parent: E01 · Type: sécurité · Module: auth · Phase: MVP
+Item Type: Enabler · Parent: E01 · Type: sécurité · Module: auth · Phase: Socle
 Stage: Done

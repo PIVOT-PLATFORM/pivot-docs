@@ -34,7 +34,7 @@ title PIVOT — Workflow agentique ACDD\n(Acceptance Criteria Driven Development
 
 |#E3F2FD| PO Agent |
 start
-:Lit **SPRINTS.md** — sprint courant\nLit fichiers US : Stage + Phase MVP;
+:Lit **SPRINTS.md** — sprint courant\nLit fichiers US : Stage + Phase Socle;
 
 :**Gate 1 — READINESS** (autonome)\nDoR check + score 0–100;
 

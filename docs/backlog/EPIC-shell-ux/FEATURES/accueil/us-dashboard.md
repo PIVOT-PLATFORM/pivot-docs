@@ -14,8 +14,8 @@
 
 ## Notes d'implémentation
 - `DashboardComponent` : `src/app/features/dashboard/`
-- Page stub MVP — métriques + quick links dans sprint suivant
+- Page stub Socle — métriques + quick links dans sprint suivant
 
 ---
-Item Type: US (hors GitHub) · Parent: F16.2 · Module: core · Phase: MVP · Size: XS · Priority: Medium
+Item Type: US (hors GitHub) · Parent: F16.2 · Module: core · Phase: Socle · Size: XS · Priority: Medium
 Stage: Done

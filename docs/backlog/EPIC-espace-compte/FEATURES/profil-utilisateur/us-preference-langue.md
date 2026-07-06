@@ -32,5 +32,5 @@
 - **Statut réel vérifié (2026-07-05) :** `pivot-core` PR #130 est sortie de draft (CI en cours), pas encore mergée. `pivot-ui` PR #72 reste **draft**. `Stage: Review` était prématuré côté vague 2 ; repassé à `In progress` en attendant la sortie de draft du volet Angular et Gate 4.
 
 ---
-Item Type: US · Parent: F02.1 · Module: auth · Phase: MVP · Size: XS · Priority: Low
+Item Type: US · Parent: F02.1 · Module: auth · Phase: Socle · Size: XS · Priority: Low
 Stage: In progress

@@ -20,7 +20,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E01 — Auth & IAM](EPIC-auth-iam/README.md) | E01 | 7+1extra | 10 | 16+4pending | 🔄 Partiellement Done |
 | [E02 — Espace compte](EPIC-espace-compte/README.md) | E02 | 3 | 2 (v1-ent) | 7+1pending | ⬜ À planifier |
 | [E03 — Système de modules](EPIC-module-system/README.md) | E03 | 3 | 4 | 7 | ✅ Sprint 2 terminé — EN03.1-4 + US03.x mergés |
-| [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 MVP + 2 v1-ent | — | ⬜ Sprint 4 |
+| [E04 — Observabilité](EPIC-observabilite/README.md) | E04 | — | 4 Socle + 2 v1-ent | — | ⬜ Sprint 4 |
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
 | [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
@@ -65,7 +65,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ## Suivi Sprint actif
 
-### Sprint 1 — Auth & Shell (MVP) — ✅ Terminé sauf contact
+### Sprint 1 — Auth & Shell (Socle) — ✅ Terminé sauf contact
 
 | US | Titre | 🤖 Dev |
 |----|-------|--------|
@@ -92,7 +92,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
-### Sprint 2 — Système de modules + Auth manquant (MVP) — ✅ Terminé
+### Sprint 2 — Système de modules + Auth manquant (Socle) — ✅ Terminé
 
 | US | Titre | 🤖 Dev |
 |----|-------|--------|
@@ -116,32 +116,32 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 
 ---
 
-## Verrou MVP
+## Verrou Socle
 
-**Phase active : MVP.** Seuls les items `Phase: MVP` sont implémentables.
+**Phase active : Socle.** Seuls les items `Phase: Socle` sont implémentables.
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
-- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = MVP mais Gate 1 PO Agent pending → **bloqué**
-- E02/E04/E06/E07 = MVP mais non démarré
+- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle mais Gate 1 PO Agent pending → **bloqué**
+- E02/E04/E06/E07 = Socle mais non démarré
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 ---
 
-## Plan de priorisation MVP
+## Plan de priorisation Socle
 
 | Priorité | Item | Phase | Statut |
 |----------|------|-------|--------|
-| Critical | US16.3.1 Formulaire de contact | MVP | 🔎 Review |
-| Critical | E03 Système de modules (EN03.1-4 + US03.x) | MVP | ✅ Sprint 2 terminé |
-| Critical | E07 Infrastructure prod (EN07.1/2/5) | MVP | ⬜ Backlog |
-| High | E06 Administration (F06.1/F06.2) | MVP | ⬜ Sprint 2/3 |
-| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | MVP | ✅ Sprint 2 terminé |
-| High | E02 Espace compte (F02.1/F02.2) | MVP | ⬜ Sprint 3 |
-| Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
-| Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
-| Medium | US16.2.2 Section modules à venir | MVP | 🔄 En cours |
-| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | MVP | ⬜ Backlog |
+| Critical | US16.3.1 Formulaire de contact | Socle | 🔎 Review |
+| Critical | E03 Système de modules (EN03.1-4 + US03.x) | Socle | ✅ Sprint 2 terminé |
+| Critical | E07 Infrastructure prod (EN07.1/2/5) | Socle | ⬜ Backlog |
+| High | E06 Administration (F06.1/F06.2) | Socle | ⬜ Sprint 2/3 |
+| High | US01.1.4/1.5 + US01.2.4 (Auth manquant) | Socle | ✅ Sprint 2 terminé |
+| High | E02 Espace compte (F02.1/F02.2) | Socle | ⬜ Sprint 3 |
+| Medium | E04 Observabilité | Socle | ⬜ Sprint 3/4 |
+| Medium | US16.1.3 Badge notifications | Socle | ⬜ À planifier |
+| Medium | US16.2.2 Section modules à venir | Socle | 🔄 En cours |
+| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
 | High | E18 Domaine Pilotage — ombrelle (ADR-008), éclaté en E21–E30 + E32–E40 | phase-3 | ⬜ Backlog |

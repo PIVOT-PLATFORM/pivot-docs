@@ -4,7 +4,7 @@
 
 Donner une visibilité complète sur l'état de la plateforme en production : logs structurés, métriques applicatives, health checks et alertes — sur **tous les backends** (pivot-core + pivot-xxx-core).
 
-## Périmètre GitHub (MVP — Critical)
+## Périmètre GitHub (Socle — Critical)
 
 - EN04.1 : Logs structurés JSON + MDC (requestId, tenantId, userId)
 - EN04.2 : Spring Actuator endpoints (health, info, metrics) — non exposés à nginx
@@ -27,7 +27,7 @@ Tous les backends : `pivot-core` · `pivot-pilotage-core` · `pivot-agilite-core
 
 ## Statut global
 
-⬜ À planifier — MVP Critical
+⬜ À planifier — Socle Critical
 
 ---
 
@@ -35,7 +35,7 @@ Tous les backends : `pivot-core` · `pivot-pilotage-core` · `pivot-agilite-core
 
 | Élément | 🤖 Dev |
 |---------|--------|
-| **Phase MVP — Critical** | |
+| **Phase Socle — Critical** | |
 | [EN04.1 — Logs structurés JSON + MDC](ENABLERS/en-logs-structures.md) | ⬜ |
 | [EN04.2 — Spring Actuator endpoints](ENABLERS/en-actuator.md) | ⬜ |
 | [EN04.3 — Micrometer Prometheus](ENABLERS/en-micrometer-prometheus.md) | ⬜ |

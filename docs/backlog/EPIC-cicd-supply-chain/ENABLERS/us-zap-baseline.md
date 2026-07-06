@@ -15,5 +15,5 @@
 | Faux positifs gérés via fichier de règles ZAP (`.zap/rules.tsv`) | ⬜ |
 
 ---
-Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: EN05.13 · Module: core · Phase: Socle · Size: S · Priority: Medium
 Stage: Backlog

@@ -1,6 +1,6 @@
 # Sprint 10 — Pilotage cœur PPM
 
-> ⏸️ **Verrou :** conditionnel au jalon « MVP terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--mvp-terminé-).
+> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
 **Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé)
 

@@ -32,5 +32,5 @@
 - Gap signalé : le point de rupture responsive mobile n'a pas de test automatisé (limitation jsdom), vérification visuelle manuelle recommandée.
 
 ---
-Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: In progress

@@ -37,5 +37,5 @@
 - Point à vérifier par un reviewer humain : le rate limiting est appliqué indépendamment par userId et par IP — un attaquant faisant tourner une seule des deux dimensions n'est pas nécessairement bloqué par l'autre (passe Red Team suggérée).
 
 ---
-Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: High
+Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: High
 Stage: In progress

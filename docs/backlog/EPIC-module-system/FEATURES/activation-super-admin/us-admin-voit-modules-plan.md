@@ -16,5 +16,5 @@
 | Un module disponible via override SUPER_ADMIN est affiché avec un indicateur visuel distinct (badge "Activé par l'administrateur plateforme") | ⬜ |
 
 ---
-Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F03.3 · Module: core · Phase: Socle · Size: M · Priority: Medium
 Stage: Backlog

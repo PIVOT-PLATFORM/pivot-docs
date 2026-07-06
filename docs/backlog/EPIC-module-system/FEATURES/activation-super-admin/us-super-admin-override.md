@@ -17,5 +17,5 @@
 | Audit event ModuleOverrideRemoved enregistré lors de la suppression d'un override | ⬜ |
 
 ---
-Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F03.3 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

@@ -30,6 +30,6 @@
 | Tous les labels toolbar et noms d'outils externalisés dans `whiteboard.canvas.*` (fr.json / en.json) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: L · Priority: High
+Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: L · Priority: High
 Stage: Backlog
 Dépendances: EN08.1 (isolation WS room), US08.3.1 (connexion WS)

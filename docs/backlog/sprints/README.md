@@ -11,26 +11,26 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 
 | Sprint | Titre | Statut |
 |--------|-------|--------|
-| [Sprint 1](./sprint-1.md) | Auth & Shell MVP | ✅ Terminé sauf contact |
+| [Sprint 1](./sprint-1.md) | Auth & Shell Socle | ✅ Terminé sauf contact |
 | [Sprint 2](./sprint-2.md) | Système de modules + Auth manquant | ✅ Terminé |
 | [Sprint 3](./sprint-3.md) | Espace compte + Administration | 🔄 En cours (15/15 implémentées, merges en attente) |
 | [Sprint 4](./sprint-4.md) | Infrastructure prod + Auth avancé + Notifications | ⬜ Non démarré |
-| [Sprint 5](./sprint-5.md) | Module Whiteboard (MVP) | ⬜ Non démarré |
-| [Sprint 6](./sprint-6.md) | Durcissement & recette MVP 🏁 | ⬜ Non démarré |
-| [Sprint 7](./sprint-7.md) | Fondations phase-3 (E17 + gouvernance ADR) | ⏸️ Verrouillé (post-MVP) |
-| [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ⏸️ Verrouillé (post-MVP) |
-| [Sprint 9](./sprint-9.md) | Socle domaine Pilotage | ⏸️ Verrouillé (post-MVP) |
-| [Sprint 10](./sprint-10.md) | Pilotage cœur PPM | ⏸️ Verrouillé (post-MVP) |
-| [Sprint 11](./sprint-11.md) | Risques + plan de contrôle sécurité | ⏸️ Verrouillé (post-MVP) |
-| [Sprint 12](./sprint-12.md) | Forms (cœur) + framework onboarding | ⏸️ Verrouillé (post-MVP) |
+| [Sprint 5](./sprint-5.md) | Module Whiteboard (Socle) | ⬜ Non démarré |
+| [Sprint 6](./sprint-6.md) | Durcissement & recette Socle 🏁 | ⬜ Non démarré |
+| [Sprint 7](./sprint-7.md) | Fondations phase-3 (E17 + gouvernance ADR) | ⏸️ Verrouillé (post-Socle) |
+| [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ⏸️ Verrouillé (post-Socle) |
+| [Sprint 9](./sprint-9.md) | Socle domaine Pilotage | ⏸️ Verrouillé (post-Socle) |
+| [Sprint 10](./sprint-10.md) | Pilotage cœur PPM | ⏸️ Verrouillé (post-Socle) |
+| [Sprint 11](./sprint-11.md) | Risques + plan de contrôle sécurité | ⏸️ Verrouillé (post-Socle) |
+| [Sprint 12](./sprint-12.md) | Forms (cœur) + framework onboarding | ⏸️ Verrouillé (post-Socle) |
 | [Backlog post-S12](./backlog-post-s12.md) | Items non planifiés au-delà du Sprint 12 | — |
 | [Zones d'ombre à raffiner](./zones-ombre.md) | Décisions produit/cadrage en attente | — |
 
 ---
 
-## Sprints 7–12 — Plan phase-3 (conditionnel au jalon « MVP terminé »)
+## Sprints 7–12 — Plan phase-3 (conditionnel au jalon « Socle terminé »)
 
-> ⏸️ **Verrou :** ces sprints ne démarrent qu'après la déclaration « MVP terminé » (Sprint 6). Séquencement fondé sur 3 goulots : E17 (aucun module phase-3 ne peut démarrer sans les templates multi-repo), la gouvernance ADR (bus d'événements non spécifié = chemin critique invisible de S9+), et le principe « piloter petit avant de piloter gros » (valider les templates sur l'agilité avant d'engager le domaine Pilotage).
+> ⏸️ **Verrou :** ces sprints ne démarrent qu'après la déclaration « Socle terminé » (Sprint 6). Séquencement fondé sur 3 goulots : E17 (aucun module phase-3 ne peut démarrer sans les templates multi-repo), la gouvernance ADR (bus d'événements non spécifié = chemin critique invisible de S9+), et le principe « piloter petit avant de piloter gros » (valider les templates sur l'agilité avant d'engager le domaine Pilotage).
 > **Hypothèse de capacité :** ~11-19 items/sprint (vélocité observée S1-S3, agents parallèles).
 
 ---

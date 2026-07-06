@@ -65,7 +65,7 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Dépendances
 

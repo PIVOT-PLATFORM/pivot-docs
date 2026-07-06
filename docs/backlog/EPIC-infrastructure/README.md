@@ -3,7 +3,7 @@
 ## Objectif
 Stack de production complète : Docker Compose prod, gestion des secrets, ActiveMQ, PgBouncer, pipeline de déploiement CI/CD, TLS interne, Redis/PostgreSQL sécurisés, scaling horizontal.
 
-## Périmètre GitHub (MVP — Critical)
+## Périmètre GitHub (Socle — Critical)
 - EN07.1 : Docker Compose production complet
 - EN07.2 : Secret management Docker secrets
 - EN07.3 : ActiveMQ persistence KahaDB
@@ -34,7 +34,7 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 
 | Élément | 🤖 Dev |
 |---------|--------|
-| **Phase MVP — Critical** | |
+| **Phase Socle — Critical** | |
 | [EN07.1 — Docker Compose production complet](ENABLERS/en-docker-compose-prod.md) | ⬜ |
 | [EN07.2 — Secret management Docker secrets](ENABLERS/en-secret-management.md) | ⬜ |
 | [EN07.3 — ActiveMQ persistence KahaDB](ENABLERS/en-activemq.md) | ⬜ |

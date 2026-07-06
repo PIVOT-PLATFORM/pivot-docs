@@ -21,5 +21,5 @@
 - E2E : `pivot-ui/e2e/auth/session-restore.spec.ts`
 
 ---
-Item Type: US · Parent: F01.8 · Module: auth · Phase: MVP · Size: S · Priority: Critical
+Item Type: US · Parent: F01.8 · Module: auth · Phase: Socle · Size: S · Priority: Critical
 Stage: Done
