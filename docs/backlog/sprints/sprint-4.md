@@ -20,7 +20,7 @@
 | EN04.1 | Logs structurés JSON + MDC (requestId, tenantId, userId) | S | Medium | 🔄 |
 | EN04.2 | Spring Actuator (management port :8081, non routé nginx) | S | Medium | 🔎 Review |
 | EN04.3 | Micrometer + Prometheus scraping `/actuator/prometheus` | S | Medium | 🔎 Review |
-| EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | ⬜ |
+| EN04.4 | Docker HEALTHCHECK + liveness / readiness separation | S | Medium | 🔎 Review |
 
 > **Blocker :** EN-NOTIF doit précéder US16.1.3. EN07.x validé avant toute release prod. EN04.x parallélisables entre eux.
 >
@@ -59,3 +59,16 @@
 > fusionnés) ; US01.5.1/US01.4.3a définis (type + i18n) mais pas câblés — leurs PR (#154/#151) ne
 > sont pas fusionnées et ne publient encore aucun événement consommable. Débloque US16.1.3 dès
 > Gate 4 = 100/100.
+>
+> **EN04.4 (2026-07-06) :** Gate 4 convergée (autoloop), PR
+> [pivot-core#162](https://github.com/PIVOT-PLATFORM/pivot-core/pull/162) +
+> [pivot-ui#104](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/104) (nginx `upstream`
+> — repo séparé, voir investigation dans la PR). **Base non standard** :
+> `pivot-core#162` est construite sur les commits non mergés de EN07.1
+> ([#149](https://github.com/PIVOT-PLATFORM/pivot-core/pull/149)) et EN04.2
+> ([#158](https://github.com/PIVOT-PLATFORM/pivot-core/pull/158)) — toutes deux Gate 4 =
+> 100/100 mais pas encore fusionnées dans `main` ; rebase nécessaire une fois l'une ou
+> l'autre mergée (attendu sans conflit, à vérifier). Coordination additionnelle détectée
+> avec EN07.5 ([#155](https://github.com/PIVOT-PLATFORM/pivot-core/pull/155)) : son
+> `deploy.yml` vérifie `localhost/api/actuator/health`, chemin qui disparaît une fois #158
+> mergée — commentaire posté sur #155.
