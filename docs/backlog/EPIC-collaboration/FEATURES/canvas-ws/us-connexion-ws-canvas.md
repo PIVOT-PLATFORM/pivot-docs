@@ -26,6 +26,46 @@
 | Stratégie de conflit en cas de modification simultanée : Last-Write-Wins (Socle) | ⬜ |
 | Métrique messages_throttled_total exposée via Micrometer | ⬜ |
 
+## Hors périmètre
+
+- Logique undo/redo (stack, application de l'annulation) : déléguée à US08.3.3 — cette US ne fait
+  que transporter le message `UNDO` sur la room.
+- Décision définitive de la stratégie de persistance des événements `DRAW` (historique complet
+  vs snapshot périodique) : voir ambiguïté documentée ci-dessous, à trancher par l'Architect Agent
+  avant Gate 2.
+- Résolution de conflits avancée (OT/CRDT) : Socle reste en Last-Write-Wins, toute stratégie plus
+  fine est hors périmètre Socle.
+- Montée en charge horizontale multi-instance des sessions WS (sticky sessions / broker externe) :
+  couverte par EN30.7 (phase-3), pas ici.
+
+## Notes d'implémentation
+
+- **Endpoint & topics** : handshake STOMP sur `/ws/whiteboard/{boardId}` (token opaque en header
+  `Authorization: Bearer`) · publication client→serveur sur `/app/whiteboard/{boardId}/action`
+  (convention Spring `@MessageMapping`) · diffusion serveur→clients via souscription
+  `/topic/whiteboard/{boardId}`.
+- **Modèle d'événements WebSocket (contrat partagé F08.3, cf. US08.3.2a/b/c et US08.3.3)** : types
+  whitelistés `JOIN`, `LEAVE`, `DRAW`, `CURSOR_MOVE`, `UNDO`. Toute mutation de contenu (trait,
+  forme, effacement, déplacement, redimensionnement) transite en `DRAW` avec un sous-champ `type`
+  (`stroke`/`shape`/`erase`/`move`/`resize`/`text`), jamais comme type STOMP distinct. Granularité :
+  un message `DRAW` par action complète (fin de tracé/geste), pas de streaming point par point —
+  cohérent avec la limite payload 64 Ko et le rate limit 30 msg/s. `CURSOR_MOVE` suit une cadence
+  différente (throttle 50 ms côté client, US08.3.2c). `PARTICIPANTS_UPDATE` émis par le serveur à
+  chaque `JOIN`/`LEAVE` avec la liste complète des participants.
+- **Dépend de EN08.1** (isolation WebSocket room par board) pour la vérification d'appartenance à
+  la souscription.
+- Le champ `payload` de `DRAW` reste **opaque et spécifique à l'outil** pour le transport (pas de
+  schéma STOMP rigide par type) : il porte notamment les attributs de style ajoutés côté canvas
+  (`strokeColor`/`fillColor`/`groupId`, cf. US08.3.2a) sans qu'aucune évolution du contrat
+  WebSocket ci-dessus ne soit nécessaire — seule la validation de schéma JSON côté serveur (whitelist
+  des champs acceptés par `type`) doit suivre les évolutions de payload décidées par les US
+  consommatrices.
+- **Ambiguïté ouverte (non tranchée ici)** : persistance des événements `DRAW` — historique complet
+  rejouable événement par événement, ou snapshot périodique + delta ? Impacte le modèle de données
+  du schéma `collaboratif` (table d'événements vs table de snapshots). À arbitrer par l'Architect
+  Agent avant l'implémentation (Gate 2), sans bloquer le Gate 1 de cette US.
+
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Backlog
+Stage: Ready
+Dépendances: EN08.1 (isolation WS room)

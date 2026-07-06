@@ -15,7 +15,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 2](./sprint-2.md) | Système de modules + Auth manquant | ✅ Terminé |
 | [Sprint 3](./sprint-3.md) | Espace compte + Administration | 🔎 15/15 mergées — en attente de recette |
 | [Sprint 4](./sprint-4.md) | Infrastructure prod + Auth avancé + Notifications | ✅ 16/16 mergées |
-| [Sprint 5](./sprint-5.md) | Module Whiteboard (Socle) | ⬜ Non démarré |
+| [Sprint 5](./sprint-5.md) | Module Whiteboard (Socle) | 🔎 Gate 1 passé (17/17 Ready) — attente recette Sprint 4 |
 | [Sprint 6](./sprint-6.md) | Durcissement & recette Socle 🏁 | ⬜ Non démarré |
 | [Sprint 7](./sprint-7.md) | Fondations phase-3 (E17 + gouvernance ADR) | ⏸️ Verrouillé (post-Socle) |
 | [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ⏸️ Verrouillé (post-Socle) |
