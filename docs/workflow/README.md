@@ -115,6 +115,30 @@ pending_ac:
 
 ---
 
+## Règle absolue — Draft par défaut
+
+Toute PR ouverte par un Dev Agent démarre et **reste en mode draft**, quel que soit l'état de la
+CI ou de l'implémentation, tant que les deux conditions suivantes ne sont pas **toutes les deux**
+réunies :
+
+1. **Une revue Gate 4 a été effectivement exécutée** — un PR Review Agent a posté un commentaire
+   `gate: MERGE_CONFIDENCE` avec un breakdown complet (architecture / traçabilité AC / sécurité /
+   qualité). L'auto-évaluation Gate 2 du Dev Agent (self-assessment à l'ouverture de la PR) ne
+   compte pas comme revue — elle n'est pas neutre, l'auteur ne peut pas s'auto-certifier.
+2. **Le score obtenu est exactement 100/100.**
+
+| Situation | État de la PR |
+|-----------|---------------|
+| Pas encore de revue Gate 4 postée | **Draft**, quelle que soit la CI |
+| Revue Gate 4 postée, score < 100 | **Draft** — corriger les findings, refaire tourner la revue |
+| Revue Gate 4 postée, score = 100 | Sortie du mode draft (`gh pr ready`) autorisée |
+
+Un Dev Agent ne sort **jamais** lui-même une PR du mode draft avant qu'une revue Gate 4 réelle
+n'ait posté un score de 100/100 en commentaire. Sortir une PR du mode draft sans revue préalable,
+ou avec un score < 100, est une violation de ce workflow — au même titre qu'un merge non autorisé.
+
+---
+
 ## Breaking Points
 
 ### Step 0 — Challenge PO (autonome, avant implémentation)
