@@ -10,6 +10,7 @@ sidebar_label: "Vue d'ensemble"
 |----------|-------------|
 | [pivot-core-workflows.md](pivot-core-workflows.md) | Pipelines CI/CD du backend Java |
 | [pivot-ui-workflows.md](pivot-ui-workflows.md) | Pipelines CI/CD du frontend Angular |
+| [docker-compose-prod.md](docker-compose-prod.md) | Déploiement production Docker Compose (EN07.1) |
 
 ## Principes communs
 
