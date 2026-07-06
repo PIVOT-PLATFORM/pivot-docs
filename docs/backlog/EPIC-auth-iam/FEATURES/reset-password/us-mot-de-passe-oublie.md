@@ -17,5 +17,5 @@
 | État de chargement (bouton désactivé + spinner) pendant la requête; résultat affiché via `role="status"` | ⬜ |
 
 ---
-Item Type: US · Parent: F01.3 · Module: auth · Phase: MVP · Size: S · Priority: Critical
+Item Type: US · Parent: F01.3 · Module: auth · Phase: Socle · Size: S · Priority: Critical
 Stage: Done

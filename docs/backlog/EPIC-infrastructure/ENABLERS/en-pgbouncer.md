@@ -12,5 +12,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E07 · Type: performance · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E07 · Type: performance · Module: core · Phase: Socle
 Stage: Backlog · Priority: High

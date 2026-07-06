@@ -15,5 +15,5 @@
 **Statut** : ✅ Fait (template contact en cours)
 
 ---
-Item Type: Enabler · Parent: E01 · Type: infrastructure · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E01 · Type: infrastructure · Module: core · Phase: Socle
 Stage: Done

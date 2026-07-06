@@ -21,5 +21,5 @@
 | Rate limiting sur POST /api/auth/register (voir EN01.x) — endpoint sensible à l'abus | ⬜ |
 
 ---
-Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: M · Priority: Critical
+Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: M · Priority: Critical
 Stage: Done

@@ -32,5 +32,5 @@
 - Guard : `authMatchGuard` (CanMatchFn) protège le shell
 
 ---
-Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: M · Priority: Critical
+Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: M · Priority: Critical
 Stage: Done

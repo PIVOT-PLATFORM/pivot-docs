@@ -27,7 +27,7 @@ Piloter par les **OKR** (Objectives & Key Results) de bout en bout : définition
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Périmètre GitHub (phase-3)
 

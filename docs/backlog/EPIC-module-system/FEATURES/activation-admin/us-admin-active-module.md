@@ -31,6 +31,6 @@
 - Tests E2E Playwright différés (environnement E2E indisponible lors de l'implémentation) — à compléter en suivi.
 
 ---
-Item Type: US · Parent: F03.1 · Module: core · Phase: MVP · Size: M · Priority: Critical
+Item Type: US · Parent: F03.1 · Module: core · Phase: Socle · Size: M · Priority: Critical
 Stage: Done
 Dépendances : EN03.3 (invalidation cache Redis) — mergée (PR #121), mais non raccordée au chemin de lecture réel du statut module ; suivi technique requis avant clôture définitive de cet AC.

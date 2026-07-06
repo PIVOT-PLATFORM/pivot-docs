@@ -25,5 +25,5 @@
 - Aucun `TranslocoPipe` sur les composants légaux (contenu hardcodé FR)
 
 ---
-Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: MVP · Size: M · Priority: High
+Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: Socle · Size: M · Priority: High
 Stage: Done

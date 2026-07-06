@@ -1,6 +1,6 @@
 # Sprint 7 — Fondations phase-3 (E17 + gouvernance ADR)
 
-> ⏸️ **Verrou :** ce sprint (comme les Sprints 7–12, voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--mvp-terminé-)) ne démarre qu'après la déclaration « MVP terminé » (Sprint 6).
+> ⏸️ **Verrou :** ce sprint (comme les Sprints 7–12, voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-)) ne démarre qu'après la déclaration « Socle terminé » (Sprint 6).
 
 **Scope :** infrastructure multi-repo complète + mise à jour de la gouvernance d'architecture
 **Pré-requis :** E03 terminé · E07 infra prod validée (S4)

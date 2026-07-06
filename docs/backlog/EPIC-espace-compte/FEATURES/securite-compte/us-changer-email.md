@@ -35,5 +35,5 @@
 - Pas de révocation de session au changement d'email confirmé (contrairement au changement de mot de passe) — intentionnel, les tokens opaques sont liés à `userId` pas à l'email, à confirmer que c'est le comportement voulu.
 
 ---
-Item Type: US · Parent: F02.2 · Module: auth · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Review

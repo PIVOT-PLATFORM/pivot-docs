@@ -4,7 +4,7 @@
 
 **En tant qu'** utilisateur PIVOT
 **Je veux** pouvoir activer **Excalidraw** en embed comme tableau blanc
-**Afin de** choisir, à l'instanciation, entre le whiteboard natif **PIVOT** ([E08](../../../EPIC-whiteboard/README.md)) et Excalidraw selon la maturité et les besoins de mon organisation — les deux peuvent coexister (ADR-009)
+**Afin de** choisir, à l'instanciation, entre le whiteboard natif **PIVOT** (noyau F08.x/EN08.x, ex-E08, fusionné dans [E30](../../../EPIC-collaboration/README.md)) et Excalidraw selon la maturité et les besoins de mon organisation — les deux peuvent coexister (ADR-009)
 
 ## Critères d'acceptation (outline — Gate 1 PO Agent)
 

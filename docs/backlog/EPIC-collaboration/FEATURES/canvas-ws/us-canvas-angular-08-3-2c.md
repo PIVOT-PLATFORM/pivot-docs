@@ -21,6 +21,6 @@
 | Labels présence internalisés dans `whiteboard.presence.*` (fr.json / en.json) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: S · Priority: Medium
 Stage: Backlog
 Dépendances: US08.3.2b (sync STOMP), US08.5.1 (présence backend)

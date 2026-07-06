@@ -9,7 +9,7 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | POST /api/account/export déclenche génération d'une archive (JSON ou ZIP) | ✅ |
-| Archive contient : profil, sessions, audit events, données modules | ✅ *(profil/sessions/audit events — données modules différées, cf. ligne MVP ci-dessous)* |
+| Archive contient : profil, sessions, audit events, données modules | ✅ *(profil/sessions/audit events — données modules différées, cf. ligne Socle ci-dessous)* |
 | Lien de téléchargement envoyé par email (TTL 24h) | ✅ |
 | Traitement asynchrone (pas de blocage UI) | ✅ *(Spring `@Async`, pas de nouvelle queue)* |
 | Rate limit : 1 export / 24h par utilisateur | ✅ |
@@ -18,7 +18,7 @@
 | Lien de téléchargement requiert session authentifiée ET vérifie que userId de la session = userId propriétaire de l'export. Tentative par un autre userId → 403 | ✅ |
 | Téléchargement via endpoint authentifié /api/account/export/download/{exportToken} — pas de lien signé public (pas de S3 presigned URL sans auth) | ✅ |
 | L'archive contient uniquement les données dont l'utilisateur est le sujet. Les audit events inclus ne contiennent pas de données personnelles d'autres utilisateurs (email admin → rôle ou ID anonymisé) | ✅ *(testé à 3 niveaux : unitaire, octets d'archive, bout-en-bout)* |
-| MVP : l'archive contient profil, sessions, audit events. Données des modules collaboratifs dans une phase ultérieure | ✅ |
+| Socle : l'archive contient profil, sessions, audit events. Données des modules collaboratifs dans une phase ultérieure | ✅ |
 | Si demande en cours ou < 24h écoulées, bouton disabled avec message : "Prochain export disponible à HH:MM" | ✅ |
 | Après clic, page affiche état "Demande reçue" avec estimation ("Vous recevrez un email dans quelques minutes") | ✅ |
 | En cas d'erreur backend, toast "error" localisé + bouton redevient actif | ✅ |
@@ -35,5 +35,5 @@
 - Stockage de l'archive : filesystem local (cohérent avec le choix pour les avatars, US02.1.1).
 
 ---
-Item Type: US · Parent: F02.3 · Module: auth · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F02.3 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Review

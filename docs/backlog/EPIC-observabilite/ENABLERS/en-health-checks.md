@@ -14,5 +14,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
 Stage: Backlog · Priority: Critical

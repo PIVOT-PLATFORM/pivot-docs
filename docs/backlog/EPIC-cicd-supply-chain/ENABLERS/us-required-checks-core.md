@@ -14,5 +14,5 @@
 | Status checks configurés dans les settings GitHub repo | ⬜ |
 
 ---
-Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: EN05.14 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

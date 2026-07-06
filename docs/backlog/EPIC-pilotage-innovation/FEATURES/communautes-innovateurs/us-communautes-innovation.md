@@ -17,7 +17,7 @@
 ## Hors périmètre
 - Moteur de messagerie/chat temps réel complet (l'espace d'échange s'appuie sur les briques existantes de discussion/commentaires du SMI, pas un nouveau système de messagerie)
 - Gestion logistique détaillée des événements de communauté — couvert par US38.15.1 (Organisation d'événements internes d'innovation)
-- Modération de contenu avancée (filtrage automatique, signalement) — hors périmètre MVP de cette US
+- Modération de contenu avancée (filtrage automatique, signalement) — hors périmètre Socle de cette US
 
 ## Notes d'implémentation
 - S'articule avec F38.2 (Idéation & campagnes) : une communauté peut porter des campagnes/défis existants, elle n'en redéfinit pas le mécanisme

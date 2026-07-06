@@ -20,7 +20,7 @@ Système de modules runtime basé sur :
 - **Pas de déploiement** : activation via UI admin, pas de restart serveur
 - **Extensibilité** : ajout d'un module = nouveau package, pas de modification du core
 - vs feature flags classiques : les feature flags gèrent des variantes de fonctionnalités, pas des modules entiers avec leurs propres routes/API/BDD
-- vs microservices : trop complexe pour une équipe réduite en phase MVP
+- vs microservices : trop complexe pour une équipe réduite en phase Socle
 
 ## Contrat
 

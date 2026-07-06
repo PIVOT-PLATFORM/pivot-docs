@@ -16,7 +16,7 @@
 
 ## Hors périmètre
 - Notation finale automatique ou classement décisionnel des idées par l'IA (la décision reste au comité, cf. US38.4.1 — Scoring multicritère)
-- Détection de biais discriminatoires avancée (algorithmes de fairness dédiés) — hors MVP de cette US, suivi qualitatif seulement
+- Détection de biais discriminatoires avancée (algorithmes de fairness dédiés) — hors Socle de cette US, suivi qualitatif seulement
 - Pré-tri sur des critères financiers/juridiques sensibles nécessitant une expertise humaine spécifique
 
 ## Notes d'implémentation

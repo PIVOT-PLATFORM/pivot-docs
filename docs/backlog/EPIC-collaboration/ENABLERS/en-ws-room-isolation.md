@@ -21,5 +21,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: MVP
+Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: Socle
 Stage: Backlog · Priority: High

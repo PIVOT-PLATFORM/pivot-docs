@@ -20,5 +20,5 @@
 | Le aria-label du badge est internalisé ("X notifications non lues" / "X unread notifications") | ⬜ |
 
 ---
-Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: F16.1 · Module: core · Phase: Socle · Size: S · Priority: Medium
 Stage: Backlog

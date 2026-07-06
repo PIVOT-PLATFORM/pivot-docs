@@ -16,5 +16,5 @@
 | Pages légales accessibles depuis footer (connecté = avec shell, non connecté = standalone) | ✅ |
 
 ---
-Item Type: US (hors GitHub) · Parent: F16.1 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US (hors GitHub) · Parent: F16.1 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: Done

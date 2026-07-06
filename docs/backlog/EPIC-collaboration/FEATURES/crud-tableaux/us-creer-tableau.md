@@ -28,5 +28,5 @@
 | Tous les libellés de la modal internalisés dans whiteboard.board.create.* (fr.json / en.json) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

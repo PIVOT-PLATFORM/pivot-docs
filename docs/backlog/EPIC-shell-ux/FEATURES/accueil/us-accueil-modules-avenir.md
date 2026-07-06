@@ -14,5 +14,5 @@
 | Responsive sur mobile | ✅ |
 
 ---
-Item Type: US · Parent: F16.2 · Module: core · Phase: MVP · Size: S · Priority: Low
+Item Type: US · Parent: F16.2 · Module: core · Phase: Socle · Size: S · Priority: Low
 Stage: In progress

@@ -23,5 +23,5 @@
 - Loader HTTP depuis `public/assets/i18n/{lang}.json`
 
 ---
-Item Type: US (hors GitHub) · Parent: F16.1 · Module: core · Phase: MVP · Size: M · Priority: High
+Item Type: US (hors GitHub) · Parent: F16.1 · Module: core · Phase: Socle · Size: M · Priority: High
 Stage: Done

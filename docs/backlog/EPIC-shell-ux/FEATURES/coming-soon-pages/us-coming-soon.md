@@ -15,5 +15,5 @@
 | Tests `coming-soon.component.spec.ts` | ✅ |
 
 ---
-Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: MVP · Size: XS · Priority: Low
+Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: Socle · Size: XS · Priority: Low
 Stage: Done

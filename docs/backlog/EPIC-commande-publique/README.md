@@ -16,7 +16,7 @@ Commande publique : consultations et appels d'offres, suivi des candidats, analy
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Périmètre GitHub (phase-3)
 

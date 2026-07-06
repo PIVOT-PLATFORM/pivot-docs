@@ -33,5 +33,5 @@
 - Point à confirmer par le PO : l'email de réactivation n'est envoyé que sur une vraie transition INACTIVE→ACTIVE, jamais sur un appel idempotent (compte déjà ACTIVE).
 
 ---
-Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: In progress

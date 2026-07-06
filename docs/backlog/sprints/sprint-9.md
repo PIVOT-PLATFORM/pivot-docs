@@ -1,6 +1,6 @@
 # Sprint 9 — Socle domaine Pilotage
 
-> ⏸️ **Verrou :** conditionnel au jalon « MVP terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--mvp-terminé-).
+> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
 **Scope :** la colonne vertébrale du domaine, pas ses satellites
 **Sortie :** une roadmap simple créable de bout en bout

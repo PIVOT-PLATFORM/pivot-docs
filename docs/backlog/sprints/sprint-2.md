@@ -2,7 +2,7 @@
 
 **Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
 **Scope :** E03 (enablers + admin features) + US01 manquants
-**Priorité :** Critical — débloque tous les modules E08–E15
+**Priorité :** Critical — débloque tous les modules collaboratifs (noyau F08.x/EN08.x sous E30, E09–E15)
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|

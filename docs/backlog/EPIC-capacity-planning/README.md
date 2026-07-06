@@ -8,7 +8,7 @@
 - Pré-requis EN17 : pivot-core-starter + @pivot/ui-core publiés avant implémentation
 
 ## Phase
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Objectif
 

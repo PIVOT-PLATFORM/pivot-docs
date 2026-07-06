@@ -3,7 +3,7 @@
 ## Objectif
 Permettre aux admins de gérer les utilisateurs de leur tenant et au SUPER_ADMIN de gérer tous les tenants de la plateforme.
 
-## Périmètre GitHub (MVP)
+## Périmètre GitHub (Socle)
 - Feature F06.1 : Gestion utilisateurs tenant (backend + frontend)
 - Feature F06.2 : Gestion tenants SUPER_ADMIN (backend + frontend)
 

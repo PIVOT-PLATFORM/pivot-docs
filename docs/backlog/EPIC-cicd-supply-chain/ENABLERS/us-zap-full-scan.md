@@ -14,5 +14,5 @@
 | Issue GitHub créée automatiquement si nouvelles alertes High+ | ⬜ |
 
 ---
-Item Type: US · Parent: EN05.13 · Module: core · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: EN05.13 · Module: core · Phase: Socle · Size: M · Priority: Medium
 Stage: Backlog

@@ -24,5 +24,5 @@
 | Tous textes internalisés dans whiteboard.board.delete.* (fr.json / en.json) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: S · Priority: Critical
+Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: Critical
 Stage: Backlog

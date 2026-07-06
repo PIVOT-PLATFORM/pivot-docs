@@ -14,7 +14,7 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Périmètre GitHub (phase-3)
 
@@ -49,7 +49,7 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
 
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface)
 - Dépend de : E17 Infrastructure multi-repo (EN17.1 + EN17.3 + EN17.5 + EN17.6)
-- Cohabite avec : E08 Whiteboard (même repo `pivot-collaboratif-*`)
+- Cohabite avec : E30 Collaboration, noyau F08.x whiteboard ex-E08 (même repo `pivot-collaboratif-*`)
 
 ## Statut global
 

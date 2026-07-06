@@ -25,5 +25,5 @@
 | Niveaux de force et libellés de critères internalisés dans auth.password.strength.* (fr.json / en.json) | ✅ |
 
 ---
-Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: S · Priority: High
 Stage: Done

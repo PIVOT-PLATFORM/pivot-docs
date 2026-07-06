@@ -18,5 +18,5 @@
 | Interface Angular /superadmin/plans pour visualiser et modifier la configuration des plans (AC frontend à définir dans une US dédiée ou ajoutés ici) | ⬜ |
 
 ---
-Item Type: US · Parent: F03.3 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F03.3 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

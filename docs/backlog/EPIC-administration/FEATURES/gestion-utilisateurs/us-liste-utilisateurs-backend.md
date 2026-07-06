@@ -28,5 +28,5 @@
 - Comptes soft-deleted (RGPD Art.17) toujours exclus de la liste.
 
 ---
-Item Type: US · Parent: F06.1 · Module: admin · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: Review

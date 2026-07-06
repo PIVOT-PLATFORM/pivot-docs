@@ -22,5 +22,5 @@
 - Route Angular : `/auth/verify-email`
 
 ---
-Item Type: US · Parent: F01.2 · Module: auth · Phase: MVP · Size: S · Priority: Critical
+Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: S · Priority: Critical
 Stage: Done

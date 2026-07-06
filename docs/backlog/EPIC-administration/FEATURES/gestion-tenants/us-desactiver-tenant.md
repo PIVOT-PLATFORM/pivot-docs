@@ -26,5 +26,5 @@
 - Collision de fichiers (`SuperAdminTenantController`/`Service`) avec PR#126 (US06.2.3) et PR#134 (US06.2.1) déjà réconciliée à la fusion — voir notes de livraison de US06.2.1 pour le détail.
 
 ---
-Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: F06.2 · Module: admin · Phase: Socle · Size: S · Priority: Medium
 Stage: Review

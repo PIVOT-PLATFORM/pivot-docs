@@ -27,5 +27,5 @@ les autres restent disponibles. nginx retourne 503 uniquement sur le préfixe du
 **Statut** : ⬜ À faire — Gate: Backlog
 
 ---
-Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: MVP
+Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: Socle
 Stage: Backlog · Priority: Critical

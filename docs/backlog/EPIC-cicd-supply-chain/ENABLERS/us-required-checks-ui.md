@@ -13,5 +13,5 @@
 | PR obligatoire avant merge (min 1 review) | ⬜ |
 
 ---
-Item Type: US · Parent: EN05.14 · Module: core · Phase: MVP · Size: S · Priority: High
+Item Type: US · Parent: EN05.14 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: Backlog

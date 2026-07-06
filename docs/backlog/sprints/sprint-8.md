@@ -1,6 +1,6 @@
 # Sprint 8 — Pilote multi-repo (agilité) + enforcement taxonomie
 
-> ⏸️ **Verrou :** conditionnel au jalon « MVP terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--mvp-terminé-).
+> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
 **Scope :** premiers modules satellites sur `pivot-agilite-*` — périmètres volontairement petits pour valider les templates EN17.5/6 avant d'engager le domaine Pilotage
 **Sortie :** 1er repo satellite en prod + retour d'expérience sur les templates

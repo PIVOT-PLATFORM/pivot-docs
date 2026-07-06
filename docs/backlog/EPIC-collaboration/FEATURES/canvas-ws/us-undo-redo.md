@@ -10,7 +10,7 @@
 |---------|--------|
 | Ctrl+Z annule la dernière action de l'utilisateur courant (undo local — n'annule pas les actions des autres participants) | ⬜ |
 | Ctrl+Y ou Ctrl+Shift+Z rétablit l'action annulée | ⬜ |
-| Stack undo : côté client uniquement (MVP). Chaque participant gère sa propre stack — stratégie collaborative (undo partagé) hors scope MVP | ⬜ |
+| Stack undo : côté client uniquement (Socle). Chaque participant gère sa propre stack — stratégie collaborative (undo partagé) hors scope Socle | ⬜ |
 | Stack undo limitée à 50 opérations par session (au-delà, les plus anciennes sont retirées) | ⬜ |
 | Message STOMP UNDO { userId, eventId } diffusé à tous les participants pour synchronisation visuelle | ⬜ |
 | Stack undo réinitialisée à la déconnexion (pas de persistance entre sessions) | ⬜ |
@@ -21,5 +21,5 @@
 | Labels et raccourcis internalisés dans whiteboard.canvas.undo.* (fr.json / en.json) | ⬜ |
 
 ---
-Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
+Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: Backlog

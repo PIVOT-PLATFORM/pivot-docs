@@ -29,5 +29,5 @@
 | Noms et descriptions de templates localisables via i18n (whiteboard.template.*) avec traductions FR et EN | ⬜ |
 
 ---
-Item Type: US · Parent: F08.4 · Module: whiteboard · Phase: MVP · Size: M · Priority: Medium
+Item Type: US · Parent: F08.4 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
 Stage: Backlog

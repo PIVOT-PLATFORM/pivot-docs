@@ -19,5 +19,5 @@
 | Dialog de confirmation avant révocation d'un membre : role="dialog", aria-modal="true", focus trap | ⬜ |
 
 ---
-Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
+Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: Backlog

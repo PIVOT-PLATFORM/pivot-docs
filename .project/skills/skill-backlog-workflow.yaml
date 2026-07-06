@@ -36,7 +36,7 @@ session_start_protocol:
     description: "Lire les fichiers US éligibles"
     criteria:
       - "Stage: Ready OU Stage: In progress (priorité)"
-      - "Stage: Backlog + Phase: MVP → PO Agent vérifie DoR + Gate 1 avant de passer Ready"
+      - "Stage: Backlog + Phase: Socle → PO Agent vérifie DoR + Gate 1 avant de passer Ready"
     path_pattern: "pivot-docs/docs/backlog/**/{us-id}-{slug}.md"
     action: >
       Pour chaque US éligible, lire son fichier markdown complet.
@@ -64,7 +64,7 @@ us_file_format:
     Item Type: "US | Enabler | Feature | Epic"
     Parent: "clé du parent (ex. F01.1)"
     Module: "core | auth | admin | oidc | pilotage | agilite | collaboratif"
-    Phase: "MVP | v1-enterprise | phase-3"
+    Phase: "Socle | v1-enterprise | phase-3"
     Size: "XS | S | M | L | XL"
     Priority: "Critical | High | Medium | Low"
     Stage: "Backlog | Ready | In progress | Review | Done"

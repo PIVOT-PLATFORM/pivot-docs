@@ -113,7 +113,7 @@ Toute contribution mobilise les experts concernés — les mentionner explicitem
 | Stage | Backlog / Ready / In progress / Review / Done |
 | Priority | Critical / High / Medium / Low |
 | Module | core / auth / admin / oidc / pilotage / agilite / collaboratif (extensible par domaine) |
-| Phase | MVP / v1-enterprise / phase-3 |
+| Phase | Socle / v1-enterprise / phase-3 |
 | Sprint | Sprint 1…N |
 | Size | XS / S / M / L / XL |
 
@@ -154,7 +154,7 @@ repos, lancement des agents en parallèle) → `docs/setup/pivot-platform-claude
 Côté lecture du backlog spécifiquement :
 1. Lire `docs/backlog/sprints/README.md` — identifier le sprint courant (pas de ✅ complet), ouvrir son `sprint-{N}.md`
 2. Pour chaque US du sprint : lire le fichier markdown dans `docs/backlog/`
-3. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase MVP uniquement
+3. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase Socle uniquement
 4. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si ≥ 70
 
 **Principes :**

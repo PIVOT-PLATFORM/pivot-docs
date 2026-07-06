@@ -1,6 +1,6 @@
 # Sprint 11 — Risques + plan de contrôle sécurité
 
-> ⏸️ **Verrou :** conditionnel au jalon « MVP terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--mvp-terminé-).
+> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
 **Sortie :** registre de risques opérationnel + socle Zero Trust posé
 

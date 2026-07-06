@@ -18,5 +18,5 @@
 | L'email contient le type d'action dans le sujet (ex: "Votre mot de passe PIVOT a été modifié", "Connexion depuis un nouvel appareil") | ⬜ |
 
 ---
-Item Type: US · Parent: F01.5 · Module: auth · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: F01.5 · Module: auth · Phase: Socle · Size: S · Priority: Medium
 Stage: Backlog

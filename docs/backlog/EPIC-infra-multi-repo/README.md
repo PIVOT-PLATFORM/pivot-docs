@@ -16,7 +16,7 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 
 ## Phase
 
-⬜ **phase-3** — prérequis MVP non bloquant · déclencher quand E03 (module system) est Done
+⬜ **phase-3** — prérequis Socle non bloquant · déclencher quand E03 (module system) est Done
 
 ## Dépendances
 

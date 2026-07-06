@@ -29,5 +29,5 @@
 | Labels de rôle localisés (owner → "Propriétaire", editor → "Éditeur", viewer → "Lecteur"), formats date via Angular DatePipe, tous états externalisés i18n whiteboard.board.list.* | ⬜ |
 
 ---
-Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: MVP · Size: M · Priority: High
+Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: Backlog

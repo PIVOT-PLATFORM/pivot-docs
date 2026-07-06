@@ -1,4 +1,4 @@
-# Sprint 1 — Auth & Shell MVP ✅ Terminé sauf contact
+# Sprint 1 — Auth & Shell Socle ✅ Terminé sauf contact
 
 **Branche :** `feat/us16-3-1-contact`
 

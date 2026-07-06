@@ -20,5 +20,5 @@
 - `AuthService.logout()` → `DELETE /api/auth/logout`
 
 ---
-Item Type: US · Parent: F01.1 · Module: auth · Phase: MVP · Size: XS · Priority: Critical
+Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: XS · Priority: Critical
 Stage: Done

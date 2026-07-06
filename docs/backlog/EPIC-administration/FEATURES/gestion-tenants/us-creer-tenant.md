@@ -37,5 +37,5 @@
 - **Statut réel vérifié (2026-07-05) :** `pivot-core` PR #134 est **mergée**, mais `pivot-ui` PR #76 — qui porte les critères Angular de cette US (formulaire `/superadmin/tenants/new`) — est encore **draft**, empilée sur la branche non mergée de PR#69. `Stage: Review` prématuré tant que le volet Angular n'est pas sorti de draft, repassé à `In progress`.
 
 ---
-Item Type: US · Parent: F06.2 · Module: admin · Phase: MVP · Size: S · Priority: Medium
+Item Type: US · Parent: F06.2 · Module: admin · Phase: Socle · Size: S · Priority: Medium
 Stage: In progress

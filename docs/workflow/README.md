@@ -41,7 +41,7 @@ Principes fondateurs :
 
 ```text
 PO Agent (autonome)
-  └─ Lit docs/backlog/sprints/ (sprint courant) → US Stage: Backlog + Phase MVP
+  └─ Lit docs/backlog/sprints/ (sprint courant) → US Stage: Backlog + Phase Socle
        │
        ▼
   Gate 1 — READINESS (PO Agent self-challenge)

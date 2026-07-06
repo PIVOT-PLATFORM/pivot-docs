@@ -3,7 +3,7 @@
 ## Objectif
 Permettre aux utilisateurs de gérer leur profil, leur sécurité (mot de passe, email, sessions), et exercer leurs droits RGPD (export, suppression).
 
-## Périmètre GitHub (MVP)
+## Périmètre GitHub (Socle)
 - Feature F02.1 : Profil utilisateur
 - Feature F02.2 : Sécurité du compte
 - Feature F02.3 : Droits RGPD (export)

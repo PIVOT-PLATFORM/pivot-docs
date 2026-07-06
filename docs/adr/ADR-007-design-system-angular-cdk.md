@@ -37,7 +37,7 @@ src/
 └── index.ts      # Point d'entrée unique @pivot/design-system
 ```
 
-### Composants MVP (priorité avant module repos)
+### Composants Socle (priorité avant module repos)
 
 `Button · Input · Select · Textarea · Card · Modal · Toast · Badge · Avatar · Spinner · Tabs · Table`
 

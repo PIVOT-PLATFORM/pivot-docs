@@ -9,7 +9,7 @@
 - E24 ADR projet · E25 Commande publique · E26 Budget · E27 OKR (satellites Pilotage, après la v0 S10)
 - E28 Intégration open source (dépend ADR-009 accepté S7 + gouvernance forks ADR-018)
 - E29 Workflows & Automatisation (78 US — passe DoR à faire au sprint précédant son implémentation)
-- E30 Collaboration (86 US — **bloqué par l'arbitrage E08/E30**, voir [§Zones d'ombre n°2](./zones-ombre.md) ; passe DoR à faire)
+- E30 Collaboration (86 US benchmark hors noyau F08.x/EN08.x déjà en Socle, ex-E08 — arbitrage résolu, voir [§Zones d'ombre n°2](./zones-ombre.md) ; passe DoR à faire)
 - E32–E37, E39 satellites Pilotage (ressources, tâches, IA, gouvernance, intégration SI, licences, chantiers)
 - E38 Management de l'innovation (45 US — dépend E42 Forms pour le dépôt d'idée)
 - E41 suites : US41.1.2-4 (tooltips, checklist, quoi de neuf), F41.2 centre d'aide, F41.3 supports, F41.4 présentiel (dépend E19), F41.5 catalogue par module (au fil des livraisons), F41.6 mesure d'adoption

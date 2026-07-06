@@ -1,7 +1,7 @@
 # E15 — Équipes transverses (cross-modules)
 
 ## Phase
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Objectif
 Modèle d'équipes partagé entre modules : CRUD équipes (couleur, membres), association équipe aux modules.

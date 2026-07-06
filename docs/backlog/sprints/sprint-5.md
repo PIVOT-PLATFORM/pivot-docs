@@ -1,7 +1,7 @@
-# Sprint 5 — Module Whiteboard (MVP)
+# Sprint 5 — Module Whiteboard (Socle E30, ex-E08)
 
 **Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
-**Scope :** E08 Whiteboard complet
+**Scope :** noyau F08.x/EN08.x complet — désormais hébergé sous [`EPIC-collaboration`](../EPIC-collaboration/README.md) (E30), `Phase: Socle` propre, non verrouillé par le reste d'E30
 **Pré-requis :** Sprint 2 terminé + Sprint 4 EN07.x validé + Gate 1 US08.x validé par PO Agent
 
 | US | Titre | Size | Priorité | 🤖 Dev |

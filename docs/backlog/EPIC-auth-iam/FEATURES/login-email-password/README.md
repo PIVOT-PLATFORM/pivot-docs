@@ -17,5 +17,5 @@
 - [x] Déconnexion → token révoqué en BDD, cookie supprimé
 
 **Hors périmètre** :
-- Social login (Google OAuth) → post-MVP
+- Social login (Google OAuth) → post-Socle
 - SSO OIDC enterprise → v1-enterprise

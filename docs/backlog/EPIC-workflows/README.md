@@ -14,7 +14,7 @@ Plateforme d'automatisation no-code / low-code : construction visuelle de workfl
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Origine
 

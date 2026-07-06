@@ -6,7 +6,7 @@
 **Je veux** retrouver chaque tableau blanc au catalogue comme entité Document
 **Afin de** le rechercher et le rattacher à un projet, indépendamment de la techno sous-jacente
 
-**Note** : le whiteboard reste natif ([E08](../../../EPIC-whiteboard/README.md), ADR-009 §5). Cette US expose l'entité au catalogue quel que soit le moteur (natif aujourd'hui ; adaptateur Excalidraw possible plus tard si EN28.8 change la donne).
+**Note** : le whiteboard reste natif (noyau F08.x/EN08.x, ex-E08, fusionné dans [E30](../../../EPIC-collaboration/README.md), ADR-009 §5). Cette US expose l'entité au catalogue quel que soit le moteur (natif aujourd'hui ; adaptateur Excalidraw possible plus tard si EN28.8 change la donne).
 
 ## Critères d'acceptation (outline — Gate 1 PO Agent)
 

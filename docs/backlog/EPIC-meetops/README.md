@@ -14,7 +14,7 @@ Gestion des réunions : préparation d'agenda, animation en temps réel, compte-
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
 
 ## Périmètre (phase-3)
 

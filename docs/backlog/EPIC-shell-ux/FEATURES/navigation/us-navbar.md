@@ -22,5 +22,5 @@
 - `TranslocoService` : langChanges$ pour la réactivité langue
 
 ---
-Item Type: US · Parent: F16.1 · Module: core · Phase: MVP · Size: L · Priority: High
+Item Type: US · Parent: F16.1 · Module: core · Phase: Socle · Size: L · Priority: High
 Stage: Done

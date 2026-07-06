@@ -89,7 +89,7 @@ rectangle "DATA TIER — reseau Docker pivot-net-data" as zone_data #EDE7F6 {
 
   database "PostgreSQL 18  :5432\n══════════════════════════════\nschema public    (pivot-core)\n  TENANTS · USERS · ACCESS_TOKENS\n  OIDC_CONFIGS · MODULES_STATE\n  TEAMS · TEAM_MEMBERS · AUDIT_EVENTS\n  PASSWORD_RESET · EMAIL_VERIF · DEVICE_TOKENS\n──────────────────────────────\nschema pilotage  (pivot-pilotage-core)\n  FK → public.tenants · public.teams\n──────────────────────────────\nschema agilite   (pivot-agilite-core)\n  FK → public.tenants · public.teams\n──────────────────────────────\nschema collaboratif  (pivot-collaboratif-core)\n  FK → public.tenants · public.teams\n══════════════════════════════\nFlyway isole par module · V1__ dans schema propre\nIndex : token_hash · user_id · tenant_id" as postgres #BBDEFB
 
-  database "Redis 7  :6379\n──────────────────────\nModule status cache  TTL 60 s\nPartage tous les backends\nRate limiting [gap MVP]\n──────────────────────────────\n[dev]  no-auth\n[prod] requirepass + TLS 1.3" as redis #B3E5FC
+  database "Redis 7  :6379\n──────────────────────\nModule status cache  TTL 60 s\nPartage tous les backends\nRate limiting [gap Socle]\n──────────────────────────────\n[dev]  no-auth\n[prod] requirepass + TLS 1.3" as redis #B3E5FC
 
   component "ActiveMQ  :61613  [dev STOMP]\n           :61617  [prod STOMP+TLS]\n──────────────────────────────\nBroker STOMP — topics isoles par domaine :\n  /topic/pilotage/**\n  /topic/agilite/**\n  /topic/collaboratif/**\nenableStompBrokerRelay() par module-core\n[prod] console :8161 non expose" as activemq #F8BBD9
 
@@ -172,7 +172,7 @@ note bottom of redis
   <b>Cache partage entre tous les backends :</b>
   module:{tenantId}:{moduleId}  TTL 60 s
   Evite appel DB a chaque requete ModuleGuard
-  Rate limiting counters  [gap MVP]
+  Rate limiting counters  [gap Socle]
 end note
 
 ' ═══════════════════════════════════════════════

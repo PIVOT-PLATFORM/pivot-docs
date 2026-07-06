@@ -23,4 +23,4 @@
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: v1-enterprise · Size: L · Priority: Medium
 Stage: Backlog
-Note: US01.4.3a (alerte appareil inconnu) = MVP → voir us-alerte-connexion-suspecte.md
+Note: US01.4.3a (alerte appareil inconnu) = Socle → voir us-alerte-connexion-suspecte.md
