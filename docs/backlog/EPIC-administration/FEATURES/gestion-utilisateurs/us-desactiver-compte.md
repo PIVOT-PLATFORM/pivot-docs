@@ -27,7 +27,7 @@
 
 ## Notes de livraison
 
-- Implémenté conjointement avec US06.1.5 (même endpoint `PATCH /api/admin/users/{userId}/status`, une seule implémentation pour les deux directions) : `pivot-core` PR [#142](https://github.com/PIVOT-PLATFORM/pivot-core/pull/142) (Gate 2 self-évalué : 98/100) · `pivot-ui` PR [#85](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/85) (Gate 2 self-évalué : détail dans la PR). Toutes deux draft, CI verte.
+- Implémenté conjointement avec US06.1.5 (même endpoint `PATCH /api/admin/users/{userId}/status`, une seule implémentation pour les deux directions) : `pivot-core` PR [#142](https://github.com/PIVOT-PLATFORM/pivot-core/pull/142) (Gate 2 self-évalué : 98/100) · `pivot-ui` PR [#85](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/85) (Gate 2 self-évalué : 93/100). Toutes deux draft, CI verte.
 - **Déviation documentée** (cohérente avec US06.1.3) : `403` au lieu de `401`.
 - Empilées sur les branches non mergées de US06.1.3 (`pivot-core` #141, `pivot-ui` #84) — fusionner dans l'ordre US06.1.2 → US06.1.3 → US06.1.4/US06.1.5.
 - Point à confirmer par le PO : l'email de réactivation n'est envoyé que sur une vraie transition INACTIVE→ACTIVE, jamais sur un appel idempotent (compte déjà ACTIVE).

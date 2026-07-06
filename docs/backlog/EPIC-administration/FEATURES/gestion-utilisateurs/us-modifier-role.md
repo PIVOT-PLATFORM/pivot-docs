@@ -28,7 +28,7 @@
 
 ## Notes de livraison
 
-- Implémenté : `pivot-core` PR [#141](https://github.com/PIVOT-PLATFORM/pivot-core/pull/141) (Gate 2 self-évalué : 98/100) · `pivot-ui` PR [#84](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/84) (Gate 2 self-évalué : 94/100). Toutes deux draft, CI verte.
+- Implémenté : `pivot-core` PR [#141](https://github.com/PIVOT-PLATFORM/pivot-core/pull/141) (Gate 2 self-évalué : 90/100) · `pivot-ui` PR [#84](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/84) (Gate 2 self-évalué : 94/100). Toutes deux draft, CI verte.
 - **Déviation documentée** : un token invalide/révoqué renvoie `403`, jamais `401` — ce repo n'a pas d'`AuthenticationEntryPoint` custom (précédent déjà établi par `SessionControllerIntegrationTest`). L'intention de l'AC (révocation immédiate et prouvée) est respectée et testée ; seul le code HTTP littéral diffère.
 - `pivot-ui` #84 est empilée sur la branche non mergée de US06.1.2 (`pivot-ui` #82) — fusionner #82 en premier.
 - `pivot-core` a refactoré `resolveAdmin()` → `resolveActor()` pour que US06.1.4/US06.1.5 (empilée ensuite) puisse le réutiliser tel quel.
