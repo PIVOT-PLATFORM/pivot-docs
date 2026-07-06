@@ -379,6 +379,9 @@
     "Dédupliquer",
     "créable",
     "TAXO",
-    "exposables"
+    "exposables",
+    "BIGSERIAL",
+    "IDOR",
+    "différable"
   ]
 }
