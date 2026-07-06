@@ -21,7 +21,7 @@ Infrastructure d'activation/désactivation de modules par tenant : registre back
 
 ## Dépendances
 - Dépend de : E01 Auth & IAM (ROLE_ADMIN, ROLE_SUPER_ADMIN)
-- Bloque : E08–E15 (tous les modules collaboratifs)
+- Bloque : noyau F08.x/EN08.x (sous E30, ex-E08) + E09–E15 (tous les modules collaboratifs)
 
 ## Statut global
 ✅ Sprint 2 terminé — EN03.1-4 + US03.1.x/US03.2.x mergés sur `main` (pivot-core + pivot-ui) ·

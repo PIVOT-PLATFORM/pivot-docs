@@ -72,7 +72,7 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 - **F28.8 — Formulaires & sondages** *(coexiste avec le natif E19/E42)*
   - [US28.8.1 — Adaptateur Formbricks](FEATURES/formulaires-sondages/us-adaptateur-formbricks.md)
   - [US28.8.2 — Adaptateur LimeSurvey (alternative)](FEATURES/formulaires-sondages/us-adaptateur-limesurvey.md)
-- **F28.9 — Whiteboard (adaptateur)** *(coexiste avec le natif E08)*
+- **F28.9 — Whiteboard (adaptateur)** *(coexiste avec le natif F08.x, ex-E08, sous E30)*
   - [US28.9.1 — Adaptateur Excalidraw (embed)](FEATURES/whiteboard-adaptateur/us-adaptateur-excalidraw.md)
   - [US28.9.2 — Adaptateur tldraw (embed, alternative)](FEATURES/whiteboard-adaptateur/us-adaptateur-tldraw.md)
 - **F28.10 — SCM & CI/CD** *(domaine absent du backlog initial, ajouté lors de la revue PO — cf. ADR-009 §5)*
@@ -81,7 +81,7 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 
 ## Principe : natif et OSS coexistent, l'instanciation choisit
 
-Le critère adaptateur-vs-natif (ADR-009 §2) porte sur la décision de *construire* un adaptateur (faisabilité technique + coût), **pas** sur l'exclusion d'un adaptateur au seul motif qu'un module natif existe déjà pour le même besoin. F28.6 à F28.9 concrétisent ce principe : OpenProject/ProjeQtOr coexistent avec le Pilotage natif (E18), Scrumlr avec Rétrospective (E20), Formbricks/LimeSurvey avec Session/Pivot Forms (E19/E42), Excalidraw/tldraw avec le Whiteboard natif (E08). Aucune exclusion mutuelle : chaque instance active ce dont elle a besoin.
+Le critère adaptateur-vs-natif (ADR-009 §2) porte sur la décision de *construire* un adaptateur (faisabilité technique + coût), **pas** sur l'exclusion d'un adaptateur au seul motif qu'un module natif existe déjà pour le même besoin. F28.6 à F28.9 concrétisent ce principe : OpenProject/ProjeQtOr coexistent avec le Pilotage natif (E18), Scrumlr avec Rétrospective (E20), Formbricks/LimeSurvey avec Session/Pivot Forms (E19/E42), Excalidraw/tldraw avec le Whiteboard natif (F08.x, ex-E08, sous E30). Aucune exclusion mutuelle : chaque instance active ce dont elle a besoin.
 
 ## Hors périmètre
 
@@ -99,7 +99,7 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 - Dépend de : [ADR-009](pathname:///pivot-docs/adr/ADR-009-cadre-integration-open-source) (statut Proposé — ce backlog ne démarre pas avant acceptation)
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface — un adaptateur s'active/désactive comme un module natif)
 - Dépend de : E17 Infrastructure multi-repo (si les adaptateurs sont un jour extraits en repos dédiés)
-- Interface avec : E08 Whiteboard, E09 Scrum Poker, E18 Pilotage, E19 Session, E20 Retrospective, E42 Pivot Forms (coexistence natif/OSS, F28.6–F28.9)
+- Interface avec : E30 Collaboration (noyau F08.x whiteboard, ex-E08), E09 Scrum Poker, E18 Pilotage, E19 Session, E20 Retrospective, E42 Pivot Forms (coexistence natif/OSS, F28.6–F28.9)
 - Interface avec : [E43 — Sécurité & Zero Trust](pathname:///pivot-docs/backlog/EPIC-securite/) (checklist d'admission EN43.13 étend EN28.3 ; EN43.11 souveraineté consommée par EN28.2 ; EN43.8 observabilité durcit EN28.4 ; SBOM/artefacts signés enrichissent EN28.12)
 
 ## Statut global

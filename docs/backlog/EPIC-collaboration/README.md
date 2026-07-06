@@ -1,6 +1,6 @@
 # E30 — Collaboration
 
-*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.19).*
+*🎓 Onboarding in-app de ce module → [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) (US41.5.19 · US41.5.1 pour le noyau F08.x/EN08.x whiteboard, ex-E08).*
 
 ## Objectif
 
@@ -14,7 +14,10 @@ Suite de collaboration visuelle (whiteboard collaboratif temps réel, ateliers d
 
 ## Phase
 
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "MVP terminé" par le mainteneur
+⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur, **à l'exception
+de F08.x/EN08.x (ex-E08)** qui gardent leur propre `Phase: Socle` (non verrouillés — implémentation
+en cours indépendamment du reste du périmètre benchmark E30, voir "Suivi d'avancement — noyau
+F08.x/EN08.x" ci-dessous).
 
 ## Origine
 
@@ -22,12 +25,28 @@ Suite de collaboration visuelle (whiteboard collaboratif temps réel, ateliers d
 
 ## Couverture existante (note de rationalisation)
 
-Une partie du périmètre est déjà couverte par des épiques MVP existantes. E30 est le référentiel benchmark cible ; les épiques ci-dessous en sont l'amorce implémentée.
+F08.x/EN08.x (ex-EPIC-whiteboard, fusionné dans E30 — E08 était le noyau incrémental de socle
+whiteboard, désormais implémenté nativement ici, voir "Suivi d'avancement — noyau F08.x/EN08.x"
+ci-dessous) couvrent nativement une partie du périmètre F30.1/F30.2/F30.4/F30.8. Le reste du
+périmètre benchmark (facilitation, IA, diagrammes, sécurité/gouvernance, plateformes, engagement,
+extensibilité, licences, innovation, chantiers SI) est **net-new**.
 
-| Features E30 | Déjà partiellement couvert par |
-|--------------|--------------------------------|
-| F30.1 Canevas & objets, F30.2 Temps réel, F30.4 Modèles, F30.8 Partage & administration | [E08 Whiteboard](../EPIC-whiteboard/README.md) |
+| Features E30 | Couvertes nativement par |
+|--------------|--------------------------|
+| F30.1 Canevas & objets, F30.2 Temps réel, F30.4 Modèles, F30.8 Partage & administration | F08.x/EN08.x (ex-E08, fusionné — voir correspondance détaillée ci-dessous) |
 | F30.3 Facilitation & ateliers, F30.11 Engagement | [E19 Session live](../EPIC-module-session/README.md) · [E20 Retrospective](../EPIC-retrospective/README.md) |
+
+### Correspondance détaillée F08.x/EN08.x → F30.x
+
+| Exigence benchmark (E30) | Portée par (ex-E08) | Écart / reste à faire |
+|--------------------------|----------------------|-----------------------|
+| F30.1 Canevas & objets (BL-001…007) | F08.3 Canvas WS | formes/connecteurs, dessin main levée, images, frames = à étendre |
+| F30.2 Collaboration temps réel (BL-008…011) | F08.3 + F08.5 Présence + EN08.1 | commentaires ancrés, historique de versions = à étendre |
+| F30.4 Modèles (BL-012…013) | F08.4 Templates | modèles d'organisation chartés = à étendre |
+| F30.8 Partage & administration (BL-014…016) | F08.2 Partage & rôles | hiérarchie d'espaces, export PNG/PDF = à étendre |
+
+F08.1 (CRUD tableaux) est un socle d'infrastructure sans équivalent benchmark direct — géré
+nativement sous ce même EPIC sans mapping F30.x.
 
 ## Périmètre GitHub (phase-3)
 
@@ -161,11 +180,19 @@ Une partie du périmètre est déjà couverte par des épiques MVP existantes. E
 - US30.15.7 : Archivage GED des boards critiques
 - US30.15.8 : Négociation licences
 
+### F08.x/EN08.x — Noyau whiteboard (ex-E08, `Phase: Socle`, non verrouillé)
+- **EN08.1** — Isolation WebSocket room par board
+- **EN08.2** — Guard Angular module whiteboard
+- **F08.1** — CRUD tableaux (backend + Angular)
+- **F08.2** — Partage et rôles (backend + Angular)
+- **F08.3** — Canvas collaboratif temps réel (backend WS + Angular)
+- **F08.4** — Templates de tableau
+
 ## Dépendances
 
 - Dépend de : **E03** Système de modules (interface PivotModule)
 - Dépend de : **E17** Infrastructure multi-repo (pré-requis pivot-core-starter + @pivot/ui-core)
-- Rationalise / prolonge : **E08** Whiteboard (socle canevas déjà implémenté)
+- F08.x/EN08.x (ex-**E08** Whiteboard) fusionné nativement dans cet EPIC — voir "Couverture existante" ci-dessus.
 
 ## Statut global
 
@@ -291,3 +318,33 @@ Une partie du périmètre est déjà couverte par des épiques MVP existantes. E
 | [US30.15.6 — Mesure d'adoption](FEATURES/chantiers-si/us-mesure-d-adoption.md) | ⬜ |
 | [US30.15.7 — Archivage GED des boards critiques](FEATURES/chantiers-si/us-archivage-ged-des-boards-critiques.md) | ⬜ |
 | [US30.15.8 — Négociation licences](FEATURES/chantiers-si/us-negociation-licences.md) | ⬜ |
+
+---
+
+## Suivi d'avancement — noyau F08.x/EN08.x (ex-E08, Phase: Socle)
+
+Ex-`EPIC-whiteboard`, fusionné ici — implémentation en cours indépendamment du verrouillage
+phase-3 du reste d'E30 (voir §Phase ci-dessus). Inspiration : PouetPouet (tableau blanc
+collaboratif open-source).
+
+| Élément | 🤖 Dev |
+|---------|--------|
+| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | ⬜ |
+| [EN08.2 — Guard Angular module whiteboard](ENABLERS/en-guard-angular-whiteboard.md) | ⬜ |
+| **F08.1 — CRUD tableaux** | |
+| [US08.1.1 — Utilisateur crée un tableau](FEATURES/crud-tableaux/us-creer-tableau.md) | ⬜ |
+| [US08.1.2 — Utilisateur liste ses tableaux (backend)](FEATURES/crud-tableaux/us-liste-tableaux-backend.md) | ⬜ |
+| [US08.1.3 — Angular : liste des tableaux](FEATURES/crud-tableaux/us-liste-tableaux-angular.md) | ⬜ |
+| [US08.1.4 — Renommer un tableau](FEATURES/crud-tableaux/us-renommer-tableau.md) | ⬜ |
+| [US08.1.5 — Supprimer un tableau](FEATURES/crud-tableaux/us-supprimer-tableau.md) | ⬜ |
+| **F08.2 — Partage et rôles** | |
+| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | ⬜ |
+| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | ⬜ |
+| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | ⬜ |
+| **F08.3 — Canvas collaboratif temps réel** | |
+| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | ⬜ |
+| [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) *(À décomposer en 3 sous-US avant implémentation)* | ⬜ |
+| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ⬜ |
+| [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ⬜ |
+| **F08.4 — Templates** | |
+| [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ⬜ |

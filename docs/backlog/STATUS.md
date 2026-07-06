@@ -24,7 +24,6 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | ⬜ À planifier |
 | [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ⬜ Critical |
-| [E08 — Module Whiteboard](EPIC-whiteboard/README.md) | E08 | 4 | 2 | 7 | ⏸️ Gate MVP |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
@@ -46,7 +45,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 10 | 12 | 35 | ⬜ phase-3 — dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 78 | ⬜ phase-3 |
-| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 15 | 12 | 86 | ⬜ phase-3 |
+| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 93 (dont 7 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : ⏸️ Gate Socle) |
 | [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E34 — IA & agents (pilotage)](EPIC-pilotage-ia/README.md) | E34 | 1 | — | 4 | ⬜ phase-3 · pilotage |
@@ -59,8 +58,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 | 1 | 42 | ⬜ phase-3 |
 | [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 32 | ⬜ phase-3 |
 | [E43 — Sécurité & Zero Trust](EPIC-securite/README.md) | E43 | — | 13 | — | ⬜ phase-3 — dépend ADR-015–020 |
-| **Total MVP** | **E01–E08 + E16** | **27** | **46** | **66** | 🔄 En cours |
-| **Total phase-3** | **E09–E43 (sauf E31, dissous)** | **140** | **67** | **558** | ⏸️ Verrouillé |
+| **Total Socle** | **E01–E07 + E16 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **46** | **66** | 🔄 En cours |
+| **Total phase-3** | **E09–E43 (sauf E31, dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **140** | **67** | **558** | ⏸️ Verrouillé |
 
 ---
 
@@ -122,7 +121,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 **Phase active : MVP.** Seuls les items `Phase: MVP` sont implémentables.
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
-- E08 Whiteboard = MVP mais Gate 1 PO Agent pending → **bloqué**
+- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = MVP mais Gate 1 PO Agent pending → **bloqué**
 - E02/E04/E06/E07 = MVP mais non démarré
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
@@ -142,7 +141,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | E04 Observabilité | MVP | ⬜ Sprint 3/4 |
 | Medium | US16.1.3 Badge notifications | MVP | ⬜ À planifier |
 | Medium | US16.2.2 Section modules à venir | MVP | 🔄 En cours |
-| — | E08 Whiteboard | MVP | ⬜ Backlog |
+| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | MVP | ⬜ Backlog |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
 | High | E18 Domaine Pilotage — ombrelle (ADR-008), éclaté en E21–E30 + E32–E40 | phase-3 | ⬜ Backlog |
