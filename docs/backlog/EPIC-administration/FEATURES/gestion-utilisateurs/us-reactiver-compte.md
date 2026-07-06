@@ -23,10 +23,11 @@
 
 ## Notes de livraison
 
-- Implémenté conjointement avec US06.1.4 (même endpoint, même PR) : `pivot-core` PR [#142](https://github.com/PIVOT-PLATFORM/pivot-core/pull/142) · `pivot-ui` PR [#85](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/85). Toutes deux draft, CI verte.
+- Implémenté conjointement avec US06.1.4 (même endpoint, même PR) : `pivot-core` PR [#142](https://github.com/PIVOT-PLATFORM/pivot-core/pull/142) **mergée** · `pivot-ui` PR [#85](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/85) **mergée**.
 - Idempotence testée à deux niveaux (TU + TI) : réactiver un compte déjà `ACTIVE` renvoie `200` sans renvoyer l'email de notification.
-- Voir US06.1.4 pour l'ordre de fusion recommandé et la déviation 403/401.
+- Voir US06.1.4 pour l'ordre de fusion respecté et la déviation 403/401.
+- **Statut réel vérifié (2026-07-06) :** les deux PR sont mergées sur `main` — resynchronisé de `In progress` à `Review`.
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
-Stage: In progress
+Stage: Review

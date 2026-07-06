@@ -31,11 +31,12 @@
 
 ## Notes de livraison
 
-- Implémenté : `pivot-core` PR [#128](https://github.com/PIVOT-PLATFORM/pivot-core/pull/128) **mergée** (Gate 2 self-évalué : 96/100) · `pivot-ui` PR [#70](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/70) **ouverte, non mergée** (Gate 2 self-évalué : 100/100 — détail dans la PR).
+- Implémenté : `pivot-core` PR [#128](https://github.com/PIVOT-PLATFORM/pivot-core/pull/128) **mergée** (Gate 2 self-évalué : 96/100) · `pivot-ui` PR [#70](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/70) **mergée** (Gate 2 self-évalué : 100/100 — détail dans la PR).
+- **Statut réel vérifié (2026-07-06) :** les deux PR sont mergées sur `main` — resynchronisé de `In progress` à `Review`.
 - Mécanisme révocation/réémission : `AccountPasswordService.changePassword` révoque **tous** les tokens (y compris le courant) puis en réémet un immédiatement, retourné dans la réponse 200 — concilie "token courant inclus dans la révocation" et "session courante préservée".
 - Correctif SonarCloud en cours de revue : message d'erreur anti-énumération déplacé d'une constante Java littérale vers le `MessageSource` i18n existant (faux positif `S2068` sur le nom de variable, pas un vrai secret).
 - Point à vérifier par un reviewer humain : le rate limiting est appliqué indépendamment par userId et par IP — un attaquant faisant tourner une seule des deux dimensions n'est pas nécessairement bloqué par l'autre (passe Red Team suggérée).
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: High
-Stage: In progress
+Stage: Review

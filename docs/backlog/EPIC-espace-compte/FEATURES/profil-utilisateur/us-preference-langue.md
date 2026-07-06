@@ -27,10 +27,10 @@
 
 - Implémenté : `pivot-core` PR [#130](https://github.com/PIVOT-PLATFORM/pivot-core/pull/130) (Gate 2 self-évalué : 98/100) · `pivot-ui` PR [#72](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/72) (Gate 2 self-évalué : détail dans la PR).
 - **Décision d'architecture** : la colonne `locale` existait déjà sur `User` (utilisée pour les emails transactionnels i18n) — réutilisée plutôt que d'ajouter une seconde colonne `preferred_language`, pour éviter deux sources de vérité sur la même donnée. À valider par le mainteneur.
-- **Dépendance de branche** : les deux PR étaient empilées sur les branches de US02.1.1 (PR#129/#71) — `pivot-core` #129 est mergée, `pivot-ui` #71 est ouverte non-draft mais pas encore mergée.
+- **Dépendance de branche** : les deux PR étaient empilées sur les branches de US02.1.1 (PR#129/#71), toutes deux mergées.
 - Effet de bord positif côté frontend : un stub `localStorage` ajouté pour les tests a corrigé un test préexistant cassé (`navbar.component.spec.ts`).
-- **Statut réel vérifié (2026-07-05) :** `pivot-core` PR #130 est sortie de draft (CI en cours), pas encore mergée. `pivot-ui` PR #72 reste **draft**. `Stage: Review` était prématuré côté vague 2 ; repassé à `In progress` en attendant la sortie de draft du volet Angular et Gate 4.
+- **Statut réel vérifié (2026-07-06) :** `pivot-core` PR #130 et `pivot-ui` PR #72 sont toutes deux mergées sur `main` — resynchronisé de `In progress` à `Review`.
 
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: Socle · Size: XS · Priority: Low
-Stage: In progress
+Stage: Review

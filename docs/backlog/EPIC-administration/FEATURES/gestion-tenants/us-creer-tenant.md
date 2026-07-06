@@ -29,13 +29,13 @@
 
 ## Notes de livraison
 
-- Implémenté : `pivot-core` PR [#134](https://github.com/PIVOT-PLATFORM/pivot-core/pull/134) (Gate 2 self-évalué : 96/100) · `pivot-ui` PR [#76](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/76) (Gate 2 self-évalué : ~90/100).
+- Implémenté : `pivot-core` PR [#134](https://github.com/PIVOT-PLATFORM/pivot-core/pull/134) **mergée** (Gate 2 self-évalué : 96/100) · `pivot-ui` PR [#76](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/76) **mergée** (Gate 2 self-évalué : ~90/100).
 - `SuperAdminTenantController`/`Service` avaient été créés indépendamment sur cette PR, sur PR#126 (US06.2.3) et sur PR#135 (US06.2.2) — collision déjà réconciliée en une seule classe (`list()` + `create()` + `checkSlug()` + `updateStatus()`), les trois PR sont mergées sur `main`.
-- **Point d'attention restant (frontend)** : PR#76 est rebasée sur la branche non mergée de PR#69 (US06.2.3) et inclut son commit — fusionner #69 en premier ou ensemble avec #76.
-- Réutilise `tenants.auth_mode` pour une sémantique différente (LOCAL/OIDC/GOOGLE, création) de celle déjà en place (SAAS/ENTERPRISE/HYBRID, mode de déploiement) — élargissement additif de la contrainte CHECK via migration V6 (renumérotée depuis V4 lors de la fusion). Décision produit à valider par le mainteneur.
+- PR#76 était rebasée sur la branche de PR#69 (US06.2.3) et incluait son commit — #69 a bien été fusionnée en premier.
+- Réutilise `tenants.auth_mode` pour une sémantique différente (LOCAL/OIDC/GOOGLE, création) de celle déjà en place (SAAS/ENTERPRISE/HYBRID, mode de déploiement) — élargissement additif de la contrainte CHECK (schéma depuis consolidé dans `V1__schema_init.sql`, voir `pivot-core` #146). Décision produit à valider par le mainteneur.
 - Incohérence mineure de nommage i18n signalée : `admin.tenants.create.*` (cette US, texte AC littéral) vs `superadmin.tenants.*` (US06.2.3) — à harmoniser plus tard.
-- **Statut réel vérifié (2026-07-05) :** `pivot-core` PR #134 est **mergée**, mais `pivot-ui` PR #76 — qui porte les critères Angular de cette US (formulaire `/superadmin/tenants/new`) — est encore **draft**, empilée sur la branche non mergée de PR#69. `Stage: Review` prématuré tant que le volet Angular n'est pas sorti de draft, repassé à `In progress`.
+- **Statut réel vérifié (2026-07-06) :** les deux PR sont mergées sur `main` — resynchronisé de `In progress` à `Review`.
 
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: Socle · Size: S · Priority: Medium
-Stage: In progress
+Stage: Review
