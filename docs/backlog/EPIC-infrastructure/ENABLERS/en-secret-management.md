@@ -13,4 +13,4 @@
 
 ---
 Item Type: Enabler · Parent: E07 · Type: sécurité · Module: core · Phase: Socle
-Stage: Backlog · Priority: Critical
+Stage: In progress · Priority: Critical
