@@ -14,5 +14,10 @@
 | Responsive sur mobile | ✅ |
 
 ---
+**Statut réel vérifié (2026-07-06) :** implémenté et mergé sur `pivot-ui` main (PR #47,
+`HomeComponent` — grille modules, cartes "coming-soon", registre de modules). Les 4 AC sont
+couvertes. Repassé de `In progress` à `Review` — `Stage: Done` reste au mainteneur (recette).
+
+---
 Item Type: US · Parent: F16.2 · Module: core · Phase: Socle · Size: S · Priority: Low
-Stage: In progress
+Stage: Review
