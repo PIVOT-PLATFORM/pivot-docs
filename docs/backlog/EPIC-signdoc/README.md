@@ -30,6 +30,11 @@ Signature électronique de documents auto-hébergée : dépôt d'un PDF, positio
 
 - **EN44.1** — Stockage chiffré des documents (source + finalisé) et horodatage du certificat numérique
 
+## Hors périmètre
+
+- **Bibliothèque documentaire générale** (collections, tags, recherche, annotations, manipulation PDF) — portée par [E45 PDF Manager](pathname:///pivot-docs/backlog/EPIC-pdf-manager/). SignDoc importe un document depuis E45 comme source, mais **possède son propre stockage** (EN44.1) pour le document source figé, le PDF final et l'audit trail — dissociés du cycle de vie mutable d'un document E45 (versioning, édition) par exigence d'immuabilité probatoire, pas par duplication involontaire.
+- **Signature qualifiée (QES) via tiers certifié** — reste hors scope v1, cf. niveaux eIDAS (Simple/Avancé uniquement en v1).
+
 ## Modules impactés
 
 `signdoc` (pivot-signdoc-core + pivot-signdoc-ui)

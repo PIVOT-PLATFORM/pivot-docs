@@ -18,7 +18,7 @@ Roue de tirage pondéré anti-repeat pour animer des événements : CRUD roues, 
 - F14.3 : Diffusion temps réel du tirage (WS) — US14.3.1
 
 ## Dépendances
-- Dépend de : E03 Système de modules
+- Dépend de : E03 Système de modules · E17 Infrastructure multi-repo
 
 ## Statut global
 ⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint

@@ -19,7 +19,7 @@ Planning poker interactif : rooms, tickets, votes temps réel WebSocket, partici
 - EN09.1 : WebSocket room Scrum Poker isolation
 
 ## Dépendances
-- Dépend de : E03 Système de modules
+- Dépend de : E03 Système de modules · E17 Infrastructure multi-repo
 
 ## Statut global
 ⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint

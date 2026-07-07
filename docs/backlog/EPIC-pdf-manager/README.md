@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Bibliothèque documentaire centrée PDF : collections, upload, recherche, visualiseur in-browser, annotations, versioning, partage, et manipulation de documents (fusion, découpe, rotation, filigrane, compression). Sert de hub de stockage pour les autres modules documentaires (SignDoc, MeetOps, Cahiers de tests).
+Bibliothèque documentaire centrée PDF : collections, upload, recherche, visualiseur in-browser, annotations, versioning, partage, et manipulation de documents (fusion, découpe, rotation, filigrane, compression). Sert de hub de **consultation et d'organisation** pour les documents PDF utilisés par d'autres modules (MeetOps, Cahiers de tests) — chaque module y importe/exporte des documents, sans que E45 ne devienne le stockage exclusif de ces modules.
 
 ## Repo cible (architecture multi-repo)
 
@@ -30,6 +30,11 @@ Bibliothèque documentaire centrée PDF : collections, upload, recherche, visual
 ### Enablers
 
 - **EN45.1** — Stockage objet (GCS/S3) et quotas de stockage par utilisateur
+
+## Hors périmètre
+
+- **Stockage du document source/final/audit trail de SignDoc** — [E44](pathname:///pivot-docs/backlog/EPIC-signdoc/) conserve son propre stockage dédié (EN44.1) pour garantir l'immuabilité probatoire après signature ; E45 n'est qu'une source d'import optionnelle en amont.
+- **OCR / recherche plein texte dans le contenu**, **champs personnalisés par collection**, **comparaison visuelle de versions** — reportés v2.
 
 ## Modules impactés
 

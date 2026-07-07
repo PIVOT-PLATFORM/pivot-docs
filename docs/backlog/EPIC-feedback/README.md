@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Remontée de bugs et d'idées par les utilisateurs de la plateforme : kanban public (Analyse → Backlog → Implémentation → Parking → Fait), création et vote en temps réel, modération réservée aux admins.
+Remontée de bugs et d'idées par les utilisateurs de la plateforme : kanban public (Analyse → Backlog → Implémentation → Parking → Fait), création et vote, modération réservée aux admins. Portée volontairement **transverse à toute la plateforme** (pas de notion d'équipe ou de board) — d'où son rattachement à `core` plutôt qu'à un domaine module ; les votes se rafraîchissent via le mécanisme de notification in-app existant (EN-NOTIF, Sprint 4), pas une room WebSocket dédiée comme les modules temps réel des domaines `collaboratif`/`agilite`.
 
 ## Repo cible (architecture multi-repo)
 

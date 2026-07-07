@@ -416,6 +416,7 @@
     "actionlint",
     "packagr",
     "signdoc",
-    "expirable"
+    "expirable",
+    "eIDAS"
   ]
 }

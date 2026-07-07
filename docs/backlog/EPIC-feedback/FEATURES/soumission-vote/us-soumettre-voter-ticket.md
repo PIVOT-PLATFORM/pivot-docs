@@ -12,7 +12,7 @@
 |---------|--------|
 | Création publique d'un ticket (titre, description, catégorie bug/idée) | ⬜ |
 | Kanban 5 colonnes : Analyse → Backlog → Implémentation → Parking → Fait | ⬜ |
-| Vote en temps réel sur un ticket (un vote par utilisateur et par ticket) | ⬜ |
+| Vote sur un ticket, rafraîchi via le mécanisme de notification in-app existant (un vote par utilisateur et par ticket) | ⬜ |
 | Édition d'un ticket réservée à son auteur ou à un admin | ⬜ |
 | Sécurité : tenantId extrait du TenantContext | ⬜ |
 
