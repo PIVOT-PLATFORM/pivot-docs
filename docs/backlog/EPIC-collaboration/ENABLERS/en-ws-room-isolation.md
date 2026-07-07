@@ -32,9 +32,9 @@ réimplémenter des vérifications ad hoc.
 - [ ] Test TI : même boardId dans deux tenants distincts = événements de présence indépendants
 - [ ] Tentative de souscription (SUBSCRIBE) à un topic non autorisé : rejetée par une frame STOMP ERROR ("Accès refusé à ce tableau"), aucune entrée ajoutée au registre de présence, session WebSocket non fermée (les autres souscriptions actives de l'utilisateur restent valides)
 
-**Statut** : ⬜ À faire
+**Statut** : ✅ Implémenté — PR pivot-collaboratif-core #27, Gate 4 91/100
 
 ---
 Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: Socle · Size: M
-Stage: Ready · Priority: High
+Stage: Review · Priority: High
 Dépendances: Aucune — prérequis bloquant pour F08.3 (Canvas WS) et US08.5.1 (Présence)

@@ -36,7 +36,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|
-| EN08.1 | Isolation WebSocket room par board | M | Critical | ⬜ |
+| EN08.1 | Isolation WebSocket room par board | M | Critical | 👀 |
 | EN08.2 | Guard Angular module whiteboard | S | Critical | 👀 |
 | US08.1.1 | Utilisateur crée un tableau (backend) | M | Critical | 👀 |
 | US08.1.2 | Utilisateur liste ses tableaux (backend) | M | Critical | 👀 |
