@@ -2,6 +2,15 @@
 
 **Type d'enabler** : infrastructure
 
+**Objectif technique** : Extraire les packages partagés de `pivot-core` (`auth`, `tenant`, `team`,
+`modules`, `db`) en un artifact Maven `fr.pivot:pivot-core-starter` publiable dans GitHub Packages,
+consommable par tout repo `pivot-xxx-core` via une dépendance versionnée standard.
+
+**Justification** : Sans ce starter, chaque repo module-core devrait soit copier le code
+d'auth/tenant (divergence garantie), soit créer une dépendance directe non versionnée à `pivot-core`
+(couplage fort, impossible à déployer indépendamment). C'est le prérequis des templates repo (EN17.5)
+et du scaffolding de `pivot-collaboratif-core`.
+
 **Critères de complétion** :
 - [ ] `pom.xml` pivot-core configuré pour publier `fr.pivot:pivot-core-starter` dans GitHub Packages
 - [ ] Packages exportés : `fr.pivot.core.auth`, `fr.pivot.core.tenant`, `fr.pivot.core.team`, `fr.pivot.core.modules`, `fr.pivot.core.db`
@@ -16,4 +25,4 @@
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Backlog · Priority: High
+Stage: Ready · Priority: Critical

@@ -4,6 +4,17 @@
 
 **Stack :** Angular CDK (comportement / a11y) + SCSS BEM custom (visuel) — aucune lib visuelle tierce.
 
+**Objectif technique** : Extraire la librairie Angular UI incubée dans `pivot-ui` (EN17.8) vers un
+package npm autonome `@pivot/design-system` dans un repo dédié `pivot-design-system`, avec pipeline
+GitHub Packages, afin que tous les repos `pivot-*-ui` partagent composants et tokens visuels sans
+duplication.
+
+**Justification** : Chaque repo module-ui doit afficher les mêmes composants (Button, Modal,
+Toast…) et respecter les mêmes tokens visuels. Sans package publié, chaque repo réimplémenterait
+sa propre UI. L'extraction est déclenchée par la création du premier `pivot-*-ui` — créer le repo
+avant éviterait la friction inutile d'un package sans consommateur (double PR par évolution,
+versioning strict des tokens).
+
 ## Trajectoire (actée 2026-07-07)
 
 Cet enabler est une **extraction**, pas une création ex nihilo : le contenu du design system
@@ -47,4 +58,4 @@ friction (double PR par évolution, versioning strict des tokens sans bénéfici
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Backlog · Priority: High
+Stage: Ready · Priority: Critical

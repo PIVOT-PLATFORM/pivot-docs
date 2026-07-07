@@ -2,6 +2,17 @@
 
 **Type d'enabler** : architecture
 
+**Objectif technique** : Définir et implémenter la convention PostgreSQL multi-schéma dans laquelle
+chaque module-core gère ses migrations Flyway dans un schéma dédié (`collaboratif`, `pilotage`,
+`agilite`) avec FK croisées uniquement vers `public`, et exposer un `FlywayConfigurer` via
+`pivot-core-starter` permettant à chaque module d'enregistrer ses propres migrations de façon
+autonome.
+
+**Justification** : Sans cette convention, chaque repo module-core créerait ses tables dans `public`
+de façon non coordonnée, rendant l'isolation des domaines et la migration multi-tenant impossibles.
+C'est le prérequis de toutes les migrations Flyway des modules backend (EN18.1, `pivot-pilotage-core`,
+`pivot-agilite-core`, `pivot-collaboratif-core`).
+
 **Critères de complétion** :
 - [ ] ADR-006 accepté — stratégie schémas PostgreSQL documentée
 - [ ] Flyway pivot-core : migrations schéma `public` stabilisées (V1__→VN__ sans rupture)
@@ -14,4 +25,4 @@
 
 ---
 Item Type: Enabler · Parent: E17 · Type: architecture · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Backlog · Priority: Critical
+Stage: Ready · Priority: Critical

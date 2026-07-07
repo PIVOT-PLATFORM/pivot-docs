@@ -7,7 +7,7 @@ complet, désormais hébergé sous [`EPIC-collaboration`](../EPIC-collaboration/
 `Phase: Socle` propre, non verrouillé par le reste d'E30
 **Pré-requis :** Sprint 2 terminé (E03 module system Done — condition de déclenchement d'E17 par
 son propre README) + Sprint 4 EN07.x validé (recette maintainer ✅ 2026-07-07) + Gate 1 US08.x
-validé par PO Agent ✅ (voir note du 2026-07-07)
+validé par PO Agent ✅ + Gate 1 EN17.x validé par PO Agent ✅ (voir notes du 2026-07-07)
 **Note de reséquencement (2026-07-07) :** voir §Reséquencement E17 ci-dessous — E17 déplacé de
 Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre le repo cible
 `pivot-collaboratif-core/-ui` (ADR-006, README E30) et son verrouillage nominal post-Socle
@@ -76,18 +76,27 @@ Repos `pivot-pilotage-core/-ui`, `pivot-agilite-core/-ui` déjà créés sur Git
 non bloquant pour ce sprint (ils restent vides tant qu'E17 n'est pas fait), mais à garder en tête :
 ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template EN17.5/17.6 stable.
 
-> **Gate 1 — READINESS (2026-07-07) :** PO Agent a passé en revue la DoR des 17 items du sprint (2
-> Enablers + 15 US, dont US08.3.2 déjà décomposée en 08.3.2a/b/c). Tous ≥ 70/100 après complétion
-> des ACs manquants (essentiellement sections `Hors périmètre`/`Notes d'implémentation` absentes,
-> AC erreur/sécurité/A11y incomplets) — **`Stage: Backlog → Ready` sur les 17 fichiers**. Détail
-> par item et conventions transverses posées (404 non-membre/cross-tenant vs 403 rôle insuffisant,
-> contrat d'événements WS unique `JOIN/LEAVE/DRAW/CURSOR_MOVE/UNDO`, hard-delete US08.1.5) → PR
-> `pivot-docs`. Chevauchement US08.5.1 ↔ US08.3.2c (deux specs de panneau participants) détecté et
-> tranché : panneau de présence porté exclusivement par US08.5.1, US08.3.2c ne rend que l'overlay
-> de curseurs. Un point produit reste ouvert, non bloquant pour Gate 1 mais à trancher avant
-> l'implémentation : TTL par défaut/maximal du token de partage (US08.2.1) — voir sa section Notes
-> d'implémentation. Le fichier `us-canvas-angular.md` (US08.3.2 pré-décomposition) reste
-> `Stage: Decomposed`, hors score Gate 1.
+> **Gate 1 — READINESS Vague 1+ (2026-07-07) :** PO Agent a passé en revue la DoR des 17 items du
+> noyau whiteboard (2 Enablers EN08.1/EN08.2 + 15 US, dont US08.3.2 déjà décomposée en
+> 08.3.2a/b/c). Tous ≥ 70/100 après complétion des ACs manquants (essentiellement sections
+> `Hors périmètre`/`Notes d'implémentation` absentes, AC erreur/sécurité/A11y incomplets) —
+> **`Stage: Backlog → Ready` sur les 17 fichiers**. Détail par item et conventions transverses posées
+> (404 non-membre/cross-tenant vs 403 rôle insuffisant, contrat d'événements WS unique
+> `JOIN/LEAVE/DRAW/CURSOR_MOVE/UNDO`, hard-delete US08.1.5) → PR `pivot-docs`. Chevauchement
+> US08.5.1 ↔ US08.3.2c (deux specs de panneau participants) détecté et tranché : panneau de présence
+> porté exclusivement par US08.5.1, US08.3.2c ne rend que l'overlay de curseurs. Un point produit
+> reste ouvert, non bloquant pour Gate 1 mais à trancher avant l'implémentation : TTL par
+> défaut/maximal du token de partage (US08.2.1) — voir sa section Notes d'implémentation. Le fichier
+> `us-canvas-angular.md` (US08.3.2 pré-décomposition) reste `Stage: Decomposed`, hors score Gate 1.
+>
+> **Gate 1 — READINESS Vague 0 (2026-07-07) :** PO Agent a passé en revue la DoR des 8 enablers E17
+> (EN17.1–EN17.8). Tous satisfont le DoR Enabler (Type · Objectif technique · Justification ·
+> Critères de complétion), score ≥ 70/100 — critères techniques précis et testables, dépendances
+> claires, aucune ambiguïté bloquante. Scores individuels : EN17.1 82 · EN17.2 80 · EN17.3 78 ·
+> EN17.4 86 · EN17.5 76 · EN17.6 75 · EN17.7 85 · EN17.8 82 — **`Stage: Backlog → Ready` sur les
+> 8 fichiers**. Priorités alignées sur le tableau Vague 0 (EN17.1/17.2/17.3/17.4/17.7/17.8 →
+> Critical ; EN17.5/17.6 → High, formalisés après coup sur scaffolding réel). DoR complétée sur cette
+> branche : ajout des sections `Objectif technique` et `Justification` manquantes dans chaque fiche.
 >
 > Recette manuelle Sprint 4 EN07.x confirmée par le mainteneur le 2026-07-07 — second volet du
 > prérequis levé. Sprint 5 démarre à cette session par la Vague 0 (E17), voir §Reséquencement E17.

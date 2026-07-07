@@ -6,12 +6,12 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 
 ## Périmètre
 
-- Enabler EN17.1 : Publication `pivot-core-starter` (Maven artifact, GitHub Packages)
-- Enabler EN17.2 : Publication `@pivot/design-system` (npm package, GitHub Packages)
-- Enabler EN17.3 : Publication `@pivot/ui-core` (npm package, GitHub Packages)
-- Enabler EN17.4 : Convention BDD multi-schéma + migration Flyway baseline stabilisée
-- Enabler EN17.5 : Template repo `pivot-xxx-core`
-- Enabler EN17.6 : Template repo `pivot-xxx-ui`
+- [Enabler EN17.1 : Publication `pivot-core-starter` (Maven artifact, GitHub Packages)](ENABLERS/en-pivot-core-starter.md)
+- [Enabler EN17.2 : Publication `@pivot/design-system` (npm package, GitHub Packages)](ENABLERS/en-design-system-package.md)
+- [Enabler EN17.3 : Publication `@pivot/ui-core` (npm package, GitHub Packages)](ENABLERS/en-pivot-ui-core-package.md)
+- [Enabler EN17.4 : Convention BDD multi-schéma + migration Flyway baseline stabilisée](ENABLERS/en-bdd-multi-schema.md)
+- [Enabler EN17.5 : Template repo `pivot-xxx-core`](ENABLERS/en-template-repo-core.md)
+- [Enabler EN17.6 : Template repo `pivot-xxx-ui`](ENABLERS/en-template-repo-ui.md)
 - [Enabler EN17.7 : nginx API Gateway — routing multi-backend par préfixe URL](ENABLERS/en-nginx-api-gateway.md)
 - [Enabler EN17.8 : Incubation du design system dans `pivot-ui`](ENABLERS/en-design-system-incubation.md) — prérequis d'EN17.2
 
@@ -33,9 +33,9 @@ valeur de verrou de sprint.
 
 ## Statut global
 
-🚀 En cours — Sprint 5 Vague 0 (2026-07-07)
+✅ Gate 1 passé (2026-07-07) — 8/8 enablers Ready · Implémentation Sprint 5 Vague 0 à démarrer
 
 ---
 
 Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 8 (EN17.1–8)
-Stage: Ready · Priority: High
+Stage: Ready · Priority: Critical
