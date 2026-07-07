@@ -44,7 +44,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.1.4 | Renommer un tableau | S | High | 🔄 |
 | US08.1.5 | Supprimer un tableau | S | Critical | 🔄 |
 | US08.2.1 | Owner partage un tableau par lien public | M | High | 👀 |
-| US08.2.2 | Utilisateur rejoint un tableau via token | M | High | ⬜ |
+| US08.2.2 | Utilisateur rejoint un tableau via token | M | High | 👀 |
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | ⬜ |
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | ⬜ |
 | US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ⬜ |
