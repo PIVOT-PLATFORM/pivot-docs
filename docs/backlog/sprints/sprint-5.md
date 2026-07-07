@@ -17,14 +17,14 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| EN17.8 | Incubation design system dans `pivot-ui` (déjà démarrable, aucun repo créé) | M | Critical | 🔁 Review — pivot-ui PR #111 (96/100 MERGE\_DOCUMENTED) |
-| EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | 🔁 Review — couvert par pivot-core PR #167 (ModuleFlywayConfigurer factory) |
-| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | 🔁 In progress — pivot-core PR #167 Gate 4 en cours |
+| EN17.8 | Incubation design system dans `pivot-ui` (déjà démarrable, aucun repo créé) | M | Critical | ✅ Done — pivot-ui PR #111 mergée |
+| EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | ✅ Done — pivot-core PR #167 mergée (ModuleFlywayConfigurer factory) |
+| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | ✅ Done — pivot-core PR #167 mergée |
 | EN17.2 | Publication `@pivot/design-system` (npm) — création repo `pivot-design-system`, déclenchée par la création de `pivot-collaboratif-ui` (1er repo module UI) | M | Critical | ✅ Done — [`@pivot-platform/design-system@0.1.0`](https://github.com/PIVOT-PLATFORM/pivot-design-system/pkgs/npm/design-system) publié sur GitHub Packages (2026-07-07) |
 | EN17.5 | Template repo `pivot-xxx-core` (formalisé à partir du scaffolding réel de `pivot-collaboratif-core`) | S | High | ✅ Done — [`pivot-template-core`](https://github.com/PIVOT-PLATFORM/pivot-template-core) créé (2026-07-07) |
-| EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ⬜ |
+| EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ✅ Done — [`pivot-template-ui`](https://github.com/PIVOT-PLATFORM/pivot-template-ui) créé (2026-07-07) |
 | EN17.3 | Publication `@pivot-platform/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ✅ Done |
-| EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ⬜ |
+| EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ✅ Done — pivot-ui PR #114 + pivot-core PR #170 mergées |
 
 > **Ordre de dépendance Vague 0 :** EN17.8 ‖ EN17.4 ‖ EN17.1 (aucune dépendance mutuelle) →
 > création de `pivot-collaboratif-core`/`pivot-collaboratif-ui` (consomment EN17.1 respectivement
@@ -109,3 +109,13 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > — Size relevé L → XL, l'Architect Agent devra juger d'une décomposition avant Gate 2. Incohérence
 > corrigée au passage sur US08.3.2b (AC citait encore DRAW/ERASE/MOVE/RESIZE comme 4 types STOMP
 > distincts, contredisant le contrat unique déjà posé en Notes d'implémentation).
+>
+> **Avancement Vague 0 (2026-07-07, session 2) :** 6/8 enablers EN17 terminés.
+> ✅ EN17.8 — design system incubé dans pivot-ui (branche `projects/design-system/`, angular.json)
+> ✅ EN17.4 — ModuleFlywayConfigurer + ModuleSchemaIsolation (pivot-core PR #167)
+> ✅ EN17.1 — pivot-core-starter publié sur GitHub Packages Maven (pivot-core PR #167)
+> ✅ EN17.5 — template repo `pivot-template-core` créé (PIVOT-PLATFORM/pivot-template-core, pivot-docs PR #105)
+> ✅ EN17.3 — `@pivot-platform/ui-core` publié sur GitHub Packages npm (pivot-ui PR #112)
+> ✅ EN17.7 — nginx API Gateway multi-module (pivot-ui PR #114 + pivot-core PR #170, 2026-07-07)
+> ✅ EN17.2 — `@pivot-platform/design-system` publié sur GitHub Packages npm (pivot-design-system PR #1, 2026-07-07)
+> ✅ EN17.6 — template repo `pivot-template-ui` créé (PIVOT-PLATFORM/pivot-template-ui, 2026-07-07)
