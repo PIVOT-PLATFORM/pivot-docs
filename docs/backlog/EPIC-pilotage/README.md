@@ -35,7 +35,7 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 
 > La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
 >
-> Les modules *benchmark* (E32–E39, E31 dissoute) et les Features `F22.2` / `F23.2` / `F26.2` proviennent du CSV d'analyse concurrentielle PPM — voir [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
+> Les modules *benchmark* (E32–E39, E31 dissoute) et les Features `F22.2` / `F23.2` / `F26.2` proviennent d'un CSV d'analyse concurrentielle PPM (items `PP-###`), rationalisé directement dans chaque EPIC concerné (ce README et les READMEs d'E22/E23/E26) — le document source `BENCHMARK.md` n'a jamais été mergé sur `main` (ex-PR #38). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
 
 ### Couche adaptative v2 (`Profils_applicables`)
 
@@ -53,8 +53,8 @@ Un **cockpit** est une vue composée qui agrège les widgets/vues des modules pe
 
 Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E13) :
 
-- **EN18.1** — Schéma Flyway `pilotage` + entités JPA (**Application**, Project, Milestone, PortfolioView, Adr, Consultation, Candidate) — hiérarchie **Application 1..n Projet** (cf. EN18.9)
-- **EN18.2** — Guard Angular module pilotage (moduleGuard `moduleId: 'pilotage'`)
+- [**EN18.1** — Schéma Flyway `pilotage` + entités JPA](ENABLERS/en-schema-flyway-pilotage.md) (**Application**, Project, Milestone, PortfolioView, Adr, Consultation, Candidate) — hiérarchie **Application 1..n Projet** (cf. EN18.9)
+- [**EN18.2** — Guard Angular module pilotage](ENABLERS/en-guard-angular-pilotage.md) (moduleGuard `moduleId: 'pilotage'`)
 - **EN18.9** — [Modèle Application → Projet](ENABLERS/en-modele-application-projet.md) : Application possède 1..n Projet, relie toutes les données de chaque Projet
 - **EN18.3** — Cloud/SaaS et RGPD *(benchmark)*
 - **EN18.4** — Localisation FR et RGAA *(benchmark)*
@@ -84,8 +84,8 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | Élément | 🤖 Dev |
 |---------|--------|
 | **Enablers partagés** | |
-| EN18.1 — Schéma Flyway `pilotage` + entités JPA | ⬜ |
-| EN18.2 — Guard Angular module pilotage | ⬜ |
+| [EN18.1 — Schéma Flyway `pilotage` + entités JPA](ENABLERS/en-schema-flyway-pilotage.md) | ⬜ |
+| [EN18.2 — Guard Angular module pilotage](ENABLERS/en-guard-angular-pilotage.md) | ⬜ |
 | [EN18.3 — Cloud/SaaS et RGPD](ENABLERS/en-cloud-saas-rgpd.md) | ⬜ |
 | [EN18.4 — Localisation FR et RGAA](ENABLERS/en-localisation-fr-rgaa.md) | ⬜ |
 | [EN18.5 — Performance de consolidation](ENABLERS/en-performance-consolidation.md) | ⬜ |

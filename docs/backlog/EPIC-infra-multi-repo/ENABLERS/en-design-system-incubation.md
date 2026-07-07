@@ -5,6 +5,16 @@
 **Stack :** Angular CDK (comportement / a11y) + SCSS BEM custom (visuel) — stack actée par
 ADR-007, inchangée.
 
+**Objectif technique** : Structurer le design system Angular CDK + SCSS BEM comme une Angular
+library workspace (`projects/design-system`) à l'intérieur de `pivot-ui`, selon la taxonomie
+ADR-007 (tokens / cdk / components / scss), de sorte que l'extraction vers `pivot-design-system`
+(EN17.2) soit un déménagement mécanique, non une réécriture.
+
+**Justification** : Créer directement le repo `pivot-design-system` sans consommateur impose des
+coûts disproportionnés (versioning sémantique strict des tokens, double PR par évolution, CI
+dédiée) sans bénéfice immédiat. L'incubation dans `pivot-ui` permet de tester et stabiliser la
+structure à coût marginal. C'est la condition de déclenchement de EN17.2.
+
 ## Contexte et décision
 
 ADR-007 (Accepté) acte la stack et le repo cible `pivot-design-system`, mais le repo n'a
@@ -52,5 +62,5 @@ L'extraction est déclenchée par la création du premier repo `pivot-*-ui` (voi
   périmètre de l'incubation.
 
 ---
-Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: v1-enterprise
-Stage: Backlog · Priority: Medium
+Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-v1-enterprise)
+Stage: Ready · Priority: Critical

@@ -19,7 +19,9 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **co
 ## Origine
 
 Nouveau dans la **v2 adaptative** du backlog PPM (`PP-A01…A06`). Introduit la dimension
-**`Profils_applicables`** portée par chaque US du domaine Pilotage. Voir [`BENCHMARK.md`](pathname:///pivot-docs/backlog/BENCHMARK).
+**`Profils_applicables`** portée par chaque US du domaine Pilotage — voir le README d'[E18 — Domaine
+Pilotage](../EPIC-pilotage/README.md) §Couche adaptative v2 (le document source `BENCHMARK.md` n'a
+jamais été mergé sur `main`, ex-PR #38).
 
 ## Dépendances
 

@@ -27,7 +27,7 @@ Tous les backends : `pivot-core` · `pivot-pilotage-core` · `pivot-agilite-core
 
 ## Statut global
 
-⬜ À planifier — Socle Critical
+🔎 En revue — Socle Critical (EN04.1-EN04.4 en Stage: Review, PRs ouvertes/mergées)
 
 ---
 
@@ -36,10 +36,10 @@ Tous les backends : `pivot-core` · `pivot-pilotage-core` · `pivot-agilite-core
 | Élément | 🤖 Dev |
 |---------|--------|
 | **Phase Socle — Critical** | |
-| [EN04.1 — Logs structurés JSON + MDC](ENABLERS/en-logs-structures.md) | ⬜ |
-| [EN04.2 — Spring Actuator endpoints](ENABLERS/en-actuator.md) | ⬜ |
-| [EN04.3 — Micrometer Prometheus](ENABLERS/en-micrometer-prometheus.md) | ⬜ |
-| [EN04.4 — Health checks Docker liveness + readiness](ENABLERS/en-health-checks.md) | ⬜ |
+| [EN04.1 — Logs structurés JSON + MDC](ENABLERS/en-logs-structures.md) | 🔎 |
+| [EN04.2 — Spring Actuator endpoints](ENABLERS/en-actuator.md) | 🔎 |
+| [EN04.3 — Micrometer Prometheus](ENABLERS/en-micrometer-prometheus.md) | 🔎 |
+| [EN04.4 — Health checks Docker liveness + readiness](ENABLERS/en-health-checks.md) | 🔎 |
 | **Phase v1-enterprise** | |
 | EN04.5 — Dashboard Grafana | ⏸️ |
 | EN04.6 — Alerting Grafana SLO | ⏸️ |

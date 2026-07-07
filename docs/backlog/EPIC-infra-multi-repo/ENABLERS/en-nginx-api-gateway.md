@@ -2,8 +2,15 @@
 
 **Type d'enabler** : infrastructure · routing
 
-**Contexte** : L'architecture multi-repo déploie 4 JVMs indépendantes. nginx doit router chaque requête vers
-le backend correspondant selon son préfixe URL. C'est le mécanisme de fault isolation.
+**Objectif technique** : Configurer nginx comme point d'entrée unique routant les requêtes vers les
+4 JVMs indépendantes de l'architecture multi-repo (`pivot-core`, `pivot-collaboratif-core`,
+`pivot-pilotage-core`, `pivot-agilite-core`) par préfixe URL, avec support WebSocket sticky
+(`ip_hash`), headers de sécurité et log JSON structuré.
+
+**Justification** : Sans ce routing, les différents backends ne sont pas joignables depuis `pivot-ui`
+de manière unifiée — chaque module serait accessible sur un port différent, incompatible avec
+l'architecture SPA. C'est aussi le mécanisme de fault isolation : un backend KO ne crashe pas le
+gateway global, les autres modules continuent à répondre.
 
 **Critères de complétion** :
 - [ ] `nginx.conf` avec routing par préfixe URL vers upstream dédié par module :
@@ -35,5 +42,5 @@ le backend correspondant selon son préfixe URL. C'est le mécanisme de fault is
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: phase-3
-Stage: Backlog · Priority: High
+Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
+Stage: Ready · Priority: Critical

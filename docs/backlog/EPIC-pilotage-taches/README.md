@@ -14,7 +14,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)), issue d
 ⏸️ **phase-3** — VERROUILLÉ · AC issus du benchmark, à affiner au Gate 1 PO Agent
 
 ## Origine
-Généré depuis le CSV benchmark (famille Pilotage, items `PP-###`). Voir la rationalisation dans [`BENCHMARK.md`](pathname:///pivot-docs/backlog/BENCHMARK).
+Généré depuis le CSV benchmark (famille Pilotage, items `PP-###`), rationalisé directement dans le README d'[E18 — Domaine Pilotage](../EPIC-pilotage/README.md) — le document source `BENCHMARK.md` n'a jamais été mergé sur `main` (ex-PR #38).
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E18 Domaine Pilotage (ombrelle)

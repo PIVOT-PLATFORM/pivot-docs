@@ -10,7 +10,9 @@ Suite de collaboration visuelle (whiteboard collaboratif temps réel, ateliers d
 
 - Backend : **`pivot-collaboratif-core`** (schéma `collaboratif`)
 - Frontend : **`pivot-collaboratif-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
-- **Pré-requis EN17 :** pivot-core-starter + @pivot/ui-core publiés avant implémentation
+- **Pré-requis EN17 :** pivot-core-starter + @pivot/ui-core publiés avant implémentation — rapatrié
+  dans **Sprint 5, Vague 0** (2026-07-07, voir `sprints/sprint-5.md` §Reséquencement E17), plus
+  besoin d'attendre Sprint 7/post-Socle comme documenté précédemment ici
 
 ## Phase
 
@@ -191,7 +193,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 ## Dépendances
 
 - Dépend de : **E03** Système de modules (interface PivotModule)
-- Dépend de : **E17** Infrastructure multi-repo (pré-requis pivot-core-starter + @pivot/ui-core)
+- Dépend de : **E17** Infrastructure multi-repo (pré-requis pivot-core-starter + @pivot/ui-core) — pour F08.x/EN08.x, résolu dans **Sprint 5, Vague 0** (même sprint, en amont de la Vague 1+ whiteboard) ; pour le reste d'E30 (net-new phase-3), reste conditionné au jalon « Socle terminé »
 - F08.x/EN08.x (ex-**E08** Whiteboard) fusionné nativement dans cet EPIC — voir "Couverture existante" ci-dessus.
 
 ## Statut global
@@ -343,7 +345,10 @@ collaboratif open-source).
 | [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | ⬜ |
 | **F08.3 — Canvas collaboratif temps réel** | |
 | [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | ⬜ |
-| [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) *(À décomposer en 3 sous-US avant implémentation)* | ⬜ |
+| [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) ⚠️ *(Decomposed — voir US08.3.2a/b/c)* | — |
+| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | ⬜ |
+| [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | ⬜ |
+| [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | ⬜ |
 | [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ⬜ |
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ⬜ |
 | **F08.4 — Templates** | |
