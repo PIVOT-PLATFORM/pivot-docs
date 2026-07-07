@@ -8,19 +8,19 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| GET /api/whiteboard/boards retourne les tableaux accessibles par l'utilisateur | ⬜ |
-| Inclut : tableaux owned + tableaux partagés avec l'user | ⬜ |
-| Champs : id, title, role, createdAt, updatedAt, thumbnailUrl | ⬜ |
-| Paginé (20 par page), trié par updatedAt DESC | ⬜ |
-| Tests TI GET /api/whiteboard/boards | ⬜ |
-| thumbnailUrl = null acceptable en Socle — valeur null retournée si aucune miniature générée | ⬜ |
-| Valeurs du champ role : "owner" \| "editor" \| "viewer" | ⬜ |
-| activeParticipantCount (entier) inclus dans la réponse : nombre de participants actuellement connectés au board | ⬜ |
-| Réponse inclut totalElements, totalPages, currentPage, hasNext pour pagination côté Angular | ⬜ |
-| Taille de page plafonnée côté backend à 50 ; size négatif ou nul → 400 Bad Request | ⬜ |
-| Requête filtre double obligatoire : (owner_id = :userId OR membre actif) AND tenant_id = :tenantId — test TI avec deux tenants distincts vérifiant l'isolation | ⬜ |
-| Recherche par titre : hors scope Socle (note explicite) | ⬜ |
-| tenantId résolu exclusivement depuis le SecurityContext (token opaque) — aucun tenantId accepté en query param | ⬜ |
+| GET /api/whiteboard/boards retourne les tableaux accessibles par l'utilisateur | ✅ |
+| Inclut : tableaux owned + tableaux partagés avec l'user | ✅ |
+| Champs : id, title, role, createdAt, updatedAt, thumbnailUrl | ✅ |
+| Paginé (20 par page), trié par updatedAt DESC | 🟡 pagination confirmée (`Pageable`) — taille de page par défaut et tri explicite non confirmés individuellement au Gate 4, à vérifier en recette |
+| Tests TI GET /api/whiteboard/boards | ✅ |
+| thumbnailUrl = null acceptable en Socle — valeur null retournée si aucune miniature générée | ✅ |
+| Valeurs du champ role : "owner" \| "editor" \| "viewer" | ✅ |
+| activeParticipantCount (entier) inclus dans la réponse : nombre de participants actuellement connectés au board | 🟡 champ présent dans le DTO, mais son alimentation réelle dépend d'EN08.1 (mergée après cette PR) — à vérifier que la valeur n'est pas restée figée à 0 |
+| Réponse inclut totalElements, totalPages, currentPage, hasNext pour pagination côté Angular | ✅ |
+| Taille de page plafonnée côté backend à 50 ; size négatif ou nul → 400 Bad Request | ✅ |
+| Requête filtre double obligatoire : (owner_id = :userId OR membre actif) AND tenant_id = :tenantId — test TI avec deux tenants distincts vérifiant l'isolation | ✅ |
+| Recherche par titre : hors scope Socle (note explicite) | ✅ |
+| tenantId résolu exclusivement depuis le SecurityContext (token opaque) — aucun tenantId accepté en query param | 🟡 écart assumé : résolu depuis les headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id` (bootstrap, TODO EN17) — voir Gate 5 spec |
 
 ## Hors périmètre
 - Recherche par titre (filtre texte) : hors scope Socle
@@ -40,3 +40,6 @@
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
 Stage: Review
 Dépendances: US08.1.1
+Gate 5 : `pivot-collaboratif-core` PR [#19](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/19)
+(Gate 4 = 88/100, même PR que US08.1.1), spec figée
+`docs/specs/EPIC-collaboration/us08-1-2-liste-tableaux-backend.md` (rétroactif, 2026-07-07)
