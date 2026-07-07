@@ -38,4 +38,4 @@ valeur de verrou de sprint.
 ---
 
 Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 8 (EN17.1–8)
-Stage: Ready · Priority: High · Sprint: Sprint 5
+Stage: Ready · Priority: High
