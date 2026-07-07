@@ -29,4 +29,4 @@ Stage: Backlog
 Source: PP-025 · MoSCoW: Should · Lot: Lot 2 · Origine: MS généralisé + Insight I6
 Profils: Tous
 Justification: Dossier §8-I6 : l'alimentation terrain décide du succès
-Dépendances: —
+Dépendances: US33.1.4 (entité tâche du quotidien à rattacher au projet)
