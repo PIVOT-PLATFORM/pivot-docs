@@ -86,7 +86,7 @@ Compteur Redis INCR par `ws:rate:{tenantId}:{boardId}:{userId}`, fenêtre fixe 1
 | Test | AC couvert |
 |------|-----------|
 | `handshake_without_identity_headers_is_rejected` | Token absent → 401 |
-| `board_member_receives_presence_on_subscribe` | Membre → subscrit → apparaît dans présence |
+| `board_member_receives_presence_on_subscribe` | Membre → souscrit → apparaît dans présence |
 | `non_member_subscribe_is_denied_and_user_absent_from_presence` | Non-membre → SUBSCRIBE droppé → absent de la présence |
 | `cross_tenant_subscribe_is_denied` | Cross-tenant : board T1, user T2 → refusé |
 | `denied_subscribe_does_not_close_session` | Session non fermée après refus SUBSCRIBE |
