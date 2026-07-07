@@ -15,7 +15,7 @@ Permettre aux admins de gérer les utilisateurs de leur tenant et au SUPER_ADMIN
 - Dépend de : E03 Système de modules (activation modules par admin)
 
 ## Statut global
-⬜ À planifier — Sprint 2/3
+🔎 En attente de recette — Sprint 3 (8/8 items en Review, mergés, recette maintainer en attente)
 
 ---
 

@@ -19,7 +19,7 @@ Permettre aux utilisateurs de gérer leur profil, leur sécurité (mot de passe,
 - Dépend de : E01 Auth & IAM (opaque tokens, session)
 
 ## Statut global
-⬜ À planifier — Sprint 2/3
+🔎 En attente de recette — Sprint 3 (Socle livré, Stage: Review, recette maintainer en attente ; enablers v1-enterprise restants en Backlog)
 
 ---
 

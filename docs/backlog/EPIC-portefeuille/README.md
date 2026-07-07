@@ -24,7 +24,7 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 - **F23.1 — Portefeuille projets**
   - US23.1.1 : Tableau de bord portefeuille projets
   - US23.1.2 : Générer un rapport d'avancement du portefeuille
-- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK))
+- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark, rationalisé dans le README d'[E18 — Domaine Pilotage](../EPIC-pilotage/README.md) (le document source `BENCHMARK.md` n'a jamais été mergé sur `main`, ex-PR #38)
   - US23.2.1 : Vue portefeuille consolidée
   - US23.2.2 : Tableaux de bord personnalisables
   - US23.2.3 : Revues et comités outillés

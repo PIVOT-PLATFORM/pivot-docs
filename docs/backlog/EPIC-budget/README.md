@@ -24,7 +24,7 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
 - **F26.1 — Budget & suivi financier**
   - US26.1.1 : Saisir le budget d'un projet
   - US26.1.2 : Suivre la consommation budgétaire en temps réel
-- **F26.2 — Budgets & finances (benchmark PPM)** — issu du CSV benchmark (cf. [BENCHMARK.md](pathname:///pivot-docs/backlog/BENCHMARK))
+- **F26.2 — Budgets & finances (benchmark PPM)** — issu du CSV benchmark, rationalisé dans le README d'[E18 — Domaine Pilotage](../EPIC-pilotage/README.md) (le document source `BENCHMARK.md` n'a jamais été mergé sur `main`, ex-PR #38)
   - US26.2.1 : Coûts au niveau projet
   - US26.2.2 : Budgets pluriannuels (PPI)
   - US26.2.3 : Flux de trésorerie

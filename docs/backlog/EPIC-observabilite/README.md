@@ -27,7 +27,7 @@ Tous les backends : `pivot-core` · `pivot-pilotage-core` · `pivot-agilite-core
 
 ## Statut global
 
-⬜ À planifier — Socle Critical
+🔎 En revue — Socle Critical (EN04.1-EN04.4 en Stage: Review, PRs ouvertes/mergées)
 
 ---
 
