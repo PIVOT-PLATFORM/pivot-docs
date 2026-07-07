@@ -51,7 +51,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ⬜ |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ⬜ |
-| US08.4.1 | Créer un tableau depuis un template | M | Medium | ⬜ |
+| US08.4.1 | Créer un tableau depuis un template | M | Medium | ✅ Done — `pivot-collaboratif-core` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (100/100, mergée) + `pivot-collaboratif-ui` PR [#29](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/29) (100/100, mergée) — fix de suivi `pivot-collaboratif-ui`#30 (thumbnailUrl) |
 | US08.5.1 | Présence des participants sur le canvas | M | High | ⬜ |
 
 ## Reséquencement E17 (2026-07-07)
@@ -127,3 +127,16 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > (gap noté sur la fiche US08.3.2a). Items non démarrés à ce stade, verrouillés par issue GitHub
 > (aucune assignation) : US08.4.1, US08.3.2b, US08.3.2c, US08.3.3. US08.5.1 assignée et en cours
 > (@tellebma, `pivot-collaboratif-core#29` / `pivot-collaboratif-ui#22`).
+>
+> **US08.4.1 (2026-07-07, session isolée — collision évitée sur US08.3.2b déjà pris) :** pris en
+> charge après confirmation qu'aucune activité concurrente n'était en cours dessus. Ambiguïté Gate 1
+> résolue (templates tenant hors Socle, pivot-docs PR #118) avant implémentation. Faille de sécurité
+> (whitelist d'images contournable via URL protocol-relative) trouvée en self-review et corrigée
+> avant merge. Autoloop jusqu'à Gate 4 = 100/100 sur les deux PR (gap AC coverage backend comblé par
+> un test IT module-désactivé ; score frontend recalculé conforme au précédent déjà établi sur ce
+> repo pour le blocage E2E Playwright non-required, PR #12) — **`pivot-collaboratif-core`#31 et
+> `pivot-collaboratif-ui`#29 mergées** (bypass review via `--admin`, faute de reviewer configuré sur
+> ces repos bootstrap, précédent déjà établi). Bug réel confirmé après merge (pas juste une
+> hypothèse) : le DTO frontend supposait `previewUrl`, le backend renvoie `thumbnailUrl` — corrigé
+> en fix de suivi `pivot-collaboratif-ui`#30 (220/220 tests verts). Issues de suivi créées pour les
+> items encore non démarrés (`pivot-collaboratif-ui#26/27/28` — US08.3.2b/2c/3.3).
