@@ -19,5 +19,5 @@
 **Statut** : ⬜ À faire
 
 ---
-Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: ui · Phase: phase-3
-Stage: Backlog · Priority: High
+Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: ui · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
+Stage: Backlog · Priority: High · Sprint: Sprint 5

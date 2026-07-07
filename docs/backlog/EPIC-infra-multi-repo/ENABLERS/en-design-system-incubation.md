@@ -52,5 +52,5 @@ L'extraction est déclenchée par la création du premier repo `pivot-*-ui` (voi
   périmètre de l'incubation.
 
 ---
-Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: v1-enterprise
-Stage: Backlog · Priority: Medium
+Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-v1-enterprise)
+Stage: Backlog · Priority: Medium · Sprint: Sprint 5

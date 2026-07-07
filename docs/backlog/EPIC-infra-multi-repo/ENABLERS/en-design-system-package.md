@@ -46,5 +46,5 @@ friction (double PR par évolution, versioning strict des tokens sans bénéfici
   extraire (tokens, composants migrés CDK, Storybook).
 
 ---
-Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: phase-3
-Stage: Backlog · Priority: High
+Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
+Stage: Backlog · Priority: High · Sprint: Sprint 5

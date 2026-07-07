@@ -17,19 +17,25 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 
 ## Phase
 
-⬜ **phase-3** — prérequis Socle non bloquant · déclencher quand E03 (module system) est Done
-· exception : EN17.8 (v1-enterprise), démarrable dès maintenant dans `pivot-ui`
+🚀 **Socle (reséquencé 2026-07-07)** — condition de déclenchement documentée de longue date
+(« Socle non bloquant · déclencher quand E03 est Done ») plutôt qu'une invention nouvelle : E03 est
+Done depuis Sprint 2, donc E17 était en réalité déjà déclenchable avant cette correction. Sa
+présence dans Sprint 7 (verrouillé post-Socle) était incohérente avec cette condition et avec le
+besoin du noyau whiteboard Socle (F08.x/EN08.x, `pivot-collaboratif-core/-ui`, ADR-006) — voir
+`sprints/sprint-5.md` §Reséquencement E17. Rapatrié dans **Sprint 5, Vague 0**. Ancienne
+classification `phase-3` conservée uniquement comme étiquette de plan produit d'origine — n'a plus
+valeur de verrou de sprint.
 
 ## Dépendances
 
-- Dépend de : E03 Système de modules (EN03.1 — interface PivotModule)
-- Dépend de : E07 Infrastructure (EN07.1 Docker Compose prod)
+- Dépend de : E03 Système de modules (EN03.1 — interface PivotModule) — ✅ Done (Sprint 2)
+- Dépend de : E07 Infrastructure (EN07.1 Docker Compose prod) — ✅ Done (Sprint 4, recette confirmée 2026-07-07)
 
 ## Statut global
 
-⬜ Non démarré — Backlog phase-3
+🚀 En cours — Sprint 5 Vague 0 (2026-07-07)
 
 ---
 
-Item Type: Epic · Clé: E17 · Phase: phase-3 · Enablers: 8 (EN17.1–8)
-Stage: Backlog · Priority: High
+Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 8 (EN17.1–8)
+Stage: Ready · Priority: High · Sprint: Sprint 5

@@ -10,7 +10,9 @@ Suite de collaboration visuelle (whiteboard collaboratif temps réel, ateliers d
 
 - Backend : **`pivot-collaboratif-core`** (schéma `collaboratif`)
 - Frontend : **`pivot-collaboratif-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
-- **Pré-requis EN17 :** pivot-core-starter + @pivot/ui-core publiés avant implémentation
+- **Pré-requis EN17 :** pivot-core-starter + @pivot/ui-core publiés avant implémentation — rapatrié
+  dans **Sprint 5, Vague 0** (2026-07-07, voir `sprints/sprint-5.md` §Reséquencement E17), plus
+  besoin d'attendre Sprint 7/post-Socle comme documenté précédemment ici
 
 ## Phase
 
@@ -191,7 +193,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 ## Dépendances
 
 - Dépend de : **E03** Système de modules (interface PivotModule)
-- Dépend de : **E17** Infrastructure multi-repo (pré-requis pivot-core-starter + @pivot/ui-core)
+- Dépend de : **E17** Infrastructure multi-repo (pré-requis pivot-core-starter + @pivot/ui-core) — pour F08.x/EN08.x, résolu dans **Sprint 5, Vague 0** (même sprint, en amont de la Vague 1+ whiteboard) ; pour le reste d'E30 (net-new phase-3), reste conditionné au jalon « Socle terminé »
 - F08.x/EN08.x (ex-**E08** Whiteboard) fusionné nativement dans cet EPIC — voir "Couverture existante" ci-dessus.
 
 ## Statut global

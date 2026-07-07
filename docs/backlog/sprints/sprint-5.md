@@ -1,8 +1,38 @@
-# Sprint 5 — Module Whiteboard (Socle E30, ex-E08)
+# Sprint 5 — Infrastructure multi-repo (E17) + Module Whiteboard (Socle E30, ex-E08)
 
 **Branches :** une branche par US/Enabler — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
-**Scope :** noyau F08.x/EN08.x complet — désormais hébergé sous [`EPIC-collaboration`](../EPIC-collaboration/README.md) (E30), `Phase: Socle` propre, non verrouillé par le reste d'E30
-**Pré-requis :** Sprint 2 terminé + Sprint 4 EN07.x validé (mergé, recette maintainer en attente) + Gate 1 US08.x validé par PO Agent ✅ (voir note du 2026-07-07)
+**Scope :** Vague 0 — E17 (infrastructure multi-repo) rapatrié depuis Sprint 7, dans la mesure
+nécessaire pour démarrer le noyau whiteboard sur son repo cible réel · Vague 1+ — noyau F08.x/EN08.x
+complet, désormais hébergé sous [`EPIC-collaboration`](../EPIC-collaboration/README.md) (E30),
+`Phase: Socle` propre, non verrouillé par le reste d'E30
+**Pré-requis :** Sprint 2 terminé (E03 module system Done — condition de déclenchement d'E17 par
+son propre README) + Sprint 4 EN07.x validé (recette maintainer ✅ 2026-07-07) + Gate 1 US08.x
+validé par PO Agent ✅ (voir note du 2026-07-07)
+**Note de reséquencement (2026-07-07) :** voir §Reséquencement E17 ci-dessous — E17 déplacé de
+Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre le repo cible
+`pivot-collaboratif-core/-ui` (ADR-006, README E30) et son verrouillage nominal post-Socle
+(ancien Sprint 7).
+
+## Vague 0 — Infrastructure multi-repo (E17, rapatrié de Sprint 7)
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| EN17.8 | Incubation design system dans `pivot-ui` (déjà démarrable, aucun repo créé) | M | Critical | ⬜ |
+| EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | ⬜ |
+| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | ⬜ |
+| EN17.2 | Publication `@pivot/design-system` (npm) — création repo `pivot-design-system`, déclenchée par la création de `pivot-collaboratif-ui` (1er repo module UI) | M | Critical | ⬜ |
+| EN17.5 | Template repo `pivot-xxx-core` (formalisé à partir du scaffolding réel de `pivot-collaboratif-core`) | S | High | ⬜ |
+| EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ⬜ |
+| EN17.3 | Publication `@pivot/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ⬜ |
+| EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ⬜ |
+
+> **Ordre de dépendance Vague 0 :** EN17.8 ‖ EN17.4 ‖ EN17.1 (aucune dépendance mutuelle) →
+> création de `pivot-collaboratif-core`/`pivot-collaboratif-ui` (consomment EN17.1 respectivement
+> rien encore) → EN17.2 (déclenché par la création de `pivot-collaboratif-ui`, extrait le contenu
+> incubé en EN17.8) → EN17.5/EN17.6 (template formalisé après coup, non bloquant pour la suite) →
+> EN17.3 (consomme EN17.2 publié) → EN17.7 (dès EN17.1 + EN17.3 stables, pour le routing réel).
+
+## Vague 1+ — Module Whiteboard (Socle), sur `pivot-collaboratif-core`/`pivot-collaboratif-ui`
 
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|
@@ -24,6 +54,28 @@
 | US08.4.1 | Créer un tableau depuis un template | M | Medium | ⬜ |
 | US08.5.1 | Présence des participants sur le canvas | M | High | ⬜ |
 
+## Reséquencement E17 (2026-07-07)
+
+Incohérence détectée au démarrage de session : `EPIC-collaboration/README.md` (§Repo cible) et
+ADR-006 fixent `pivot-collaboratif-core`/`pivot-collaboratif-ui` comme cible du noyau whiteboard,
+sous réserve d'E17 — mais E17 vivait entièrement dans Sprint 7, verrouillé « post-Socle » (derrière
+Sprint 6 + déclaration mainteneur). Le noyau whiteboard F08.x/EN08.x est pourtant explicitement
+`Phase: Socle`, non verrouillé — un item Socle ne peut pas dépendre d'un prérequis phase-3 verrouillé
+post-Socle sans blocage circulaire.
+
+Le README de l'épique E17 lui-même contredisait déjà le verrou Sprint 7 : sa condition de
+déclenchement documentée est « prérequis Socle non bloquant · déclencher quand E03 (module system)
+est Done » — pas une déclaration « Socle terminé ». E03 est Done depuis Sprint 2. **Décision** :
+rapatrier EN17.1–EN17.8 dans ce sprint (Vague 0), avant le noyau whiteboard (Vague 1+), conformément
+à la condition de déclenchement déjà documentée par E17 — pas une invention nouvelle, une correction
+d'un verrou sur-conservateur qui ne correspondait pas à sa propre epic. Sprint 7 recentré sur la
+gouvernance ADR (ADR-008→016 acceptation, ADR-017–020) uniquement — voir `sprint-7.md`.
+
+Repos `pivot-pilotage-core/-ui`, `pivot-agilite-core/-ui` déjà créés sur GitHub
+(2026-07-06) par anticipation, avant que ces prérequis EN17 soient satisfaits — écart constaté,
+non bloquant pour ce sprint (ils restent vides tant qu'E17 n'est pas fait), mais à garder en tête :
+ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template EN17.5/17.6 stable.
+
 > **Gate 1 — READINESS (2026-07-07) :** PO Agent a passé en revue la DoR des 17 items du sprint (2
 > Enablers + 15 US, dont US08.3.2 déjà décomposée en 08.3.2a/b/c). Tous ≥ 70/100 après complétion
 > des ACs manquants (essentiellement sections `Hors périmètre`/`Notes d'implémentation` absentes,
@@ -37,9 +89,8 @@
 > d'implémentation. Le fichier `us-canvas-angular.md` (US08.3.2 pré-décomposition) reste
 > `Stage: Decomposed`, hors score Gate 1.
 >
-> Sprint 5 reste non démarré côté implémentation : le second volet du prérequis (Sprint 4 EN07.x
-> **validé** au sens recette, pas seulement mergé) dépend de la recette manuelle du mainteneur, pas
-> d'un agent.
+> Recette manuelle Sprint 4 EN07.x confirmée par le mainteneur le 2026-07-07 — second volet du
+> prérequis levé. Sprint 5 démarre à cette session par la Vague 0 (E17), voir §Reséquencement E17.
 >
 > **Revue de parité concurrentielle (2026-07-07, suite du Gate 1) :** benchmark Miro/Klaxoon/
 > Microsoft Whiteboard sur les fonctionnalités déjà planifiées. Décision du mainteneur : ne pas

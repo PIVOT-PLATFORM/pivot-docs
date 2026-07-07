@@ -15,9 +15,9 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 2](./sprint-2.md) | Système de modules + Auth manquant | ✅ Terminé |
 | [Sprint 3](./sprint-3.md) | Espace compte + Administration | 🔎 15/15 mergées — en attente de recette |
 | [Sprint 4](./sprint-4.md) | Infrastructure prod + Auth avancé + Notifications | ✅ 16/16 mergées |
-| [Sprint 5](./sprint-5.md) | Module Whiteboard (Socle) | 🔎 Gate 1 passé (17/17 Ready) — attente recette Sprint 4 |
+| [Sprint 5](./sprint-5.md) | Infra multi-repo (E17) + Module Whiteboard (Socle) | 🚀 Démarré (2026-07-07) — Vague 0 (E17) en cours |
 | [Sprint 6](./sprint-6.md) | Durcissement & recette Socle 🏁 | ⬜ Non démarré |
-| [Sprint 7](./sprint-7.md) | Fondations phase-3 (E17 + gouvernance ADR) | ⏸️ Verrouillé (post-Socle) |
+| [Sprint 7](./sprint-7.md) | Gouvernance ADR (phase-3) | ⏸️ Verrouillé (post-Socle) |
 | [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ⏸️ Verrouillé (post-Socle) |
 | [Sprint 9](./sprint-9.md) | Socle domaine Pilotage | ⏸️ Verrouillé (post-Socle) |
 | [Sprint 10](./sprint-10.md) | Pilotage cœur PPM | ⏸️ Verrouillé (post-Socle) |
@@ -30,7 +30,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 
 ## Sprints 7–12 — Plan phase-3 (conditionnel au jalon « Socle terminé »)
 
-> ⏸️ **Verrou :** ces sprints ne démarrent qu'après la déclaration « Socle terminé » (Sprint 6). Séquencement fondé sur 3 goulots : E17 (aucun module phase-3 ne peut démarrer sans les templates multi-repo), la gouvernance ADR (bus d'événements non spécifié = chemin critique invisible de S9+), et le principe « piloter petit avant de piloter gros » (valider les templates sur l'agilité avant d'engager le domaine Pilotage).
+> ⏸️ **Verrou :** ces sprints ne démarrent qu'après la déclaration « Socle terminé » (Sprint 6). Séquencement fondé sur 2 goulots restants (E17 déplacé en Sprint 5, voir sa note de reséquencement) : la gouvernance ADR (bus d'événements non spécifié = chemin critique invisible de S9+), et le principe « piloter petit avant de piloter gros » (valider les templates issus de Sprint 5 sur l'agilité avant d'engager le domaine Pilotage).
 > **Hypothèse de capacité :** ~11-19 items/sprint (vélocité observée S1-S3, agents parallèles).
 
 ---
