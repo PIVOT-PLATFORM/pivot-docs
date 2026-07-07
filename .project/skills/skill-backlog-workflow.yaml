@@ -41,7 +41,7 @@ session_start_protocol:
     action: >
       Pour chaque US éligible, lire son fichier markdown complet.
       Vérifier les ACs, la taille (Size), les dépendances (Notes).
-      Si Stage Backlog : calculer Gate 1 — si ≥ 70 passer Ready et procéder.
+      Si Stage Backlog : calculer Gate 1 — si = 100 passer Ready et procéder.
 
   step_4_parallel_launch:
     description: "Lancer les agents en parallèle — un par US éligible"
@@ -70,7 +70,7 @@ us_file_format:
     Stage: "Backlog | Ready | In progress | Review | Done"
 
   stage_transitions:
-    backlog_to_ready: "PO Agent vérifie DoR + Gate 1 ≥ 70 → Stage: Ready (autonome)"
+    backlog_to_ready: "PO Agent vérifie DoR + Gate 1 = 100 → Stage: Ready (autonome)"
     ready_to_in_progress: "Dev Agent démarre immédiatement → Stage: In progress"
     in_progress_to_review: "Après Gate 4 = 100/100 → Stage: Review + signal mainteneur + Gate 5 SPEC FREEZE (Doc Agent, dans l'Autoloop, avant merge) → docs/specs/{EPIC}/{us-id}-{slug}.md figé"
     review_to_done: "Mainteneur merge la PR"
@@ -100,8 +100,8 @@ gate_1_readiness:
     size_estimated_20pts: "Size renseignée et cohérente avec les ACs"
     no_conflict_10pts: "Pas de conflit avec US en cours sur les mêmes fichiers"
   thresholds:
-    proceed: "≥ 70 → Stage: Ready → implémentation immédiate"
-    rewrite: "< 70 → PO Agent réécrit/complète les ACs → recalculer → procéder dès ≥ 70"
+    proceed: "= 100 → Stage: Ready → implémentation immédiate"
+    rewrite: "< 100 → PO Agent réécrit/complète les ACs → recalculer → procéder dès = 100"
 
 ---
 

@@ -57,14 +57,14 @@ Dépendances: …
 
 ## 3. Challenge PO — démarrage d'implémentation
 
-**Gate 1 ≥ 70 requis avant implémentation — calculé et validé par le PO Agent (Claude).**
+**Gate 1 = 100 requis avant implémentation — calculé et validé par le PO Agent (Claude).**
 
 | Transition | Qui | Condition |
 |------------|-----|-----------|
-| `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 ≥ 70 |
+| `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 = 100 |
 | `Ready → In progress` | **Claude** (Dev Agent) | Immédiat après `Stage: Ready` |
 
-- Gate 1 < 70 → PO Agent réécrit/clarifie les ACs → recalculer → procéder dès ≥ 70.
+- Gate 1 < 100 → PO Agent réécrit/clarifie les ACs → recalculer → procéder dès = 100.
 - AC ambigus en cours d'implémentation → PO Agent clarifie → jamais d'interprétation unilatérale.
 - Pas de blocage humain — Claude est autonome de A à Z sur la validation des ACs.
 
@@ -128,7 +128,7 @@ Dépendances: …
 ## 5. Cycle de vie d'un item
 
 ```text
-Backlog ──(PO Agent : DoR + Gate 1 ≥ 70)──► Ready ──(Dev Agent)──► In progress
+Backlog ──(PO Agent : DoR + Gate 1 = 100)──► Ready ──(Dev Agent)──► In progress
                                                                           │
                                                                      (implémentation + autoloop PR)
                                                                           │
@@ -137,7 +137,7 @@ Done ◄──(mainteneur : merge PR)────────────── 
 
 | Transition | Qui | Condition |
 |------------|-----|-----------|
-| `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 ≥ 70 |
+| `Backlog → Ready` | **Claude** (PO Agent) | DoR §8.2 satisfaite + Gate 1 = 100 |
 | `Ready → In progress` | **Claude** (Dev Agent) | Immédiat |
 | `In progress → Review` | **Claude** | PR autoloop terminé (Gate 4 = 100/100, CI verte, max 20 boucles) |
 | `Review → Done` | **Mainteneur** | Merge PR — **jamais Claude** |
@@ -186,7 +186,7 @@ Done ◄──(mainteneur : merge PR)────────────── 
 | **Enabler** | type, objectif technique, justification, critères de complétion |
 | **US** | story `En tant que…`, ≥ 1 AC `Given/When/Then`, AC erreur + sécurité (+ A11y si UI), hors-périmètre, notes d'implémentation, champs frontmatter renseignés |
 
-> Le PO Agent vérifie la DoR et calcule Gate 1. Score ≥ 70 → `Stage: Ready` → implémentation immédiate.
+> Le PO Agent vérifie la DoR et calcule Gate 1. Score = 100 → `Stage: Ready` → implémentation immédiate.
 
 ### 8.3 Ordre de construction (vagues)
 
