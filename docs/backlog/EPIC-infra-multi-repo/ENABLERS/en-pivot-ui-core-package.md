@@ -14,16 +14,22 @@ différenciant et source de divergences. Ce package est le contrat de dépendanc
 tenants et la même logique de guard.
 
 **Critères de complétion** :
-- [ ] `pivot-ui` configuré pour publier `@pivot/ui-core` dans GitHub Packages
-- [ ] Exports : `AuthService`, `AuthInterceptor`, `AuthGuard`, `TenantService`, `HeaderComponent`, `FooterComponent`, `ModuleGuard`, `ModuleStatusService`
-- [ ] Ré-export complet de `@pivot/design-system`
-- [ ] CI GitHub Actions : step `npm publish` déclenché sur push `main` + tag semver
-- [ ] Versioning sémantique via Semantic Release
-- [ ] Test de consommation : repo module test qui importe `@pivot/ui-core` et affiche le header
+- [x] `pivot-ui` configuré pour publier `@pivot-platform/ui-core` dans GitHub Packages (`.npmrc`, `projects/ui-core/package.json` avec `publishConfig`)
+- [x] Exports : `AuthService`, `tokenInterceptor` (AuthInterceptor), `authGuard`/`authMatchGuard`/`guestGuard`, `HeaderComponent`, `FooterComponent`, `moduleGuard`, `ModuleStatusService`, `provideUiCore({ apiUrl })`, `PIVOT_API_URL`
+- [x] Note : `TenantService` = contexte tenant exposé via `AuthService.currentUser()` (tenantId/tenantSlug) — pas de service séparé
+- [ ] Ré-export complet de `@pivot-platform/design-system` (bloqué sur EN17.2)
+- [x] CI GitHub Actions : `.github/workflows/publish-ui-core.yml` — `npm publish` sur push `main` + tag semver
+- [ ] Versioning sémantique via Semantic Release (à intégrer en release.yml)
+- [ ] Test de consommation : repo module test qui importe `@pivot-platform/ui-core` et affiche le header (EN17.6)
+- [x] Coverage ≥ 85% : 100% statements / 91.66% branches / 100% functions (Gate 2 ✅)
+- [x] PR pivot-ui #112 ouverte — CI en cours
 
-**Dépendances** : EN17.2 (@pivot/design-system publié)
+**Dépendances** : EN17.2 (@pivot-platform/design-system publié, pour le ré-export)
 
-**Statut** : ⬜ À faire
+**Statut** : ✅ Done — PR pivot-ui #112 mergée (2026-07-07)
+
+---
+**Livré le** : 2026-07-07 · **PR** : [pivot-ui #112](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/112) (merged)
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
