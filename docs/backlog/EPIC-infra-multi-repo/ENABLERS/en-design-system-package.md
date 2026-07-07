@@ -49,7 +49,7 @@ friction (double PR par évolution, versioning strict des tokens sans bénéfici
 - [ ] `pivot-ui` consomme `@pivot/design-system` — migration des composants existants
 - [ ] README d'intégration pour les repos modules
 
-**Statut** : 🔄 In progress — repo [`pivot-design-system`](https://github.com/PIVOT-PLATFORM/pivot-design-system) créé (2026-07-07), 35 fichiers migrés depuis EN17.8 (composants CDK + tokens SCSS + Storybook). Prochaine étape : première release npm v0.1.0.
+**Statut** : ✅ Done — package [`@pivot-platform/design-system@0.1.0`](https://github.com/PIVOT-PLATFORM/pivot-design-system/pkgs/npm/design-system) publié sur GitHub Packages (2026-07-07). Repo [`pivot-design-system`](https://github.com/PIVOT-PLATFORM/pivot-design-system), 35 fichiers migrés depuis EN17.8. Note : scope npm `@pivot-platform` (correspond à l'org GitHub PIVOT-PLATFORM — contrainte GitHub Packages).
 
 ## Notes
 
@@ -60,4 +60,4 @@ friction (double PR par évolution, versioning strict des tokens sans bénéfici
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: In progress · Priority: Critical
+Stage: Done · Priority: Critical
