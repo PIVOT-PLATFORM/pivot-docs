@@ -22,7 +22,7 @@
 - Restauration/réimport d'une archive dans le système source — cette US couvre l'archivage, pas la réintégration
 
 ## Notes d'implémentation
-- Le format cible SEDA (Standard d'Échange de Données pour l'Archivage) implique une structure de bordereau de versement avec métadonnées descriptives — vérifier au Gate 1 le niveau d'exigence réel attendu (export SEDA complet vs. format inspiré de SEDA) compte tenu du Size XL et de la Phase phase-3
+- Le format cible SEDA (Standard d'Échange de Données pour l'Archivage), version en vigueur 2.2 (publiée par le ministère de la Culture, janvier 2022), implique une structure de bordereau de versement avec métadonnées descriptives — vérifier au Gate 1 le niveau d'exigence réel attendu (export SEDA 2.2 complet vs. format inspiré de SEDA) compte tenu du Size XL et de la Phase phase-3 ; **choix d'interopérabilité SEDA à valider par le mainteneur**, cette US n'en décide pas
 - S'appuie sur US35.1.3 (Traçabilité des décisions) pour la source des décisions horodatées/historisées à archiver — cette US ajoute la couche de mise en forme probante et d'export, ne redéfinit pas la traçabilité elle-même
 - Le scellement d'intégrité (hash + horodatage) doit être cohérent avec le mécanisme d'inaltérabilité déjà requis pour l'historique des décisions (US35.1.3) — éviter deux mécanismes de preuve d'intégrité distincts dans le même module `pivot-pilotage-core`
 - Priorité Low / Phase phase-3 / Could (MoSCoW) — item bonus (Dossier §7-B6), à ne pas sur-investir avant confirmation de la demande client réelle

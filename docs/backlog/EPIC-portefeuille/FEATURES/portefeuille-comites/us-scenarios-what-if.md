@@ -20,7 +20,7 @@
 - La génération de business cases à partir d'un scénario relève de US23.2.8.
 
 ## Notes d'implémentation
-- "Fonction reine de l'arbitrage" (Dossier §6.2) — US complexe (XL) : les scénarios doivent être stockés comme des copies/deltas isolés des données de référence (pas de mutation directe des entités `Project` réelles).
+- "Fonction reine de l'arbitrage" (Dossier §6.2) — US complexe (XL) : les scénarios doivent être stockés comme des copies/deltas isolés des données de référence (pas de mutation directe des entités `Project` réelles) — pattern courant des outils PPM comparables (copy-on-write / chaîne de snapshots à partir d'un état de référence) ; **choix définitif entre copie complète et delta appliqué sur snapshot à valider par le mainteneur/Architecte Modules au Gate 1**, cette US ne tranche pas l'implémentation.
 - Le recalcul des impacts (charge, budget, trésorerie) doit rester borné à l'horizon de planification du portefeuille — au-delà, l'AC erreur s'applique.
 - Backend `pivot-pilotage-core`, schéma `pilotage` ; dépend implicitement des données de programmes (US23.2.5) si les scénarios portent sur des programmes entiers.
 
