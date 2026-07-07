@@ -24,7 +24,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | 🔎 Sprint 3 — US mergées, en attente de recette |
 | [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ✅ Sprint 4 terminé (EN07.1/2/5) |
-| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 8 (EN17.1–8) | — | ✅ Terminé — 8/8 enablers Done, Sprint 5 Vague 0 (reséquencé Socle le 2026-07-07, ex-phase-3) |
+| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 8 (EN17.1–8) | — | 🔄 7/8 Done — EN17.1 In progress (extraction `modules`/`tenant`/`auth` incomplète, `team` jamais implémenté, [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171)) |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 8 | 1 | 16 | ⏸️ phase-3 |
@@ -93,7 +93,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | Footer + i18n | Footer + Transloco FR/EN | ✅ |
 | Dashboard utilisateur | Accueil connecté | ✅ |
 | Pages Bientôt disponible | Modules non activés | ✅ |
-| **US16.3.1** | **Formulaire de contact** | ⬜ |
+| **US16.3.1** | **Formulaire de contact** | 🔎 Review |
 
 > US16.3.1 : branche `feat/us16-3-1-contact` — pivot-core + pivot-ui
 
@@ -126,8 +126,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 **Phase active : Socle.** Seuls les items `Phase: Socle` sont implémentables.
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
-- E17 Infrastructure multi-repo = Socle (reséquencé 2026-07-07) → ✅ terminé, 8/8 enablers Done (Sprint 5 Vague 0)
-- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle, Gate 1 PO Agent passé (2026-07-07, 17/17 items Ready) → 🔄 en cours (Sprint 5 Vague 1+, plusieurs items In progress/Review)
+- E17 Infrastructure multi-repo = Socle (reséquencé 2026-07-07) → 🔄 7/8 enablers Done (Sprint 5 Vague 0) — EN17.1 reste `In progress` (voir détail dans la synthèse EPICs ci-dessus)
+- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle, Gate 1 PO Agent passé (2026-07-07, 17/17 items Ready) → 🔄 en cours (Sprint 5 Vague 1+, 0/17 encore Done — majorité en Review)
 - E02/E06 = Sprint 3, mergés, en attente de recette · E04/E07 = Sprint 4, mergés, en attente de recette
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
@@ -149,7 +149,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | EN-NOTIF + US03.3.1/3.2/3.3 (notifications in-app + SUPER_ADMIN plans) | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
 | Medium | US16.1.3 Badge notifications | Socle | 🔎 Review |
 | Medium | US16.2.2 Section modules à venir | Socle | 🔎 Review |
-| Critical | E17 Infrastructure multi-repo (EN17.1–8 + nginx gateway) | Socle (reséquencé 2026-07-07) | ✅ Terminé — Sprint 5 Vague 0 |
+| Critical | E17 Infrastructure multi-repo (EN17.1–8 + nginx gateway) | Socle (reséquencé 2026-07-07) | 🔄 7/8 Done — EN17.1 In progress (pivot-core#171) |
 | — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | 🔄 En cours — Sprint 5 Vague 1+, Gate 1 passé (17/17 Ready) |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E18 Domaine Pilotage — ombrelle (ADR-008), éclaté en E21–E30 + E32–E40 | phase-3 | ⬜ Backlog |
@@ -187,3 +187,5 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 *Refinement 2026-07-08 : audit de cohérence sur les 44 EPICs (aucune promotion `Stage`/`Phase` en dehors des faits déjà actés ailleurs). Corrections objectives : E17 resynchronisé Socle (son propre README l'annonçait déjà, la synthèse ne l'avait jamais répercuté — 8/8 enablers Done, Sprint 5 Vague 0) ; E30 noyau F08.x/EN08.x resynchronisé sur le `Stage:` réel de chaque fichier (le tableau de suivi était resté à ⬜ pour les 17 items malgré le Gate 1 du 2026-07-07 et des PR déjà en Review/In progress) et son compte US corrigé (7→15 Socle, 93→101 total) ; E11 Capacity Planning resynchronisé sur son propre périmètre déclaré (3→8 Features, 5→16 US — la synthèse datait d'avant l'ajout de F11.4-F11.8) ; E18 (7→9 enablers) et E21 (—→3 enablers) resynchronisés sur leur propre tableau de suivi. E09/E10/E14 : ajout d'E17 en Dépendances (incohérent avec leur propre mention « Pré-requis EN17 »). EPIC-roadmap : correction d'une clé erronée (E03→E32 pour "Ressources & temps"). E44-E48 : ajout de sections Hors périmètre clarifiant les frontières avec E45/E29/E34 relevées par l'audit.*
 
 *Findings identifiés mais non corrigés dans cette passe (décision produit/mainteneur requise, hors scope d'un simple fix de cohérence) — détail complet dans la PR : chevauchement E28 (adaptateur workflow OSS) / E29 (moteur natif) non tracé dans les deux sens ; chevauchement E48 (assistant transverse) / E29 US29.9.4 (chatbots connectés) partiellement seulement clarifié côté E48 ; E05 CI/CD sans section Dépendances alors qu'il chevauche EN07.5 (E07) ; E39 Chantiers SI porte encore un item "demande-arbitrage" qu'E18 déclare pourtant supprimé (ex-E31) ; E39 vs E34 chevauchement IA de pilotage non tracé ; E32 Ressources & temps ne référence pas E22 alors que F22.5 recouvre largement son objectif ; EPICs benchmark E32/E33/E34/E35/E36/E37/E40 sans section Périmètre détaillée (Gate 1 non atteignable en l'état).*
+
+*Resync 2026-07-08 (soir) : la PR #119 avait déjà corrigé EN17.1 de `Done` → `In progress` (extraction `pivot-core-starter` très en-deçà de ce qui était affiché — `team` n'existe même pas dans le codebase, voir [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171)) mais cette correction n'avait jamais été répercutée dans `STATUS.md` (Synthèse EPICs, Verrou Socle, Plan de priorisation) ni dans `EPIC-infra-multi-repo/README.md` (§Statut global) — tous les trois affirmaient encore « 8/8 Done ». Corrigé ici. Contradiction supplémentaire résolue : `US16.3.1` (formulaire de contact) était `⬜` dans la table Sprint 1 mais `🔎 Review` dans le Plan de priorisation du même fichier — les deux fichiers de fond confirment `Review`, table Sprint 1 alignée. Tableau de suivi du noyau whiteboard (`EPIC-collaboration/README.md`) resynchronisé une seconde fois (12 Review · 2 In progress · 5 Ready · 0 Done — 5 items ont avancé Ready→Review depuis le dernier resync du même jour). Voir aussi `sprints/sprint-6.md` pour la Definition of Done Socle rédigée à cette occasion (zones-ombre.md #1).*
