@@ -58,8 +58,13 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 | 1 | 42 | ⬜ phase-3 |
 | [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 32 | ⬜ phase-3 |
 | [E43 — Sécurité & Zero Trust](EPIC-securite/README.md) | E43 | — | 13 | — | ⬜ phase-3 — dépend ADR-015–020 |
+| [E44 — SignDoc (signature électronique)](EPIC-signdoc/README.md) | E44 | 3 | 1 | 4 | ⬜ phase-3 |
+| [E45 — PDF Manager (Mes PDF)](EPIC-pdf-manager/README.md) | E45 | 4 | 1 | 4 | ⬜ phase-3 |
+| [E46 — Feedback](EPIC-feedback/README.md) | E46 | 2 | — | 2 | ⬜ phase-3 |
+| [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
+| [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
 | **Total Socle** | **E01–E07 + E16 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **46** | **66** | 🔄 En cours |
-| **Total phase-3** | **E09–E43 (sauf E31, dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **140** | **67** | **558** | ⏸️ Verrouillé |
+| **Total phase-3** | **E09–E48 (sauf E31, dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **153** | **70** | **572** | ⏸️ Verrouillé |
 
 ---
 
@@ -164,9 +169,16 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | E41 Formation & Onboarding (tours guidés, supports, présentiel) | phase-3 | ⬜ Backlog |
 | Medium | E42 Pivot Forms (form-builder no-code souverain) | phase-3 | ⬜ Backlog |
 | Critical | E43 Sécurité & Zero Trust (BFF/Gateway/Mesh, secrets, autorisation, SIEM) | phase-3 | ⬜ Backlog — dépend ADR-015–020 |
+| Medium | E44 SignDoc (signature électronique) | phase-3 | ⬜ Backlog |
+| Medium | E45 PDF Manager (Mes PDF) | phase-3 | ⬜ Backlog |
+| Low | E46 Feedback (kanban public bugs/idées) | phase-3 | ⬜ Backlog |
+| Low | E47 Mini-jeux collaboratifs (Bingo, Post-it Rush, Trivia Agile) | phase-3 · collaboratif | ⬜ Backlog |
+| Medium | E48 Assistant IA transverse (widget contextuel du shell) | phase-3 | ⬜ Backlog |
 
 ---
 
 *Dernière mise à jour : 2026-07-06 — ajout E21–E43 (sauf E31, dissous) suite au merge des branches split/pilotage, split/integration-oss, split/workflows, split/collaboration, split/agilite, split/onboarding, split/pivot-forms, split/securite et docs/taxonomie-referentiel-roles*
 
 *Resync 2026-07-07 : Sprint 4 (E04/E07 + auth avancé + EN-NOTIF + US03.3.x + US16.1.3/16.2.2) — 16/16 items mergés sur `pivot-core`/`pivot-ui`, `Stage: Review` en attente de recette. Voir `docs/backlog/sprints/sprint-4.md` pour le détail PR par item.*
+
+*Ajout 2026-07-08 : E44–E48 — audit de parité contre le POC PouetPouet (`FEATURES.md`/`ROADMAP.md`/`CHANGELOG.md`) ayant révélé 5 modules livrés sans EPIC : SignDoc (signature électronique), PDF Manager, Feedback, Mini-jeux collaboratifs, Assistant IA transverse. Le même audit a identifié deux décalages de périmètre à trancher séparément avec le mainteneur (hors scope de cet ajout) : E25 Commande publique décrit un module d'appel d'offres alors que le POC construit un workflow de demandes d'achat internes (PGI/LDAP externes) ; E29 Workflows ne référence pas concrètement le moteur Parcours livré (étapes typées, classification C0–C3, GCS).*

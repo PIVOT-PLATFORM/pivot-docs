@@ -414,6 +414,8 @@
     "slackapi",
     "bootstrappés",
     "actionlint",
-    "packagr"
+    "packagr",
+    "signdoc",
+    "expirable"
   ]
 }
