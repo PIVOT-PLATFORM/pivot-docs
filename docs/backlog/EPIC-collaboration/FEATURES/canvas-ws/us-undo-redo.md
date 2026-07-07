@@ -48,3 +48,11 @@
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: Ready
 Dépendances: US08.3.1 (message UNDO), US08.3.2a (toolbar boutons), US08.3.2b (service de synchronisation STOMP)
+Note post-implémentation US08.3.2a (2026-07-07) : `pivot-collaboratif-ui` PR
+[#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) a déjà créé
+`UndoRedoService` avec pile de 50 snapshots et signals — couvre vraisemblablement AC1-4/6-8/11-12
+(mécanique locale, boutons, limite, i18n) mais **pas** AC5/9/10 (diffusion STOMP du message UNDO,
+rejet viewer câblé côté client, état lecture seule sur perte de connexion) qui dépendent de
+US08.3.2b, non démarrée. Ne pas recréer le service — étendre l'existant. Stage laissé à `Ready`
+(non Review) tant que ces trois AC réseau ne sont pas couvertes. Issue de suivi :
+`pivot-collaboratif-ui#28`.
