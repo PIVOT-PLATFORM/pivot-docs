@@ -16,13 +16,13 @@ C'est le prérequis de toutes les migrations Flyway des modules backend (EN18.1,
 **Critères de complétion** :
 - [ ] ADR-006 accepté — stratégie schémas PostgreSQL documentée
 - [ ] Flyway pivot-core : migrations schéma `public` stabilisées (V1__→VN__ sans rupture)
-- [ ] `pivot-core-starter` expose un `FlywayConfigurer` permettant à un module d'enregistrer ses propres migrations dans un schéma dédié
+- [ ] `pivot-core-starter` expose `ModuleFlywayConfigurer` (factory) permettant à un module de créer un `Flyway` dédié par schéma via `createFlyway(DataSource)` — isolé du Flyway partagé de Spring Boot
 - [ ] Convention FK cross-schéma documentée : `{schema}.table → public.teams(id)` / `public.tenants(id)` uniquement
 - [ ] Script SQL de bootstrap multi-schéma disponible dans `pivot-docs/docs/architecture/`
 - [ ] Test Testcontainers dans pivot-core-starter validant l'isolation schéma (un module ne peut pas écrire dans le schéma `public` directement)
 
-**Statut** : ⬜ À faire
+**Statut** : 🔄 In progress — pivot-core PR #167 (ModuleFlywayConfigurer factory + TI Testcontainers schema isolation)
 
 ---
 Item Type: Enabler · Parent: E17 · Type: architecture · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Ready · Priority: Critical
+Stage: In progress · Priority: Critical

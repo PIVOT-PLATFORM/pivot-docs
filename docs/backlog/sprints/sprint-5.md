@@ -17,10 +17,10 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| EN17.8 | Incubation design system dans `pivot-ui` (déjà démarrable, aucun repo créé) | M | Critical | ⬜ |
-| EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | ⬜ |
-| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | ⬜ |
-| EN17.2 | Publication `@pivot/design-system` (npm) — création repo `pivot-design-system`, déclenchée par la création de `pivot-collaboratif-ui` (1er repo module UI) | M | Critical | ⬜ |
+| EN17.8 | Incubation design system dans `pivot-ui` (déjà démarrable, aucun repo créé) | M | Critical | 🔁 Review — pivot-ui PR #111 (96/100 MERGE\_DOCUMENTED) |
+| EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | 🔁 Review — couvert par pivot-core PR #167 (ModuleFlywayConfigurer factory) |
+| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | 🔁 In progress — pivot-core PR #167 Gate 4 en cours |
+| EN17.2 | Publication `@pivot/design-system` (npm) — création repo `pivot-design-system`, déclenchée par la création de `pivot-collaboratif-ui` (1er repo module UI) | M | Critical | ✅ Done — [`@pivot-platform/design-system@0.1.0`](https://github.com/PIVOT-PLATFORM/pivot-design-system/pkgs/npm/design-system) publié sur GitHub Packages (2026-07-07) |
 | EN17.5 | Template repo `pivot-xxx-core` (formalisé à partir du scaffolding réel de `pivot-collaboratif-core`) | S | High | ⬜ |
 | EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ⬜ |
 | EN17.3 | Publication `@pivot/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ⬜ |
