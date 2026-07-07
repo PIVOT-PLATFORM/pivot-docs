@@ -43,4 +43,4 @@ gateway global, les autres modules continuent à répondre.
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Ready · Priority: Critical
+Stage: Review · Priority: Critical · Sprint: 5 · Done: 2026-07-07 (pivot-ui #114 + pivot-core #170)
