@@ -26,8 +26,8 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 ### Enablers — gouvernance
 
 - **EN28.9** — [ADR-009 : règle de licences amont/aval](ENABLERS/en-adr-009-licences-amont-aval.md)
-- **EN28.10** — [ADR-011 : modèle d'entités](ENABLERS/en-adr-011-modele-entites.md)
-- **EN28.11** — [ADR-012 : stratégie de forks](ENABLERS/en-adr-012-strategie-forks.md)
+- **EN28.10** — [ADR-017 : modèle d'entités](ENABLERS/en-adr-011-modele-entites.md)
+- **EN28.11** — [ADR-018 : stratégie de forks](ENABLERS/en-adr-012-strategie-forks.md)
 - **EN28.12** — [Intendance upstream](ENABLERS/en-intendance-upstream.md)
 - **EN28.13** — [Veille licences & versions](ENABLERS/en-veille-licences-versions.md)
 
@@ -122,8 +122,8 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 | [EN28.7 — Critère adaptateur vs natif](ENABLERS/en-critere-adaptateur-vs-natif.md) | ⬜ |
 | **Enablers — gouvernance** | |
 | [EN28.9 — ADR-009 licences amont/aval](ENABLERS/en-adr-009-licences-amont-aval.md) | ⬜ |
-| [EN28.10 — ADR-011 modèle d'entités](ENABLERS/en-adr-011-modele-entites.md) | ⬜ |
-| [EN28.11 — ADR-012 stratégie de forks](ENABLERS/en-adr-012-strategie-forks.md) | ⬜ |
+| [EN28.10 — ADR-017 modèle d'entités](ENABLERS/en-adr-011-modele-entites.md) | ⬜ |
+| [EN28.11 — ADR-018 stratégie de forks](ENABLERS/en-adr-012-strategie-forks.md) | ⬜ |
 | [EN28.12 — Intendance upstream](ENABLERS/en-intendance-upstream.md) | ⬜ |
 | [EN28.13 — Veille licences & versions](ENABLERS/en-veille-licences-versions.md) | ⬜ |
 | **F28.1 — Delivery agile** | |

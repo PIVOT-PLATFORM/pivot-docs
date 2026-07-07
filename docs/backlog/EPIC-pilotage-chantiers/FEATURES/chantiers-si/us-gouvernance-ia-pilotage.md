@@ -5,6 +5,15 @@
 **Afin de** garantir une IA de pilotage gouvernée et transparente
 
 > ⚠️ **Hors v2 adaptative** — non repris dans la mise à jour du backlog PPM v2 ; conservé pour mémoire, à confirmer.
+>
+> **Constat (2026-07-08, zones-ombre.md #8) :** cette US recouvre presque mot pour mot
+> [US34.1.1 — IA de synthèse gouvernée](pathname:///pivot-docs/backlog/EPIC-pilotage-ia/) (« localisation
+> des traitements, traçabilité des productions, contrôle humain ») et [US34.1.4 — IA souveraine](pathname:///pivot-docs/backlog/EPIC-pilotage-ia/)
+> (localisation/souveraineté), toutes deux déjà portées par **E34 — IA & agents (pilotage)**.
+> Proposition : retirer cette US au profit d'E34 plutôt que de la reconfirmer telle quelle — cohérent
+> avec la redistribution déjà actée pour d'autres items « secteur public » d'ex-E38 vers leurs
+> modules dédiés (voir `EPIC-pilotage/README.md`). **Décision non prise ici** — proposition à valider
+> par le mainteneur au même titre que le reste du statut « hors v2 adaptative ».
 
 ## Critères d'acceptation
 
