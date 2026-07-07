@@ -20,6 +20,11 @@ Plateforme d'automatisation no-code / low-code : construction visuelle de workfl
 
 Généré depuis le CSV de benchmark (84 items `WF-###` couvrant les 6 cahiers n8n / Zapier / Power Automate / Activepieces / Gumloop / IFTTT). Les critères d'acceptation sont indicatifs et **à affiner au Gate 1 PO Agent** au démarrage du sprint.
 
+Raffinage complémentaire du 2026-07-08 : relecture croisée des 6 cahiers individuels (au-delà du
+dossier de synthèse) — 2 AC complétées (US29.7.1, US29.7.6) et 1 US ajoutée hors CSV initial
+(US29.1.8, écart identifié par lecture fine du cahier Power Automate, absent du dossier de synthèse
+faute de porter sur plus d'un outil).
+
 ## Périmètre
 
 - **Enablers (E13 NFR)** — exigences non fonctionnelles socle
@@ -29,7 +34,7 @@ Généré depuis le CSV de benchmark (84 items `WF-###` couvrant les 6 cahiers n
   - EN29.4 : Montée en charge
   - EN29.5 : Localisation FR
   - EN29.6 : Estimation avant batch
-- **F29.1 — Éditeur & logique** — US29.1.1, US29.1.2, US29.1.3, US29.1.4, US29.1.5, US29.1.6, US29.1.7
+- **F29.1 — Éditeur & logique** — US29.1.1, US29.1.2, US29.1.3, US29.1.4, US29.1.5, US29.1.6, US29.1.7, US29.1.8
   - US29.1.1 : Modèle déclencheur → actions
   - US29.1.2 : Constructeur visuel no-code
   - US29.1.3 : Bibliothèque de modèles
@@ -37,6 +42,7 @@ Généré depuis le CSV de benchmark (84 items `WF-###` couvrant les 6 cahiers n
   - US29.1.5 : Étapes de code
   - US29.1.6 : Sub-workflows
   - US29.1.7 : Versioning des workflows
+  - US29.1.8 : Édition collaborative temps réel
 - **F29.2 — Déclencheurs & connectivité** — US29.2.1, US29.2.2, US29.2.3, US29.2.4, US29.2.5
   - US29.2.1 : Webhooks entrants
   - US29.2.2 : Planification
@@ -146,6 +152,7 @@ Généré depuis le CSV de benchmark (84 items `WF-###` couvrant les 6 cahiers n
 | [US29.1.5 — Étapes de code](FEATURES/editeur-logique/us-etapes-de-code.md) | ⬜ |
 | [US29.1.6 — Sub-workflows](FEATURES/editeur-logique/us-sub-workflows.md) | ⬜ |
 | [US29.1.7 — Versioning des workflows](FEATURES/editeur-logique/us-versioning-workflows.md) | ⬜ |
+| [US29.1.8 — Édition collaborative temps réel](FEATURES/editeur-logique/us-edition-collaborative-temps-reel.md) | ⬜ |
 | **F29.2 — Déclencheurs & connectivité** | |
 | [US29.2.1 — Webhooks entrants](FEATURES/declencheurs-connectivite/us-webhooks-entrants.md) | ⬜ |
 | [US29.2.2 — Planification](FEATURES/declencheurs-connectivite/us-planification.md) | ⬜ |
