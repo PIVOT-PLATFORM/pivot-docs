@@ -40,5 +40,5 @@ de navigation whiteboard par board (F08.1 liste/CRUD, F08.3 canvas).
 
 ---
 Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: Socle · Size: S
-Stage: In progress · Priority: High
+Stage: Review · Priority: High
 Dépendances: EN03.2 (moduleGuard générique, Stage: Done) · EN08.1 (cohérence des codes d'erreur board)
