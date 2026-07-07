@@ -21,7 +21,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | 🔁 Review — couvert par pivot-core PR #167 (ModuleFlywayConfigurer factory) |
 | EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | 🔁 In progress — pivot-core PR #167 Gate 4 en cours |
 | EN17.2 | Publication `@pivot/design-system` (npm) — création repo `pivot-design-system`, déclenchée par la création de `pivot-collaboratif-ui` (1er repo module UI) | M | Critical | ✅ Done — [`@pivot-platform/design-system@0.1.0`](https://github.com/PIVOT-PLATFORM/pivot-design-system/pkgs/npm/design-system) publié sur GitHub Packages (2026-07-07) |
-| EN17.5 | Template repo `pivot-xxx-core` (formalisé à partir du scaffolding réel de `pivot-collaboratif-core`) | S | High | ⬜ |
+| EN17.5 | Template repo `pivot-xxx-core` (formalisé à partir du scaffolding réel de `pivot-collaboratif-core`) | S | High | ✅ Done — [`pivot-template-core`](https://github.com/PIVOT-PLATFORM/pivot-template-core) créé (2026-07-07) |
 | EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ⬜ |
 | EN17.3 | Publication `@pivot/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ⬜ |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ⬜ |
