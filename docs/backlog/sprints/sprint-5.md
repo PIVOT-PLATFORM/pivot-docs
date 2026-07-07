@@ -40,7 +40,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | EN08.2 | Guard Angular module whiteboard | S | Critical | 👀 |
 | US08.1.1 | Utilisateur crée un tableau (backend) | M | Critical | 🔄 |
 | US08.1.2 | Utilisateur liste ses tableaux (backend) | M | Critical | 🔄 |
-| US08.1.3 | Angular : liste des tableaux | M | Critical | ⬜ |
+| US08.1.3 | Angular : liste des tableaux | M | Critical | 🔄 |
 | US08.1.4 | Renommer un tableau | S | High | 🔄 |
 | US08.1.5 | Supprimer un tableau | S | Critical | 🔄 |
 | US08.2.1 | Owner partage un tableau par lien public | M | High | ⬜ |
