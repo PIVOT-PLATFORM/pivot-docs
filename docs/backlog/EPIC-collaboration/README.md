@@ -345,7 +345,10 @@ collaboratif open-source).
 | [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | ⬜ |
 | **F08.3 — Canvas collaboratif temps réel** | |
 | [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | ⬜ |
-| [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) *(À décomposer en 3 sous-US avant implémentation)* | ⬜ |
+| [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) ⚠️ *(Decomposed — voir US08.3.2a/b/c)* | — |
+| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | ⬜ |
+| [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | ⬜ |
+| [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | ⬜ |
 | [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ⬜ |
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ⬜ |
 | **F08.4 — Templates** | |

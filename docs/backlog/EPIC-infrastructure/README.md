@@ -35,11 +35,11 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 | Élément | 🤖 Dev |
 |---------|--------|
 | **Phase Socle — Critical** | |
-| [EN07.1 — Docker Compose production complet](ENABLERS/en-docker-compose-prod.md) | ⬜ |
-| [EN07.2 — Secret management Docker secrets](ENABLERS/en-secret-management.md) | ⬜ |
+| [EN07.1 — Docker Compose production complet](ENABLERS/en-docker-compose-prod.md) | 🔎 Review |
+| [EN07.2 — Secret management Docker secrets](ENABLERS/en-secret-management.md) | 🔎 Review |
 | [EN07.3 — ActiveMQ persistence KahaDB](ENABLERS/en-activemq.md) | ⬜ |
 | [EN07.4 — PgBouncer session mode prod](ENABLERS/en-pgbouncer.md) | ⬜ |
-| [EN07.5 — deploy.yml GitHub Actions CI/CD vers prod](ENABLERS/en-deploy-ci.md) | ⬜ |
+| [EN07.5 — deploy.yml GitHub Actions CI/CD vers prod](ENABLERS/en-deploy-ci.md) | 🔎 Review |
 | **Phase v1-enterprise** | |
 | EN07.7 — TLS interne nginx↔core cert CA entreprise | ⏸️ |
 | EN07.8 — Redis TLS prod requirepass + tls-port | ⏸️ |

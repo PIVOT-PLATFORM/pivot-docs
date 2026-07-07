@@ -38,7 +38,7 @@ F03.3 (SUPER_ADMIN, SaaS) reste `phase-3`, non démarré
 | [EN03.2 — Guard Angular moduleGuard + status API](ENABLERS/en-module-guard-angular.md) | ✅ |
 | [EN03.3 — Cache Redis statut modules TTL 60s](ENABLERS/en-module-cache-redis.md) | ✅ |
 | [EN03.4 — Contrat de module frontend (TypeScript)](ENABLERS/en-module-contrat-frontend.md) | ✅ |
-| [EN-NOTIF — Infrastructure notifications in-app](ENABLERS/en-notifications.md) *(transversal, prérequis US16.1.3)* | ⬜ |
+| [EN-NOTIF — Infrastructure notifications in-app](ENABLERS/en-notifications.md) *(transversal, prérequis US16.1.3)* | 🔎 Review |
 | **F03.1 — Activation modules admin tenant** | |
 | [US03.1.1 — Admin active un module pour son tenant](FEATURES/activation-admin/us-admin-active-module.md) | ✅ |
 | [US03.1.2 — Admin désactive un module pour son tenant](FEATURES/activation-admin/us-admin-desactive-module.md) | ✅ |
@@ -46,6 +46,6 @@ F03.3 (SUPER_ADMIN, SaaS) reste `phase-3`, non démarré
 | [US03.2.1 — UI liste modules disponibles avec statut](FEATURES/interface-admin-angular/us-liste-modules.md) | ✅ |
 | [US03.2.2 — Guard Angular bloque accès module désactivé](FEATURES/interface-admin-angular/us-guard-module-desactive.md) | ✅ |
 | **F03.3 — Activation SUPER_ADMIN (SaaS)** | |
-| [US03.3.1 — SUPER_ADMIN définit modules disponibles par plan](FEATURES/activation-super-admin/us-super-admin-modules-plan.md) | ⬜ |
-| [US03.3.2 — SUPER_ADMIN active/désactive un module par tenant (override)](FEATURES/activation-super-admin/us-super-admin-override.md) | ⬜ |
-| [US03.3.3 — Admin tenant voit uniquement modules de son plan](FEATURES/activation-super-admin/us-admin-voit-modules-plan.md) | ⬜ |
+| [US03.3.1 — SUPER_ADMIN définit modules disponibles par plan](FEATURES/activation-super-admin/us-super-admin-modules-plan.md) | 🔎 Review |
+| [US03.3.2 — SUPER_ADMIN active/désactive un module par tenant (override)](FEATURES/activation-super-admin/us-super-admin-override.md) | 🔎 Review |
+| [US03.3.3 — Admin tenant voit uniquement modules de son plan](FEATURES/activation-super-admin/us-admin-voit-modules-plan.md) | 🔎 Review |

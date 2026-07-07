@@ -1,7 +1,7 @@
 # US16.3.1 — Page contact
 
 > **Branche active** : `feat/us16-3-1-contact` (pivot-ui + pivot-core)
-> **Statut** : 🔄 En cours — implémentation complète, en attente de validation PO + merge
+> **Statut** : 🔎 Review — implémentation complète, en attente de validation PO + merge
 
 **En tant que** utilisateur (connecté ou non)
 **Je veux** envoyer un message à l'équipe PIVOT via un formulaire
