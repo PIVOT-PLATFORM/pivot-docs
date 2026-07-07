@@ -50,7 +50,7 @@ L'extraction est déclenchée par la création du premier repo `pivot-*-ui` (voi
 - [ ] Critère de déclenchement de l'extraction documenté dans le README de la librairie
       (renvoi vers EN17.2)
 
-**Statut** : ⬜ À faire
+**Statut** : 🔄 In progress — pivot-ui PR #111 (Angular library workspace design system, 96/100 Gate 4)
 
 ## Notes
 
