@@ -20,7 +20,11 @@ anticipation. ActiveMQ et PgBouncer ont d'ailleurs leurs propres Enablers dédi�
 **Critères de complétion** :
 - [x] `docker-compose.prod.yml` avec les services existants aujourd'hui :
   - [x] `nginx` (image `pivot-ui` — API gateway + static SPA) — `:80` (`:443`/TLS différé,
-        nécessite un changement `nginx.conf` côté `pivot-ui` — repo distinct)
+        nécessite un changement `nginx.conf` côté `pivot-ui` — repo distinct ; TLS depuis
+        implémenté par [EN17.7](../../EPIC-infra-multi-repo/ENABLERS/en-nginx-api-gateway.md) —
+        voir sa section « Configuration nginx dev vs prod » pour la stratégie complète
+        dev/prod, y compris le correctif en cours sur l'alias réseau `pivot-core` et
+        `nginx.dev.conf`)
   - [x] `pivot-core` :8080 — auth · tenant · team · module registry (aucun port publié)
   - [ ] `pivot-pilotage-core` :8081 — **différé**, repo pas encore créé (bloc commentaire
         dans le compose marquant où l'intégrer)
