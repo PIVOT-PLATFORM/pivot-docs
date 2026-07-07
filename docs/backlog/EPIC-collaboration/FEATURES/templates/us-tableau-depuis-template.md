@@ -18,7 +18,7 @@
 | Initialisation = insertion des éléments du template dans la table d'événements canvas du nouveau board | ⬜ |
 | Dépendances : US08.1.1 (création de tableau), US08.1.3 (modal "Nouveau tableau") | ⬜ |
 | Contenu des templates validé à l'insertion via schéma JSON strict (whitelist : shape, text, image). Champs texte soumis aux mêmes contraintes que les éléments canvas user | ⬜ |
-| templateId vérifie que le template est visible par le tenant courant (templates globaux publics OU templates du tenant courant). templateId hors périmètre → 404 | ⬜ |
+| templateId vérifie que le template est global public (`tenant_id IS NULL`) — aucun template propre à un tenant ne peut exister en Socle (voir résolution Gate 1 ci-dessous). templateId hors périmètre (inexistant ou, si un `tenant_id` non nul apparaissait par anomalie, appartenant à un autre tenant) → 404 | ⬜ |
 | Galerie templates : skeleton cards pendant le GET /api/whiteboard/templates (aria-busy="true") | ⬜ |
 | Chaque card template : nom, aperçu visuel (img avec alt descriptif), courte description textuelle | ⬜ |
 | Card sélectionnée : aria-selected="true" + contour visible contraste ≥ 3:1 | ⬜ |
@@ -29,7 +29,7 @@
 | Noms et descriptions de templates localisables via i18n (whiteboard.template.*) avec traductions FR et EN | ⬜ |
 | Error : GET /api/whiteboard/templates en échec (5xx/réseau) → galerie affiche un état d'erreur non bloquant + bouton "Réessayer" (la modal reste ouvrable, création "Vierge" via US08.1.1 non impactée) | ⬜ |
 | Error : templateId de format invalide (UUID malformé) → 400 INVALID_TEMPLATE_ID | ⬜ |
-| Tests TI : POST avec templateId d'un autre tenant (non public) → 404 (pas de fuite d'existence, cohérent avec l'IDOR ci-dessus) | ⬜ |
+| Tests TI : POST avec templateId inexistant → 404 ; POST avec templateId valide format UUID mais absent en base → 404 (pas de fuite d'existence) | ⬜ |
 
 ## Hors périmètre
 
@@ -37,7 +37,18 @@
 - Modèles personnalisés à l'image de l'organisation (couleurs, logos) : relève de **US30.4.2** (F30.4, `phase-3`, verrouillé).
 - Bibliothèque interne gouvernée (modération, cycle de vie des modèles) : relève de **US30.4.3** (F30.4, `phase-3`, verrouillé).
 - Création ou édition d'un template par un utilisateur final (pas d'UI d'authoring dans cette US) — seuls les 3 templates initiaux (Brainstorm, Retrospective, User Story Map) sont disponibles, leur contenu étant seedé en base (voir Notes d'implémentation).
-- ⚠️ **Ambiguïté produit non tranchée** : l'AC IDOR ci-dessus distingue déjà "templates globaux publics" et "templates du tenant courant", mais aucune US `Phase: Socle` ne décrit la création d'un template propre à un tenant — ce mécanisme est probablement anticipé pour **US30.4.2** (`phase-3`, verrouillé). À clarifier avant implémentation : si aucun template tenant ne peut exister en Socle, l'AC IDOR devrait être simplifiée (uniquement templates globaux) ; sinon il manque une US Socle pour la création de template tenant.
+- Templates propres à un tenant (`tenant_id` non nul) : aucune US `Phase: Socle` ne permet d'en créer — relève de **US30.4.2** (`phase-3`, verrouillé). Voir résolution Gate 1 ci-dessous.
+
+## Résolution Gate 1 (2026-07-07, PO Agent)
+
+Ambiguïté relevée à la lecture : l'AC IDOR distinguait "templates globaux publics" et "templates
+du tenant courant", mais aucune US Socle ne décrit la création d'un template propre à un tenant.
+**Décision** : en Socle, seuls les templates globaux publics (`tenant_id IS NULL`) existent — les
+3 templates seedés. La colonne `tenant_id` reste nullable dans le schéma (cf. Notes
+d'implémentation) pour rester extensible sans migration de rupture le jour où US30.4.2
+(`phase-3`) débloque la création de templates par tenant, mais aucune ligne à `tenant_id` non nul
+n'est produite en Socle — le AC IDOR est donc simplifié : `templateId` doit référencer un template
+global existant, sinon `404`. AC et test correspondants mis à jour en conséquence.
 
 ## Notes d'implémentation
 
