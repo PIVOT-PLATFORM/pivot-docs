@@ -3,8 +3,6 @@ title: Convention BDD multi-schéma
 sidebar_label: BDD multi-schéma
 ---
 
-# Convention BDD multi-schéma (EN17.4)
-
 ## Vue d'ensemble
 
 PIVOT utilise une **instance PostgreSQL partagée** avec un schéma par domaine fonctionnel.
@@ -115,7 +113,7 @@ CREATE INDEX IF NOT EXISTS idx_{schema}_items_team_id   ON {schema}.items (team_
 
 Respecter la convention Flyway :
 
-```
+```text
 db/{schema}/
 ├── V1__{description}.sql      # migration initiale (schéma, tables)
 └── V2__{description}.sql      # migration suivante (uniquement après BETA — cf. CLAUDE.md)
