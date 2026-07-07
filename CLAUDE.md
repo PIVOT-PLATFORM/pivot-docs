@@ -131,7 +131,7 @@ Template US, Definition of Ready, vagues → `docs/backlog/README.md`.
 Avant tout code (dans `pivot-core`/`pivot-ui`), le **PO Agent** challenge les ACs de l'US :
 
 1. Vérifier DoR (§8.2 `docs/backlog/README.md`) — story complète, ACs Given/When/Then, AC erreur + sécurité
-2. Calculer Gate 1 : **≥ 70** → `Stage: Ready` → procéder · **< 70** → PO Agent réécrit ACs → recalculer
+2. Calculer Gate 1 : **= 100** → `Stage: Ready` → procéder · **< 100** → PO Agent réécrit ACs → recalculer
 3. AC ambigus à l'implémentation → PO Agent clarifie, jamais d'interprétation unilatérale
 
 Pas de blocage humain — Claude autonome de A à Z sur la validation des ACs.
@@ -155,7 +155,7 @@ Côté lecture du backlog spécifiquement :
 1. Lire `docs/backlog/sprints/README.md` — identifier le sprint courant (pas de ✅ complet), ouvrir son `sprint-{N}.md`
 2. Pour chaque US du sprint : lire le fichier markdown dans `docs/backlog/`
 3. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase Socle uniquement
-4. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si ≥ 70
+4. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si = 100
 
 **Principes :**
 - **Une branche par US / Enabler** — `feat/{us-id}-{slug}` ou `feat/{en-id}-{slug}`
@@ -253,7 +253,7 @@ dans le champ **Stage** du frontmatter US.
 
 | Gate | Moment | Seuils |
 |------|--------|--------|
-| **1 — READINESS** | Avant implémentation | PO Agent self-challenge · ≥ 70 → Stage: Ready → procéder · < 70 → PO Agent réécrit ACs |
+| **1 — READINESS** | Avant implémentation | PO Agent self-challenge · = 100 → Stage: Ready → procéder · < 100 → PO Agent réécrit ACs |
 | **2 — COVERAGE** | Par commit (pivot-core/pivot-ui) | ≥ 85 → continuer · 70–84 → compléter tests · < 70 → stop |
 | **3 — QUALITY** | Après CI verte | Hard blocks : secret Gitleaks, label `security`/`breaking-change`, structure backlog non coordonnée |
 | **4 — MERGE CONFIDENCE** | Avant merge | = 100/100 → sortie du mode draft (merge autonome) · 60–99 → merge documenté · < 60 → Breaking Point 2 |
