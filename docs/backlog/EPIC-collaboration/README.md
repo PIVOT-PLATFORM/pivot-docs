@@ -25,6 +25,15 @@ F08.x/EN08.x" ci-dessous).
 
 Épique générée depuis le **CSV benchmark Collaboration** (98 items `BL-###`, thème *Collaboration*). Les critères d'acceptation sont dérivés automatiquement des descriptions du benchmark et **restent à affiner au Gate 1 PO Agent** avant tout démarrage de sprint.
 
+**Raffinement 2026-07** : passe de croisement contre les 4 cahiers de spécifications individuels
+(`pivot-benchmarks/collaboration-visuelle`) en complément du dossier de synthèse déjà exploité pour
+les 98 items `BL-###` — 2 écarts fonctionnels mineurs identifiés dans les cahiers mais non repris
+dans la synthèse cross-outils, ajoutés sous leur Feature existante (US30.1.11, US30.4.4 —
+`Source: Benchmark 2026-07`, sans identifiant `BL-###`). Le reste du croisement confirme une
+couverture déjà large : les 8 propositions « bonus » du dossier de synthèse (§7, B1-B8) et les 9
+insights SI (§8, I1-I9) sont déjà portés respectivement par F30.14 Innovation et F30.15 Chantiers
+SI.
+
 ## Couverture existante (note de rationalisation)
 
 F08.x/EN08.x (ex-EPIC-whiteboard, fusionné dans E30 — E08 était le noyau incrémental de socle
@@ -77,6 +86,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.1.8 : Reconnaissance d'encre
 - US30.1.9 : Capture de pense-bêtes physiques
 - US30.1.10 : Ink-to-table
+- US30.1.11 : Liens enrichis et lecture vidéo intégrée
 
 ### F30.2 — Collaboration temps réel
 - US30.2.1 : Édition simultanée temps réel
@@ -102,6 +112,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.4.1 : Bibliothèque de modèles
 - US30.4.2 : Modèles personnalisés d'organisation
 - US30.4.3 : Bibliothèque interne gouvernée
+- US30.4.4 : Rituels récurrents
 
 ### F30.5 — Diagrammes & structuration
 - US30.5.1 : Diagrammes structurés
@@ -230,6 +241,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 | [US30.1.8 — Reconnaissance d'encre](FEATURES/canevas-objets/us-reconnaissance-d-encre.md) | ⬜ |
 | [US30.1.9 — Capture de pense-bêtes physiques](FEATURES/canevas-objets/us-capture-de-pense-betes-physiques.md) | ⬜ |
 | [US30.1.10 — Ink-to-table](FEATURES/canevas-objets/us-ink-to-table.md) | ⬜ |
+| [US30.1.11 — Liens enrichis et lecture vidéo intégrée](FEATURES/canevas-objets/us-liens-enrichis-video.md) | ⬜ |
 | **F30.2 — Collaboration temps réel** | |
 | [US30.2.1 — Édition simultanée temps réel](FEATURES/temps-reel/us-edition-simultanee-temps-reel.md) | ⬜ |
 | [US30.2.2 — Présence et curseurs nommés](FEATURES/temps-reel/us-presence-et-curseurs-nommes.md) | ⬜ |
@@ -252,6 +264,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 | [US30.4.1 — Bibliothèque de modèles](FEATURES/modeles/us-bibliotheque-de-modeles.md) | ⬜ |
 | [US30.4.2 — Modèles personnalisés d'organisation](FEATURES/modeles/us-modeles-personnalises-d-organisation.md) | ⬜ |
 | [US30.4.3 — Bibliothèque interne gouvernée](FEATURES/modeles/us-bibliotheque-interne-gouvernee.md) | ⬜ |
+| [US30.4.4 — Rituels récurrents](FEATURES/modeles/us-rituels-recurrents.md) | ⬜ |
 | **F30.5 — Diagrammes & structuration** | |
 | [US30.5.1 — Diagrammes structurés](FEATURES/diagrammes/us-diagrammes-structures.md) | ⬜ |
 | [US30.5.2 — Mind mapping](FEATURES/diagrammes/us-mind-mapping.md) | ⬜ |
