@@ -26,10 +26,10 @@ tenants et la même logique de guard.
 
 **Dépendances** : EN17.2 (@pivot-platform/design-system publié, pour le ré-export)
 
-**Statut** : 🔵 In progress — PR pivot-ui #112 en review CI
+**Statut** : ✅ Done — PR pivot-ui #112 mergée (2026-07-07)
 
 ---
-**Livré le** : 2026-07-07 · **PR** : [pivot-ui #112](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/112)
+**Livré le** : 2026-07-07 · **PR** : [pivot-ui #112](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/112) (merged)
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
