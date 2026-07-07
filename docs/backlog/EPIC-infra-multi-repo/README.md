@@ -33,7 +33,7 @@ valeur de verrou de sprint.
 
 ## Statut global
 
-✅ Gate 1 passé (2026-07-07) — 8/8 enablers Ready · Implémentation Sprint 5 Vague 0 à démarrer
+✅ Terminé — 8/8 enablers Done (Sprint 5 Vague 0, voir `sprints/sprint-5.md` pour le détail PR par item)
 
 ---
 

@@ -198,7 +198,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 
 ## Statut global
 
-⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint
+⬜ Backlog — reste du périmètre E30 (phase-3, F30.x/EN30.x NFR), Gate 1 PO Agent à effectuer au démarrage du sprint · noyau F08.x/EN08.x (Socle) : 🔄 En cours (Gate 1 passé 2026-07-07, Sprint 5 Vague 1+ — détail dans le tableau dédié ci-dessous)
 
 ---
 
@@ -331,25 +331,29 @@ collaboratif open-source).
 
 | Élément | 🤖 Dev |
 |---------|--------|
-| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | ⬜ |
-| [EN08.2 — Guard Angular module whiteboard](ENABLERS/en-guard-angular-whiteboard.md) | ⬜ |
+| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | Ready |
+| [EN08.2 — Guard Angular module whiteboard](ENABLERS/en-guard-angular-whiteboard.md) | 🔎 Review |
 | **F08.1 — CRUD tableaux** | |
-| [US08.1.1 — Utilisateur crée un tableau](FEATURES/crud-tableaux/us-creer-tableau.md) | ⬜ |
-| [US08.1.2 — Utilisateur liste ses tableaux (backend)](FEATURES/crud-tableaux/us-liste-tableaux-backend.md) | ⬜ |
-| [US08.1.3 — Angular : liste des tableaux](FEATURES/crud-tableaux/us-liste-tableaux-angular.md) | ⬜ |
-| [US08.1.4 — Renommer un tableau](FEATURES/crud-tableaux/us-renommer-tableau.md) | ⬜ |
-| [US08.1.5 — Supprimer un tableau](FEATURES/crud-tableaux/us-supprimer-tableau.md) | ⬜ |
+| [US08.1.1 — Utilisateur crée un tableau](FEATURES/crud-tableaux/us-creer-tableau.md) | 🔎 Review |
+| [US08.1.2 — Utilisateur liste ses tableaux (backend)](FEATURES/crud-tableaux/us-liste-tableaux-backend.md) | 🔎 Review |
+| [US08.1.3 — Angular : liste des tableaux](FEATURES/crud-tableaux/us-liste-tableaux-angular.md) | 🔎 Review |
+| [US08.1.4 — Renommer un tableau](FEATURES/crud-tableaux/us-renommer-tableau.md) | 🔄 In progress |
+| [US08.1.5 — Supprimer un tableau](FEATURES/crud-tableaux/us-supprimer-tableau.md) | 🔄 In progress |
 | **F08.2 — Partage et rôles** | |
-| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | ⬜ |
-| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | ⬜ |
-| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | ⬜ |
+| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | Ready |
+| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | Ready |
+| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | Ready |
 | **F08.3 — Canvas collaboratif temps réel** | |
-| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | ⬜ |
+| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | Ready |
 | [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) ⚠️ *(Decomposed — voir US08.3.2a/b/c)* | — |
-| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | ⬜ |
-| [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | ⬜ |
-| [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | ⬜ |
-| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ⬜ |
-| [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ⬜ |
+| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | Ready |
+| [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | Ready |
+| [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | Ready |
+| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | Ready |
+| [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | Ready |
 | **F08.4 — Templates** | |
-| [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ⬜ |
+| [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | Ready |
+
+> Statuts resynchronisés le 2026-07-08 depuis le frontmatter `Stage:` de chaque fichier (source de
+> vérité) — ce tableau était resté à ⬜ pour les 17 items malgré le Gate 1 READINESS du 2026-07-07
+> (`sprints/sprint-5.md`) et les PR déjà en Review/In progress sur `pivot-core`/`pivot-ui`.

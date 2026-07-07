@@ -24,19 +24,19 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | 🔎 Sprint 3 — US mergées, en attente de recette |
 | [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ✅ Sprint 4 terminé (EN07.1/2/5) |
+| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 8 (EN17.1–8) | — | ✅ Terminé — 8/8 enablers Done, Sprint 5 Vague 0 (reséquencé Socle le 2026-07-07, ex-phase-3) |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
-| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 3 | — | 5 | ⏸️ phase-3 |
+| [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 8 | 1 | 16 | ⏸️ phase-3 |
 | [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 3 (F12.1–3) | 2 (EN12.1–2) | 4 | ⬜ phase-3 · collaboratif |
 | [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 Sprint 1 Done + badge notifs/modules à venir (Sprint 4, 🔎 Review) |
-| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 7 (EN17.1–7) | — | ⬜ phase-3 |
-| [E18 — Domaine Pilotage (ombrelle)](EPIC-pilotage/README.md) | E18 | — | 7 (EN18.1–9) | — | ⬜ phase-3 — éclaté en modules E21–E30 + E32–E40 (ADR-008) |
+| [E18 — Domaine Pilotage (ombrelle)](EPIC-pilotage/README.md) | E18 | — | 9 (EN18.1–9) | — | ⬜ phase-3 — éclaté en modules E21–E30 + E32–E40 (ADR-008) |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
-| [E21 — Module Gestion des risques](EPIC-risk/README.md) | E21 | 9 | — | 47 | ⬜ phase-3 · pilotage |
+| [E21 — Module Gestion des risques](EPIC-risk/README.md) | E21 | 9 | 3 | 47 | ⬜ phase-3 · pilotage |
 | [E22 — Module Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 | 3 | 47 | ⬜ phase-3 · pilotage |
 | [E23 — Module Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 | — | 12 | ⬜ phase-3 · pilotage |
 | [E24 — Module ADR projet](EPIC-adr-projet/README.md) | E24 | 1 | — | 2 | ⬜ phase-3 · pilotage |
@@ -45,7 +45,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 10 | 12 | 35 | ⬜ phase-3 — dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 78 | ⬜ phase-3 |
-| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 93 (dont 7 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : ⏸️ Gate Socle) |
+| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 101 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
 | [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E34 — IA & agents (pilotage)](EPIC-pilotage-ia/README.md) | E34 | 1 | — | 4 | ⬜ phase-3 · pilotage |
@@ -58,8 +58,13 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 | 1 | 42 | ⬜ phase-3 |
 | [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 32 | ⬜ phase-3 |
 | [E43 — Sécurité & Zero Trust](EPIC-securite/README.md) | E43 | — | 13 | — | ⬜ phase-3 — dépend ADR-015–020 |
-| **Total Socle** | **E01–E07 + E16 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **46** | **66** | 🔄 En cours |
-| **Total phase-3** | **E09–E43 (sauf E31, dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **140** | **67** | **558** | ⏸️ Verrouillé |
+| [E44 — SignDoc (signature électronique)](EPIC-signdoc/README.md) | E44 | 3 | 1 | 4 | ⬜ phase-3 |
+| [E45 — PDF Manager (Mes PDF)](EPIC-pdf-manager/README.md) | E45 | 4 | 1 | 4 | ⬜ phase-3 |
+| [E46 — Feedback](EPIC-feedback/README.md) | E46 | 2 | — | 2 | ⬜ phase-3 |
+| [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
+| [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
+| **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **74** | 🔄 En cours |
+| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **158** | **68** | **583** | ⏸️ Verrouillé |
 
 ---
 
@@ -121,7 +126,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 **Phase active : Socle.** Seuls les items `Phase: Socle` sont implémentables.
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
-- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle mais Gate 1 PO Agent pending → **bloqué**
+- E17 Infrastructure multi-repo = Socle (reséquencé 2026-07-07) → ✅ terminé, 8/8 enablers Done (Sprint 5 Vague 0)
+- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle, Gate 1 PO Agent passé (2026-07-07, 17/17 items Ready) → 🔄 en cours (Sprint 5 Vague 1+, plusieurs items In progress/Review)
 - E02/E06 = Sprint 3, mergés, en attente de recette · E04/E07 = Sprint 4, mergés, en attente de recette
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
@@ -143,9 +149,9 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | EN-NOTIF + US03.3.1/3.2/3.3 (notifications in-app + SUPER_ADMIN plans) | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
 | Medium | US16.1.3 Badge notifications | Socle | 🔎 Review |
 | Medium | US16.2.2 Section modules à venir | Socle | 🔎 Review |
-| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | ⬜ Backlog |
+| Critical | E17 Infrastructure multi-repo (EN17.1–8 + nginx gateway) | Socle (reséquencé 2026-07-07) | ✅ Terminé — Sprint 5 Vague 0 |
+| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | 🔄 En cours — Sprint 5 Vague 1+, Gate 1 passé (17/17 Ready) |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
-| High | E17 Infrastructure multi-repo (EN17.1–7 + nginx gateway) | phase-3 | ⬜ Backlog |
 | High | E18 Domaine Pilotage — ombrelle (ADR-008), éclaté en E21–E30 + E32–E40 | phase-3 | ⬜ Backlog |
 | High | E19 Module Session (QUIZ multijoueur/POLL/WORDCLOUD/BRAINSTORM/QA/VOTE) | phase-3 | ⬜ Backlog |
 | High | E20 Module Retrospective (formats rétro, dot-voting, plan action) | phase-3 · agilite | ⬜ Backlog |
@@ -164,9 +170,20 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | E41 Formation & Onboarding (tours guidés, supports, présentiel) | phase-3 | ⬜ Backlog |
 | Medium | E42 Pivot Forms (form-builder no-code souverain) | phase-3 | ⬜ Backlog |
 | Critical | E43 Sécurité & Zero Trust (BFF/Gateway/Mesh, secrets, autorisation, SIEM) | phase-3 | ⬜ Backlog — dépend ADR-015–020 |
+| Medium | E44 SignDoc (signature électronique) | phase-3 | ⬜ Backlog |
+| Medium | E45 PDF Manager (Mes PDF) | phase-3 | ⬜ Backlog |
+| Low | E46 Feedback (kanban public bugs/idées) | phase-3 | ⬜ Backlog |
+| Low | E47 Mini-jeux collaboratifs (Bingo, Post-it Rush, Trivia Agile) | phase-3 · collaboratif | ⬜ Backlog |
+| Medium | E48 Assistant IA transverse (widget contextuel du shell) | phase-3 | ⬜ Backlog |
 
 ---
 
 *Dernière mise à jour : 2026-07-06 — ajout E21–E43 (sauf E31, dissous) suite au merge des branches split/pilotage, split/integration-oss, split/workflows, split/collaboration, split/agilite, split/onboarding, split/pivot-forms, split/securite et docs/taxonomie-referentiel-roles*
 
 *Resync 2026-07-07 : Sprint 4 (E04/E07 + auth avancé + EN-NOTIF + US03.3.x + US16.1.3/16.2.2) — 16/16 items mergés sur `pivot-core`/`pivot-ui`, `Stage: Review` en attente de recette. Voir `docs/backlog/sprints/sprint-4.md` pour le détail PR par item.*
+
+*Ajout 2026-07-08 : E44–E48 — audit de parité contre le POC PouetPouet (`FEATURES.md`/`ROADMAP.md`/`CHANGELOG.md`) ayant révélé 5 modules livrés sans EPIC : SignDoc (signature électronique), PDF Manager, Feedback, Mini-jeux collaboratifs, Assistant IA transverse. Le même audit a identifié deux décalages de périmètre à trancher séparément avec le mainteneur (hors scope de cet ajout) : E25 Commande publique décrit un module d'appel d'offres alors que le POC construit un workflow de demandes d'achat internes (PGI/LDAP externes) ; E29 Workflows ne référence pas concrètement le moteur Parcours livré (étapes typées, classification C0–C3, GCS).*
+
+*Refinement 2026-07-08 : audit de cohérence sur les 44 EPICs (aucune promotion `Stage`/`Phase` en dehors des faits déjà actés ailleurs). Corrections objectives : E17 resynchronisé Socle (son propre README l'annonçait déjà, la synthèse ne l'avait jamais répercuté — 8/8 enablers Done, Sprint 5 Vague 0) ; E30 noyau F08.x/EN08.x resynchronisé sur le `Stage:` réel de chaque fichier (le tableau de suivi était resté à ⬜ pour les 17 items malgré le Gate 1 du 2026-07-07 et des PR déjà en Review/In progress) et son compte US corrigé (7→15 Socle, 93→101 total) ; E11 Capacity Planning resynchronisé sur son propre périmètre déclaré (3→8 Features, 5→16 US — la synthèse datait d'avant l'ajout de F11.4-F11.8) ; E18 (7→9 enablers) et E21 (—→3 enablers) resynchronisés sur leur propre tableau de suivi. E09/E10/E14 : ajout d'E17 en Dépendances (incohérent avec leur propre mention « Pré-requis EN17 »). EPIC-roadmap : correction d'une clé erronée (E03→E32 pour "Ressources & temps"). E44-E48 : ajout de sections Hors périmètre clarifiant les frontières avec E45/E29/E34 relevées par l'audit.*
+
+*Findings identifiés mais non corrigés dans cette passe (décision produit/mainteneur requise, hors scope d'un simple fix de cohérence) — détail complet dans la PR : chevauchement E28 (adaptateur workflow OSS) / E29 (moteur natif) non tracé dans les deux sens ; chevauchement E48 (assistant transverse) / E29 US29.9.4 (chatbots connectés) partiellement seulement clarifié côté E48 ; E05 CI/CD sans section Dépendances alors qu'il chevauche EN07.5 (E07) ; E39 Chantiers SI porte encore un item "demande-arbitrage" qu'E18 déclare pourtant supprimé (ex-E31) ; E39 vs E34 chevauchement IA de pilotage non tracé ; E32 Ressources & temps ne référence pas E22 alors que F22.5 recouvre largement son objectif ; EPICs benchmark E32/E33/E34/E35/E36/E37/E40 sans section Périmètre détaillée (Gate 1 non atteignable en l'état).*

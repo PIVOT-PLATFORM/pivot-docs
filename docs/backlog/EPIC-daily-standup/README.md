@@ -18,7 +18,7 @@ Animation de daily standups : sessions CRUD, minuteur configurable + rotation pa
 - F10.3 : Statistiques sessions terminées — US10.3.1
 
 ## Dépendances
-- Dépend de : E03 Système de modules
+- Dépend de : E03 Système de modules · E17 Infrastructure multi-repo
 
 ## Statut global
 ⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint

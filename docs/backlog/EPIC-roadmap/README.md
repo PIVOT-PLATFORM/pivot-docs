@@ -94,7 +94,7 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E15 Équipes transverses (projet ↔ équipe)
 - Dépend de : E18 Domaine Pilotage (EN18.1/EN18.2/EN18.9) · E40 Profil & adaptation (altitude par profil)
-- Coordonné avec : E03 Ressources & temps (capacité transverse) · E26 Budget (coûts)
+- Coordonné avec : E32 Ressources & temps (capacité transverse) · E26 Budget (coûts)
 
 ## Statut global
 
