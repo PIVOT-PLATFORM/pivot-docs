@@ -67,5 +67,5 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Ready
-Dépendances: EN08.1 (isolation WS room)
+Stage: Review
+Dépendances: EN08.1 (isolation WS room) — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100, spec figée `docs/specs/EPIC-collaboration/us08-3-1-connexion-ws-canvas.md`

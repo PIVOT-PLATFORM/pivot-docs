@@ -46,8 +46,8 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.1 | Owner partage un tableau par lien public | M | High | 👀 |
 | US08.2.2 | Utilisateur rejoint un tableau via token | M | High | 👀 |
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | 👀 |
-| US08.3.1 | Connexion WebSocket au canvas | M | Critical | ⬜ |
-| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ⬜ |
+| US08.3.1 | Connexion WebSocket au canvas | M | Critical | 🔁 Review — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100 |
+| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ⬜ |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ⬜ |
@@ -119,3 +119,11 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > ✅ EN17.7 — nginx API Gateway multi-module (pivot-ui PR #114 + pivot-core PR #170, 2026-07-07)
 > ✅ EN17.2 — `@pivot-platform/design-system` publié sur GitHub Packages npm (pivot-design-system PR #1, 2026-07-07)
 > ✅ EN17.6 — template repo `pivot-template-ui` créé (PIVOT-PLATFORM/pivot-template-ui, 2026-07-07)
+>
+> **Rattrapage Gate 5 (2026-07-07, tard) :** US08.3.1 (`pivot-collaboratif-core` PR #28, Gate 4 =
+> 89/100) et US08.3.2a (`pivot-collaboratif-ui` PR #24, Gate 4 = 92/100) mergées sans PR `pivot-docs`
+> correspondante — écart comblé ici (`Stage: Review`, specs Gate 5 figées). US08.3.2a a implémenté
+> par anticipation `UndoRedoService` (portée d'US08.3.3), ADR Canvas 2D API toujours non rédigée
+> (gap noté sur la fiche US08.3.2a). Items non démarrés à ce stade, verrouillés par issue GitHub
+> (aucune assignation) : US08.4.1, US08.3.2b, US08.3.2c, US08.3.3. US08.5.1 assignée et en cours
+> (@tellebma, `pivot-collaboratif-core#29` / `pivot-collaboratif-ui#22`).
