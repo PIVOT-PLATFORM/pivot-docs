@@ -34,6 +34,20 @@ npm start      # http://localhost:3000/pivot-docs/
 npm run build  # génère build/
 ```
 
+**`npm run build` échoue en local** (`Markdown image ... couldn't be resolved`) si les PNG des
+diagrammes PlantUML (`docs/**/diagrams/*.puml`) n'ont pas été générés au préalable — en CI, ce
+cette génération est un step dédié (`.github/workflows/deploy-docs.yml`/`docs-checks.yml`), absent d'un
+`npm install` local. Contournement (nécessite un JDK) :
+
+```bash
+curl -sL "https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar" -o /tmp/plantuml.jar
+find docs -name "*.puml" | while IFS= read -r f; do java -jar /tmp/plantuml.jar -tpng "$f"; done
+npm run build
+```
+
+Les PNG générés ne sont **jamais committés** (divergence avec le `.puml` source, cf. `CLAUDE.md`
+§Standards de code) — à supprimer après vérification locale du build.
+
 ## Repos
 
 | Repo | Rôle |

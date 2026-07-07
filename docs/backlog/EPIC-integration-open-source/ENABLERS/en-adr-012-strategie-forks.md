@@ -1,4 +1,4 @@
-# EN28.11 — ADR-012 : stratégie de forks
+# EN28.11 — ADR-018 : stratégie de forks
 
 **Type d'enabler** : gouvernance · git
 
@@ -8,7 +8,7 @@
 - [ ] Règle de rattachement documentée (dépendance packagée / subtree / submodule / paquet npm embarqué)
 - [ ] Gabarit `FORK.md` (PR, raison, condition de mort, responsable) publié
 - [ ] Job CI de resynchronisation hebdomadaire (`git fetch upstream` + rapport de dérive) opérationnel
-- [ ] ADR-012 rédigée et acceptée
+- [ ] ADR-018 rédigée et acceptée
 
 **Dépendances** : ADR-009 (Accepté)
 

@@ -422,6 +422,10 @@
     "signdoc",
     "expirable",
     "eIDAS",
-    "désync"
+    "désync",
+    "backfillées",
+    "backfiller",
+    "plantuml",
+    "tpng"
   ]
 }

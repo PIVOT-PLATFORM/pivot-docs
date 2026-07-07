@@ -52,6 +52,7 @@ Dépendances: …
 | **Module** | `core` · `auth` · `admin` · `oidc` · `pilotage` · `agilite` · `collaboratif` (extensible par domaine) |
 | **Phase** | `Socle` · `v1-enterprise` · `phase-3` |
 | **Size** | `XS` · `S` · `M` · `L` · `XL` |
+| **Profils** *(optionnel)* | `TPE` · `PME` · `Grand groupe` · `Privée sous droit public` · `Publique` · `État` · `Tous` — profils d'organisation ([E40](pathname:///pivot-docs/backlog/EPIC-profil-adaptation/)) pour lesquels l'item est applicable ; combinable (liste). Porté par 228 US du domaine Pilotage (backlog PPM v2 adaptative) et E41 — absent = non discriminant par profil |
 
 ---
 
