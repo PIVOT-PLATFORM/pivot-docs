@@ -4,7 +4,7 @@ Décisions produit / cadrages à traiter **avant** le sprint qui en dépend :
 
 | # | Sujet | Échéance | Détail |
 |---|-------|----------|--------|
-| 1 | **Definition of Done Socle** | avant S6 | Le jalon « Socle terminé » n'a aucun critère écrit — rédiger la checklist (features, prod, recette PO) qui déclenche le déverrouillage phase-3 |
+| 1 | **Definition of Done Socle** — **rédigée, à valider par le mainteneur** | avant S6 | Checklist en 4 axes (features/prod/recette PO/hygiène) rédigée le 2026-07-08 dans `sprint-6.md` §Definition of Done — Socle. Ne tranche pas : seuils prod (Axe 2, hors périmètre docs-only) ni si les reliquats actuels (EN05.13-15, EN07.3/4, EN17.1 restant, E30 noyau 0/17) doivent être terminés ou basculés en dette différée — décision de scope pour le mainteneur |
 | 2 | ~~Arbitrage E08 ↔ E30~~ — **résolu** | tranché | **Décision (2026-07-06) : E08 devient le noyau incrémental de E30.** EPIC-whiteboard fusionné dans EPIC-collaboration — F08.1-F08.4/EN08.1-EN08.2/US08.x.x conservent leurs identifiants (pas de renumérotation) et leur `Phase: Socle` propre (non verrouillés), désormais hébergés physiquement sous `EPIC-collaboration/` ; le reste d'E30 reste `phase-3` verrouillé. Voir `EPIC-collaboration/README.md` §Couverture existante |
 | 3 | **ADR-019 bus d'événements** | avant S9 | Référencé partout (boucle vivante E21, `form.submitted` E42, EN43.8, E29, ADR-008/009) mais aucune ADR ne le spécifie — chemin critique invisible de tout le plan phase-3 |
 | 4 | **Statuts ADR-008→016** | S7 | Toutes « Proposé » alors que la décision d'acceptation a été prise (merge E43) — acter dans `docs/adr/` |

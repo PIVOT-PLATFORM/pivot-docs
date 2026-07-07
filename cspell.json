@@ -421,6 +421,7 @@
     "packagr",
     "signdoc",
     "expirable",
-    "eIDAS"
+    "eIDAS",
+    "désync"
   ]
 }

@@ -331,7 +331,7 @@ collaboratif open-source).
 
 | Élément | 🤖 Dev |
 |---------|--------|
-| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | Ready |
+| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | 🔎 Review |
 | [EN08.2 — Guard Angular module whiteboard](ENABLERS/en-guard-angular-whiteboard.md) | 🔎 Review |
 | **F08.1 — CRUD tableaux** | |
 | [US08.1.1 — Utilisateur crée un tableau](FEATURES/crud-tableaux/us-creer-tableau.md) | 🔎 Review |
@@ -340,13 +340,13 @@ collaboratif open-source).
 | [US08.1.4 — Renommer un tableau](FEATURES/crud-tableaux/us-renommer-tableau.md) | 🔄 In progress |
 | [US08.1.5 — Supprimer un tableau](FEATURES/crud-tableaux/us-supprimer-tableau.md) | 🔄 In progress |
 | **F08.2 — Partage et rôles** | |
-| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | Ready |
-| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | Ready |
-| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | Ready |
+| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | 🔎 Review |
+| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | 🔎 Review |
+| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | 🔎 Review |
 | **F08.3 — Canvas collaboratif temps réel** | |
-| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | Ready |
+| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | 🔎 Review |
 | [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) ⚠️ *(Decomposed — voir US08.3.2a/b/c)* | — |
-| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | Ready |
+| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | 🔎 Review |
 | [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | Ready |
 | [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | Ready |
 | [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | Ready |
@@ -354,6 +354,8 @@ collaboratif open-source).
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | Ready |
 
-> Statuts resynchronisés le 2026-07-08 depuis le frontmatter `Stage:` de chaque fichier (source de
-> vérité) — ce tableau était resté à ⬜ pour les 17 items malgré le Gate 1 READINESS du 2026-07-07
-> (`sprints/sprint-5.md`) et les PR déjà en Review/In progress sur `pivot-core`/`pivot-ui`.
+> Statuts resynchronisés le 2026-07-08 (soir) depuis le frontmatter `Stage:` de chaque fichier
+> (source de vérité) : 12 Review · 2 In progress · 5 Ready · 0 Done. Développement très actif —
+> ce tableau était déjà repassé en désync une première fois le même jour (5 items Ready→Review en
+> quelques heures). Ne pas considérer ce statut comme figé ; revérifier le frontmatter avant toute
+> décision qui en dépend (ex. Definition of Done Socle, `sprints/sprint-6.md`).
