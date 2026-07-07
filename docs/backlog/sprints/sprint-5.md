@@ -117,5 +117,5 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > ✅ EN17.5 — template repo `pivot-template-core` créé (PIVOT-PLATFORM/pivot-template-core, pivot-docs PR #105)
 > ✅ EN17.3 — `@pivot-platform/ui-core` publié sur GitHub Packages npm (pivot-ui PR #112)
 > ✅ EN17.7 — nginx API Gateway multi-module (pivot-ui PR #114 + pivot-core PR #170, 2026-07-07)
-> ⬜ EN17.2 — `@pivot-platform/design-system` (pivot-design-system repo à créer — non bloquant pour EN17.7)
-> ⬜ EN17.6 — template repo `pivot-template-ui` (bloqué sur EN17.2)
+> ✅ EN17.2 — `@pivot-platform/design-system` publié sur GitHub Packages npm (pivot-design-system PR #1, 2026-07-07)
+> ⬜ EN17.6 — template repo `pivot-template-ui` (EN17.2 maintenant débloqué)
