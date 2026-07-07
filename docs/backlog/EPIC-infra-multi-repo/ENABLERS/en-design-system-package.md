@@ -56,7 +56,7 @@ friction (double PR par évolution, versioning strict des tokens sans bénéfici
 - Dépend de : EN17.8 (Incubation du design system dans `pivot-ui`) — fournit le contenu à
   extraire (tokens, composants migrés CDK, Storybook).
 - Repo créé avant la création de `pivot-collaboratif-ui` — décision actée pour éviter la friction
-  de bootstrapper le package au moment où le premier consommateur en a besoin.
+  de créer le package au moment où le premier consommateur en a besoin.
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
