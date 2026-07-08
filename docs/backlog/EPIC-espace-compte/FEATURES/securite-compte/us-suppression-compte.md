@@ -17,7 +17,7 @@
 | Audit event enregistré (AccountDeleted) | ✅ |
 | Pour comptes à auth_mode OIDC (sans mot de passe local) : confirmation via OTP 6 chiffres envoyé par email (TTL 10min). DELETE /api/account sans confirmation valide → 403 | ✅ |
 | Dès la demande de suppression (avant fin du délai de grâce) : tous tokens révoqués immédiatement, compte passe en statut PENDING_DELETION inaccessible en lecture par les admins | ✅ |
-| Politique RGPD précise : email anonymisé en deleted-{uuid}@pivot.invalid, prénom/nom mis à null, avatar supprimé, sessions révoquées, audit events conservés 1 an puis purgés | ✅ *(anonymisation testée et confirmée ; la purge des audit events après 1 an est documentée comme suivi à planifier, non implémentée dans cette PR)* |
+| Politique RGPD précise : email anonymisé en deleted-{uuid}@pivot.invalid, prénom/nom mis à null, avatar supprimé, sessions révoquées, audit events conservés 1 an puis purgés | 🟡 anonymisation (email/prénom/nom/avatar/sessions) testée et confirmée (TU + TI dédiée avançant réellement au-delà du délai de grâce) ; la purge des audit events après 1 an **n'est pas implémentée** — documentée comme TODO de suivi, à traiter par un enabler RGPD dédié — voir spec Gate 5 |
 | Pendant le délai de grâce, compte désactivé (401 à toute connexion). L'utilisateur peut annuler via lien dans l'email | ✅ |
 | Email de confirmation avec date effective de suppression envoyé dès la demande | ✅ |
 | Bannière persistante pendant le délai de grâce rappelle la date de suppression effective et propose "Annuler la suppression" | ✅ |
@@ -42,3 +42,4 @@
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Review
+Gate 5 : `pivot-core` PR [#140](https://github.com/PIVOT-PLATFORM/pivot-core/pull/140) (Gate 4 = 94/100, needs-human-review) + `pivot-ui` PR [#83](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/83) (Gate 4 = 100/100, needs-human-review) + PR [#97](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/97) (fix bannière, Gate 4 = 98/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-4-suppression-compte.md` (rétroactif, 2026-07-08)

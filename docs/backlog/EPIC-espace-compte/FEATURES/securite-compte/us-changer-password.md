@@ -36,7 +36,13 @@
 - Mécanisme révocation/réémission : `AccountPasswordService.changePassword` révoque **tous** les tokens (y compris le courant) puis en réémet un immédiatement, retourné dans la réponse 200 — concilie "token courant inclus dans la révocation" et "session courante préservée".
 - Correctif SonarCloud en cours de revue : message d'erreur anti-énumération déplacé d'une constante Java littérale vers le `MessageSource` i18n existant (faux positif `S2068` sur le nom de variable, pas un vrai secret).
 - Point à vérifier par un reviewer humain : le rate limiting est appliqué indépendamment par userId et par IP — un attaquant faisant tourner une seule des deux dimensions n'est pas nécessairement bloqué par l'autre (passe Red Team suggérée).
+- Gate 4 réel au figeage (≠ Gate 2 self-évalué ci-dessus) : `pivot-core` 99/100, `pivot-ui` 93/100.
+  Un finding bloquant a été trouvé et corrigé pendant la review `pivot-ui` (le `401` de
+  `POST /account/password` déclenchait une déconnexion forcée via `TokenInterceptor` au lieu du
+  message inline attendu — commit `b457485`) ; la spec E2E Playwright reste différée (action de
+  suivi avant `Stage: Done`) — détail complet dans `docs/specs/EPIC-espace-compte/us02-2-1-changer-password.md`.
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: High
 Stage: Review
+Gate 5 : `pivot-core` PR [#128](https://github.com/PIVOT-PLATFORM/pivot-core/pull/128) (Gate 4 = 99/100) + `pivot-ui` PR [#70](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/70) (Gate 4 = 93/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-1-changer-password.md` (rétroactif, 2026-07-08)

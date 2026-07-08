@@ -12,7 +12,7 @@
 | L'email actuel est conservé jusqu'à confirmation depuis la nouvelle adresse | ✅ |
 | Lien de confirmation à usage unique, TTL 24h | ✅ |
 | Email de notification envoyé à l'ancienne adresse après changement | ✅ |
-| La nouvelle adresse ne doit pas déjà exister en BDD (409 si doublon) | ✅ |
+| La nouvelle adresse ne doit pas déjà exister en BDD (409 si doublon) | 🟡 |
 | Formulaire Angular avec validation email + mot de passe actuel | ✅ |
 | Réponse POST /api/account/email toujours 202 Accepted, qu'il y ait doublon ou non. Message d'erreur de doublon envoyé uniquement à la nouvelle adresse, jamais exposé dans le body HTTP | ✅ |
 | Token de confirmation : SecureRandom 256 bits, hashé SHA-256 en BDD (raw jamais persisté). Invalidé après premier clic valide. Second clic → 410 Gone | ✅ |
@@ -33,7 +33,9 @@
 - Token de confirmation : réutilise exactement le mécanisme existant (`CryptoUtils.generateSecureToken()`/`sha256()`, consommation atomique à usage unique) déjà utilisé par la réinitialisation de mot de passe — pas de réinvention.
 - Point à valider par un reviewer humain : léger déséquilibre de timing CPU sur la branche doublon (pas de travail BCrypt factice, contrairement à `RegistrationService`) — jugé non exploitable mais à confirmer.
 - Pas de révocation de session au changement d'email confirmé (contrairement au changement de mot de passe) — intentionnel, les tokens opaques sont liés à `userId` pas à l'email, à confirmer que c'est le comportement voulu.
+- 🟡 AC « 409 si doublon » : tension littérale avec l'AC « toujours 202 Accepted » relevée en Gate 4 (`pivot-core` PR #131, 2ᵉ passage) et tranchée unilatéralement par le développeur — `POST /api/account/email` retourne toujours `202`, le `409 EMAIL_CHANGE_TARGET_TAKEN` n'existant que sur `GET /confirm` (course tardive sur la cible). Comportement testé des deux côtés (backend + frontend) mais interprétation d'AC ambigu **non actée formellement par le PO Agent** — à valider a posteriori (détail : `docs/specs/EPIC-espace-compte/us02-2-2-changer-email.md`, section « Écarts vs AC initiaux »).
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Review
+Gate 5 : `pivot-core` PR [#131](https://github.com/PIVOT-PLATFORM/pivot-core/pull/131) (Gate 4 = 97/100) + `pivot-ui` PR [#73](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/73) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-2-changer-email.md` (rétroactif, 2026-07-08)
