@@ -34,6 +34,20 @@ Assistant conversationnel contextuel, disponible depuis le shell dans tous les m
 
 - **EN48.1** — Fournisseur LLM interchangeable, rate-limit et audit des échanges
 
+## Repères marché (benchmark POC)
+
+Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahier Intercom Fin, dossier de synthèse
+(juillet 2026). Fin n'est pas un concurrent fonctionnel direct (support client externe vs aide contextuelle
+interne) mais une référence méthodologique de gouvernance d'agent IA. Raffinements à qualifier au Gate 1
+pour US48.1.1/EN48.1 :
+
+- Mesure d'un taux de réponses jugées utiles (feedback pouce haut/bas en fin d'échange) — Fin publie ce type
+  de métrique de façon inhabituellement transparente pour le marché
+- Base de connaissances administrable sans redéploiement (contenu géré séparément du code)
+
+Repère réaliste à ne pas sur-promettre au Gate 1 : même l'état de l'art (Fin) ne dépasse pas ~2/3 de
+résolution autonome en conditions réelles documentées.
+
 ## Modules impactés
 
 `core` (pivot-core + pivot-ui)

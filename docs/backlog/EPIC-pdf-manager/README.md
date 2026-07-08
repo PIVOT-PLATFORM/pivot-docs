@@ -36,6 +36,23 @@ Bibliothèque documentaire centrée PDF : collections, upload, recherche, visual
 - **Stockage du document source/final/audit trail de SignDoc** — [E44](pathname:///pivot-docs/backlog/EPIC-signdoc/) conserve son propre stockage dédié (EN44.1) pour garantir l'immuabilité probatoire après signature ; E45 n'est qu'une source d'import optionnelle en amont.
 - **OCR / recherche plein texte dans le contenu**, **champs personnalisés par collection**, **comparaison visuelle de versions** — reportés v2.
 
+## Repères marché (benchmark POC)
+
+Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahiers Adobe Acrobat, Smallpdf, PDF.co,
+Apryse, dossier de synthèse (juillet 2026). **Aucun écart de socle** sur F45.1-F45.4. Raffinement à
+qualifier au Gate 1 : rédaction/masquage définitif et non réversible d'informations sensibles, absent des
+AC stub actuelles → US45.3.1 (la compression avec aperçu du gain et le filigrane y sont déjà couverts).
+
+Deux **décisions d'architecture** soulevées par les cahiers PDF.co et Apryse conditionnent EN45.1 et
+doivent être tranchées par l'Architecte Modules avant le début de F45.2/F45.3 — pas un raffinement de
+backlog, un point de suivi :
+
+- Composant de rendu/annotation PDF pour `pivot-pdf-ui` : bibliothèque open source (ex. PDF.js) personnalisée
+  au design system (ADR-007) vs SDK commercial type Apryse (licence propriétaire à vérifier contre l'AGPL de
+  PIVOT, ADR-002, avant tout engagement — coût d'entrée ~1 500 $)
+- Traitement PDF backend (fusion, compression, OCR) : internalisation dans `pivot-pdf-core` vs délégation à
+  un service API tiers façon PDF.co (coût variable proportionnel à l'usage vs effort de développement fixe)
+
 ## Modules impactés
 
 `pdf` (pivot-pdf-core + pivot-pdf-ui)

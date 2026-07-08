@@ -14,6 +14,7 @@
 | Clic avant disparition = points, série de clics = multiplicateur de combo | ⬜ |
 | Classement en temps réel des participants pendant la partie | ⬜ |
 | Rejoindre via code, avec ou sans compte PIVOT | ⬜ |
+| Seuil explicite de participants simultanés par room documenté, avec dégradation progressive (pas de blocage brutal) au-delà — benchmark Kahoot/Mentimeter/Slido | ⬜ |
 | Sécurité : le score est calculé côté serveur (pas de confiance au client) | ⬜ |
 
 ---

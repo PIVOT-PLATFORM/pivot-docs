@@ -13,6 +13,8 @@
 | Création publique d'un ticket (titre, description, catégorie bug/idée) | ⬜ |
 | Kanban 5 colonnes : Analyse → Backlog → Implémentation → Parking → Fait | ⬜ |
 | Vote sur un ticket, rafraîchi via le mécanisme de notification in-app existant (un vote par utilisateur et par ticket) | ⬜ |
+| Compteur de votes visible et tri du kanban par popularité — benchmark Slido (vote ascendant) | ⬜ |
+| Protection anti-abus dès le socle sur la soumission publique (rate-limit ou équivalent) — benchmark Typeform : ne pas réserver cette protection à une option payante | ⬜ |
 | Édition d'un ticket réservée à son auteur ou à un admin | ⬜ |
 | Sécurité : tenantId extrait du TenantContext | ⬜ |
 

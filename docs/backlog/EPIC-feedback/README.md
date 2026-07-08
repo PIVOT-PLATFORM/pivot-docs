@@ -22,6 +22,21 @@ Remontée de bugs et d'idées par les utilisateurs de la plateforme : kanban pub
 - **F46.2 — Gestion et modération**
   - US46.2.1 : Traiter et modérer les tickets de feedback
 
+## Repères marché (benchmark POC)
+
+Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahiers Typeform, Slido, Canny, Frill, dossier
+de synthèse (juillet 2026). Le périmètre socle actuel (kanban 5 colonnes + vote + modération, sans roadmap
+publique ni changelog dédiés) est **confirmé cohérent** par comparaison à Frill, la référence de borne basse
+du marché — pas un écart à combler en urgence. Raffinements à qualifier au Gate 1 :
+
+- Fusion de deux tickets similaires par un admin, cumulant leurs votes respectifs — pattern Canny → US46.2.1
+- Protection anti-abus dès le socle sur la soumission publique (rate-limit ou équivalent), pas réservée à une
+  option payante comme chez Typeform → US46.1.1
+- Compteur de votes visible et tri du kanban par popularité — pattern Slido → US46.1.1
+
+Roadmap publique en lecture seule et notification de clôture de ticket (Frill, Canny) restent des extensions
+non prioritaires, cohérentes avec la Priority Low déjà affectée à E46.
+
 ## Modules impactés
 
 `core` (pivot-core + pivot-ui)

@@ -25,6 +25,24 @@ Petits jeux d'équipe temps réel pour animer une pause ou un icebreaker : bingo
 - **F47.3 — Trivia Agile** — questions Scrum/agile, timer, score final
   - US47.3.1 : Jouer à Trivia Agile à plusieurs
 
+## Repères marché (benchmark POC)
+
+Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahiers Kahoot!, Mentimeter (+ Slido, cahier
+partagé avec E46), dossier de synthèse (juillet 2026). Raffinements à qualifier au Gate 1 :
+
+- Seuil explicite de participants simultanés par room, absent des AC stub des trois US actuelles — à
+  documenter avec dégradation progressive (file d'attente, limitation), jamais de blocage brutal comme le
+  modèle Mentimeter (30 jours de blocage au dépassement de quota, contre-modèle explicite à ne pas reproduire)
+- Classement intermédiaire affiché après chaque question, pas seulement en fin de partie → US47.3.1
+- Formule du bonus de rapidité de US47.3.1 (déjà mentionnée en AC stub) à expliciter précisément au Gate 1
+
+Deux **extensions de périmètre** identifiées par le benchmark, **non tranchées ici — à qualifier avec le
+mainteneur avant toute création de Feature** :
+
+- Rôle animateur/host distinct des joueurs (pattern Kahoot) — aucune des trois US actuelles ne le mentionne
+- Un éventuel quatrième mini-jeu « nuage de mots collaboratif » (pattern Mentimeter, nouvelle Feature F47.4
+  potentielle) et une échelle de notation/classement comme variante de vote plus riche
+
 ## Modules impactés
 
 `collaboratif` (pivot-collaboratif-core + pivot-collaboratif-ui)

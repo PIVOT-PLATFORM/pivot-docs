@@ -14,6 +14,7 @@
 | Ordre de signature configurable : séquentiel ou parallèle | ⬜ |
 | Envoi : chaque signataire reçoit un lien unique à usage unique (token) | ⬜ |
 | Document passe en statut `PENDING` après envoi | ⬜ |
+| Rappels automatiques configurables aux signataires en attente (fréquence par défaut + réglable) — benchmark : standard chez DocuSign/Dropbox Sign/Yousign | ⬜ |
 | Sécurité : token de signataire non devinable, à usage unique, expirable | ⬜ |
 
 ---

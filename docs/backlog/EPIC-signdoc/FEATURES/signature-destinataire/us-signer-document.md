@@ -14,6 +14,7 @@
 | Prévisualisation multi-pages du document dans le navigateur | ⬜ |
 | Remplissage des champs assignés, signature (dessin ou typographie) | ⬜ |
 | Confirmation d'identité (OTP email) avant validation de la signature | ⬜ |
+| Niveau de vérification d'identité renforcée (au-delà de l'OTP email) à qualifier au Gate 1 selon la sensibilité du document — benchmark Yousign (différenciateur anti-fraude natif) | ⬜ |
 | En séquentiel, le signataire suivant n'est notifié qu'après la signature du précédent | ⬜ |
 | Un signataire peut refuser avec motif obligatoire — notifie immédiatement l'organisateur | ⬜ |
 | Error : token expiré ou déjà utilisé → accès refusé explicite | ⬜ |
