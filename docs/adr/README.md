@@ -24,5 +24,17 @@ sidebar_label: "Vue d'ensemble"
 | [ADR-014](ADR-014-secrets-credentials-externes-openbao.md) | Secrets & credentials externes (OpenBao, rotation) | Proposé |
 | [ADR-015](ADR-015-zones-souverainete-segmentation.md) | Zones de souveraineté A/B/C & segmentation réseau | Proposé |
 | [ADR-016](ADR-016-baseline-supply-chain-admission-modules.md) | Baseline supply-chain & gouvernance d'admission des modules | Proposé |
+| [ADR-017](ADR-017-chiffrement-repos-differentie.md) | Chiffrement au repos différencié par classe de données | Proposé |
+| [ADR-018](ADR-018-chiffrement-e2e-cles-tenant.md) | Chiffrement de bout en bout et gestion des clés par tenant (modules critiques) | Proposé |
+| [ADR-019](ADR-019-dlp-applicatif-exfiltration-api.md) | DLP applicatif : prévention de l'exfiltration par les API | Proposé |
+| [ADR-020](ADR-020-journaux-audit-immuables-non-repudiation.md) | Journaux d'audit immuables et non-répudiation | Proposé |
+| [ADR-021](ADR-021-cycle-vie-donnees-retention-purge.md) | Cycle de vie des données : rétention, anonymisation et purge sécurisée | Proposé |
+| [ADR-022](ADR-022-principal-authentification-minimal-partage.md) | Principal d'authentification minimal partagé (`pivot-core-starter`) | Proposé |
 
-> **Numérotation ADR-017 à ADR-020** : réservées textuellement par ADR-009 §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives) — non encore rédigées. Renumérotées depuis ADR-011–014 pour laisser la place aux 6 ADR Sécurité (ADR-011–016), qui occupaient la première tranche disponible après ADR-010.
+> **Numérotation ADR-017 à ADR-020** : à l'origine réservées textuellement par ADR-009
+> §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives).
+> Finalement attribuées à la place à la vague d'ADR Protection des données (pivot-docs#144,
+> 2026-07-08) — les quatre sujets réservés par ADR-009 restent donc **sans numéro attribué à ce
+> jour** ; leur prochaine attribution devra reprendre à la première valeur libre au moment de leur
+> rédaction (vérifier `docs/adr/` + PR ouvertes avant d'assigner, pas de calcul a priori — un tel
+> écart de numérotation s'est déjà produit deux fois sur ce fichier).
