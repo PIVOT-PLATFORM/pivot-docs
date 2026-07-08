@@ -39,7 +39,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E22 — Module Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 | 3 | 47 | ⬜ phase-3 · pilotage |
 | [E23 — Module Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 | — | 12 | ⬜ phase-3 · pilotage |
 | [E24 — Module ADR projet](EPIC-adr-projet/README.md) | E24 | 1 | — | 2 | ⬜ phase-3 · pilotage |
-| [E25 — Module Commande publique](EPIC-commande-publique/README.md) | E25 | 1 | — | 4 | ⬜ phase-3 · pilotage |
+| *(E25 — Module Commande publique → [BACKLOG-IDEATION](BACKLOG-IDEATION/EPIC-commande-publique/README.md))* | E25 | 1 | — | 4 | 📋 Idéation |
 | [E26 — Module Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 | — | 8 | ⬜ phase-3 · pilotage |
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 11 | 12 | 38 | ⬜ phase-3 — dépend ADR-009 |
@@ -176,6 +176,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | EPIC | Titre | Raison |
 |------|-------|--------|
 | [E18](BACKLOG-IDEATION/EPIC-pilotage/README.md) | Domaine Pilotage (ombrelle) | Conteneur sans US propres — rôle documentaire uniquement |
+| [E25](BACKLOG-IDEATION/EPIC-commande-publique/README.md) | Commande publique | Niche secteur public français (appels d'offres), périmètre décalé vs POC PouetPouet — D1 résolue : en idéation |
 | [E32](BACKLOG-IDEATION/EPIC-ressources-temps/README.md) | Ressources & temps | Issu du benchmark CSV, section Périmètre manquante |
 | [E33](BACKLOG-IDEATION/EPIC-pilotage-taches/README.md) | Collaboration & tâches (pilotage) | Idem |
 | [E34](BACKLOG-IDEATION/EPIC-pilotage-ia/README.md) | IA & agents (pilotage) | Idem |
@@ -191,7 +192,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 
 | # | Sujet | EPICs concernés | Impact |
 |---|-------|----------------|--------|
-| D1 | **Périmètre E25** — le backlog décrit un module d'appel d'offres public, le POC PouetPouet construit un workflow de demandes d'achat internes (PGI/LDAP). Quel périmètre retenir ? | E25 | Redéfinir l'EPIC avant Gate 1 |
+| ~~D1~~ | ~~**Périmètre E25**~~ — **Résolu (2026-07-09)** : E25 déplacé en [BACKLOG-IDEATION](BACKLOG-IDEATION/EPIC-commande-publique/README.md). Module appels d'offres publics trop niche, décalé vs POC PouetPouet (workflow achat interne). À reprendre uniquement sur décision explicite du mainteneur. | E25 | ✅ Résolu — en idéation |
 | D2 | **Chevauchement E28/E29** — frontières entre adaptateurs OSS (E28) et moteur de workflow natif (E29) non tracées dans les deux sens | E28, E29 | Clarifier avant implémentation |
 | D3 | **E29 vs moteur Parcours** — E29 ne référence pas le moteur Parcours livré dans le POC (étapes typées, classification C0–C3, GCS) | E29 | Aligner ou créer l'EPIC manquant |
 | D4 | **Chevauchement E48/E29** — assistant IA transverse (E48) vs chatbots connectés (E29 US29.9.4) partiellement clarifié côté E48 uniquement | E48, E29 | Compléter côté E29 |
@@ -221,3 +222,5 @@ déjà complète pour leur périmètre). Voir `EPIC-collaboration/README.md` §O
 *Raffinage benchmark 2026-07-08 : relecture croisée des 6 cahiers de spécifications individuels du benchmark workflows (`pivot-benchmarks/workflows/`), au-delà du dossier de synthèse déjà entièrement répercuté dans E29 (84 items `WF-###`). Deux écarts mineurs corrigés par extension d'AC existantes (`US29.7.1` credentials-centralisés : détection de credentials expirés/révoqués + reconnexion guidée, cahier IFTTT ENF-04 ; `US29.7.6` inventaire-propriétaires : transfert explicite de propriété, cahier Zapier §2.2). Un écart réel identifié hors CSV initial : `US29.1.8` édition collaborative temps réel de l'éditeur de workflows (cahier Power Automate EF-RPA-04, mentionné uniquement pour le RPA mais généralisable — absent du dossier de synthèse car ne portant que sur un seul outil). E29 : 78 → 79 US (compte mis à jour ci-dessus). Aucune décision d'architecture prise unilatéralement : la note d'implémentation de `US29.1.8` marque explicitement le choix du modèle de synchronisation temps réel (OT centralisée vs CRDT) comme « à valider par le mainteneur ».*
 
 *Nettoyage backlog 2026-07-09 : E18, E32–E37, E39, E40 déplacés dans `BACKLOG-IDEATION/` (dossiers hors backlog opérationnel) — Gate 1 non atteignable en l'état (section Périmètre manquante, ACs insuffisantes). E18 est un conteneur documentaire sans US propres ; E32–E40 sont des EPICs générés depuis un CSV benchmark PPM sans raffinement suffisant. 4 décisions ouvertes tracées dans §Décisions ouvertes (E25 périmètre, E28/E29 chevauchement, E29/Parcours, E48/E29). Liens relatifs mis à jour dans EPIC-pilotage/README.md, EPIC-roadmap/README.md, EPIC-portefeuille/README.md, EPIC-budget/README.md, sprints/zones-ombre.md.*
+
+*Nettoyage backlog 2026-07-09 (2e passe) : E25 déplacé en BACKLOG-IDEATION. F28.6/28.9/28.10/28.11 (E28), F29.10/29.14 (E29), F38.14/US38.13.2/US38.13.4/US38.7.1/EN38.2 (E38), US23.2.9/23.2.10 (E23), US26.2.2/26.2.4/26.2.5/26.2.6 (E26), US30.14.3/30.14.5 (E30), US41.5.14 (E41) déplacés en BACKLOG-IDEATION — doublons, hors domaine, niche secteur public, ou trop spéculatif.*

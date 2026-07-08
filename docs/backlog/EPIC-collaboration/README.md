@@ -176,9 +176,9 @@ nativement sous ce même EPIC sans mapping F30.x.
 ### F30.14 — Innovation
 - US30.14.1 : Mémoire d'atelier exécutable
 - US30.14.2 : Coffre de décisions
-- US30.14.3 : Traduction simultanée
+- *(US30.14.3 Traduction simultanée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/) 2026-07-09 — spéculatif, dépendance IA)*
 - US30.14.4 : Équité de participation
-- US30.14.5 : Pont physique-numérique continu
+- *(US30.14.5 Pont physique-numérique continu → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/) 2026-07-09 — spéculatif, infrastructure non définie)*
 - US30.14.6 : Format d'échange ouvert
 - US30.14.7 : IA souveraine embarquée
 - US30.14.8 : Board accessible non visuel
@@ -318,9 +318,9 @@ nativement sous ce même EPIC sans mapping F30.x.
 | **F30.14 — Innovation** | |
 | [US30.14.1 — Mémoire d'atelier exécutable](FEATURES/innovation/us-memoire-d-atelier-executable.md) | ⬜ |
 | [US30.14.2 — Coffre de décisions](FEATURES/innovation/us-coffre-de-decisions.md) | ⬜ |
-| [US30.14.3 — Traduction simultanée](FEATURES/innovation/us-traduction-simultanee.md) | ⬜ |
+| *(US30.14.3 — Traduction simultanée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/us-traduction-simultanee.md))* | — |
 | [US30.14.4 — Équité de participation](FEATURES/innovation/us-equite-de-participation.md) | ⬜ |
-| [US30.14.5 — Pont physique-numérique continu](FEATURES/innovation/us-pont-physique-numerique-continu.md) | ⬜ |
+| *(US30.14.5 — Pont physique-numérique continu → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/us-pont-physique-numerique-continu.md))* | — |
 | [US30.14.6 — Format d'échange ouvert](FEATURES/innovation/us-format-d-echange-ouvert.md) | ⬜ |
 | [US30.14.7 — IA souveraine embarquée](FEATURES/innovation/us-ia-souveraine-embarquee.md) | ⬜ |
 | [US30.14.8 — Board accessible non visuel](FEATURES/innovation/us-board-accessible-non-visuel.md) | ⬜ |

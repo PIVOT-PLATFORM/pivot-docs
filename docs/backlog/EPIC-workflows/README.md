@@ -27,6 +27,8 @@ faute de porter sur plus d'un outil).
 
 ## Périmètre
 
+> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/) (2026-07-09)** : F29.10 (RPA & process intelligence — hors scope PIVOT), F29.14 (Chantiers SI — méta-gouvernance SI, pas des features produit).
+
 - **Enablers (E13 NFR)** — exigences non fonctionnelles socle
   - EN29.1 : Chiffrement & RGPD
   - EN29.2 : Disponibilité 99,9 %
@@ -92,10 +94,7 @@ faute de porter sur plus d'un outil).
   - US29.9.2 : Interfaces no-code
   - US29.9.3 : Cartographie des processus
   - US29.9.4 : Chatbots connectés
-- **F29.10 — RPA & process intelligence** — US29.10.1, US29.10.2, US29.10.3
-  - US29.10.1 : RPA desktop
-  - US29.10.2 : RPA auto-réparante
-  - US29.10.3 : Process mining
+- *(F29.10 — RPA & process intelligence déplacé en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/) 2026-07-09 — hors scope : RPA desktop + process mining)*
 - **F29.11 — Extensibilité & écosystème** — US29.11.1, US29.11.2, US29.11.3, US29.11.4, US29.11.5
   - US29.11.1 : Serveur MCP
   - US29.11.2 : Connecteurs communautaires typés
@@ -115,18 +114,7 @@ faute de porter sur plus d'un outil).
   - US29.13.6 : Mode dégradé organisé
   - US29.13.7 : Pile souveraine certifiée
   - US29.13.8 : Packs conformité France
-- **F29.14 — Chantiers SI** — US29.14.1, US29.14.2, US29.14.3, US29.14.4, US29.14.5, US29.14.6, US29.14.7, US29.14.8, US29.14.9, US29.14.10, US29.14.11
-  - US29.14.1 : Segmentation par profil d'usage
-  - US29.14.2 : Projection des volumes
-  - US29.14.3 : Classification souveraineté
-  - US29.14.4 : Stratégie socle + exception
-  - US29.14.5 : CoE et gouvernance citoyenne
-  - US29.14.6 : Principe 'IA minimale'
-  - US29.14.7 : Exploitation de production
-  - US29.14.8 : Contractualisation IA & sortie
-  - US29.14.9 : Audit de sécurité credentials
-  - US29.14.10 : Conformité AI Act
-  - US29.14.11 : Accessibilité RGAA
+- *(F29.14 — Chantiers SI déplacé en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/) 2026-07-09 — méta-gouvernance SI, pas des features produit)*
 
 ## Dépendances
 
@@ -202,10 +190,7 @@ faute de porter sur plus d'un outil).
 | [US29.9.2 — Interfaces no-code](FEATURES/suite-experience/us-interfaces-nocode.md) | ⬜ |
 | [US29.9.3 — Cartographie des processus](FEATURES/suite-experience/us-cartographie-processus.md) | ⬜ |
 | [US29.9.4 — Chatbots connectés](FEATURES/suite-experience/us-chatbots-connectes.md) | ⬜ |
-| **F29.10 — RPA & process intelligence** | |
-| [US29.10.1 — RPA desktop](FEATURES/rpa-process/us-rpa-desktop.md) | ⬜ |
-| [US29.10.2 — RPA auto-réparante](FEATURES/rpa-process/us-rpa-auto-reparante.md) | ⬜ |
-| [US29.10.3 — Process mining](FEATURES/rpa-process/us-process-mining.md) | ⬜ |
+| *(F29.10 — RPA & process intelligence → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/rpa-process/))* | — |
 | **F29.11 — Extensibilité & écosystème** | |
 | [US29.11.1 — Serveur MCP](FEATURES/extensibilite-ecosysteme/us-serveur-mcp.md) | ⬜ |
 | [US29.11.2 — Connecteurs communautaires typés](FEATURES/extensibilite-ecosysteme/us-connecteurs-communautaires-types.md) | ⬜ |
@@ -225,15 +210,4 @@ faute de porter sur plus d'un outil).
 | [US29.13.6 — Mode dégradé organisé](FEATURES/innovation/us-mode-degrade-organise.md) | ⬜ |
 | [US29.13.7 — Pile souveraine certifiée](FEATURES/innovation/us-pile-souveraine-certifiee.md) | ⬜ |
 | [US29.13.8 — Packs conformité France](FEATURES/innovation/us-packs-conformite-france.md) | ⬜ |
-| **F29.14 — Chantiers SI** | |
-| [US29.14.1 — Segmentation par profil d'usage](FEATURES/chantiers-si/us-segmentation-par-profil.md) | ⬜ |
-| [US29.14.2 — Projection des volumes](FEATURES/chantiers-si/us-projection-volumes.md) | ⬜ |
-| [US29.14.3 — Classification souveraineté](FEATURES/chantiers-si/us-classification-souverainete.md) | ⬜ |
-| [US29.14.4 — Stratégie socle + exception](FEATURES/chantiers-si/us-strategie-socle-exception.md) | ⬜ |
-| [US29.14.5 — CoE et gouvernance citoyenne](FEATURES/chantiers-si/us-coe-gouvernance-citoyenne.md) | ⬜ |
-| [US29.14.6 — Principe 'IA minimale'](FEATURES/chantiers-si/us-principe-ia-minimale.md) | ⬜ |
-| [US29.14.7 — Exploitation de production](FEATURES/chantiers-si/us-exploitation-production.md) | ⬜ |
-| [US29.14.8 — Contractualisation IA & sortie](FEATURES/chantiers-si/us-contractualisation-ia-sortie.md) | ⬜ |
-| [US29.14.9 — Audit de sécurité credentials](FEATURES/chantiers-si/us-audit-securite-credentials.md) | ⬜ |
-| [US29.14.10 — Conformité AI Act](FEATURES/chantiers-si/us-conformite-ai-act.md) | ⬜ |
-| [US29.14.11 — Accessibilité RGAA](FEATURES/chantiers-si/us-accessibilite-rgaa.md) | ⬜ |
+| *(F29.14 — Chantiers SI → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/chantiers-si/))* | — |
