@@ -1,7 +1,10 @@
 # US16.3.1 — Page contact
 
-> **Branche active** : `feat/us16-3-1-contact` (pivot-ui + pivot-core)
-> **Statut** : 🔎 Review — implémentation complète, en attente de validation PO + merge
+> **Statut** : 🔎 Review — implémentation complète et **mergée sur `main`** (backend `pivot-core`
+> PR [#112](https://github.com/PIVOT-PLATFORM/pivot-core/pull/112), frontend `pivot-ui` PR
+> [#48](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/48) + [#87](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/87)),
+> branches supprimées post-merge. `Stage: Review` reflète la recette PO restante avant
+> `Stage: Done` (mainteneur), pas un merge en attente — resynchronisé le 2026-07-08.
 
 **En tant que** utilisateur (connecté ou non)
 **Je veux** envoyer un message à l'équipe PIVOT via un formulaire
@@ -28,11 +31,14 @@
 - Formulaire de contact admin (gestion des messages reçus → backlog futur)
 
 ## Notes d'implémentation
-- Frontend : `ContactComponent` — `src/app/features/contact/`
+- Frontend : `ContactComponent` (`pivot-ui`, `src/app/features/contact/`) → `ContactApiService.submit()`,
+  routé authentifié (shell) + fallback public (accessible sans connexion)
 - Tests : `TranslocoTestingModule.forRoot()` depuis `@jsverse/transloco` (pas subpath)
-- Backend : `ContactController.POST /api/contact` → `ContactService` → `EmailService.sendContactConfirmation()`
-- DTO : `ContactRequest { email, message, lang }` → validation `@NotBlank`, `@Email`, `@Size(max=2000)`
-- Rate limiting (à valider : 5 req/15min par IP) → EN02.x ou règle SecurityConfig
+- Backend (`pivot-core`) : `ContactController.POST /contact` → `ContactService` → email de
+  confirmation i18n
+- DTO : `ContactRequestDto { email, message, lang }` → validation `@Valid`
+- Rate limiting confirmé dans le code mergé : **5 req/10min par IP** (`RateLimiterService`,
+  `HttpStatus.ACCEPTED` en succès, `RateLimitException` au-delà du seuil)
 
 ---
 Item Type: US · Parent: F16.3 · Module: core · Phase: Socle · Size: M · Priority: Low

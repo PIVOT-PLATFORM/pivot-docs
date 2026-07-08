@@ -6,7 +6,6 @@
 
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
-| US16.3.1 | Formulaire de contact (en review depuis Sprint 1 — à sortir) | Critical | 🔎 Review |
 | EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth` à déplacer, `team` à implémenter (jamais fait, bloque la FK cross-schéma EN17.4) — [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) | Critical | 🔄 In progress |
 | EN07.3 | ActiveMQ persistence KahaDB | High | ⬜ |
 | EN07.4 | PgBouncer session mode configuration prod | High | ⬜ |
