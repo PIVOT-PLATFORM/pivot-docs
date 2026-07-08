@@ -4,18 +4,42 @@
 **Scope :** clôture du périmètre Socle — reliquats, dette, recette
 **Jalon de sortie :** déclaration **« Socle terminé »** par le mainteneur → déverrouille les sprints 7+
 
+## Lancement (2026-07-09)
+
+Gate 1 (PO Agent) passé sur les items éligibles Phase Socle : `Stage: Backlog → Ready` pour
+EN07.3, US05.13.1, US05.13.2, US05.15.1, US05.15.2 (Enabler EN07.3 complété avec Objectif
+technique + Justification, absents à l'origine). Agents dev lancés en parallèle sur ces 5 items
+(isolation git worktree côté `pivot-core`, évite les conflits inter-agents sur les fichiers
+partagés — `compose.yml`, workflows CI).
+
+**Volontairement exclus de ce lancement** (voir tableau ci-dessous pour le détail) :
+- **EN07.4** (PgBouncer) — déjà assignée à un mainteneur humain (`leo-brgn`,
+  `pivot-core#185`) : lancer un agent dessus reproduirait la collision déjà vécue sur
+  `pivot-ui#121`/`#122`. `Stage: Ready` quand même mis à jour (DoR complète), pas de conflit sur
+  le fait qu'elle soit prête — seulement sur qui l'implémente.
+- **US05.14.1-3** (branch protection required-checks) — modifient une config de repo partagée
+  hors du flux PR normal (paramètres GitHub, pas du code revu). Hors périmètre d'un lancement
+  autonome sans confirmation explicite du mainteneur.
+- **Dette S2** Redis cache + dédup `sanitizeReturnUrl` — aucun ticket dédié (juste des lignes
+  narratives dans `STATUS.md`), pas de DoR à évaluer. Nécessitent une US/Enabler en bonne et due
+  forme avant tout lancement.
+- **Recette** (a11y, bug bash) — tâches humaines par nature, non déléguables à un agent dev.
+
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
-| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth` à déplacer, `team` à implémenter (jamais fait, bloque la FK cross-schéma EN17.4) — [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) | Critical | 🔄 In progress |
-| EN07.3 | ActiveMQ persistence KahaDB | High | ⬜ |
-| EN07.4 | PgBouncer session mode configuration prod | High | ⬜ |
-| EN05.13-15 | CI/CD Supply-chain restants | High | ⬜ |
-| E05 US restantes | 7 US supply-chain | High | ⬜ |
-| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ |
-| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ⬜ |
-| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ |
-| Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ |
-| Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ |
+| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth`/`team` extraits (PR #167/#173/#177/#180), `pivot-core#171` fermée | Critical | ✅ Review (recette mainteneur → Done) |
+| EN07.3 | ActiveMQ persistence KahaDB | High | 🔄 In progress |
+| EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185), assignée à leo-brgn | High | ⬜ (assignée, hors lancement agent — évite collision) |
+| US05.13.1 | ZAP baseline planifié | Medium | 🔄 In progress |
+| US05.13.2 | ZAP full scan + rapport | Medium | 🔄 In progress |
+| US05.14.1-3 | Required checks core/ui/docs (branch protection) | High/Medium | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
+| US05.15.1 | Composite action setup partagée | Medium | 🔄 In progress |
+| US05.15.2 | Aligner workflows ui sur conventions core | Medium | 🔄 In progress |
+| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ — pas de ticket dédié, hors lancement |
+| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ✅ Done — [pivot-core#184](https://github.com/PIVOT-PLATFORM/pivot-core/pull/184) |
+| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ — pas de ticket dédié, hors lancement |
+| Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ — recette humaine |
+| Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ — recette humaine |
 
 > **Noyau whiteboard (E30, F08.x/EN08.x)** reste porté par `sprint-5.md` (Vague 1+), pas dupliqué
 > ici — mais sa complétion (17/17 `Done`) est un pré-requis du jalon « Socle terminé » au même

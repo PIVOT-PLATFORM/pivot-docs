@@ -15,4 +15,4 @@
 
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: Socle · Size: M · Priority: Medium
-Stage: Backlog
+Stage: Ready
