@@ -44,7 +44,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E26 — Module Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 | — | 8 | ⬜ phase-3 · pilotage |
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 10 | 12 | 35 | ⬜ phase-3 — dépend ADR-009 |
-| [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 78 | ⬜ phase-3 |
+| [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 79 | ⬜ phase-3 |
 | [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 103 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
 | [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 3 | ⬜ phase-3 · pilotage |
@@ -197,3 +197,5 @@ sous leur Feature existante — US30.1.11 Liens enrichis et lecture vidéo inté
 Whiteboard) et US30.4.4 Rituels récurrents (cahier FigJam) — E30 : 101→103 US. E12 MeetOps et E19
 Module Session vérifiés contre le même benchmark sans écart supplémentaire identifié (couverture
 déjà complète pour leur périmètre). Voir `EPIC-collaboration/README.md` §Origine pour le détail.*
+
+*Raffinage benchmark 2026-07-08 : relecture croisée des 6 cahiers de spécifications individuels du benchmark workflows (`pivot-benchmarks/workflows/`), au-delà du dossier de synthèse déjà entièrement répercuté dans E29 (84 items `WF-###`). Deux écarts mineurs corrigés par extension d'AC existantes (`US29.7.1` credentials-centralisés : détection de credentials expirés/révoqués + reconnexion guidée, cahier IFTTT ENF-04 ; `US29.7.6` inventaire-propriétaires : transfert explicite de propriété, cahier Zapier §2.2). Un écart réel identifié hors CSV initial : `US29.1.8` édition collaborative temps réel de l'éditeur de workflows (cahier Power Automate EF-RPA-04, mentionné uniquement pour le RPA mais généralisable — absent du dossier de synthèse car ne portant que sur un seul outil). E29 : 78 → 79 US (compte mis à jour ci-dessus). Aucune décision d'architecture prise unilatéralement : la note d'implémentation de `US29.1.8` marque explicitement le choix du modèle de synchronisation temps réel (OT centralisée vs CRDT) comme « à valider par le mainteneur ».*
