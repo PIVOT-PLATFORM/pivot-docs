@@ -49,6 +49,17 @@ skills:
         - "signal 'prêt pour review' d'un Dev_Agent"
         - "autoloop PR — itération review + corrections"
 
+  # ── AUDITS DE DOMAINE ─────────────────────────────────────────────────────────
+
+  - id: pivot-audit-format
+    file: .project/skills/skill-audit-format.yaml
+    priority: 1
+    load_when:
+      agents: [Expert_Red_Team, Expert_Blue_Team, Architecte_Modules, Architecte_BDD, Expert_QA, Expert_RGPD, Expert_UXUI, Expert_DevSecOps, Product_Owner, Scrum_Master]
+      triggers:
+        - "avant tout audit formel de domaine (docs/audits/*.md)"
+        - "profil agent responsable identifié dans docs/audits/README.md prêt à publier un score réel"
+
 ---
 
 loading_protocol:

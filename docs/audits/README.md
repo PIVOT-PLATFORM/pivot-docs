@@ -8,6 +8,13 @@ sidebar_label: "Vue d'ensemble"
 
 Un fichier par domaine, mis à jour en place. **Jamais de fichiers datés.**
 
+**Gabarit de rapport formel** (squelette commun + grille d'analyse par domaine) → skill
+`pivot-audit-format` (`.project/skills/skill-audit-format.yaml`) — à charger par le profil agent
+responsable avant tout audit formel, pas pour les simples éditions de contexte/scaffolding.
+Règle clé : `Historique des révisions` ne grossit que sur un vrai passage noté (score réel),
+jamais sur une édition de préparation — `Statut` reste `À compléter` tant qu'aucun audit formel
+n'a été publié.
+
 | Audit | Fichier | Profil agent responsable |
 |-------|---------|---------------------------|
 | Architecture | [audit-architecture.md](audit-architecture.md) | Architecte Modules (coordination) + Architecte Java/Spring + Architecte Angular |

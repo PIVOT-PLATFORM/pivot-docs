@@ -380,8 +380,9 @@ Index : `.project/skills/_index.yaml`
 | `pivot-backlog-workflow` | `skill-backlog-workflow.yaml` | **Toujours** — démarrage de session, lecture `sprints/`, sélection US, mise à jour Stage |
 | `pivot-ac-traceability` | `skill-ac-traceability.yaml` | **Toujours** — toute implémentation d'US, Gate 2, Gate 4 |
 | `pivot-pr-reviewer` | `skill-pr-reviewer.yaml` | Gate 3 (qualité CI), Gate 4 (décision merge), review PR |
+| `pivot-audit-format` | `skill-audit-format.yaml` | Avant tout audit formel de domaine (`docs/audits/*.md`) — jamais pour une simple édition de contexte |
 
-**Règle :** `pivot-backlog-workflow` est chargée à chaque démarrage de session ; les deux autres avant toute review de PR.
+**Règle :** `pivot-backlog-workflow` est chargée à chaque démarrage de session ; `pivot-ac-traceability` et `pivot-pr-reviewer` avant toute review de PR ; `pivot-audit-format` avant tout audit formel de domaine.
 
 ---
 

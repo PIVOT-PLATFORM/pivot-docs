@@ -1,0 +1,296 @@
+skill:
+  id: pivot-audit-format
+  version: "1.0"
+  name: "Format des audits de domaine (docs/audits/)"
+  description: >
+    Gabarit de rapport d'audit formel — squelette commun à toutes les
+    catégories de docs/audits/ (cyber, architecture, bdd, qa, rgpd, ux,
+    modules, cicd, dependances, observabilite, backlog), avec la grille
+    d'analyse propre à chaque domaine. Chargé par le profil agent
+    responsable (voir table dans docs/audits/README.md) avant tout audit
+    formel — pas pour les simples éditions de contexte/scaffolding.
+  loaded_by:
+    - Expert Red Team / Expert Blue Team (audit-cyber)
+    - Architecte Modules / Architecte Java-Spring / Architecte Angular (audit-architecture, audit-modules)
+    - Architecte BDD PostgreSQL (audit-bdd)
+    - Expert QA (audit-qa)
+    - Expert RGPD (audit-rgpd)
+    - Expert UX/UI (audit-ux)
+    - Expert DevSecOps (audit-cicd, audit-dependances, audit-observabilite)
+    - Product Owner / Scrum Master (audit-backlog)
+
+---
+
+principes_generaux:
+
+  regle_historique: >
+    "Historique des révisions" ne grossit QUE sur un vrai passage d'audit
+    formel avec un score réel (jamais "—"). Une édition de scaffolding
+    (ajout de contexte, de profil agent, de points d'attention avant le
+    premier passage) ne compte pas comme une révision — incident réel du
+    2026-07-08 : les audits pivot-platform avaient été gonflés à v3/v5
+    avant même le premier audit formel, corrigé en revenant à v1 partout.
+
+  regle_fichier_unique: >
+    Un fichier par domaine, mis à jour en place, jamais de fichier daté
+    (règle CLAUDE.md déjà en vigueur). "Score global" et "Statut" en tête
+    de fichier reflètent toujours l'état du DERNIER audit formel publié,
+    jamais un brouillon en cours de rédaction.
+
+  statut: >
+    "À compléter" tant qu'aucun audit formel n'a été publié. Passe à un
+    score réel (ex. "8.1/10 — v1") dès la publication du premier rapport
+    complet suivant ce gabarit.
+
+  jamais_100_pourcent_negatif: >
+    Toute publication inclut une section "Bonnes pratiques confirmées" ou
+    "Points forts" — un rapport qui ne liste que des findings sans jamais
+    reconnaître ce qui fonctionne perd en crédibilité et en actionnabilité.
+
+  double_passe_optionnelle: >
+    Pour les domaines à fort enjeu (cyber en particulier), une méthodologie
+    double-passe réduit le biais d'ancrage :
+      - Passe A (vérification) : accès à l'historique, focalisée sur la
+        re-vérification des corrections antérieures.
+      - Passe B (aveugle) : interdiction de lire les audits antérieurs,
+        méthodologie trace-complète indépendante.
+    Le score publié est l'union des deux passes (le plus prudent des deux
+    sur les findings actifs), avec le détail des deux scores individuels
+    et une note sur les écarts constatés. Non obligatoire pour les
+    domaines à enjeu plus faible (ex. audit-backlog, audit-observabilite).
+
+---
+
+squelette_commun:
+
+  en_tete:
+    - "Titre : Audit {Domaine} — PIVOT Platform"
+    - "Date + version (correspond à la dernière ligne Historique) + branche/repo audité si pertinent"
+    - "Expert : {profil agent responsable, cf. docs/audits/README.md} — méthodologie si double-passe"
+    - "Périmètre : liste exacte des repos/couches/fichiers réellement couverts, pas une intention générique"
+
+  score_global:
+    - "Score global : X/10 avec tendance (↑/↓/→) vs la version précédente"
+    - "Paragraphe de progression : ce qui a changé depuis le dernier audit formel, référencé aux findings résolus par ID"
+
+  corps:
+    description: >
+      Deux variantes de corps selon le type de domaine — choisir celle qui
+      correspond, ne pas forcer l'autre gabarit sur un domaine qui ne s'y
+      prête pas.
+    variante_findings_par_severite:
+      domaines: [audit-cyber, audit-rgpd, audit-dependances]
+      structure: >
+        Sections CRITIQUE / HIGH / MEDIUM / LOW-INFO. Chaque finding :
+        ID (VULN-XXX ou équivalent), fichier:ligne, sévérité, catégorie de
+        grille (OWASP / Art. RGPD / CVE), score quantifié (CVSS ou
+        équivalent avec vecteur complet), extrait de code vulnérable,
+        PoC d'exploitation si applicable et sans danger à documenter,
+        impact, recommandation avec code de correction, effort estimé,
+        priorité (P0-P3).
+    variante_analyse_par_axe:
+      domaines: [audit-architecture, audit-modules, audit-bdd, audit-qa, audit-ux, audit-cicd, audit-observabilite, audit-backlog]
+      structure: >
+        Une section par couche/axe d'analyse pertinent au domaine, chacune
+        avec un score propre, points positifs/négatifs, extraits de code
+        ou exemples concrets, et une table de hotspots/duplication/dette
+        si applicable au domaine.
+
+  statut_findings_historiques:
+    - "Table de suivi des findings/dettes des versions précédentes : # | item | statut | preuve"
+    - "Preuve = référence concrète (fichier:ligne, commit, PR) — jamais une simple affirmation"
+
+  bonnes_pratiques_ou_points_forts:
+    - "Table ou liste numérotée de ce qui est déjà correct/exemplaire dans le domaine audité"
+
+  score_par_grille:
+    - "Table de score par sous-catégorie de la grille du domaine (voir grilles_par_domaine ci-dessous)"
+
+  plan_action_priorise:
+    - "P0 — bloquant (sens dépend du domaine : prod pour cyber, maintenabilité critique pour architecture)"
+    - "P1 — avant le prochain déploiement / dette majeure à traiter vite"
+    - "P2 — sprint suivant / amélioration planifiable"
+    - "P3 — qualité continue / mois"
+    - "Externe — hors du contrôle direct de l'équipe (ex. dépendance à un prestataire, un repo pas encore créé)"
+
+  conclusion:
+    - "Verdict global explicite (ex. PROD-READY, dette maîtrisée, bloquant) + réserves principales nommées"
+
+  signature:
+    - "*{Profil agent responsable} — {date} — {indépendant|vérification} — distribution restreinte*"
+
+---
+
+grilles_par_domaine:
+
+  audit-cyber:
+    grille: "OWASP Top 10 2021 + score CVSS v3.1 par finding (vecteur complet)"
+    axes_specifiques:
+      - "Score par catégorie OWASP (table A01-A10 + rubrique spécifique langage/stack)"
+      - "Sous-domaines OIDC/IAM et temps réel/WebSocket traités comme des findings à part entière, pas noyés dans le générique"
+    methodologie: "Double-passe recommandée vu l'enjeu (voir principes_generaux)"
+
+  audit-architecture:
+    grille: "Principes SOLID (violations vs respect, par principe) + organisation des couches"
+    axes_specifiques:
+      - "Arbre de dossiers commenté (nombre de fichiers par couche)"
+      - "Analyse par couche (Core/Controllers/Models/Services/... — adapté à la stack réelle)"
+      - "Duplication de code (DRY) — table occurrences/impact/évolution vs version précédente"
+      - "Complexité cyclomatique — hotspots (table fichier/lignes/méthodes/alerte/évolution)"
+
+  audit-modules:
+    grille: "Contrat PivotModule + cohérence cross-repo (registre, cache, guards Angular)"
+    axes_specifiques:
+      - "Conformité du contrat par module -core (getId/getName/getVersion/isEnabled)"
+      - "État réel des guards -ui (stub vs implémentation réelle)"
+      - "Isolation inter-module (bus d'événements vs couplage direct)"
+
+  audit-bdd:
+    grille: "Intégrité référentielle, normalisation, performance (plans de requête), conformité migrations Flyway"
+    axes_specifiques:
+      - "Respect du schéma multi-BDD (FK cross-schéma uniquement vers public)"
+      - "Convention V1 unique pré-BETA — respectée sur tous les modules ou seulement pivot-core"
+      - "Index et volumétrie sur les tables à forte croissance potentielle"
+
+  audit-qa:
+    grille: "Pyramide de tests (unitaires/intégration/E2E), couverture réelle par repo, fiabilité CI"
+    axes_specifiques:
+      - "Coverage Gate 2 réel vs seuil déclaré, consolidé multi-repo"
+      - "Mutation testing (PITest/Stryker) — statut par repo"
+      - "Cohérence E2E entre repos -ui (dépendance backend réelle vs mockée vs absente)"
+
+  audit-rgpd:
+    grille: "Art. 30 (registre des traitements), bases légales par finalité, droits des personnes"
+    axes_specifiques:
+      - "Inventaire des données personnelles par table/module (pas seulement schéma public)"
+      - "Politique de rétention/purge par type de donnée"
+      - "Droit à l'effacement/portabilité — preuve d'implémentation, pas une supposition"
+
+  audit-ux:
+    grille: "WCAG 2.1 AA (success criteria), 4 piliers Lighthouse, cohérence design system"
+    axes_specifiques:
+      - "Couverture a11y réelle par repo -ui (pas seulement le shell pivot-ui)"
+      - "Performance/Best Practices/SEO — suivis ou explicitement hors périmètre"
+      - "i18n — complétude des clés par repo, pas seulement placeholders"
+
+  audit-cicd:
+    grille: "Maturité DevSecOps (rulesets de branche, required checks, SonarCloud), gouvernance des packages inter-repos"
+    axes_specifiques:
+      - "Convergence des rulesets entre repos matures et repos bootstrap"
+      - "Incidents CI déjà rencontrés — jurisprudence à ne pas redécouvrir"
+      - "Permissions cross-repo GitHub Packages/GHCR — couples publisher/consumer recensés"
+
+  audit-dependances:
+    grille: "SCA (CVE connues), compatibilité de licence, SBOM"
+    axes_specifiques:
+      - "Consolidation multi-repo des résultats SCA (aujourd'hui dispersés par repo)"
+      - "Compatibilité de licence vs AGPL-3.0-or-later déclarée partout"
+      - "Fraîcheur des dépendances majeures, dérive entre repos du même type"
+
+  audit-observabilite:
+    grille: "Couverture logs structurés/métriques/health checks, exploitabilité en incident"
+    axes_specifiques:
+      - "Cohérence des health groups readiness/liveness entre repos"
+      - "Couverture des audit_events (événements métier sensibles)"
+      - "Dashboards/alerting réellement branchés vs instrumentation seule"
+
+  audit-backlog:
+    grille: "Cohérence Stage/PR/issue, traçabilité AC→test, hygiène sprint"
+    axes_specifiques:
+      - "Échantillonnage AC→test sur des US Stage: Done"
+      - "Doublons/items fantômes entre backlog markdown et issues GitHub"
+      - "Dépendances déclarées entre US/Enablers — cycles ou blocages silencieux"
+
+---
+
+report_template: |
+  # Audit {Domaine} — PIVOT Platform
+  ## Date : {date} — v{n}{ (branche/repo audité si pertinent)}
+  ## Expert : {profil agent responsable}{ — méthodologie double-passe si applicable}
+  ## Périmètre : {repos/couches/fichiers réellement couverts}
+
+  ---
+
+  ## Score global : {score}/10 {tendance ↑/↓/→}
+
+  {Paragraphe de progression depuis le dernier audit formel, référencé aux findings résolus par ID.}
+
+  ---
+
+  ## I. Résumé exécutif
+
+  {Verdict global en un paragraphe.}
+
+  ## II-V. Findings par sévérité — CRITIQUE / HIGH / MEDIUM / LOW-INFO
+  {Variante findings_par_severite — voir squelette_commun. Une sous-section par sévérité, vide si "Aucune".}
+
+  ## II-VI. Analyse par axe
+  {Variante analyse_par_axe — voir squelette_commun. Une section par couche/axe pertinent, score propre.}
+
+  ## Statut des findings/dettes historiques
+
+  | # | Item | Statut | Preuve |
+  |---|------|--------|--------|
+
+  ## Bonnes pratiques confirmées / Points forts
+
+  {Table ou liste numérotée.}
+
+  ## Score par {grille du domaine — voir grilles_par_domaine}
+
+  | Catégorie | Score | Findings/dette actifs |
+  |-----------|-------|------------------------|
+
+  ## Plan d'action
+
+  ### P0 — {bloquant, sens selon domaine}
+  ### P1 — {avant prochain déploiement / dette majeure}
+  ### P2 — {sprint suivant}
+  ### P3 — {qualité continue}
+  ### Externe — {hors contrôle direct de l'équipe, si applicable}
+
+  ## Conclusion
+
+  {Verdict + réserves principales nommées explicitement.}
+
+  ---
+
+  *{Profil agent responsable} — {date} — {indépendant|vérification} — distribution restreinte*
+
+  ---
+
+  ## Historique des révisions
+
+  | Version | Date | Score | Évolutions principales |
+  |---|---|---|---|
+  | v1 | {date} | {score réel} | {résumé de ce premier audit formel} |
+
+---
+
+artifact_format: |
+  audit: {domaine}
+  version: v{n}
+  date: {date}
+  profil_agent: {expert}
+  score_global: {score}/10
+  tendance: up | down | stable
+  findings_actifs:
+    critique: {n}
+    high: {n}
+    medium: {n}
+    low_info: {n}
+  plan_action:
+    p0: ["..."]
+    p1: ["..."]
+    p2: ["..."]
+    p3: ["..."]
+
+---
+
+gate_checklist:
+  avant_publication_audit_formel:
+    - "Score global calculé sur un vrai passage (jamais '—') — sinon rester en Statut: À compléter, pas de nouvelle ligne Historique"
+    - "Au moins une section Bonnes pratiques confirmées / Points forts renseignée"
+    - "Plan d'action P0→P3 (+ Externe si pertinent) rempli, pas de section vide silencieuse"
+    - "Historique des révisions : une seule nouvelle ligne ajoutée pour ce passage, avec le score réel obtenu"
+    - "Findings historiques (versions précédentes) confrontés un par un — statut + preuve, pas une affirmation générique"
