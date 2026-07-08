@@ -37,3 +37,4 @@
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: Review
+Gate 5 : `pivot-core` PR [#141](https://github.com/PIVOT-PLATFORM/pivot-core/pull/141) (Gate 4 = 100/100) · `pivot-ui` PR [#84](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/84) (Gate 4 = 84/100, rétrospectif) + correctif [#98](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/98), spec figée `docs/specs/EPIC-administration/us06-1-3-modifier-role.md` (rétroactif, 2026-07-08)

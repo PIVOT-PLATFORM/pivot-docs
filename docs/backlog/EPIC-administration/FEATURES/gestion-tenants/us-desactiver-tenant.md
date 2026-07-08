@@ -28,3 +28,4 @@
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: Socle · Size: S · Priority: Medium
 Stage: Review
+Gate 5 : `pivot-core` PR [#135](https://github.com/PIVOT-PLATFORM/pivot-core/pull/135) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-administration/us06-2-2-desactiver-tenant.md` (rétroactif, 2026-07-08)

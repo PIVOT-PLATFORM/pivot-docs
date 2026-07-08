@@ -39,3 +39,8 @@
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: Socle · Size: S · Priority: Medium
 Stage: Review
+Gate 5 : `pivot-core` PR [#134](https://github.com/PIVOT-PLATFORM/pivot-core/pull/134) (Gate 4 =
+95/100) · `pivot-ui` PR [#76](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/76) (Gate 4 =
+100/100), spec figée `docs/specs/EPIC-administration/us06-2-1-creer-tenant.md` (rétroactif,
+2026-07-08) — divergence notable non tranchée : `invitationUrl` reçu du backend mais jamais
+exploité côté UI (voir § Écarts de la spec)

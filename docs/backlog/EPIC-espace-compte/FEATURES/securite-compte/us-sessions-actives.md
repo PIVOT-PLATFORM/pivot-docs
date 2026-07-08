@@ -28,15 +28,17 @@
 | Dialog de confirmation : role="dialog", aria-modal="true", aria-labelledby, focus trap actif | ✅ |
 | Session courante : indicateur visuel ET textuel accessible (pas uniquement icône colorée) | ✅ |
 | Tous textes internalisés dans account.sessions.* (fr.json / en.json) | ✅ |
-| Sur mobile (< 768px), tableau → liste de cartes : IP et date en texte secondaire sous le nom d'appareil | ✅ |
+| Sur mobile (< 768px), tableau → liste de cartes : IP et date en texte secondaire sous le nom d'appareil | 🟡 |
 
 ## Notes de livraison
 
-- Implémenté : `pivot-core` PR [#132](https://github.com/PIVOT-PLATFORM/pivot-core/pull/132) (Gate 2 self-évalué : 100/100) · `pivot-ui` PR [#74](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/74) (Gate 2 self-évalué : 100/100).
+- Implémenté : `pivot-core` PR [#132](https://github.com/PIVOT-PLATFORM/pivot-core/pull/132) (Gate 2 self-évalué : 100/100, Gate 4 final après convergence : 100/100) · `pivot-ui` PR [#74](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/74) (Gate 2 self-évalué : 100/100, Gate 4 final revue neutre : 93/100).
 - Réutilise l'entité `AccessToken`/`TokenService` existante — capture appareil/IP déjà présente à l'émission du token, seul le strip HTML + troncature 200 caractères a été ajouté avant stockage.
 - Le composant de dialog de confirmation partagé (`ConfirmDialogComponent`) a gagné un input `role` (`dialog`/`alertdialog`) pour respecter l'AC — vérifié non cassant pour son usage existant (admin modules).
 - Point à confirmer par le PO : `DELETE /{tokenId}` sur un token déjà révoqué/expiré retourne 404 plutôt qu'un 204 idempotent — choix de design à valider.
+- AC responsive mobile (🟡 ci-dessus) : le SCSS (`@media (max-width: 767px)`) a été relu et jugé sain en revue Gate 4, mais aucun test automatisé ne le couvre (hors portée JSDOM/Vitest, nécessiterait un test Playwright avec émulation de viewport) — spec E2E différée par politique projet, cf. `docs/specs/EPIC-espace-compte/us02-2-3-sessions-actives.md`.
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: Review
+Gate 5 : `pivot-core` PR [#132](https://github.com/PIVOT-PLATFORM/pivot-core/pull/132) (Gate 4 = 100/100) · `pivot-ui` PR [#74](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/74) (Gate 4 = 93/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-3-sessions-actives.md` (rétroactif, 2026-07-08)
