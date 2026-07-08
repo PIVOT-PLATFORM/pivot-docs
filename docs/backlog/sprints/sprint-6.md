@@ -6,21 +6,33 @@
 
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
-| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth` à déplacer, `team` à implémenter (jamais fait, bloque la FK cross-schéma EN17.4) — [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) | Critical | 🔄 In progress |
 | EN07.3 | ActiveMQ persistence KahaDB | High | ⬜ |
-| EN07.4 | PgBouncer session mode configuration prod | High | ⬜ |
-| EN05.13-15 | CI/CD Supply-chain restants | High | ⬜ |
-| E05 US restantes | 7 US supply-chain | High | ⬜ |
-| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ |
-| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ⬜ |
-| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ |
+| EN07.4 | PgBouncer session mode configuration prod | High | 🔄 In progress |
+| US05.13.1 | ZAP baseline planifié | High | ⬜ |
+| US05.13.2 | ZAP full scan + rapport | High | ⬜ |
+| US05.14.1 | Required checks pivot-core | High | ⬜ |
+| US05.14.2 | Required checks pivot-ui | High | ⬜ |
+| US05.14.3 | Required checks pivot-docs | High | ⬜ |
+| US05.15.1 | Composite action setup partagée — **AC bloquée** : cible "pivot-platform (ou repo dédié)" contredit la règle établie (`pivot-platform/` n'est pas un repo) ; décision de repo cible requise avant Gate 1 | Medium | ⛔ Bloqué |
+| US05.15.2 | Aligner workflows `pivot-ui` sur conventions `pivot-core` — dépend d'US05.15.1 | Medium | ⛔ Bloqué |
+| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | 🔄 In progress |
+| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | 🔄 In progress |
 | Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ |
 | Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ |
+| EN08.3 | Authentification réelle cross-service `pivot-collaboratif-core` (bearer token opaque `pivot-core`, remplace le stub headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id`, `ADR-022`) — [détail](../EPIC-collaboration/ENABLERS/en-auth-cross-service-collaboratif.md) | Critical | ⬜ |
 
+> **EN17.1** retiré de ce tableau (2026-07-08) : vérifié `Done` — `pivot-core#171` fermée, les 5
+> volets (`db`/`modules`/`tenant`/`team`/`auth`) extraits et livrés (PR #167/#173/#177/#180),
+> `ADR-022` tranche le volet `auth`. **Dette S2 "cache Redis EN03.3"** retiré également : vérifié
+> déjà implémenté et câblé (`ModuleActivationCacheService`, consommé par
+> `ModuleController.getModuleStatus()`) — aucun travail restant.
+>
 > **Noyau whiteboard (E30, F08.x/EN08.x)** reste porté par `sprint-5.md` (Vague 1+), pas dupliqué
 > ici — mais sa complétion (17/17 `Done`) est un pré-requis du jalon « Socle terminé » au même
-> titre que les items ci-dessus. État à date (2026-07-08, voir `EPIC-collaboration/README.md`
-> §Suivi noyau) : 0/17 `Done` — 12 Review · 2 In progress · 5 Ready.
+> titre que les items ci-dessus. État à date (2026-07-08, resynchronisé depuis le frontmatter de
+> chaque fichier — voir `EPIC-collaboration/README.md` §Suivi noyau) : **17 Review · 0 In
+> progress · 0 Ready · 0 Done** — tout le noyau a du code mergé, `Done` reste réservé à la
+> recette PO du mainteneur.
 
 ## Definition of Done — Socle
 
@@ -33,12 +45,16 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 ### Axe 1 — Features (code)
 
 - [ ] E01–E07, E16 : 100% des US/Enablers `Phase: Socle` en `Stage: Done`
-- [ ] E17 : 8/8 enablers `Done` — **reste : EN17.1** (extraction `modules`/`tenant`/`auth`/`team`,
-      voir tableau ci-dessus et [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171))
-- [ ] E30 noyau F08.x/EN08.x : 17/17 items `Done` — **état actuel : 0/17** (12 Review, 2 In
-      progress, 5 Ready — voir `EPIC-collaboration/README.md` §Suivi noyau, resynchronisé
-      régulièrement vu le rythme d'avancement)
+- [x] E17 : 8/8 enablers `Done` — **EN17.1 confirmé terminé le 2026-07-08** (5 volets extraits,
+      `pivot-core#171` fermée, `ADR-022` tranche le volet `auth`)
+- [ ] E30 noyau F08.x/EN08.x : 17/17 items `Done` — **état actuel : 0/17**, mais **17/17 en
+      `Review`** (tout le code est mergé, reste la recette PO du mainteneur — voir
+      `EPIC-collaboration/README.md` §Suivi noyau, resynchronisé le 2026-07-08)
 - [ ] E07 : EN07.3 (ActiveMQ persistence) + EN07.4 (PgBouncer session mode) sortis de `Backlog`
+      — EN07.4 en cours (voir tableau ci-dessus)
+- [ ] EN08.3 (auth cross-service `pivot-collaboratif-core`, tracé le 2026-07-08) — bloquant pour
+      la recette E30 (un utilisateur ne peut pas utiliser le tableau blanc sans, cf. détail
+      de l'Enabler), dépend de l'acceptation formelle d'`ADR-022`
 
 ### Axe 2 — Prod
 
@@ -69,8 +85,14 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 ### Ce que cette checklist ne tranche pas
 
 - Le contenu exact des seuils de l'Axe 2 — dépend de décisions d'infra/SRE hors backlog markdown.
-- Si les items encore `Backlog`/`In progress` (EN05.13-15, EN07.3/4, EN17.1 restant, E30 noyau)
-  doivent être **terminés** avant la déclaration, ou si le mainteneur préfère en **basculer
+- Si les items encore `Backlog`/`In progress` (US05.13-15.x, EN07.3, EN08.3, E30 noyau — recette
+  PO) doivent être **terminés** avant la déclaration, ou si le mainteneur préfère en **basculer
   certains explicitement en dette différée hors Socle** — décision de scope, pas de cohérence
-  documentaire. Vu l'écart actuel (0/17 sur le noyau whiteboard, 7 US E05 jamais commencées),
-  cette checklist suggère que le jalon est encore loin, pas imminent.
+  documentaire. Mise à jour 2026-07-08 (soir) : E17 et la dette S2 "cache Redis" sont en réalité
+  déjà terminés (retirés du tableau ci-dessus, la version précédente de cette checklist les
+  comptait à tort comme restants) ; le noyau whiteboard a désormais 17/17 items en code mergé
+  (`Review`), plus proche de la ligne d'arrivée que la précédente estimation "0/17" ne le
+  suggérait — mais EN08.3 (nouvellement tracé) est un blocage fonctionnel réel pour la recette
+  E30, pas juste documentaire.
+- Repo cible pour US05.15.1 (composite action CI partagée) — décision non prise, bloque
+  également US05.15.2 qui en dépend.
