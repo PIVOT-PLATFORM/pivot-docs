@@ -29,6 +29,11 @@ Gestion des tests manuels et de recette : création de cas de test, organisation
 - **F13.3 — Reporting qualité**
   - US13.3.1 : Tableau de bord campagne (taux de succès, cas bloquants, progression)
 
+> Aucune fonctionnalité de gestion de tests/recette n'est couverte par le benchmark PPM
+> secteur public (Project Monitor / Sciforma / MS Planner-Project — voir
+> `pivot-benchmarks/pilotage-projet/`) : ce périmètre reste piloté par les besoins internes
+> PIVOT, pas par une analyse concurrentielle.
+
 ### Enablers
 - **EN13.1** — Schéma Flyway `pilotage` — tables `test_cases`, `test_suites`, `test_campaigns`, `test_executions`
 - **EN13.2** — Guard Angular module cahiers-tests (moduleGuard `moduleId: 'cahiers-tests'`)
@@ -46,6 +51,21 @@ Gestion des tests manuels et de recette : création de cas de test, organisation
 ## Statut global
 
 ⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint
+
+---
+
+## Suivi d'avancement
+
+| Élément | 🤖 Dev |
+|---------|--------|
+| **F13.1 — Cas de tests** | |
+| [US13.1.1 — Créer et gérer des cas de test](FEATURES/cas-tests/us-creer-cas.md) | ⬜ |
+| [US13.1.2 — Organiser les cas de test en suites](FEATURES/cas-tests/us-organiser-suites.md) | ⬜ |
+| **F13.2 — Campagnes de recette** | |
+| [US13.2.1 — Créer une campagne de test](FEATURES/campagnes/us-creer-campagne.md) | ⬜ |
+| [US13.2.2 — Exécuter une campagne (guided mode)](FEATURES/campagnes/us-executer-campagne.md) | ⬜ |
+| **F13.3 — Reporting qualité** | |
+| [US13.3.1 — Tableau de bord campagne](FEATURES/reporting/us-tableau-bord-campagne.md) | ⬜ |
 
 ---
 

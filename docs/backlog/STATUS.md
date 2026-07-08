@@ -29,7 +29,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 8 | 1 | 16 | ⏸️ phase-3 |
 | [E12 — Module MeetOps](EPIC-meetops/README.md) | E12 | 3 (F12.1–3) | 2 (EN12.1–2) | 4 | ⬜ phase-3 · collaboratif |
-| [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 3 | ⬜ phase-3 · pilotage |
+| [E13 — Module Cahiers de tests](EPIC-cahiers-tests/README.md) | E13 | 3 (F13.1–3) | 2 (EN13.1–2) | 5 | ⬜ phase-3 · pilotage |
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 Sprint 1 Done + badge notifs/modules à venir (Sprint 4, 🔎 Review) |
