@@ -15,10 +15,11 @@
 | Ancien token utilisé → 400 (token déjà consommé) | ✅ |
 | Password trop court → validation avant appel API | ✅ |
 | Toutes les sessions actives de l'utilisateur révoquées après reset | ✅ |
-| Clés i18n dans l'espace `auth.resetPassword.*` (fr.json / en.json) — libellés, erreurs token, succès | ⬜ |
+| Clés i18n dans l'espace `auth.resetPassword.*` (fr.json / en.json) — libellés, erreurs token, succès | ✅ |
 | A11y : erreurs de validation (token expiré, passwords différents) affichées avec `role="alert"` et focus géré | ⬜ |
-| État de chargement (bouton désactivé + spinner) pendant la soumission du nouveau mot de passe | ⬜ |
+| État de chargement (bouton désactivé + spinner) pendant la soumission du nouveau mot de passe | ✅ |
 
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: Socle · Size: S · Priority: Critical
 Stage: Done
+Gate 5 : `pivot-core` PR [#105](https://github.com/PIVOT-PLATFORM/pivot-core/pull/105) (Gate 4 = 87/100) + `pivot-ui` PR [#39](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/39) (Gate 4 = 86/100), spec figée `docs/specs/EPIC-auth-iam/us01-3-2-reset-password.md` (rétroactif, 2026-07-08)
