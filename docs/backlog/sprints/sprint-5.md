@@ -25,6 +25,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ✅ Done — [`pivot-template-ui`](https://github.com/PIVOT-PLATFORM/pivot-template-ui) créé (2026-07-07) |
 | EN17.3 | Publication `@pivot-platform/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ✅ Done |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ✅ Done — pivot-ui PR #114 + pivot-core PR #170 mergées |
+| EN17.9 | Compose dev — modules satellites manquants (`pivot-pilotage-core`/`pivot-agilite-core`/`pivot-collaboratif-core` absents du `compose.yml` malgré le routing EN17.7 déjà en place) | S | High | ✅ Done — pivot-core PR #179 + pivot-pilotage-core PR #18 (context-path bug corrigé au passage) mergées |
 
 > **Ordre de dépendance Vague 0 :** EN17.8 ‖ EN17.4 ‖ EN17.1 (aucune dépendance mutuelle) →
 > création de `pivot-collaboratif-core`/`pivot-collaboratif-ui` (consomment EN17.1 respectivement
