@@ -63,8 +63,13 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E46 — Feedback](EPIC-feedback/README.md) | E46 | 2 | — | 2 | ⬜ phase-3 |
 | [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
+| [E49 — Organisation & gouvernance DSI (pilotage)](EPIC-organisation-gouvernance-dsi/README.md) | E49 | 2 | 3 | 4 | ⬜ phase-3 · pilotage |
+| [E50 — Architecture d'entreprise & urbanisation (pilotage)](EPIC-architecture-entreprise/README.md) | E50 | 4 | — | 5 | ⬜ phase-3 · pilotage |
+| [E51 — Gouvernance de la donnée (pilotage)](EPIC-gouvernance-donnee/README.md) | E51 | 2 | — | 3 | ⬜ phase-3 · pilotage |
+| [E52 — Gouvernance Citizen Development (pilotage)](EPIC-citizen-development/README.md) | E52 | 4 | — | 6 | ⬜ phase-3 · pilotage |
+| [E53 — Cybersécurité & conformité SI (pilotage)](EPIC-cyber-conformite-si/README.md) | E53 | 4 | — | 4 | ⬜ phase-3 · pilotage |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **74** | 🔄 En cours |
-| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **159** | **68** | **589** | ⏸️ Verrouillé |
+| **Total phase-3** | **E09–E53 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **175** | **71** | **611** | ⏸️ Verrouillé |
 
 ---
 

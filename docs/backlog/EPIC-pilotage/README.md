@@ -32,10 +32,17 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 | Management de l'innovation — SMI | [E38](../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
 | Chantiers SI *(benchmark)* | [E39](../EPIC-pilotage-chantiers/README.md) | pivot-pilotage-core · `pilotage` |
 | **Profil & adaptation *(v2)*** | [E40](../EPIC-profil-adaptation/README.md) | pivot-pilotage-core · `pilotage` |
+| Organisation & gouvernance DSI *(benchmark DSI)* | [E49](../EPIC-organisation-gouvernance-dsi/README.md) | pivot-pilotage-core · `pilotage` |
+| Architecture d'entreprise & urbanisation *(benchmark DSI)* | [E50](../EPIC-architecture-entreprise/README.md) | pivot-pilotage-core · `pilotage` |
+| Gouvernance de la donnée *(benchmark DSI)* | [E51](../EPIC-gouvernance-donnee/README.md) | pivot-pilotage-core · `pilotage` |
+| Gouvernance Citizen Development *(benchmark DSI)* | [E52](../EPIC-citizen-development/README.md) | pivot-pilotage-core · `pilotage` |
+| Cybersécurité & conformité SI *(benchmark DSI)* | [E53](../EPIC-cyber-conformite-si/README.md) | pivot-pilotage-core · `pilotage` |
 
 > La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
 >
 > Les modules *benchmark* (E32–E39, E31 dissoute) et les Features `F22.2` / `F23.2` / `F26.2` proviennent d'un CSV d'analyse concurrentielle PPM (items `PP-###`), rationalisé directement dans chaque EPIC concerné (ce README et les READMEs d'E22/E23/E26) — le document source `BENCHMARK.md` n'a jamais été mergé sur `main` (ex-PR #38). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
+>
+> Les modules *benchmark DSI* (E49–E53, 2026-07-08) proviennent d'un **second document benchmark**, distinct du CSV PPM ci-dessus : « Organisations DSI dans les grands groupes ». **E49 est l'enabler partagé transverse** (référentiel organisationnel, rôles génériques, matrice RACI) consommé par E50/E51/E52/E53 — ces quatre EPICs référencent les rôles/RACI d'EN49.2 plutôt que d'en redéfinir. E52 généralise par ailleurs des US de gouvernance citoyenne déjà amorcées module-spécifiquement dans [E29 — Workflows & Automatisation](../EPIC-workflows/README.md) (US29.7.3, US29.7.6, US29.14.5) — E29 n'a pas été modifié, seulement référencé.
 
 ### Couche adaptative v2 (`Profils_applicables`)
 
