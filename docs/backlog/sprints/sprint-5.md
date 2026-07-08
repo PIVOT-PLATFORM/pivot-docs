@@ -48,11 +48,11 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | 👀 |
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | 🔁 Review — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100 |
 | US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
-| US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ⬜ |
-| US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
-| US08.3.3 | Undo / Redo sur le canvas | M | High | ⬜ |
+| US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31) mergée (Gate 4 = 92/100) |
+| US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ Débloquée (dépendances US08.3.2b + US08.5.1 backend toutes deux mergées) |
+| US08.3.3 | Undo / Redo sur le canvas | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) mergée (Gate 4 = 97/100) |
 | US08.4.1 | Créer un tableau depuis un template | M | Medium | ✅ Done — `pivot-collaboratif-core` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (100/100, mergée) + `pivot-collaboratif-ui` PR [#29](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/29) (100/100, mergée) — fix de suivi `pivot-collaboratif-ui`#30 (thumbnailUrl) |
-| US08.5.1 | Présence des participants sur le canvas | M | High | ⬜ |
+| US08.5.1 | Présence des participants sur le canvas | M | High | 🔄 Backend Done — `pivot-collaboratif-core` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/33) mergée (Gate 4 = 95/100). Volet Angular (`PresencePanelComponent`) non démarré — `pivot-collaboratif-ui#22` |
 
 ## Reséquencement E17 (2026-07-07)
 
@@ -140,3 +140,32 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > hypothèse) : le DTO frontend supposait `previewUrl`, le backend renvoie `thumbnailUrl` — corrigé
 > en fix de suivi `pivot-collaboratif-ui`#30 (220/220 tests verts). Issues de suivi créées pour les
 > items encore non démarrés (`pivot-collaboratif-ui#26/27/28` — US08.3.2b/2c/3.3).
+>
+> **Session du 2026-07-08 :** trois items enchaînés séquentiellement (dépendances réelles entre
+> eux, pas parallélisables). **US08.3.2b** (`pivot-collaboratif-ui`#26 →
+> [PR #31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31), Gate 4 = 92/100,
+> mergée `--admin`) — `WhiteboardSyncService` STOMP, 5 clarifications Gate 1 documentées
+> (contrat réel `DRAW` sans `userId` client, canal de révocation réel
+> `/user/queue/errors`, redirect guard corrigé, interprétation "3 tentatives", gap auth
+> différée déjà connu). **US08.3.3** (`pivot-collaboratif-ui`#28 →
+> [PR #32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32), Gate 4 = 97/100,
+> mergée `--admin`) — étend `UndoRedoService`/`WhiteboardSyncService` existants (pas de
+> recréation), comble les 3 AC réseau laissés ouverts par US08.3.2a ; incident CI
+> (SonarCloud Java 17→21) diagnostiqué et corrigé en route.
+>
+> **US08.5.1 (backend uniquement) — tâche reprise à @tellebma** (`pivot-collaboratif-core`#29
+> + #32, `pivot-collaboratif-ui`#22) : aucun travail de code en cours (juste une analyse
+> technique déjà écrite sur #32), réassignation actée avec passation créditant l'analyse
+> d'origine. Résolution de la collision #32 suivie telle qu'analysée par @tellebma —
+> [PR #33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/33), Gate 4 =
+> 95/100, mergée `--admin`. Clarification Gate 1 : le timeout 30s de présence est couvert par
+> le heartbeat STOMP déjà configuré (`WebSocketConfig`, US08.3.1), pas de nouvelle tâche
+> planifiée. **US08.3.2c débloquée** par ce merge : sa dépendance à US08.5.1 ne portait que sur
+> le backend (couleur déterministe, liste participants), pas sur `PresencePanelComponent`
+> (`pivot-collaboratif-ui`#22, volet frontend de US08.5.1, toujours non démarré, seul reste
+> bloquant pour clore US08.5.1 elle-même).
+>
+> Rattrapage backlog pivot-docs pour US08.3.2b et US08.3.3 fait dans des PR séparées (jamais de
+> commit cross-repo) : [PR #145](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/145) et
+> [PR #146](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/146), prêtes, en attente du merge
+> humain (règle absolue de ce repo).
