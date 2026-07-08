@@ -50,7 +50,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31), Gate 4 = 92/100 |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
-| US08.3.3 | Undo / Redo sur le canvas | M | High | ⬜ |
+| US08.3.3 | Undo / Redo sur le canvas | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32), Gate 4 = 97/100 |
 | US08.4.1 | Créer un tableau depuis un template | M | Medium | ✅ Done — `pivot-collaboratif-core` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (100/100, mergée) + `pivot-collaboratif-ui` PR [#29](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/29) (100/100, mergée) — fix de suivi `pivot-collaboratif-ui`#30 (thumbnailUrl) |
 | US08.5.1 | Présence des participants sur le canvas | M | High | ⬜ |
 
@@ -152,3 +152,16 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > hors E2E Playwright (gap infra préexistant déjà confirmé identique sur `pivot-collaboratif-ui`
 > #29/#30, non lié à ce changement). `publish()` reste générique pour US08.3.3 (undo/redo réseau)
 > sans en câbler la diffusion — `us-undo-redo.md` reste `Stage: Ready`.
+>
+> **US08.3.3 (2026-07-08) :** `UndoRedoService` (PR #24) et `WhiteboardSyncService` (PR #31)
+> étendues en place pour fermer les 3 AC réseau laissées ouvertes — `pivot-collaboratif-ui` PR
+> [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) (`Stage: Review`, spec
+> Gate 5 figée), closes `pivot-collaboratif-ui#28`. Gate 4 = 97/100 (MERGE_AUTONOMOUS), merge via
+> `--admin` faute de reviewer configuré sur ce repo bootstrap — même précédent que US08.4.1/
+> US08.3.2b déjà noté ci-dessus. 3 clarifications Gate 1 documentées dans la PR : `eventId` minté
+> côté client (aucun id serveur à réutiliser pour les diffusions `DRAW`), rejet viewer non
+> spécialisé côté client faute de canal d'erreur typé côté backend (comportement fail-secure
+> existant de `/user/queue/errors`, PR #31, réutilisé tel quel), pas de message STOMP dédié sur
+> `redo()` (aucun type `REDO` dans la whitelist backend). CI verte hors E2E Playwright (gap infra
+> préexistant déjà confirmé identique sur `pivot-collaboratif-ui`#29/#30/#31, non lié à ce
+> changement).
