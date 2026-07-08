@@ -8,11 +8,13 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Nommage des jobs identique (build, test, lint, security) | ⬜ |
-| Composite action setup partagée (US05.15.1) utilisée | ⬜ |
-| Même structure de rapports (artefacts, annotations) | ⬜ |
-| Plumber compliance check présent dans pivot-ui CI | ⬜ |
+| Nommage des jobs identique (build, test, lint, security) | ✅ (`quality-frontend`/`tests-frontend`, miroir du suffixe `-backend` de pivot-core) |
+| Composite action setup partagée (US05.15.1) utilisée | ✅ |
+| Même structure de rapports (artefacts, annotations) | ✅ |
+| Plumber compliance check présent dans pivot-ui CI | ✅ (déjà présent, structurellement aligné) |
+
+**Implémentation** : [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) (mergée).
 
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: Socle · Size: S · Priority: Medium
-Stage: Ready
+Stage: Review

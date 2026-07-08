@@ -22,22 +22,36 @@ partagés — `compose.yml`, workflows CI).
   autonome sans confirmation explicite du mainteneur.
 - **Dette S2** Redis cache + dédup `sanitizeReturnUrl` — aucun ticket dédié (juste des lignes
   narratives dans `STATUS.md`), pas de DoR à évaluer. Nécessitent une US/Enabler en bonne et due
-  forme avant tout lancement.
+  forme avant tout lancement. Correction post-synchro : `sanitizeReturnUrl` s'est avérée déjà
+  mergée entre-temps (`pivot-ui#124`, hors de ce lancement) — découvert en vérifiant l'état live,
+  pas par les agents dispatchés ici.
 - **Recette** (a11y, bug bash) — tâches humaines par nature, non déléguables à un agent dev.
+
+## Synchronisation (2026-07-09, suite — 5/5 items lancés terminés)
+
+Les 5 agents lancés ont tous mergé leur PR, CI verte de bout en bout : `Stage: Ready → Review`
+pour EN07.3, US05.13.1, US05.13.2, US05.15.1, US05.15.2 (liens PR dans le tableau ci-dessous).
+
+**Point d'attention réel signalé par les agents US05.13.1/US05.13.2** : aucun environnement de
+staging pivot-ui n'existe encore (vérifié — absent de `docs/cicd/`, aucun workflow
+`deploy-staging`). Les deux workflows ZAP tournent mais se dégradent gracieusement
+(`::warning::`) tant que le secret `STAGING_PIVOT_UI_URL` (+ identifiants DAST pour le full scan)
+n'existe pas. **Action mainteneur requise** : provisionner ce staging + créer les secrets pour
+que les scans DAST tournent réellement.
 
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
 | EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth`/`team` extraits (PR #167/#173/#177/#180), `pivot-core#171` fermée | Critical | ✅ Review (recette mainteneur → Done) |
-| EN07.3 | ActiveMQ persistence KahaDB | High | 🔄 In progress |
+| EN07.3 | ActiveMQ persistence KahaDB — [pivot-core#193](https://github.com/PIVOT-PLATFORM/pivot-core/pull/193), [pivot-pilotage-core#21](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/21), [pivot-agilite-core#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/19), [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35) | High | ✅ Review (recette mainteneur → Done) |
 | EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185), assignée à leo-brgn | High | ⬜ (assignée, hors lancement agent — évite collision) |
-| US05.13.1 | ZAP baseline planifié | Medium | 🔄 In progress |
-| US05.13.2 | ZAP full scan + rapport | Medium | 🔄 In progress |
+| US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Review — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
+| US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Review — même dépendance staging que US05.13.1 |
 | US05.14.1-3 | Required checks core/ui/docs (branch protection) | High/Medium | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
-| US05.15.1 | Composite action setup partagée | Medium | 🔄 In progress |
-| US05.15.2 | Aligner workflows ui sur conventions core | Medium | 🔄 In progress |
+| US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Review |
+| US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Review |
 | Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ — pas de ticket dédié, hors lancement |
 | Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ✅ Done — [pivot-core#184](https://github.com/PIVOT-PLATFORM/pivot-core/pull/184) |
-| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ — pas de ticket dédié, hors lancement |
+| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ✅ Done — [pivot-ui#124](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/124) (mergée hors de ce lancement, découverte lors de la synchro) |
 | Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ — recette humaine |
 | Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ — recette humaine |
 
@@ -62,7 +76,7 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 - [ ] E30 noyau F08.x/EN08.x : 17/17 items `Done` — **état actuel : 0/17** (12 Review, 2 In
       progress, 5 Ready — voir `EPIC-collaboration/README.md` §Suivi noyau, resynchronisé
       régulièrement vu le rythme d'avancement)
-- [ ] E07 : EN07.3 (ActiveMQ persistence) + EN07.4 (PgBouncer session mode) sortis de `Backlog`
+- [ ] E07 : EN07.3 (ActiveMQ persistence) `Review` ✅ · EN07.4 (PgBouncer session mode) reste `Ready`, assignée à leo-brgn
 
 ### Axe 2 — Prod
 
