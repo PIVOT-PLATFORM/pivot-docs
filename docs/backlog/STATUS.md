@@ -45,7 +45,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 10 | 12 | 35 | ⬜ phase-3 — dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 78 | ⬜ phase-3 |
-| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 101 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
+| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 103 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
 | [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 3 | ⬜ phase-3 · pilotage |
 | [E34 — IA & agents (pilotage)](EPIC-pilotage-ia/README.md) | E34 | 1 | — | 4 | ⬜ phase-3 · pilotage |
@@ -64,7 +64,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **74** | 🔄 En cours |
-| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **158** | **68** | **583** | ⏸️ Verrouillé |
+| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **158** | **68** | **585** | ⏸️ Verrouillé |
 
 ---
 
@@ -189,3 +189,11 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 *Findings identifiés mais non corrigés dans cette passe (décision produit/mainteneur requise, hors scope d'un simple fix de cohérence) — détail complet dans la PR : chevauchement E28 (adaptateur workflow OSS) / E29 (moteur natif) non tracé dans les deux sens ; chevauchement E48 (assistant transverse) / E29 US29.9.4 (chatbots connectés) partiellement seulement clarifié côté E48 ; E05 CI/CD sans section Dépendances alors qu'il chevauche EN07.5 (E07) ; E39 Chantiers SI porte encore un item "demande-arbitrage" qu'E18 déclare pourtant supprimé (ex-E31) ; E39 vs E34 chevauchement IA de pilotage non tracé ; E32 Ressources & temps ne référence pas E22 alors que F22.5 recouvre largement son objectif ; EPICs benchmark E32/E33/E34/E35/E36/E37/E40 sans section Périmètre détaillée (Gate 1 non atteignable en l'état).*
 
 *Resync 2026-07-08 (soir) : la PR #119 avait déjà corrigé EN17.1 de `Done` → `In progress` (extraction `pivot-core-starter` très en-deçà de ce qui était affiché — `team` n'existe même pas dans le codebase, voir [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171)) mais cette correction n'avait jamais été répercutée dans `STATUS.md` (Synthèse EPICs, Verrou Socle, Plan de priorisation) ni dans `EPIC-infra-multi-repo/README.md` (§Statut global) — tous les trois affirmaient encore « 8/8 Done ». Corrigé ici. Contradiction supplémentaire résolue : `US16.3.1` (formulaire de contact) était `⬜` dans la table Sprint 1 mais `🔎 Review` dans le Plan de priorisation du même fichier — les deux fichiers de fond confirment `Review`, table Sprint 1 alignée. Tableau de suivi du noyau whiteboard (`EPIC-collaboration/README.md`) resynchronisé une seconde fois (12 Review · 2 In progress · 5 Ready · 0 Done — 5 items ont avancé Ready→Review depuis le dernier resync du même jour). Voir aussi `sprints/sprint-6.md` pour la Definition of Done Socle rédigée à cette occasion (zones-ombre.md #1).*
+
+*Raffinement 2026-07-08 : croisement du backlog E30 Collaboration contre les 4 cahiers de
+spécifications individuels du benchmark (`pivot-benchmarks/collaboration-visuelle`, en complément
+du dossier de synthèse déjà exploité pour les 98 items `BL-###`). 2 écarts fonctionnels ajoutés
+sous leur Feature existante — US30.1.11 Liens enrichis et lecture vidéo intégrée (cahier Microsoft
+Whiteboard) et US30.4.4 Rituels récurrents (cahier FigJam) — E30 : 101→103 US. E12 MeetOps et E19
+Module Session vérifiés contre le même benchmark sans écart supplémentaire identifié (couverture
+déjà complète pour leur périmètre). Voir `EPIC-collaboration/README.md` §Origine pour le détail.*
