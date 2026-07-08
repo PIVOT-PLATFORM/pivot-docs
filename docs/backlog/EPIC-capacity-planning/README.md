@@ -14,6 +14,8 @@
 
 Outil d'aide à la **planification de capacité pour le sprint, l'incrément (lot de sprints) et le PI SAFe**. Il calcule la **capacité nette** d'une équipe sur une période, en tenant compte des absences, des jours réellement ouvrés, d'un facteur de concentration, de la vélocité passée et de la maturité agile — dans le respect strict de la RGPD et de l'éthique.
 
+**Benchmark** ([dossier de synthèse outils agilité](https://github.com/PIVOT-PLATFORM/pivot-benchmarks) — Jira Advanced Roadmaps, Linear Cycles) : les deux références du marché calculent une vélocité glissante fiable, mais Linear a une longueur d'avance nette en dérivant la capacité individuelle d'un calendrier d'absences synchronisé plutôt que de la faire déclarer (enseignement déjà intégré à ce module via US11.7.1/US11.2.2) ; Jira verrouille tout le capacity planning derrière ses offres Premium/Enterprise, un écueil à ne pas reproduire — cette brique reste un attendu de base du module Agilité PIVOT, sans palier tarifaire dédié (US11.8.1, cohérent avec F11.8).
+
 ## Modèle de calcul
 
 > **Capacité nette** = `jours ouvrés × quotité × facteur de concentration`, où
@@ -51,7 +53,7 @@ Outil d'aide à la **planification de capacité pour le sprint, l'incrément (lo
 - **F11.3 — Hiérarchie événements** (Sprint sous PI) — US11.3.1
 - **F11.4 — Velocity tracking** — US11.4.1 saisir vélocité réelle · US11.4.2 burndown chart
 - **F11.5 — Cadence & période** — US11.5.1 sprint / incrément / **PI SAFe** · US11.5.2 période auto (API) ou durée manuelle
-- **F11.6 — Calcul de capacité** — US11.6.1 jours ouvrables vs ouvrés · US11.6.2 facteur de concentration · US11.6.3 ajustement vélocité N-1 · US11.6.4 ajustement maturité agile · US11.6.5 capacité nette consolidée
+- **F11.6 — Calcul de capacité** — US11.6.1 jours ouvrables vs ouvrés · US11.6.2 facteur de concentration · US11.6.3 ajustement vélocité N-1 · US11.6.4 ajustement maturité agile · US11.6.5 capacité nette consolidée · US11.6.6 alerte visuelle de dépassement de capacité (jauge, seuil configurable — benchmark Jira/Linear)
 - **F11.7 — Absences (import automatique)** — US11.7.1 connecteur SI RH/absence (SAP, Workday…)
 - **F11.8 — RGPD & éthique** — US11.8.1 gouvernance des données de capacité
 
@@ -60,7 +62,7 @@ Outil d'aide à la **planification de capacité pour le sprint, l'incrément (lo
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E15 Équipes transverses
-- Interface avec : **E22 Roadmap** (calendriers/fériés/absences via EN22.3) · outils agiles (période de sprint, vélocité) via bus PIVOT
+- Interface avec : **E22 Roadmap** (calendriers/fériés/absences via EN22.3) · outils agiles (période de sprint, vélocité) via bus PIVOT · **E09 Scrum Poker** (remontée des points estimés vers le calcul de vélocité — différenciant identifié par le benchmark, aucun concurrent analysé ne bouclant estimation → capacité)
 - Coordonné avec : E20 Rétrospective (agilité) · E19 Session
 
 ## Statut global

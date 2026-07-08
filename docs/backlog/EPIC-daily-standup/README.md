@@ -12,10 +12,12 @@
 ## Objectif
 Animation de daily standups : sessions CRUD, minuteur configurable + rotation participants en temps réel, statistiques sessions terminées.
 
+**Benchmark** ([dossier de synthèse outils agilité](https://github.com/PIVOT-PLATFORM/pivot-benchmarks) — Geekbot) : le marché du daily standup asynchrone (Geekbot et pairs Standuply/Range) répond à un besoin réel mais reste structurellement incapable d'offrir un vrai standup debout chronométré en temps réel — c'est précisément le socle déjà retenu pour ce module (F10.2), à conserver comme fondation plutôt qu'à remplacer par de l'asynchrone. Deux gestes de Geekbot restent peu coûteux à reprendre sans changer d'architecture : la **relance automatique des retardataires** et le **signalement explicite de blocage**, distinct du texte libre, qui accélère la résolution sans attendre la session suivante.
+
 ## Périmètre GitHub (phase-3)
 - F10.1 : Sessions daily CRUD — US10.1.1, US10.1.2
-- F10.2 : Animation temps réel (minuteur + rotation WS) — US10.2.1, US10.2.2
-- F10.3 : Statistiques sessions terminées — US10.3.1
+- F10.2 : Animation temps réel (minuteur + rotation WS) — US10.2.1, US10.2.2, US10.2.3 signalement explicite de blocage par participant (benchmark Geekbot)
+- F10.3 : Statistiques sessions terminées — US10.3.1, US10.3.2 taux de participation par membre/équipe (benchmark Geekbot)
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo
