@@ -14,6 +14,7 @@
 | Coche d'une case en temps réel, visible par tous les participants | ⬜ |
 | Détection de ligne/colonne/diagonale complète → victoire annoncée | ⬜ |
 | Rejoindre via code, avec ou sans compte PIVOT | ⬜ |
+| Seuil explicite de participants simultanés par room documenté, avec dégradation progressive (pas de blocage brutal) au-delà — benchmark Kahoot/Mentimeter/Slido | ⬜ |
 | Sécurité : une partie n'est visible que par ses participants (room dédiée) | ⬜ |
 
 ---

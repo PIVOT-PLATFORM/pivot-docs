@@ -11,9 +11,11 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Banque de questions Scrum/agile (20 questions par défaut), timer par question (15 s) | ⬜ |
-| Score calculé par bonne réponse, bonus de rapidité | ⬜ |
+| Score calculé par bonne réponse, bonus de rapidité (formule à expliciter au Gate 1 — benchmark Kahoot) | ⬜ |
+| Classement intermédiaire affiché après chaque question, pas seulement en fin de partie — benchmark Kahoot | ⬜ |
 | Écran de score final classant les participants | ⬜ |
 | Rejoindre via code, avec ou sans compte PIVOT | ⬜ |
+| Seuil explicite de participants simultanés par room documenté, avec dégradation progressive (pas de blocage brutal) au-delà — benchmark Kahoot/Mentimeter/Slido | ⬜ |
 | Sécurité : la bonne réponse n'est jamais exposée au client avant la clôture de la question | ⬜ |
 
 ---

@@ -14,6 +14,8 @@
 | Réponses en flux continu (SSE) | ⬜ |
 | Prompts suggérés adaptés à la route/module courant | ⬜ |
 | Réponses ancrées sur une base de connaissances produit (pas d'hallucination sur des fonctionnalités inexistantes) | ⬜ |
+| Base de connaissances administrable sans redéploiement (contenu géré séparément du code) — benchmark Intercom Fin | ⬜ |
+| Mesure d'un taux de réponses jugées utiles (feedback pouce haut/bas en fin d'échange) — benchmark Intercom Fin | ⬜ |
 | Sécurité : rate-limit par utilisateur, échanges audités | ⬜ |
 | A11y : widget navigable au clavier, annoncé aux lecteurs d'écran (WCAG 2.1 AA) | ⬜ |
 

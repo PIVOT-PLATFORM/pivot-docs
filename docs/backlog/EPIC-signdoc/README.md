@@ -35,6 +35,18 @@ Signature électronique de documents auto-hébergée : dépôt d'un PDF, positio
 - **Bibliothèque documentaire générale** (collections, tags, recherche, annotations, manipulation PDF) — portée par [E45 PDF Manager](pathname:///pivot-docs/backlog/EPIC-pdf-manager/). SignDoc importe un document depuis E45 comme source, mais **possède son propre stockage** (EN44.1) pour le document source figé, le PDF final et l'audit trail — dissociés du cycle de vie mutable d'un document E45 (versioning, édition) par exigence d'immuabilité probatoire, pas par duplication involontaire.
 - **Signature qualifiée (QES) via tiers certifié** — reste hors scope v1, cf. niveaux eIDAS (Simple/Avancé uniquement en v1).
 
+## Repères marché (benchmark POC)
+
+Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahiers DocuSign, Dropbox Sign, Yousign,
+dossier de synthèse (juillet 2026). **Aucun écart de socle** : EN44.1/US44.1.1/US44.1.2/US44.2.1/US44.3.1
+couvrent le ticket d'entrée observé chez les trois éditeurs (upload, champs, signataires, signature sans
+compte, audit trail scellé, SES/AES natifs). Raffinements à qualifier au Gate 1 (AC à enrichir, pas
+d'extension de périmètre) :
+
+- Rappels automatiques configurables — standard chez les trois éditeurs analysés → US44.1.2
+- Niveau de vérification d'identité renforcée à qualifier selon la sensibilité du document (au-delà de l'OTP
+  email déjà prévu) — Yousign en fait un différenciateur anti-fraude natif → US44.2.1
+
 ## Modules impactés
 
 `signdoc` (pivot-signdoc-core + pivot-signdoc-ui)

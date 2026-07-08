@@ -11,6 +11,7 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Déplacement d'un ticket entre colonnes réservé aux admins | ⬜ |
+| Fusion de deux tickets similaires par un admin, cumulant leurs votes respectifs — benchmark Canny | ⬜ |
 | Suppression d'un ticket réservée aux admins | ⬜ |
 | Vue plein écran du kanban | ⬜ |
 | Security : les actions de modération sont réservées à ROLE_ADMIN | ⬜ |

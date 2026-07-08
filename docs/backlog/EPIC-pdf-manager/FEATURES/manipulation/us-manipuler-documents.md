@@ -15,6 +15,7 @@
 | Réorganisation de pages (glisser-déposer, suppression, duplication) et rotation | ⬜ |
 | Compression (légère / standard / forte) avec aperçu du gain avant confirmation | ⬜ |
 | Filigrane texte (position, opacité, taille) | ⬜ |
+| Rédaction : masquage définitif et non réversible d'informations sensibles (zone sélectionnée) — benchmark Adobe Acrobat | ⬜ |
 | Toute opération produit un **nouveau document** — le document source n'est jamais modifié | ⬜ |
 | Sécurité : opérations réservées au propriétaire et aux éditeurs | ⬜ |
 
