@@ -9,6 +9,8 @@
 - [ ] Suite de tests de contrat automatisée
 - [ ] Un adaptateur conforme passe la suite de tests de contrat
 
+**Extension prévue (benchmark plateforme développeur, `pivot-benchmarks/plateforme-developpeur/dossier-synthese-plateforme-developpeur.md` §8.2, pivot-benchmarks#1)** : F28.11 (scorecards, scaffolding self-service, TechDocs) réutilise ce contrat comme socle plutôt que d'en créer un parallèle, cohérent avec le principe ADR-009 « même contrat, que la brique soit adaptateur ou native ».
+
 **Dépendances** : EN28.2 (catalogue d'entités étendu)
 
 **Statut** : ⬜ À faire
