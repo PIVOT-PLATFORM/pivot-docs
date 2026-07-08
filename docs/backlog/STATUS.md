@@ -47,7 +47,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 79 | ⬜ phase-3 |
 | [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 103 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
 | [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 | — | 3 | ⬜ phase-3 · pilotage |
-| [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 3 | ⬜ phase-3 · pilotage |
+| [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 4 | ⬜ phase-3 · pilotage |
 | [E34 — IA & agents (pilotage)](EPIC-pilotage-ia/README.md) | E34 | 1 | — | 4 | ⬜ phase-3 · pilotage |
 | [E35 — Gouvernance & sécurité (pilotage)](EPIC-pilotage-gouvernance/README.md) | E35 | 1 | — | 8 | ⬜ phase-3 · pilotage |
 | [E36 — Intégration SI (pilotage)](EPIC-pilotage-integration-si/README.md) | E36 | 1 | — | 5 | ⬜ phase-3 · pilotage |
@@ -64,7 +64,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **74** | 🔄 En cours |
-| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **158** | **68** | **585** | ⏸️ Verrouillé |
+| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **158** | **68** | **586** | ⏸️ Verrouillé |
 
 ---
 

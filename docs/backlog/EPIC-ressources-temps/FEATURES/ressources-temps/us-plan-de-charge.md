@@ -9,7 +9,7 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Given des affectations existantes sur des ressources, when le PMO consulte le plan de charge, then la charge est confrontée à la capacité par ressource, service et compétence, avec répartition distincte projet / maintenance / activités récurrentes | ⬜ |
-| Given une ressource en tension (charge cumulée > capacité disponible), when le PMO consulte le plan de charge, then la tension est détectée et signalée visuellement (code couleur / indicateur) | ⬜ |
+| Given une ressource en tension — surcharge (charge cumulée > capacité disponible) ou sous-charge significative (charge cumulée très inférieure à un seuil configurable de la capacité disponible), when le PMO consulte le plan de charge, then la tension est détectée et signalée visuellement avec une distinction claire entre les deux cas (code couleur / indicateur différenciés) | ⬜ |
 | Error : given une ressource sans données de capacité renseignées, system exclut la ressource du calcul de charge et signale la donnée manquante plutôt que d'afficher une valeur erronée | ⬜ |
 | Security : la vue de charge respecte les périmètres de visibilité par rôle — un chef de projet ne voit que les ressources de ses projets, un PMO voit son périmètre de portefeuille, sans exposer les charges d'autres services non autorisés | ⬜ |
 | A11y : le plan de charge (tableaux, indicateurs visuels de tension, code couleur) est conforme WCAG 2.1 AA — le signalement de tension n'est jamais porté par la couleur seule (icône/texte associé), contrastes et navigation clavier conformes | ⬜ |
@@ -17,8 +17,9 @@
 ## Hors périmètre
 - Le calcul et la saisie de la capacité elle-même (temps de travail théorique, congés, absences) : cette US consomme la capacité, elle ne la définit pas
 - La saisie ou la modification des affectations (couverte par US32.1.1)
-- La résolution automatique des surcharges (replanification, réaffectation) : cette US se limite à la détection et à l'affichage, l'arbitrage reste manuel
+- La résolution automatique des surcharges et sous-charges (replanification, réaffectation, suggestion d'affectation optimisée) : cette US se limite à la détection et à l'affichage, l'arbitrage reste manuel
 - Les prévisions de charge au-delà des affectations planifiées (pas de simulation "what-if")
+- L'agrégation de la charge des demandes/projets proposés non encore lancés face à la capacité (« capacité à faire » en gate d'intake) : périmètre explicitement retiré du backlog lors de la dissolution d'E31 (cf. [E18 — Domaine Pilotage](../../../EPIC-pilotage/README.md)) — cette US ne porte que le plan de charge des ressources déjà affectées sur des projets/activités en cours ; frontière exacte avec le wording « tout est projet » d'E31 à confirmer par le mainteneur (zone d'ombre #12)
 
 ## Notes d'implémentation
 - Vue agrégée en lecture seule qui croise les données d'affectation (US32.1.1) et de capacité par ressource ; nécessite que ces données existent en amont dans le schéma `pilotage`

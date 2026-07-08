@@ -30,4 +30,4 @@ Stage: Backlog
 Source: PP-009 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 3/3
 Profils: Tous
 Justification: Dossier §4
-Dépendances: —
+Dépendances: US33.1.4 (entité tâche du quotidien, objet du fil de discussion)
