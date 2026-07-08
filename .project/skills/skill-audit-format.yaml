@@ -129,6 +129,29 @@ grilles_par_domaine:
       - "Score par catégorie OWASP (table A01-A10 + rubrique spécifique langage/stack)"
       - "Sous-domaines OIDC/IAM et temps réel/WebSocket traités comme des findings à part entière, pas noyés dans le générique"
     methodologie: "Double-passe recommandée vu l'enjeu (voir principes_generaux)"
+    plan_action_priorise:
+      principe: >
+        Priorité dérivée directement de la sévérité/CVSS du finding — pas
+        d'arbitrage qualitatif au cas par cas. Délais internes
+        volontairement plus stricts que le SLA public de divulgation
+        (`SECURITY.md` : 7j critique / 30j élevé, destiné aux rapports
+        externes) — l'audit interne vise à corriger avant qu'un rapport
+        externe n'arrive.
+      p0:
+        label: "Bloquant prod (< 24h)"
+        critere: "CRITIQUE — CVSS ≥ 9.0. Merge/déploiement gelé tant que non corrigé."
+      p1:
+        label: "Avant le prochain déploiement (< 48h)"
+        critere: "HIGH — CVSS 7.0–8.9."
+      p2:
+        label: "Sprint suivant (< 7j)"
+        critere: "MEDIUM — CVSS 4.0–6.9."
+      p3:
+        label: "Mois (< 30j)"
+        critere: "LOW/INFO — CVSS < 4.0, ou défense en profondeur sans exploitation directe."
+      externe:
+        label: "Suivi externe, pas de délai interne"
+        critere: "Correctif hors du contrôle direct de l'équipe (ex. algorithme imposé par un prestataire de paiement/banque)."
 
   audit-architecture:
     grille: "Principes SOLID (violations vs respect, par principe) + organisation des couches"
@@ -137,6 +160,43 @@ grilles_par_domaine:
       - "Analyse par couche (Core/Controllers/Models/Services/... — adapté à la stack réelle)"
       - "Duplication de code (DRY) — table occurrences/impact/évolution vs version précédente"
       - "Complexité cyclomatique — hotspots (table fichier/lignes/méthodes/alerte/évolution)"
+    seuils_hotspot:
+      # Bornes indicatives — à recalibrer une fois un premier audit réel publié sur nos repos
+      # (Java/Spring et Angular n'ont pas la même distribution naturelle que le PHP MVC custom
+      # de référence). Servent à qualifier "alerte" dans la table de hotspots, pas un score CVSS.
+      sain: "< 300 lignes"
+      a_surveiller: "300–800 lignes"
+      hotspot: "> 800 lignes — God Class/Service à traiter en priorité P1"
+      critique: "> 1500 lignes ET > 40 méthodes publiques — décomposition non différable"
+    plan_action_priorise:
+      principe: >
+        Priorité dérivée du couple (effort de correction, risque si le
+        report continue) — pas de score numérique unique comme le CVSS,
+        mais des critères explicites pour éviter l'arbitraire.
+      p0:
+        label: "Bloquant maintenabilité — ROI immédiat"
+        critere: >
+          Dette mécanique à effort faible (< 1 jour), gain élevé, zéro
+          risque de régression — migration déjà à moitié faite, doublon
+          actif avec un remplaçant existant, méthode dupliquée remontable
+          telle quelle dans une classe mère.
+      p1:
+        label: "Dette architecturale majeure"
+        critere: >
+          Violation SOLID active sur une classe hotspot (seuil ci-dessus)
+          concentrant plusieurs responsabilités métier distinctes, ou
+          duplication cross-fichiers qui bloque l'évolutivité (ex. helper
+          de sécurité dupliqué dans N controllers). Effort élevé mais le
+          coût du prochain changement augmente à chaque report.
+      p2:
+        label: "Amélioration architecture"
+        critere: >
+          Introduction de patterns qui réduisent la dette sans qu'il y ait
+          de violation active bloquante (container DI, Repository pattern,
+          extraction de service) — planifiable, non urgent.
+      p3:
+        label: "Qualité continue"
+        critere: "Cosmétique — constantes extraites, renommage, conventions de style, literals dupliqués (S1192)."
 
   audit-modules:
     grille: "Contrat PivotModule + cohérence cross-repo (registre, cache, guards Angular)"
