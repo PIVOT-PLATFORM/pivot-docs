@@ -33,3 +33,6 @@
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: M · Priority: High
 Stage: Done
+Gate 5 : `pivot-ui` PR [#63](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/63) (Gate 4 =
+96/100), spec figée `docs/specs/EPIC-auth-iam/us01-1-5-expiration-session.md` (rétroactif,
+2026-07-08)

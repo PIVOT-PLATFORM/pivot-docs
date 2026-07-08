@@ -26,3 +26,7 @@ consommé par l'API status en production
 ---
 Item Type: Enabler · Parent: E03 · Type: performance · Module: core · Phase: Socle
 Stage: Done · Priority: Critical
+Gate 5 : `pivot-core` PR [#121](https://github.com/PIVOT-PLATFORM/pivot-core/pull/121) (Gate 4 =
+98/100), spec figée `docs/specs/EPIC-module-system/en03-3-cache-redis-modules-ttl.md` (rétroactif,
+2026-07-08) — spec documente explicitement le non-raccordement au endpoint de statut réel (PR
+pivot-core #123)
