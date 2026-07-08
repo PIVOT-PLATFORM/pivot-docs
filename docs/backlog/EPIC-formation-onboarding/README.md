@@ -36,6 +36,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 - **LMS complet hébergé par Pivot** — seul l'export SCORM/xAPI vers un LMS tiers est couvert (F41.3), pas un LMS de substitution
 - **Certification externe/officielle reconnue** — seule la certification interne au tenant est couverte (F41.4)
 - **Relances hors canal in-app/e-mail** (SMS, appel) — hors périmètre du funnel d'activation (F41.6)
+- **Documentation technique versionnée d'une entité du catalogue** (« TechDocs », documentation-as-code) — reste [E28 — Intégration open source](pathname:///pivot-docs/backlog/EPIC-integration-open-source/) (US28.11.3, gap identifié par le benchmark plateforme développeur, `pivot-benchmarks/plateforme-developpeur/dossier-synthese-plateforme-developpeur.md` §8.1, pivot-benchmarks#1) ; F41.2/F41.3 restent centrés sur le contenu pédagogique utilisateur final (centre d'aide, guides, e-learning), pas sur la documentation technique d'un composant
 
 > **Note (réconciliation post-merge `split/pilotage`)** : US41.5.20 (onboarding dédié à l'ex-EPIC E31 « Demande & arbitrage ») a été supprimée — E31 a été dissous et son contenu (scénarios what-if, business cases) migré vers E23 Portefeuille, désormais couvert par US41.5.12. La numérotation US41.5.1–30 conserve donc un trou en 20 plutôt que d'être renumérotée. US41.5.27 a été mise à jour : E38 est le Système de Management de l'Innovation (SMI), pas « Innovation ».
 

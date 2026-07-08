@@ -78,6 +78,10 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 - **F28.10 — SCM & CI/CD** *(domaine absent du backlog initial, ajouté lors de la revue PO — cf. ADR-009 §5)*
   - [US28.10.1 — Adaptateur GitLab CE](FEATURES/scm-cicd/us-adaptateur-gitlab-ce.md)
   - [US28.10.2 — Adaptateur Forgejo (alternative souveraine)](FEATURES/scm-cicd/us-adaptateur-forgejo.md)
+- **F28.11 — Plateforme développeur (scorecards, scaffolding, TechDocs)** *(gap confirmé par le benchmark plateforme développeur — `pivot-benchmarks/plateforme-developpeur/dossier-synthese-plateforme-developpeur.md`, pivot-benchmarks#1 — non couvert par les Enablers socle EN28.1-EN28.7, qui portent le catalogue mais aucune capacité de mesure, de création ou de documentation)*
+  - [US28.11.1 — Scorecards de conformité et maturité par entité catalogue](FEATURES/plateforme-developpeur/us-scorecards-conformite-maturite.md)
+  - [US28.11.2 — Scaffolding self-service (golden path agnostique du SCM)](FEATURES/plateforme-developpeur/us-scaffolding-self-service.md)
+  - [US28.11.3 — TechDocs : documentation-as-code par entité catalogue](FEATURES/plateforme-developpeur/us-techdocs-documentation-as-code.md)
 
 ## Principe : natif et OSS coexistent, l'instanciation choisit
 
@@ -100,7 +104,8 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 - Dépend de : E03 Système de modules (EN03.1 PivotModule interface — un adaptateur s'active/désactive comme un module natif)
 - Dépend de : E17 Infrastructure multi-repo (si les adaptateurs sont un jour extraits en repos dédiés)
 - Interface avec : E30 Collaboration (noyau F08.x whiteboard, ex-E08), E09 Scrum Poker, E18 Pilotage, E19 Session, E20 Retrospective, E42 Pivot Forms (coexistence natif/OSS, F28.6–F28.9)
-- Interface avec : [E43 — Sécurité & Zero Trust](pathname:///pivot-docs/backlog/EPIC-securite/) (checklist d'admission EN43.13 étend EN28.3 ; EN43.11 souveraineté consommée par EN28.2 ; EN43.8 observabilité durcit EN28.4 ; SBOM/artefacts signés enrichissent EN28.12)
+- Interface avec : [E43 — Sécurité & Zero Trust](pathname:///pivot-docs/backlog/EPIC-securite/) (checklist d'admission EN43.13 étend EN28.3 ; EN43.11 souveraineté consommée par EN28.2 ; EN43.8 observabilité durcit EN28.4 ; SBOM/artefacts signés enrichissent EN28.12 ; EN43.13 consommable directement par une règle de scorecard F28.11)
+- Interface avec : [E41 — Formation & Onboarding](pathname:///pivot-docs/backlog/EPIC-formation-onboarding/) — TechDocs (US28.11.3, documentation technique versionnée d'une entité catalogue) reste distinct du contenu pédagogique utilisateur d'E41/F41.2-F41.3 (cf. US28.11.3, Distinction)
 
 ## Statut global
 
@@ -171,3 +176,7 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 | **F28.10 — SCM & CI/CD** | |
 | [US28.10.1 — Adaptateur GitLab CE](FEATURES/scm-cicd/us-adaptateur-gitlab-ce.md) | ⬜ |
 | [US28.10.2 — Adaptateur Forgejo (alternative)](FEATURES/scm-cicd/us-adaptateur-forgejo.md) | ⬜ |
+| **F28.11 — Plateforme développeur (scorecards, scaffolding, TechDocs)** | |
+| [US28.11.1 — Scorecards de conformité et maturité](FEATURES/plateforme-developpeur/us-scorecards-conformite-maturite.md) | ⬜ |
+| [US28.11.2 — Scaffolding self-service](FEATURES/plateforme-developpeur/us-scaffolding-self-service.md) | ⬜ |
+| [US28.11.3 — TechDocs (documentation-as-code)](FEATURES/plateforme-developpeur/us-techdocs-documentation-as-code.md) | ⬜ |
