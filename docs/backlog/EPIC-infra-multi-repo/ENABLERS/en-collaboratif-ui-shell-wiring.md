@@ -1,4 +1,4 @@
-# EN17.9 — Publication @pivot-platform/collaboratif-ui + câblage shell route whiteboard
+# EN17.10 — Publication @pivot-platform/collaboratif-ui + câblage shell route whiteboard
 
 **Type d'enabler** : infrastructure
 
