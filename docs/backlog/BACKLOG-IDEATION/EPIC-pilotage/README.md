@@ -15,25 +15,25 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 
 | Module | EPIC | Repo / schéma |
 |--------|------|---------------|
-| Roadmap / Gantt | [E22](../EPIC-roadmap/README.md) | pivot-pilotage-core · `pilotage` |
-| Portefeuille projets | [E23](../EPIC-portefeuille/README.md) | pivot-pilotage-core · `pilotage` |
-| ADR projet | [E24](../EPIC-adr-projet/README.md) | pivot-pilotage-core · `pilotage` |
-| Commande publique | [E25](../EPIC-commande-publique/README.md) | pivot-pilotage-core · `pilotage` |
-| Budget & suivi financier | [E26](../EPIC-budget/README.md) | pivot-pilotage-core · `pilotage` |
-| OKR | [E27](../EPIC-okr/README.md) | pivot-pilotage-core · `pilotage` |
-| Cahiers de tests | [E13](../EPIC-cahiers-tests/README.md) | pivot-pilotage-core · `pilotage` |
-| **Gestion des risques** | [E21](../EPIC-risk/README.md) | pivot-risk-core · `risk` |
+| Roadmap / Gantt | [E22](../../EPIC-roadmap/README.md) | pivot-pilotage-core · `pilotage` |
+| Portefeuille projets | [E23](../../EPIC-portefeuille/README.md) | pivot-pilotage-core · `pilotage` |
+| ADR projet | [E24](../../EPIC-adr-projet/README.md) | pivot-pilotage-core · `pilotage` |
+| Commande publique | [E25](../../EPIC-commande-publique/README.md) | pivot-pilotage-core · `pilotage` |
+| Budget & suivi financier | [E26](../../EPIC-budget/README.md) | pivot-pilotage-core · `pilotage` |
+| OKR | [E27](../../EPIC-okr/README.md) | pivot-pilotage-core · `pilotage` |
+| Cahiers de tests | [E13](../../EPIC-cahiers-tests/README.md) | pivot-pilotage-core · `pilotage` |
+| **Gestion des risques** | [E21](../../EPIC-risk/README.md) | pivot-risk-core · `risk` |
 | Ressources & temps *(benchmark)* | [E32](../EPIC-ressources-temps/README.md) | pivot-pilotage-core · `pilotage` |
 | Collaboration & tâches *(benchmark)* | [E33](../EPIC-pilotage-taches/README.md) | pivot-pilotage-core · `pilotage` |
 | IA & agents *(benchmark)* | [E34](../EPIC-pilotage-ia/README.md) | pivot-pilotage-core · `pilotage` |
 | Gouvernance & sécurité *(benchmark)* | [E35](../EPIC-pilotage-gouvernance/README.md) | pivot-pilotage-core · `pilotage` |
 | Intégration SI *(benchmark)* | [E36](../EPIC-pilotage-integration-si/README.md) | pivot-pilotage-core · `pilotage` |
 | Licences & réversibilité *(benchmark)* | [E37](../EPIC-pilotage-licences/README.md) | pivot-pilotage-core · `pilotage` |
-| Management de l'innovation — SMI | [E38](../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
+| Management de l'innovation — SMI | [E38](../../EPIC-pilotage-innovation/README.md) | pivot-pilotage-core · `pilotage` |
 | Chantiers SI *(benchmark)* | [E39](../EPIC-pilotage-chantiers/README.md) | pivot-pilotage-core · `pilotage` |
 | **Profil & adaptation *(v2)*** | [E40](../EPIC-profil-adaptation/README.md) | pivot-pilotage-core · `pilotage` |
 
-> La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../EPIC-risk/README.md)**.
+> La gestion des risques « légère » (ex-F18.7) est supprimée — entièrement remplacée par le module dédié **[E21](../../EPIC-risk/README.md)**.
 >
 > Les modules *benchmark* (E32–E39, E31 dissoute) et les Features `F22.2` / `F23.2` / `F26.2` proviennent d'un CSV d'analyse concurrentielle PPM (items `PP-###`), rationalisé directement dans chaque EPIC concerné (ce README et les READMEs d'E22/E23/E26) — le document source `BENCHMARK.md` n'a jamais été mergé sur `main` (ex-PR #38). Roadmap (E22), Portefeuille (E23) et Budget (E26) sont **étendus** par ces items.
 
@@ -94,13 +94,13 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [EN18.8 — Option on-premise](ENABLERS/en-option-on-premise.md) | ⬜ |
 | [EN18.9 — Modèle Application → Projet](ENABLERS/en-modele-application-projet.md) | ⬜ |
 | **Modules (EPICs dédiés)** | |
-| [E22 — Roadmap / Gantt](../EPIC-roadmap/README.md) | ⬜ |
-| [E23 — Portefeuille projets](../EPIC-portefeuille/README.md) | ⬜ |
-| [E24 — ADR projet](../EPIC-adr-projet/README.md) | ⬜ |
-| [E25 — Commande publique](../EPIC-commande-publique/README.md) | ⬜ |
-| [E26 — Budget & suivi financier](../EPIC-budget/README.md) | ⬜ |
-| [E27 — OKR](../EPIC-okr/README.md) | ⬜ |
-| [E21 — Gestion des risques](../EPIC-risk/README.md) | ⬜ |
+| [E22 — Roadmap / Gantt](../../EPIC-roadmap/README.md) | ⬜ |
+| [E23 — Portefeuille projets](../../EPIC-portefeuille/README.md) | ⬜ |
+| [E24 — ADR projet](../../EPIC-adr-projet/README.md) | ⬜ |
+| [E25 — Commande publique](../../EPIC-commande-publique/README.md) | ⬜ |
+| [E26 — Budget & suivi financier](../../EPIC-budget/README.md) | ⬜ |
+| [E27 — OKR](../../EPIC-okr/README.md) | ⬜ |
+| [E21 — Gestion des risques](../../EPIC-risk/README.md) | ⬜ |
 | **Couche adaptative v2 (E40)** | |
 | [E40 — Profil & adaptation](../EPIC-profil-adaptation/README.md) | ⬜ |
 | **Modules benchmark PPM (E32–E39, E31 dissoute)** | |
@@ -110,5 +110,5 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [E35 — Gouvernance & sécurité](../EPIC-pilotage-gouvernance/README.md) | ⬜ |
 | [E36 — Intégration SI](../EPIC-pilotage-integration-si/README.md) | ⬜ |
 | [E37 — Licences & réversibilité](../EPIC-pilotage-licences/README.md) | ⬜ |
-| [E38 — Management de l'innovation (SMI)](../EPIC-pilotage-innovation/README.md) | ⬜ |
+| [E38 — Management de l'innovation (SMI)](../../EPIC-pilotage-innovation/README.md) | ⬜ |
 | [E39 — Chantiers SI](../EPIC-pilotage-chantiers/README.md) | ⬜ |
