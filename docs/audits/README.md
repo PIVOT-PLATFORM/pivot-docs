@@ -15,6 +15,13 @@ Règle clé : `Historique des révisions` ne grossit que sur un vrai passage not
 jamais sur une édition de préparation — `Statut` reste `À compléter` tant qu'aucun audit formel
 n'a été publié.
 
+**Vues consolidées cross-domaine** (mises à jour après chaque audit formel publié, jamais en
+avance) :
+- [BILAN-AUDITS.md](BILAN-AUDITS.md) — score et statut de chaque domaine, findings récents,
+  synthèse chiffrée par priorité
+- [PLAN-ACTION.md](PLAN-ACTION.md) — plan d'action consolidé, findings actifs regroupés par
+  sévérité (CRITICAL → INFO) avec ID cross-référencé au rapport de domaine
+
 | Audit | Fichier | Profil agent responsable |
 |-------|---------|---------------------------|
 | Architecture | [audit-architecture.md](audit-architecture.md) | Architecte Modules (coordination) + Architecte Java/Spring + Architecte Angular |

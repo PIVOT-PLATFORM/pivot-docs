@@ -354,3 +354,9 @@ gate_checklist:
     - "Plan d'action P0→P3 (+ Externe si pertinent) rempli, pas de section vide silencieuse"
     - "Historique des révisions : une seule nouvelle ligne ajoutée pour ce passage, avec le score réel obtenu"
     - "Findings historiques (versions précédentes) confrontés un par un — statut + preuve, pas une affirmation générique"
+
+  apres_publication_audit_formel:
+    - "docs/audits/BILAN-AUDITS.md : ligne du domaine mise à jour (Statut, Score, Tendance, Dernière révision, Avis PROD)"
+    - "docs/audits/BILAN-AUDITS.md : findings apparus depuis le bilan précédent ajoutés à la section dédiée"
+    - "docs/audits/PLAN-ACTION.md : chaque finding actif reporté dans sa section de sévérité avec le même ID que le rapport de domaine — findings résolus depuis le cycle précédent retirés"
+    - "docs/audits/PLAN-ACTION.md et BILAN-AUDITS.md : tableau de synthèse chiffrée recalculé"
