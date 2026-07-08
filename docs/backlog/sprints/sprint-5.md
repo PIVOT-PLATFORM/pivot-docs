@@ -110,10 +110,13 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > corrigée au passage sur US08.3.2b (AC citait encore DRAW/ERASE/MOVE/RESIZE comme 4 types STOMP
 > distincts, contredisant le contrat unique déjà posé en Notes d'implémentation).
 >
-> **Avancement Vague 0 (2026-07-07, session 2) :** 6/8 enablers EN17 terminés.
+> **Avancement Vague 0 (2026-07-07, session 2) :** 7/8 enablers EN17 terminés.
 > ✅ EN17.8 — design system incubé dans pivot-ui (branche `projects/design-system/`, angular.json)
 > ✅ EN17.4 — ModuleFlywayConfigurer + ModuleSchemaIsolation (pivot-core PR #167)
-> ✅ EN17.1 — pivot-core-starter publié sur GitHub Packages Maven (pivot-core PR #167)
+> 🔄 EN17.1 — **correction (2026-07-08) : PR #167 pose la structure multi-module et publie
+> `fr.pivot.core.db`, mais ne déplace ni `modules`/`tenant` (fait depuis, pivot-core PR #173) ni
+> `auth`/`team` (toujours ouvert, `pivot-core#171`) — cette entrée affirmait à tort un "Done"
+> complet ; voir la ligne Vague 0 du tableau ci-dessus, seule source à jour**
 > ✅ EN17.5 — template repo `pivot-template-core` créé (PIVOT-PLATFORM/pivot-template-core, pivot-docs PR #105)
 > ✅ EN17.3 — `@pivot-platform/ui-core` publié sur GitHub Packages npm (pivot-ui PR #112)
 > ✅ EN17.7 — nginx API Gateway multi-module (pivot-ui PR #114 + pivot-core PR #170, 2026-07-07)
