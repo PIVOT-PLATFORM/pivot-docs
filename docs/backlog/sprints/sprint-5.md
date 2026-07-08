@@ -49,7 +49,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | 🔁 Review — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100 |
 | US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31), Gate 4 = 92/100 |
-| US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
+| US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | 🔁 Review — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32), Gate 4 = 97/100 |
 | US08.4.1 | Créer un tableau depuis un template | M | Medium | ✅ Done — `pivot-collaboratif-core` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (100/100, mergée) + `pivot-collaboratif-ui` PR [#29](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/29) (100/100, mergée) — fix de suivi `pivot-collaboratif-ui`#30 (thumbnailUrl) |
 | US08.5.1 | Présence des participants sur le canvas | M | High | ⬜ |
@@ -165,3 +165,16 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > `redo()` (aucun type `REDO` dans la whitelist backend). CI verte hors E2E Playwright (gap infra
 > préexistant déjà confirmé identique sur `pivot-collaboratif-ui`#29/#30/#31, non lié à ce
 > changement).
+>
+> **US08.3.2c (2026-07-08) :** pris en charge après confirmation des deux dépendances mergées —
+> `pivot-collaboratif-ui`#31 (US08.3.2b, client STOMP) et backend de présence US08.5.1
+> (`pivot-collaboratif-core`#33, `ParticipantsBroadcastService`/couleur déterministe). Clarification
+> Gate 1 additionnelle apportée en implémentation (non présente dans le fichier backlog initial,
+> vérifiée sur le code backend réel) : `PARTICIPANTS_UPDATE` est diffusé sur un sous-topic dédié
+> `/topic/whiteboard/{boardId}/presence`, payload brut `{ participants: [...] }` distinct de
+> l'enveloppe `BroadcastCanvasMessage` du topic principal — `WhiteboardSyncService` étendu pour
+> souscrire aux deux topics. `WhiteboardPresenceComponent` (overlay SVG de curseurs, throttle 50ms,
+> timeout 5s, XSS-safe) — `pivot-collaboratif-ui`#33, 295/295 tests verts, coverage
+> `whiteboard-presence.component.ts` 98.73 %. E2E Playwright rouge sur le même gap infra GHCR déjà
+> documenté (#29/#30/#31/#32), non bloquant. PR draft sortie de brouillon, Gate 4 en attente de
+> confirmation du mainteneur avant merge (pas d'auto-merge sur ce repo pour cette session).
