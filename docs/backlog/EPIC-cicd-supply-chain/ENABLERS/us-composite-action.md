@@ -8,10 +8,16 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Composite action `.github/actions/setup/action.yml` dans pivot-platform (ou repo dédié) | ⬜ |
+| Composite action `.github/actions/setup/action.yml` hébergée dans `pivot-core` | ⬜ |
 | Paramètres : `java-version`, `node-version`, `cache-key` | ⬜ |
-| Utilisée dans les workflows pivot-core ET pivot-ui | ⬜ |
+| Référencée depuis `pivot-ui` via `uses: PIVOT-PLATFORM/pivot-core/.github/actions/setup@main` (composite action cross-repo, pas de checkout du repo hôte requis) | ⬜ |
 | Cache Maven + npm partagé via `actions/cache` | ⬜ |
+
+> **Repo cible** : `pivot-core`, pas `pivot-platform/` (n'est pas un repo — cf. racine `CLAUDE.md`)
+> ni un repo dédié (aucun besoin identifié au-delà de core+ui pour justifier un repo
+> supplémentaire). `pivot-core` est le repo `Module: core` naturel des deux consommateurs
+> (`pivot-core`, `pivot-ui`) et GitHub Actions résout nativement les composite actions
+> cross-repo via `owner/repo/chemin@ref`, y compris sur repos privés du même org.
 
 ---
 Item Type: US · Parent: EN05.15 · Module: core · Phase: Socle · Size: S · Priority: Medium
