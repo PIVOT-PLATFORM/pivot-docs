@@ -48,11 +48,11 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | 👀 |
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | 🔁 Review — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100 |
 | US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
-| US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31), Gate 4 = 92/100 |
-| US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | 🔁 Review — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) |
-| US08.3.3 | Undo / Redo sur le canvas | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32), Gate 4 = 97/100 |
+| US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31) mergée |
+| US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ✅ Done — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) mergée |
+| US08.3.3 | Undo / Redo sur le canvas | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) mergée |
 | US08.4.1 | Créer un tableau depuis un template | M | Medium | ✅ Done — `pivot-collaboratif-core` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (100/100, mergée) + `pivot-collaboratif-ui` PR [#29](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/29) (100/100, mergée) — fix de suivi `pivot-collaboratif-ui`#30 (thumbnailUrl) |
-| US08.5.1 | Présence des participants sur le canvas | M | High | ⬜ |
+| US08.5.1 | Présence des participants sur le canvas | M | High | ✅ Done — `pivot-collaboratif-core` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/33) mergée + `pivot-collaboratif-ui` PR [#34](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/34) mergée |
 
 ## Reséquencement E17 (2026-07-07)
 
@@ -178,3 +178,26 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > `whiteboard-presence.component.ts` 98.73 %. E2E Playwright rouge sur le même gap infra GHCR déjà
 > documenté (#29/#30/#31/#32), non bloquant. PR draft sortie de brouillon, Gate 4 en attente de
 > confirmation du mainteneur avant merge (pas d'auto-merge sur ce repo pour cette session).
+>
+> **US08.5.1 — volet frontend (2026-07-08) :** dernier item non démarré de la Vague 1+ pris en
+> charge (`pivot-collaboratif-ui`#22, `leo-brgn` assigné, aucune collision détectée). Volet backend
+> déjà mergé (`pivot-collaboratif-core`#33) — le noyau `PARTICIPANTS_UPDATE`/couleur
+> déterministe/timeout heartbeat/dédoublonnage multi-onglets était en place, cette PR corrige
+> uniquement une collision de payload entre `WhiteboardPresenceRegistry` (EN08.1) et
+> `CanvasActionService` (US08.3.1) sur le sous-topic `/presence` partagé — voir
+> `us-presence-participants.md` §Implémentation pour le détail. `PresencePanelComponent`
+> (`pivot-collaboratif-ui`#34) réutilise l'`Observable` `WhiteboardSyncService.participantsUpdates$`
+> déjà exposé depuis US08.3.2c (même sous-topic dédié `/topic/whiteboard/{boardId}/presence`,
+> payload brut sans enveloppe) — aucune souscription STOMP additionnelle, aucun doublon avec
+> `WhiteboardPresenceComponent` (overlay de curseurs, chevauchement déjà tranché au Gate 1 du
+> 2026-07-07). 310/310 tests Vitest verts en isolation ; `E2E - Playwright` rouge sur le même gap
+> infra GHCR déjà documenté (#29/#30/#31/#32/#33), non bloquant. Flake intermittent pré-existant
+> observé sur `whiteboard-sync.service.spec.ts` lors de certaines exécutions locales complètes de
+> `npm run test:ci` — reproduit indépendamment sur `main` avant tout changement de cette PR (pool
+> `threads` Vitest, pollution d'état entre fichiers en parallèle), signalé pour investigation
+> séparée hors périmètre de cette US. PR draft sortie de brouillon, Gates 1/2/3 postés
+> (100/92/96), Gate 4 en attente de confirmation du mainteneur avant merge (pas d'auto-merge sur
+> ce repo pour cette session). US08.3.2b (`pivot-collaboratif-ui`#31) et US08.3.3
+> (`pivot-collaboratif-ui`#32) confirmées mergées entre-temps (tableau ci-dessus mis à jour en
+> conséquence, stale sur ce point avant cette PR) — US08.5.1 était donc bien le dernier item non
+> démarré de la Vague 1+ au moment de la prise en charge.
