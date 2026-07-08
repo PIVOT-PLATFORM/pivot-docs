@@ -37,6 +37,30 @@ gateway global, les autres modules continuent à répondre.
 - [ ] Log format JSON structuré (module extractable du préfixe URL)
 - [ ] Test : arrêter `pivot-collaboratif-core` → `/api/auth/` répond 200 · `/api/collaboratif/` répond 503
 
+## Configuration nginx dev vs prod
+
+Correctif en cours (2 PR sœurs, `pivot-ui` + `pivot-core`) sur la stratégie de config nginx
+entre environnements. Upstream et routing par préfixe identiques dev/prod — seule la
+terminaison TLS diffère, via deux fichiers nginx distincts côté `pivot-ui` :
+
+| | **PROD** | **DEV** |
+|---|---|---|
+| Fichier | `nginx.conf` — packagé dans l'image Docker `pivot-ui` | `nginx.dev.conf` — jamais packagé dans l'image, monté par le `compose.yml` de dev par-dessus `/etc/nginx/conf.d/default.conf` |
+| Écoute | `listen 443 ssl` + redirection `:80 → :443` | `listen 80` nu — pas de bloc TLS, pas de redirection |
+| Certificats | montés au runtime (`pivot.crt`/`pivot.key` — Let's Encrypt, CA interne, ou self-signé pour staging), **jamais committés** — cf. [EN07.1](../../EPIC-infrastructure/ENABLERS/en-docker-compose-prod.md) | aucun |
+| Upstream | `pivot-core:8080` | `pivot-core:8080` — le service `backend` du `compose.yml` dev reçoit un **alias réseau** `pivot-core`, pour que la résolution DNS de l'upstream (partagé entre les deux fichiers) reste identique dev/prod sans dupliquer la config |
+
+**Décision : pas de génération de certificat local en dev** (pas de mkcert/CA locale dans la
+procédure obligatoire) :
+- Les tokens OIDC PKCE sont stockés **en mémoire uniquement** côté Angular — jamais en cookie
+  `Secure` ni en Local Storage/sessionStorage (`pivot-ui/CLAUDE.md`, section *Auth OIDC*) :
+  l'auth locale n'a donc **aucune dépendance TLS**.
+- Générer/faire confiance à une CA locale (mkcert) ajouterait une friction de setup (install,
+  approbation navigateur/OS) pour un bénéfice quasi nul en dev.
+- **Optionnel, hors procédure obligatoire** : un développeur qui veut explicitement tester le
+  comportement HTTPS-only (redirection, HSTS, mixed-content) peut utiliser
+  [mkcert](https://github.com/FiloSottile/mkcert) en local, à sa propre initiative.
+
 **Dépendances** : EN07.1 (Docker Compose multi-repo), EN17.1–6 (libs partagées)
 
 **Statut** : ⬜ À faire
