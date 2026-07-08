@@ -1,7 +1,8 @@
 # Audit — cicd
 
 **Statut :** À compléter
-**Dernière révision :** 2026-07-04
+**Dernière révision :** 2026-07-08
+**Profil agent responsable :** Expert DevSecOps
 
 ## Résumé
 
@@ -39,6 +40,38 @@
   `mutation-testing.yml` — cron lundi 06:00 UTC + `workflow_dispatch` manuel, timeout porté
   à 60min. Voir pivot-ui#68.
 
+## Sous-domaine — Gouvernance des packages inter-repos (GitHub Packages / GHCR)
+
+**Profil agent responsable :** Expert DevSecOps
+
+Sous-domaine ajouté suite à deux incidents réels déjà rencontrés :
+
+1. **Course de versioning (2026-07-06)** — plusieurs merges rapprochés déclenchaient chacun
+   `release.yml`, calculant la même "prochaine version" avant qu'un tag ne soit créé entre eux ;
+   le second à publier échouait en conflit sur GitHub Packages (`pivot-core` : versions 0.22.0
+   puis 0.25.0 restées orphelines sans tag). Corrigé par la règle `Release-Trigger: true` sur
+   sa propre ligne, déclenchée uniquement au dernier item d'un sprint (voir
+   `pivot-core/CLAUDE.md` et `pivot-ui/CLAUDE.md`, section Workflow — Release).
+2. **Accès cross-repo GHCR refusé (2026-07-07/08)** — le package conteneur privé
+   `ghcr.io/pivot-platform/pivot-collaboratif-core/pivot-collaboratif-core` n'accorde pas
+   l'accès Actions à `pivot-collaboratif-ui`, qui en a besoin pour son E2E Playwright
+   (`docker: denied` après login GHCR réussi). Documenté dans
+   `pivot-collaboratif-ui/TODO-SETUP.md` (BLOQUANT #2), commande de correctif prête
+   (`gh api orgs/PIVOT-PLATFORM/packages/container/.../repositories`) mais nécessite un rôle
+   admin d'organisation — non exécutable avec un PAT de repo standard (confirmé 2026-07-08).
+
+- [ ] Recenser tous les couples publisher/consumer package inter-repos existants ou prévus
+      (`fr.pivot:pivot-core-starter` → `pivot-agilite-core`/`pivot-collaboratif-core`/
+      `pivot-pilotage-core` ; `@pivot-platform/ui-core` → `pivot-agilite-ui`/
+      `pivot-collaboratif-ui`/`pivot-pilotage-ui` ; images GHCR `-core` → E2E des `-ui` sœurs)
+      et vérifier pour chacun si l'accès cross-repo ("Manage Actions access") est déjà accordé
+- [ ] `@pivot-platform/ui-core` — le workflow `publish-ui-core.yml` échoue actuellement
+      (`npm ci` plante sur un remote SSH sans clé) : le package n'existe pas encore, donc aucune
+      permission cross-repo n'est encore pertinente pour lui
+- [ ] `fr.pivot:pivot-core-starter` — dépendance pas encore déclarée dans les `pom.xml` des
+      modules `-core` (EN17.1 tout juste mergé pour le volet modules/tenant, `auth`/`team`
+      restent — voir issue pivot-core#171) ; permission à poser une fois la dépendance ajoutée
+
 ## Historique des révisions
 
 | Version | Date | Score | Évolutions principales |
@@ -46,3 +79,4 @@
 | v1 | 2026-06-20 | — | Initialisation |
 | v2 | 2026-07-03 | — | Mutation testing pivot-ui déplacé en hebdomadaire (voir Décisions notables) |
 | v3 | 2026-07-04 | — | Retry déploiement GitHub Pages sur échec transitoire (voir Décisions notables) |
+| v4 | 2026-07-08 | — | Ajout profil agent responsable + sous-domaine gouvernance des packages inter-repos |

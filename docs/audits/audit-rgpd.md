@@ -1,7 +1,8 @@
 # Audit — rgpd
 
 **Statut :** À compléter
-**Dernière révision :** 2026-06-20
+**Dernière révision :** 2026-07-08
+**Profil agent responsable :** Expert RGPD
 
 ## Résumé
 
@@ -16,3 +17,4 @@
 | Version | Date | Score | Évolutions principales |
 |---------|------|-------|------------------------|
 | v1 | 2026-06-20 | — | Initialisation |
+| v2 | 2026-07-08 | — | Ajout profil agent responsable |
