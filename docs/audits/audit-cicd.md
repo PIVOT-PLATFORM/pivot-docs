@@ -1,7 +1,7 @@
 # Audit — cicd
 
 **Statut :** À compléter
-**Dernière révision :** 2026-07-08
+**Dernière révision :** 2026-07-04
 **Profil agent responsable :** Expert DevSecOps
 
 ## Résumé
@@ -11,20 +11,20 @@ dédiée à la gouvernance des packages inter-repos ci-dessous.
 
 ## Points d'attention
 
-- [ ] Convergence des rulesets de branche — `pivot-core`/`pivot-ui` ont un ruleset complet
+- Convergence des rulesets de branche — `pivot-core`/`pivot-ui` ont un ruleset complet
       (checks requis, review obligatoire) ; les repos modules bootstrap (`pivot-agilite-*`,
       `pivot-pilotage-*`) démarrent volontairement avec un périmètre de checks requis plus
       restreint le temps d'observer leurs premiers runs (voir leurs `TODO-SETUP.md` respectifs).
       Suivre explicitement la convergence vers le ruleset `main-protection` complet plutôt que
       de laisser ces exceptions devenir permanentes par défaut.
-- [ ] SonarCloud — projet inexistant sur au moins `pivot-pilotage-core`/`pivot-pilotage-ui` au
+- SonarCloud — projet inexistant sur au moins `pivot-pilotage-core`/`pivot-pilotage-ui` au
       bootstrap (`SonarCloud Analysis` volontairement exclu du gate initial) ; à créer avant que
       ces repos passent en développement actif.
-- [ ] Incidents CI déjà rencontrés et corrigés à documenter comme jurisprudence pour éviter les
+- Incidents CI déjà rencontrés et corrigés à documenter comme jurisprudence pour éviter les
       redécouvertes : retry `actions/deploy-pages` sur échec transitoire (pivot-docs, 2026-07-04,
       voir Décisions notables ci-dessous), déplacement du mutation testing Stryker en cron
       hebdomadaire pour timeout (pivot-ui, 2026-07-03).
-- [ ] Vérifier qu'aucun repo ne contourne la règle "0 erreur/0 warning avant push autonome" via
+- Vérifier qu'aucun repo ne contourne la règle "0 erreur/0 warning avant push autonome" via
       un `continue-on-error` ajouté pour des raisons de confort plutôt que pour un indicateur
       qualité non bloquant assumé (seul cas légitime documenté : mutation testing).
 
@@ -76,15 +76,15 @@ Sous-domaine ajouté suite à deux incidents réels déjà rencontrés :
    (`gh api orgs/PIVOT-PLATFORM/packages/container/.../repositories`) mais nécessite un rôle
    admin d'organisation — non exécutable avec un PAT de repo standard (confirmé 2026-07-08).
 
-- [ ] Recenser tous les couples publisher/consumer package inter-repos existants ou prévus
+- Recenser tous les couples publisher/consumer package inter-repos existants ou prévus
       (`fr.pivot:pivot-core-starter` → `pivot-agilite-core`/`pivot-collaboratif-core`/
       `pivot-pilotage-core` ; `@pivot-platform/ui-core` → `pivot-agilite-ui`/
       `pivot-collaboratif-ui`/`pivot-pilotage-ui` ; images GHCR `-core` → E2E des `-ui` sœurs)
       et vérifier pour chacun si l'accès cross-repo ("Manage Actions access") est déjà accordé
-- [ ] `@pivot-platform/ui-core` — le workflow `publish-ui-core.yml` échoue actuellement
+- `@pivot-platform/ui-core` — le workflow `publish-ui-core.yml` échoue actuellement
       (`npm ci` plante sur un remote SSH sans clé) : le package n'existe pas encore, donc aucune
       permission cross-repo n'est encore pertinente pour lui
-- [ ] `fr.pivot:pivot-core-starter` — dépendance pas encore déclarée dans les `pom.xml` des
+- `fr.pivot:pivot-core-starter` — dépendance pas encore déclarée dans les `pom.xml` des
       modules `-core` (EN17.1 tout juste mergé pour le volet modules/tenant, `auth`/`team`
       restent — voir issue pivot-core#171) ; permission à poser une fois la dépendance ajoutée
 
@@ -95,5 +95,3 @@ Sous-domaine ajouté suite à deux incidents réels déjà rencontrés :
 | v1 | 2026-06-20 | — | Initialisation |
 | v2 | 2026-07-03 | — | Mutation testing pivot-ui déplacé en hebdomadaire (voir Décisions notables) |
 | v3 | 2026-07-04 | — | Retry déploiement GitHub Pages sur échec transitoire (voir Décisions notables) |
-| v4 | 2026-07-08 | — | Ajout profil agent responsable + sous-domaine gouvernance des packages inter-repos |
-| v5 | 2026-07-08 | — | Contexte et points d'attention initiaux (préparation premier audit formel) |

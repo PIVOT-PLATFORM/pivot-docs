@@ -16,14 +16,14 @@ multi-repo n'existe pour en faire la synthèse.
 
 ## Points d'attention
 
-- [ ] Consolider les résultats `SCA - Dependency Audit` des 8 repos (core+ui × 4 domaines) dans
+- Consolider les résultats `SCA - Dependency Audit` des 8 repos (core+ui × 4 domaines) dans
       une vue unique — aujourd'hui dispersés par repo, aucune vue transverse
-- [ ] Compatibilité de licence : tous les repos déclarent `AGPL-3.0-or-later` — vérifier
+- Compatibilité de licence : tous les repos déclarent `AGPL-3.0-or-later` — vérifier
       qu'aucune dépendance tierce (Maven/npm) n'a une licence incompatible (ex. certaines
       licences propriétaires ou copyleft incompatibles)
-- [ ] SBOM (Software Bill of Materials) — génération mentionnée dans `skill-devops-cicd` de
+- SBOM (Software Bill of Materials) — génération mentionnée dans `skill-devops-cicd` de
       plusieurs repos, statut de génération/publication réelle à vérifier
-- [ ] Fraîcheur des dépendances directes majeures (Spring Boot, Angular, Testcontainers,
+- Fraîcheur des dépendances directes majeures (Spring Boot, Angular, Testcontainers,
       Playwright) sur chaque repo — dérive de version entre repos du même type (core vs core)
 
 ## Historique des révisions

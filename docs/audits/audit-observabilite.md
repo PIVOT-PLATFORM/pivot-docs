@@ -17,15 +17,15 @@ admin).
 
 ## Points d'attention
 
-- [ ] Cohérence des health groups (`readiness`/`liveness`) entre `pivot-core` et les modules
+- Cohérence des health groups (`readiness`/`liveness`) entre `pivot-core` et les modules
       `-core` — vérifier que chaque module suit le même modèle que `pivot-core`
       (`readinessState,db,redis,flyway` / `livenessState`)
-- [ ] Couverture des logs structurés côté modules `-core` récemment bootstrappés
+- Couverture des logs structurés côté modules `-core` récemment bootstrappés
       (`pivot-agilite-core`, `pivot-pilotage-core`) — à comparer avec `pivot-core` (référence)
-- [ ] `audit_events` — événements sensibles couverts (`LOGIN_SUCCESS`/`LOGIN_BLOCKED`/
+- `audit_events` — événements sensibles couverts (`LOGIN_SUCCESS`/`LOGIN_BLOCKED`/
       `LOGIN_UNVERIFIED_EMAIL` déjà vus dans les seeds `pivot-core`) : lister les événements
       manquants (ex. actions admin, changement de rôle, activation/désactivation module)
-- [ ] Dashboards/alerting réels branchés sur Prometheus, ou seulement instrumentation exposée
+- Dashboards/alerting réels branchés sur Prometheus, ou seulement instrumentation exposée
       sans consommateur en aval — à clarifier
 
 ## Historique des révisions
