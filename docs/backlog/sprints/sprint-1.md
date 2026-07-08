@@ -24,3 +24,5 @@
 | Dashboard utilisateur | Accueil connecté | ✅ |
 | Pages Bientôt disponible | Modules non activés | ✅ |
 | **US16.3.1** | **Formulaire de contact** | 🔎 Review |
+
+> **US16.3.1 non clôturée sur ce sprint** — implémentation complète (`feat/us16-3-1-contact`), en attente de validation PO + merge. Sortie officiellement du périmètre Sprint 1 vers **`sprint-6.md`** (Durcissement & recette Socle), qui la référence désormais explicitement en recette PO (Axe 3) — voir `sprints/sprint-6.md`.
