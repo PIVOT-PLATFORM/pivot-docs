@@ -1,7 +1,7 @@
 # Audit — cicd
 
 **Statut :** À compléter
-**Dernière révision :** 2026-07-04
+**Dernière révision :** 2026-06-20
 **Profil agent responsable :** Expert DevSecOps
 
 ## Résumé
@@ -93,5 +93,3 @@ Sous-domaine ajouté suite à deux incidents réels déjà rencontrés :
 | Version | Date | Score | Évolutions principales |
 |---------|------|-------|------------------------|
 | v1 | 2026-06-20 | — | Initialisation |
-| v2 | 2026-07-03 | — | Mutation testing pivot-ui déplacé en hebdomadaire (voir Décisions notables) |
-| v3 | 2026-07-04 | — | Retry déploiement GitHub Pages sur échec transitoire (voir Décisions notables) |
