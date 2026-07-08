@@ -14,6 +14,7 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 - [Enabler EN17.6 : Template repo `pivot-xxx-ui`](ENABLERS/en-template-repo-ui.md)
 - [Enabler EN17.7 : nginx API Gateway — routing multi-backend par préfixe URL](ENABLERS/en-nginx-api-gateway.md)
 - [Enabler EN17.8 : Incubation du design system dans `pivot-ui`](ENABLERS/en-design-system-incubation.md) — prérequis d'EN17.2
+- [Enabler EN17.9 : Compose dev — modules satellites manquants](ENABLERS/en-compose-dev-satellites.md)
 
 ## Phase
 
@@ -37,5 +38,5 @@ valeur de verrou de sprint.
 
 ---
 
-Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 8 (EN17.1–8)
+Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 9 (EN17.1–9)
 Stage: Ready · Priority: Critical
