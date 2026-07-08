@@ -26,7 +26,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | EN17.3 | Publication `@pivot-platform/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ✅ Done |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ✅ Done — pivot-ui PR #114 + pivot-core PR #170 mergées |
 | EN17.9 | Compose dev — modules satellites manquants (`pivot-pilotage-core`/`pivot-agilite-core`/`pivot-collaboratif-core` absents du `compose.yml` malgré le routing EN17.7 déjà en place) | S | High | ✅ Done — pivot-core PR #179 + pivot-pilotage-core PR #18 (context-path bug corrigé au passage) mergées |
-| EN17.10 | Publication `@pivot-platform/collaboratif-ui` (npm) + câblage shell route `/whiteboard` (`loadChildren`, remplace `ComingSoonComponent`) | M | High | 👀 |
+| EN17.10 | Publication `@pivot-platform/collaboratif-ui` (npm) + câblage shell route `/whiteboard` (`loadChildren`, remplace `ComingSoonComponent`) | M | High | 🔁 Review partiel — volet `pivot-collaboratif-ui` [`#36`](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/36) mergé (package publié) ; volet `pivot-ui` [`#121`](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/121) implémenté, **CI bloquée** (accès cross-repo GitHub Packages manquant, `needs-human-review`) |
 
 > **Ordre de dépendance Vague 0 :** EN17.8 ‖ EN17.4 ‖ EN17.1 (aucune dépendance mutuelle) →
 > création de `pivot-collaboratif-core`/`pivot-collaboratif-ui` (consomment EN17.1 respectivement
@@ -209,3 +209,29 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > (`pivot-collaboratif-ui`#32) confirmées mergées entre-temps (tableau ci-dessus mis à jour en
 > conséquence, stale sur ce point avant cette PR) — US08.5.1 était donc bien le dernier item non
 > démarré de la Vague 1+ au moment de la prise en charge.
+>
+> **EN17.10 (2026-07-08) :** dernier item Vague 0 restant pris en charge. Volet 1/2
+> (`pivot-collaboratif-ui`, conversion workspace multi-projets + publication
+> `@pivot-platform/collaboratif-ui@0.1.0`) déjà mergé —
+> [`pivot-collaboratif-ui`#36](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/36)
+> (closes `pivot-collaboratif-ui`#35), CI verte, standalone (`nginx.conf`/port 8090) vérifié non
+> cassé par un build réel (`npm run build`), 310/310 tests. Volet 2/2 (câblage `pivot-ui`) implémenté
+> sur [`pivot-ui`#121](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/121) — `whiteboard-module-loader.ts`
+> isolé (testable unitairement, jamais d'import statique du package pour préserver le
+> code-splitting), `ModuleLoadErrorComponent` pour l'AC error case, `moduleGuard('whiteboard')`
+> non régressé (couvert par `e2e/modules/module-guard.spec.ts`, cas désactivé inchangé). Sécurité
+> tenantId revérifiée (grep exhaustif `projects/collaboratif-ui/src` côté `pivot-collaboratif-ui`
+> — aucune occurrence d'un `tenantId`/`userId` envoyé depuis Angular, wiring n'y touche pas de toute
+> façon). Coverage 100 % sur le nouveau code de wiring `pivot-ui`, tsc/lint/build production tous
+> verts en local. **Bloqué avant merge** : CI réelle de `pivot-ui`#121 échoue sur `npm ci` — 404
+> GitHub Packages sur `@pivot-platform/collaboratif-ui`, accès cross-repo non accordé entre les
+> deux repos (même famille de blocage que le cross-repo GHCR déjà documenté côté
+> `pivot-collaboratif-ui/TODO-SETUP.md`) — nécessite une action mainteneur (package settings,
+> "Manage Actions access") hors de portée d'une PR ; label `needs-human-review` posé, détail dans
+> `pivot-ui`#121. Playwright (`whiteboard-shell-wiring.spec.ts`, nouveau, + `module-guard.spec.ts`
+> modifié pour migrer son cas générique "module actif" de `whiteboard` vers `session` puisque
+> `whiteboard` n'est plus un placeholder) non exécutable dans l'environnement d'implémentation
+> (dépendance système manquante pour Chromium headless, pas d'accès `sudo`) — à vérifier une fois
+> la CI débloquée. Gap résiduel signalé, hors AC de cet Enabler : les clés Transloco
+> `whiteboard.*` du package ne sont pas encore fusionnées/scopées dans le catalogue i18n de
+> `pivot-ui` (rendu avec clés manquantes/brutes tant que non traité).
