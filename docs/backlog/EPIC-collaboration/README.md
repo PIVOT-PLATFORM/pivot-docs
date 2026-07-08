@@ -362,13 +362,14 @@ collaboratif open-source).
 | [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | 🔎 Review |
 | [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | Ready |
 | [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | Ready |
-| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | Ready |
+| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | 🔎 Review |
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | Ready |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | Ready |
 
 > Statuts resynchronisés le 2026-07-08 (soir) depuis le frontmatter `Stage:` de chaque fichier
-> (source de vérité) : 12 Review · 2 In progress · 5 Ready · 0 Done. Développement très actif —
-> ce tableau était déjà repassé en désync une première fois le même jour (5 items Ready→Review en
-> quelques heures). Ne pas considérer ce statut comme figé ; revérifier le frontmatter avant toute
-> décision qui en dépend (ex. Definition of Done Socle, `sprints/sprint-6.md`).
+> (source de vérité) : 13 Review · 2 In progress · 4 Ready · 0 Done (US08.3.3 Ready → Review,
+> `pivot-collaboratif-ui` PR #32 mergée). Développement très actif — ce tableau était déjà repassé
+> en désync une première fois le même jour (5 items Ready→Review en quelques heures). Ne pas
+> considérer ce statut comme figé ; revérifier le frontmatter avant toute décision qui en dépend
+> (ex. Definition of Done Socle, `sprints/sprint-6.md`).
