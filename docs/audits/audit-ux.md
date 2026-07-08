@@ -6,11 +6,27 @@
 
 ## Résumé
 
-> _À remplir lors du premier audit formel._
+Score de maturité pas encore calculé (`Statut: À compléter`). Voir aussi la sous-section
+dédiée à la performance (Lighthouse) ci-dessous.
 
 ## Points d'attention
 
-- [ ] À identifier
+- [ ] WCAG 2.1 AA — mesuré en CI (`Lighthouse — Accessibilité`) uniquement sur `pivot-ui` et
+      `pivot-collaboratif-ui` à ce jour ; `pivot-agilite-ui`/`pivot-pilotage-ui` sont encore au
+      stade bootstrap sans page réelle à auditer. Suivre l'activation du check au fil des
+      premières vraies features de chaque module.
+- [ ] Passe Lighthouse authentifiée — nécessite un vrai backend + une vraie page connectée ;
+      plusieurs modules bootstrap n'ont ni l'un ni l'autre pour l'instant (TODO explicite dans
+      leurs `TODO-SETUP.md`). Seule la passe publique (page d'accueil du shell) tourne en
+      attendant.
+- [ ] i18n (Transloco) — `pivot-ui` a une couverture réelle (fr/en complets) ; les modules
+      bootstrap n'ont que des clés placeholder (`app.title`, `app.bootstrapNotice`). Pas un
+      défaut aujourd'hui (features pas encore développées) mais à re-vérifier une fois les US
+      métier livrées — clés manquantes ou chaînes littérales non externalisées.
+- [ ] Design system — `pivot-ui` gère ses styles en interne (`src/styles/`) faute de
+      `pivot-design-system` publié ; vérifier la cohérence visuelle entre `pivot-ui` et les
+      modules `-ui` qui n'ont pour l'instant qu'un reset CSS minimal auto-contenu, en attendant
+      la migration vers `@pivot/design-system`.
 
 ## Sous-domaine — Performance (Lighthouse)
 
@@ -35,3 +51,4 @@ Performance/Best Practices/SEO ne sont ni scorés ni utilisés comme critère de
 |---------|------|-------|------------------------|
 | v1 | 2026-06-20 | — | Initialisation |
 | v2 | 2026-07-08 | — | Ajout profil agent responsable + sous-domaine performance (Lighthouse) |
+| v3 | 2026-07-08 | — | Contexte et points d'attention initiaux (préparation premier audit formel) |

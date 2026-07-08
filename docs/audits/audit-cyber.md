@@ -6,14 +6,28 @@
 
 ## Résumé
 
-> _À remplir lors du premier audit formel._
-
-Périmètre étendu à deux sous-domaines transverses jusqu'ici non rattachés à un audit — voir
-sous-sections dédiées ci-dessous : OIDC/IAM et temps réel/WebSocket.
+Score de maturité pas encore calculé (`Statut: À compléter`). Périmètre étendu à deux
+sous-domaines transverses jusqu'ici non rattachés à un audit — voir sous-sections dédiées
+ci-dessous : OIDC/IAM et temps réel/WebSocket.
 
 ## Points d'attention
 
-- [ ] À identifier
+- [ ] Isolation tenant (IDOR) — règle absolue répétée dans tous les repos core
+      (`tenantId`/`userId` extrait exclusivement du `TenantContext` du token porteur, jamais du
+      body/query/header) avec test TI cross-tenant obligatoire sur chaque endpoint admin.
+      Vérifier la couverture réelle de ce test sur tous les endpoints `/api/admin/*`,
+      `/api/superadmin/*` et `/api/{module}/*` existants, pas seulement sur les nouveaux.
+- [ ] `404` vs `403` sur ressource cross-tenant — règle explicite (ne pas confirmer l'existence
+      d'une ressource cross-tenant) : vérifier qu'aucun endpoint ne renvoie `403` par erreur là
+      où `404` est requis.
+- [ ] `// NOSONAR` / `// nosemgrep` — interdits par défaut dans tous les repos ; vérifier
+      qu'aucune exception non validée par le mainteneur ne s'est glissée malgré la règle.
+- [ ] Rate limiting — `JoinRateLimitService` existe côté `pivot-collaboratif-core` (jointure de
+      board via token de partage) ; vérifier la couverture équivalente sur les autres endpoints
+      sensibles de `pivot-core` (login, reset mot de passe, vérification email).
+- [ ] Scanners automatisés (Gitleaks, CodeQL, Semgrep) — tous verts sur les PR observées à ce
+      jour ; l'audit formel doit vérifier l'absence de faux négatifs plutôt que se fier
+      uniquement au statut CI vert.
 
 ## Sous-domaine — OIDC / IAM
 
@@ -55,3 +69,4 @@ Fonctionnalité déjà en production (EN08.1, isolation de room STOMP mergée da
 |---------|------|-------|------------------------|
 | v1 | 2026-06-20 | — | Initialisation |
 | v2 | 2026-07-08 | — | Ajout profil agent responsable + sous-domaines OIDC/IAM et temps réel/WebSocket |
+| v3 | 2026-07-08 | — | Contexte et points d'attention initiaux (préparation premier audit formel) |

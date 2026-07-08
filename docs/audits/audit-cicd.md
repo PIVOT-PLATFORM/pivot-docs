@@ -6,11 +6,27 @@
 
 ## Résumé
 
-> _À remplir lors du premier audit formel._
+Score de maturité pas encore calculé (`Statut: À compléter`). Voir aussi la sous-section
+dédiée à la gouvernance des packages inter-repos ci-dessous.
 
 ## Points d'attention
 
-- [ ] À identifier
+- [ ] Convergence des rulesets de branche — `pivot-core`/`pivot-ui` ont un ruleset complet
+      (checks requis, review obligatoire) ; les repos modules bootstrap (`pivot-agilite-*`,
+      `pivot-pilotage-*`) démarrent volontairement avec un périmètre de checks requis plus
+      restreint le temps d'observer leurs premiers runs (voir leurs `TODO-SETUP.md` respectifs).
+      Suivre explicitement la convergence vers le ruleset `main-protection` complet plutôt que
+      de laisser ces exceptions devenir permanentes par défaut.
+- [ ] SonarCloud — projet inexistant sur au moins `pivot-pilotage-core`/`pivot-pilotage-ui` au
+      bootstrap (`SonarCloud Analysis` volontairement exclu du gate initial) ; à créer avant que
+      ces repos passent en développement actif.
+- [ ] Incidents CI déjà rencontrés et corrigés à documenter comme jurisprudence pour éviter les
+      redécouvertes : retry `actions/deploy-pages` sur échec transitoire (pivot-docs, 2026-07-04,
+      voir Décisions notables ci-dessous), déplacement du mutation testing Stryker en cron
+      hebdomadaire pour timeout (pivot-ui, 2026-07-03).
+- [ ] Vérifier qu'aucun repo ne contourne la règle "0 erreur/0 warning avant push autonome" via
+      un `continue-on-error` ajouté pour des raisons de confort plutôt que pour un indicateur
+      qualité non bloquant assumé (seul cas légitime documenté : mutation testing).
 
 ## Décisions notables
 
@@ -80,3 +96,4 @@ Sous-domaine ajouté suite à deux incidents réels déjà rencontrés :
 | v2 | 2026-07-03 | — | Mutation testing pivot-ui déplacé en hebdomadaire (voir Décisions notables) |
 | v3 | 2026-07-04 | — | Retry déploiement GitHub Pages sur échec transitoire (voir Décisions notables) |
 | v4 | 2026-07-08 | — | Ajout profil agent responsable + sous-domaine gouvernance des packages inter-repos |
+| v5 | 2026-07-08 | — | Contexte et points d'attention initiaux (préparation premier audit formel) |
