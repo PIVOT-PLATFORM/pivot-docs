@@ -19,7 +19,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 |------|-------|------|----------|--------|
 | EN17.8 | Incubation design system dans `pivot-ui` (déjà démarrable, aucun repo créé) | M | Critical | ✅ Done — pivot-ui PR #111 mergée |
 | EN17.4 | Convention BDD multi-schéma + Flyway baseline | S | Critical | ✅ Done — pivot-core PR #167 mergée (ModuleFlywayConfigurer factory) |
-| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | 🔄 Partiel — `db`/`modules`/`tenant`/`team` extraits et livrés (PR #167, #173, #177) ; seul `auth` reste, escaladé sur [`pivot-core#171`](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) (`needs-human-review` — ADR requise avant tout déplacement de code sur ce composant de sécurité critique) |
+| EN17.1 | Publication `pivot-core-starter` (Maven, extraction depuis `pivot-core`) | L | Critical | ✅ Done — `db`/`modules`/`tenant`/`team`/`auth` extraits et livrés (PR #167, #173, #177, #180). Volet `auth` : [`pivot-core#171`](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) fermée — [ADR-022](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/155) a tranché principal minimal `AuthenticatedPrincipal`(userId/tenantId/role) + validation dupliquée (pas de centralisation réseau) |
 | EN17.2 | Publication `@pivot/design-system` (npm) — création repo `pivot-design-system`, déclenchée par la création de `pivot-collaboratif-ui` (1er repo module UI) | M | Critical | ✅ Done — [`@pivot-platform/design-system@0.1.0`](https://github.com/PIVOT-PLATFORM/pivot-design-system/pkgs/npm/design-system) publié sur GitHub Packages (2026-07-07) |
 | EN17.5 | Template repo `pivot-xxx-core` (formalisé à partir du scaffolding réel de `pivot-collaboratif-core`) | S | High | ✅ Done — [`pivot-template-core`](https://github.com/PIVOT-PLATFORM/pivot-template-core) créé (2026-07-07) |
 | EN17.6 | Template repo `pivot-xxx-ui` (formalisé à partir du scaffolding réel de `pivot-collaboratif-ui`) | S | High | ✅ Done — [`pivot-template-ui`](https://github.com/PIVOT-PLATFORM/pivot-template-ui) créé (2026-07-07) |
@@ -127,6 +127,17 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > ✅ EN17.7 — nginx API Gateway multi-module (pivot-ui PR #114 + pivot-core PR #170, 2026-07-07)
 > ✅ EN17.2 — `@pivot-platform/design-system` publié sur GitHub Packages npm (pivot-design-system PR #1, 2026-07-07)
 > ✅ EN17.6 — template repo `pivot-template-ui` créé (PIVOT-PLATFORM/pivot-template-ui, 2026-07-07)
+>
+> **Clôture EN17.1 (2026-07-08) :** volet `auth`, dernier restant, traité — [ADR-022](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/155)
+> tranche les deux décisions demandées par l'escalade `pivot-core#171` (forme du principal minimal
+> partagé ; validation dupliquée via bibliothèque partagée plutôt que centralisée par appel
+> réseau). Implémenté sur `pivot-core` PR #180 : `fr.pivot.core.auth.AuthenticatedPrincipal`
+> (userId/tenantId/role) + `AuthenticatedPrincipalResolver`, implémentée par `TokenService`
+> (`resolve()` délègue à `validate()`, inchangé) ; `TokenAuthenticationFilter` volontairement non
+> modifié (dépendance existante d'une dizaine de contrôleurs à l'entité `User` complète via
+> `Authentication#getDetails()`) ; `StompAuthChannelInterceptor` migré vers l'abstraction, premier
+> consommateur réel. `pivot-core#171` fermée. EN17.1 : 8/8 volets terminés (`db`/`modules`/
+> `tenant`/`team`/`auth`) — Enabler `Stage: Review`, recette `Stage: Done` laissée au mainteneur.
 >
 > **Rattrapage Gate 5 (2026-07-07, tard) :** US08.3.1 (`pivot-collaboratif-core` PR #28, Gate 4 =
 > 89/100) et US08.3.2a (`pivot-collaboratif-ui` PR #24, Gate 4 = 92/100) mergées sans PR `pivot-docs`
