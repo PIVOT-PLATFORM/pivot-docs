@@ -23,3 +23,7 @@
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: XS · Priority: High
 Stage: Done
+Gate 5 : `pivot-core` PR [#67](https://github.com/PIVOT-PLATFORM/pivot-core/pull/67) (revue
+humaine, `security`/Breaking Point 2 — pas de score Gate 4 automatisé) + `pivot-ui` PR
+[#11](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/11) (Gate 4 = 82/100), spec figée
+`docs/specs/EPIC-auth-iam/us01-1-3-remember-me.md` (rétroactif, 2026-07-08)

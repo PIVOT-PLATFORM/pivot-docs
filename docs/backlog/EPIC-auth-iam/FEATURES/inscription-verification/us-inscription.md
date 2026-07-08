@@ -23,3 +23,6 @@
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: M · Priority: Critical
 Stage: Done
+Gate 5 : `pivot-core` PR [#105](https://github.com/PIVOT-PLATFORM/pivot-core/pull/105) (87/100) +
+`pivot-ui` PR [#39](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/39) (86/100) — lot MVP E01,
+spec figée `docs/specs/EPIC-auth-iam/us01-2-1-inscription.md` (rétroactif, 2026-07-08)
