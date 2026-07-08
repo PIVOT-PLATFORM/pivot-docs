@@ -39,4 +39,3 @@ la couverture de tests réelle constatée par repo début juillet 2026.
 | Version | Date | Score | Évolutions principales |
 |---------|------|-------|------------------------|
 | v1 | 2026-06-20 | — | Initialisation |
-| v3 | 2026-07-08 | — | Contexte et points d'attention initiaux (préparation premier audit formel) |
