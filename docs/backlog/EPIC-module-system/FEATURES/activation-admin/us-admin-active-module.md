@@ -34,3 +34,4 @@
 Item Type: US · Parent: F03.1 · Module: core · Phase: Socle · Size: M · Priority: Critical
 Stage: Done
 Dépendances : EN03.3 (invalidation cache Redis) — mergée (PR #121), mais non raccordée au chemin de lecture réel du statut module ; suivi technique requis avant clôture définitive de cet AC.
+Gate 5 : `pivot-core` PR [#122](https://github.com/PIVOT-PLATFORM/pivot-core/pull/122) (Gate 4 = 92/100) · `pivot-ui` PR [#66](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/66) (Gate 4 = 92/100), spec figée `docs/specs/EPIC-module-system/us03-1-1-admin-active-module.md` (rétroactif, 2026-07-08).

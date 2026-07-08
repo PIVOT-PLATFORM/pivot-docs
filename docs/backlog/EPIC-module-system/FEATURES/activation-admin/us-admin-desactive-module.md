@@ -31,4 +31,5 @@
 ---
 Item Type: US · Parent: F03.1 · Module: core · Phase: Socle · Size: M · Priority: Critical
 Stage: Done
+Gate 5 : `pivot-core` PR [#122](https://github.com/PIVOT-PLATFORM/pivot-core/pull/122) (Gate 4 = 98/100) · `pivot-ui` PR [#66](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/66) (Gate 4 = 92/100), spec figée `docs/specs/EPIC-module-system/us03-1-2-admin-desactive-module.md` (rétroactif, 2026-07-08).
 Dépendances : EN03.2 (guard Angular + status API), EN03.3 (invalidation cache Redis) — toutes deux mergées ; suivi technique requis sur le raccordement cache Redis + filtre générique `/api/{module}/*`, avant clôture définitive des AC déférés ci-dessus.

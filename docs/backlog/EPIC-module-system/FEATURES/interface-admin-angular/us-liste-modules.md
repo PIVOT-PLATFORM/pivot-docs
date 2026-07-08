@@ -22,7 +22,7 @@
 | Chaque carte module : role="article" ou dans <ul><li> ; toggle a aria-label="Activer [nom du module]" / "Désactiver [nom du module]" | ✅ |
 | Badge de statut n'est pas uniquement différencié par couleur — texte "Actif" / "Inactif" visible ou en aria-label | ✅ |
 | Grille navigable au clavier ; Tab atteint chaque toggle sans piège | ✅ *(couverture Vitest ; validation E2E clavier différée, cf. notes)* |
-| Sur mobile (< 768px), grille → colonne unique ; zone cliquable du toggle ≥ 44px (WCAG 2.5.5) | ✅ |
+| Sur mobile (< 768px), grille → colonne unique ; zone cliquable du toggle ≥ 44px (WCAG 2.5.5) | 🟡 *(implémenté — media query CSS + tap target 44px — mais Gate 4 `pivot-ui` classe explicitement cet AC "non testé automatiquement (vérif visuelle/E2E)" ; pas de test Vitest dédié)* |
 | Tous textes internalisés dans admin.modules.list.* (fr.json / en.json) | ✅ |
 
 ## Notes de livraison
@@ -36,3 +36,4 @@
 Item Type: US · Parent: F03.2 · Module: core · Phase: Socle · Size: M · Priority: High
 Stage: Done
 Dépendances : alignement `description`/`PivotModule` à statuer (coordination EN03.1 + repos modules) ; E2E Playwright en suivi.
+Gate 5 : `pivot-core` PR [#122](https://github.com/PIVOT-PLATFORM/pivot-core/pull/122) (Gate 4 = 98/100) · `pivot-ui` PR [#66](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/66) (Gate 4 = 92/100), spec figée `docs/specs/EPIC-module-system/us03-2-1-liste-modules-statut.md` (rétroactif, 2026-07-08).
