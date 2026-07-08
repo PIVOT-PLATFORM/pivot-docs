@@ -48,7 +48,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | 👀 |
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | 🔁 Review — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100 |
 | US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
-| US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ⬜ |
+| US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | 🔁 Review — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31), Gate 4 = 92/100 |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ⬜ |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ⬜ |
 | US08.4.1 | Créer un tableau depuis un template | M | Medium | ✅ Done — `pivot-collaboratif-core` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (100/100, mergée) + `pivot-collaboratif-ui` PR [#29](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/29) (100/100, mergée) — fix de suivi `pivot-collaboratif-ui`#30 (thumbnailUrl) |
@@ -140,3 +140,15 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > hypothèse) : le DTO frontend supposait `previewUrl`, le backend renvoie `thumbnailUrl` — corrigé
 > en fix de suivi `pivot-collaboratif-ui`#30 (220/220 tests verts). Issues de suivi créées pour les
 > items encore non démarrés (`pivot-collaboratif-ui#26/27/28` — US08.3.2b/2c/3.3).
+>
+> **US08.3.2b (2026-07-08) :** `WhiteboardSyncService` (`@stomp/rx-stomp`) mergée —
+> `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31)
+> (`Stage: Review`, spec Gate 5 figée). 5 clarifications Gate 1 documentées dans la PR : contrat
+> `DRAW` réel sans `userId` dans le payload (résolu serveur depuis le principal STOMP), canal de
+> révocation réel `/user/queue/errors` en plus de la frame STOMP `ERROR` (le backend ne ferme pas
+> la session en 1008 malgré le texte de l'AC), redirect guard `boardAccessGuard` corrigé
+> `/home` → `/whiteboard`, interprétation "3 tentatives" = 3 tentatives au total (initiale
+> incluse), gap plateforme "Auth différée" déjà connu (EN17) non traité par cette US. CI verte
+> hors E2E Playwright (gap infra préexistant déjà confirmé identique sur `pivot-collaboratif-ui`
+> #29/#30, non lié à ce changement). `publish()` reste générique pour US08.3.3 (undo/redo réseau)
+> sans en câbler la diffusion — `us-undo-redo.md` reste `Stage: Ready`.
