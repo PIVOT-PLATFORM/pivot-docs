@@ -26,12 +26,16 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | EN17.3 | Publication `@pivot-platform/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ✅ Done |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ✅ Done — pivot-ui PR #114 + pivot-core PR #170 mergées |
 | EN17.9 | Compose dev — modules satellites manquants (`pivot-pilotage-core`/`pivot-agilite-core`/`pivot-collaboratif-core` absents du `compose.yml` malgré le routing EN17.7 déjà en place) | S | High | ✅ Done — pivot-core PR #179 + pivot-pilotage-core PR #18 (context-path bug corrigé au passage) mergées |
+| EN17.9 | Publication `@pivot-platform/collaboratif-ui` (npm) + câblage shell route `/whiteboard` (`loadChildren`, remplace `ComingSoonComponent`) | M | High | 👀 |
 
 > **Ordre de dépendance Vague 0 :** EN17.8 ‖ EN17.4 ‖ EN17.1 (aucune dépendance mutuelle) →
 > création de `pivot-collaboratif-core`/`pivot-collaboratif-ui` (consomment EN17.1 respectivement
 > rien encore) → EN17.2 (déclenché par la création de `pivot-collaboratif-ui`, extrait le contenu
 > incubé en EN17.8) → EN17.5/EN17.6 (template formalisé après coup, non bloquant pour la suite) →
-> EN17.3 (consomme EN17.2 publié) → EN17.7 (dès EN17.1 + EN17.3 stables, pour le routing réel).
+> EN17.3 (consomme EN17.2 publié) → EN17.7 (dès EN17.1 + EN17.3 stables, pour le routing réel) →
+> EN17.9 (consomme le pattern EN17.3, dernier maillon avant que le module whiteboard soit
+> réellement atteignable depuis le shell — identifié après-coup lors de la vérification manuelle
+> en local du Sprint 5, absent du séquencement initial du 2026-07-07).
 
 ## Vague 1+ — Module Whiteboard (Socle), sur `pivot-collaboratif-core`/`pivot-collaboratif-ui`
 
