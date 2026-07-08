@@ -24,5 +24,6 @@ sidebar_label: "Vue d'ensemble"
 | [ADR-014](ADR-014-secrets-credentials-externes-openbao.md) | Secrets & credentials externes (OpenBao, rotation) | Proposé |
 | [ADR-015](ADR-015-zones-souverainete-segmentation.md) | Zones de souveraineté A/B/C & segmentation réseau | Proposé |
 | [ADR-016](ADR-016-baseline-supply-chain-admission-modules.md) | Baseline supply-chain & gouvernance d'admission des modules | Proposé |
+| [ADR-017](ADR-017-tiers-sensibilite-durcissement-modules.md) | Tiers de sensibilité cyber & durcissement gradué des modules | Proposé |
 
-> **Numérotation ADR-017 à ADR-020** : réservées textuellement par ADR-009 §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives) — non encore rédigées. Renumérotées depuis ADR-011–014 pour laisser la place aux 6 ADR Sécurité (ADR-011–016), qui occupaient la première tranche disponible après ADR-010.
+> **Numérotation ADR-018 à ADR-021** : réservées textuellement par ADR-009 §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives) — non encore rédigées. Renumérotées depuis ADR-011–014 pour laisser la place aux 6 ADR Sécurité (ADR-011–016), qui occupaient la première tranche disponible après ADR-010 ; puis décalées une seconde fois de 017–020 à 018–021 (2026-07-08) pour laisser la place à ADR-017 (tiers de sensibilité cyber), déclenchée par le benchmark ayant produit E49–E53.
