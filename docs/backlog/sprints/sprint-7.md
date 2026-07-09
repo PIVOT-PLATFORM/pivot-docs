@@ -23,6 +23,5 @@ Socle (`pivot-collaboratif-core/-ui`, ADR-006) en dépend. Détail → `sprint-5
 | ADR | Rédaction ADR-023 (modèle d'entités catalogue) · ADR-024 (stratégie forks) · **ADR-025 (bus d'événements — bloquant E21/E29/E42/E43)** · ADR-026 (briques natives) | Critical | ✅ |
 
 > Rédaction ADR parallélisable dans son ensemble. Les 4 ADR sont rédigés et documentés
-> (2026-07-09), statut **Proposé** — leur passage à **Accepté** est une décision mainteneur
-> distincte de cette tâche de rédaction, non actée ici (contrairement à ADR-008→016 ci-dessus,
-> dont l'acceptation était explicitement demandée par cet item de sprint).
+> (2026-07-09). **Acceptation mainteneur actée le 2026-07-09** — ADR-023 à ADR-026 passés
+> `Proposé → Accepté` (`docs/adr/README.md`).
