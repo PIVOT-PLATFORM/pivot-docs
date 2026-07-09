@@ -28,12 +28,13 @@ Suivi de l'extraction auth (principal minimal, ADR-022) → [`pivot-core#171`](h
 
 **Dépendances** : EN03.1 (interface PivotModule finalisée)
 
-**Statut** : ✅ Review — `db`/`modules`/`tenant`/`team`/`auth` (principal minimal) extraits et livrés
+**Statut** : ✅ Done — `db`/`modules`/`tenant`/`team`/`auth` (principal minimal) extraits et livrés
 (PR #167, #173, #177, #180). Les deux critères restants (déclenchement CI `mvn deploy` réel,
 premier repo module consommateur) ne bloquent pas la clôture de cet enabler — aucun repo module
 n'a encore de besoin métier réel ; suivis passivement, pas de ticket dédié tant qu'aucun
-consommateur ne se présente. `Stage: Done` laissé à la recette du mainteneur.
+consommateur ne se présente. `Stage: Done` positionné par décision explicite du mainteneur
+(2026-07-09) — recette métier formelle différée, pas bloquante pour la suite du backlog.
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Review · Priority: Critical · Done: 2026-07-08 (pivot-core #167, #173, #177, #180)
+Stage: Done · Priority: Critical · Done: 2026-07-08 (pivot-core #167, #173, #177, #180)

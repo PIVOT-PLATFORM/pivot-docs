@@ -39,16 +39,30 @@ staging pivot-ui n'existe encore (vérifié — absent de `docs/cicd/`, aucun wo
 n'existe pas. **Action mainteneur requise** : provisionner ce staging + créer les secrets pour
 que les scans DAST tournent réellement.
 
+## Passage à Done (2026-07-09, décision mainteneur)
+
+`Stage: Done` positionné directement sur EN17.1, EN07.3, US05.13.1, US05.13.2, US05.15.1,
+US05.15.2 — décision explicite du mainteneur de ne pas attendre la recette métier formelle
+(différée, traitée plus tard) pour refléter que le code est implémenté et mergé. Exception
+documentée à la règle habituelle (`docs/backlog/README.md` — `Stage: Done` réservé à la recette
+humaine, jamais positionné par Claude) : ici positionné sur instruction directe du mainteneur,
+pas par auto-attribution.
+
+**EN07.4 reste hors de ce passage à Done** : `pivot-core#185` a été fermée par leo-brgn mais
+aucune PR n'y est liée (`commit_id: null` sur l'event de fermeture) — impossible de vérifier
+depuis GitHub si le code a réellement été livré. À clarifier directement avec lui avant de
+statuer sur son Stage.
+
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
-| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth`/`team` extraits (PR #167/#173/#177/#180), `pivot-core#171` fermée | Critical | ✅ Review (recette mainteneur → Done) |
-| EN07.3 | ActiveMQ persistence KahaDB — [pivot-core#193](https://github.com/PIVOT-PLATFORM/pivot-core/pull/193), [pivot-pilotage-core#21](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/21), [pivot-agilite-core#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/19), [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35) | High | ✅ Review (recette mainteneur → Done) |
-| EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185), assignée à leo-brgn | High | ⬜ (assignée, hors lancement agent — évite collision) |
-| US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Review — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
-| US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Review — même dépendance staging que US05.13.1 |
+| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth`/`team` extraits (PR #167/#173/#177/#180), `pivot-core#171` fermée | Critical | ✅ Done (recette métier différée — décision mainteneur 2026-07-09) |
+| EN07.3 | ActiveMQ persistence KahaDB — [pivot-core#193](https://github.com/PIVOT-PLATFORM/pivot-core/pull/193), [pivot-pilotage-core#21](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/21), [pivot-agilite-core#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/19), [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35) | High | ✅ Done (recette métier différée) |
+| EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185) fermée par leo-brgn, **aucune PR liée** (`commit_id: null`) — implémentation non vérifiable depuis GitHub | High | ❓ à clarifier avec leo-brgn |
+| US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Done (recette métier différée) — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
+| US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Done (recette métier différée) — même dépendance staging que US05.13.1 |
 | US05.14.1-3 | Required checks core/ui/docs (branch protection) | High/Medium | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
-| US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Review |
-| US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Review |
+| US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Done (recette métier différée) |
+| US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Done (recette métier différée) |
 | Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ — pas de ticket dédié, hors lancement |
 | Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ✅ Done — [pivot-core#184](https://github.com/PIVOT-PLATFORM/pivot-core/pull/184) |
 | Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ✅ Done — [pivot-ui#124](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/124) (mergée hors de ce lancement, découverte lors de la synchro) |
@@ -71,12 +85,13 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 ### Axe 1 — Features (code)
 
 - [ ] E01–E07, E16 : 100% des US/Enablers `Phase: Socle` en `Stage: Done`
-- [ ] E17 : 8/8 enablers `Done` — **reste : EN17.1** (extraction `modules`/`tenant`/`auth`/`team`,
-      voir tableau ci-dessus et [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171))
+- [x] E17 : 8/8 enablers `Done` — EN17.1 passé `Done` le 2026-07-09 (recette métier différée,
+      décision mainteneur)
 - [ ] E30 noyau F08.x/EN08.x : 17/17 items `Done` — **état actuel : 0/17** (12 Review, 2 In
       progress, 5 Ready — voir `EPIC-collaboration/README.md` §Suivi noyau, resynchronisé
       régulièrement vu le rythme d'avancement)
-- [ ] E07 : EN07.3 (ActiveMQ persistence) `Review` ✅ · EN07.4 (PgBouncer session mode) reste `Ready`, assignée à leo-brgn
+- [ ] E07 : EN07.3 (ActiveMQ persistence) `Done` ✅ · EN07.4 (PgBouncer session mode) fermée par
+      leo-brgn sans PR liée — statut réel à clarifier avec lui avant de cocher
 
 ### Axe 2 — Prod
 
