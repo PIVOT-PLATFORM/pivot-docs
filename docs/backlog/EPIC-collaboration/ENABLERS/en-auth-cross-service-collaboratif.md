@@ -59,6 +59,6 @@ PostgreSQL partagée — cf. architecture BDD multi-repo déjà établie).
 Item Type: Enabler · Parent: E08 (E30) · Type: sécurité · Module: collaboratif · Phase: Socle · Size: M
 Stage: Backlog · Priority: Critical
 Dépendances: `pivot-core#171`/EN17.1 (`AuthenticatedPrincipal`/`AuthenticatedPrincipalResolver`,
-livré) · [`ADR-022`](../../../adr/ADR-022-principal-authentification-minimal-partage.md) (statut
+livré) · [`ADR-022`](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage) (statut
 Proposé — acceptation formelle par le mainteneur recommandée avant le Gate 1 de cet enabler,
 la décision qu'il documente est déjà celle implémentée dans `pivot-core-starter`)
