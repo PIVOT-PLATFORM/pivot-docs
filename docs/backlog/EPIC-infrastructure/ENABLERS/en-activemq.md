@@ -36,8 +36,9 @@ dev/prod, `ci.yml` compose-validate étendu),
 [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35)
 (un `enableStompBrokerRelay()` par module-core) — les 4 mergées.
 
-**Statut** : ✅ Review — recette mainteneur → Done
+**Statut** : ✅ Done — `Stage: Done` positionné par décision explicite du mainteneur (2026-07-09),
+recette métier formelle différée
 
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: Socle
-Stage: Review · Priority: High
+Stage: Done · Priority: High

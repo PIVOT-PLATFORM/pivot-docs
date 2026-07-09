@@ -39,7 +39,11 @@
 - Frontend : édition inline dans `BoardCardComponent` (grille US08.1.3) et dans le header du canvas (US08.3.2)
 - i18n : clés `whiteboard.board.rename.*`
 
+**Implémentation** : `pivot-collaboratif-core#19` (API CRUD, couvre US08.1.1–US08.1.5) +
+`pivot-collaboratif-ui#19` — mergées. `Stage: Done` positionné le 2026-07-09 (recette métier
+différée) après constat que le frontmatter était resté à `In progress` malgré le merge.
+
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
-Stage: Review
+Stage: Done
 Dépendances: US08.1.1

@@ -39,7 +39,11 @@
 - Frontend : dialog `role="alertdialog"` déclenché depuis `BoardCardComponent` (menu ⋯), composant `@pivot/design-system` ConfirmDialog
 - i18n : clés `whiteboard.board.delete.*`
 
+**Implémentation** : `pivot-collaboratif-core#19` (API CRUD, couvre US08.1.1–US08.1.5) +
+`pivot-collaboratif-ui#20` — mergées. `Stage: Done` positionné le 2026-07-09 (recette métier
+différée) après constat que le frontmatter était resté à `In progress` malgré le merge.
+
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: Critical
-Stage: Review
+Stage: Done
 Dépendances: US08.1.1

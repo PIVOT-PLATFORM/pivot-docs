@@ -61,5 +61,5 @@ destination couvre déjà le suffixe `/presence`.
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: S · Priority: Medium
-Stage: Review
+Stage: Done
 Dépendances: US08.3.2b (sync STOMP), US08.5.1 (présence backend)

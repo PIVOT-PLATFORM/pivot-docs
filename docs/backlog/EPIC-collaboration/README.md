@@ -223,7 +223,7 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 
 ## Statut global
 
-⬜ Backlog — reste du périmètre E30 (phase-3, F30.x/EN30.x NFR), Gate 1 PO Agent à effectuer au démarrage du sprint · noyau F08.x/EN08.x (Socle) : 🔄 En cours (Gate 1 passé 2026-07-07, Sprint 5 Vague 1+ — détail dans le tableau dédié ci-dessous)
+⬜ Backlog — reste du périmètre E30 (phase-3, F30.x/EN30.x NFR), Gate 1 PO Agent à effectuer au démarrage du sprint · noyau F08.x/EN08.x (Socle) : ✅ Done — 17/17 (2026-07-09, recette PO différée, détail dans le tableau dédié ci-dessous)
 
 ---
 
@@ -355,34 +355,34 @@ collaboratif open-source).
 
 | Élément | 🤖 Dev |
 |---------|--------|
-| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | 🔎 Review |
-| [EN08.2 — Guard Angular module whiteboard](ENABLERS/en-guard-angular-whiteboard.md) | 🔎 Review |
+| [EN08.1 — Isolation WebSocket room par board](ENABLERS/en-ws-room-isolation.md) | ✅ Done |
+| [EN08.2 — Guard Angular module whiteboard](ENABLERS/en-guard-angular-whiteboard.md) | ✅ Done |
 | **F08.1 — CRUD tableaux** | |
-| [US08.1.1 — Utilisateur crée un tableau](FEATURES/crud-tableaux/us-creer-tableau.md) | 🔎 Review |
-| [US08.1.2 — Utilisateur liste ses tableaux (backend)](FEATURES/crud-tableaux/us-liste-tableaux-backend.md) | 🔎 Review |
-| [US08.1.3 — Angular : liste des tableaux](FEATURES/crud-tableaux/us-liste-tableaux-angular.md) | 🔎 Review |
-| [US08.1.4 — Renommer un tableau](FEATURES/crud-tableaux/us-renommer-tableau.md) | 🔎 Review |
-| [US08.1.5 — Supprimer un tableau](FEATURES/crud-tableaux/us-supprimer-tableau.md) | 🔎 Review |
+| [US08.1.1 — Utilisateur crée un tableau](FEATURES/crud-tableaux/us-creer-tableau.md) | ✅ Done |
+| [US08.1.2 — Utilisateur liste ses tableaux (backend)](FEATURES/crud-tableaux/us-liste-tableaux-backend.md) | ✅ Done |
+| [US08.1.3 — Angular : liste des tableaux](FEATURES/crud-tableaux/us-liste-tableaux-angular.md) | ✅ Done |
+| [US08.1.4 — Renommer un tableau](FEATURES/crud-tableaux/us-renommer-tableau.md) | ✅ Done |
+| [US08.1.5 — Supprimer un tableau](FEATURES/crud-tableaux/us-supprimer-tableau.md) | ✅ Done |
 | **F08.2 — Partage et rôles** | |
-| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | 🔎 Review |
-| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | 🔎 Review |
-| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | 🔎 Review |
+| [US08.2.1 — Owner partage un tableau par lien public](FEATURES/partage-roles/us-partager-tableau.md) | ✅ Done |
+| [US08.2.2 — Utilisateur rejoint un tableau via token](FEATURES/partage-roles/us-rejoindre-tableau.md) | ✅ Done |
+| [US08.2.3 — Angular : UI partage et gestion rôles](FEATURES/partage-roles/us-ui-partage-roles.md) | ✅ Done |
 | **F08.3 — Canvas collaboratif temps réel** | |
-| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | 🔎 Review |
+| [US08.3.1 — Connexion WebSocket au canvas d'un tableau](FEATURES/canvas-ws/us-connexion-ws-canvas.md) | ✅ Done |
 | [US08.3.2 — Angular : canvas whiteboard](FEATURES/canvas-ws/us-canvas-angular.md) ⚠️ *(Decomposed — voir US08.3.2a/b/c)* | — |
-| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | 🔎 Review |
-| [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | 🔎 Review |
-| [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | 🔎 Review |
-| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | 🔎 Review |
-| [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | 🔎 Review |
+| [US08.3.2a — Canvas local, outils de dessin et a11y](FEATURES/canvas-ws/us-canvas-angular-08-3-2a.md) | ✅ Done |
+| [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | ✅ Done |
+| [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | ✅ Done |
+| [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ✅ Done |
+| [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
 | **F08.4 — Templates** | |
-| [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | 🔎 Review |
+| [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ✅ Done |
 
-> Statuts resynchronisés le 2026-07-08 (nuit) depuis le frontmatter `Stage:` de chaque fichier
-> (source de vérité, grep direct des 17 fichiers) : **17 Review · 0 In progress · 0 Ready · 0
-> Done**. Tous les items ont désormais du code mergé côté `pivot-collaboratif-core` et/ou
-> `-ui` — `Done` reste réservé à la recette PO du mainteneur (jamais auto-positionné), donc 0/17
-> `Done` est attendu à ce stade, pas un signal de retard. Développement très actif — ce tableau
-> est repassé en désync plusieurs fois le même jour. Ne pas considérer ce statut comme figé ;
-> revérifier le frontmatter avant toute décision qui en dépend (ex. Definition of Done Socle,
-> `sprints/sprint-6.md`).
+> **Resynchronisé le 2026-07-09** depuis le frontmatter `Stage:` de chaque fichier (source de
+> vérité, grep direct des 17 fichiers) : ce tableau affichait encore « 17 Review » alors que
+> 2 fichiers (US08.1.4, US08.1.5) étaient en réalité restés à `In progress` malgré un code déjà
+> mergé des deux côtés (`pivot-collaboratif-core#19`, `pivot-collaboratif-ui#19`/`#20`) — écart
+> corrigé. **17/17 `Stage: Done` positionné le 2026-07-09** — décision explicite du mainteneur de
+> ne pas attendre la recette PO formelle (différée, traitée séparément) pour refléter que tout le
+> code du noyau est implémenté et mergé. Exception documentée à la règle habituelle (`Stage: Done`
+> réservé à la recette humaine) — voir `sprints/sprint-6.md` pour le contexte de cette décision.

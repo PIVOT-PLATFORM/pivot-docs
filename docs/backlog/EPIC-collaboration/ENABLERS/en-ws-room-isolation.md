@@ -36,5 +36,5 @@ réimplémenter des vérifications ad hoc.
 
 ---
 Item Type: Enabler · Parent: E08 · Type: architecture · Module: whiteboard · Phase: Socle · Size: M
-Stage: Review · Priority: High
+Stage: Done · Priority: High
 Dépendances: Aucune — prérequis bloquant pour F08.3 (Canvas WS) et US08.5.1 (Présence)

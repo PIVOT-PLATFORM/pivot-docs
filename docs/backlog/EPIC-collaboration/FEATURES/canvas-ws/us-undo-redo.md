@@ -48,7 +48,7 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Review
+Stage: Done
 Dépendances: US08.3.1 (message UNDO), US08.3.2a (toolbar boutons), US08.3.2b (service de
 synchronisation STOMP) — `pivot-collaboratif-ui` PR
 [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32), Gate 4 = 97/100, spec

@@ -41,31 +41,34 @@ que les scans DAST tournent réellement.
 
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
-| EN07.3 | ActiveMQ persistence KahaDB — [pivot-core#193](https://github.com/PIVOT-PLATFORM/pivot-core/pull/193), [pivot-pilotage-core#21](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/21), [pivot-agilite-core#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/19), [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35) | High | ✅ Review (recette mainteneur → Done) |
-| EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185), assignée à leo-brgn | High | ⬜ (assignée, hors lancement agent — évite collision) |
-| US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Review — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
-| US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Review — même dépendance staging que US05.13.1 |
+| EN07.3 | ActiveMQ persistence KahaDB — [pivot-core#193](https://github.com/PIVOT-PLATFORM/pivot-core/pull/193), [pivot-pilotage-core#21](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/21), [pivot-agilite-core#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/19), [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35) | High | ✅ Done (recette différée) |
+| EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185) rouverte (fermée par leo-brgn sans PR liée, non vérifiable) | High | 🔄 In progress — agent relancé dessus |
+| US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Done (recette différée) — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
+| US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Done (recette différée) — même dépendance staging que US05.13.1 |
 | US05.14.1-3 | Required checks core/ui/docs (branch protection) | High/Medium | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
-| US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Review |
-| US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Review |
+| US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Done (recette différée) |
+| US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Done (recette différée) |
+| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | 🔄 In progress — agent lancé dessus |
 | Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ✅ Done — [pivot-core#184](https://github.com/PIVOT-PLATFORM/pivot-core/pull/184) |
 | Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ✅ Done — [pivot-ui#124](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/124) (mergée hors de ce lancement, découverte lors de la synchro) |
 | Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ — recette humaine |
 | Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ — recette humaine |
 | EN08.3 | Authentification réelle cross-service `pivot-collaboratif-core` (bearer token opaque `pivot-core`, remplace le stub headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id`, `ADR-022`) — [détail](../EPIC-collaboration/ENABLERS/en-auth-cross-service-collaboratif.md) | Critical | ⬜ |
 
-> **EN17.1** retiré de ce tableau (2026-07-08) : vérifié `Done` — `pivot-core#171` fermée, les 5
-> volets (`db`/`modules`/`tenant`/`team`/`auth`) extraits et livrés (PR #167/#173/#177/#180),
-> `ADR-022` tranche le volet `auth`. **Dette S2 "cache Redis EN03.3"** retiré également : vérifié
-> déjà implémenté et câblé (`ModuleActivationCacheService`, consommé par
-> `ModuleController.getModuleStatus()`) — aucun travail restant.
+> **EN17.1** retiré de ce tableau (2026-07-08) : `Stage: Done` (2026-07-09, recette différée) —
+> `pivot-core#171` fermée, les 5 volets (`db`/`modules`/`tenant`/`team`/`auth`) extraits et livrés
+> (PR #167/#173/#177/#180), `ADR-022` tranche le volet `auth`.
+>
+> **Correction (2026-07-09)** : la ligne précédente affirmait « Dette S2 cache Redis EN03.3 retiré,
+> aucun travail restant » — **faux**, vérifié par un agent dédié : le cache existait mais n'était
+> réellement pas raccordé au chemin de lecture, cf. ligne Dette S2 ci-dessus (en cours).
 >
 > **Noyau whiteboard (E30, F08.x/EN08.x)** reste porté par `sprint-5.md` (Vague 1+), pas dupliqué
-> ici — mais sa complétion (17/17 `Done`) est un pré-requis du jalon « Socle terminé » au même
-> titre que les items ci-dessus. État à date (2026-07-08, resynchronisé depuis le frontmatter de
-> chaque fichier — voir `EPIC-collaboration/README.md` §Suivi noyau) : **17 Review · 0 In
-> progress · 0 Ready · 0 Done** — tout le noyau a du code mergé, `Done` reste réservé à la
-> recette PO du mainteneur.
+> ici. **17/17 `Stage: Done` positionné le 2026-07-09** (recette PO différée) — tout le code est
+> mergé côté `pivot-collaboratif-core`/`-ui`. 2 items (US08.1.4, US08.1.5) étaient restés à
+> `In progress` dans leur propre fichier malgré un code déjà mergé (`pivot-collaboratif-core#19`,
+> `pivot-collaboratif-ui#19`/`#20`) — écart corrigé au passage, voir `EPIC-collaboration/README.md`
+> §Suivi noyau pour le détail complet.
 
 ## Definition of Done — Socle
 
@@ -80,11 +83,10 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 - [ ] E01–E07, E16 : 100% des US/Enablers `Phase: Socle` en `Stage: Done`
 - [x] E17 : 8/8 enablers `Done` — **EN17.1 confirmé terminé le 2026-07-08** (5 volets extraits,
       `pivot-core#171` fermée, `ADR-022` tranche le volet `auth`)
-- [ ] E30 noyau F08.x/EN08.x : 17/17 items `Done` — **état actuel : 0/17**, mais **17/17 en
-      `Review`** (tout le code est mergé, reste la recette PO du mainteneur — voir
-      `EPIC-collaboration/README.md` §Suivi noyau, resynchronisé le 2026-07-08)
-- [ ] E07 : EN07.3 (ActiveMQ persistence) `Review` ✅ · EN07.4 (PgBouncer session mode) reste
-      `Ready`, assignée à leo-brgn
+- [x] E30 noyau F08.x/EN08.x : 17/17 items `Done` (2026-07-09, recette PO différée) — voir
+      `EPIC-collaboration/README.md` §Suivi noyau
+- [ ] E07 : EN07.3 (ActiveMQ persistence) `Done` ✅ · EN07.4 (PgBouncer session mode) rouverte,
+      agent en cours
 - [ ] EN08.3 (auth cross-service `pivot-collaboratif-core`, tracé le 2026-07-08) — bloquant pour
       la recette E30 (un utilisateur ne peut pas utiliser le tableau blanc sans, cf. détail
       de l'Enabler), dépend de l'acceptation formelle d'`ADR-022`
