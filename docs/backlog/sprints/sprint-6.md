@@ -19,7 +19,10 @@ partagés — `compose.yml`, workflows CI).
   le fait qu'elle soit prête — seulement sur qui l'implémente.
 - **US05.14.1-3** (branch protection required-checks) — modifient une config de repo partagée
   hors du flux PR normal (paramètres GitHub, pas du code revu). Hors périmètre d'un lancement
-  autonome sans confirmation explicite du mainteneur.
+  autonome sans confirmation explicite du mainteneur. **US05.14.3** (pivot-docs) lancée le
+  2026-07-09 sur confirmation explicite du mainteneur — contrairement à `.1`/`.2`, gap de code
+  réel (aucun job Gitleaks en CI sur pivot-docs) en plus de la config branch protection ;
+  `.1`/`.2` restent hors périmètre.
 - **Dette S2** Redis cache + dédup `sanitizeReturnUrl` — aucun ticket dédié (juste des lignes
   narratives dans `STATUS.md`), pas de DoR à évaluer. Nécessitent une US/Enabler en bonne et due
   forme avant tout lancement. Correction post-synchro : `sanitizeReturnUrl` s'est avérée déjà
@@ -45,7 +48,8 @@ que les scans DAST tournent réellement.
 | EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185) rouverte (fermée par leo-brgn sans PR liée, non vérifiable) | High | 🔄 In progress — agent relancé dessus |
 | US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Done (recette différée) — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
 | US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Done (recette différée) — même dépendance staging que US05.13.1 |
-| US05.14.1-3 | Required checks core/ui/docs (branch protection) | High/Medium | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
+| US05.14.1-2 | Required checks core/ui (branch protection) | High | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
+| US05.14.3 | Required checks docs (job Gitleaks CI + branch protection `main`) | Medium | 🔄 In progress — PR pivot-docs en cours |
 | US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Done (recette différée) |
 | US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Done (recette différée) |
 | Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | 🔄 In progress — agent lancé dessus |
