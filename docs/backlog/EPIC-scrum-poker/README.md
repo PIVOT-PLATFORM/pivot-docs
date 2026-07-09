@@ -7,7 +7,8 @@
 - Frontend : **`pivot-agilite-ui`** (consomme `@pivot/ui-core` + `@pivot/design-system`)
 - Pré-requis EN17 : pivot-core-starter + @pivot/ui-core publiés avant implémentation
 ## Phase
-⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration "Socle terminé" par le mainteneur
+🚀 **phase-3** — verrou levé (déclaration "Socle terminé" actée Sprint 6, 2026-07-09 ; verrou
+Sprint 8 levé 2026-07-10, voir `docs/backlog/sprints/sprint-8.md`)
 
 ## Objectif
 Planning poker interactif : rooms, tickets, votes temps réel WebSocket, participant anonyme via code.
@@ -24,4 +25,6 @@ Planning poker interactif : rooms, tickets, votes temps réel WebSocket, partici
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo
 
 ## Statut global
-⬜ Backlog — Gate 1 PO Agent à effectuer au démarrage du sprint
+🔄 Sprint 8 démarré (2026-07-10) — US09.1.1 Gate 1 = 100/100 (AC détaillées Given/When/Then,
+voir `FEATURES/rooms/us-creer-room.md`), implémentation en cours. Reste du périmètre F09.1/F09.2/
+F09.3/EN09.1 : Gate 1 à effectuer par vague (voir `sprints/sprint-8.md`)
