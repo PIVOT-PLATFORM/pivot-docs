@@ -1,9 +1,17 @@
 # ADR-022 — Principal d'authentification minimal partagé (`pivot-core-starter`)
 
-**Date :** 2026-07-08
-**Statut :** Proposé — **intérimaire par construction** (voir §Portée temporelle)
+**Date :** 2026-07-08 · **Acceptée :** 2026-07-09
+**Statut :** Accepté — **intérimaire par construction** (voir §Portée temporelle)
 **Décideurs :** Architecte Java / Spring, Expert OIDC / IAM, Expert Red Team, Expert Blue Team, mainteneur
 **Contexte technique :** `pivot-core#171` (EN17.1, volet `fr.pivot.core.auth`)
+
+**Note du mainteneur (acceptation, 2026-07-09) :** un mécanisme d'identité inter-services fiable
+et vérifiable — pas seulement des headers non authentifiés — est également un prérequis pour
+brancher, à terme, des agents/consommateurs IA sur la plateforme (accès scopé, traçable,
+révocable par principal). Raison supplémentaire de traiter la cible BFF + token exchange
+(§Portée temporelle) comme une vraie trajectoire, pas une note en bas de page — un identity layer
+que seuls des humains via navigateur consomment aujourd'hui devra, demain, servir aussi des
+identités machine avec des garanties équivalentes.
 
 ---
 
@@ -306,3 +314,4 @@ BFF minimal dédié à l'auth avant le socle mTLS/Service Mesh complet, plutôt 
 | v1 | 2026-07-08 | Décision initiale — lève l'escalade `pivot-core#171` (volet auth) |
 | v2 | 2026-07-09 | Clarification à la demande du mainteneur : décision inchangée, mais reformulée contre le paysage IAM nommé explicitement (introspection RFC 7662, token exchange RFC 8693, lecture directe) plutôt qu'une « centralisation réseau » vague. Ajoute le risque de couplage schéma sur donnée à fort churn (nuance vs. `tenants`/`teams`, données de référence stables) comme conséquence négative explicite avec mitigation actée (migrations additives uniquement + logique centralisée dans le starter). Ajoute une section Trigger de réévaluation (éclatement DB par module, volume de repos consommateurs, arrivée d'EN07.11 mTLS/Service Mesh, besoin de politiques de token différenciées par module) — la décision n'est pas figée, elle est datée et conditionnée. Toujours `Statut: Proposé` — cette révision ne vaut pas acceptation formelle. |
 | v3 | 2026-07-09 | Précision explicite du mainteneur : cette ADR est **intérimaire par construction**, pas un choix définitif parmi d'autres également valables. Le token exchange RFC 8693 derrière un BFF est la trajectoire actée, pas une option listée par exhaustivité — nouvelle section §Portée temporelle en tête de fiche, §Trigger de réévaluation restructurée (« migration actée, pas hypothétique » séparée des signaux qui l'accéléreraient), alternative token exchange requalifiée « différée » plutôt que « écartée ». Engagement explicite : dès qu'un BFF existe, cette ADR doit être marquée `Remplacé par` la nouvelle, pas amendée sur place. Toujours `Statut: Proposé`. |
+| v4 | 2026-07-09 | **Acceptée par le mainteneur.** `Statut: Proposé → Accepté`. Motif supplémentaire consigné : un identity layer inter-services fiable est aussi un prérequis pour brancher de futurs agents/consommateurs IA sur la plateforme (accès scopé, traçable, révocable par principal) — renforce, sans la changer, la trajectoire BFF + token exchange déjà actée en v3. Lève le blocage Gate 1 d'EN08.3 (acceptation formelle recommandée avant implémentation). |
