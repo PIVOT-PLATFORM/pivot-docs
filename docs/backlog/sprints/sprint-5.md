@@ -57,7 +57,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.2 | Utilisateur rejoint un tableau via token | M | High | ✅ Done |
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | ✅ Done — `pivot-collaboratif-core#25` |
 | US08.3.1 | Connexion WebSocket au canvas | M | Critical | ✅ Done — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28) mergée, Gate 4 = 89/100 (`auto-approved`) |
-| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée. Gate 4 = 69/100 (`MERGE_DOCUMENTED`) posté rétroactivement le 2026-07-09 — le 92/100 précédemment cité ici n'avait jamais été appuyé par un commentaire PR, voir note ci-dessous |
+| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée, Gate 4 réel 69/100. Gaps corrigés et mergés sur [`pivot-collaboratif-ui`#37](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/37), Gate 4 = 100/100 (2026-07-09) — voir note ci-dessous |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31) mergée |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ✅ Done — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) mergée |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) mergée |
@@ -325,3 +325,12 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > fonctionnel), posté sur la PR. **PR laissée en draft à la demande du mainteneur** — sortie de
 > draft et merge non faits, à décider séparément. Gap auto-signalé hors périmètre (non corrigé) :
 > `WhiteboardBoardComponent` ne lie jamais `[boardTitle]`, `aria-label` se termine par `"— "`.
+>
+> **Merge US08.3.2a — `pivot-collaboratif-ui`#37 (2026-07-09, suite) :** le décompte de tests
+> obsolète (348 vs 355) n'était déjà plus présent dans la description au moment de la revue —
+> `npm run test:ci` réexécuté confirme 355/355 exacts. Un commit supplémentaire (contraste WCAG
+> vérifié par un test indépendant du backend, plus de dépendance à un commentaire calculé à la
+> main) ajouté entre-temps, sans régression (`lint`/`tsc` propres). Gate 4 réel = **100/100**,
+> posté sur la PR. Mainteneur a confirmé le score et demandé le merge — PR sortie de draft et
+> mergée (`--admin`). Gap hors périmètre toujours non corrigé (`WhiteboardBoardComponent`
+> `[boardTitle]`), reste à trancher séparément.
