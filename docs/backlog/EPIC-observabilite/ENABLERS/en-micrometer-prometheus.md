@@ -45,4 +45,4 @@
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
-Stage: Review · Priority: Medium
+Stage: Done · Priority: Medium

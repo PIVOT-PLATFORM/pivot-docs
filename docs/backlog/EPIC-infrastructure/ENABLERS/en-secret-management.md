@@ -50,4 +50,4 @@ dynamiques) sous `EN43.6`.
 
 ---
 Item Type: Enabler · Parent: E07 · Type: sécurité · Module: core · Phase: Socle
-Stage: Review · Priority: Critical
+Stage: Done · Priority: Critical

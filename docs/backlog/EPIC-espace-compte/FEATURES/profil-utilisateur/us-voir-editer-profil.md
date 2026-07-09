@@ -40,5 +40,5 @@
 
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: Socle · Size: S · Priority: Medium
-Stage: Review
+Stage: Done
 Gate 5 : `pivot-core` PR [#129](https://github.com/PIVOT-PLATFORM/pivot-core/pull/129) (Gate 4 = 100/100) + `pivot-ui` PR [#71](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/71) (Gate 4 = 94/100), spec figée `docs/specs/EPIC-espace-compte/us02-1-1-voir-editer-profil.md` (rétroactif, 2026-07-08)

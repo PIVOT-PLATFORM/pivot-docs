@@ -79,6 +79,6 @@ de revue sur la PR + spec Gate 5 (`docs/specs/EPIC-shell-ux/us16-1-3-badge-notif
 
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: Socle · Size: S · Priority: Medium
-Stage: Review
+Stage: Done
 Dépendances: EN-NOTIF (`pivot-core` PR #160, Gate 4 = 100/100, CI verte — non fusionnée sur `main`,
 coordination cross-repo documentée ci-dessus)

@@ -54,11 +54,11 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 | [US01.3.2 — Réinitialisation par token](FEATURES/reset-password/us-reset-password.md) | ✅ |
 | **F01.4 — MFA par appareil** | |
 | [US01.4.1 — OTP depuis un appareil inconnu](FEATURES/device-confirmation/us-device-confirm-otp.md) | ✅ |
-| [US01.4.2 — Gestion des appareils de confiance](FEATURES/device-confirmation/us-appareils-confiance.md) | 🔎 Review |
-| [US01.4.3a — Alerte connexion suspecte (appareil inconnu)](FEATURES/device-confirmation/us-alerte-connexion-suspecte.md) | 🔎 Review |
+| [US01.4.2 — Gestion des appareils de confiance](FEATURES/device-confirmation/us-appareils-confiance.md) | ✅ Done |
+| [US01.4.3a — Alerte connexion suspecte (appareil inconnu)](FEATURES/device-confirmation/us-alerte-connexion-suspecte.md) | ✅ Done |
 | [US01.4.3b — Alerte connexion depuis IP/pays inhabituel](FEATURES/device-confirmation/us-alerte-ip-suspecte.md) *(v1-enterprise)* | ⬜ |
 | **F01.5 — Notifications de sécurité** | |
-| [US01.5.1 — E-mail de confirmation d'action sensible](FEATURES/notifications-securite/us-email-action-sensible.md) | 🔎 Review |
+| [US01.5.1 — E-mail de confirmation d'action sensible](FEATURES/notifications-securite/us-email-action-sensible.md) | ✅ Done |
 | **Extras hors GitHub** | |
 | [F01.6 — Google OAuth2](FEATURES/google-oauth/us-google-oauth.md) | ✅ |
 | [F01.7 — OIDC Enterprise login](FEATURES/oidc-enterprise/us-oidc-login.md) | ✅ |

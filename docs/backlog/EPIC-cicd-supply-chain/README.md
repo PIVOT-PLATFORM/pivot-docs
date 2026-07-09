@@ -20,15 +20,15 @@ Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité
 - EN05.12 — Gate Lighthouse (a11y)
 
 ### Enablers Backlog ⬜
-- EN05.13 — DAST (ZAP)
-- EN05.14 — Protection de branche + required checks
-- EN05.15 — Standardisation CI core ↔ ui
+- EN05.14 — Protection de branche + required checks (US05.14.1 bloquée, permission token insuffisante)
 
 ## Modules impactés
 `core`
 
 ## Statut global
-🔄 En cours — EN05.1-12 ✅ Done, EN05.13-15 ⬜ À faire
+✅ Done — EN05.1-13, EN05.15 terminés (2026-07-09, recette différée) · EN05.14 : US05.14.2 Done,
+US05.14.3 In progress (PR pivot-docs#175), US05.14.1 bloquée (permission `gh` insuffisante,
+voir note)
 
 ---
 
@@ -49,12 +49,12 @@ Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité
 | EN05.11 — Gate E2E (Playwright) | ✅ |
 | EN05.12 — Gate Lighthouse (a11y) | ✅ |
 | **EN05.13 — DAST (ZAP)** | |
-| [US05.13.1 — ZAP baseline planifié](ENABLERS/us-zap-baseline.md) | ⬜ |
-| [US05.13.2 — ZAP full scan + rapport](ENABLERS/us-zap-full-scan.md) | ⬜ |
+| [US05.13.1 — ZAP baseline planifié](ENABLERS/us-zap-baseline.md) | ✅ |
+| [US05.13.2 — ZAP full scan + rapport](ENABLERS/us-zap-full-scan.md) | ✅ |
 | **EN05.14 — Protection de branche + required checks** | |
-| [US05.14.1 — Required checks pivot-core](ENABLERS/us-required-checks-core.md) | ⬜ |
-| [US05.14.2 — Required checks pivot-ui](ENABLERS/us-required-checks-ui.md) | ⬜ |
-| [US05.14.3 — Required checks pivot-docs](ENABLERS/us-required-checks-docs.md) | ⬜ |
+| [US05.14.1 — Required checks pivot-core](ENABLERS/us-required-checks-core.md) | ⬜ bloquée (permission `gh` insuffisante — `Administration: Read and write` requis) |
+| [US05.14.2 — Required checks pivot-ui](ENABLERS/us-required-checks-ui.md) | ✅ |
+| [US05.14.3 — Required checks pivot-docs](ENABLERS/us-required-checks-docs.md) | 🔄 In progress — `pivot-docs#175` |
 | **EN05.15 — Standardisation CI core ↔ ui** | |
-| [US05.15.1 — Composite action setup partagée](ENABLERS/us-composite-action.md) | ⬜ |
-| [US05.15.2 — Aligner workflows ui sur conventions core](ENABLERS/us-aligner-workflows.md) | ⬜ |
+| [US05.15.1 — Composite action setup partagée](ENABLERS/us-composite-action.md) | ✅ |
+| [US05.15.2 — Aligner workflows ui sur conventions core](ENABLERS/us-aligner-workflows.md) | ✅ |

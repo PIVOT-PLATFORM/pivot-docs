@@ -13,14 +13,16 @@ cette absence de mutualisation risque d'épuiser les connexions natives Postgres
 d'autres modules/replicas démarrent. Pré-requis du jalon « Socle terminé » (`sprint-6.md` Axe 1).
 
 **Critères de complétion** :
-- [ ] PgBouncer configuré en `session` mode (compatible JPA/Hibernate)
-- [ ] Pool size configuré (max_client_conn, default_pool_size)
-- [ ] pivot-core se connecte à PgBouncer (pas directement à Postgres)
-- [ ] Métriques PgBouncer exposées (pool utilization)
-- [ ] Tests de charge basiques (vérification pas de connexion leak)
+- [x] PgBouncer configuré en `session` mode (compatible JPA/Hibernate)
+- [x] Pool size configuré (`MAX_CLIENT_CONN=200`, `DEFAULT_POOL_SIZE=20`)
+- [x] pivot-core se connecte à PgBouncer (pas directement à Postgres) — `SPRING_DATASOURCE_URL` basculé
+- [x] Métriques PgBouncer exposées — sidecar `pgbouncer-exporter` + cible `prometheus.yml`, vérifié (`pool_size=20`, `max_client_conn=200`)
+- [x] Tests de charge basiques — `docker/pgbouncer/loadtest.sh`, exécuté : pic borné à 20 sous 40 clients concurrents, `sv_active` revenu à 0 après charge (aucune fuite)
 
-**Statut** : ⬜ À faire
+**Implémentation** : [pivot-core#197](https://github.com/PIVOT-PLATFORM/pivot-core/pull/197) (mergée).
+
+**Statut** : ✅ Done — `Stage: Done` positionné le 2026-07-09 (recette métier différée)
 
 ---
 Item Type: Enabler · Parent: E07 · Type: performance · Module: core · Phase: Socle
-Stage: Ready · Priority: High
+Stage: Done · Priority: High

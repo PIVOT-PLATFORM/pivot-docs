@@ -28,4 +28,4 @@
 
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: Socle · Size: S · Priority: Medium · Note: US01.4.3b (alerte IP/géo) → v1-enterprise
-Stage: Review
+Stage: Done

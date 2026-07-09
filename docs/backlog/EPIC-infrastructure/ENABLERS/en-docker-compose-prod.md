@@ -65,4 +65,4 @@ module-cores/activemq/pgbouncer différés, voir note ci-dessus — Gate: Review
 
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: Socle
-Stage: Review · Priority: Critical
+Stage: Done · Priority: Critical

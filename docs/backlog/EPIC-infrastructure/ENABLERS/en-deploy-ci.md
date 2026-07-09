@@ -65,4 +65,4 @@ secrets SSH/Slack en gap externe documenté — Gate: Review
 
 ---
 Item Type: Enabler · Parent: E07 · Type: CI/CD · Module: core · Phase: Socle
-Stage: Review · Priority: Critical
+Stage: Done · Priority: Critical

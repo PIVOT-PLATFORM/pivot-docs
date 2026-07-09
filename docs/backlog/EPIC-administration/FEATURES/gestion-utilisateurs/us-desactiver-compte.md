@@ -35,5 +35,5 @@
 
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
-Stage: Review
+Stage: Done
 Gate 5 : `pivot-core` PR [#142](https://github.com/PIVOT-PLATFORM/pivot-core/pull/142) (Gate 4 = 100/100) · `pivot-ui` PR [#85](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/85) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-administration/us06-1-4-admin-desactive-compte.md` (rétroactif, 2026-07-08).
