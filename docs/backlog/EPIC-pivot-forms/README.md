@@ -4,7 +4,7 @@
 
 ## Objectif
 
-**Form-builder no-code souverain** de la suite PIVOT, **recentré sur l'intégration** : création visuelle, logique conditionnelle & scoring, diffusion & embed dans le portail, collecte & restitution, **API & événements** (`form.submitted` au bus), IA gouvernée, **gouvernance & RGPD**, **auto-hébergement**, accessibilité RGAA. Benchmark : Typeform, Jotform, Tally, Formbricks, Qualtrics, Google Forms. **32 US** issues du CSV `backlog_formulaires.csv` (version recentrée).
+**Form-builder no-code souverain** de la suite PIVOT, **recentré sur l'intégration** : création visuelle, logique conditionnelle & scoring, diffusion & embed dans le portail, collecte & restitution, **API & événements** (`form.submitted` au bus), IA gouvernée, **gouvernance & RGPD**, **auto-hébergement**, accessibilité RGAA. Benchmark : Typeform, Jotform, Tally, Formbricks, Qualtrics, Google Forms. **34 US** — 32 issues du CSV `backlog_formulaires.csv` (version recentrée) + 2 (US42.3.4/US42.3.5, envoi nominatif et relances) ajoutées lors de l'audit de parité POC PouetPouet du 2026-07-10.
 
 > **Brique transverse & gouvernée.** Forms est consommé par les autres modules — notamment le **SMI (E38, F38.15)** pour le dépôt d'idée et le module **Workflow (E29)** (une réponse → `form.submitted` → tâche/risque/contrat). **L'orchestration aval n'est pas dans Forms** : Forms émet l'événement, le bus et Workflow orchestrent. Formulaire = objet gouverné au catalogue (propriétaire, classification, rétention).
 
@@ -23,7 +23,7 @@
 ### Features
 - **F42.1 — Éditeur & champs** (4 US)
 - **F42.2 — Logique & personnalisation** (5 US)
-- **F42.3 — Diffusion & canaux** (3 US)
+- **F42.3 — Diffusion & canaux** (5 US)
 - **F42.4 — Réponses & restitution** (3 US)
 - **F42.5 — API & événements** (4 US)
 - **F42.6 — IA** (2 US)
@@ -78,6 +78,8 @@
 | [US42.3.1 — Lien partageable](FEATURES/diffusion-canaux/us-lien-partageable.md) | ⬜ |
 | [US42.3.2 — Intégration embarquée dans le portail](FEATURES/diffusion-canaux/us-integration-embarquee-dans-le-portail.md) | ⬜ |
 | [US42.3.3 — Enquêtes in-app ciblées](FEATURES/diffusion-canaux/us-enquetes-in-app-ciblees.md) | ⬜ |
+| [US42.3.4 — Envoi nominatif à des destinataires nommés](FEATURES/diffusion-canaux/us-envoi-nominatif-destinataires.md) | ⬜ |
+| [US42.3.5 — Relances paramétrables](FEATURES/diffusion-canaux/us-relances-parametrables.md) | ⬜ |
 | **F42.4 — Réponses & restitution** | |
 | [US42.4.1 — Collecte et tableau de réponses](FEATURES/reponses-restitution/us-collecte-et-tableau-de-reponses.md) | ⬜ |
 | [US42.4.2 — Restitution visuelle](FEATURES/reponses-restitution/us-restitution-visuelle.md) | ⬜ |

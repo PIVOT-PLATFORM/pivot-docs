@@ -374,6 +374,10 @@ collaboratif open-source).
 | [US08.3.2b — Sync STOMP et états de connexion](FEATURES/canvas-ws/us-canvas-angular-08-3-2b.md) | ✅ Done |
 | [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | ✅ Done |
 | [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ✅ Done |
+| [US08.3.4 — Taille du texte proportionnelle à la taille de la carte](FEATURES/canvas-ws/us-texte-proportionnel-carte.md) | ⬜ |
+| [US08.3.5 — Dézoom dynamique selon la taille du contenu](FEATURES/canvas-ws/us-dezoom-dynamique-contenu.md) | ⬜ |
+| [US08.3.6 — Redimensionnement d'une sélection multiple ou d'un groupe par cadre englobant](FEATURES/canvas-ws/us-redim-selection-multiple-cadre.md) | ⬜ |
+| [US08.3.7 — Navigation au clic droit](FEATURES/canvas-ws/us-navigation-clic-droit.md) | ⬜ |
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ✅ Done |
@@ -386,3 +390,10 @@ collaboratif open-source).
 > ne pas attendre la recette PO formelle (différée, traitée séparément) pour refléter que tout le
 > code du noyau est implémenté et mergé. Exception documentée à la règle habituelle (`Stage: Done`
 > réservé à la recette humaine) — voir `sprints/sprint-6.md` pour le contexte de cette décision.
+>
+> **Ajout 2026-07-10 (audit de parité POC PouetPouet, v0.32.0)** : US08.3.4 à US08.3.7 sont des
+> raffinements UX du canvas ("confort des boards") livrés dans le POC après le gel des 17 items
+> ci-dessus — net-new, `Stage: Backlog`, ne remettent pas en cause le 17/17 Done. À vérifier au
+> Gate 1 contre l'état réel de `pivot-collaboratif-ui` (le redimensionnement par handles sur objet
+> unique et le groupement `Ctrl+G` sont déjà couverts par US08.3.2a — seul le raffinement listé
+> dans chaque US est net-new).
