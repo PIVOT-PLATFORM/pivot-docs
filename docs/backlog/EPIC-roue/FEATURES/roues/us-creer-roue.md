@@ -25,6 +25,7 @@ marché. Une entrée « libre » (nom ad hoc, sans compte PIVOT) reste possible 
 | Given une roue existante, when `PUT /api/agilite/wheels/{wheelId}` avec un nouveau `name` et/ou une nouvelle liste `entries`, then la liste d'entrées est intégralement remplacée (ajouts, retraits, changements de poids) et la réponse 200 reflète l'état final ; `teamId` n'est pas modifiable après création | ⬜ |
 | Given une roue existante, when `DELETE /api/agilite/wheels/{wheelId}`, then la roue et toutes ses entrées sont supprimées (204 No Content, suppression en cascade côté BDD) | ⬜ |
 | Given un `teamId` de l'équipe de l'appelant, when `GET /api/agilite/teams/{teamId}/members`, then la réponse 200 liste les membres de l'équipe (`id` = `team_members.id`, `userId`, `displayName` résolu comme ci-dessus) — alimente le sélecteur de membres côté Angular, sans ressaisie manuelle | ⬜ |
+| Given un utilisateur authentifié, when `GET /api/agilite/teams`, then la réponse 200 liste les équipes dont il est membre (`id`, `name`) — nécessaire pour choisir un `teamId` côté Angular, `pivot-core` n'exposant pas encore cette liste (gap EN17.3/`@pivot/ui-core` non consommé, voir Notes d'implémentation) | ⬜ |
 
 ### Cas d'erreur
 
@@ -51,7 +52,8 @@ marché. Une entrée « libre » (nom ad hoc, sans compte PIVOT) reste possible 
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given la page « Mes roues », when l'utilisateur clique sur « Créer une roue », then un formulaire s'affiche : nom, sélecteur de membres de l'équipe (alimenté par `GET /api/agilite/teams/{teamId}/members`), option « ajouter un nom libre », poids ajustable par entrée (1 à 10, défaut 1) | ⬜ |
+| Given la page « Mes roues », when elle se charge, then la liste des équipes de l'utilisateur (`GET /api/agilite/teams`) est utilisée pour choisir l'équipe active (pas de sélecteur d'équipe partagé avec le shell tant que `@pivot/ui-core`/EN17.3 n'est pas consommé) | ⬜ |
+| Given la page « Mes roues » et une équipe active choisie, when l'utilisateur clique sur « Créer une roue », then un formulaire s'affiche : nom, sélecteur de membres de l'équipe (alimenté par `GET /api/agilite/teams/{teamId}/members`), option « ajouter un nom libre », poids ajustable par entrée (1 à 10, défaut 1) | ⬜ |
 | Given une entrée ajoutée (membre ou libre) dans le formulaire, when l'utilisateur clique sur « Retirer », then l'entrée disparaît de la liste avant tout appel réseau (état local, signal Angular) | ⬜ |
 | Given un formulaire de roue avec 0 entrée, when l'utilisateur tente d'enregistrer, then le bouton « Enregistrer » est désactivé ou un message d'erreur inline s'affiche — aucun appel `POST`/`PUT` avec une liste `entries` vide | ⬜ |
 | Given une sauvegarde réussie (201 ou 200), when la réponse revient, then un toast de confirmation (`role="status"`) s'affiche et la liste des roues est rafraîchie | ⬜ |
@@ -86,12 +88,17 @@ marché. Une entrée « libre » (nom ad hoc, sans compte PIVOT) reste possible 
   jour ; pas de bouton « importer tous les membres » séparé dans cette US
 - Gestion des équipes elles-mêmes (création/membres) — hors périmètre, propriété de `pivot-core`
   (`public.teams`/`public.team_members`), consommée en lecture seule ici
+- Sélecteur d'équipe global partagé entre modules (« équipe active » au niveau du shell) — hors
+  périmètre tant que `@pivot/ui-core`/`TeamService` (EN17.3) n'est pas consommable ; `GET
+  /api/agilite/teams` reste local à ce module pour cette US
 
 ## Notes d'implémentation
 
 - **Backend** `pivot-agilite-core` (schéma Flyway `agilite`) : `WheelController`/`WheelService`/
   `WheelRepository` sous `fr.pivot.agilite.wheel`, `TeamMembershipController` (ou équivalent) sous
-  `fr.pivot.agilite.team` pour `GET /api/agilite/teams/{teamId}/members`
+  `fr.pivot.agilite.team` pour `GET /api/agilite/teams` (équipes de l'appelant) et `GET
+  /api/agilite/teams/{teamId}/members` — les deux en lecture seule sur `public.teams`/
+  `public.team_members`, aucune écriture (propriété `pivot-core`)
 - **Modèle de données** (schéma `agilite`) :
   - `wheel` : `id UUID`, `tenant_id BIGINT` (FK cross-schéma → `public.tenants.id`), `team_id BIGINT`
     (FK cross-schéma → `public.teams.id`), `name VARCHAR(100)`, `last_drawn_entry_id UUID`
