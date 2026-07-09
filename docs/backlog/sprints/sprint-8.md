@@ -28,7 +28,7 @@
 | US14.1.1 | Créer et gérer une roue de tirage | M | High | 🟡 frontend mergé ([pivot-agilite-ui#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/19), Gate 4 100/100) · backend PR ouverte, `needs-human-review` ([pivot-agilite-core#27](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/27)) — hard block CLAUDE.md sur l'ajout de `pivot-core-starter`, jamais de merge autonome quel que soit le score |
 | US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
 | US14.3.1 | Diffusion du résultat en temps réel (WebSocket) | M | High | ⬜ |
-| US20.1.1 | Créer une session de rétrospective | M | High | ⬜ |
+| US20.1.1 | Créer une session de rétrospective | M | High | ✅ |
 | US20.1.2a | Contribution & révélation des cards *(ex-US20.1.2, décomposée)* | M | High | ⬜ |
 | US20.1.2b | Phase Vote (dot-voting) *(ex-US20.1.2, décomposée)* | M | High | ⬜ |
 | US20.1.2c | Phase Action (transition en session) *(ex-US20.1.2, décomposée)* | S | High | ⬜ |
@@ -52,7 +52,12 @@
 > **US20.1.1 — statut détaillé (item réparti sur deux repos) :** frontend (`pivot-agilite-ui`)
 > livré — PR [`pivot-agilite-ui#18`](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/18)
 > (`RetroApiService`, formulaire de création, route `retro/create`, i18n fr/en, tests Vitest +
-> Playwright). Backend (`pivot-agilite-core`) toujours en cours (issue
-> [`pivot-agilite-core#24`](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/issues/24), pas
-> de PR à ce jour) — 🤖 Dev de la ligne ci-dessus laissé `⬜` tant que les deux repos ne sont pas
-> livrés, pour ne pas donner une fausse impression d'item entièrement terminé.
+> Playwright). Backend (`pivot-agilite-core`) livré — PR
+> [`pivot-agilite-core#28`](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/28)
+> (`POST`/`GET /retro/sessions`, `GET /retro/sessions/join/{joinCode}`, schéma Flyway
+> `retro_sessions`/`retro_cards`, EN08.3 auth, 83 tests, coverage 96,6 %) — issue
+> [`pivot-agilite-core#24`](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/issues/24)
+> fermée à la fusion de cette PR. 🤖 Dev de la ligne ci-dessus passé à `✅` : les deux repos sont
+> désormais livrés (implémentation + tests Dev Agent complets des deux côtés) — reste la revue/
+> fusion humaine de chaque PR, `Stage` frontmatter de l'US reste `⬜` jusqu'à la recette
+> mainteneur (§5 de ce backlog).
