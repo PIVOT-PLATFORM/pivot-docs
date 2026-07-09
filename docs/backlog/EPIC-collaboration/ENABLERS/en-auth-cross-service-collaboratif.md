@@ -75,7 +75,7 @@ ci-dessus
 
 ---
 Item Type: Enabler · Parent: E08 (E30) · Type: sécurité · Module: collaboratif · Phase: Socle · Size: M
-Stage: Review · Priority: Critical
+Stage: ⬜ · Priority: Critical
 Dépendances: `pivot-core#171`/EN17.1 (`AuthenticatedPrincipal`/`AuthenticatedPrincipalResolver`,
 livré) · [`ADR-022`](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage) (statut
 Proposé — acceptation formelle par le mainteneur recommandée avant le Gate 1 de cet enabler,

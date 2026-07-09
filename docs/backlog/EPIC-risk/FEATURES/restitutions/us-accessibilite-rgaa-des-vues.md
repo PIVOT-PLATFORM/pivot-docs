@@ -33,5 +33,5 @@ Vues et matrices conformes RGAA 4 / WCAG 2.1 AA. Cette US transverse consolide e
 
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.8.1

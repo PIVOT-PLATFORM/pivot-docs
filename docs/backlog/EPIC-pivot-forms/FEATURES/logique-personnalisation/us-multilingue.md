@@ -23,7 +23,7 @@
 
 ---
 Item Type: US · Parent: F42.2 · Module: forms · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: FRM-105 · MoSCoW: Could · Origine: Formbricks (AI), Qualtrics
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

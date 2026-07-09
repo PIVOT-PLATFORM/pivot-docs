@@ -11,6 +11,6 @@
 
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-062 · MoSCoW: Should · Lot: Lot 2 · Origine: Insight I8 + plans Enterprise
 Justification: Dossier §8-I8 : mesurer l'usage réel, pas les licences

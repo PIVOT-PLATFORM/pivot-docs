@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.2 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-063 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Miro
 Justification: Dossier §6.1 ; requis seulement si Agile à l'échelle
 Dépendances: —

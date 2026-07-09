@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-070 · MoSCoW: Must (conditionnel) · Lot: Lot 2 · Origine: Contexte public FR
 Profils: Privée sous droit public, Publique, État
 Justification: Obligation légale ; prolonge PP-012

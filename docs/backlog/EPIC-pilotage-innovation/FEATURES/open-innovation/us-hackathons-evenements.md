@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F38.8 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: SMI — Système de Management de l'Innovation (état de l'art, ISO 56002/56000) ; distinct de US38.15.1 (événements internes) par le périmètre écosystème externe
 Dépendances: EN38.1 (modèle SMI & moteur) · US38.15.1 (moteur d'événements)

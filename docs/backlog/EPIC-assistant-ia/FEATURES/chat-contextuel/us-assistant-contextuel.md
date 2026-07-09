@@ -21,5 +21,5 @@
 
 ---
 Item Type: US · Parent: F48.1 · Module: core · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN48.1 (fournisseur LLM, rate-limit, audit)

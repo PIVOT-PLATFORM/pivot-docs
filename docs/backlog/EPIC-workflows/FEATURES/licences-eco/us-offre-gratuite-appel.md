@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.12 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: WF-010 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 6/6
 Justification: Dossier §4 + limite IFTTT documentée
 Dépendances: —

@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: PP-037 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Sciforma
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §6.2

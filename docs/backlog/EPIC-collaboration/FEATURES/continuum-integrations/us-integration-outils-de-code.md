@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.7 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-068 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Miro
 Justification: Dossier §6.1
 Dépendances: —

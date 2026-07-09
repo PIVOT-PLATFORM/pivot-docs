@@ -110,7 +110,7 @@ Toute contribution mobilise les experts concernés — les mentionner explicitem
 |-------|---------|
 | Item Type | Epic / Feature / Enabler / US |
 | Parent | clé du parent (ex. `E01`, `F01.1`) |
-| Stage | Backlog / Ready / In progress / Review / Done |
+| Stage | ⬜ (pas encore terminé) / ✅ (Done — recette mainteneur). États intermédiaires internes, non persistés → `docs/backlog/README.md` §2/§5 |
 | Priority | Critical / High / Medium / Low |
 | Module | core / auth / admin / oidc / pilotage / agilite / collaboratif (extensible par domaine) |
 | Phase | Socle / v1-enterprise / phase-3 |
@@ -131,7 +131,7 @@ Template US, Definition of Ready, vagues → `docs/backlog/README.md`.
 Avant tout code (dans `pivot-core`/`pivot-ui`), le **PO Agent** challenge les ACs de l'US :
 
 1. Vérifier DoR (§8.2 `docs/backlog/README.md`) — story complète, ACs Given/When/Then, AC erreur + sécurité
-2. Calculer Gate 1 : **= 100** → `Stage: Ready` → procéder · **< 100** → PO Agent réécrit ACs → recalculer
+2. Calculer Gate 1 : **= 100** → état interne Ready → procéder (`Stage` frontmatter reste `⬜`) · **< 100** → PO Agent réécrit ACs → recalculer
 3. AC ambigus à l'implémentation → PO Agent clarifie, jamais d'interprétation unilatérale
 
 Pas de blocage humain — Claude autonome de A à Z sur la validation des ACs.
@@ -154,13 +154,13 @@ repos, lancement des agents en parallèle) → `docs/setup/pivot-platform-claude
 Côté lecture du backlog spécifiquement :
 1. Lire `docs/backlog/sprints/README.md` — identifier le sprint courant (pas de ✅ complet), ouvrir son `sprint-{N}.md`
 2. Pour chaque US du sprint : lire le fichier markdown dans `docs/backlog/`
-3. Filtrer : `Stage: Ready` ou `Stage: In progress` · Phase Socle uniquement
-4. Pour chaque US `Stage: Backlog` éligible — PO Agent vérifie DoR + Gate 1 → `Stage: Ready` si = 100
+3. Filtrer : `Stage: ⬜` (pas encore Done) · Phase Socle uniquement
+4. Pour chaque US `⬜` éligible — vérifier l'état réel côté GitHub (branche/PR) : rien encore → PO Agent vérifie DoR + Gate 1 → procède si = 100 (état interne Ready) ; branche/PR déjà ouverte → reprendre là où elle en est
 
 **Principes :**
 - **Une branche par US / Enabler** — `feat/{us-id}-{slug}` ou `feat/{en-id}-{slug}`
 - **Agents en parallèle** — un agent par item, branches séparées, pas de conflit inter-US
-- **Mise à jour Stage + `sprints/sprint-{N}.md` committée sur la branche de l'US concernée** (pas de branche docs séparée)
+- **`Stage` (⬜/✅) + `sprints/sprint-{N}.md` mis à jour uniquement à la création et au Done, committés sur la branche de l'US concernée** (pas de branche docs séparée)
 
 ## Workflow — Autoloop PR (docs)
 
@@ -173,7 +173,7 @@ Après modification (backlog, ADR, audit, workflow) sur une branche dédiée :
      - **CI** — `npm run lint` (markdownlint + cspell + naming) = 0 erreur
    - **Corrections** — tous les findings résolus, commit `fix(docs): ...` ou `fix(backlog): ...`
    - **Convergence** — Gate 4 = 100/100 (ou convergence confirmée sans finding restant) ET CI verte → sortir
-3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · `Stage: Review` dans frontmatter US + `sprints/sprint-{N}.md` + signal mainteneur
+3. Gate 4 = 100/100 (ou convergence confirmée sans finding restant) → sortir la PR du mode draft (`gh pr ready`) · état interne Review (`Stage` frontmatter reste `⬜`) + `sprints/sprint-{N}.md` + signal mainteneur
 4. Blocage 20 boucles → Breaking Point 2
 
 **Merge toujours humain, quel que soit le score.** Contrairement à `pivot-core`/`pivot-ui`/aux
@@ -231,7 +231,7 @@ Format **Conventional Commits** (`type(scope): message`).
 
 | Commit | Contenu |
 |--------|---------|
-| `docs(backlog):` | nouvelle US/Enabler/Feature, mise à jour Stage, `sprints/sprint-{N}.md` |
+| `docs(backlog):` | nouvelle US/Enabler/Feature, mise à jour Stage (⬜/✅), `sprints/sprint-{N}.md` |
 | `fix(backlog):` | correction fichier backlog existant (lien brisé, frontmatter invalide) |
 | `docs(adr):` | nouvel ADR ou mise à jour |
 | `docs(audit):` | audit par domaine (mis à jour en place, jamais de fichier daté) |
@@ -253,7 +253,7 @@ dans le champ **Stage** du frontmatter US.
 
 | Gate | Moment | Seuils |
 |------|--------|--------|
-| **1 — READINESS** | Avant implémentation | PO Agent self-challenge · = 100 → Stage: Ready → procéder · < 100 → PO Agent réécrit ACs |
+| **1 — READINESS** | Avant implémentation | PO Agent self-challenge · = 100 → état interne Ready → procéder (`Stage` reste `⬜`) · < 100 → PO Agent réécrit ACs |
 | **2 — COVERAGE** | Par commit (pivot-core/pivot-ui) | ≥ 85 → continuer · 70–84 → compléter tests · < 70 → stop |
 | **3 — QUALITY** | Après CI verte | Hard blocks : secret Gitleaks, label `security`/`breaking-change`, structure backlog non coordonnée |
 | **4 — MERGE CONFIDENCE** | Avant merge | = 100/100 → sortie du mode draft (merge autonome) · 60–99 → merge documenté · < 60 → Breaking Point 2 |
@@ -303,7 +303,7 @@ AC ambigu à l'implémentation → **stopper, PO Agent clarifie, jamais d'interp
 ### Post-merge
 
 ```bash
-# 1. Mainteneur : passe Stage → Done dans le frontmatter US (recette humaine — jamais Claude)
+# 1. Mainteneur : passe Stage: ⬜ → ✅ dans le frontmatter US (recette humaine — jamais Claude)
 # 2. Débloquer les US dépendantes
 # 3. Nettoyer la branche
 git push origin --delete feat/{us-id}-{slug}

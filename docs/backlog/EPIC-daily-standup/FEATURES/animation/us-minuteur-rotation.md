@@ -18,5 +18,5 @@
 
 ---
 Item Type: US · Parent: F10.2 · Module: agilite · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: US10.1.2, EN19.2 (WS room isolation)

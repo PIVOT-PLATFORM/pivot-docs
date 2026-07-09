@@ -30,4 +30,4 @@ formalisé après coup (après EN17.2 + EN17.3 publiés) pour refléter un scaff
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: ui · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Ready · Priority: High
+Stage: ⬜ · Priority: High

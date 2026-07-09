@@ -46,4 +46,4 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: L · Priority: High
-Stage: Decomposed — voir US08.3.2a/b/c
+Stage: ⬜

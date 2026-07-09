@@ -28,5 +28,5 @@ EMV = Probabilité(%) × Impact coût(€) par risque quantifiable.
 
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.2.2

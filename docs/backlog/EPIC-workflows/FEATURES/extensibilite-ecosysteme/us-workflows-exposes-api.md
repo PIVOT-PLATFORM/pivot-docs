@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.11 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-046 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant n8n/Activepieces
 Justification: Dossier §5.3
 Dépendances: —

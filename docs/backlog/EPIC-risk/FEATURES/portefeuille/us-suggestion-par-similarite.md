@@ -29,5 +29,5 @@ Proposer « les projets comme le vôtre ont rencontré ces risques ».
 
 ---
 Item Type: US · Parent: F21.5 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.5.3

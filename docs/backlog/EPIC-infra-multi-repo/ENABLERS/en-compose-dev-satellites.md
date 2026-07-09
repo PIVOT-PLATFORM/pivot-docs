@@ -52,4 +52,4 @@ uniquement le démarrage des backends côté compose dev)
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle
-Stage: Review · Priority: High · Sprint: 5 · Done: 2026-07-08 (pivot-core #179 + pivot-pilotage-core #18)
+Stage: ⬜ · Priority: High · Sprint: 5 · Done: 2026-07-08 (pivot-core #179 + pivot-pilotage-core #18)

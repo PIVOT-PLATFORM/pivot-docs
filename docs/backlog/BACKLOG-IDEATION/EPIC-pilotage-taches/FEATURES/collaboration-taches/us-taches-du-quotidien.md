@@ -34,7 +34,7 @@
 
 ---
 Item Type: US · Parent: F33.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: Écart agent 2026-07-08 · MoSCoW: Should · Lot: Lot 1 · Origine: MS Planner EF-TSK-01/EF-TSK-05 (tâches d'équipe non couvertes)
 Profils: Tous
 Justification: Cahier MS Planner/Project §3.1 (EF-TSK-01, EF-TSK-05) — entité tâche du quotidien manquante alors que US33.1.1 et US33.1.2 la présupposent déjà toutes deux

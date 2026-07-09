@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.12 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-067 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Miro (160+)
 Justification: Dossier §6.1 ; retard documenté Klaxoon/FigJam
 Dépendances: —

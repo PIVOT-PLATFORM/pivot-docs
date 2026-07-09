@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-061 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I1
 Profils: Tous
 Justification: Dossier §8-I1

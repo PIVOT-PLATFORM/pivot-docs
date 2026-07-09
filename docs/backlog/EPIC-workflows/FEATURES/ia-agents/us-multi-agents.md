@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-054 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant n8n
 Justification: Dossier §6.1
 Dépendances: —

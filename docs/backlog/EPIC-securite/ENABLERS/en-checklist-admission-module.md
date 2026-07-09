@@ -23,4 +23,4 @@
 
 ---
 Item Type: Enabler · Parent: E43 · Type: gouvernance · Module: securite · Phase: phase-3 · Size: M
-Stage: Backlog · Priority: Critical
+Stage: ⬜ · Priority: Critical

@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: WF-068 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B3
 Justification: Dossier §7-B3
 Dépendances: —

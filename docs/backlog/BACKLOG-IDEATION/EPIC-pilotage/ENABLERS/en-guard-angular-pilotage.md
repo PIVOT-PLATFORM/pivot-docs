@@ -23,5 +23,5 @@ tenant désactivé.
 
 ---
 Item Type: Enabler · Parent: E18 · Type: architecture · Module: pilotage · Phase: phase-3 · Size: S · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN03.2 (moduleGuard générique, Stage: Done)

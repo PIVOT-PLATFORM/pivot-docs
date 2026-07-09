@@ -33,7 +33,7 @@ deep-links pilotage (roadmap E22, portefeuille E23, risque E21) — **pas de FK 
 
 ---
 Item Type: Enabler · Parent: E27 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Profils: Tous
 Justification: Fondation OKR (modèle + moteur scoring/alignement) — état de l'art Doerr/Google
 Dépendances: EN18.1 (schéma pilotage) · bus PIVOT (ADR-008)

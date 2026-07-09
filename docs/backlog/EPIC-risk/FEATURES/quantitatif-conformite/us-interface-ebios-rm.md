@@ -28,5 +28,5 @@ Sources de risque, scénarios, mesures pour les projets à sécurité prédomina
 
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.1.3

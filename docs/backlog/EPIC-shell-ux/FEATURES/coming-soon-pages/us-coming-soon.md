@@ -16,4 +16,4 @@
 
 ---
 Item Type: US (hors GitHub) · Parent: E16 · Module: core · Phase: Socle · Size: XS · Priority: Low
-Stage: Done
+Stage: ✅

@@ -88,7 +88,7 @@ duplication, alignement)
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: XL · Priority: High
-Stage: Done
+Stage: ✅
 Dépendances: EN08.1 (isolation WS room), US08.3.1 (connexion WS) — `pivot-collaboratif-ui` PR
 [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100, spec
 figée `docs/specs/EPIC-collaboration/us08-3-2a-canvas-angular-local.md`

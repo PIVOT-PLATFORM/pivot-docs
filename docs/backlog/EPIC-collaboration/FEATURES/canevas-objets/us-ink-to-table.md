@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.1 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-070 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant MSW
 Justification: Dossier §6.2
 Dépendances: —

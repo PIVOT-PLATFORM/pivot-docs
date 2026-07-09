@@ -51,4 +51,4 @@ Animer des rétrospectives d'équipe structurées avec formats multiples (Start/
 ---
 
 Item Type: Epic · Clé: E20 · Phase: phase-3 · Module: agilite
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

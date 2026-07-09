@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-021 · MoSCoW: Should · Lot: Lot 3 · Origine: 4/6 (n8n, PA, Zapier, AP)
 Justification: Dossier §5.2 : en voie de généralisation
 Dépendances: —

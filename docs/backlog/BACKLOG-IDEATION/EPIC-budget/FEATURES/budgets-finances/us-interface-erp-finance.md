@@ -27,7 +27,7 @@
 
 ---
 Item Type: US · Parent: F26.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-017b · MoSCoW: Should · Lot: Lot 2 · Origine: Insight I2 (variante privée)
 Profils: PME, Grand groupe, Privée sous droit public
 Justification: Synthèse v2 §8 : équivalent privé de l'interface comptable

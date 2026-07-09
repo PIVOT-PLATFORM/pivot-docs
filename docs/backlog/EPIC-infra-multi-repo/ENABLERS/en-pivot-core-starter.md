@@ -37,4 +37,4 @@ consommateur ne se présente. `Stage: Done` positionné par décision explicite 
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Done · Priority: Critical · Done: 2026-07-08 (pivot-core #167, #173, #177, #180)
+Stage: ✅ · Priority: Critical · Done: 2026-07-08 (pivot-core #167, #173, #177, #180)

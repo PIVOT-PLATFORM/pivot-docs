@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F40.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: PP-A02 · MoSCoW: Must · Lot: Lot 1 · Origine: Synthèse v2
 Profils: Tous
 Justification: Synthèse v2 §7 + Insight I1

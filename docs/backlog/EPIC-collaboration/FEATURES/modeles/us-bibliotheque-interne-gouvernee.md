@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.4 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-061 · MoSCoW: Should · Lot: Lot 2 · Origine: Insight I8
 Justification: Dossier §8-I8 : condition d'adoption
 Dépendances: —

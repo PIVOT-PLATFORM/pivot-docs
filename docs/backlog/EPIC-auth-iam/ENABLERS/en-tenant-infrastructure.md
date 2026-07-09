@@ -16,4 +16,4 @@
 
 ---
 Item Type: Enabler (hors GitHub) · Parent: E01 · Type: architecture · Module: auth · Phase: Socle
-Stage: Done · Priority: High
+Stage: ✅ · Priority: High

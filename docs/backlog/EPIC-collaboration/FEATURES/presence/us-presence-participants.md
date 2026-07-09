@@ -79,5 +79,5 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Done
+Stage: ✅
 Dépendances: EN08.1 (isolation WS room), EN08.2 (guard Angular)

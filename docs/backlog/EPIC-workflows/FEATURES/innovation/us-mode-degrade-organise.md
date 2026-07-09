@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: WF-071 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B6
 Justification: Dossier §7-B6 : continuité d'activité, angle mort des 6
 Dépendances: —

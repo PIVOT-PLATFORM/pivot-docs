@@ -10,6 +10,6 @@
 
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-082 · MoSCoW: Could · Lot: Lot 3 · Origine: NFR Klaxoon
 Justification: Cahier Klaxoon ENF-DIS-03

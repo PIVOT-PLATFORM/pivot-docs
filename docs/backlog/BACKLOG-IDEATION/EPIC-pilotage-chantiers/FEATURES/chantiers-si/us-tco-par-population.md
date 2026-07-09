@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-068 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I8
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §8-I8

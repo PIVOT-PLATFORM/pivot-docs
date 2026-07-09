@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-019 · MoSCoW: Should · Lot: Lot 3 · Origine: Quasi-standard 5/6
 Justification: Dossier §5.1 : la convergence 2026
 Dépendances: —

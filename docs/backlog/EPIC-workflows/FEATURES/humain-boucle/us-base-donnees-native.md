@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.6 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-028 · MoSCoW: Should · Lot: Lot 3 · Origine: 3/6 (Zapier, AP, PA Dataverse)
 Justification: Dossier §5.2 : le workflow absorbe le datastore
 Dépendances: —

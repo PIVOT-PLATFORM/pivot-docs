@@ -26,4 +26,4 @@
 
 ---
 Item Type: US · Parent: F01.6 · Module: auth · Phase: Socle · Size: M · Priority: High
-Stage: Done
+Stage: ✅

@@ -27,7 +27,7 @@
 
 ---
 Item Type: US · Parent: F40.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-A06 · MoSCoW: Should · Lot: Lot 3 · Origine: Synthèse v2
 Profils: Privée sous droit public
 Justification: Synthèse v2 §5 + Insight I6 : vide de marché

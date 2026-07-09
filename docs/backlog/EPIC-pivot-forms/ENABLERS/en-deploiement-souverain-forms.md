@@ -15,6 +15,6 @@
 
 ---
 Item Type: Enabler · Parent: E42 · Module: forms · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Justification: Souveraineté (self-host/UE), sécurité et RGPD-by-design du form-builder
 Dépendances: EN42.1 · E01 Auth & IAM (SSO Keycloak)

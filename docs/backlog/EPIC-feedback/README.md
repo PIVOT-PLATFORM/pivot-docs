@@ -63,4 +63,4 @@ non prioritaires, cohérentes avec la Priority Low déjà affectée à E46.
 
 ---
 Item Type: Epic · Clé: E46 · Phase: phase-3 · Module: core
-Stage: Backlog · Priority: Low
+Stage: ⬜ · Priority: Low

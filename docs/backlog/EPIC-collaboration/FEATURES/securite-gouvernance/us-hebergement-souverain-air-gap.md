@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-076 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Klaxoon
 Justification: Dossier §6.3 ; requis en secteur régulé
 Dépendances: —

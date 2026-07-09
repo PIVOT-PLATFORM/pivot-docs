@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.1 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-014 · MoSCoW: Must · Lot: Lot 1 · Origine: Quasi-standard 5/6 (sauf IFTTT)
 Justification: Dossier §5.1 : la frontière outil perso/pro
 Dépendances: —

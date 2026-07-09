@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-049 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection (plans Enterprise)
 Justification: Cahiers ENF-SEC Miro/FigJam
 Dépendances: —

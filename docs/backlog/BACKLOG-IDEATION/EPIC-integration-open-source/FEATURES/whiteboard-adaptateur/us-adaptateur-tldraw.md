@@ -17,5 +17,5 @@
 
 ---
 Item Type: US · Parent: F28.9 · Module: whiteboard-adaptateur · Phase: phase-3 · Size: M · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN28.3

@@ -22,7 +22,7 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: XS · Priority: High
-Stage: Done
+Stage: ✅
 Gate 5 : `pivot-core` PR [#67](https://github.com/PIVOT-PLATFORM/pivot-core/pull/67) (revue
 humaine, `security`/Breaking Point 2 — pas de score Gate 4 automatisé) + `pivot-ui` PR
 [#11](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/11) (Gate 4 = 82/100), spec figée
