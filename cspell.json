@@ -291,6 +291,7 @@
     "throttlé",
     "Thymeleaf",
     "BIGSERIAL",
+    "SMALLINT",
     "Pageable",
     "pageable",
     "scopées",
