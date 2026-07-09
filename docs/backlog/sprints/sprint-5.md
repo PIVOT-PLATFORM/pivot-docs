@@ -26,7 +26,7 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | EN17.3 | Publication `@pivot-platform/ui-core` (npm, consomme `@pivot/design-system` publié) | M | Critical | ✅ Done |
 | EN17.7 | nginx API Gateway — routing multi-backend par préfixe URL (rend `pivot-collaboratif-core` joignable) | M | Critical | ✅ Done — pivot-ui PR #114 + pivot-core PR #170 mergées |
 | EN17.9 | Compose dev — modules satellites manquants (`pivot-pilotage-core`/`pivot-agilite-core`/`pivot-collaboratif-core` absents du `compose.yml` malgré le routing EN17.7 déjà en place) | S | High | ✅ Done — pivot-core PR #179 + pivot-pilotage-core PR #18 (context-path bug corrigé au passage) mergées |
-| EN17.10 | Publication `@pivot-platform/collaboratif-ui` (npm) + câblage shell route `/whiteboard` (`loadChildren`, remplace `ComingSoonComponent`) | M | High | 👀 |
+| EN17.10 | Publication `@pivot-platform/collaboratif-ui` (npm) + câblage shell route `/whiteboard` (`loadChildren`, remplace `ComingSoonComponent`) | M | High | ✅ Done — [`pivot-collaboratif-ui`#36](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/36) + [`pivot-ui`#121](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/121) mergées, CI 100 % verte (voir note de correction plus bas) |
 
 > **Ordre de dépendance Vague 0 :** EN17.8 ‖ EN17.4 ‖ EN17.1 (aucune dépendance mutuelle) →
 > création de `pivot-collaboratif-core`/`pivot-collaboratif-ui` (consomment EN17.1 respectivement
@@ -220,3 +220,49 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > (`pivot-collaboratif-ui`#32) confirmées mergées entre-temps (tableau ci-dessus mis à jour en
 > conséquence, stale sur ce point avant cette PR) — US08.5.1 était donc bien le dernier item non
 > démarré de la Vague 1+ au moment de la prise en charge.
+>
+> **EN17.10 (2026-07-08) :** dernier item Vague 0 restant pris en charge. Volet 1/2
+> (`pivot-collaboratif-ui`, conversion workspace multi-projets + publication
+> `@pivot-platform/collaboratif-ui@0.1.0`) déjà mergé —
+> [`pivot-collaboratif-ui`#36](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/36)
+> (closes `pivot-collaboratif-ui`#35), CI verte, standalone (`nginx.conf`/port 8090) vérifié non
+> cassé par un build réel (`npm run build`), 310/310 tests. Volet 2/2 (câblage `pivot-ui`) implémenté
+> sur [`pivot-ui`#121](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/121) — `whiteboard-module-loader.ts`
+> isolé (testable unitairement, jamais d'import statique du package pour préserver le
+> code-splitting), `ModuleLoadErrorComponent` pour l'AC error case, `moduleGuard('whiteboard')`
+> non régressé (couvert par `e2e/modules/module-guard.spec.ts`, cas désactivé inchangé). Sécurité
+> tenantId revérifiée (grep exhaustif `projects/collaboratif-ui/src` côté `pivot-collaboratif-ui`
+> — aucune occurrence d'un `tenantId`/`userId` envoyé depuis Angular, wiring n'y touche pas de toute
+> façon). Coverage 100 % sur le nouveau code de wiring `pivot-ui`, tsc/lint/build production tous
+> verts en local. **Bloqué avant merge** : CI réelle de `pivot-ui`#121 échoue sur `npm ci` — 404
+> GitHub Packages sur `@pivot-platform/collaboratif-ui`, accès cross-repo non accordé entre les
+> deux repos (même famille de blocage que le cross-repo GHCR déjà documenté côté
+> `pivot-collaboratif-ui/TODO-SETUP.md`) — nécessite une action mainteneur (package settings,
+> "Manage Actions access") hors de portée d'une PR ; label `needs-human-review` posé, détail dans
+> `pivot-ui`#121. Playwright (`whiteboard-shell-wiring.spec.ts`, nouveau, + `module-guard.spec.ts`
+> modifié pour migrer son cas générique "module actif" de `whiteboard` vers `session` puisque
+> `whiteboard` n'est plus un placeholder) non exécutable dans l'environnement d'implémentation
+> (dépendance système manquante pour Chromium headless, pas d'accès `sudo`) — à vérifier une fois
+> la CI débloquée. Gap résiduel signalé, hors AC de cet Enabler : les clés Transloco
+> `whiteboard.*` du package ne sont pas encore fusionnées/scopées dans le catalogue i18n de
+> `pivot-ui` (rendu avec clés manquantes/brutes tant que non traité).
+>
+> **Correction post-blocage (2026-07-08, suite) :** le diagnostic "accès cross-repo GitHub
+> Packages manquant" ci-dessus s'est révélé **faux** une fois creusé plus loin — la vraie cause
+> du 404 était une URL `resolved` fabriquée à la main dans `package-lock.json` (aucun accès
+> registre au moment de l'implémentation initiale), pas un souci de permissions. Confirmé par
+> comparaison avec le lockfile de `pivot-ui#122` (même package/version, vrai hash d'intégrité,
+> URL différente) et corrigé sans toucher aux réglages du package. Deux bugs supplémentaires
+> trouvés et corrigés au passage : `ModuleLoadErrorComponent` était lui-même chargé en
+> `loadComponent()` (donc exposé à la même panne qu'il doit couvrir — corrigé en import
+> statique), et la simulation Playwright de l'échec de chargement (`page.route('**/*.js',
+> abort)`) ne s'est jamais déclenchée en CI sur le chunk réel (limitation Chromium/Playwright
+> sur les imports dynamiques ES, pas un flake) — remplacée par un test d'intégration TestBed +
+> `RouterTestingHarness` (`app.routes.spec.ts`), fiable. Collision réelle détectée avec
+> `pivot-ui#122` (`leo-brgn`, même Enabler travaillé en parallèle) — résolue par rebase manuel de
+> `#121` par-dessus `#122` (déjà mergée), `#121` retenue pour le volet `pivot-ui` car seule à
+> couvrir l'AC error case obligatoire. `pivot-ui#125` corrige au passage deux bugs CI réels et
+> sans rapport trouvés sur `publish-ui-core.yml` (token `npm ci` manquant, republication en
+> boucle de la même version). **EN17.10 est désormais réellement terminé** — voir
+> `en-collaboratif-ui-shell-wiring.md` pour le détail complet et le statut à jour du fichier
+> Enabler.

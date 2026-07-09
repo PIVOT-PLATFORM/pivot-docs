@@ -33,28 +33,19 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E14 — Module La Roue](EPIC-roue/README.md) | E14 | 3 | — | 3 | ⏸️ phase-3 |
 | [E15 — Équipes transverses](EPIC-equipes/README.md) | E15 | — | 2 | 2 | ⏸️ phase-3 |
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 Sprint 1 Done + badge notifs/modules à venir (Sprint 4, 🔎 Review) |
-| [E18 — Domaine Pilotage (ombrelle)](EPIC-pilotage/README.md) | E18 | — | 9 (EN18.1–9) | — | ⬜ phase-3 — éclaté en modules E21–E30 + E32–E40 (ADR-008) |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
 | [E21 — Module Gestion des risques](EPIC-risk/README.md) | E21 | 9 | 3 | 47 | ⬜ phase-3 · pilotage |
 | [E22 — Module Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 | 3 | 47 | ⬜ phase-3 · pilotage |
 | [E23 — Module Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 | — | 12 | ⬜ phase-3 · pilotage |
 | [E24 — Module ADR projet](EPIC-adr-projet/README.md) | E24 | 1 | — | 2 | ⬜ phase-3 · pilotage |
-| [E25 — Module Commande publique](EPIC-commande-publique/README.md) | E25 | 1 | — | 4 | ⬜ phase-3 · pilotage |
+| *(E25 — Module Commande publique → [BACKLOG-IDEATION](BACKLOG-IDEATION/EPIC-commande-publique/README.md))* | E25 | 1 | — | 4 | 📋 Idéation |
 | [E26 — Module Budget & suivi financier](EPIC-budget/README.md) | E26 | 2 | — | 8 | ⬜ phase-3 · pilotage |
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 11 | 12 | 38 | ⬜ phase-3 — dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 79 | ⬜ phase-3 |
 | [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 103 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
-| [E32 — Ressources & temps](EPIC-ressources-temps/README.md) | E32 | 1 | — | 3 | ⬜ phase-3 · pilotage |
-| [E33 — Collaboration & tâches (pilotage)](EPIC-pilotage-taches/README.md) | E33 | 1 | — | 4 | ⬜ phase-3 · pilotage |
-| [E34 — IA & agents (pilotage)](EPIC-pilotage-ia/README.md) | E34 | 1 | — | 4 | ⬜ phase-3 · pilotage |
-| [E35 — Gouvernance & sécurité (pilotage)](EPIC-pilotage-gouvernance/README.md) | E35 | 1 | — | 8 | ⬜ phase-3 · pilotage |
-| [E36 — Intégration SI (pilotage)](EPIC-pilotage-integration-si/README.md) | E36 | 1 | — | 5 | ⬜ phase-3 · pilotage |
-| [E37 — Licences & réversibilité (pilotage)](EPIC-pilotage-licences/README.md) | E37 | 1 | — | 5 | ⬜ phase-3 · pilotage |
 | [E38 — Management de l'innovation (SMI, pilotage)](EPIC-pilotage-innovation/README.md) | E38 | 15 | 2 | 45 | ⬜ phase-3 · pilotage |
-| [E39 — Chantiers SI (pilotage)](EPIC-pilotage-chantiers/README.md) | E39 | 1 | — | 10 | ⬜ phase-3 · pilotage |
-| [E40 — Profil & adaptation](EPIC-profil-adaptation/README.md) | E40 | 1 | — | 6 | ⬜ phase-3 · pilotage |
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 | 1 | 42 | ⬜ phase-3 |
 | [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 32 | ⬜ phase-3 |
 | [E43 — Sécurité & Zero Trust](EPIC-securite/README.md) | E43 | — | 13 | — | ⬜ phase-3 — dépend ADR-015–020 |
@@ -64,7 +55,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **74** | 🔄 En cours |
-| **Total phase-3** | **E09–E48 (sauf E17 reséquencé Socle, E31 dissous) — hors noyau F08.x/EN08.x déjà compté en Socle** | **159** | **68** | **589** | ⏸️ Verrouillé |
+| **Total phase-3** | **E09–E48 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~151** | **~68** | **~544** | ⏸️ Verrouillé |
+| **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
 
 ---
 
@@ -164,9 +156,8 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | E28 Intégration open source (adaptateurs OSS + natif coexistants) | phase-3 | ⬜ Backlog — dépend ADR-009 |
 | Medium | E29 Workflows & Automatisation (no-code/low-code, IA/agents) | phase-3 | ⬜ Backlog |
 | Medium | E30 Collaboration (whiteboard, ateliers, facilitation) | phase-3 | ⬜ Backlog |
-| Low | E32–E37, E39 Ressources, tâches, IA, gouvernance, intégration SI, licences, chantiers (pilotage) | phase-3 · pilotage | ⬜ Backlog |
 | Medium | E38 Management de l'innovation (SMI, ISO 56002) | phase-3 · pilotage | ⬜ Backlog |
-| Medium | E40 Profil & adaptation (profil d'organisation, PPM v2 adaptative) | phase-3 · pilotage | ⬜ Backlog |
+| — | E18, E32–E37, E39, E40 — EPICs benchmark sans périmètre suffisant | — | 📋 Idéation — voir `BACKLOG-IDEATION/` |
 | Medium | E41 Formation & Onboarding (tours guidés, supports, présentiel) | phase-3 | ⬜ Backlog |
 | Medium | E42 Pivot Forms (form-builder no-code souverain) | phase-3 | ⬜ Backlog |
 | Critical | E43 Sécurité & Zero Trust (BFF/Gateway/Mesh, secrets, autorisation, SIEM) | phase-3 | ⬜ Backlog — dépend ADR-015–020 |
@@ -175,6 +166,36 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Low | E46 Feedback (kanban public bugs/idées) | phase-3 | ⬜ Backlog |
 | Low | E47 Mini-jeux collaboratifs (Bingo, Post-it Rush, Trivia Agile) | phase-3 · collaboratif | ⬜ Backlog |
 | Medium | E48 Assistant IA transverse (widget contextuel du shell) | phase-3 | ⬜ Backlog |
+
+---
+
+## Idéation — EPICs hors backlog opérationnel
+
+> Déplacés dans `BACKLOG-IDEATION/` (2026-07-09) : Gate 1 non atteignable en l'état — aucun de ces EPICs ne peut passer à `Stage: Ready` sans décision explicite du mainteneur.
+
+| EPIC | Titre | Raison |
+|------|-------|--------|
+| [E18](BACKLOG-IDEATION/EPIC-pilotage/README.md) | Domaine Pilotage (ombrelle) | Conteneur sans US propres — rôle documentaire uniquement |
+| [E25](BACKLOG-IDEATION/EPIC-commande-publique/README.md) | Commande publique | Niche secteur public français (appels d'offres), périmètre décalé vs POC PouetPouet — D1 résolue : en idéation |
+| [E32](BACKLOG-IDEATION/EPIC-ressources-temps/README.md) | Ressources & temps | Issu du benchmark CSV, section Périmètre manquante |
+| [E33](BACKLOG-IDEATION/EPIC-pilotage-taches/README.md) | Collaboration & tâches (pilotage) | Idem |
+| [E34](BACKLOG-IDEATION/EPIC-pilotage-ia/README.md) | IA & agents (pilotage) | Idem |
+| [E35](BACKLOG-IDEATION/EPIC-pilotage-gouvernance/README.md) | Gouvernance & sécurité (pilotage) | Idem |
+| [E36](BACKLOG-IDEATION/EPIC-pilotage-integration-si/README.md) | Intégration SI (pilotage) | Idem |
+| [E37](BACKLOG-IDEATION/EPIC-pilotage-licences/README.md) | Licences & réversibilité (pilotage) | Idem |
+| [E39](BACKLOG-IDEATION/EPIC-pilotage-chantiers/README.md) | Chantiers SI (pilotage) | Idem + item "demande-arbitrage" déclaré supprimé (ex-E31) mais toujours présent |
+| [E40](BACKLOG-IDEATION/EPIC-profil-adaptation/README.md) | Profil & adaptation | Idem |
+
+---
+
+## Décisions ouvertes (mainteneur requis)
+
+| # | Sujet | EPICs concernés | Impact |
+|---|-------|----------------|--------|
+| ~~D1~~ | ~~**Périmètre E25**~~ — **Résolu (2026-07-09)** : E25 déplacé en [BACKLOG-IDEATION](BACKLOG-IDEATION/EPIC-commande-publique/README.md). Module appels d'offres publics trop niche, décalé vs POC PouetPouet (workflow achat interne). À reprendre uniquement sur décision explicite du mainteneur. | E25 | ✅ Résolu — en idéation |
+| D2 | **Chevauchement E28/E29** — frontières entre adaptateurs OSS (E28) et moteur de workflow natif (E29) non tracées dans les deux sens | E28, E29 | Clarifier avant implémentation |
+| D3 | **E29 vs moteur Parcours** — E29 ne référence pas le moteur Parcours livré dans le POC (étapes typées, classification C0–C3, GCS) | E29 | Aligner ou créer l'EPIC manquant |
+| D4 | **Chevauchement E48/E29** — assistant IA transverse (E48) vs chatbots connectés (E29 US29.9.4) partiellement clarifié côté E48 uniquement | E48, E29 | Compléter côté E29 |
 
 ---
 
@@ -199,3 +220,7 @@ Module Session vérifiés contre le même benchmark sans écart supplémentaire 
 déjà complète pour leur périmètre). Voir `EPIC-collaboration/README.md` §Origine pour le détail.*
 
 *Raffinage benchmark 2026-07-08 : relecture croisée des 6 cahiers de spécifications individuels du benchmark workflows (`pivot-benchmarks/workflows/`), au-delà du dossier de synthèse déjà entièrement répercuté dans E29 (84 items `WF-###`). Deux écarts mineurs corrigés par extension d'AC existantes (`US29.7.1` credentials-centralisés : détection de credentials expirés/révoqués + reconnexion guidée, cahier IFTTT ENF-04 ; `US29.7.6` inventaire-propriétaires : transfert explicite de propriété, cahier Zapier §2.2). Un écart réel identifié hors CSV initial : `US29.1.8` édition collaborative temps réel de l'éditeur de workflows (cahier Power Automate EF-RPA-04, mentionné uniquement pour le RPA mais généralisable — absent du dossier de synthèse car ne portant que sur un seul outil). E29 : 78 → 79 US (compte mis à jour ci-dessus). Aucune décision d'architecture prise unilatéralement : la note d'implémentation de `US29.1.8` marque explicitement le choix du modèle de synchronisation temps réel (OT centralisée vs CRDT) comme « à valider par le mainteneur ».*
+
+*Nettoyage backlog 2026-07-09 : E18, E32–E37, E39, E40 déplacés dans `BACKLOG-IDEATION/` (dossiers hors backlog opérationnel) — Gate 1 non atteignable en l'état (section Périmètre manquante, ACs insuffisantes). E18 est un conteneur documentaire sans US propres ; E32–E40 sont des EPICs générés depuis un CSV benchmark PPM sans raffinement suffisant. 4 décisions ouvertes tracées dans §Décisions ouvertes (E25 périmètre, E28/E29 chevauchement, E29/Parcours, E48/E29). Liens relatifs mis à jour dans EPIC-pilotage/README.md, EPIC-roadmap/README.md, EPIC-portefeuille/README.md, EPIC-budget/README.md, sprints/zones-ombre.md.*
+
+*Nettoyage backlog 2026-07-09 (2e passe) : E25 déplacé en BACKLOG-IDEATION. F28.6/28.9/28.10/28.11 (E28), F29.10/29.14 (E29), F38.14/US38.13.2/US38.13.4/US38.7.1/EN38.2 (E38), US23.2.9/23.2.10 (E23), US26.2.2/26.2.4/26.2.5/26.2.6 (E26), US30.14.3/30.14.5 (E30), US41.5.14 (E41) déplacés en BACKLOG-IDEATION — doublons, hors domaine, niche secteur public, ou trop spéculatif.*

@@ -90,7 +90,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 | [US41.5.11 — Onboarding Roadmap & Planification (E22)](FEATURES/onboarding-modules/us-onboarding-roadmap.md) | ⬜ |
 | [US41.5.12 — Onboarding Portefeuille projets (E23)](FEATURES/onboarding-modules/us-onboarding-portefeuille.md) | ⬜ |
 | [US41.5.13 — Onboarding ADR projet (E24)](FEATURES/onboarding-modules/us-onboarding-adr-projet.md) | ⬜ |
-| [US41.5.14 — Onboarding Commande publique (E25)](FEATURES/onboarding-modules/us-onboarding-commande-publique.md) | ⬜ |
+| *(US41.5.14 — Onboarding Commande publique (E25) → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-formation-onboarding/FEATURES/onboarding-modules/us-onboarding-commande-publique.md) — E25 en idéation)* | — |
 | [US41.5.15 — Onboarding Budget & suivi financier (E26)](FEATURES/onboarding-modules/us-onboarding-budget.md) | ⬜ |
 | [US41.5.16 — Onboarding OKR (E27)](FEATURES/onboarding-modules/us-onboarding-okr.md) | ⬜ |
 | [US41.5.17 — Onboarding Intégration open source (E28)](FEATURES/onboarding-modules/us-onboarding-integration-open-source.md) | ⬜ |

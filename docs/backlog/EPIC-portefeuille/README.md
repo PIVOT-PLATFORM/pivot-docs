@@ -24,7 +24,7 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 - **F23.1 — Portefeuille projets**
   - US23.1.1 : Tableau de bord portefeuille projets
   - US23.1.2 : Générer un rapport d'avancement du portefeuille
-- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark, rationalisé dans le README d'[E18 — Domaine Pilotage](../EPIC-pilotage/README.md) (le document source `BENCHMARK.md` n'a jamais été mergé sur `main`, ex-PR #38)
+- **F23.2 — Portefeuille & comités (benchmark PPM)** — issu du CSV benchmark, rationalisé dans le README d'[E18 — Domaine Pilotage](../BACKLOG-IDEATION/EPIC-pilotage/README.md) (le document source `BENCHMARK.md` n'a jamais été mergé sur `main`, ex-PR #38)
   - US23.2.1 : Vue portefeuille consolidée
   - US23.2.2 : Tableaux de bord personnalisables
   - US23.2.3 : Revues et comités outillés
@@ -33,6 +33,8 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
   - US23.2.6 : Pilotage des plans stratégiques
   - US23.2.7 : Scénarios what-if *(déplacé depuis E31 en v2)*
   - US23.2.8 : Business cases dynamiques *(déplacé depuis E31 en v2)*
+  - *(US23.2.9 Livrables d'instance générés → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/) 2026-07-09 — secteur public uniquement)*
+  - *(US23.2.10 Indicateurs de valeur publique → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/) 2026-07-09 — secteur public uniquement)*
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
@@ -71,5 +73,5 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 | [US23.2.6 — Pilotage des plans stratégiques](FEATURES/portefeuille-comites/us-plans-strategiques.md) | ⬜ |
 | [US23.2.7 — Scénarios what-if](FEATURES/portefeuille-comites/us-scenarios-what-if.md) | ⬜ |
 | [US23.2.8 — Business cases dynamiques](FEATURES/portefeuille-comites/us-business-cases-dynamiques.md) | ⬜ |
-| [US23.2.9 — Livrables d'instance générés](FEATURES/portefeuille-comites/us-livrables-instance-generes.md) *(ex-E38)* | ⬜ |
-| [US23.2.10 — Indicateurs de valeur publique](FEATURES/portefeuille-comites/us-indicateurs-valeur-publique.md) *(ex-E38)* | ⬜ |
+| *(US23.2.9 — Livrables d'instance générés → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/us-livrables-instance-generes.md))* | — |
+| *(US23.2.10 — Indicateurs de valeur publique → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/us-indicateurs-valeur-publique.md))* | — |
