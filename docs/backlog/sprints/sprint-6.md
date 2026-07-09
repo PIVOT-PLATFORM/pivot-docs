@@ -76,7 +76,9 @@ que les scans DAST tournent réellement.
 aucun critère écrit. Checklist proposée, en 4 axes — à valider/amender par le mainteneur avant
 de servir de base à la déclaration « Socle terminé ».*
 
-Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 100% :
+Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 100% — **Axe 2 écarté de
+cette condition le 2026-07-09** (décision mainteneur, voir note dans cet axe), donc en pratique
+Axes 1/3/4 :
 
 ### Axe 1 — Features (code)
 
@@ -91,7 +93,7 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
       la recette E30 (un utilisateur ne peut pas utiliser le tableau blanc sans, cf. détail
       de l'Enabler), dépend de l'acceptation formelle d'`ADR-022`
 
-### Axe 2 — Prod
+### Axe 2 — Prod — **écarté de la déclaration (décision mainteneur, 2026-07-09)**
 
 - [ ] Déploiement stable sur l'environnement cible (GCP Cloud Run ou équivalent — cf. E07)
 - [ ] Healthchecks verts, aucun incident P0/P1 ouvert
@@ -99,6 +101,13 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 
 > Axe non vérifiable depuis `pivot-docs` (repo sans code applicatif) — à confirmer par les
 > experts infra `pivot-core`/`pivot-ui` avant la déclaration.
+>
+> **Incident réel constaté (2026-07-09)** : `deploy.yml` échoue sur `pivot-core` (SSH timeout vers
+> la VM GCP du repo `pivot-infra`, port 22 injoignable) — vérifié, pas un faux positif CI. Pas
+> d'accès infra/SSH/GCP disponible pour investiguer plus loin depuis cette session. **Le
+> mainteneur a explicitement choisi d'écarter cet axe de la condition de déclaration
+> « Socle terminé »** plutôt que d'attendre sa résolution — décision de scope, pas un axe
+> resté injustement non vérifié.
 
 ### Axe 3 — Recette PO (mainteneur)
 
