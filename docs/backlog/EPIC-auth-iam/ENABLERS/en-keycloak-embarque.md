@@ -24,4 +24,4 @@ direct via EN01.14, sans composant Keycloak.
 
 ---
 Item Type: Enabler · Parent: E01 · Type: infrastructure · Module: oidc · Phase: v1-enterprise · Size: M
-Stage: Backlog · Priority: Medium
+Stage: ⬜ · Priority: Medium

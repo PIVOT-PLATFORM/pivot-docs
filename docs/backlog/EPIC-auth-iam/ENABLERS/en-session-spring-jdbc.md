@@ -36,4 +36,4 @@ migration d'infrastructure sur du code déjà livré.
 
 ---
 Item Type: Enabler · Parent: E01 · Type: architecture · Module: auth · Phase: v1-enterprise · Size: XL
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

@@ -28,4 +28,4 @@ clarification de doc.
 
 ---
 Item Type: Enabler · Parent: E01 · Type: architecture · Module: oidc · Phase: v1-enterprise · Size: S
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

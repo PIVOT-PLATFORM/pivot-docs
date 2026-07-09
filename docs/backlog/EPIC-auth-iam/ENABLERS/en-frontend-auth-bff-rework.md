@@ -29,4 +29,4 @@ briques existantes.
 
 ---
 Item Type: Enabler · Parent: E01 · Type: architecture · Module: auth · Phase: v1-enterprise · Size: M
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

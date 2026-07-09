@@ -30,4 +30,4 @@ Multi-tenant), bloque EN01.17 (rework auth frontend), EN01.18 (retrait PKCE Angu
 
 ---
 Item Type: Enabler · Parent: E01 · Type: architecture · Module: oidc · Phase: v1-enterprise · Size: L
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High
