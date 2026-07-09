@@ -29,5 +29,5 @@ Plan de repli prêt à déclencher pour les risques tolérés.
 
 ---
 Item Type: US · Parent: F21.3 · Module: risk · Phase: phase-3 · Size: S · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.3.2

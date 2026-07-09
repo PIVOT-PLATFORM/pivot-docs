@@ -87,4 +87,4 @@ backlog, un point de suivi :
 
 ---
 Item Type: Epic · Clé: E45 · Phase: phase-3 · Module: pdf
-Stage: Backlog · Priority: Medium
+Stage: ⬜ · Priority: Medium

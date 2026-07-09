@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: WF-007 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 6/6
 Justification: Dossier §4 ; renforcé en WF-036 (I4) ; AC détection/reconnexion ajoutée lors du raffinage benchmark 2026-07-08 (cahier IFTTT ENF-04 : « détection des services cassés et reconnexion guidée », absente des 6 autres cahiers mais généralisable — un identifiant expiré est le premier facteur d'échec silencieux documenté §8-I7)
 Dépendances: —

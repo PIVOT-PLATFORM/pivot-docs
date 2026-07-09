@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F36.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: PP-044 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant MS
 Profils: TPE, PME, Grand groupe
 Justification: Dossier §6.3 : capillarité terrain

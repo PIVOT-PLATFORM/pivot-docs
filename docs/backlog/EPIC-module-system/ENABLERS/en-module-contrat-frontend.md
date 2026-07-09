@@ -24,7 +24,7 @@ du code, décision documentée dans `docs/backlog/sprints/sprint-2.md`.
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: Socle
-Stage: Done · Priority: Critical
+Stage: ✅ · Priority: Critical
 Gate 5 : `pivot-ui` PR [#45](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/45) (Gate 3 = 88/100)
 et [#62](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/62) (Gate 4 = 100/100), `pivot-core`
 PR [#111](https://github.com/PIVOT-PLATFORM/pivot-core/pull/111) (Gate 4 = 93/100) et

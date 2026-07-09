@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-066 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I6 + I8
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §8-I6/I8 : l'alimentation terrain décide du succès

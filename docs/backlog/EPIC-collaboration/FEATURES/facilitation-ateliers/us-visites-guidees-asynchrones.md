@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.3 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: BL-064 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Miro
 Justification: Dossier §6.1 : l'asynchrone le plus abouti
 Dépendances: —

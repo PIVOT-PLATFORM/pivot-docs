@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-078 · MoSCoW: Should · Lot: Lot 2 · Origine: Insight I5 + PA CoE
 Justification: Dossier §8-I5 : contre le nouveau shadow IT
 Dépendances: —

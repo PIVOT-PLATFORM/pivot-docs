@@ -19,5 +19,5 @@
 
 ---
 Item Type: US · Parent: F16.2 · Module: core · Phase: Socle · Size: S · Priority: High
-Stage: Done
+Stage: ✅
 Gate 5 : `pivot-ui` PR [#47](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/47) (Gate 4 = 98/100), spec figée `docs/specs/EPIC-shell-ux/us16-2-1-accueil-grille-modules.md` (rétroactif, 2026-07-08)

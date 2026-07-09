@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: WF-073 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B8 + contexte FR
 Justification: Dossier §7-B8 : différenciant immédiat sur le marché français
 Dépendances: —

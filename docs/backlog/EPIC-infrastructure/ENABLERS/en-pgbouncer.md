@@ -25,4 +25,4 @@ d'autres modules/replicas démarrent. Pré-requis du jalon « Socle terminé » 
 
 ---
 Item Type: Enabler · Parent: E07 · Type: performance · Module: core · Phase: Socle
-Stage: Done · Priority: High
+Stage: ✅ · Priority: High

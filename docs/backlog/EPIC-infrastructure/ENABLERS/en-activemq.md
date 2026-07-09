@@ -41,4 +41,4 @@ recette métier formelle différée
 
 ---
 Item Type: Enabler · Parent: E07 · Type: infrastructure · Module: core · Phase: Socle
-Stage: Done · Priority: High
+Stage: ✅ · Priority: High

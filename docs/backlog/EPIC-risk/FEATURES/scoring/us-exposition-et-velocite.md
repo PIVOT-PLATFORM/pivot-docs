@@ -29,5 +29,5 @@ Moduler la criticité par proximité d'échéance et vélocité du risque.
 
 ---
 Item Type: US · Parent: F21.2 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.2.1

@@ -16,4 +16,4 @@
 
 ---
 Item Type: Enabler · Parent: E01 · Type: sécurité · Module: auth · Phase: Socle
-Stage: Done
+Stage: ✅

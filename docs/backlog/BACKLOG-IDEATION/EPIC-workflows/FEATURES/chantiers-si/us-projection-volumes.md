@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-075 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I2
 Justification: Dossier §8-I2 : décision d'architecture
 Dépendances: —

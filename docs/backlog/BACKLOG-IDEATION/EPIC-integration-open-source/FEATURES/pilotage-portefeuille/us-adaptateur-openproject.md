@@ -17,5 +17,5 @@
 
 ---
 Item Type: US · Parent: F28.6 · Module: pilotage-portefeuille · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN28.3

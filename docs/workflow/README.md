@@ -39,13 +39,18 @@ Principes fondateurs :
 
 ## Cycle complet
 
+> Backlog/Ready/In progress/Review ci-dessous sont des **états de travail internes**, jamais
+> persistés dans le frontmatter US — le champ `Stage` n'y porte que 2 valeurs : `⬜` (pas encore
+> terminé, tout au long de ce cycle) et `✅` (Done, posé par le mainteneur). État réel entre
+> sessions = branche/PR GitHub, pas le fichier (`docs/backlog/README.md` §2/§5).
+
 ```text
 PO Agent (autonome)
-  └─ Lit docs/backlog/sprints/ (sprint courant) → US Stage: Backlog + Phase Socle
+  └─ Lit docs/backlog/sprints/ (sprint courant) → US Stage: ⬜ (état interne Backlog) + Phase Socle
        │
        ▼
   Gate 1 — READINESS (PO Agent self-challenge)
-  ├─ ≥ 70 → ACs validés → Stage: Ready → procéder
+  ├─ ≥ 70 → ACs validés → état interne Ready → procéder
   └─ < 70 → PO Agent réécrit ACs → recalculer
 
        │
@@ -55,7 +60,7 @@ PO Agent (autonome)
 
        │
        ▼
-  Dev Agent — branche feat/us-{id}-{slug} → Stage: In progress
+  Dev Agent — branche feat/us-{id}-{slug} → état interne In progress
   ├─ Code + tests (un commit = Gate 2)
   ├─ Gate 2 — COVERAGE (par commit)
   │    ├─ ≥ 85 → continuer
@@ -69,7 +74,7 @@ PO Agent (autonome)
   ├─ Gate 3 — QUALITY (CI verte, Gitleaks, Semgrep)
   │    └─ Hard blocks : secret, label security, breaking-change contrat module
   └─ Gate 4 — MERGE CONFIDENCE
-       ├─ = 100/100 → sortie du mode draft + Stage: Review + Gate 5 SPEC FREEZE + signal mainteneur
+       ├─ = 100/100 → sortie du mode draft + état interne Review + Gate 5 SPEC FREEZE + signal mainteneur
        ├─ 60–99 → merge documenté (commentaire breakdown)
        └─ < 60 → Breaking Point 2 (escalade mainteneur)
 
@@ -81,7 +86,7 @@ PO Agent (autonome)
 
        │ [merge mainteneur]
        ▼
-  Stage: Done (mainteneur uniquement — jamais Claude)
+  Stage: ✅ (mainteneur uniquement — jamais Claude)
 ```
 
 ---
@@ -122,7 +127,7 @@ pending_ac:
 PO Agent valide les ACs de l'US avant toute ligne de code :
 
 1. Vérifier DoR (story complète, ACs Given/When/Then, erreur + sécurité)
-2. Gate 1 ≥ 70 → `Stage: Ready` → procéder immédiatement
+2. Gate 1 ≥ 70 → état interne `Ready` → procéder immédiatement (`Stage` frontmatter reste `⬜`)
 3. Gate 1 < 70 → PO Agent réécrit/complète ACs → recalculer → procéder dès ≥ 70
 
 Pas de blocage humain — Claude est autonome de A à Z sur la validation des ACs.
@@ -149,15 +154,16 @@ AC sans test = non implémenté, peu importe le code présent.
 
 ## Gate 5 — SPEC fonctionnelle et technique figée
 
-**Problème résolu :** une fois `Stage: Done`, le fichier US backlog continue de vivre (relecture,
+**Problème résolu :** une fois `Stage: ✅`, le fichier US backlog continue de vivre (relecture,
 reformulation, découpage en US enfants) et perd sa valeur de référence technique. Sans figeage,
 aucune source de vérité stable ne décrit le contrat « tel que livré » — ce qui pénalise les US
 futures qui en dépendent (ex. un contrat WebSocket de session dont dépend le canvas whiteboard).
 
 **Déclencheur :** dans l'Autoloop du repo qui implémente l'US (`pivot-core`/`pivot-ui`), dès que
 Gate 4 atteint 100/100 — **avant merge**, au même moment que la sortie du mode draft et le passage
-`Stage: Review`. Ne dépend pas de la recette humaine du mainteneur (`Stage: Done`) : la PR peut
-encore être en attente de review humaine (ex. Breaking Point 2) alors que la spec est déjà figée.
+à l'état interne Review (`Stage` frontmatter reste `⬜`). Ne dépend pas de la recette humaine du
+mainteneur (`Stage: ✅`) : la PR peut encore être en attente de review humaine (ex. Breaking Point 2)
+alors que la spec est déjà figée.
 
 **Agent :** Doc Agent — lit la PR à Gate 4 = 100/100 (ACs cochés, diff de la PR), puis génère un
 document figé **dans une branche/PR dédiée sur `pivot-docs`** (jamais de commit cross-repo) :

@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.10 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: BL-017 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4
 Justification: Dossier §4
 Dépendances: —

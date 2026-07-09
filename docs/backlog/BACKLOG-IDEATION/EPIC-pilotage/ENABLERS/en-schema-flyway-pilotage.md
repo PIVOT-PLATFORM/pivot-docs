@@ -27,5 +27,5 @@ Application/Projet de façon incohérente.
 
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN17.4 (convention BDD multi-schéma) · EN18.9 (modèle Application → Projet)

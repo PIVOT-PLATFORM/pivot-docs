@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.14 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: BL-090 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B8
 Justification: Dossier §7-B8 : au-delà du WCAG d'interface
 Dépendances: —

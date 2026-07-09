@@ -22,7 +22,7 @@
 
 ---
 Item Type: US · Parent: F01.1 · Module: auth · Phase: Socle · Size: S · Priority: High
-Stage: Done
+Stage: ✅
 Gate 5 : `pivot-ui` PR [#64](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/64) (Gate 4 =
 100/100), spec figée `docs/specs/EPIC-auth-iam/us01-1-4-redirection-post-login.md` (rétroactif,
 2026-07-08)

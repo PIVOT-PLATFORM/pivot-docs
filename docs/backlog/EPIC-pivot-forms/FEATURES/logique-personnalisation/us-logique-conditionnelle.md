@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F42.2 · Module: forms · Phase: phase-3 · Size: L · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: FRM-101 · MoSCoW: Must · Origine: 5/6 (sauf Google avancé)
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

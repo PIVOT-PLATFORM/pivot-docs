@@ -74,4 +74,4 @@ résolution autonome en conditions réelles documentées.
 
 ---
 Item Type: Epic · Clé: E48 · Phase: phase-3 · Module: core
-Stage: Backlog · Priority: Medium
+Stage: ⬜ · Priority: Medium

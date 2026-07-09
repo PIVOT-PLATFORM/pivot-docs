@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-030 · MoSCoW: Must · Lot: Lot 3 · Origine: Gumloop (Gumstack) généralisé + I6/I9
 Justification: Dossier §6.6 + §8 : exigible partout
 Dépendances: —

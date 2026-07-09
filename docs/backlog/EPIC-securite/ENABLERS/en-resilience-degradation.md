@@ -19,4 +19,4 @@
 
 ---
 Item Type: Enabler · Parent: E43 · Type: architecture · Module: securite · Phase: phase-3 · Size: L
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

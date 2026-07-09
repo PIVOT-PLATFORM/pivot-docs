@@ -33,5 +33,5 @@
 
 ---
 Item Type: US · Parent: F02.1 · Module: auth · Phase: Socle · Size: XS · Priority: Low
-Stage: Done
+Stage: ✅
 Gate 5 : `pivot-core` PR [#130](https://github.com/PIVOT-PLATFORM/pivot-core/pull/130) (Gate 4 = 100/100) · `pivot-ui` PR [#72](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/72) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-espace-compte/us02-1-2-preference-langue.md` (rétroactif, 2026-07-08)

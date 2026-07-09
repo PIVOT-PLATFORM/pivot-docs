@@ -72,4 +72,4 @@ mainteneur avant toute création de Feature** :
 
 ---
 Item Type: Epic · Clé: E47 · Phase: phase-3 · Module: collaboratif
-Stage: Backlog · Priority: Low
+Stage: ⬜ · Priority: Low

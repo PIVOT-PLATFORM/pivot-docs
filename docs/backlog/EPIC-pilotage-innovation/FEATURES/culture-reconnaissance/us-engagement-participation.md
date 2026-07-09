@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F38.10 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: SMI — Système de Management de l'Innovation (état de l'art, ISO 56002/56000)
 Dépendances: EN38.1 (modèle SMI & moteur)

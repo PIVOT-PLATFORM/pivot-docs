@@ -28,5 +28,5 @@
 
 ---
 Item Type: US · Parent: F28.11 · Module: plateforme-developpeur · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN28.3, F28.10

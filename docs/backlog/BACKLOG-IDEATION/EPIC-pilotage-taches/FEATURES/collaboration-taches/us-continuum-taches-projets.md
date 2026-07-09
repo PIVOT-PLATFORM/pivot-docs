@@ -25,7 +25,7 @@
 
 ---
 Item Type: US · Parent: F33.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-025 · MoSCoW: Should · Lot: Lot 2 · Origine: MS généralisé + Insight I6
 Profils: Tous
 Justification: Dossier §8-I6 : l'alimentation terrain décide du succès

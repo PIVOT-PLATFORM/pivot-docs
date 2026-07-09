@@ -28,5 +28,5 @@
 
 ---
 Item Type: US · Parent: F23.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: US22.1.1

@@ -23,4 +23,4 @@ Cette question conditionne F28.11 (scorecards, scaffolding, TechDocs), qui a bes
 
 ---
 Item Type: Enabler · Parent: E28 · Type: gouvernance · Module: gouvernance · Phase: phase-3
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

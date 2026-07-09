@@ -14,5 +14,5 @@
 
 ---
 Item Type: US · Parent: F28.1 · Module: delivery-agile · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: US28.1.1

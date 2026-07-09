@@ -9,6 +9,6 @@
 
 ---
 Item Type: Enabler · Parent: E29 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-065 · MoSCoW: Should · Lot: Lot 3 · Origine: NFR des 6 cahiers
 Justification: Cahier Gumloop ; prépare B1

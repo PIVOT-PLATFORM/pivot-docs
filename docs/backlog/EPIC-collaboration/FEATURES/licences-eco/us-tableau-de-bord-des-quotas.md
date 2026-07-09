@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.13 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-051 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I3 + limites Klaxoon/FigJam
 Justification: Dossier §8-I3 : quota = risque opérationnel (blocage en réunion)
 Dépendances: —

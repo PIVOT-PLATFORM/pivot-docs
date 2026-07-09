@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.9 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-051 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Zapier (+AP embed)
 Justification: Dossier §6.4
 Dépendances: —

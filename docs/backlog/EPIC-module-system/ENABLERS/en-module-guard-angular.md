@@ -33,7 +33,7 @@ couvert conjointement avec US03.2.2 (même guard, mêmes tests).
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: Socle
-Stage: Done · Priority: Critical
+Stage: ✅ · Priority: Critical
 Gate 5 : `pivot-core` PR [#123](https://github.com/PIVOT-PLATFORM/pivot-core/pull/123) (Gate 4 = 100/100) +
 `pivot-ui` PR [#67](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/67) (Gate 4 = 100/100), spec figée
 `docs/specs/EPIC-module-system/en03-2-guard-angular-status-api.md` (rétroactif, 2026-07-08)

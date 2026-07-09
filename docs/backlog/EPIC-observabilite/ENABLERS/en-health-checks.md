@@ -70,4 +70,4 @@ Dépendances ci-dessus) + `pivot-ui`
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
-Stage: Done · Priority: Critical
+Stage: ✅ · Priority: Critical

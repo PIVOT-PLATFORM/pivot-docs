@@ -16,4 +16,4 @@
 
 ---
 Item Type: Enabler · Parent: E28 · Type: gouvernance · Module: gouvernance · Phase: phase-3
-Stage: Backlog · Priority: High
+Stage: ⬜ · Priority: High

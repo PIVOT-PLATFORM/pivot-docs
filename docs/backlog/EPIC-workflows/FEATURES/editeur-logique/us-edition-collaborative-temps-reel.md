@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.1 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: — (hors CSV WF-### initial) · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Power Automate (RPA, 2026) généralisé
 Justification: Ajouté lors du raffinage benchmark 2026-07-08 — cahier Power Automate EF-RPA-04 (« collaboration temps réel des créateurs ») mentionne la co-édition uniquement pour les flux RPA, mais aucun des 6 outils ne l'offre sur l'éditeur de workflow général ; recoupé avec l'ADN collaboratif de PIVOT (whiteboard temps réel — voir EPIC-collaboration). Absent du dossier de synthèse (non repris en §5) faute de porter sur plus d'un outil — écart identifié par lecture croisée des cahiers individuels
 Dépendances: —

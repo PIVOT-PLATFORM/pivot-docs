@@ -35,13 +35,15 @@ session_start_protocol:
   step_3_read_us:
     description: "Lire les fichiers US éligibles"
     criteria:
-      - "Stage: Ready OU Stage: In progress (priorité)"
-      - "Stage: Backlog + Phase: Socle → PO Agent vérifie DoR + Gate 1 avant de passer Ready"
+      - "Stage: ⬜ (pas encore Done) + Phase: Socle"
+      - "État interne réel (Backlog/Ready/In progress/Review, non persisté) déterminé en vérifiant la branche/PR GitHub — pas le fichier"
     path_pattern: "pivot-docs/docs/backlog/**/{us-id}-{slug}.md"
     action: >
-      Pour chaque US éligible, lire son fichier markdown complet.
+      Pour chaque US éligible (Stage: ⬜), lire son fichier markdown complet.
       Vérifier les ACs, la taille (Size), les dépendances (Notes).
-      Si Stage Backlog : calculer Gate 1 — si = 100 passer Ready et procéder.
+      Vérifier l'état réel côté GitHub (branche/PR) pour situer l'état interne :
+      rien → calculer Gate 1, si = 100 procéder (état interne Ready) ; branche/PR déjà ouverte →
+      reprendre là où elle en est.
 
   step_4_parallel_launch:
     description: "Lancer les agents en parallèle — un par US éligible"
@@ -67,13 +69,17 @@ us_file_format:
     Phase: "Socle | v1-enterprise | phase-3"
     Size: "XS | S | M | L | XL"
     Priority: "Critical | High | Medium | Low"
-    Stage: "Backlog | Ready | In progress | Review | Done"
+    Stage: "⬜ (pas encore Done) | ✅ (Done — recette mainteneur)"
 
   stage_transitions:
-    backlog_to_ready: "PO Agent vérifie DoR + Gate 1 = 100 → Stage: Ready (autonome)"
-    ready_to_in_progress: "Dev Agent démarre immédiatement → Stage: In progress"
-    in_progress_to_review: "Après Gate 4 = 100/100 → Stage: Review + signal mainteneur + Gate 5 SPEC FREEZE (Doc Agent, dans l'Autoloop, avant merge) → docs/specs/{EPIC}/{us-id}-{slug}.md figé"
-    review_to_done: "Mainteneur merge la PR"
+    note: >
+      Backlog/Ready/In progress/Review sont des états de travail internes, jamais persistés
+      dans le frontmatter — seul le passage final vers Done modifie Stage. Entre deux sessions,
+      l'état réel se lit sur la branche/PR GitHub, pas sur ce champ.
+    backlog_to_ready: "PO Agent vérifie DoR + Gate 1 = 100 → état interne Ready (autonome), Stage reste ⬜"
+    ready_to_in_progress: "Dev Agent démarre immédiatement → état interne In progress, Stage reste ⬜"
+    in_progress_to_review: "Après Gate 4 = 100/100 → état interne Review + signal mainteneur + Gate 5 SPEC FREEZE (Doc Agent, dans l'Autoloop, avant merge) → docs/specs/{EPIC}/{us-id}-{slug}.md figé ; Stage reste ⬜"
+    review_to_done: "Mainteneur merge la PR + recette → Stage: ⬜ → ✅"
 
 ---
 
@@ -85,7 +91,7 @@ update_protocol:
     - "sprints/sprint-{N}.md (sprint courant de l'US) mis à jour en même temps que le fichier US"
 
   how_to_update:
-    - "Modifier le frontmatter (dernière ligne du fichier) : Stage: X → Stage: Y"
+    - "Frontmatter (dernière ligne) : Stage: ⬜ à la création, Stage: ✅ au Done uniquement (mainteneur)"
     - "Modifier la colonne 🤖 Dev dans sprints/sprint-{N}.md"
     - "Commit atomique : doc(backlog): US{id} Stage {old} → {new}"
 
@@ -100,7 +106,7 @@ gate_1_readiness:
     size_estimated_20pts: "Size renseignée et cohérente avec les ACs"
     no_conflict_10pts: "Pas de conflit avec US en cours sur les mêmes fichiers"
   thresholds:
-    proceed: "= 100 → Stage: Ready → implémentation immédiate"
+    proceed: "= 100 → état interne Ready → implémentation immédiate (Stage frontmatter reste ⬜)"
     rewrite: "< 100 → PO Agent réécrit/complète les ACs → recalculer → procéder dès = 100"
 
 ---
@@ -109,10 +115,10 @@ gate_5_spec_freeze:
 
   trigger: >
     Dans l'Autoloop du repo qui implémente l'US (pivot-core/pivot-ui), dès que Gate 4 atteint
-    100/100 — avant merge, au même moment que la sortie du mode draft et le passage
-    Stage: Review. Le Doc Agent agit de façon autonome, indépendamment de la recette humaine
-    du mainteneur (Stage: Done) : la PR peut encore attendre une review humaine (ex. Breaking
-    Point 2) alors que la spec est déjà figée.
+    100/100 — avant merge, au même moment que la sortie du mode draft et le passage à l'état
+    interne Review (Stage frontmatter reste ⬜). Le Doc Agent agit de façon autonome,
+    indépendamment de la recette humaine du mainteneur (Stage: ✅) : la PR peut encore attendre
+    une review humaine (ex. Breaking Point 2) alors que la spec est déjà figée.
   non_blocking: >
     Un échec du Doc Agent n'affecte jamais la sortie du mode draft ni le Gate 4 déjà validé —
     reproductible à la prochaine itération de l'Autoloop si manqué.

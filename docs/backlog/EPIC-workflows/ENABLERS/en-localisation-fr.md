@@ -9,6 +9,6 @@
 
 ---
 Item Type: Enabler · Parent: E29 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-038 · MoSCoW: Should · Lot: Lot 2 · Origine: NFR des 6 cahiers
 Justification: Cahiers ENF ; produits majoritairement anglophones

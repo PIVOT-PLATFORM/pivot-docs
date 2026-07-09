@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.9 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-039 · MoSCoW: Should · Lot: Lot 3 · Origine: 3/6 (PA, IFTTT, Zapier)
 Justification: Cahiers FLX/MOB
 Dépendances: —

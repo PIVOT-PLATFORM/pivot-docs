@@ -28,5 +28,5 @@ Somme des EMV → réserve de contingence recommandée (logique AP/CP dans le pu
 
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.6.1

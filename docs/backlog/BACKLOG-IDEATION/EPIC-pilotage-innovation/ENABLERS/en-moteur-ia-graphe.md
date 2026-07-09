@@ -19,7 +19,7 @@
 
 ---
 Item Type: Enabler · Parent: E38 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Profils: Grand groupe, Publique, État
 Justification: Socle IA & graphe gouverné pour les fonctionnalités innovantes du SMI
 Dépendances: EN38.1 (modèle SMI) · gouvernance IA suite (cf. BL-028 / WF-020 / PP-031)

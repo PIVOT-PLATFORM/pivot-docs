@@ -16,4 +16,4 @@
 
 ---
 Item Type: Enabler · Parent: E01 · Type: infrastructure · Module: core · Phase: Socle
-Stage: Done
+Stage: ✅

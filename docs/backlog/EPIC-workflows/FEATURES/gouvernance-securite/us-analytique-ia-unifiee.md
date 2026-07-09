@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-064 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Gumloop
 Justification: Dossier §6.6 ; prolonge WF-030
 Dépendances: —

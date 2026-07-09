@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.6 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-028 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I6
 Justification: Dossier §8-I6 : l'IA gouvernée dès le premier jour
 Dépendances: —

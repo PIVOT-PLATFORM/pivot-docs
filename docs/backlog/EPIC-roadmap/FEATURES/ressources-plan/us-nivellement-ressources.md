@@ -28,7 +28,7 @@
 
 ---
 Item Type: US · Parent: F22.5 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Profils: Grand groupe, Publique, État
 Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)
 Dépendances: EN22.1 (modèle temporel unique)

@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.11 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: WF-060 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant IFTTT (+Gumloop, n8n templates)
 Justification: Dossier §6.5
 Dépendances: —

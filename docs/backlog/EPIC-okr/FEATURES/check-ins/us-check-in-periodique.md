@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F27.4 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Profils: Tous
 Justification: Raffinage OKR état de l'art (Doerr/Google ; Quantive/Workboard/Viva Goals/Perdoo)
 Dépendances: EN27.1 (modèle OKR & moteur)

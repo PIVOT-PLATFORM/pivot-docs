@@ -18,5 +18,5 @@
 
 ---
 Item Type: US · Parent: F45.1 · Module: pdf · Repo: pivot-pdf-core/ui · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN45.1 (stockage objet)

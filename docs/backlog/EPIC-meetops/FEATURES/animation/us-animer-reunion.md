@@ -19,5 +19,5 @@
 
 ---
 Item Type: US · Parent: F12.2 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US12.1.1

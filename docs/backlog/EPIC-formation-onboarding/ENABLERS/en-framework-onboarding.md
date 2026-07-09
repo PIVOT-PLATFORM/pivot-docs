@@ -20,7 +20,7 @@
 
 ---
 Item Type: Enabler · Parent: E41 · Module: core · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Profils: Tous
 Justification: Socle commun d'onboarding in-app pour tous les modules
 Dépendances: E16 Shell applicatif & UX · E19 Session (présentiel)

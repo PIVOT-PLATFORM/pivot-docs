@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: PP-048 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Virage (Strat Monitor, toutes les ARS)
 Profils: Grand groupe, Publique, État
 Justification: Dossier §6.1

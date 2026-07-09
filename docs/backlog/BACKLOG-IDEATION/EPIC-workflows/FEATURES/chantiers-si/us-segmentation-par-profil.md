@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: S · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-074 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I1
 Justification: Dossier §8-I1
 Dépendances: —

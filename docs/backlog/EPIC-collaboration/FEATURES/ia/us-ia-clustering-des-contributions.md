@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.6 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-025 · MoSCoW: Must · Lot: Lot 2 · Origine: Intersection 3/4 (Miro, Klaxoon, FigJam)
 Justification: Dossier §5.1 : attendu du marché ; absent MSW = son grand retard
 Dépendances: —

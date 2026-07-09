@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: WF-070 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B5 + AI Act
 Justification: Dossier §7-B5 : critique pour systèmes à risque
 Dépendances: —

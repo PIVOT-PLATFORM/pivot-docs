@@ -19,5 +19,5 @@
 
 ---
 Item Type: US · Parent: F14.2 · Module: agilite · Repo: pivot-agilite-core/ui · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: US14.1.1

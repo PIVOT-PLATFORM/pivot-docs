@@ -29,5 +29,5 @@ Vecteur de poids par typologie sur 6 dimensions (Délai, Coût, Qualité, Sécur
 
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.1.2

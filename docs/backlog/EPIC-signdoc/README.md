@@ -80,4 +80,4 @@ d'extension de périmètre) :
 
 ---
 Item Type: Epic · Clé: E44 · Phase: phase-3 · Module: signdoc
-Stage: Backlog · Priority: Medium
+Stage: ⬜ · Priority: Medium

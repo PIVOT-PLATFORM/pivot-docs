@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.13 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Low
-Stage: Backlog
+Stage: ⬜
 Source: WF-066 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B1
 Justification: Dossier §7-B1 : éviterait les 3 pathologies économiques documentées
 Dépendances: —

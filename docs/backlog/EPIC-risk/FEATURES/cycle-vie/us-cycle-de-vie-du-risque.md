@@ -30,5 +30,5 @@
 
 ---
 Item Type: US · Parent: F21.3 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.1.6

@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.1 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: BL-001 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4
 Justification: Dossier §4 : socle commoditisé, présent chez les 4
 Dépendances: —

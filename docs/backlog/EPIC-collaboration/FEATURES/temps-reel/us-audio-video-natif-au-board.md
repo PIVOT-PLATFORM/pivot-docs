@@ -15,7 +15,7 @@
 
 ---
 Item Type: US · Parent: F30.2 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-044 · MoSCoW: Could · Lot: Lot 3 · Origine: Intersection 2/4 (Miro vidéo, FigJam audio)
 Justification: Dossier §5.2
 Dépendances: —

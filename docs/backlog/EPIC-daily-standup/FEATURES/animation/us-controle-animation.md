@@ -19,5 +19,5 @@
 
 ---
 Item Type: US · Parent: F10.2 · Module: agilite · Phase: phase-3 · Size: S · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US10.1.2

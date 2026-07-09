@@ -20,5 +20,5 @@
 
 ---
 Item Type: US · Parent: F44.3 · Module: signdoc · Repo: pivot-signdoc-core/ui · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US44.2.1 (signature de tous les signataires) · Interface E45 PDF Manager (archivage)

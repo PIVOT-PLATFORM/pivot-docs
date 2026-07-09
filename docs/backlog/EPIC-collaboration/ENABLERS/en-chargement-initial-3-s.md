@@ -11,6 +11,6 @@
 
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: BL-056 · MoSCoW: Should · Lot: Lot 2 · Origine: NFR + lenteurs MSW documentées
 Justification: Cahiers ENF-PRF

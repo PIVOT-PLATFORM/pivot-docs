@@ -33,7 +33,7 @@ RGPD (données de participation agrégées).
 
 ---
 Item Type: Enabler · Parent: E38 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Fondation d'un SMI aligné ISO 56002 (modèle + moteur entonnoir/stage-gate/scoring)
 Dépendances: EN18.1 (schéma pilotage) · bus PIVOT (ADR-008) · E22 · E23

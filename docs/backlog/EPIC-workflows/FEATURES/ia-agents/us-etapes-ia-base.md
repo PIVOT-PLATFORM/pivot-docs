@@ -14,7 +14,7 @@
 
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: WF-009 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 6/6
 Justification: Dossier §4 : accès IA généralisé chez les 6
 Dépendances: —

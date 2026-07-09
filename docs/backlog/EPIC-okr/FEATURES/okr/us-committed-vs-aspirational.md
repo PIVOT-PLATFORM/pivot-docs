@@ -27,7 +27,7 @@
 
 ---
 Item Type: US · Parent: F27.1 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Profils: Tous
 Justification: Raffinage OKR état de l'art (Doerr/Google ; Quantive/Workboard/Viva Goals/Perdoo)
 Dépendances: US27.1.1

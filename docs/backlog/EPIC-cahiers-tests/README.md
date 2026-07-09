@@ -70,4 +70,4 @@ Gestion des tests manuels et de recette : création de cas de test, organisation
 ---
 
 Item Type: Epic · Clé: E13 · Phase: phase-3 · Module: pilotage
-Stage: Backlog · Priority: Medium
+Stage: ⬜ · Priority: Medium

@@ -53,4 +53,4 @@ Gestion des réunions : préparation d'agenda, animation en temps réel, compte-
 ---
 
 Item Type: Epic · Clé: E12 · Phase: phase-3 · Module: collaboratif
-Stage: Backlog · Priority: Medium
+Stage: ⬜ · Priority: Medium

@@ -107,7 +107,7 @@ l'architecture PIVOT, pas à reprendre telle quelle :
 
 ---
 Item Type: Enabler · Parent: E30 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: PouetPouet (implémentation de référence, `apps/web/src/lib/klx-import/`) · sans
 identifiant BL-###
 Dépendances: F08.1 (CRUD tableaux), US08.3.2a (canvas Angular — types de cartes natifs)

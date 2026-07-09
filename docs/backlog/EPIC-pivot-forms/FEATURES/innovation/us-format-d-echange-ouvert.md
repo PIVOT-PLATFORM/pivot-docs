@@ -23,7 +23,7 @@
 
 ---
 Item Type: US · Parent: F42.11 · Module: forms · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: FRM-B01 · MoSCoW: Could · Origine: Vide de marché
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

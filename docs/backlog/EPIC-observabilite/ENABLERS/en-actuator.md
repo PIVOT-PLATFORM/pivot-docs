@@ -38,4 +38,4 @@ PR#149 ; mise à jour du fichier compose laissée à EN07.1 lors du rebase.
 
 ---
 Item Type: Enabler · Parent: E04 · Type: observabilité · Module: core · Phase: Socle
-Stage: Done · Priority: High
+Stage: ✅ · Priority: High

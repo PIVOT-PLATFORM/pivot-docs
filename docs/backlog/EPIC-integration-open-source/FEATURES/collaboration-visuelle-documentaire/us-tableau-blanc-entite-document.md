@@ -17,5 +17,5 @@
 
 ---
 Item Type: US · Parent: F28.2 · Module: collaboration · Phase: phase-3 · Size: S · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN28.2

@@ -16,9 +16,9 @@ review_dimensions:
 
   backlog_consistency:
     rules:
-      - "Stage du frontmatter cohérent avec sprints/sprint-{N}.md"
-      - "Pas d'US en Stage: Done sans PR mergée"
-      - "Pas d'US en Stage: Review sans Gate 4 posté en commentaire PR"
+      - "Stage du frontmatter (⬜/✅) cohérent avec sprints/sprint-{N}.md"
+      - "Pas d'US en Stage: ✅ sans PR mergée"
+      - "Pas d'US en état interne Review (autoloop terminé, PR prête) sans Gate 4 posté en commentaire PR"
 
   ac_coverage:
     rules:

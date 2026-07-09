@@ -9,6 +9,6 @@
 
 ---
 Item Type: Enabler · Parent: E29 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: WF-036 · MoSCoW: Must · Lot: Lot 1 · Origine: NFR des 6 cahiers
 Justification: Dossier §6.5/cahier IFTTT ENF-01

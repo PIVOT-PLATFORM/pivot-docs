@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F22.7 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Profils: Grand groupe, Publique, État
 Justification: Interopérabilité / interfaces inter-modules & SI (ADR-010, bus PIVOT + deep-links ADR-006/008)
 Dépendances: EN22.1 (modèle temporel unique)

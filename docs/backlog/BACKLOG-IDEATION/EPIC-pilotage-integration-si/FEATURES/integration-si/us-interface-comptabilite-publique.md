@@ -26,7 +26,7 @@
 
 ---
 Item Type: US · Parent: F36.1 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: PP-017 · MoSCoW: Must (conditionnel) · Lot: Lot 2 · Origine: Différenciant PM élevé au rang d'exigence + Insight I2
 Profils: Privée sous droit public, Publique, État
 Justification: Dossier §8-I2 : critère discriminant n°1 ; cas Strasbourg, gain 1 j -> 1 h (Haute-Savoie)

@@ -15,5 +15,5 @@
 
 ---
 Item Type: US · Parent: F11.5 · Module: agilite · Phase: phase-3 · Size: L · Priority: High
-Stage: Backlog
+Stage: ⬜
 Dépendances: EN11.1

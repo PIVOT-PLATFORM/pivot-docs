@@ -18,4 +18,4 @@ autonome `--admin` déjà en place pour contourner la seule restriction d'auto-r
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: Socle · Size: S · Priority: High
-Stage: Done
+Stage: ✅

@@ -257,7 +257,7 @@ grilles_par_domaine:
   audit-backlog:
     grille: "Cohérence Stage/PR/issue, traçabilité AC→test, hygiène sprint"
     axes_specifiques:
-      - "Échantillonnage AC→test sur des US Stage: Done"
+      - "Échantillonnage AC→test sur des US Stage: ✅"
       - "Doublons/items fantômes entre backlog markdown et issues GitHub"
       - "Dépendances déclarées entre US/Enablers — cycles ou blocages silencieux"
 

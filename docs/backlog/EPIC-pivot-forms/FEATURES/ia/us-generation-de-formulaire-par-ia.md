@@ -24,7 +24,7 @@
 
 ---
 Item Type: US · Parent: F42.6 · Module: forms · Phase: phase-3 · Size: M · Priority: High
-Stage: Backlog
+Stage: ⬜
 Source: FRM-501 · MoSCoW: Should · Origine: Standard 2026 (Typeform, Jotform, Tally...)
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

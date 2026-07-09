@@ -22,4 +22,4 @@
 
 ---
 Item Type: US · Parent: F01.8 · Module: auth · Phase: Socle · Size: S · Priority: Critical
-Stage: Done
+Stage: ✅

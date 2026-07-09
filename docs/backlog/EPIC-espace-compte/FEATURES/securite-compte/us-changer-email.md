@@ -37,5 +37,5 @@
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
-Stage: Done
+Stage: ✅
 Gate 5 : `pivot-core` PR [#131](https://github.com/PIVOT-PLATFORM/pivot-core/pull/131) (Gate 4 = 97/100) + `pivot-ui` PR [#73](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/73) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-2-changer-email.md` (rétroactif, 2026-07-08)

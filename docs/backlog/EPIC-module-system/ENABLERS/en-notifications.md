@@ -34,4 +34,4 @@
 
 ---
 Item Type: Enabler · Parent: E03 (transversal) · Type: architecture · Module: core · Phase: Socle
-Stage: Done · Priority: Medium
+Stage: ✅ · Priority: Medium

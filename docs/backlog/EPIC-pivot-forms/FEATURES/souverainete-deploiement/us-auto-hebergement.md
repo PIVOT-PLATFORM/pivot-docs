@@ -24,7 +24,7 @@
 
 ---
 Item Type: US · Parent: F42.8 · Module: forms · Phase: phase-3 · Size: L · Priority: Critical
-Stage: Backlog
+Stage: ⬜
 Source: FRM-801 · MoSCoW: Must · Origine: Différenciant Formbricks (AGPLv3)
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

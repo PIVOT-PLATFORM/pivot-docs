@@ -67,4 +67,4 @@ procédure obligatoire) :
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
-Stage: Review · Priority: Critical · Sprint: 5 · Done: 2026-07-07 (pivot-ui #114 + pivot-core #170)
+Stage: ⬜ · Priority: Critical · Sprint: 5 · Done: 2026-07-07 (pivot-ui #114 + pivot-core #170)

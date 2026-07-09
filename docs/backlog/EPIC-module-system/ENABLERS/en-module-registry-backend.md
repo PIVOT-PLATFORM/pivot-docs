@@ -15,5 +15,5 @@
 
 ---
 Item Type: Enabler · Parent: E03 · Type: architecture · Module: core · Phase: Socle
-Stage: Done · Priority: Critical
+Stage: ✅ · Priority: Critical
 Gate 5 : `pivot-core` PR [#119](https://github.com/PIVOT-PLATFORM/pivot-core/pull/119) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-module-system/en03-1-module-registry-backend.md` (rétroactif, 2026-07-08)

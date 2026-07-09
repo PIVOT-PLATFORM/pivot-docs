@@ -27,7 +27,7 @@
 
 ---
 Item Type: US · Parent: F37.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Source: PP-050 · MoSCoW: Should · Lot: Lot 3 · Origine: Différenciant MS
 Profils: TPE, PME
 Justification: Dossier §6.3

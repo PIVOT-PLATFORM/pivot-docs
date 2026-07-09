@@ -29,5 +29,5 @@ Ajouter la détectabilité (P × G × D) pour les typologies où la détection t
 
 ---
 Item Type: US · Parent: F21.2 · Module: risk · Phase: phase-3 · Size: S · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.2.1

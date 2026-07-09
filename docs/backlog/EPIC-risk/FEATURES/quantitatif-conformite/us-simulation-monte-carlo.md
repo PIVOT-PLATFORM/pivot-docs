@@ -28,5 +28,5 @@ Distributions de dates de fin et de coûts pour les projets critiques.
 
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: L · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.6.1

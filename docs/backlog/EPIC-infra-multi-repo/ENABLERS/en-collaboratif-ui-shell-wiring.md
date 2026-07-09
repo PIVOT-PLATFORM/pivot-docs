@@ -94,4 +94,4 @@ Router du cas d'erreur).
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: collaboratif · Phase: Socle
-Stage: Review · Priority: High
+Stage: ⬜ · Priority: High

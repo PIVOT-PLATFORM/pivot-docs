@@ -29,5 +29,5 @@ Traçabilité des suggestions, localisation des traitements, validation humaine 
 
 ---
 Item Type: US · Parent: F21.7 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
-Stage: Backlog
+Stage: ⬜
 Dépendances: US21.7.1
