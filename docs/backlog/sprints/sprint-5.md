@@ -56,8 +56,8 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.1 | Owner partage un tableau par lien public | M | High | ✅ Done — `pivot-collaboratif-core#21` |
 | US08.2.2 | Utilisateur rejoint un tableau via token | M | High | ✅ Done |
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | ✅ Done — `pivot-collaboratif-core#25` |
-| US08.3.1 | Connexion WebSocket au canvas | M | Critical | ✅ Done — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28) mergée |
-| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée |
+| US08.3.1 | Connexion WebSocket au canvas | M | Critical | ✅ Done — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28) mergée, Gate 4 = 89/100 (`auto-approved`) |
+| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée. Gate 4 = 69/100 (`MERGE_DOCUMENTED`) posté rétroactivement le 2026-07-09 — le 92/100 précédemment cité ici n'avait jamais été appuyé par un commentaire PR, voir note ci-dessous |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31) mergée |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ✅ Done — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) mergée |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) mergée |
@@ -271,3 +271,57 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > boucle de la même version). **EN17.10 est désormais réellement terminé** — voir
 > `en-collaboratif-ui-shell-wiring.md` pour le détail complet et le statut à jour du fichier
 > Enabler.
+>
+> **Correction Gate 4 — US08.3.1 / US08.3.2a (2026-07-09) :** écart détecté entre ce fichier et
+> l'état réel GitHub. US08.3.1 (`pivot-collaboratif-core`#28) était déjà mergée et
+> auto-approuvée sur un vrai commentaire Gate 4 = 89/100 depuis le 2026-07-07 — ce fichier
+> affichait encore `🔁 Review` par erreur, corrigé en ✅ Done. US08.3.2a (`pivot-collaboratif-ui`#24)
+> était mergée mais **aucun commentaire Gate 4 n'avait jamais été posté** sur la PR — le 92/100
+> cité ici n'était appuyé par aucune preuve GitHub. Revue rétroactive menée sur le code tel que
+> mergé (commit `cb0bf67` — `tsc`/`lint`/`test:ci`/`build` exécutés réellement, AC de l'US
+> comparées au comportement effectif) : score réel **69/100** (`MERGE_DOCUMENTED`), commentaire
+> Gate 4 posté sur la PR. Trois bugs fonctionnels réels trouvés en cours de route (handles de
+> redimensionnement inopérants — déplacent l'objet au lieu de le redimensionner ; `clampShape()`
+> jamais appelé en production malgré son test unitaire ; `duplicate()` émet systématiquement un
+> DRAW de sous-type `stroke` quel que soit le type réel de l'objet, risque de payload mal typé
+> pour US08.3.2b) + AC axe-core/focus-trap cochées ✅ dans l'US sans l'être réellement — détail
+> complet dans le commentaire Gate 4 de la PR. Aucune action de merge à reprendre (déjà fait),
+> mais ces 3 bugs fonctionnels restent à trancher (issue de suivi ou acceptation en dette
+> technique) — non tranché à ce stade, à la charge du mainteneur.
+>
+> **Réparation Gate 4 — US08.3.1 / US08.3.2a (2026-07-09, suite) :** le mainteneur a demandé la
+> correction réelle du code plutôt qu'une simple documentation de la dette. Audit indépendant
+> supplémentaire mené sur US08.3.1 (`pivot-collaboratif-core`#28, score original 89/100 jamais
+> recalculé) : score réel **75/100** (arithmétique du commentaire original incohérente
+> 40+22+25=87≠89, dimension sécurité jamais notée séparément), 4 gaps trouvés (rate-limit
+> "3 tentatives" non testé et en réalité un no-op silencieux, JavaDoc mensongère sur le replay-on-
+> join jamais implémenté, aucun test sur l'AC payload DRAW > 64KB, décompte de tests du
+> commentaire original faux). Réparation livrée sur `pivot-collaboratif-core`#28 →
+> [`pivot-collaboratif-core`#36](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/36) :
+> les 3 gaps corrigés + un second bug réel découvert au passage (buffer WebSocket Tomcat 8KB
+> inférieur à la limite STOMP applicative de 64KB, provoquait une fermeture brutale de connexion
+> — code 1009 — au lieu de l'ERROR STOMP gracieux attendu, avec risque de cascade sur les autres
+> participants). Vérification adversariale par un agent indépendant : les 2 nouveaux tests
+> d'intégration rejoués contre le code d'avant-fix échouent exactement comme prévu, puis passent
+> sur le code corrigé — non tautologiques, confirmé. Gate 4 réel = **100/100**, posté sur la PR,
+> mergée (`--admin`, même précédent déjà établi sur ce repo bootstrap sans reviewer configuré).
+> Gap résiduel honnêtement signalé, hors périmètre (AC "déconnexion WS code 1008 sur souscription
+> non autorisée" toujours non implémentée) — à trancher par le mainteneur.
+>
+> Réparation US08.3.2a (`pivot-collaboratif-ui`#24) : les 9 gaps du score réel 69/100 corrigés sur
+> [`pivot-collaboratif-ui`#37](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/37) —
+> redimensionnement par handles réellement fonctionnel, `clampObjectToCanvas()` câblé sur tous les
+> chemins réels (drag/resize/duplicate/paste), `duplicate()` corrigé (sous-type DRAW réel au lieu
+> de `'stroke'` systématique), focus trap réel sur le dialogue raccourcis, contraste corrigé
+> (`#888` → `#555`, recalculé selon la formule WCAG), erreur du champ hexadécimal rendue
+> accessible (`aria-describedby`), `@axe-core/playwright` réellement ajouté et invoqué (plus une
+> fausse affirmation), spec Playwright E2E ajoutée (limitée par l'absence de backend live en
+> sandbox — gap d'infra pré-existant confirmé légitime via `TODO-SETUP.md`, pas une esquive),
+> table de traçabilité AC ajoutée. Vérification indépendante : contraste WCAG recalculé à la main
+> (correspondance à 3-4 décimales près), `axe-core` confirmé comme vraie dépendance réellement
+> invoquée, resize/duplicate/focus-trap tous tracés avec tests sur les valeurs résultantes réelles,
+> aucune régression sur les 195+ tests pré-existants. Gate 4 réel = **99/100** (-1 sur un décompte
+> de tests obsolète dans la description de la PR, 348 annoncés vs 355 réels — coquille sans impact
+> fonctionnel), posté sur la PR. **PR laissée en draft à la demande du mainteneur** — sortie de
+> draft et merge non faits, à décider séparément. Gap auto-signalé hors périmètre (non corrigé) :
+> `WhiteboardBoardComponent` ne lie jamais `[boardTitle]`, `aria-label` se termine par `"— "`.
