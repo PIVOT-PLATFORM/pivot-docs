@@ -1,7 +1,7 @@
 # ADR-012 — Plan de trafic : API Gateway + Service Mesh + Egress Gateway
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, RSSI
 **Contexte technique :** organisation `PIVOT-PLATFORM`
 

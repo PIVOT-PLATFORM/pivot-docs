@@ -1,7 +1,7 @@
 # ADR-014 — Secrets & credentials externes (OpenBao, rotation)
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, RSSI
 **Contexte technique :** organisation `PIVOT-PLATFORM`
 
