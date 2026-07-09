@@ -1,11 +1,30 @@
 # ADR-022 — Principal d'authentification minimal partagé (`pivot-core-starter`)
 
 **Date :** 2026-07-08
-**Statut :** Proposé
+**Statut :** Proposé — **intérimaire par construction** (voir §Portée temporelle)
 **Décideurs :** Architecte Java / Spring, Expert OIDC / IAM, Expert Red Team, Expert Blue Team, mainteneur
 **Contexte technique :** `pivot-core#171` (EN17.1, volet `fr.pivot.core.auth`)
 
 ---
+
+## Portée temporelle — décision intérimaire, pas définitive
+
+**Cette ADR ne fixe pas le mécanisme cible.** La cible actée est le **token exchange
+([RFC 8693](https://www.rfc-editor.org/rfc/rfc8693)) derrière un BFF** (§Paysage IAM,
+§Alternatives écartées) — c'est le pattern de référence pour cette architecture (portail +
+modules propriétaires de leurs données), pas une option parmi d'autres listée par souci
+d'exhaustivité. Il n'est pas choisi *maintenant* uniquement parce que PIVOT n'a pas encore de BFF
+dans le chemin de la requête (nginx route chaque module directement, aucun point d'échange
+géré par `pivot-core`) — poser un BFF est un changement d'architecture qui dépasse le périmètre
+« zero behavior change » de cette extraction.
+
+**La lecture directe du store partagé (§Décision) est donc un pont, pas une destination** : elle
+débloque EN17.1/EN08.3 aujourd'hui, avec un risque de couplage schéma explicitement assumé
+(§Conséquences) en échange de zéro nouvelle infrastructure. **Dès qu'un BFF existe** (voir
+EN07.11 mTLS/Service Mesh, phase-3, ou tout Enabler dédié qui introduirait un point d'échange
+plus tôt), cette ADR doit être marquée `Remplacé par` l'ADR qui posera le token exchange RFC 8693
+— pas amendée sur place. Ne pas laisser la lecture directe devenir la norme de facto par simple
+absence de pression pour migrer.
 
 ## Contexte
 
@@ -218,22 +237,28 @@ tokens en local, dans un ticket dédié référençant cette ADR pour la forme d
 
 ## Trigger de réévaluation
 
-Cette ADR n'est pas un choix figé pour la durée de vie du projet — à rouvrir explicitement si
-l'une de ces conditions survient :
+### Migration actée — pas hypothétique
+
+Le passage à un BFF posant le token exchange RFC 8693 **est** la trajectoire décidée pour ce
+mécanisme (§Portée temporelle) — ce n'est pas conditionné à un « si » mais à un « quand » : le
+jour où un BFF/point d'échange existe dans le chemin de la requête (que ce soit via EN07.11
+mTLS/Service Mesh, ou via un Enabler dédié posé plus tôt si le besoin devient pressant avant
+phase-3), la lecture directe du store partagé doit être démontée et cette ADR marquée
+`Remplacé par` la nouvelle. Ne pas attendre un incident pour déclencher ce ticket — le déclencheur
+est la disponibilité du BFF, pas un problème constaté.
+
+### Signaux qui rendraient cette migration urgente avant même qu'un BFF soit posé pour d'autres raisons
+
+Ces conditions n'attendent pas EN07.11 — si l'une survient plus tôt, elle justifie de poser un
+BFF minimal dédié à l'auth avant le socle mTLS/Service Mesh complet, plutôt que d'attendre :
 
 - **Éclatement de la base Postgres par module** (chaque `pivot-xxx-core` sur son instance
   propre) — casse l'hypothèse fondatrice (« la donnée est déjà accessible localement ») ; la
   lecture directe devient alors un vrai appel réseau déguisé, sans les garanties d'un pattern
-  standard. Migrer vers introspection (RFC 7662) ou token exchange (RFC 8693) à ce moment-là, pas
-  avant.
+  standard.
 - **Volume de repos modules qui rend le coût de coordination de schéma significatif** — au-delà
   de 3-4 repos consommateurs de `access_tokens` en lecture directe, le coût de coordination d'une
   migration additive peut dépasser celui d'un contrat réseau versionné.
-- **EN07.11 (mTLS interne / Service Mesh, phase-3)** — une fois un mesh en place, l'appel réseau
-  inter-service authentifié (mTLS) devient une primitive déjà payée pour d'autres raisons
-  (chiffrement transport, identité de service) ; le token exchange (pattern 3, §Paysage IAM)
-  devient alors quasi gratuit à ajouter et résout à la fois le couplage schéma et la duplication de
-  logique de validation — c'est le moment naturel de migrer, pas avant que ce socle existe.
 - **Un module a besoin de politiques d'accès aux tokens différentes des autres** (ex. TTL propre,
   contrainte de device binding spécifique à un module) — la lecture directe suppose une sémantique
   de token uniforme pour tous les consommateurs ; un besoin de différenciation casserait cette
@@ -250,14 +275,15 @@ l'une de ces conditions survient :
   (voir §Trigger de réévaluation) — pas écartée sur le fond, écartée sur le calendrier.
 - **Token exchange / assertion interne signée** ([RFC 8693](https://www.rfc-editor.org/rfc/rfc8693)
   — `pivot-core` échange le token porteur contre un JWT signé courte durée, vérifié localement par
-  chaque module sans DB ni réseau par requête) : écartée pour cette ADR — c'est le pattern le plus
-  souvent cité comme référence pour une architecture portail + modules propriétaires de leurs
-  données (élimine à la fois couplage réseau et couplage schéma), mais suppose un point d'échange
-  dans le chemin de la requête que PIVOT n'a pas aujourd'hui (nginx route chaque module
-  directement, pas de hop d'échange géré par `pivot-core`). L'introduire maintenant demanderait un
-  nouvel endpoint d'échange + un changement du flux `pivot-ui` (récupérer un second token
-  scope-module) — hors périmètre du « zero behavior change » de cette extraction. Candidat naturel
-  une fois EN07.11 (mTLS/Service Mesh) posé (voir §Trigger de réévaluation).
+  chaque module sans DB ni réseau par requête) : **différée, pas écartée sur le fond — c'est la
+  cible actée de cette ADR** (voir §Portée temporelle). C'est le pattern le plus souvent cité
+  comme référence pour une architecture portail + modules propriétaires de leurs données (élimine
+  à la fois couplage réseau et couplage schéma), mais suppose un point d'échange dans le chemin de
+  la requête que PIVOT n'a pas aujourd'hui (nginx route chaque module directement, pas de hop
+  d'échange géré par `pivot-core`). L'introduire maintenant demanderait un nouvel endpoint
+  d'échange + un changement du flux `pivot-ui` (récupérer un second token scope-module) — hors
+  périmètre du « zero behavior change » de cette extraction. À poser dès qu'un BFF existe (voir
+  §Trigger de réévaluation) — quand, pas si.
 - **Réutiliser `fr.pivot.core.tenant.TenantContext` tel quel comme principal partagé** : écartée —
   son champ `userId` est un `String` (hérité d'un usage de journalisation), inadapté à une
   jointure/filtre JPA direct sur `public.users.id` dans un futur repo module ; le faire évoluer en
@@ -279,3 +305,4 @@ l'une de ces conditions survient :
 |---------|------|-----------|
 | v1 | 2026-07-08 | Décision initiale — lève l'escalade `pivot-core#171` (volet auth) |
 | v2 | 2026-07-09 | Clarification à la demande du mainteneur : décision inchangée, mais reformulée contre le paysage IAM nommé explicitement (introspection RFC 7662, token exchange RFC 8693, lecture directe) plutôt qu'une « centralisation réseau » vague. Ajoute le risque de couplage schéma sur donnée à fort churn (nuance vs. `tenants`/`teams`, données de référence stables) comme conséquence négative explicite avec mitigation actée (migrations additives uniquement + logique centralisée dans le starter). Ajoute une section Trigger de réévaluation (éclatement DB par module, volume de repos consommateurs, arrivée d'EN07.11 mTLS/Service Mesh, besoin de politiques de token différenciées par module) — la décision n'est pas figée, elle est datée et conditionnée. Toujours `Statut: Proposé` — cette révision ne vaut pas acceptation formelle. |
+| v3 | 2026-07-09 | Précision explicite du mainteneur : cette ADR est **intérimaire par construction**, pas un choix définitif parmi d'autres également valables. Le token exchange RFC 8693 derrière un BFF est la trajectoire actée, pas une option listée par exhaustivité — nouvelle section §Portée temporelle en tête de fiche, §Trigger de réévaluation restructurée (« migration actée, pas hypothétique » séparée des signaux qui l'accéléreraient), alternative token exchange requalifiée « différée » plutôt que « écartée ». Engagement explicite : dès qu'un BFF existe, cette ADR doit être marquée `Remplacé par` la nouvelle, pas amendée sur place. Toujours `Statut: Proposé`. |
