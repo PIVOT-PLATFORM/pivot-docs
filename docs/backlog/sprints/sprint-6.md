@@ -53,7 +53,7 @@ que les scans DAST tournent réellement.
 | Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ✅ Done — [pivot-ui#124](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/124) (mergée hors de ce lancement, découverte lors de la synchro) |
 | Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ — recette humaine |
 | Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ — recette humaine |
-| EN08.3 | Authentification réelle cross-service `pivot-collaboratif-core` (bearer token opaque `pivot-core`, remplace le stub headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id`, `ADR-022`) — [détail](../EPIC-collaboration/ENABLERS/en-auth-cross-service-collaboratif.md) | Critical | ⬜ |
+| EN08.3 | Authentification réelle cross-service `pivot-collaboratif-core` (bearer token opaque `pivot-core`, remplace le stub headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id`, `ADR-022`) — [pivot-collaboratif-core#46](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/46), [détail](../EPIC-collaboration/ENABLERS/en-auth-cross-service-collaboratif.md) | Critical | ✅ Review — vérification manuelle `pivot-ui` (pas de déconnexion sur `/whiteboard`) restante |
 
 > **EN17.1** retiré de ce tableau (2026-07-08) : `Stage: Done` (2026-07-09, recette différée) —
 > `pivot-core#171` fermée, les 5 volets (`db`/`modules`/`tenant`/`team`/`auth`) extraits et livrés
@@ -87,9 +87,9 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
       `EPIC-collaboration/README.md` §Suivi noyau
 - [ ] E07 : EN07.3 (ActiveMQ persistence) `Done` ✅ · EN07.4 (PgBouncer session mode) rouverte,
       agent en cours
-- [ ] EN08.3 (auth cross-service `pivot-collaboratif-core`, tracé le 2026-07-08) — bloquant pour
-      la recette E30 (un utilisateur ne peut pas utiliser le tableau blanc sans, cf. détail
-      de l'Enabler), dépend de l'acceptation formelle d'`ADR-022`
+- [x] EN08.3 (auth cross-service `pivot-collaboratif-core`) — `pivot-collaboratif-core#46` mergée
+      (2026-07-09). Reste une vérification manuelle `pivot-ui` (non bloquante pour le code, cf.
+      détail de l'Enabler)
 
 ### Axe 2 — Prod
 
