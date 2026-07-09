@@ -1,12 +1,21 @@
-# US20.1.2 — Animer la rétrospective en temps réel
+# US20.1.2 — Animer la rétrospective en temps réel ⚠️ DÉCOMPOSÉE
 
-> Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
+> **Cette US a été décomposée en 3 sous-US (2026-07-10, Gate 1 PO Agent — XL trop volumineuse
+> pour un seul agent/PR). Ne pas implémenter ce fichier — implémenter les 3 sous-US à la place :**
+>
+> - [US20.1.2a — Contribution & révélation des cards](us-animer-retro-20-1-2a.md)
+> - [US20.1.2b — Phase Vote (dot-voting)](us-animer-retro-20-1-2b.md)
+> - [US20.1.2c — Phase Action (transition en session)](us-animer-retro-20-1-2c.md)
+>
+> **Raison :** 4 phases temps réel distinctes (contribution, révélation, vote, action), chacune
+> avec sa propre machine à états STOMP et ses propres tests — indépendantes et parallélisables
+> une fois la précédente livrée, comme US08.3.2 (whiteboard) au Sprint 5.
 
 **En tant que** Scrum Master (animateur)
 **Je veux** conduire la rétrospective par phases avec timer et contribution collaborative
 **Afin d'** obtenir des retours structurés de toute l'équipe en temps réel
 
-## Critères d'acceptation (outline — Gate 1 PO Agent)
+## Critères d'acceptation (outline d'origine — voir sous-US pour le détail Given/When/Then)
 
 | Critère | 🤖 Dev |
 |---------|--------|
