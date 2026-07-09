@@ -36,36 +36,70 @@ Deux décisions étaient nécessaires avant tout déplacement de code, formulée
 l'escalade `pivot-core#171` :
 
 1. La forme du principal minimal partagé.
-2. Validation dupliquée (chaque `pivot-xxx-core` interroge `public.access_tokens` directement,
-   via du code de bibliothèque partagé) vs. centralisée (`pivot-core` reste seul validateur, les
-   autres services délèguent par appel réseau).
+2. Comment un repo module valide un token opaque entrant.
+
+### Paysage IAM — où se situe ce choix
+
+Pour un portail central + modules qui possèdent chacun leurs données, la littérature identifie
+trois familles de solutions pour ce problème précis (« un service B doit vérifier une identité
+émise par un service A ») — nommées explicitement ici pour que ce choix soit comparable à l'état
+de l'art, pas seulement à lui-même :
+
+| Pattern | Mécanisme | Référence |
+|---------|-----------|-----------|
+| **Lecture directe du store partagé** | B lit la même base que A pour valider | Pas de RFC — pattern « base partagée », courant dans les monolithes modulaires co-déployés |
+| **Token introspection** | B appelle A en réseau à chaque validation (ou avec cache TTL court) | [RFC 7662](https://www.rfc-editor.org/rfc/rfc7662) |
+| **Token exchange / assertion interne signée** | A échange le token porteur contre un JWT signé, courte durée de vie, que B vérifie localement (signature seule, ni DB ni réseau par requête) | [RFC 8693](https://www.rfc-editor.org/rfc/rfc8693) — pattern courant des BFF/API Gateways (Netflix Passport, Kong/Ambassador + JWT, Cognito token exchange) |
+
+Le troisième pattern est celui le plus souvent cité comme référence pour une architecture
+« portail + services propriétaires de leurs données », précisément parce qu'il élimine à la fois
+le couplage réseau par requête *et* le couplage par schéma partagé. Il suppose cependant un point
+d'échange dans le chemin de la requête (un gateway/BFF qui termine le token porteur et émet
+l'assertion interne) — **PIVOT n'a pas ce point aujourd'hui** : nginx route chaque module
+directement (`/api/collaboratif/` → `pivot-collaboratif-core:8083`), le navigateur porte un seul
+token opaque envoyé tel quel à quelque service que nginx cible, sans hop d'échange. Introduire le
+pattern 3 supposerait donc soit un nouvel endpoint d'échange côté `pivot-core` appelé une fois
+par session côté `pivot-ui` (et non par requête), soit un vrai gateway applicatif — un changement
+d'architecture qui dépasse le périmètre de cette ADR. Il reste noté ci-dessous comme trigger de
+réévaluation.
 
 ## Décision
 
-### 1. Validation dupliquée via bibliothèque partagée — pas de centralisation réseau
+### 1. Lecture directe du store partagé — pas d'introspection réseau, pas de token exchange
 
 Chaque `pivot-xxx-core` validera, à terme, ses propres tokens opaques entrants en interrogeant
 directement `public.access_tokens` (même instance PostgreSQL partagée, FK cross-schéma vers
 `public` déjà la convention établie par EN17.4), à l'aide de code de validation packagé dans
-`pivot-core-starter`. **Pas** de délégation réseau vers `pivot-core` comme validateur central.
+`pivot-core-starter`. **Pas** de délégation réseau vers `pivot-core` (ni introspection RFC 7662,
+ni token exchange RFC 8693 — voir §Paysage IAM ci-dessus pour pourquoi ce dernier n'est pas
+praticable sans architecture supplémentaire).
 
 Raisons :
 
+- **Cohérence avec un choix déjà pris, pas un nouveau risque isolé.** EN17.4 a déjà établi que les
+  repos modules lisent `public.tenants`/`public.teams` par FK cross-schéma, sur la même instance
+  Postgres partagée — ce choix architectural pour les données de référence est déjà acté et vécu.
+  Étendre `public.access_tokens` au même mécanisme n'introduit pas une nouvelle catégorie de
+  couplage, ça applique la convention déjà en vigueur. Introduire l'introspection réseau (pattern
+  2) créerait à l'inverse un **nouveau** type de dépendance (appel HTTP synchrone inter-service)
+  qui n'existe nulle part ailleurs dans la codebase — un coût d'architecture réel, pas hypothétique.
 - **Isolation de panne.** Les `CLAUDE.md` de `pivot-pilotage-core`, `pivot-agilite-core` et
   `pivot-collaboratif-core` documentent explicitement l'isolation de panne vis-à-vis de
   `pivot-core` comme objectif d'architecture. Un appel réseau à `pivot-core` sur chaque requête
   pour une décision d'auth ferait dépendre la disponibilité de chaque module de celle de
   `pivot-core` — contradiction directe avec cet objectif déjà acté.
-- **Cohérence avec le reste de l'extraction.** Tout ce qui a déjà été extrait
-  (`fr.pivot.core.db`, `fr.pivot.core.modules`, `fr.pivot.core.tenant`/`team`) est une bibliothèque
-  consommée in-process, jamais un service réseau. Il n'existe aucun pattern d'appel de service
-  interne dans cette codebase — en introduire un maintenant, pour l'auth seule, serait
-  architecturalement incohérent avec le reste de la plateforme.
 - **Donnée déjà accessible.** `public.access_tokens` (et `public.users`/`public.tenants`, requis
   pour les vérifications de désactivation utilisateur/tenant, voir plus bas) vivent déjà dans
   l'unique instance PostgreSQL partagée que chaque module lit directement — aucune raison
   technique d'ajouter un saut réseau supplémentaire alors que la donnée est déjà atteignable
   directement.
+
+**Nuance assumée, à ne pas sous-estimer** : `public.tenants`/`public.teams` (déjà lus par FK) sont
+des données de référence à faible churn, avec un contrat de schéma stable. `public.access_tokens`
+est une donnée à fort churn, sécurité-critique (émission/rotation/révocation continues) — le
+risque de couplage schéma n'est donc pas strictement équivalent, même si le mécanisme d'accès
+l'est. Traité explicitement en Conséquences ci-dessous, pas juste glissé sous le tapis de
+l'argument « on le fait déjà pour les tenants ».
 
 ### 2. Forme du principal minimal : `fr.pivot.core.auth.AuthenticatedPrincipal`
 
@@ -165,17 +199,65 @@ tokens en local, dans un ticket dédié référençant cette ADR pour la forme d
   voudrait valider ses propres tokens aujourd'hui devrait soit attendre ce futur ticket, soit
   continuer de déléguer via `pivot-core` en proxy — acceptable car aucun repo module n'a ce besoin
   aujourd'hui (constat de l'escalade, revérifié à la date de cette ADR).
+- **Négatif, à surveiller activement (pattern « base partagée ») :** `public.access_tokens` étant
+  une donnée à fort churn et sécurité-critique (pas une donnée de référence stable comme
+  `tenants`/`teams`), son schéma devient de fait un **contrat inter-repos**, au même titre qu'une
+  API versionnée — un changement (nouvel algorithme de hash, ajout d'un token binding par device,
+  nouvelle colonne de révocation) impacte silencieusement tout module ayant dupliqué la logique de
+  lecture, sans le filet de sécurité qu'offrirait un contrat réseau versionné (RFC 7662/8693).
+  Mitigation actée : (1) toute migration sur `access_tokens` doit rester **additive uniquement**
+  tant que des repos modules en dépendent en lecture directe (jamais de renommage/suppression de
+  colonne sans période de dépréciation coordonnée) ; (2) la logique de lecture elle-même reste
+  centralisée dans `pivot-core-starter` (une seule implémentation versionnée consommée par tous
+  les modules, jamais du copié-collé SQL par repo) — déjà la décision prise en §1, mais listée ici
+  comme la mitigation concrète du risque, pas seulement comme un choix de commodité.
 - **Interdit :** exposer `fr.pivot.auth.entity.User` (ou tout DTO équivalent portant email, hash
   de mot de passe, état 2FA, appareils de confiance, locale, avatar) depuis
   `fr.pivot.core.auth`/`pivot-core-starter` — seul `AuthenticatedPrincipal` (userId, tenantId,
   role) peut transiter vers un repo module.
 
+## Trigger de réévaluation
+
+Cette ADR n'est pas un choix figé pour la durée de vie du projet — à rouvrir explicitement si
+l'une de ces conditions survient :
+
+- **Éclatement de la base Postgres par module** (chaque `pivot-xxx-core` sur son instance
+  propre) — casse l'hypothèse fondatrice (« la donnée est déjà accessible localement ») ; la
+  lecture directe devient alors un vrai appel réseau déguisé, sans les garanties d'un pattern
+  standard. Migrer vers introspection (RFC 7662) ou token exchange (RFC 8693) à ce moment-là, pas
+  avant.
+- **Volume de repos modules qui rend le coût de coordination de schéma significatif** — au-delà
+  de 3-4 repos consommateurs de `access_tokens` en lecture directe, le coût de coordination d'une
+  migration additive peut dépasser celui d'un contrat réseau versionné.
+- **EN07.11 (mTLS interne / Service Mesh, phase-3)** — une fois un mesh en place, l'appel réseau
+  inter-service authentifié (mTLS) devient une primitive déjà payée pour d'autres raisons
+  (chiffrement transport, identité de service) ; le token exchange (pattern 3, §Paysage IAM)
+  devient alors quasi gratuit à ajouter et résout à la fois le couplage schéma et la duplication de
+  logique de validation — c'est le moment naturel de migrer, pas avant que ce socle existe.
+- **Un module a besoin de politiques d'accès aux tokens différentes des autres** (ex. TTL propre,
+  contrainte de device binding spécifique à un module) — la lecture directe suppose une sémantique
+  de token uniforme pour tous les consommateurs ; un besoin de différenciation casserait cette
+  hypothèse et pousserait vers un contrat explicite par consommateur (token exchange scoping).
+
 ## Alternatives écartées
 
-- **Centralisation réseau** (`pivot-core` seul validateur, appel réseau depuis chaque module) :
-  écartée — voir raisons détaillées en section Décision (isolation de panne contredite, aucun
-  pattern de service interne existant dans la codebase, donnée déjà directement accessible en
-  base partagée).
+- **Token introspection réseau** ([RFC 7662](https://www.rfc-editor.org/rfc/rfc7662) —
+  `pivot-core` seul validateur, chaque module appelle un endpoint d'introspection, avec ou sans
+  cache TTL court) : écartée pour ce Socle — voir raisons détaillées en section Décision
+  (isolation de panne contredite, aucun pattern d'appel de service interne existant dans la
+  codebase à ce jour, donnée déjà directement accessible en base partagée). Pattern standard et
+  légitime en soi ; le bon choix architectural change si la base Postgres cesse d'être partagée
+  (voir §Trigger de réévaluation) — pas écartée sur le fond, écartée sur le calendrier.
+- **Token exchange / assertion interne signée** ([RFC 8693](https://www.rfc-editor.org/rfc/rfc8693)
+  — `pivot-core` échange le token porteur contre un JWT signé courte durée, vérifié localement par
+  chaque module sans DB ni réseau par requête) : écartée pour cette ADR — c'est le pattern le plus
+  souvent cité comme référence pour une architecture portail + modules propriétaires de leurs
+  données (élimine à la fois couplage réseau et couplage schéma), mais suppose un point d'échange
+  dans le chemin de la requête que PIVOT n'a pas aujourd'hui (nginx route chaque module
+  directement, pas de hop d'échange géré par `pivot-core`). L'introduire maintenant demanderait un
+  nouvel endpoint d'échange + un changement du flux `pivot-ui` (récupérer un second token
+  scope-module) — hors périmètre du « zero behavior change » de cette extraction. Candidat naturel
+  une fois EN07.11 (mTLS/Service Mesh) posé (voir §Trigger de réévaluation).
 - **Réutiliser `fr.pivot.core.tenant.TenantContext` tel quel comme principal partagé** : écartée —
   son champ `userId` est un `String` (hérité d'un usage de journalisation), inadapté à une
   jointure/filtre JPA direct sur `public.users.id` dans un futur repo module ; le faire évoluer en
@@ -196,3 +278,4 @@ tokens en local, dans un ticket dédié référençant cette ADR pour la forme d
 | Version | Date | Évolution |
 |---------|------|-----------|
 | v1 | 2026-07-08 | Décision initiale — lève l'escalade `pivot-core#171` (volet auth) |
+| v2 | 2026-07-09 | Clarification à la demande du mainteneur : décision inchangée, mais reformulée contre le paysage IAM nommé explicitement (introspection RFC 7662, token exchange RFC 8693, lecture directe) plutôt qu'une « centralisation réseau » vague. Ajoute le risque de couplage schéma sur donnée à fort churn (nuance vs. `tenants`/`teams`, données de référence stables) comme conséquence négative explicite avec mitigation actée (migrations additives uniquement + logique centralisée dans le starter). Ajoute une section Trigger de réévaluation (éclatement DB par module, volume de repos consommateurs, arrivée d'EN07.11 mTLS/Service Mesh, besoin de politiques de token différenciées par module) — la décision n'est pas figée, elle est datée et conditionnée. Toujours `Statut: Proposé` — cette révision ne vaut pas acceptation formelle. |
