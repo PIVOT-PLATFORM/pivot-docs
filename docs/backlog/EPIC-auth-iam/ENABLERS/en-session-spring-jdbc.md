@@ -8,7 +8,7 @@ table `access_tokens`, `SessionCreationPolicy.STATELESS`, `Authorization: Bearer
 PostgreSQL (`SPRING_SESSION`/`SPRING_SESSION_ATTRIBUTES`), exposée via un cookie de session
 opaque unique pour l'auth interne et l'auth enterprise (post-EN01.14).
 
-**Justification** : [ADR-005 v2](../../../adr/ADR-005-opaque-tokens.md) retient Spring Session
+**Justification** : [ADR-005 v2](pathname:///pivot-docs/adr/ADR-005-opaque-tokens) retient Spring Session
 JDBC. Ce n'est pas une simple mise à jour de doc : le code actuel (`EN01.1`, `EN01.2`, tous deux
 Done) est stateless par design (`SecurityConfig` fixe explicitement
 `SessionCreationPolicy.STATELESS`) et n'utilise aucun mécanisme Spring Session. C'est une
@@ -23,13 +23,13 @@ migration d'infrastructure sur du code déjà livré.
       surface CSRF — voir ADR-004 v2 §Sécurité)
 - [ ] `GET /api/me` remplace `GET /auth/refresh` comme source d'état de session
 - [ ] Table `access_tokens` : plan de dépréciation documenté — impact direct sur
-      [ADR-022](../../../adr/ADR-022-principal-authentification-minimal-partage.md), qui bâtit la
+      [ADR-022](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage), qui bâtit la
       validation cross-module sur cette table ; ADR-022 doit être révisée en parallèle, pas après
       coup
 - [ ] Migration des sessions actives : stratégie de bascule sans déconnexion forcée de masse
 
-**Dépendances** : [ADR-005 v2](../../../adr/ADR-005-opaque-tokens.md), impacte
-[ADR-022](../../../adr/ADR-022-principal-authentification-minimal-partage.md) (table
+**Dépendances** : [ADR-005 v2](pathname:///pivot-docs/adr/ADR-005-opaque-tokens), impacte
+[ADR-022](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage) (table
 `access_tokens` partagée), bloque EN01.17 (rework auth frontend)
 
 **Statut** : ⬜ À faire

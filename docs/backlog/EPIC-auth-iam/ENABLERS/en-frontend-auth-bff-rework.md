@@ -6,7 +6,7 @@
 (`TokenInterceptor` injectant `Authorization: Bearer`, `AuthService` gardant le token en signal
 mémoire) et le remplacer par un état de session dérivé uniquement de `GET /api/me`.
 
-**Justification** : [ADR-004 v2](../../../adr/ADR-004-oidc-multi-tenant.md) — Angular ne doit
+**Justification** : [ADR-004 v2](pathname:///pivot-docs/adr/ADR-004-oidc-multi-tenant) — Angular ne doit
 plus détenir ni relayer aucun token. `EN01.10` est marqué Done mais implémente exactement le
 pattern inverse (Bearer en mémoire) ; ce n'est pas une extension, c'est un remplacement des
 briques existantes.

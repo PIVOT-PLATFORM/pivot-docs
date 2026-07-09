@@ -7,7 +7,7 @@ Authorization Code + PKCE face à l'IdP enterprise (`OidcAuthController`/`OidcAu
 serveur reçoivent actuellement un token déjà échangé côté client) — remplacé par la redirection
 serveur-à-serveur posée par EN01.14.
 
-**Justification** : [ADR-004 v2](../../../adr/ADR-004-oidc-multi-tenant.md) — le flux OIDC ne
+**Justification** : [ADR-004 v2](pathname:///pivot-docs/adr/ADR-004-oidc-multi-tenant) — le flux OIDC ne
 doit plus transiter par Angular du tout. Le code actuel confirme qu'Angular fait aujourd'hui le
 PKCE lui-même (aucune librairie OIDC de type `angular-oauth2-oidc`/`oidc-client-js` n'est même
 utilisée — implémentation hand-rolled), donc ce retrait est un changement de code, pas une

@@ -6,7 +6,7 @@
 défaut, pour les tenants (associations, TPE) sans IdP existant. Keycloak agit aussi en broker
 pour les IdP SAML-only (ADFS legacy), sans écrire de code SAML dans `pivot-core`.
 
-**Justification** : [ADR-004 v2](../../../adr/ADR-004-oidc-multi-tenant.md) prévoit Keycloak en
+**Justification** : [ADR-004 v2](pathname:///pivot-docs/adr/ADR-004-oidc-multi-tenant) prévoit Keycloak en
 option, jamais en dépendance imposée — un tenant qui a déjà Entra ID ou Okta se branche en
 direct via EN01.14, sans composant Keycloak.
 

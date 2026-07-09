@@ -19,7 +19,7 @@ Socle (`pivot-collaboratif-core/-ui`, ADR-006) en dépend. Détail → `sprint-5
 >
 > **Reséquencement E01 (2026-07-10)** : EN01.14 à EN01.18 (migration BFF — `ClientRegistrationRepository`
 > dynamique, Spring Session JDBC, Keycloak embarqué, rework auth frontend, retrait PKCE Angular,
-> voir [ADR-004 v2](../../adr/ADR-004-oidc-multi-tenant.md)/[ADR-005 v2](../../adr/ADR-005-opaque-tokens.md))
+> voir [ADR-004 v2](pathname:///pivot-docs/adr/ADR-004-oidc-multi-tenant)/[ADR-005 v2](pathname:///pivot-docs/adr/ADR-005-opaque-tokens))
 > sont `Phase: v1-enterprise`, pas `phase-3` — leur place « par défaut » était `backlog-post-s12.md`
 > (après Sprint 12), ce qui n'a pas de sens pour un chantier qui réécrit de l'auth déjà livrée
 > (`EN01.1/EN01.2/EN01.10/EN01.11`, tous Done) et débloque l'argument de vente « SSO enterprise »

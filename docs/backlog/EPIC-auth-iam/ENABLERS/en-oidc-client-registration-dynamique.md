@@ -8,7 +8,7 @@ serveur, avec un `ClientRegistrationRepository` qui résout `issuer`/`client_id`
 depuis PostgreSQL selon le tenant (au lieu d'une configuration statique par variable
 d'environnement).
 
-**Justification** : [ADR-004 v2](../../../adr/ADR-004-oidc-multi-tenant.md) retient le pattern
+**Justification** : [ADR-004 v2](pathname:///pivot-docs/adr/ADR-004-oidc-multi-tenant) retient le pattern
 BFF — Angular ne doit plus manipuler de token IdP ni exécuter lui-même le PKCE. C'est un
 changement d'implémentation réel : aujourd'hui aucun `oauth2Login` ni `ClientRegistrationRepository`
 n'existe côté `pivot-core` (vérifié dans le code, pas seulement dans le backlog).
@@ -23,7 +23,7 @@ n'existe côté `pivot-core` (vérifié dans le code, pas seulement dans le back
 - [ ] Migration des tenants existants configurés (Azure AD, Okta) vers le nouveau mécanisme sans
       interruption de service
 
-**Dépendances** : [ADR-004 v2](../../../adr/ADR-004-oidc-multi-tenant.md), EN01.12 (Infrastructure
+**Dépendances** : [ADR-004 v2](pathname:///pivot-docs/adr/ADR-004-oidc-multi-tenant), EN01.12 (Infrastructure
 Multi-tenant), bloque EN01.17 (rework auth frontend), EN01.18 (retrait PKCE Angular)
 
 **Statut** : ⬜ À faire
