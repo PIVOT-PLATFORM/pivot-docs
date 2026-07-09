@@ -4,18 +4,56 @@
 **Scope :** clôture du périmètre Socle — reliquats, dette, recette
 **Jalon de sortie :** déclaration **« Socle terminé »** par le mainteneur → déverrouille les sprints 7+
 
+## Lancement (2026-07-09)
+
+Gate 1 (PO Agent) passé sur les items éligibles Phase Socle : `Stage: Backlog → Ready` pour
+EN07.3, US05.13.1, US05.13.2, US05.15.1, US05.15.2 (Enabler EN07.3 complété avec Objectif
+technique + Justification, absents à l'origine). Agents dev lancés en parallèle sur ces 5 items
+(isolation git worktree côté `pivot-core`, évite les conflits inter-agents sur les fichiers
+partagés — `compose.yml`, workflows CI).
+
+**Volontairement exclus de ce lancement** (voir tableau ci-dessous pour le détail) :
+- **EN07.4** (PgBouncer) — déjà assignée à un mainteneur humain (`leo-brgn`,
+  `pivot-core#185`) : lancer un agent dessus reproduirait la collision déjà vécue sur
+  `pivot-ui#121`/`#122`. `Stage: Ready` quand même mis à jour (DoR complète), pas de conflit sur
+  le fait qu'elle soit prête — seulement sur qui l'implémente.
+- **US05.14.1-3** (branch protection required-checks) — modifient une config de repo partagée
+  hors du flux PR normal (paramètres GitHub, pas du code revu). Hors périmètre d'un lancement
+  autonome sans confirmation explicite du mainteneur.
+- **Dette S2** Redis cache + dédup `sanitizeReturnUrl` — aucun ticket dédié (juste des lignes
+  narratives dans `STATUS.md`), pas de DoR à évaluer. Nécessitent une US/Enabler en bonne et due
+  forme avant tout lancement. Correction post-synchro : `sanitizeReturnUrl` s'est avérée déjà
+  mergée entre-temps (`pivot-ui#124`, hors de ce lancement) — découvert en vérifiant l'état live,
+  pas par les agents dispatchés ici.
+- **Recette** (a11y, bug bash) — tâches humaines par nature, non déléguables à un agent dev.
+
+## Synchronisation (2026-07-09, suite — 5/5 items lancés terminés)
+
+Les 5 agents lancés ont tous mergé leur PR, CI verte de bout en bout : `Stage: Ready → Review`
+pour EN07.3, US05.13.1, US05.13.2, US05.15.1, US05.15.2 (liens PR dans le tableau ci-dessous).
+
+**Point d'attention réel signalé par les agents US05.13.1/US05.13.2** : aucun environnement de
+staging pivot-ui n'existe encore (vérifié — absent de `docs/cicd/`, aucun workflow
+`deploy-staging`). Les deux workflows ZAP tournent mais se dégradent gracieusement
+(`::warning::`) tant que le secret `STAGING_PIVOT_UI_URL` (+ identifiants DAST pour le full scan)
+n'existe pas. **Action mainteneur requise** : provisionner ce staging + créer les secrets pour
+que les scans DAST tournent réellement.
+
 | Item | Titre | Priorité | 🤖 Dev |
 |------|-------|----------|--------|
-| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth` à déplacer, `team` à implémenter (jamais fait, bloque la FK cross-schéma EN17.4) — [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) | Critical | 🔄 In progress |
-| EN07.3 | ActiveMQ persistence KahaDB | High | ⬜ |
-| EN07.4 | PgBouncer session mode configuration prod | High | ⬜ |
-| EN05.13-15 | CI/CD Supply-chain restants | High | ⬜ |
-| E05 US restantes | 7 US supply-chain | High | ⬜ |
-| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ |
-| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ⬜ |
-| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ⬜ |
-| Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ |
-| Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ |
+| EN17.1 | Reste de l'extraction `pivot-core-starter` — `modules`/`tenant`/`auth`/`team` extraits (PR #167/#173/#177/#180), `pivot-core#171` fermée | Critical | ✅ Review (recette mainteneur → Done) |
+| EN07.3 | ActiveMQ persistence KahaDB — [pivot-core#193](https://github.com/PIVOT-PLATFORM/pivot-core/pull/193), [pivot-pilotage-core#21](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/21), [pivot-agilite-core#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/19), [pivot-collaboratif-core#35](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/35) | High | ✅ Review (recette mainteneur → Done) |
+| EN07.4 | PgBouncer session mode configuration prod — [pivot-core#185](https://github.com/PIVOT-PLATFORM/pivot-core/issues/185), assignée à leo-brgn | High | ⬜ (assignée, hors lancement agent — évite collision) |
+| US05.13.1 | ZAP baseline planifié — [pivot-core#190](https://github.com/PIVOT-PLATFORM/pivot-core/pull/190) | Medium | ✅ Review — staging pivot-ui inexistant, secret `STAGING_PIVOT_UI_URL` à provisionner par le mainteneur |
+| US05.13.2 | ZAP full scan + rapport — [pivot-core#191](https://github.com/PIVOT-PLATFORM/pivot-core/pull/191) | Medium | ✅ Review — même dépendance staging que US05.13.1 |
+| US05.14.1-3 | Required checks core/ui/docs (branch protection) | High/Medium | ⬜ — hors lancement agent, config repo partagée : attend confirmation explicite mainteneur |
+| US05.15.1 | Composite action setup partagée — [pivot-core#187](https://github.com/PIVOT-PLATFORM/pivot-core/pull/187) | Medium | ✅ Review |
+| US05.15.2 | Aligner workflows ui sur conventions core — [pivot-ui#127](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/127) | Medium | ✅ Review |
+| Dette S2 | Raccorder cache Redis EN03.3 au chemin de lecture statut module | High | ⬜ — pas de ticket dédié, hors lancement |
+| Dette S2 | Aligner champ `description` API modules avec `PivotModule` | Medium | ✅ Done — [pivot-core#184](https://github.com/PIVOT-PLATFORM/pivot-core/pull/184) |
+| Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ✅ Done — [pivot-ui#124](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/124) (mergée hors de ce lancement, découverte lors de la synchro) |
+| Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ — recette humaine |
+| Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ — recette humaine |
 
 > **Noyau whiteboard (E30, F08.x/EN08.x)** reste porté par `sprint-5.md` (Vague 1+), pas dupliqué
 > ici — mais sa complétion (17/17 `Done`) est un pré-requis du jalon « Socle terminé » au même
@@ -38,7 +76,7 @@ Le mainteneur déclare « Socle terminé » quand les 4 axes suivants sont à 10
 - [ ] E30 noyau F08.x/EN08.x : 17/17 items `Done` — **état actuel : 0/17** (12 Review, 2 In
       progress, 5 Ready — voir `EPIC-collaboration/README.md` §Suivi noyau, resynchronisé
       régulièrement vu le rythme d'avancement)
-- [ ] E07 : EN07.3 (ActiveMQ persistence) + EN07.4 (PgBouncer session mode) sortis de `Backlog`
+- [ ] E07 : EN07.3 (ActiveMQ persistence) `Review` ✅ · EN07.4 (PgBouncer session mode) reste `Ready`, assignée à leo-brgn
 
 ### Axe 2 — Prod
 
