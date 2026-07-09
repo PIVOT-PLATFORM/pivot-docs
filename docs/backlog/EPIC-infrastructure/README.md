@@ -9,6 +9,7 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 - EN07.3 : ActiveMQ persistence KahaDB
 - EN07.4 : PgBouncer session mode configuration prod
 - EN07.5 : deploy.yml GitHub Actions CI/CD vers prod
+- EN07.6 : Hébergement GCP en IaC (Terraform + Ansible) — test MVP
 
 ## Périmètre GitHub (v1-enterprise)
 - EN07.7 : TLS interne nginx↔core cert CA entreprise
@@ -27,6 +28,8 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 
 ## Statut global
 ✅ Done — EN07.1-EN07.5 (Phase Socle) tous `Stage: Done` (2026-07-09, recette métier différée) ·
+EN07.6 test MVP déployé et fonctionnel sur GCP (2026-07-09, `pivot-infra`) — a mis en évidence
+plusieurs bugs réels dans EN07.1/EN07.5 jamais visibles avant un déploiement réel (voir EN07.6) ·
 EN07.7-10 différés (v1-enterprise)
 
 ---
@@ -44,6 +47,7 @@ EN07.7-10 différés (v1-enterprise)
 | [EN07.3 — ActiveMQ persistence KahaDB](ENABLERS/en-activemq.md) | ✅ Done |
 | [EN07.4 — PgBouncer session mode prod](ENABLERS/en-pgbouncer.md) | ✅ Done |
 | [EN07.5 — deploy.yml GitHub Actions CI/CD vers prod](ENABLERS/en-deploy-ci.md) | ✅ Done |
+| [EN07.6 — Hébergement GCP en IaC (Terraform + Ansible) — test MVP](ENABLERS/en-gcp-hosting-iac.md) | ✅ |
 | **Phase v1-enterprise** | |
 | EN07.7 — TLS interne nginx↔core cert CA entreprise | ⏸️ |
 | EN07.8 — Redis TLS prod requirepass + tls-port | ⏸️ |
