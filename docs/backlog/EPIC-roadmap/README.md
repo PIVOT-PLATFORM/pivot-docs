@@ -6,7 +6,7 @@
 
 ## Objectif
 
-Planifier dans le temps, de la **roadmap stratégique** au **Gantt opérationnel**, avec une **parité fonctionnelle MS Project mais en mode web**. Le module porte l'entité **Projet** (rattachée à une **Application**, 1 Application → 1..n Projet, cf. [EN18.9](../EPIC-pilotage/ENABLERS/en-modele-application-projet.md)).
+Planifier dans le temps, de la **roadmap stratégique** au **Gantt opérationnel**, avec une **parité fonctionnelle MS Project mais en mode web**. Le module porte l'entité **Projet** (rattachée à une **Application**, 1 Application → 1..n Projet, cf. [EN18.9](../BACKLOG-IDEATION/EPIC-pilotage/ENABLERS/en-modele-application-projet.md)).
 
 ## Principe directeur — deux vues d'un **modèle temporel unique**
 
@@ -23,7 +23,7 @@ Planifier dans le temps, de la **roadmap stratégique** au **Gantt opérationnel
 
 ## Altitude pilotée par le **profil** (E40)
 
-Le curseur roadmap↔Gantt est **indexé sur le profil d'organisation** ([E40](../EPIC-profil-adaptation/README.md)) :
+Le curseur roadmap↔Gantt est **indexé sur le profil d'organisation** ([E40](../BACKLOG-IDEATION/EPIC-profil-adaptation/README.md)) :
 
 - **TPE / PME** → roadmap rapide (F22.3) ; le Gantt lourd est de la sur-ingénierie (chemin critique « peu utile en TPE »).
 - **Grand groupe / Publique / État** → Gantt complet (F22.4), ressources & nivellement (F22.5), baselines, hybride cascade/agile, consolidation 100+ projets.

@@ -21,7 +21,7 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 - **EN28.5** — [Design-system et thème pour adaptateurs](ENABLERS/en-design-system-adaptateurs.md)
 - **EN28.6** — [Endpoint santé unifié](ENABLERS/en-endpoint-sante-unifie.md)
 - **EN28.7** — [Critère de décision adaptateur vs natif](ENABLERS/en-critere-adaptateur-vs-natif.md)
-- *(pas d'EN28.8 : l'ancienne veille Excalidraw est remplacée par un adaptateur réel, cf. F28.9)*
+- *(pas d'EN28.8 : l'ancienne veille Excalidraw était remplacée par un adaptateur réel — F28.9 déplacé en BACKLOG-IDEATION 2026-07-09)*
 
 ### Enablers — gouvernance
 
@@ -32,6 +32,8 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 - **EN28.13** — [Veille licences & versions](ENABLERS/en-veille-licences-versions.md)
 
 ### Features
+
+> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/) (2026-07-09)** : F28.6 (Pilotage de portefeuille / OpenProject/ProjeQtOr — doublon avec E22/E23), F28.9 (Whiteboard adaptateur / Excalidraw/tldraw — doublon avec E30), F28.10 (SCM & CI/CD — hors domaine PIVOT), F28.11 (Plateforme développeur — hors domaine PIVOT).
 
 - **F28.1 — Delivery agile**
   - [US28.1.1 — Adaptateur Plane, backlog & sprints](FEATURES/delivery-agile-plane/us-adaptateur-plane-backlog-sprints.md)
@@ -64,28 +66,17 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
   - [US28.5.3 — Messagerie souveraine (Element/Matrix)](FEATURES/contrats-communication/us-messagerie-souveraine.md)
   - [US28.5.4 — Adaptateur Docuseal (alternative signature)](FEATURES/contrats-communication/us-adaptateur-docuseal.md)
   - [US28.5.5 — Lien Rocket.Chat (alternative messagerie)](FEATURES/contrats-communication/us-lien-rocket-chat.md)
-- **F28.6 — Pilotage de portefeuille (PPM)** *(coexiste avec le natif — cf. principe ci-dessus)*
-  - [US28.6.1 — Adaptateur OpenProject](FEATURES/pilotage-portefeuille/us-adaptateur-openproject.md)
-  - [US28.6.2 — Adaptateur ProjeQtOr (alternative souveraine)](FEATURES/pilotage-portefeuille/us-adaptateur-projeqtor.md)
 - **F28.7 — Rétrospectives** *(coexiste avec le natif E20)*
   - [US28.7.1 — Lien Scrumlr](FEATURES/retrospectives/us-lien-scrumlr.md)
 - **F28.8 — Formulaires & sondages** *(coexiste avec le natif E19/E42)*
   - [US28.8.1 — Adaptateur Formbricks](FEATURES/formulaires-sondages/us-adaptateur-formbricks.md)
   - [US28.8.2 — Adaptateur LimeSurvey (alternative)](FEATURES/formulaires-sondages/us-adaptateur-limesurvey.md)
-- **F28.9 — Whiteboard (adaptateur)** *(coexiste avec le natif F08.x, ex-E08, sous E30)*
-  - [US28.9.1 — Adaptateur Excalidraw (embed)](FEATURES/whiteboard-adaptateur/us-adaptateur-excalidraw.md)
-  - [US28.9.2 — Adaptateur tldraw (embed, alternative)](FEATURES/whiteboard-adaptateur/us-adaptateur-tldraw.md)
-- **F28.10 — SCM & CI/CD** *(domaine absent du backlog initial, ajouté lors de la revue PO — cf. ADR-009 §5)*
-  - [US28.10.1 — Adaptateur GitLab CE](FEATURES/scm-cicd/us-adaptateur-gitlab-ce.md)
-  - [US28.10.2 — Adaptateur Forgejo (alternative souveraine)](FEATURES/scm-cicd/us-adaptateur-forgejo.md)
-- **F28.11 — Plateforme développeur (scorecards, scaffolding, TechDocs)** *(gap confirmé par le benchmark plateforme développeur — `pivot-benchmarks/plateforme-developpeur/dossier-synthese-plateforme-developpeur.md`, pivot-benchmarks#1 — non couvert par les Enablers socle EN28.1-EN28.7, qui portent le catalogue mais aucune capacité de mesure, de création ou de documentation)*
-  - [US28.11.1 — Scorecards de conformité et maturité par entité catalogue](FEATURES/plateforme-developpeur/us-scorecards-conformite-maturite.md)
-  - [US28.11.2 — Scaffolding self-service (golden path agnostique du SCM)](FEATURES/plateforme-developpeur/us-scaffolding-self-service.md)
-  - [US28.11.3 — TechDocs : documentation-as-code par entité catalogue](FEATURES/plateforme-developpeur/us-techdocs-documentation-as-code.md)
 
 ## Principe : natif et OSS coexistent, l'instanciation choisit
 
-Le critère adaptateur-vs-natif (ADR-009 §2) porte sur la décision de *construire* un adaptateur (faisabilité technique + coût), **pas** sur l'exclusion d'un adaptateur au seul motif qu'un module natif existe déjà pour le même besoin. F28.6 à F28.9 concrétisent ce principe : OpenProject/ProjeQtOr coexistent avec le Pilotage natif (E18), Scrumlr avec Rétrospective (E20), Formbricks/LimeSurvey avec Session/Pivot Forms (E19/E42), Excalidraw/tldraw avec le Whiteboard natif (F08.x, ex-E08, sous E30). Aucune exclusion mutuelle : chaque instance active ce dont elle a besoin.
+Le critère adaptateur-vs-natif (ADR-009 §2) porte sur la décision de *construire* un adaptateur (faisabilité technique + coût), **pas** sur l'exclusion d'un adaptateur au seul motif qu'un module natif existe déjà pour le même besoin. F28.7 et F28.8 concrétisent ce principe : Scrumlr coexiste avec Rétrospective (E20), Formbricks/LimeSurvey avec Session/Pivot Forms (E19/E42). Aucune exclusion mutuelle : chaque instance active ce dont elle a besoin.
+
+> **Note** : F28.6 (OpenProject/ProjeQtOr) et F28.9 (Excalidraw/tldraw) ont été déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/) (2026-07-09) — doublons avec E22/E23 et E30 respectivement.
 
 ## Hors périmètre
 
@@ -162,21 +153,8 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 | [US28.5.3 — Messagerie souveraine](FEATURES/contrats-communication/us-messagerie-souveraine.md) | ⬜ |
 | [US28.5.4 — Adaptateur Docuseal (alternative)](FEATURES/contrats-communication/us-adaptateur-docuseal.md) | ⬜ |
 | [US28.5.5 — Lien Rocket.Chat (alternative)](FEATURES/contrats-communication/us-lien-rocket-chat.md) | ⬜ |
-| **F28.6 — Pilotage de portefeuille (PPM)** | |
-| [US28.6.1 — Adaptateur OpenProject](FEATURES/pilotage-portefeuille/us-adaptateur-openproject.md) | ⬜ |
-| [US28.6.2 — Adaptateur ProjeQtOr (alternative)](FEATURES/pilotage-portefeuille/us-adaptateur-projeqtor.md) | ⬜ |
 | **F28.7 — Rétrospectives** | |
 | [US28.7.1 — Lien Scrumlr](FEATURES/retrospectives/us-lien-scrumlr.md) | ⬜ |
 | **F28.8 — Formulaires & sondages** | |
 | [US28.8.1 — Adaptateur Formbricks](FEATURES/formulaires-sondages/us-adaptateur-formbricks.md) | ⬜ |
 | [US28.8.2 — Adaptateur LimeSurvey (alternative)](FEATURES/formulaires-sondages/us-adaptateur-limesurvey.md) | ⬜ |
-| **F28.9 — Whiteboard (adaptateur)** | |
-| [US28.9.1 — Adaptateur Excalidraw (embed)](FEATURES/whiteboard-adaptateur/us-adaptateur-excalidraw.md) | ⬜ |
-| [US28.9.2 — Adaptateur tldraw (embed, alternative)](FEATURES/whiteboard-adaptateur/us-adaptateur-tldraw.md) | ⬜ |
-| **F28.10 — SCM & CI/CD** | |
-| [US28.10.1 — Adaptateur GitLab CE](FEATURES/scm-cicd/us-adaptateur-gitlab-ce.md) | ⬜ |
-| [US28.10.2 — Adaptateur Forgejo (alternative)](FEATURES/scm-cicd/us-adaptateur-forgejo.md) | ⬜ |
-| **F28.11 — Plateforme développeur (scorecards, scaffolding, TechDocs)** | |
-| [US28.11.1 — Scorecards de conformité et maturité](FEATURES/plateforme-developpeur/us-scorecards-conformite-maturite.md) | ⬜ |
-| [US28.11.2 — Scaffolding self-service](FEATURES/plateforme-developpeur/us-scaffolding-self-service.md) | ⬜ |
-| [US28.11.3 — TechDocs (documentation-as-code)](FEATURES/plateforme-developpeur/us-techdocs-documentation-as-code.md) | ⬜ |

@@ -48,6 +48,7 @@ function checkBacklog() {
     const full = join(root, entry);
     if (!isDir(full)) continue;
     if (entry === 'sprints') continue; // pas un EPIC — voir checkSprints()
+    if (entry === 'BACKLOG-IDEATION') continue; // dossier d'idéation hors backlog opérationnel
 
     if (!/^EPIC-[a-z0-9-]+$/.test(entry)) {
       fail(`${full}: dossier EPIC attendu au format \`EPIC-slug-kebab-case\``);
