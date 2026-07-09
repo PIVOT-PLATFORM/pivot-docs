@@ -44,18 +44,20 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 11 | 12 | 38 | ⬜ phase-3 — dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 79 | ⬜ phase-3 |
-| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 103 (dont 15 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
-| [E38 — Management de l'innovation (SMI, pilotage)](EPIC-pilotage-innovation/README.md) | E38 | 15 | 2 | 45 | ⬜ phase-3 · pilotage |
+| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 107 (dont 19 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
+| [E38 — Management de l'innovation (SMI, pilotage)](EPIC-pilotage-innovation/README.md) | E38 | 16 | 2 | 46 | ⬜ phase-3 · pilotage |
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 | 1 | 42 | ⬜ phase-3 |
-| [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 32 | ⬜ phase-3 |
+| [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 34 | ⬜ phase-3 |
 | [E43 — Sécurité & Zero Trust](EPIC-securite/README.md) | E43 | — | 13 | — | ⬜ phase-3 — dépend ADR-015–020 |
 | [E44 — SignDoc (signature électronique)](EPIC-signdoc/README.md) | E44 | 3 | 1 | 4 | ⬜ phase-3 |
 | [E45 — PDF Manager (Mes PDF)](EPIC-pdf-manager/README.md) | E45 | 4 | 1 | 4 | ⬜ phase-3 |
 | [E46 — Feedback](EPIC-feedback/README.md) | E46 | 2 | — | 2 | ⬜ phase-3 |
 | [E47 — Mini-jeux collaboratifs](EPIC-mini-jeux/README.md) | E47 | 3 | — | 3 | ⬜ phase-3 · collaboratif |
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
-| **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **74** | 🔄 En cours |
-| **Total phase-3** | **E09–E48 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~151** | **~68** | **~544** | ⏸️ Verrouillé |
+| [E49 — Module To-Do](EPIC-todo/README.md) | E49 | 3 | — | 3 | ⬜ phase-3 |
+| [E50 — Module PI Planning](EPIC-pi-planning/README.md) | E50 | 3 | — | 4 | ⬜ phase-3 · agilite |
+| **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **78** | 🔄 En cours |
+| **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~158** | **~68** | **~554** | ⏸️ Verrouillé |
 | **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
 
 ---
@@ -166,6 +168,8 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Low | E46 Feedback (kanban public bugs/idées) | phase-3 | ⬜ Backlog |
 | Low | E47 Mini-jeux collaboratifs (Bingo, Post-it Rush, Trivia Agile) | phase-3 · collaboratif | ⬜ Backlog |
 | Medium | E48 Assistant IA transverse (widget contextuel du shell) | phase-3 | ⬜ Backlog |
+| Medium | E49 Module To-Do (listes de tâches perso/partagées, dashboard consolidé) | phase-3 | ⬜ Backlog |
+| Medium | E50 Module PI Planning (cycle PI SAFe, Program board multi-équipes) | phase-3 · agilite | ⬜ Backlog |
 
 ---
 
@@ -196,6 +200,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | D2 | **Chevauchement E28/E29** — frontières entre adaptateurs OSS (E28) et moteur de workflow natif (E29) non tracées dans les deux sens | E28, E29 | Clarifier avant implémentation |
 | D3 | **E29 vs moteur Parcours** — E29 ne référence pas le moteur Parcours livré dans le POC (étapes typées, classification C0–C3, GCS) | E29 | Aligner ou créer l'EPIC manquant |
 | D4 | **Chevauchement E48/E29** — assistant IA transverse (E48) vs chatbots connectés (E29 US29.9.4) partiellement clarifié côté E48 uniquement | E48, E29 | Compléter côté E29 |
+| D5 | **Dépôt d'idée E38 vs POC Innovation** — F38.15 route *tout* dépôt d'idée via Pivot Forms (US38.15.3, par conception) alors que le POC PouetPouet capture la fiche idée de base nativement et ne route que le dépôt via challenge par formulaire | E38, E42 | Confirmer le choix Forms-driven avec le mainteneur avant Gate 1 (cf. EPIC-pilotage-innovation/README.md) |
 
 ---
 
@@ -224,3 +229,38 @@ déjà complète pour leur périmètre). Voir `EPIC-collaboration/README.md` §O
 *Nettoyage backlog 2026-07-09 : E18, E32–E37, E39, E40 déplacés dans `BACKLOG-IDEATION/` (dossiers hors backlog opérationnel) — Gate 1 non atteignable en l'état (section Périmètre manquante, ACs insuffisantes). E18 est un conteneur documentaire sans US propres ; E32–E40 sont des EPICs générés depuis un CSV benchmark PPM sans raffinement suffisant. 4 décisions ouvertes tracées dans §Décisions ouvertes (E25 périmètre, E28/E29 chevauchement, E29/Parcours, E48/E29). Liens relatifs mis à jour dans EPIC-pilotage/README.md, EPIC-roadmap/README.md, EPIC-portefeuille/README.md, EPIC-budget/README.md, sprints/zones-ombre.md.*
 
 *Nettoyage backlog 2026-07-09 (2e passe) : E25 déplacé en BACKLOG-IDEATION. F28.6/28.9/28.10/28.11 (E28), F29.10/29.14 (E29), F38.14/US38.13.2/US38.13.4/US38.7.1/EN38.2 (E38), US23.2.9/23.2.10 (E23), US26.2.2/26.2.4/26.2.5/26.2.6 (E26), US30.14.3/30.14.5 (E30), US41.5.14 (E41) déplacés en BACKLOG-IDEATION — doublons, hors domaine, niche secteur public, ou trop spéculatif.*
+
+*Ajout 2026-07-10 : audit de parité contre le POC PouetPouet, borné aux releases postérieures au
+dernier audit du même type (2026-07-08, `c62a710`, qui couvrait le CHANGELOG jusqu'à v0.28.1 —
+28 versions). Quatre releases livrées depuis (v0.29.0 à v0.32.0) comparées à `ROADMAP.md`/
+`CHANGELOG.md` puis croisées au backlog existant :*
+
+- *v0.30.0 Module To-Do (listes perso/partagées, dashboard consolidé) et v0.31.0 Module PI
+  Planning (cycle PI SAFe, Program board multi-équipes) — **aucune EPIC existante ne les
+  couvrait** → **E49** et **E50** créées (gabarit standard E44-E48 : README + Features + US stubs
+  phase-3, Gate 1 PO Agent à faire au démarrage du sprint).*
+- *v0.29.0 Module Innovation (fiches idée, challenges/jury/scoring, gamification, rattachement
+  organisationnel hybride LDAP+hiérarchie interne) — **E38 SMI existait déjà et couvrait
+  l'essentiel** (gamification US38.10.1/38.10.2, challenges/dépôt Forms US38.15.3, schéma
+  extensible US38.15.4) à l'exception du rattachement organisationnel hybride, absent → nouvelle
+  **F38.16/US38.16.1**. Écart d'architecture noté en **D5** ci-dessus plutôt que résolu
+  unilatéralement (le choix Forms-driven d'E38 est documenté et justifié, mais diverge de
+  l'implémentation de référence du POC).*
+- *v0.31.0 Formulaires génériques (destinataires nommés + lien personnel, relances
+  manuelles/automatiques paramétrables), livrés pour les besoins de PI Planning — absents de
+  F42.3 → **US42.3.4/US42.3.5** ajoutées (E42 : 32→34 US).*
+- *v0.32.0 Import Klaxoon revu (dépôt direct du `.klx`, décompression/repérage d'activités
+  automatiques, fidélité de conversion améliorée — zones→cadres, post-its image, dessins au
+  brush, champs personnalisés depuis les catégories/dimensions Klaxoon, annulation d'import,
+  placement anti-collision) — **EN30.13 existant décrivait l'ancienne méthode** (décompression
+  manuelle par l'utilisateur) → enabler mis à jour en place, pas de nouvel item.*
+- *v0.32.0 "Confort des boards" (texte proportionnel à la carte, dézoom dynamique selon le
+  contenu, redimensionnement d'une sélection multiple/groupe par cadre englobant, navigation au
+  clic droit) — raffinements du noyau **F08.x/EN08.x (Socle, 17/17 Done au 2026-07-09)**, non
+  couverts par les 17 items déjà clos → **US08.3.4 à US08.3.7** ajoutées en `Stage: Backlog`,
+  net-new, sans remettre en cause le 17/17 Done (voir `EPIC-collaboration/README.md`).*
+
+*Total : 2 EPICs créées (E49, E50 : 6 Features, 7 US), 1 Feature + 1 US ajoutées à E38, 2 US
+ajoutées à E42, 1 enabler mis à jour (EN30.13, sans nouvel item), 4 US ajoutées au noyau Socle
+E30/F08.3. Une décision d'architecture nouvellement identifiée tracée en D5, à trancher avec le
+mainteneur avant Gate 1 d'E38/F38.15.*

@@ -41,8 +41,11 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 - **F38.13 — Corporate venturing & intrapreneuriat** : studio/incubateur interne · **venture board & financement par paliers** · spin-off/spin-in · **lien écosystème start-up & CVC**
 - *(F38.14 — Intelligence collective avancée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) 2026-07-09)*
 - **F38.15 — Événements, parcours & formulaires d'innovation** : **événements internes** (hackathons, ateliers, demo days, awards) · **parcours d'innovation orchestré par Pivot Workflow (E29)** · **challenges & dépôt d'idée par formulaire (Forms)** · schéma d'idée extensible
+- **F38.16 — Rattachement organisationnel & éligibilité** : rattachement hybride **LDAP externe + hiérarchie interne**, catégories scopées/héritées, éligibilité de challenge par sous-arbre
 
-> **Note.** Le module **[E42 — Pivot Forms](pathname:///pivot-docs/backlog/EPIC-pivot-forms/)** fournit le form-builder ; F38.15 le consomme pour le **dépôt d'idée** (`form.submitted` → idée). Le **parcours** d'innovation s'appuie sur **Workflow (E29)**, l'animation d'événements sur **Session (E19)** / **MeetOps (E12)**.
+> **Note.** Le module **[E42 — Pivot Forms](pathname:///pivot-docs/backlog/EPIC-pivot-forms/)** fournit le form-builder ; F38.15 le consomme pour le **dépôt d'idée** (`form.submitted` → idée). Le **parcours** d'innovation s'appuie sur **Workflow (E29)**, l'animation d'événements sur **Session (E19)** / **MeetOps (E12)**. F38.16 réutilise le pattern LDAP externe déjà bâti pour **E25 Commande publique** (`mock-service-kit`/`external-client`).
+>
+> **Écart d'architecture à trancher (audit POC 2026-07-10, cf. STATUS.md §Décisions ouvertes, D5).** Le POC PouetPouet (module Innovation, v0.29.0) capture la fiche idée de base nativement (titre, pitch, problème/solution/bénéfices, votes, favoris, commentaires) et ne route que le **dépôt via challenge** à travers un formulaire ; F38.15 de cet EPIC fait l'inverse par conception (US38.15.3 : *tout* dépôt d'idée passe par Pivot Forms, pour ne pas dupliquer le modèle Idea). Choix documenté et justifié dans US38.15.3, cohérent avec l'architecture PIVOT (Forms comme brique transverse) — mais à confirmer explicitement avec le mainteneur avant Gate 1, car il diverge de l'implémentation de référence du POC.
 
 ### Enablers
 - **[EN38.1](ENABLERS/en-modele-smi-moteur.md)** — Modèle SMI & moteur (entonnoir, stage-gate, scoring, portefeuille, KPIs)
@@ -51,7 +54,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 ## Dépendances
 
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E18 Domaine Pilotage
-- Interface avec : **E22 Roadmap** / **E23 Portefeuille** (conversion innovation → projet), **E29 Workflows** (parcours d'innovation orchestré, F38.15), **E42 Pivot Forms** (dépôt d'idée, F38.15), **E19 Session** (vote/idéation, événements), **E12 MeetOps** (logistique événements), **E21 Risque** (grilles de scoring) — via bus PIVOT + deep-links
+- Interface avec : **E22 Roadmap** / **E23 Portefeuille** (conversion innovation → projet), **E29 Workflows** (parcours d'innovation orchestré, F38.15), **E42 Pivot Forms** (dépôt d'idée, F38.15), **E19 Session** (vote/idéation, événements), **E12 MeetOps** (logistique événements), **E21 Risque** (grilles de scoring), **E25 Commande publique** (pattern LDAP externe réutilisé, F38.16) — via bus PIVOT + deep-links
 
 ## Statut global
 
@@ -122,3 +125,5 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 | [US38.15.2 — Parcours d'innovation orchestré (Pivot Workflow, E29)](FEATURES/evenements-parcours-forms/us-parcours-innovation-workflow.md) | ⬜ |
 | [US38.15.3 — Challenges & dépôt d'idée par formulaire (Forms)](FEATURES/evenements-parcours-forms/us-challenges-depot-idee-forms.md) | ⬜ |
 | [US38.15.4 — Schéma d'idée extensible (champs personnalisés)](FEATURES/evenements-parcours-forms/us-schema-idee-extensible.md) | ⬜ |
+| **F38.16 — Rattachement organisationnel & éligibilité** | |
+| [US38.16.1 — Rattachement organisationnel hybride & éligibilité par sous-arbre](FEATURES/organisation-eligibilite/us-rattachement-organisationnel-hybride.md) | ⬜ |
