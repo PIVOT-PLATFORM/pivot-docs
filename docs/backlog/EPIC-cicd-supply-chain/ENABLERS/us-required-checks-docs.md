@@ -8,9 +8,13 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Branch protection `main` : required check = gitleaks (secrets scan) | 🔄 job Gitleaks ajouté, PR [#175](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/175) en cours (merge humain requis) |
+| Branch protection `main` : required check = gitleaks (secrets scan) | ✅ — `required_status_checks.contexts` = Lint + build docs site, Gitleaks - Secret Scan |
 | Force push désactivé sur `main` | ✅ (déjà en place) |
+
+**Implémentation** : job Gitleaks ajouté ([pivot-docs#175](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/175), mergée) + branch protection configurée dans la même PR.
+
+**Statut** : ✅ Terminé (2026-07-09)
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: Socle · Size: XS · Priority: Medium
-Stage: In progress
+Stage: Done
