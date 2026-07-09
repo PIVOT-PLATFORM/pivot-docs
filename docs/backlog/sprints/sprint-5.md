@@ -288,3 +288,40 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > complet dans le commentaire Gate 4 de la PR. Aucune action de merge à reprendre (déjà fait),
 > mais ces 3 bugs fonctionnels restent à trancher (issue de suivi ou acceptation en dette
 > technique) — non tranché à ce stade, à la charge du mainteneur.
+>
+> **Réparation Gate 4 — US08.3.1 / US08.3.2a (2026-07-09, suite) :** le mainteneur a demandé la
+> correction réelle du code plutôt qu'une simple documentation de la dette. Audit indépendant
+> supplémentaire mené sur US08.3.1 (`pivot-collaboratif-core`#28, score original 89/100 jamais
+> recalculé) : score réel **75/100** (arithmétique du commentaire original incohérente
+> 40+22+25=87≠89, dimension sécurité jamais notée séparément), 4 gaps trouvés (rate-limit
+> "3 tentatives" non testé et en réalité un no-op silencieux, JavaDoc mensongère sur le replay-on-
+> join jamais implémenté, aucun test sur l'AC payload DRAW > 64KB, décompte de tests du
+> commentaire original faux). Réparation livrée sur `pivot-collaboratif-core`#28 →
+> [`pivot-collaboratif-core`#36](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/36) :
+> les 3 gaps corrigés + un second bug réel découvert au passage (buffer WebSocket Tomcat 8KB
+> inférieur à la limite STOMP applicative de 64KB, provoquait une fermeture brutale de connexion
+> — code 1009 — au lieu de l'ERROR STOMP gracieux attendu, avec risque de cascade sur les autres
+> participants). Vérification adversariale par un agent indépendant : les 2 nouveaux tests
+> d'intégration rejoués contre le code d'avant-fix échouent exactement comme prévu, puis passent
+> sur le code corrigé — non tautologiques, confirmé. Gate 4 réel = **100/100**, posté sur la PR,
+> mergée (`--admin`, même précédent déjà établi sur ce repo bootstrap sans reviewer configuré).
+> Gap résiduel honnêtement signalé, hors périmètre (AC "déconnexion WS code 1008 sur souscription
+> non autorisée" toujours non implémentée) — à trancher par le mainteneur.
+>
+> Réparation US08.3.2a (`pivot-collaboratif-ui`#24) : les 9 gaps du score réel 69/100 corrigés sur
+> [`pivot-collaboratif-ui`#37](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/37) —
+> redimensionnement par handles réellement fonctionnel, `clampObjectToCanvas()` câblé sur tous les
+> chemins réels (drag/resize/duplicate/paste), `duplicate()` corrigé (sous-type DRAW réel au lieu
+> de `'stroke'` systématique), focus trap réel sur le dialogue raccourcis, contraste corrigé
+> (`#888` → `#555`, recalculé selon la formule WCAG), erreur du champ hexadécimal rendue
+> accessible (`aria-describedby`), `@axe-core/playwright` réellement ajouté et invoqué (plus une
+> fausse affirmation), spec Playwright E2E ajoutée (limitée par l'absence de backend live en
+> sandbox — gap d'infra pré-existant confirmé légitime via `TODO-SETUP.md`, pas une esquive),
+> table de traçabilité AC ajoutée. Vérification indépendante : contraste WCAG recalculé à la main
+> (correspondance à 3-4 décimales près), `axe-core` confirmé comme vraie dépendance réellement
+> invoquée, resize/duplicate/focus-trap tous tracés avec tests sur les valeurs résultantes réelles,
+> aucune régression sur les 195+ tests pré-existants. Gate 4 réel = **99/100** (-1 sur un décompte
+> de tests obsolète dans la description de la PR, 348 annoncés vs 355 réels — coquille sans impact
+> fonctionnel), posté sur la PR. **PR laissée en draft à la demande du mainteneur** — sortie de
+> draft et merge non faits, à décider séparément. Gap auto-signalé hors périmètre (non corrigé) :
+> `WhiteboardBoardComponent` ne lie jamais `[boardTitle]`, `aria-label` se termine par `"— "`.
