@@ -170,28 +170,24 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.12.3 : Widgets communautaires
 
 ### F30.13 — Licences & modèle économique
-- US30.13.1 : Sièges légers participants
 - US30.13.2 : Tableau de bord des quotas
 
 ### F30.14 — Innovation
 - US30.14.1 : Mémoire d'atelier exécutable
 - US30.14.2 : Coffre de décisions
-- *(US30.14.3 Traduction simultanée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/) 2026-07-09 — spéculatif, dépendance IA)*
+- *(US30.14.3 Traduction simultanée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/us-traduction-simultanee.md) 2026-07-09 — spéculatif, dépendance IA)*
 - US30.14.4 : Équité de participation
-- *(US30.14.5 Pont physique-numérique continu → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/) 2026-07-09 — spéculatif, infrastructure non définie)*
+- *(US30.14.5 Pont physique-numérique continu → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-collaboration/FEATURES/innovation/us-pont-physique-numerique-continu.md) 2026-07-09 — spéculatif, infrastructure non définie)*
 - US30.14.6 : Format d'échange ouvert
 - US30.14.7 : IA souveraine embarquée
 - US30.14.8 : Board accessible non visuel
 
 ### F30.15 — Chantiers SI
 - US30.15.1 : Standardisation du parc
-- US30.15.2 : Choix par écosystème
-- US30.15.3 : Contractualisation gouvernance
 - US30.15.4 : Test de sortie avant signature
 - US30.15.5 : Réseau d'animateurs référents
 - US30.15.6 : Mesure d'adoption
 - US30.15.7 : Archivage GED des boards critiques
-- US30.15.8 : Négociation licences
 
 ### F08.x/EN08.x — Noyau whiteboard (ex-E08, `Phase: Socle`, non verrouillé)
 - **EN08.1** — Isolation WebSocket room par board
@@ -200,6 +196,23 @@ nativement sous ce même EPIC sans mapping F30.x.
 - **F08.2** — Partage et rôles (backend + Angular)
 - **F08.3** — Canvas collaboratif temps réel (backend WS + Angular)
 - **F08.4** — Templates de tableau
+
+## Hors périmètre
+
+*Retiré le 2026-07-09 : PIVOT n'a pas de modèle payant/multi-tiers (une instance = un déploiement
+gratuit, pas de facturation par siège ni de licence à négocier) — ces US, dérivées du benchmark
+concurrentiel (Miro/Klaxoon/FigJam/Microsoft Whiteboard, tous payants), n'ont pas d'équivalent
+produit chez PIVOT.*
+
+| Retiré | Raison |
+|---|---|
+| US30.13.1 — Sièges légers participants | Sièges gratuits/à bas coût pour participants occasionnels : n'a de sens que face à une tarification par siège, absente chez PIVOT |
+| US30.15.2 — Choix par écosystème | Grille d'arbitrage entre outils payants concurrents par écosystème IT (M365→Whiteboard, Figma→FigJam…) — PIVOT n'est pas en compétition de licence sur ce terrain |
+| US30.15.3 — Contractualisation gouvernance | Clauses contractuelles (SLA, audit, réversibilité) propres à un contrat de licence commercial — sans contrat payant, rien à négocier |
+| US30.15.8 — Négociation licences | Négociation de sièges légers et d'engagement pluriannuel indexé sur l'usage — présuppose un modèle de licence payant |
+
+US30.13.2 (Tableau de bord des quotas) est conservé : les quotas qu'il couvre (participants,
+fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle de facturation.
 
 ## Dépendances
 
@@ -313,7 +326,6 @@ nativement sous ce même EPIC sans mapping F30.x.
 | [US30.12.2 — Marketplace d'intégrations](FEATURES/extensibilite/us-marketplace-d-integrations.md) | ⬜ |
 | [US30.12.3 — Widgets communautaires](FEATURES/extensibilite/us-widgets-communautaires.md) | ⬜ |
 | **F30.13 — Licences & modèle éco.** | |
-| [US30.13.1 — Sièges légers participants](FEATURES/licences-eco/us-sieges-legers-participants.md) | ⬜ |
 | [US30.13.2 — Tableau de bord des quotas](FEATURES/licences-eco/us-tableau-de-bord-des-quotas.md) | ⬜ |
 | **F30.14 — Innovation** | |
 | [US30.14.1 — Mémoire d'atelier exécutable](FEATURES/innovation/us-memoire-d-atelier-executable.md) | ⬜ |
@@ -326,13 +338,10 @@ nativement sous ce même EPIC sans mapping F30.x.
 | [US30.14.8 — Board accessible non visuel](FEATURES/innovation/us-board-accessible-non-visuel.md) | ⬜ |
 | **F30.15 — Chantiers SI** | |
 | [US30.15.1 — Standardisation du parc](FEATURES/chantiers-si/us-standardisation-du-parc.md) | ⬜ |
-| [US30.15.2 — Choix par écosystème](FEATURES/chantiers-si/us-choix-par-ecosysteme.md) | ⬜ |
-| [US30.15.3 — Contractualisation gouvernance](FEATURES/chantiers-si/us-contractualisation-gouvernance.md) | ⬜ |
 | [US30.15.4 — Test de sortie avant signature](FEATURES/chantiers-si/us-test-de-sortie-avant-signature.md) | ⬜ |
 | [US30.15.5 — Réseau d'animateurs référents](FEATURES/chantiers-si/us-reseau-d-animateurs-referents.md) | ⬜ |
 | [US30.15.6 — Mesure d'adoption](FEATURES/chantiers-si/us-mesure-d-adoption.md) | ⬜ |
 | [US30.15.7 — Archivage GED des boards critiques](FEATURES/chantiers-si/us-archivage-ged-des-boards-critiques.md) | ⬜ |
-| [US30.15.8 — Négociation licences](FEATURES/chantiers-si/us-negociation-licences.md) | ⬜ |
 
 ---
 

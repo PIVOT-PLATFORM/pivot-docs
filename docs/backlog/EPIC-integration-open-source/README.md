@@ -33,7 +33,7 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 
 ### Features
 
-> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/) (2026-07-09)** : F28.6 (Pilotage de portefeuille / OpenProject/ProjeQtOr — doublon avec E22/E23), F28.9 (Whiteboard adaptateur / Excalidraw/tldraw — doublon avec E30), F28.10 (SCM & CI/CD — hors domaine PIVOT), F28.11 (Plateforme développeur — hors domaine PIVOT).
+> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) (2026-07-09)** : F28.6 (Pilotage de portefeuille / OpenProject/ProjeQtOr — doublon avec E22/E23), F28.9 (Whiteboard adaptateur / Excalidraw/tldraw — doublon avec E30), F28.10 (SCM & CI/CD — hors domaine PIVOT), F28.11 (Plateforme développeur — hors domaine PIVOT).
 
 - **F28.1 — Delivery agile**
   - [US28.1.1 — Adaptateur Plane, backlog & sprints](FEATURES/delivery-agile-plane/us-adaptateur-plane-backlog-sprints.md)
@@ -76,7 +76,7 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 
 Le critère adaptateur-vs-natif (ADR-009 §2) porte sur la décision de *construire* un adaptateur (faisabilité technique + coût), **pas** sur l'exclusion d'un adaptateur au seul motif qu'un module natif existe déjà pour le même besoin. F28.7 et F28.8 concrétisent ce principe : Scrumlr coexiste avec Rétrospective (E20), Formbricks/LimeSurvey avec Session/Pivot Forms (E19/E42). Aucune exclusion mutuelle : chaque instance active ce dont elle a besoin.
 
-> **Note** : F28.6 (OpenProject/ProjeQtOr) et F28.9 (Excalidraw/tldraw) ont été déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/) (2026-07-09) — doublons avec E22/E23 et E30 respectivement.
+> **Note** : F28.6 (OpenProject/ProjeQtOr) et F28.9 (Excalidraw/tldraw) ont été déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) (2026-07-09) — doublons avec E22/E23 et E30 respectivement.
 
 ## Hors périmètre
 

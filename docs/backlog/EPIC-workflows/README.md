@@ -27,7 +27,7 @@ faute de porter sur plus d'un outil).
 
 ## Périmètre
 
-> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/) (2026-07-09)** : F29.10 (RPA & process intelligence — hors scope PIVOT), F29.14 (Chantiers SI — méta-gouvernance SI, pas des features produit).
+> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) (2026-07-09)** : F29.10 (RPA & process intelligence — hors scope PIVOT), F29.14 (Chantiers SI — méta-gouvernance SI, pas des features produit).
 
 - **Enablers (E13 NFR)** — exigences non fonctionnelles socle
   - EN29.1 : Chiffrement & RGPD
@@ -94,7 +94,7 @@ faute de porter sur plus d'un outil).
   - US29.9.2 : Interfaces no-code
   - US29.9.3 : Cartographie des processus
   - US29.9.4 : Chatbots connectés
-- *(F29.10 — RPA & process intelligence déplacé en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/) 2026-07-09 — hors scope : RPA desktop + process mining)*
+- *(F29.10 — RPA & process intelligence déplacé en [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) 2026-07-09 — hors scope : RPA desktop + process mining)*
 - **F29.11 — Extensibilité & écosystème** — US29.11.1, US29.11.2, US29.11.3, US29.11.4, US29.11.5
   - US29.11.1 : Serveur MCP
   - US29.11.2 : Connecteurs communautaires typés
@@ -114,7 +114,7 @@ faute de porter sur plus d'un outil).
   - US29.13.6 : Mode dégradé organisé
   - US29.13.7 : Pile souveraine certifiée
   - US29.13.8 : Packs conformité France
-- *(F29.14 — Chantiers SI déplacé en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/) 2026-07-09 — méta-gouvernance SI, pas des features produit)*
+- *(F29.14 — Chantiers SI déplacé en [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) 2026-07-09 — méta-gouvernance SI, pas des features produit)*
 
 ## Dépendances
 
@@ -190,7 +190,7 @@ faute de porter sur plus d'un outil).
 | [US29.9.2 — Interfaces no-code](FEATURES/suite-experience/us-interfaces-nocode.md) | ⬜ |
 | [US29.9.3 — Cartographie des processus](FEATURES/suite-experience/us-cartographie-processus.md) | ⬜ |
 | [US29.9.4 — Chatbots connectés](FEATURES/suite-experience/us-chatbots-connectes.md) | ⬜ |
-| *(F29.10 — RPA & process intelligence → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/rpa-process/))* | — |
+| *(F29.10 — RPA & process intelligence → [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md))* | — |
 | **F29.11 — Extensibilité & écosystème** | |
 | [US29.11.1 — Serveur MCP](FEATURES/extensibilite-ecosysteme/us-serveur-mcp.md) | ⬜ |
 | [US29.11.2 — Connecteurs communautaires typés](FEATURES/extensibilite-ecosysteme/us-connecteurs-communautaires-types.md) | ⬜ |
@@ -210,4 +210,4 @@ faute de porter sur plus d'un outil).
 | [US29.13.6 — Mode dégradé organisé](FEATURES/innovation/us-mode-degrade-organise.md) | ⬜ |
 | [US29.13.7 — Pile souveraine certifiée](FEATURES/innovation/us-pile-souveraine-certifiee.md) | ⬜ |
 | [US29.13.8 — Packs conformité France](FEATURES/innovation/us-packs-conformite-france.md) | ⬜ |
-| *(F29.14 — Chantiers SI → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-workflows/FEATURES/chantiers-si/))* | — |
+| *(F29.14 — Chantiers SI → [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md))* | — |
