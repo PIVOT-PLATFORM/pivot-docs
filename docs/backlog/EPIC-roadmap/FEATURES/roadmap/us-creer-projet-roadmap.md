@@ -26,7 +26,7 @@
 
 - Le projet est l'entité racine du schéma `pilotage` (EN18.1) ; il est le point d'ancrage du modèle temporel unique (EN22.1 : `Projet ─< Phase ─< Tâche`) — cette US ne crée que le `Projet`, sans Phase/Tâche.
 - FK `teams.id` vers `public.teams` (schéma partagé) : respecter la contrainte « pas de FK inter-domaine » (ADR-006/008) — validation applicative du `teamId`, pas de contrainte SQL cross-schéma.
-- Rattachement à une `Application` : cf. [EN18.9](../../../EPIC-pilotage/ENABLERS/en-modele-application-projet.md) — 1 Application → 1..n Projet.
+- Rattachement à une `Application` : cf. [EN18.9](../../../BACKLOG-IDEATION/EPIC-pilotage/ENABLERS/en-modele-application-projet.md) — 1 Application → 1..n Projet.
 - Le passage à `CANCELLED`/`COMPLETED` doit être compatible avec les futures US de baseline (US22.2.5, US22.4.9) : ne pas bloquer la lecture d'un projet clos.
 
 ---

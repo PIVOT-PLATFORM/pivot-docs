@@ -18,7 +18,7 @@ Chaque module de capacité est désormais **un EPIC dédié** :
 | Roadmap / Gantt | [E22](../../EPIC-roadmap/README.md) | pivot-pilotage-core · `pilotage` |
 | Portefeuille projets | [E23](../../EPIC-portefeuille/README.md) | pivot-pilotage-core · `pilotage` |
 | ADR projet | [E24](../../EPIC-adr-projet/README.md) | pivot-pilotage-core · `pilotage` |
-| Commande publique | [E25](../../EPIC-commande-publique/README.md) | pivot-pilotage-core · `pilotage` |
+| Commande publique | [E25](../EPIC-commande-publique/README.md) | pivot-pilotage-core · `pilotage` |
 | Budget & suivi financier | [E26](../../EPIC-budget/README.md) | pivot-pilotage-core · `pilotage` |
 | OKR | [E27](../../EPIC-okr/README.md) | pivot-pilotage-core · `pilotage` |
 | Cahiers de tests | [E13](../../EPIC-cahiers-tests/README.md) | pivot-pilotage-core · `pilotage` |
@@ -97,7 +97,7 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | [E22 — Roadmap / Gantt](../../EPIC-roadmap/README.md) | ⬜ |
 | [E23 — Portefeuille projets](../../EPIC-portefeuille/README.md) | ⬜ |
 | [E24 — ADR projet](../../EPIC-adr-projet/README.md) | ⬜ |
-| [E25 — Commande publique](../../EPIC-commande-publique/README.md) | ⬜ |
+| [E25 — Commande publique](../EPIC-commande-publique/README.md) | ⬜ |
 | [E26 — Budget & suivi financier](../../EPIC-budget/README.md) | ⬜ |
 | [E27 — OKR](../../EPIC-okr/README.md) | ⬜ |
 | [E21 — Gestion des risques](../../EPIC-risk/README.md) | ⬜ |

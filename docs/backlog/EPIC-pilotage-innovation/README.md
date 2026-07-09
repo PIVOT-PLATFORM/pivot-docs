@@ -4,7 +4,7 @@
 
 ## Objectif
 
-Module-EPIC du **Domaine Pilotage** ([E18](../EPIC-pilotage/README.md)) — **Système de Management de l'Innovation (SMI)** aligné **ISO 56002 / famille ISO 56000** : de la **stratégie** d'innovation à l'**idéation**, l'**entonnoir & stage-gate**, l'**évaluation**, le **portefeuille d'innovation** (horizons H1/H2/H3), l'**expérimentation**, la **propriété intellectuelle**, l'**open innovation**, les **KPIs & la maturité**, et la **culture**. Comparables outils : Qmarkets, Brightidea, HYPE, Itonics, Wazoku, Sopheon.
+Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/README.md)) — **Système de Management de l'Innovation (SMI)** aligné **ISO 56002 / famille ISO 56000** : de la **stratégie** d'innovation à l'**idéation**, l'**entonnoir & stage-gate**, l'**évaluation**, le **portefeuille d'innovation** (horizons H1/H2/H3), l'**expérimentation**, la **propriété intellectuelle**, l'**open innovation**, les **KPIs & la maturité**, et la **culture**. Comparables outils : Qmarkets, Brightidea, HYPE, Itonics, Wazoku, Sopheon.
 
 > **Recentrage.** Les 8 items « secteur public » historiquement rangés ici (lien commande publique, subventions, AP/CP, transparence, archivage probant, valeur publique, livrables d'instance, format ouvert) ont été **redistribués** vers E25 (commande publique), E26 (budget), E23 (portefeuille), E35 (gouvernance) et E37 (licences/réversibilité). E38 est désormais un **SMI pur**.
 
