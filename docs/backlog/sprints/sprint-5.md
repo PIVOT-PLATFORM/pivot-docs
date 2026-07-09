@@ -39,20 +39,25 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 
 ## Vague 1+ — Module Whiteboard (Socle), sur `pivot-collaboratif-core`/`pivot-collaboratif-ui`
 
+> **Resynchronisé le 2026-07-09** depuis le frontmatter `Stage:` réel de chaque fichier (source de
+> vérité) — ce tableau était resté figé à un état bien antérieur (plusieurs 👀/🔄 alors que le
+> code correspondant était déjà mergé depuis). Voir aussi la correction du même écart dans
+> `EPIC-collaboration/README.md` §Suivi noyau.
+
 | US | Titre | Size | Priorité | 🤖 Dev |
 |----|-------|------|----------|--------|
-| EN08.1 | Isolation WebSocket room par board | M | Critical | 👀 |
-| EN08.2 | Guard Angular module whiteboard | S | Critical | 👀 |
-| US08.1.1 | Utilisateur crée un tableau (backend) | M | Critical | 👀 |
-| US08.1.2 | Utilisateur liste ses tableaux (backend) | M | Critical | 👀 |
-| US08.1.3 | Angular : liste des tableaux | M | Critical | 👀 |
-| US08.1.4 | Renommer un tableau | S | High | 🔄 |
-| US08.1.5 | Supprimer un tableau | S | Critical | 🔄 |
-| US08.2.1 | Owner partage un tableau par lien public | M | High | 👀 |
-| US08.2.2 | Utilisateur rejoint un tableau via token | M | High | 👀 |
-| US08.2.3 | Angular : UI partage et gestion rôles | M | High | 👀 |
-| US08.3.1 | Connexion WebSocket au canvas | M | Critical | 🔁 Review — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28), Gate 4 = 89/100 |
-| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | 🔁 Review — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24), Gate 4 = 92/100 |
+| EN08.1 | Isolation WebSocket room par board | M | Critical | ✅ Done |
+| EN08.2 | Guard Angular module whiteboard | S | Critical | ✅ Done |
+| US08.1.1 | Utilisateur crée un tableau (backend) | M | Critical | ✅ Done — `pivot-collaboratif-core#19` |
+| US08.1.2 | Utilisateur liste ses tableaux (backend) | M | Critical | ✅ Done — `pivot-collaboratif-core#19` |
+| US08.1.3 | Angular : liste des tableaux | M | Critical | ✅ Done — `pivot-collaboratif-ui#17` |
+| US08.1.4 | Renommer un tableau | S | High | ✅ Done — `pivot-collaboratif-core#19` + `pivot-collaboratif-ui#19` (frontmatter resté `In progress` malgré le merge, corrigé) |
+| US08.1.5 | Supprimer un tableau | S | Critical | ✅ Done — `pivot-collaboratif-core#19` + `pivot-collaboratif-ui#20` (frontmatter resté `In progress` malgré le merge, corrigé) |
+| US08.2.1 | Owner partage un tableau par lien public | M | High | ✅ Done — `pivot-collaboratif-core#21` |
+| US08.2.2 | Utilisateur rejoint un tableau via token | M | High | ✅ Done |
+| US08.2.3 | Angular : UI partage et gestion rôles | M | High | ✅ Done — `pivot-collaboratif-core#25` |
+| US08.3.1 | Connexion WebSocket au canvas | M | Critical | ✅ Done — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28) mergée |
+| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31) mergée |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ✅ Done — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) mergée |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) mergée |

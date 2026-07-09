@@ -43,6 +43,6 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
-Stage: Review
+Stage: Done
 Gate 5 : `pivot-collaboratif-core` PR [#19](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/19)
 (Gate 4 = 88/100), spec figée `docs/specs/EPIC-collaboration/us08-1-1-creer-tableau.md` (rétroactif, 2026-07-07)

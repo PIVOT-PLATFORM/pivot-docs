@@ -54,7 +54,7 @@
 
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
-Stage: Review
+Stage: Done
 Dépendances: US08.3.2a (composant canvas local), EN08.1 (isolation WS room), US08.3.1 (connexion WS)
 — `pivot-collaboratif-ui` PR
 [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31), Gate 4 = 92/100, spec
