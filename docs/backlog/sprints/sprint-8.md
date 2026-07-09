@@ -12,7 +12,7 @@
 | US09.2.1 | Voter sur un ticket en temps réel | M | High | ⬜ |
 | US09.2.2 | Révéler les votes et calculer le consensus | S | High | ⬜ |
 | US09.3.1 | Participer anonymement (sans compte) | M | Medium | ⬜ |
-| US14.1.1 | Créer et gérer une roue de tirage | M | High | ⬜ |
+| US14.1.1 | Créer et gérer une roue de tirage | M | High | 🟡 frontend mergé ([pivot-agilite-ui#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/19), Gate 4 100/100) · backend PR ouverte, `needs-human-review` ([pivot-agilite-core#27](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/27)) — hard block CLAUDE.md sur l'ajout de `pivot-core-starter`, jamais de merge autonome quel que soit le score |
 | US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
 | US14.3.1 | Diffusion du résultat en temps réel (WebSocket) | M | High | ⬜ |
 | US20.1.1 | Créer une session de rétrospective | M | High | ⬜ |
