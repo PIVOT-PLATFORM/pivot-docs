@@ -8,9 +8,9 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Branch protection `main` : required check = gitleaks (secrets scan) | ⬜ |
-| Force push désactivé sur `main` | ⬜ |
+| Branch protection `main` : required check = gitleaks (secrets scan) | 🔄 job Gitleaks ajouté, PR [#175](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/175) en cours (merge humain requis) |
+| Force push désactivé sur `main` | ✅ (déjà en place) |
 
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: Socle · Size: XS · Priority: Medium
-Stage: Backlog
+Stage: In progress

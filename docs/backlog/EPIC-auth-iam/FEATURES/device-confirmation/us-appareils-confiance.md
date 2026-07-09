@@ -27,5 +27,5 @@
 
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: Socle · Size: M · Priority: Medium
-Stage: Review
+Stage: Done
 Gate 5 : `pivot-core` PR [#152](https://github.com/PIVOT-PLATFORM/pivot-core/pull/152) (Gate 4 = 100/100) · `pivot-ui` PR [#100](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/100) (Gate 4 = 93/100), spec figée `docs/specs/EPIC-auth-iam/us01-4-2-gestion-appareils-confiance.md` (rétroactif, 2026-07-08)

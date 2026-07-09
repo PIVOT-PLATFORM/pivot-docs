@@ -44,5 +44,5 @@
 
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: High
-Stage: Review
+Stage: Done
 Gate 5 : `pivot-core` PR [#128](https://github.com/PIVOT-PLATFORM/pivot-core/pull/128) (Gate 4 = 99/100) + `pivot-ui` PR [#70](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/70) (Gate 4 = 93/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-1-changer-password.md` (rétroactif, 2026-07-08)
