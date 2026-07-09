@@ -29,35 +29,53 @@ lui-même, contre la même table `public.access_tokens` (lecture cross-schéma, 
 PostgreSQL partagée — cf. architecture BDD multi-repo déjà établie).
 
 **Critères de complétion** :
-- [ ] `pivot-collaboratif-core` implémente `AuthenticatedPrincipalResolver` (contrat
+- [x] `pivot-collaboratif-core` implémente `AuthenticatedPrincipalResolver` (contrat
   `pivot-core-starter`, `fr.pivot.core.auth`) — validation directe contre `public.access_tokens`
   (hash SHA-256 du bearer token, expiration, révocation) + `public.users`/`public.tenants` (rôle,
   désactivation tenant/utilisateur) — même algorithme et mêmes règles que `TokenService`
   (`pivot-core-app`), dupliqué, jamais d'appel réseau vers `pivot-core`
-- [ ] Given un bearer token opaque valide émis par `pivot-core`, when un appel REST whiteboard
+- [x] Given un bearer token opaque valide émis par `pivot-core`, when un appel REST whiteboard
   (`GET /whiteboard/boards`, etc.), then la requête est authentifiée et résolue au bon
   `userId`/`tenantId` — remplace le `X-Pivot-User-Id`/`X-Pivot-Tenant-Id` actuel (jamais un header
   client-fourni comme source de vérité identité, cf. règle absolue déjà en vigueur côté
   `pivot-core`)
-- [ ] Error case: given un token expiré/révoqué/inconnu, then 401 (comportement identique à
+- [x] Error case: given un token expiré/révoqué/inconnu, then 401 (comportement identique à
   `pivot-core` pour un client)
-- [ ] Error case: given un tenant désactivé, then 401 (pas de fuite d'information sur la cause)
-- [ ] Security: aucune régression sur l'isolation tenant déjà en vigueur (le `tenantId` résolu
+- [x] Error case: given un tenant désactivé, then 401 (pas de fuite d'information sur la cause)
+- [x] Security: aucune régression sur l'isolation tenant déjà en vigueur (le `tenantId` résolu
   depuis le token reste l'unique source de vérité, jamais un paramètre requête/body)
-- [ ] Security: le hash du token n'est jamais loggé, cohérent avec `ADR-005`
-- [ ] Tests d'intégration : token valide/expiré/révoqué/tenant désactivé, contre une vraie
-  instance Postgres (Testcontainers, cohérent avec les conventions déjà établies du repo)
-- [ ] `pivot-ui` : plus de déconnexion erronée au clic sur `/whiteboard` une fois activé — vérifié
-  manuellement (flow complet login → activation module → navigation whiteboard → chargement liste
-  de tableaux, sans déconnexion)
-- [ ] `RequestPrincipalResolver` (stub headers) retiré, remplacé par le nouveau resolver — pas de
+- [x] Security: le hash du token n'est jamais loggé, cohérent avec `ADR-005`
+- [x] Tests d'intégration : token valide/expiré/révoqué/tenant désactivé, contre une vraie
+  instance Postgres (Testcontainers, cohérent avec les conventions déjà établies du repo) —
+  `AuthenticationIT`, 9 tests, plus la conversion de toute la suite whiteboard existante
+- [ ] `pivot-ui` : plus de déconnexion erronée au clic sur `/whiteboard` une fois activé — **non
+  vérifié manuellement dans cette session** (nécessite un navigateur réel, hors de portée ici) ;
+  le mécanisme serveur qui causait le 401 est corrigé, mais le flow UI de bout en bout reste à
+  confirmer par un humain
+- [x] `RequestPrincipalResolver` (stub headers) retiré, remplacé par le nouveau resolver — pas de
   double mécanisme d'identité coexistant
 
-**Statut** : ⬜ À faire
+**Implémentation** : [pivot-collaboratif-core#46](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/46)
+(mergée). Trois bugs réels trouvés et corrigés en cours de route, au-delà du scope initial :
+1. **Spring Security auto-configuré par défaut** — `pivot-core-starter` (nouvelle dépendance)
+   amène transitivement `spring-boot-starter-security` ; sans `SecurityFilterChain` explicite,
+   Spring Boot bloquait **toute** requête (REST compris, pas juste WebSocket) avec un challenge
+   HTTP Basic — confirmé par un dump de handshake brut (`401` + `WWW-Authenticate: Basic`). Un
+   `SecurityFilterChain` permit-all a été ajouté (l'auth réelle reste entièrement hors Spring
+   Security, gérée par le code applicatif de cet Enabler).
+2. **Race condition sur la fermeture de session après 3 violations de rate-limit** (US08.3.1,
+   pré-existante, jamais exercée en CI avant ce fix car masquée par le bug ci-dessus) — le message
+   de fermeture n'avait pas le temps d'être flush au client avant la coupure TCP. Corrigé par un
+   délai de grâce de 250ms avant la fermeture effective.
+3. **CVE-2026-10532** (logback-core, LOW) — même fix que `pivot-core#208`, appliqué localement
+   (dépendance résolue indépendamment par ce repo).
+
+**Statut** : ✅ Terminé (backend) — vérification manuelle `pivot-ui` restante, voir AC non coché
+ci-dessus
 
 ---
 Item Type: Enabler · Parent: E08 (E30) · Type: sécurité · Module: collaboratif · Phase: Socle · Size: M
-Stage: Backlog · Priority: Critical
+Stage: Review · Priority: Critical
 Dépendances: `pivot-core#171`/EN17.1 (`AuthenticatedPrincipal`/`AuthenticatedPrincipalResolver`,
 livré) · [`ADR-022`](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage) (statut
 Proposé — acceptation formelle par le mainteneur recommandée avant le Gate 1 de cet enabler,
