@@ -1,7 +1,7 @@
 # ADR-011 — Zero Trust : mTLS est-ouest, token exchange
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, RSSI, Lead intégration
 **Contexte technique :** organisation `PIVOT-PLATFORM` (`pivot-core`, `pivot-ui`, adaptateurs `pivot-plugins`)
 

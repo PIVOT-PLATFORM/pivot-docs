@@ -1,7 +1,7 @@
 # ADR-013 — Autorisation externalisée (policy-as-code)
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, RSSI, Responsable juridique
 **Contexte technique :** organisation `PIVOT-PLATFORM`
 

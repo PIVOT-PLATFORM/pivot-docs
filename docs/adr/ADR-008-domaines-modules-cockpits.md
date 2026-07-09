@@ -1,7 +1,7 @@
 # ADR-008 — Domaines composables & cockpits
 
 **Date :** 2026-07-04
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Équipe PIVOT
 
 ---

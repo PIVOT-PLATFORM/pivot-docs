@@ -1,7 +1,7 @@
 # ADR-010 — Roadmap & Gantt : un modèle temporel unique, parité MS Project en web
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Équipe PIVOT
 
 ---

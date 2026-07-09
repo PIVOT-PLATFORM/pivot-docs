@@ -1,7 +1,7 @@
 # ADR-015 — Zones de souveraineté A/B/C & segmentation réseau
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, RSSI, Responsable juridique
 **Contexte technique :** organisation `PIVOT-PLATFORM`
 

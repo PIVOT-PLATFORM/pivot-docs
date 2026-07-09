@@ -1,7 +1,7 @@
 # ADR-016 — Baseline supply-chain & gouvernance d'admission des modules
 
 **Date :** 2026-07-05
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, RSSI, Lead intégration
 **Contexte technique :** organisation `PIVOT-PLATFORM`
 
