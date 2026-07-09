@@ -48,3 +48,11 @@
 >
 > E09 ‖ E14 ‖ E20 restent parallélisables entre eux à chaque vague (même repo `pivot-agilite-*`,
 > périmètres disjoints) ‖ TAXO-2 indépendant (pivot-docs).
+>
+> **US20.1.1 — statut détaillé (item réparti sur deux repos) :** frontend (`pivot-agilite-ui`)
+> livré — PR [`pivot-agilite-ui#18`](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/18)
+> (`RetroApiService`, formulaire de création, route `retro/create`, i18n fr/en, tests Vitest +
+> Playwright). Backend (`pivot-agilite-core`) toujours en cours (issue
+> [`pivot-agilite-core#24`](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/issues/24), pas
+> de PR à ce jour) — 🤖 Dev de la ligne ci-dessus laissé `⬜` tant que les deux repos ne sont pas
+> livrés, pour ne pas donner une fausse impression d'item entièrement terminé.
