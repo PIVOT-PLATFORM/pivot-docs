@@ -1,7 +1,7 @@
 # ADR-023 — Modèle d'entités du catalogue, réconcilié avec `public.teams`
 
 **Date :** 2026-07-09
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, Product Owner
 **Contexte technique :** `pivot-core` (schéma `public`, portail catalogue), `pivot-pilotage-core` (schéma `pilotage`), `pivot-agilite-core` (schéma `agilite`), futur `pivot-risk-core` (schéma `risk`, cf. §6 Extensibilité), adaptateurs E28 (`pivot-docs/docs/backlog/EPIC-integration-open-source/`)
 

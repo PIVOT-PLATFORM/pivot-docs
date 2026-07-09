@@ -1,7 +1,7 @@
 # ADR-026 — Briques natives à construire (planning poker, CLM) et périmètre
 
 **Date :** 2026-07-09
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, Product Owner
 **Contexte technique :** `pivot-agilite-core`/`-ui` (planning poker) · `pivot-pilotage-core`/`-ui` (CLM)
 

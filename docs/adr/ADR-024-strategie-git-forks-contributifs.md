@@ -1,7 +1,7 @@
 # ADR-024 — Stratégie Git des forks contributifs
 
 **Date :** 2026-07-09
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, Lead intégration
 **Contexte technique :** organisation `PIVOT-PLATFORM` — forks contributifs (ADR-009 §1/§6)
 

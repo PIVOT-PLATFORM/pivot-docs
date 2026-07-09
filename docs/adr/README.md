@@ -30,10 +30,10 @@ sidebar_label: "Vue d'ensemble"
 | [ADR-020](ADR-020-journaux-audit-immuables-non-repudiation.md) | Journaux d'audit immuables et non-répudiation | Proposé |
 | [ADR-021](ADR-021-cycle-vie-donnees-retention-purge.md) | Cycle de vie des données : rétention, anonymisation et purge sécurisée | Proposé |
 | [ADR-022](ADR-022-principal-authentification-minimal-partage.md) | Principal d'authentification minimal partagé (`pivot-core-starter`) | Proposé |
-| [ADR-023](ADR-023-modele-entites-catalogue.md) | Modèle d'entités du catalogue, réconcilié avec `public.teams` | Proposé |
-| [ADR-024](ADR-024-strategie-git-forks-contributifs.md) | Stratégie Git des forks contributifs | Proposé |
-| [ADR-025](ADR-025-bus-evenements-schema-inter-briques.md) | Bus d'événements et schéma d'événements inter-briques | Proposé |
-| [ADR-026](ADR-026-briques-natives-perimetre.md) | Briques natives à construire (planning poker, CLM) et périmètre | Proposé |
+| [ADR-023](ADR-023-modele-entites-catalogue.md) | Modèle d'entités du catalogue, réconcilié avec `public.teams` | Accepté |
+| [ADR-024](ADR-024-strategie-git-forks-contributifs.md) | Stratégie Git des forks contributifs | Accepté |
+| [ADR-025](ADR-025-bus-evenements-schema-inter-briques.md) | Bus d'événements et schéma d'événements inter-briques | Accepté |
+| [ADR-026](ADR-026-briques-natives-perimetre.md) | Briques natives à construire (planning poker, CLM) et périmètre | Accepté |
 
 > **Numérotation ADR-017 à ADR-020** : à l'origine réservées textuellement par ADR-009
 > §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives).

@@ -1,7 +1,7 @@
 # ADR-025 — Bus d'événements et schéma d'événements inter-briques
 
 **Date :** 2026-07-09
-**Statut :** Proposé
+**Statut :** Accepté
 **Décideurs :** Architecte plateforme, Lead intégration
 **Contexte technique :** organisation `PIVOT-PLATFORM` — bloquant E21/E29/E42/E43
 
