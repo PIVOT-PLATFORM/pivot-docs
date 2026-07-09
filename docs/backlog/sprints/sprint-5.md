@@ -56,8 +56,8 @@ Sprint 7 vers ce sprint, en Vague 0, pour lever l'incohérence détectée entre 
 | US08.2.1 | Owner partage un tableau par lien public | M | High | ✅ Done — `pivot-collaboratif-core#21` |
 | US08.2.2 | Utilisateur rejoint un tableau via token | M | High | ✅ Done |
 | US08.2.3 | Angular : UI partage et gestion rôles | M | High | ✅ Done — `pivot-collaboratif-core#25` |
-| US08.3.1 | Connexion WebSocket au canvas | M | Critical | ✅ Done — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28) mergée |
-| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée |
+| US08.3.1 | Connexion WebSocket au canvas | M | Critical | ✅ Done — `pivot-collaboratif-core` PR [#28](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/28) mergée, Gate 4 = 89/100 (`auto-approved`) |
+| US08.3.2a | Angular : canvas whiteboard — composant local & outils de dessin | XL | High | ✅ Done — `pivot-collaboratif-ui` PR [#24](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/24) mergée. Gate 4 = 69/100 (`MERGE_DOCUMENTED`) posté rétroactivement le 2026-07-09 — le 92/100 précédemment cité ici n'avait jamais été appuyé par un commentaire PR, voir note ci-dessous |
 | US08.3.2b | Angular : canvas whiteboard — synchronisation STOMP & états connexion | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/31) mergée |
 | US08.3.2c | Angular : canvas whiteboard — présence des participants (curseurs) | S | Medium | ✅ Done — `pivot-collaboratif-ui` PR [#33](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/33) mergée |
 | US08.3.3 | Undo / Redo sur le canvas | M | High | ✅ Done — `pivot-collaboratif-ui` PR [#32](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/32) mergée |
@@ -271,3 +271,20 @@ ne pas les scaffolder avant que Sprint 5 Vague 0 ne soit terminé et le template
 > boucle de la même version). **EN17.10 est désormais réellement terminé** — voir
 > `en-collaboratif-ui-shell-wiring.md` pour le détail complet et le statut à jour du fichier
 > Enabler.
+>
+> **Correction Gate 4 — US08.3.1 / US08.3.2a (2026-07-09) :** écart détecté entre ce fichier et
+> l'état réel GitHub. US08.3.1 (`pivot-collaboratif-core`#28) était déjà mergée et
+> auto-approuvée sur un vrai commentaire Gate 4 = 89/100 depuis le 2026-07-07 — ce fichier
+> affichait encore `🔁 Review` par erreur, corrigé en ✅ Done. US08.3.2a (`pivot-collaboratif-ui`#24)
+> était mergée mais **aucun commentaire Gate 4 n'avait jamais été posté** sur la PR — le 92/100
+> cité ici n'était appuyé par aucune preuve GitHub. Revue rétroactive menée sur le code tel que
+> mergé (commit `cb0bf67` — `tsc`/`lint`/`test:ci`/`build` exécutés réellement, AC de l'US
+> comparées au comportement effectif) : score réel **69/100** (`MERGE_DOCUMENTED`), commentaire
+> Gate 4 posté sur la PR. Trois bugs fonctionnels réels trouvés en cours de route (handles de
+> redimensionnement inopérants — déplacent l'objet au lieu de le redimensionner ; `clampShape()`
+> jamais appelé en production malgré son test unitaire ; `duplicate()` émet systématiquement un
+> DRAW de sous-type `stroke` quel que soit le type réel de l'objet, risque de payload mal typé
+> pour US08.3.2b) + AC axe-core/focus-trap cochées ✅ dans l'US sans l'être réellement — détail
+> complet dans le commentaire Gate 4 de la PR. Aucune action de merge à reprendre (déjà fait),
+> mais ces 3 bugs fonctionnels restent à trancher (issue de suivi ou acceptation en dette
+> technique) — non tranché à ce stade, à la charge du mainteneur.
