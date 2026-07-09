@@ -1,10 +1,13 @@
 # Authentification — PIVOT
 
-PIVOT supporte deux mécanismes d'authentification distincts. Voir [ADR-004](https://pivot-platform.github.io/pivot-docs/adr/ADR-004-oidc-multi-tenant) et [ADR-005](https://pivot-platform.github.io/pivot-docs/adr/ADR-005-opaque-tokens).
+PIVOT adopte le pattern **BFF (Backend For Frontend)** : Angular ne manipule jamais de token —
+`pivot-core` porte le flux d'authentification côté serveur et expose l'état de connexion via un
+cookie de session opaque. Voir [ADR-004](https://pivot-platform.github.io/pivot-docs/adr/ADR-004-oidc-multi-tenant)
+et [ADR-005](https://pivot-platform.github.io/pivot-docs/adr/ADR-005-opaque-tokens).
 
 ---
 
-## 1. Auth interne — Opaque tokens (email / password)
+## 1. Auth interne — email / password
 
 Mécanisme par défaut pour tous les tenants sans IdP externe.
 
@@ -13,58 +16,56 @@ Utilisateur → pivot-ui → POST /api/auth/login (email + password)
                               ↓
                        pivot-core valide credentials
                               ↓
-                       Génère token 256-bit SecureRandom
-                       → hash SHA-256 stocké en BDD (access_tokens)
-                       → raw token renvoyé UNE SEULE FOIS dans la réponse
+                       Crée une session serveur (Spring Session JDBC)
+                       → cookie SESSION (HttpOnly, Secure, SameSite=Lax)
                               ↓
-pivot-ui stocke le token EN MÉMOIRE uniquement
-pivot-ui → pivot-core  Authorization: Bearer {raw_token}
-                              ↓
-                       pivot-core retrouve le hash SHA-256
-                       → vérifie TTL + révocation
+pivot-ui n'a AUCUN token à gérer — le cookie est porté automatiquement par le navigateur
+pivot-ui → GET /api/me  pour connaître l'état de connexion (200 + profil, ou 401)
 ```
 
 | Propriété | Valeur |
 |-----------|--------|
-| Entropie | 256 bits (SecureRandom) |
-| Stockage serveur | SHA-256 du token en BDD (`access_tokens`) |
-| Stockage client | Mémoire uniquement — jamais localStorage, jamais cookie |
+| Session serveur | Spring Session JDBC (table `SPRING_SESSION`, PostgreSQL) |
+| Cookie navigateur | `SESSION` — `HttpOnly`, `Secure`, `SameSite=Lax` |
+| Payload côté client | Aucun — identifiant de session opaque uniquement |
 | TTL | Configurable en BDD (feature flag) |
 | Sessions max | 5 par utilisateur (configurable via feature flag `MAX_SESSIONS_PER_USER`) |
-| Révocation | Immédiate (suppression en BDD) |
+| Révocation | Immédiate (suppression de la ligne `SPRING_SESSION`) |
 
 ### Configuration côté Spring Boot
 
 ```yaml
-# Pas de JWT/OAuth2 resource server pour l'auth interne.
-# Spring Security filtre via un TokenAuthenticationFilter custom
-# qui lookup le hash SHA-256 en BDD à chaque requête.
+spring:
+  session:
+    store-type: jdbc
 ```
 
 ---
 
-## 2. Auth enterprise — OIDC PKCE S256 (IdP externe)
+## 2. Auth enterprise — OIDC par tenant (IdP externe)
 
-Pour les tenants avec Keycloak, Azure AD, Okta ou autre IdP compatible OIDC.
+Pour les tenants avec Keycloak (embarqué en option), Azure AD, Okta, ADFS/SAML (via bridging
+Keycloak) ou tout autre IdP compatible OIDC.
 
 ```text
-Utilisateur → pivot-ui → IdP (Keycloak / Azure AD / Okta)
-                ↓ Authorization Code + PKCE S256
-            code → token endpoint IdP
-                ↓ Access Token (JWT signé par l'IdP)
-pivot-ui stocke le token EN MÉMOIRE uniquement
-pivot-ui → pivot-core  Authorization: Bearer {jwt_from_idp}
-                ↓
-pivot-core valide signature via JWKS de l'IdP
-→ extrait claims → mappe roles Spring Security
+Utilisateur → pivot-ui → GET /oauth2/authorization/{tenant}
+                              ↓ redirection gérée entièrement par pivot-core (Spring Security)
+                       Authorization Code + PKCE (côté serveur) → IdP du tenant
+                              ↓ callback
+                       pivot-core valide le JWT de l'IdP (jamais transmis à Angular)
+                       → crée la même session serveur (Spring Session JDBC)
+                       → cookie SESSION posé
+                              ↓
+pivot-ui → GET /api/me  (identique au flux interne — Angular ne distingue pas les deux)
 ```
 
 | Paramètre | Valeur |
 |-----------|--------|
-| Flux | Authorization Code + PKCE S256 (pas d'implicit flow) |
-| Token storage | Mémoire uniquement — jamais localStorage |
-| Silent refresh | Iframe OIDC ou rotating refresh token (selon IdP) |
-| Intercepteur Angular | `Authorization: Bearer {token}` sur toutes les requêtes API |
+| Flux | Authorization Code + PKCE, exécuté entièrement côté serveur (pivot-core) |
+| Token IdP | Ne quitte jamais pivot-core — jamais exposé au navigateur |
+| Résolution IdP | `ClientRegistrationRepository` dynamique, résolu par tenant depuis PostgreSQL |
+| Découverte | `/.well-known/openid-configuration` par IdP de tenant |
+| Keycloak embarqué | Optionnel (profil Docker Compose) — IdP par défaut pour tenants sans IdP, bridging SAML pour IdP legacy |
 
 ### Configuration côté Spring Boot
 
@@ -72,17 +73,13 @@ pivot-core valide signature via JWKS de l'IdP
 spring:
   security:
     oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${OIDC_ISSUER_URI}
+      client:
+        registration: # résolu dynamiquement par tenant, pas de config statique en dur
 ```
 
-Spring Security valide le JWT via le JWKS de l'IdP. Pas de client_secret côté Angular.
-
-### Configuration multi-tenant
-
-Un `TenantOidcConfig` par tenant. Provisionnement JIT configurable.
-Variable d'environnement `OIDC_ISSUER_URI` — un binaire Spring Boot, N tenants.
+Le `ClientRegistrationRepository` statique de Spring Boot est remplacé par une implémentation
+qui charge (`issuer`, `client_id`, `client_secret`) depuis PostgreSQL selon le tenant identifié
+(sous-domaine ou chemin), puis effectue la découverte OIDC standard.
 
 ---
 
@@ -93,10 +90,12 @@ Variable d'environnement `OIDC_ISSUER_URI` — un binaire Spring Boot, N tenants
 | `ROLE_SUPER_ADMIN` | `pivot_super_admin: true` | Plateforme entière |
 | `ROLE_ADMIN` | `pivot_role: admin` | Tenant de l'utilisateur |
 | `ROLE_USER` | `pivot_role: user` | Tenant de l'utilisateur |
-| `ROLE_GUEST` | Aucun (token de session live) | Session live uniquement |
+| `ROLE_GUEST` | Aucun (session live) | Session live uniquement |
 
-Pour l'auth interne, les rôles sont stockés en BDD et portés dans le `SecurityContext`
-via le `TokenAuthenticationFilter`.
+Le mapping claims/groupes IdP → rôles internes est configurable par tenant (ex. groupe AD
+`PIVOT-Admins` → rôle `admin`). Pour l'auth interne, les rôles sont stockés en BDD et portés
+comme attribut de la session Spring Session JDBC. L'activation des modules par tenant est
+vérifiée côté serveur à chaque requête, jamais seulement masquée côté Angular.
 
 ---
 
@@ -104,16 +103,18 @@ via le `TokenAuthenticationFilter`.
 
 | Contrainte | Implémentation |
 |------------|----------------|
-| Token jamais persisté côté client | Mémoire uniquement (opaque ou JWT) |
-| Pas d'implicit flow | PKCE S256 obligatoire pour OIDC |
-| Validation serveur | Stateless : pivot-core valide chaque requête |
+| Aucun token côté navigateur | Cookie de session opaque uniquement, dans les deux flux |
+| Cookie de session | `HttpOnly`, `Secure`, `SameSite=Lax` |
+| CSRF | Jeton CSRF requis sur les requêtes de mutation (`/api/**`), le cookie seul ne suffit pas |
+| Validation serveur | pivot-core valide chaque requête via la session Spring Session JDBC |
 | CORS | `CORS_ALLOWED_ORIGINS` configurable |
 | CSP | Headers nginx (pivot-ui) — bloque injection scripts tiers |
-| Révocation opaque token | Suppression en BDD → invalide immédiatement |
+| Révocation | Suppression de la session en BDD → invalide immédiatement |
+| Secrets IdP par tenant | `client_secret` chiffré en base — voir ADR-014 |
 
 ---
 
 ## Voir aussi
 
-- [ADR-004 — OIDC Multi-tenant](https://pivot-platform.github.io/pivot-docs/adr/ADR-004-oidc-multi-tenant)
-- [ADR-005 — Opaque tokens (auth interne)](https://pivot-platform.github.io/pivot-docs/adr/ADR-005-opaque-tokens)
+- [ADR-004 — OIDC Multi-tenant via BFF](https://pivot-platform.github.io/pivot-docs/adr/ADR-004-oidc-multi-tenant)
+- [ADR-005 — Session opaque (Spring Session JDBC)](https://pivot-platform.github.io/pivot-docs/adr/ADR-005-opaque-tokens)

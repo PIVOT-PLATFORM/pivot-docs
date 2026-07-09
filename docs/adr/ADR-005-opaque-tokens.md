@@ -1,21 +1,37 @@
-# ADR-005 — Opaque tokens pour l'authentification interne
+# ADR-005 — Session opaque (Spring Session JDBC) pour l'authentification
 
 **Statut :** Accepté
-**Date :** 2026-06-20
+**Date :** 2026-06-20 (révisé 2026-07-10)
 
 ## Contexte
 
-PIVOT doit gérer des sessions utilisateur pour le flux d'authentification interne
-(email / password). Deux approches principales : JWT auto-signé ou opaque token avec
-lookup en base de données.
+PIVOT doit gérer une session utilisateur pour les deux flux d'authentification : interne
+(email / password) et enterprise (OIDC via le BFF, [ADR-004](ADR-004-oidc-multi-tenant.md)).
 
-ADR-004 couvre l'OIDC enterprise (JWT émis par un IdP externe). Ce document couvre
-exclusivement l'auth **interne**.
+La v1 de cet ADR retenait un opaque token 256-bit géré manuellement (génération, hash SHA-256,
+table `access_tokens`, relais `Authorization: Bearer` par Angular) et rejetait explicitement les
+sessions côté serveur (`HttpSession`) au motif d'incompatibilité avec un déploiement
+multi-instance stateless et de la complexité d'un store Redis.
+
+Ce choix est révisé avec l'adoption du pattern BFF (ADR-004) : Angular ne portant plus aucun
+token, il n'y a plus de relais `Authorization: Bearer` à faire manuellement. La session serveur
+redevient pertinente — à condition de rester compatible multi-instance sans sticky sessions et
+sans ajouter Redis à la stack. **Spring Session JDBC** remplit ces deux conditions en réutilisant
+PostgreSQL, déjà présent.
 
 ## Décision
 
-**Opaque tokens** : token 256-bit SecureRandom, hash SHA-256 stocké en BDD (`access_tokens`),
-raw token jamais persisté côté serveur, TTL géré en BDD, révocable immédiatement.
+**Spring Session JDBC** : session serveur backée par PostgreSQL (table `SPRING_SESSION` /
+`SPRING_SESSION_ATTRIBUTES`), exposée au navigateur via un cookie de session opaque (`SESSION`,
+`HttpOnly`, `Secure`, `SameSite=Lax`). Ce mécanisme unique sert :
+
+- **L'auth interne** (email / password) : après validation des credentials, une session est
+  créée et associée à l'utilisateur
+- **L'auth enterprise** (OIDC via BFF, ADR-004) : après le callback OIDC, le BFF crée la même
+  session serveur — le JWT de l'IdP ne quitte jamais pivot-core
+
+Dans les deux cas, le navigateur ne détient qu'un identifiant de session opaque en cookie —
+jamais de JWT, jamais de payload lisible.
 
 ## Raisons
 
@@ -26,63 +42,71 @@ raw token jamais persisté côté serveur, TTL géré en BDD, révocable immédi
 | Non révocable sans blacklist | Un token volé reste valide jusqu'à expiration |
 | TTL fixe dans le token | Impossible d'invalider sans rotation de clé |
 | Payload lisible (base64) | Fuite de métadonnées si intercepté |
-| Stockage côté client | localStorage → vulnérable XSS ; cookie → CSRF |
 | Complexité rotation de clés | Gestion des clés HMAC/RSA en infra auto-hébergée |
 
-### Pourquoi opaque tokens
+### Pourquoi Spring Session JDBC plutôt qu'un opaque token géré à la main (v1 de cet ADR)
+
+- **Cookie, pas de relais manuel** : avec le BFF (ADR-004), Angular ne relaie plus de
+  `Authorization: Bearer` — le cookie de session est porté automatiquement par le navigateur,
+  y compris sur le handshake WebSocket (whiteboard, session live)
+- **Standard Spring Security** : pas de `TokenAuthenticationFilter` custom à maintenir
+- **Révocabilité immédiate** : suppression de la ligne `SPRING_SESSION` → session invalide à la
+  prochaine requête, propriété identique à l'opaque token v1
+- **Pas de payload exposé** : le cookie ne contient qu'un identifiant de session, jamais de rôles
+  ni de claims
+
+### Pourquoi Spring Session JDBC plutôt que `HttpSession` in-memory ou Redis
+
+| Option | Problème |
+|--------|----------|
+| `HttpSession` in-memory (défaut Tomcat) | Sticky sessions requises, incompatible scale horizontal sans affinité |
+| Redis | Composant supplémentaire à opérer en infra auto-hébergée sans gain vs PostgreSQL déjà présent |
+| **Spring Session JDBC (retenu)** | Réutilise PostgreSQL, aucune sticky session, migration vers Redis possible plus tard (une ligne de configuration) si la charge le justifie |
+
+### Propriétés conservées de la v1
 
 - **Révocabilité immédiate** : suppression en BDD → session invalide à la prochaine requête
-- **Pas de payload** : aucune information exposée côté client
-- **TTL flexible** : modifiable sans réémettre le token
+- **Pas de payload côté client** : identifiant de session opaque uniquement
+- **TTL flexible** : modifiable sans réémission
 - **Multi-session contrôlable** : max 5 sessions par utilisateur (feature flag `MAX_SESSIONS_PER_USER`)
-- **Audit natif** : chaque token = ligne BDD avec `created_at`, `last_used_at`, `device_info`
-- **Cohérence auto-hébergée** : pas de PKI à gérer, juste PostgreSQL
-
-### Pourquoi pas de sessions côté serveur (HttpSession)
-
-- Incompatible avec un déploiement multi-instance stateless
-- Redis session store complexifie l'infra sans gain vs opaque token en BDD
+- **Audit natif** : chaque session = ligne BDD, exploitable pour `docs/specs/.../us02-2-3-sessions-actives.md`
+- **Cohérence auto-hébergée** : pas de PKI ni de Redis à gérer, juste PostgreSQL
 
 ## Implémentation
 
-```java
-// Génération
-byte[] raw = new byte[32];
-SecureRandom.getInstanceStrong().nextBytes(raw);
-String rawToken = Base64.getUrlEncoder().withoutPadding().encodeToString(raw);
-String hash = sha256hex(rawToken);
-
-// Stockage (jamais le raw token)
-accessTokenRepository.save(new AccessToken(userId, hash, expiresAt));
-
-// Retour client (une seule fois)
-return rawToken;
-
-// Validation à chaque requête
-String hash = sha256hex(bearerToken);
-AccessToken token = accessTokenRepository.findByHashAndNotExpired(hash)
-    .orElseThrow(UnauthorizedException::new);
+```yaml
+# application.yml
+spring:
+  session:
+    store-type: jdbc
+  datasource:
+    url: jdbc:postgresql://...
 ```
 
-Table BDD : `access_tokens` (colonnes : `id`, `user_id`, `token_hash`, `expires_at`,
-`created_at`, `last_used_at`, `revoked`).
+Table BDD : `SPRING_SESSION` (`SESSION_ID`, `CREATION_TIME`, `LAST_ACCESS_TIME`, `EXPIRY_TIME`),
+`SPRING_SESSION_ATTRIBUTES` (attributs de session : `userId`, `tenantId`, `roles`).
 
 ### Côté Angular (pivot-ui)
 
-- Token stocké en mémoire uniquement (`AuthService`, signal privé)
-- **Jamais localStorage** (XSS) — **jamais cookie** (CSRF)
-- Propriété `expiresAt` pour auto-refresh côté client avant expiration
-- `isAuthenticated()` vérifie `expiresAt > Date.now()` (pas juste token != null)
+- Aucune gestion de token — le cookie `SESSION` est envoyé automatiquement par le navigateur
+  (`withCredentials: true` sur les requêtes cross-origin le cas échéant)
+- État de connexion déterminé par `GET /api/me` (200 + profil, ou 401)
+- Déconnexion : `POST /api/auth/logout` invalide la session serveur et efface le cookie
 
 ## Conséquences
 
-- Lookup BDD à chaque requête API — index sur `token_hash` requis (PostgreSQL hash index)
-- Nettoyage des tokens expirés : job planifié ou purge lazy à la connexion
-- En cas de perte du token client (refresh page sans restore) : re-authentification requise
-- Pas de déconnexion "push" côté client — l'UI détecte l'expiration via `expiresAt`
+- Lookup BDD à chaque requête API — index sur `SESSION_ID` requis (fourni par le schéma Spring
+  Session standard)
+- Nettoyage des sessions expirées : `SpringSessionBackedSessionRegistry` + job planifié
+  (`spring.session.jdbc.cleanup-cron`)
+- CSRF désormais pertinent (cookie automatique) — jeton CSRF requis sur les requêtes de mutation,
+  voir [ADR-004](ADR-004-oidc-multi-tenant.md#sécurité)
+- Pas de déconnexion « push » vers d'autres onglets ouverts — l'UI détecte l'expiration via 401
+  sur `/api/me`
 
 ## Historique
 
 | Version | Date | Évolution |
 |---------|------|-----------|
-| v1 | 2026-06-20 | Décision initiale |
+| v1 | 2026-06-20 | Décision initiale — opaque token 256-bit géré à la main, relais `Authorization: Bearer` par Angular, sessions serveur explicitement écartées |
+| v2 | 2026-07-10 | Bascule vers Spring Session JDBC suite à l'adoption du pattern BFF (ADR-004) — même garanties (révocable, sans payload, PostgreSQL), portées par cookie plutôt que par relais manuel côté Angular |

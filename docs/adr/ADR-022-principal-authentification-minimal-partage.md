@@ -5,6 +5,16 @@
 **Décideurs :** Architecte Java / Spring, Expert OIDC / IAM, Expert Red Team, Expert Blue Team, mainteneur
 **Contexte technique :** `pivot-core#171` (EN17.1, volet `fr.pivot.core.auth`)
 
+> **Note (2026-07-10) — trigger de réévaluation déclenché, remplacement pas encore posé.**
+> [ADR-004 v2](ADR-004-oidc-multi-tenant.md) fait exister un BFF (session navigateur ↔ pivot-core
+> via Spring Session JDBC) — la condition du §Trigger de réévaluation (« le jour où un BFF/point
+> d'échange existe dans le chemin de la requête ») est donc remplie. Cette ADR **n'est pas encore
+> marquée `Remplacé par`** : ADR-004 v2 ne couvre que le flux navigateur ↔ BFF, pas la propagation
+> d'identité BFF → modules (`pivot-xxx-core`) que cible cette ADR — le token exchange RFC 8693
+> reste porté par [ADR-011](ADR-011-zero-trust-mtls-token-exchange.md), toujours **Proposé**.
+> À faire : poser (ou accepter) l'ADR de token exchange module-à-module, puis démonter la lecture
+> directe de `public.access_tokens` et marquer cette ADR `Remplacé par` cette nouvelle décision.
+
 **Note du mainteneur (acceptation, 2026-07-09) :** un mécanisme d'identité inter-services fiable
 et vérifiable — pas seulement des headers non authentifiés — est également un prérequis pour
 brancher, à terme, des agents/consommateurs IA sur la plateforme (accès scopé, traçable,
@@ -313,5 +323,6 @@ BFF minimal dédié à l'auth avant le socle mTLS/Service Mesh complet, plutôt 
 |---------|------|-----------|
 | v1 | 2026-07-08 | Décision initiale — lève l'escalade `pivot-core#171` (volet auth) |
 | v2 | 2026-07-09 | Clarification à la demande du mainteneur : décision inchangée, mais reformulée contre le paysage IAM nommé explicitement (introspection RFC 7662, token exchange RFC 8693, lecture directe) plutôt qu'une « centralisation réseau » vague. Ajoute le risque de couplage schéma sur donnée à fort churn (nuance vs. `tenants`/`teams`, données de référence stables) comme conséquence négative explicite avec mitigation actée (migrations additives uniquement + logique centralisée dans le starter). Ajoute une section Trigger de réévaluation (éclatement DB par module, volume de repos consommateurs, arrivée d'EN07.11 mTLS/Service Mesh, besoin de politiques de token différenciées par module) — la décision n'est pas figée, elle est datée et conditionnée. Toujours `Statut: Proposé` — cette révision ne vaut pas acceptation formelle. |
+| v3 | 2026-07-10 | Note ajoutée : [ADR-004 v2](ADR-004-oidc-multi-tenant.md) fait exister un BFF (Spring Session JDBC côté navigateur), ce qui déclenche formellement le §Trigger de réévaluation. Statut inchangé (`Accepté — intérimaire`) : le remplacement suppose le token exchange RFC 8693 module-à-module d'[ADR-011](ADR-011-zero-trust-mtls-token-exchange.md), toujours `Proposé` — pas encore posé. |
 | v3 | 2026-07-09 | Précision explicite du mainteneur : cette ADR est **intérimaire par construction**, pas un choix définitif parmi d'autres également valables. Le token exchange RFC 8693 derrière un BFF est la trajectoire actée, pas une option listée par exhaustivité — nouvelle section §Portée temporelle en tête de fiche, §Trigger de réévaluation restructurée (« migration actée, pas hypothétique » séparée des signaux qui l'accéléreraient), alternative token exchange requalifiée « différée » plutôt que « écartée ». Engagement explicite : dès qu'un BFF existe, cette ADR doit être marquée `Remplacé par` la nouvelle, pas amendée sur place. Toujours `Statut: Proposé`. |
 | v4 | 2026-07-09 | **Acceptée par le mainteneur.** `Statut: Proposé → Accepté`. Motif supplémentaire consigné : un identity layer inter-services fiable est aussi un prérequis pour brancher de futurs agents/consommateurs IA sur la plateforme (accès scopé, traçable, révocable par principal) — renforce, sans la changer, la trajectoire BFF + token exchange déjà actée en v3. Lève le blocage Gate 1 d'EN08.3 (acceptation formelle recommandée avant implémentation). |
