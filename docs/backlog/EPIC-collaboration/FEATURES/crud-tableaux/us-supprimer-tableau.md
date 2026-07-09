@@ -41,5 +41,5 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: Critical
-Stage: In progress
+Stage: Review
 Dépendances: US08.1.1

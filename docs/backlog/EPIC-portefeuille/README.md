@@ -33,8 +33,8 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
   - US23.2.6 : Pilotage des plans stratégiques
   - US23.2.7 : Scénarios what-if *(déplacé depuis E31 en v2)*
   - US23.2.8 : Business cases dynamiques *(déplacé depuis E31 en v2)*
-  - *(US23.2.9 Livrables d'instance générés → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/) 2026-07-09 — secteur public uniquement)*
-  - *(US23.2.10 Indicateurs de valeur publique → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/) 2026-07-09 — secteur public uniquement)*
+  - *(US23.2.9 Livrables d'instance générés → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/us-livrables-instance-generes.md) 2026-07-09 — secteur public uniquement)*
+  - *(US23.2.10 Indicateurs de valeur publique → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/us-indicateurs-valeur-publique.md) 2026-07-09 — secteur public uniquement)*
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)

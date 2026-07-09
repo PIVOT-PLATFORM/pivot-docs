@@ -22,7 +22,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 
 ### Features
 
-> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/) (2026-07-09)** : F38.14 (Intelligence collective avancée — marchés prédictifs / sérendipité / Black-Scholes, trop spéculatif), US38.13.2 (Venture board & financement par paliers — modèle VC interne, hors scope PME), US38.13.4 (Lien écosystème start-up & CVC — gestion deal flow M&A, hors scope PIVOT), US38.7.1 (Propriété intellectuelle / brevets INPI — très niche), EN38.2 (Moteur IA & graphe — over-ambitious, dépend de F38.14 déplacée).
+> **Déplacés en [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) (2026-07-09)** : F38.14 (Intelligence collective avancée — marchés prédictifs / sérendipité / Black-Scholes, trop spéculatif), US38.13.2 (Venture board & financement par paliers — modèle VC interne, hors scope PME), US38.13.4 (Lien écosystème start-up & CVC — gestion deal flow M&A, hors scope PIVOT), US38.7.1 (Propriété intellectuelle / brevets INPI — très niche), EN38.2 (Moteur IA & graphe — over-ambitious, dépend de F38.14 déplacée).
 
 - **F38.1 — Stratégie & politique d'innovation** (ISO 56002 §5)
 - **F38.2 — Idéation & campagnes** (capture, défis, crowdsourcing)
@@ -39,7 +39,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 - **F38.11 — Innovation augmentée par l'IA** (gouvernée) : assistant d'idéation · **ponts entre idées ressemblantes** (clustering sémantique) · évaluation assistée · **fail-fast assisté** · matchmaking IA · gouvernance IA (humain dans la boucle, non-entraînement, AI Act)
 - **F38.12 — Communautés & profils d'innovateurs** : communautés · profils (compétences/intérêts) · constitution d'équipes · mentorat
 - **F38.13 — Corporate venturing & intrapreneuriat** : studio/incubateur interne · **venture board & financement par paliers** · spin-off/spin-in · **lien écosystème start-up & CVC**
-- *(F38.14 — Intelligence collective avancée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/FEATURES/intelligence-collective/) 2026-07-09)*
+- *(F38.14 — Intelligence collective avancée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md) 2026-07-09)*
 - **F38.15 — Événements, parcours & formulaires d'innovation** : **événements internes** (hackathons, ateliers, demo days, awards) · **parcours d'innovation orchestré par Pivot Workflow (E29)** · **challenges & dépôt d'idée par formulaire (Forms)** · schéma d'idée extensible
 
 > **Note.** Le module **[E42 — Pivot Forms](pathname:///pivot-docs/backlog/EPIC-pivot-forms/)** fournit le form-builder ; F38.15 le consomme pour le **dépôt d'idée** (`form.submitted` → idée). Le **parcours** d'innovation s'appuie sur **Workflow (E29)**, l'animation d'événements sur **Session (E19)** / **MeetOps (E12)**.
@@ -116,7 +116,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 | *(US38.13.2 — Venture board → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/FEATURES/corporate-venturing/us-venture-board-financement.md))* | — |
 | [US38.13.3 — Spin-off / spin-in & essaimage](FEATURES/corporate-venturing/us-spinoff-spinin-essaimage.md) | ⬜ |
 | *(US38.13.4 — Lien écosystème start-up & CVC → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/FEATURES/corporate-venturing/us-ecosysteme-startup-cvc.md))* | — |
-| *(F38.14 — Intelligence collective avancée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/FEATURES/intelligence-collective/))* | — |
+| *(F38.14 — Intelligence collective avancée → [BACKLOG-IDEATION](../BACKLOG-IDEATION/README.md))* | — |
 | **F38.15 — Événements, parcours & formulaires d'innovation** | |
 | [US38.15.1 — Organisation d'événements internes d'innovation](FEATURES/evenements-parcours-forms/us-evenements-innovation.md) | ⬜ |
 | [US38.15.2 — Parcours d'innovation orchestré (Pivot Workflow, E29)](FEATURES/evenements-parcours-forms/us-parcours-innovation-workflow.md) | ⬜ |

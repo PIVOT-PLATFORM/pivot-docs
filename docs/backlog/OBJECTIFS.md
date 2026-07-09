@@ -188,12 +188,12 @@ Ces items ne contribuent à aucun des 6 objectifs stratégiques. Ils sont en [`B
 | **Marchés publics / Commande publique** | Niche sectorielle incompatible avec le positionnement B-all | [E25](BACKLOG-IDEATION/EPIC-commande-publique/README.md) |
 | **Gestionnaire de brevets (INPI/EPO)** | Outil juridique spécialisé hors domaine collaboration | US38.7.1 |
 | **Corporate venturing & deal flow M&A** | Finance d'investissement, hors scope PME | US38.13.2, US38.13.4 |
-| **Marchés prédictifs d'idées / sérendipité** | Trop académique, bénéfice non démontré en production | [F38.14](BACKLOG-IDEATION/EPIC-pilotage-innovation/FEATURES/intelligence-collective/) |
-| **SCM & CI/CD (GitLab CE, Forgejo)** | Outillage développeur, pas collaboration métier | [F28.10](BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/scm-cicd/) |
-| **Plateforme développeur (scorecards, TechDocs)** | Outillage Platform Engineering, hors cible | [F28.11](BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/plateforme-developpeur/) |
-| **Doublons avec modules natifs** (PPM natif E22/E23, whiteboard natif E30) | L'adaptateur OSS est redondant si le natif couvre le besoin | [F28.6](BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/pilotage-portefeuille/), [F28.9](BACKLOG-IDEATION/EPIC-integration-open-source/FEATURES/whiteboard-adaptateur/) |
-| **RPA desktop & process mining** | Outillage spécialisé (UiPath/Power Automate), hors scope | [F29.10](BACKLOG-IDEATION/EPIC-workflows/FEATURES/rpa-process/) |
-| **Chantiers SI (transformation organisationnelle)** | Méta-gouvernance, pas une feature produit | [F29.14](BACKLOG-IDEATION/EPIC-workflows/FEATURES/chantiers-si/) |
+| **Marchés prédictifs d'idées / sérendipité** | Trop académique, bénéfice non démontré en production | [F38.14](BACKLOG-IDEATION/README.md) |
+| **SCM & CI/CD (GitLab CE, Forgejo)** | Outillage développeur, pas collaboration métier | [F28.10](BACKLOG-IDEATION/README.md) |
+| **Plateforme développeur (scorecards, TechDocs)** | Outillage Platform Engineering, hors cible | [F28.11](BACKLOG-IDEATION/README.md) |
+| **Doublons avec modules natifs** (PPM natif E22/E23, whiteboard natif E30) | L'adaptateur OSS est redondant si le natif couvre le besoin | [F28.6](BACKLOG-IDEATION/README.md), [F28.9](BACKLOG-IDEATION/README.md) |
+| **RPA desktop & process mining** | Outillage spécialisé (UiPath/Power Automate), hors scope | [F29.10](BACKLOG-IDEATION/README.md) |
+| **Chantiers SI (transformation organisationnelle)** | Méta-gouvernance, pas une feature produit | [F29.14](BACKLOG-IDEATION/README.md) |
 | **Budgets secteur public (PPI, AP/CP, subventions)** | Niche comptabilité publique française | US26.2.2, US26.2.5, US26.2.6 |
 | **Interface ERP finance** | Intégration lourde, dépendance externe majeure | US26.2.4 |
 | **Indicateurs valeur publique** | Terminologie et besoins secteur public uniquement | US23.2.9, US23.2.10 |

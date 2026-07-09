@@ -26,11 +26,11 @@ Budget & suivi financier : saisie du budget par poste et suivi de la consommatio
   - US26.1.2 : Suivre la consommation budgétaire en temps réel
 - **F26.2 — Budgets & finances (benchmark PPM)** — issu du CSV benchmark, rationalisé dans le README d'[E18 — Domaine Pilotage](../BACKLOG-IDEATION/EPIC-pilotage/README.md) (le document source `BENCHMARK.md` n'a jamais été mergé sur `main`, ex-PR #38)
   - US26.2.1 : Coûts au niveau projet
-  - *(US26.2.2 Budgets pluriannuels PPI → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/) 2026-07-09 — secteur public uniquement)*
+  - *(US26.2.2 Budgets pluriannuels PPI → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/us-budgets-pluriannuels-ppi.md) 2026-07-09 — secteur public uniquement)*
   - US26.2.3 : Flux de trésorerie
-  - *(US26.2.4 Interface ERP finance → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/) 2026-07-09 — dépendance externe lourde)*
-  - *(US26.2.5 Suivi des subventions → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/) 2026-07-09 — secteur public uniquement)*
-  - *(US26.2.6 Simulation AP/CP → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/) 2026-07-09 — secteur public uniquement)*
+  - *(US26.2.4 Interface ERP finance → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/us-interface-erp-finance.md) 2026-07-09 — dépendance externe lourde)*
+  - *(US26.2.5 Suivi des subventions → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/us-suivi-subventions.md) 2026-07-09 — secteur public uniquement)*
+  - *(US26.2.6 Simulation AP/CP → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-budget/FEATURES/budgets-finances/us-simulation-ap-cp.md) 2026-07-09 — secteur public uniquement)*
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
