@@ -13,7 +13,7 @@ l'architecture SPA. C'est aussi le mécanisme de fault isolation : un backend KO
 gateway global, les autres modules continuent à répondre.
 
 **Critères de complétion** :
-- [ ] `nginx.conf` avec routing par préfixe URL vers upstream dédié par module :
+- [x] `nginx.conf` avec routing par préfixe URL vers upstream dédié par module :
   ```nginx
   location /api/auth/        { proxy_pass http://pivot-core:8080; }
   location /api/admin/       { proxy_pass http://pivot-core:8080; }
@@ -26,16 +26,30 @@ gateway global, les autres modules continuent à répondre.
   location /ws/collaboratif/ { proxy_pass http://pivot-collaboratif-core:8083; # ip_hash }
   location /                 { try_files $uri $uri/ /index.html; }  # SPA Angular
   ```
-- [ ] Upstream `ip_hash` pour les WebSocket (`/ws/**`) — sticky session au handshake
-- [ ] Upstream `round-robin` pour les REST (`/api/**`)
-- [ ] `proxy_read_timeout`, `proxy_send_timeout` configurés (défaut 60s, 300s pour WS)
-- [ ] Headers WebSocket : `Upgrade`, `Connection` propagés correctement
-- [ ] `503` retourné proprement si backend KO — pas de crash global
-- [ ] Headers sécurité sur toutes les réponses : `Strict-Transport-Security`, `X-Frame-Options DENY`,
+  Implémenté dans `pivot-ui/nginx.conf` — routing par préfixe équivalent (catch-all `/api/` vers
+  `pivot_core_rest` pour auth/admin/superadmin, préfixes dédiés `/api/pilotage/`, `/api/agilite/`,
+  `/api/collaboratif/`, `/ws/**`, SPA fallback).
+- [ ] Upstream `ip_hash` pour les WebSocket (`/ws/**`) — sticky session au handshake — **différé** :
+  `pivot-ui/nginx.conf` implémente le routing WebSocket via `resolver` + `set $var` (nginx OSS,
+  upstream nommé + `ip_hash` exige que tous les serveurs soient résolvables au démarrage), mais
+  n'active pas encore `ip_hash` lui-même. Commentaire déjà présent dans `nginx.conf` : *"On a
+  single-instance backend ip_hash is a no-op. Revisit to a named upstream with ip_hash once
+  pivot-pilotage-core is stable in the Docker network."* — no-op tant qu'une seule instance
+  backend existe, à reprendre au passage en multi-instance.
+- [x] Upstream `round-robin` pour les REST (`/api/**`) — comportement par défaut de l'upstream
+  nommé `pivot_core_rest` (pas de directive `ip_hash`/`least_conn`)
+- [x] `proxy_read_timeout`, `proxy_send_timeout` configurés (défaut 60s, 300s pour WS)
+- [x] Headers WebSocket : `Upgrade`, `Connection` propagés correctement
+- [x] `503` retourné proprement si backend KO — pas de crash global (`@api_unavailable` /
+  `@module_unavailable`, `proxy_intercept_errors on`)
+- [x] Headers sécurité sur toutes les réponses : `Strict-Transport-Security`, `X-Frame-Options DENY`,
   `X-Content-Type-Options nosniff`, `Referrer-Policy`, `Permissions-Policy`, `Content-Security-Policy`
-- [ ] Redirect `:80 → :443` (HTTPS enforced)
-- [ ] Log format JSON structuré (module extractable du préfixe URL)
-- [ ] Test : arrêter `pivot-collaboratif-core` → `/api/auth/` répond 200 · `/api/collaboratif/` répond 503
+- [x] Redirect `:80 → :443` (HTTPS enforced)
+- [x] Log format JSON structuré (module extractable du préfixe URL) — `log_format json_access`,
+  champ `$pivot_module` dérivé de l'URI
+- [ ] Test : arrêter `pivot-collaboratif-core` → `/api/auth/` répond 200 · `/api/collaboratif/`
+  répond 503 — comportement couvert par la config (`@api_unavailable`/`@module_unavailable`), mais
+  aucune trace d'exécution du test de failover retrouvée ; à effectuer avant recette
 
 ## Configuration nginx dev vs prod
 
@@ -63,7 +77,9 @@ procédure obligatoire) :
 
 **Dépendances** : EN07.1 (Docker Compose multi-repo), EN17.1–6 (libs partagées)
 
-**Statut** : ⬜ À faire
+**Statut** : ⬜ Quasi-terminé — routing, headers sécurité, timeouts, 503 backend KO et logs JSON
+livrés dans `pivot-ui/nginx.conf` ; restent : activer `ip_hash` WebSocket (différé, no-op
+single-instance) et exécuter le test de failover manuel avant recette mainteneur
 
 ---
 Item Type: Enabler · Parent: E17 · Type: infrastructure · Module: core · Phase: Socle (reséquencé 2026-07-07, ex-phase-3)
