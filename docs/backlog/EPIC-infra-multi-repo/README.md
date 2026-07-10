@@ -15,6 +15,8 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 - [Enabler EN17.7 : nginx API Gateway — routing multi-backend par préfixe URL](ENABLERS/en-nginx-api-gateway.md)
 - [Enabler EN17.8 : Incubation du design system dans `pivot-ui`](ENABLERS/en-design-system-incubation.md) — prérequis d'EN17.2
 - [Enabler EN17.9 : Compose dev — modules satellites manquants](ENABLERS/en-compose-dev-satellites.md)
+- [Enabler EN17.10 : Publication `@pivot-platform/collaboratif-ui` + câblage shell route whiteboard](ENABLERS/en-collaboratif-ui-shell-wiring.md) — ✅ terminé, oubli de mise à jour de ce README, corrigé au passage
+- [Enabler EN17.11 : Publication `@pivot-platform/agilite-ui` + câblage shell route agilite](ENABLERS/en-agilite-ui-shell-wiring.md)
 
 ## Phase
 
