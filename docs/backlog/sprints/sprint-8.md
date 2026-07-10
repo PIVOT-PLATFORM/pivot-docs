@@ -24,7 +24,7 @@
 | US09.1.2 | Rejoindre une room via code | S | High | ⬜ |
 | US09.2.1 | Voter sur un ticket en temps réel | M | High | ⬜ |
 | US09.2.2 | Révéler les votes et calculer le consensus | S | High | ⬜ |
-| US09.3.1 | Participer anonymement (sans compte) | M | Medium | ⬜ |
+| US09.3.1 | Participer anonymement (sans compte) | M | Medium | 🟢 livré et fusionné — voir statut détaillé ci-dessous |
 | US14.1.1 | Créer et gérer une roue de tirage | M | High | 🟡 frontend mergé ([pivot-agilite-ui#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/19), Gate 4 100/100) · backend PR ouverte, `needs-human-review` ([pivot-agilite-core#27](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/27)) — hard block CLAUDE.md sur l'ajout de `pivot-core-starter`, jamais de merge autonome quel que soit le score |
 | US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
 | US14.3.1 | Diffusion du résultat en temps réel (WebSocket) | M | High | ⬜ |
@@ -61,3 +61,25 @@
 > désormais livrés (implémentation + tests Dev Agent complets des deux côtés) — reste la revue/
 > fusion humaine de chaque PR, `Stage` frontmatter de l'US reste `⬜` jusqu'à la recette
 > mainteneur (§5 de ce backlog).
+>
+> **US09.3.1 — statut détaillé (item réparti sur deux repos, Gate 1 : `pivot-docs#199`) :**
+> frontend (`pivot-agilite-ui`) et backend (`pivot-agilite-core`) tous deux livrés **et fusionnés
+> de façon autonome** (Gate 4 = 100/100 chacun, contrairement à US09.1.1/US14.1.1 ci-dessus qui
+> restent bloquées sur le hard block `pivot-core-starter` — cette US ne modifie aucune
+> dépendance) :
+> - Frontend — PR [`pivot-agilite-ui#35`](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/35)
+>   (mode "rejoindre sans compte" sur `join-room`, heartbeat périodique, 17 nouveaux tests
+>   Vitest, spec Playwright dédiée) — CI intégralement verte (16/16 checks, E2E réel inclus),
+>   coverage 93,04 %.
+> - Backend — PR [`pivot-agilite-core#41`](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/41)
+>   (`POST /poker/rooms/join-anonymous`, `POST /poker/rooms/{roomId}/guest-sessions/heartbeat`,
+>   `RoomAccessGrantService` étendu de façon additive, 26 nouveaux tests) — fusionnée via
+>   `gh pr merge --admin` avec Gate 4 documenté en commentaire de PR : `ci.yml` (`pull_request`)
+>   n'a jamais déclenché pour cette PR (même panne GitHub Actions que celle déjà documentée sur
+>   US09.1.1/US14.1.1 ce sprint, confirmée non résolue) — compensée par `mvn verify` local complet
+>   (411/411 tests, 0 échec) + Checkstyle/SpotBugs 0 violation + 10/10 checks CI qui ont
+>   effectivement tourné, tous verts.
+> - Issues [`pivot-agilite-core#40`](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/issues/40)
+>   et [`pivot-agilite-ui#33`](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/issues/33)
+>   fermées à la fusion. `Stage` frontmatter de l'US reste `⬜` jusqu'à la recette mainteneur
+>   (§5 de ce backlog) — seule `pivot-docs` (cette PR) reste à fusion humaine dans tous les cas.
