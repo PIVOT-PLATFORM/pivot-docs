@@ -20,7 +20,7 @@
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
 | EN09.1 | Isolation WebSocket room Scrum Poker | S | Critical | ⬜ |
-| US09.1.1 | Créer une room de planning poker | M | High | 🔄 Gate 1 = 100/100 (AC Given/When/Then détaillées, `FEATURES/rooms/us-creer-room.md`) — implémentation en cours (`pivot-agilite-core`/`pivot-agilite-ui`) |
+| US09.1.1 | Créer une room de planning poker | M | High | 🟡 frontend mergé ([pivot-agilite-ui#23](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/23), Gate 4 100/100) · backend PR ouverte, `needs-human-review` ([pivot-agilite-core#26](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/26)) — Gate 4 100/100, CI verte, mais hard block CLAUDE.md sur l'ajout de `pivot-core-starter` (première dépendance de ce repo vers ce package), jamais de merge autonome quel que soit le score |
 | US09.1.2 | Rejoindre une room via code | S | High | ⬜ |
 | US09.2.1 | Voter sur un ticket en temps réel | M | High | ⬜ |
 | US09.2.2 | Révéler les votes et calculer le consensus | S | High | ⬜ |
