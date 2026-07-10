@@ -1,6 +1,6 @@
 # Sprint 11 — Risques + plan de contrôle sécurité
 
-> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+> ✅ **Verrou Socle levé (2026-07-10).** Inchangé au re-tri du 2026-07-10 (aucune dépendance E40/EN18.3-8). Voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
 **Sortie :** registre de risques opérationnel + socle Zero Trust posé
 
