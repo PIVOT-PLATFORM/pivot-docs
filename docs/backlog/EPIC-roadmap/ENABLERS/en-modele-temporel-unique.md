@@ -1,5 +1,7 @@
 # EN22.1 — Modèle temporel unique & moteur d'ordonnancement
 
+> ⚠️ **Décomposée (2026-07-10)** en [EN22.1a](en-schema-temporel-pilotage.md) (schéma), [EN22.1b](en-moteur-cpm-api.md) (moteur CPM & API), [EN22.1c](en-jalon-agregation-vues-evenements.md) (jalon partagé, agrégation, vues & événements) pour l'implémentation. **Le contrat figé ci-dessous reste la référence canonique** (immuable) — les trois enfants en implémentent chacun une part, sans rouvrir aucune décision figée.
+
 **Type d'enabler** : architecture (modèle de données + moteur)
 
 **Objectif technique** : Poser **un seul graphe temporel** dont la roadmap rapide et le Gantt détaillé sont **deux vues** (pas deux stockages). Interdit la double saisie et la divergence (vision data-centric PIVOT, cf. ADR-010).
@@ -330,7 +332,7 @@ Le freeze du contrat vaut pour les trois sous-enablers : la scission ne rouvre a
 
 ---
 Item Type: Enabler · Parent: E22 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Critical
-Stage: ⬜
+Stage: Decomposed
 Profils: Tous
 Justification: Fondation « roadmap & Gantt = deux vues d'un modèle temporel unique » (ADR-010)
 Dépendances: EN18.1 (schéma pilotage) · EN18.9 (Application→Projet)
