@@ -1,5 +1,7 @@
 # US22.4.1 — WBS : tâches & tâches récapitulatives
 
+> ⚠️ **Décomposée (2026-07-10)** en US22.4.1a, US22.4.1b, US22.4.1c — voir les fiches enfants ; cette US/enabler ne porte plus d'ACs propres (hors score Gate 1).
+
 **En tant que** chef de projet
 **Je veux** structurer le projet en arborescence (WBS) avec hiérarchisation (indent/outdent), tâches récapitulatives et numérotation WBS
 **Afin de** organiser le travail comme dans MS Project
@@ -27,7 +29,7 @@
 
 ---
 Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Critical
-Stage: ⬜
+Stage: Decomposed
 Rôle: chef-de-projet
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)

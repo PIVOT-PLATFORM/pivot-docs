@@ -19,7 +19,10 @@ Gantt, portefeuille) sans requérir le profil adaptatif ni l'habillage entrepris
 |------|-------|------|----------|--------|
 | US24.1.1 | Créer un ADR (Architecture Decision Record) projet | M | High | ⬜ |
 | US24.1.2 | Consulter et rechercher les ADRs d'un projet | S | Medium | ⬜ |
-| EN27.1 | Modèle OKR & moteur | L | Critical | ⬜ |
+| EN27.1a | Modèle OKR & persistance (schéma pilotage) *(ex-EN27.1 XL, décomposé 2026-07-10)* | M | Critical | ⬜ |
+| EN27.1b | Moteur d'avancement, score & statut OKR | L | Critical | ⬜ |
+| EN27.1c | Alignement OKR : arbre & garde-fou anti-cycle | M | Critical | ⬜ |
+| EN27.1d | Connecteurs OKR : auto-update KR, rappels & deep-links | L | Critical | ⬜ |
 | US27.1.1 | Créer un OKR (objectif + Key Results) | M | Critical | ⬜ |
 | US27.1.2 | Suivre un Key Result | M | Critical | ⬜ |
 | US27.1.3 | Types de KR (métrique/jalon/booléen, pondération) | M | High | ⬜ |
@@ -39,9 +42,11 @@ Gantt, portefeuille) sans requérir le profil adaptatif ni l'habillage entrepris
 | US26.2.3 | Flux de trésorerie | M | Medium | ⬜ |
 | US23.2.3 | Revues & comités de portefeuille | M | High | ⬜ |
 | US23.2.5 | Programmes | M | High | ⬜ |
-| US23.2.6 | Plans stratégiques | M | Medium | ⬜ |
+| US23.2.6a | Modèle de plan stratégique & contrats d'objectifs *(ex-US23.2.6 XL)* | M | Medium | ⬜ |
+| US23.2.6b | Rattachement projet ↔ objectif stratégique | M | Medium | ⬜ |
+| US23.2.6c | Vue de suivi d'alignement & statut « non aligné » | M | Medium | ⬜ |
 
-> **Dépendances :** EN27.1 précède toutes les US27.x · US27.6.2 dépend de la v0 E22/E23/E21 (S9-S11).
+> **Dépendances :** EN27.1a (modèle) précède EN27.1b/c/d et toutes les US27.x · US27.6.2 dépend de la v0 E22/E23/E21 (S9-S11).
 > **Restent en queue idéation / post-S13** : E27 F27.4-10 (check-ins, scoring, gouvernance),
 > E26 F26.2 vague 2 (US26.2.2/2.4/2.5/2.6 → idéation), E23 US23.2.7/23.2.8 (what-if & business
 > cases), US23.2.9/23.2.10 (livrables & valeur publique → idéation).

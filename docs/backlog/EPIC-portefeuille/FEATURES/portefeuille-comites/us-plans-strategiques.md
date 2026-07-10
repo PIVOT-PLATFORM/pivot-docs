@@ -1,5 +1,7 @@
 # US23.2.6 — Pilotage des plans stratégiques
 
+> ⚠️ **Décomposée (2026-07-10)** en US23.2.6a, US23.2.6b, US23.2.6c — voir les fiches enfants ; cette US/enabler ne porte plus d'ACs propres (hors score Gate 1).
+
 **En tant que** direction
 **Je veux** prolonger le portefeuille vers les plans stratégiques et contrats d'objectifs (déclinaison, suivi, alignement)
 **Afin de** relier les projets aux orientations stratégiques et suivre leur alignement
@@ -26,7 +28,7 @@
 
 ---
 Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Medium
-Stage: ⬜
+Stage: Decomposed
 Rôle: macro:direction-pilotage
 Source: PP-048 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Virage (Strat Monitor, toutes les ARS)
 Profils: Grand groupe, Publique, État

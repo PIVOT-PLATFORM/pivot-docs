@@ -1,5 +1,7 @@
 # US22.6.1 — Vues multiples (Gantt, chronologie, calendrier, réseau, ressources)
 
+> ⚠️ **Décomposée (2026-07-10)** en US22.6.1a, US22.6.1b, US22.6.1c — voir les fiches enfants ; cette US/enabler ne porte plus d'ACs propres (hors score Gate 1).
+
 **En tant que** utilisateur métier
 **Je veux** basculer entre Gantt, Chronologie (roadmap), Calendrier, Réseau (PERT), Feuille de ressources, Utilisation tâches/ressources, Tableau/Kanban
 **Afin de** consulter le même plan sous l'angle adapté (parité vues MS Project)
@@ -31,7 +33,7 @@
 
 ---
 Item Type: US · Parent: F22.6 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: ⬜
+Stage: Decomposed
 Rôle: utilisateur-final
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)

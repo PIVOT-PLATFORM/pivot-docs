@@ -9,7 +9,9 @@ par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US22.4.1 | WBS : tâches & tâches récapitulatives *(XL → décomposer avant impl.)* | XL | Critical | ⬜ |
+| US22.4.1a | WBS : modèle arborescent & numérotation *(ex-US22.4.1 XL, décomposée 2026-07-10)* | M | Critical | ⬜ |
+| US22.4.1b | WBS : indent/outdent & réordonnancement | M | Critical | ⬜ |
+| US22.4.1c | WBS : agrégation tâches récapitulatives & A11y | M | Critical | ⬜ |
 | US22.4.2 | Durées, effort, planification auto vs manuelle | L | Critical | ⬜ |
 | US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ⬜ |
 | US22.4.4 | Contraintes de date & échéances | M | High | ⬜ |
@@ -18,8 +20,12 @@ par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation
 | US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ |
 | US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ⬜ |
 | US22.4.9 | Baselines multiples & analyse des écarts | L | High | ⬜ |
-| US22.4.10 | Interactions Gantt directes *(XL → décomposer avant impl.)* | XL | Critical | ⬜ |
-| US22.6.1 | Vues multiples (Gantt, chronologie, calendrier, réseau) *(XL → décomposer)* | XL | High | ⬜ |
+| US22.4.10a | Déplacement/redimensionnement des barres & lien par glisser *(ex-US22.4.10 XL)* | L | Critical | ⬜ |
+| US22.4.10b | Zoom de l'échelle de temps & poignée d'avancement | M | Critical | ⬜ |
+| US22.4.10c | Virtualisation du rendu & édition clavier accessible | L | Critical | ⬜ |
+| US22.6.1a | Socle multi-vues & vues temporelles (Gantt, Chronologie, Calendrier) *(ex-US22.6.1 XL)* | L | High | ⬜ |
+| US22.6.1b | Vues Réseau (PERT) & Tableau/Kanban | L | High | ⬜ |
+| US22.6.1c | Vues ressources (Feuille de ressources & Utilisation) | M | High | ⬜ |
 | US22.6.2 | Colonnes, filtres, regroupements & tri | L | High | ⬜ |
 | US23.1.1 | Tableau de bord portefeuille projets | L | High | ⬜ |
 | US23.1.2 | Générer un rapport d'avancement du portefeuille | M | Medium | ⬜ |
