@@ -29,5 +29,5 @@
 Item Type: US · Parent: F22.3 · Module: pilotage · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
 Profils: Tous
-Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)
+Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude par défaut EN18.10 (E40 adaptatif ultérieur)
 Dépendances: EN22.1 (modèle temporel unique)

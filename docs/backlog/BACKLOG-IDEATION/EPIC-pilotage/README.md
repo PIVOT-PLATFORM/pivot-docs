@@ -7,7 +7,7 @@
 > **Décision structurante — [ADR-008 Domaines composables & cockpits](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits).**
 > L'intégration entre modules passe par le **bus d'événements PIVOT** et des **deep-links** — jamais de FK inter-modules (cf. ADR-006).
 
-**Modèle de données du domaine** — une **Application** possède **1..n Projet** (Projet = version d'application, ou autre unité), et **relie toutes les données de chaque Projet** (jalons, budget, risques, décisions…). Voir [EN18.9 — Modèle Application → Projet](ENABLERS/en-modele-application-projet.md).
+**Modèle de données du domaine** — une **Application** possède **1..n Projet** (Projet = version d'application, ou autre unité), et **relie toutes les données de chaque Projet** (jalons, budget, risques, décisions…). Voir [EN18.9 — Modèle Application → Projet](../../EPIC-pilotage/ENABLERS/en-modele-application-projet.md).
 
 ## Modules du domaine
 
@@ -53,9 +53,9 @@ Un **cockpit** est une vue composée qui agrège les widgets/vues des modules pe
 
 Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E13) :
 
-- [**EN18.1** — Schéma Flyway `pilotage` + entités JPA](ENABLERS/en-schema-flyway-pilotage.md) (**Application**, Project, Milestone, PortfolioView, Adr, Consultation, Candidate) — hiérarchie **Application 1..n Projet** (cf. EN18.9)
-- [**EN18.2** — Guard Angular module pilotage](ENABLERS/en-guard-angular-pilotage.md) (moduleGuard `moduleId: 'pilotage'`)
-- **EN18.9** — [Modèle Application → Projet](ENABLERS/en-modele-application-projet.md) : Application possède 1..n Projet, relie toutes les données de chaque Projet
+- [**EN18.1** — Schéma Flyway `pilotage` + entités JPA](../../EPIC-pilotage/ENABLERS/en-schema-flyway-pilotage.md) (**Application**, Project, Milestone, PortfolioView, Adr, Consultation, Candidate) — hiérarchie **Application 1..n Projet** (cf. EN18.9)
+- [**EN18.2** — Guard Angular module pilotage](../../EPIC-pilotage/ENABLERS/en-guard-angular-pilotage.md) (moduleGuard `moduleId: 'pilotage'`)
+- **EN18.9** — [Modèle Application → Projet](../../EPIC-pilotage/ENABLERS/en-modele-application-projet.md) : Application possède 1..n Projet, relie toutes les données de chaque Projet
 - **EN18.3** — Cloud/SaaS et RGPD *(benchmark)*
 - **EN18.4** — Localisation FR et RGAA *(benchmark)*
 - **EN18.5** — Performance de consolidation *(benchmark)*
@@ -84,15 +84,15 @@ Le schéma et le guard sont mutualisés par les modules `pilotage` (E22–E27, E
 | Élément | 🤖 Dev |
 |---------|--------|
 | **Enablers partagés** | |
-| [EN18.1 — Schéma Flyway `pilotage` + entités JPA](ENABLERS/en-schema-flyway-pilotage.md) | ⬜ |
-| [EN18.2 — Guard Angular module pilotage](ENABLERS/en-guard-angular-pilotage.md) | ⬜ |
+| [EN18.1 — Schéma Flyway `pilotage` + entités JPA](../../EPIC-pilotage/ENABLERS/en-schema-flyway-pilotage.md) | ⬜ |
+| [EN18.2 — Guard Angular module pilotage](../../EPIC-pilotage/ENABLERS/en-guard-angular-pilotage.md) | ⬜ |
 | [EN18.3 — Cloud/SaaS et RGPD](ENABLERS/en-cloud-saas-rgpd.md) | ⬜ |
 | [EN18.4 — Localisation FR et RGAA](ENABLERS/en-localisation-fr-rgaa.md) | ⬜ |
 | [EN18.5 — Performance de consolidation](ENABLERS/en-performance-consolidation.md) | ⬜ |
 | [EN18.6 — Administration sans code](ENABLERS/en-administration-sans-code.md) | ⬜ |
 | [EN18.7 — Hébergement France/UE](ENABLERS/en-hebergement-france-ue.md) | ⬜ |
 | [EN18.8 — Option on-premise](ENABLERS/en-option-on-premise.md) | ⬜ |
-| [EN18.9 — Modèle Application → Projet](ENABLERS/en-modele-application-projet.md) | ⬜ |
+| [EN18.9 — Modèle Application → Projet](../../EPIC-pilotage/ENABLERS/en-modele-application-projet.md) | ⬜ |
 | **Modules (EPICs dédiés)** | |
 | [E22 — Roadmap / Gantt](../../EPIC-roadmap/README.md) | ⬜ |
 | [E23 — Portefeuille projets](../../EPIC-portefeuille/README.md) | ⬜ |
