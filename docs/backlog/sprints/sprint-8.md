@@ -34,7 +34,7 @@
 | US20.1.2c | Phase Action (transition en session) *(ex-US20.1.2, décomposée)* | S | High | ⬜ |
 | US20.2.1 | Formats de rétro prédéfinis + custom | M | Medium | ⬜ |
 | US20.3.1 | Créer et assigner des actions de rétro | M | High | ⬜ |
-| US20.3.2 | Revoir les actions de la rétro précédente | S | Medium | ⬜ |
+| US20.3.2 | Revoir les actions de la rétro précédente | S | Medium | 🟡 frontend mergé ([pivot-agilite-ui#47](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/47), Gate 4 100/100, `Release-Trigger: true` — dernier item du sprint pour ce repo) · backend en cours ([pivot-agilite-core#52](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/issues/52), pas encore de PR) — spec Gate 5 figée : `docs/specs/EPIC-retrospective/us20-3-2-warmup-actions.md` |
 | TAXO-1 | Merge `check-taxonomie.mjs` + câblage `lint:taxonomie` en CI | S | High | ✅ — déjà fait (`scripts/check-taxonomie.mjs` existe, `npm run lint`/`docs-checks.yml` le lancent, vérifié 2026-07-10) |
 | TAXO-2 | Backfill champ `Rôle:` sur ~700 US/EN (résolution vers le référentiel) | M | High | 🟡 backfill fait, PR ouverte ([pivot-docs#212](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/212)) — 600/674 US résolus (référentiel `docs/taxonomie/roles.json` + table §18, 0 valeur inventée), 73 US et les 113 Enablers documentés comme non résolus plutôt que devinés (détail : `zones-ombre.md` #5 + commentaire PR) — merge volontairement laissé à la revue humaine (modification à grande échelle) |
 
