@@ -131,12 +131,13 @@ function checkIdFormat() {
   // Grammaire réelle observée dans docs/backlog (STATUS.md, sprints/, EPIC READMEs) :
   // - E01 (epic, toujours seul)
   // - F01.1 / F01.x (feature, éventuellement wildcard ".x" = "toute la feature")
-  // - EN01.1 / EN01 / EN01.x (enabler, avec ou sans sous-numéro, wildcard possible)
+  // - EN01.1 / EN01 / EN01.x / EN01.1a (enabler, avec ou sans sous-numéro, wildcard
+  //   possible, suffixe lettre a/b pour les enablers scindés — cf. EN27.1a, EN43.7a)
   // - US01 / US01.x / US01.1 / US01.1.1 / US01.1.3a (story, jusqu'à 2 sous-segments,
   //   wildcard ".x", suffixe lettre a/b pour les stories scindées)
   const seg = '(\\.(\\d+|x))';
   const validId = new RegExp(
-    `^(E\\d{2}|F\\d{2}${seg}|EN\\d{2}${seg}?|US\\d{2}${seg}{0,2}[a-z]?)$`,
+    `^(E\\d{2}|F\\d{2}${seg}|EN\\d{2}${seg}?[a-z]?|US\\d{2}${seg}{0,2}[a-z]?)$`,
   );
   // Repère un jeton qui RESSEMBLE à un ID (préfixe E/F/EN/US suivi de chiffres,
   // points, "x" wildcard, ou lettre de suffixe) mais qui pourrait être mal formé.
