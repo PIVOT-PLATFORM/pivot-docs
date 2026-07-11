@@ -61,7 +61,10 @@
 | Élément | 🤖 Dev |
 |---------|--------|
 | **Enablers** | |
-| [EN42.1 — Moteur & schéma de formulaire](ENABLERS/en-moteur-schema-formulaire.md) | ⬜ |
+| [EN42.1a — Schéma & validation](ENABLERS/en-schema-validation-formulaire.md) *(ex-EN42.1 décomposé)* | ⬜ |
+| [EN42.1b — Moteur logique & scoring](ENABLERS/en-moteur-logique-scoring.md) | ⬜ |
+| [EN42.1c — Événements & API](ENABLERS/en-evenements-api-forms.md) | ⬜ |
+| [EN42.1d — Thème & intégration](ENABLERS/en-theme-integration-forms.md) | ⬜ |
 | [EN42.2 — Déploiement souverain & sécurité](ENABLERS/en-deploiement-souverain-forms.md) | ⬜ |
 | **F42.1 — Éditeur & champs** | |
 | [US42.1.1 — Éditeur no-code drag-and-drop](FEATURES/editeur-champs/us-editeur-no-code-drag-and-drop.md) | ⬜ |

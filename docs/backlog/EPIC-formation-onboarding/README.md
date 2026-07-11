@@ -60,7 +60,10 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 | Élément | 🤖 Dev |
 |---------|--------|
 | **Enablers** | |
-| [EN41.1 — Framework d'onboarding in-app](ENABLERS/en-framework-onboarding.md) | ⬜ |
+| [EN41.1a — Moteur d'affichage in-app](ENABLERS/en-moteur-affichage-in-app.md) *(ex-EN41.1 décomposé)* | ⬜ |
+| [EN41.1b — API parcours & progression](ENABLERS/en-api-parcours-progression.md) | ⬜ |
+| [EN41.1c — Ciblage rôle/module/étape](ENABLERS/en-ciblage-role-module-etape.md) | ⬜ |
+| [EN41.1d — Analytics d'adoption (RGPD)](ENABLERS/en-analytics-adoption-rgpd.md) | ⬜ |
 | **F41.1 — Onboarding in-app** | |
 | [US41.1.1 — Tour guidé au premier accès](FEATURES/onboarding-in-app/us-tour-guide.md) | ⬜ |
 | [US41.1.2 — Tooltips & aide contextuelle](FEATURES/onboarding-in-app/us-tooltips-aide-contextuelle.md) | ⬜ |

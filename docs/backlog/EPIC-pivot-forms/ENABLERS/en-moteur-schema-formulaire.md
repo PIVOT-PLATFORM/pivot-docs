@@ -1,5 +1,7 @@
 # EN42.1 — Moteur & schéma de formulaire
 
+> ⚠️ **Décomposée (2026-07-11)** en EN42.1a/b/c/d — voir les fiches enfants ; ne porte plus d'ACs propres.
+
 **Type d'enabler** : architecture
 
 **Objectif technique** : Le cœur du form-builder — modèle et moteurs réutilisables :
@@ -19,6 +21,6 @@
 
 ---
 Item Type: Enabler · Parent: E42 · Module: forms · Phase: phase-3 · Size: XL · Priority: Critical
-Stage: ⬜
+Stage: Decomposed
 Justification: Moteur commun du form-builder (schéma, logique, scoring, thème, événements)
 Dépendances: E03 Système de modules · E17 Infrastructure multi-repo · bus PIVOT (ADR-025, implémentation EN28.4 ⬜)
