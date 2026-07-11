@@ -36,7 +36,7 @@ valeur de verrou de sprint.
 
 ## Statut global
 
-🔎 Enablers dev-terminés — Sprint 5 Vague 0 (EN17.1–17.10) : 10/10 mergés ; EN17.11 (Sprint 8, câblage shell agilite) mergé. EN17.1 clos le 2026-07-08 : 8/8 volets `db`/`modules`/`tenant`/`team`/`auth` extraits et publiés via `pivot-core-starter` ([`pivot-core#171`](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) fermée, [ADR-022](../../adr/ADR-022-principal-authentification-minimal-partage.md)). En attente de recette mainteneur (EN17.1/17.2/17.5 déjà recettés `✅`). Voir `sprints/sprint-5.md` pour le détail PR par item.
+🔎 Enablers dev-terminés — Sprint 5 Vague 0 (EN17.1–17.10) : 10/10 mergés ; EN17.11 (Sprint 8, câblage shell agilite) mergé. EN17.1 clos le 2026-07-08 : 8/8 volets `db`/`modules`/`tenant`/`team`/`auth` extraits et publiés via `pivot-core-starter` ([`pivot-core#171`](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) fermée, [ADR-022](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage)). En attente de recette mainteneur (EN17.1/17.2/17.5 déjà recettés `✅`). Voir `sprints/sprint-5.md` pour le détail PR par item.
 
 ---
 
