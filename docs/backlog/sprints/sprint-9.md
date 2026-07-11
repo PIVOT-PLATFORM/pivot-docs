@@ -43,7 +43,7 @@ toute implémentation.
 | US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ⬜ (← US22.3.1) |
 | US22.3.3 | Vue Now / Next / Later | M | Should | ⬜ (← US22.3.1) |
 | US22.3.4 | Jalons stratégiques | S | High | ⬜ (← US22.3.1) |
-| US22.3.5 | Partage & export de la roadmap | S | Should | ⬜ (← US22.3.1) |
+| US22.3.5 | Partage & export de la roadmap | S | Should | 🟡 backend mergé ([pivot-pilotage-core#36](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/36)) · frontend en cours |
 
 ## Pré-requis d'amorçage (première action, avant tout Dev Agent)
 
