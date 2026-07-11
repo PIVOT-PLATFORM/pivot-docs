@@ -1,5 +1,7 @@
 # EN41.1 — Framework d'onboarding in-app
 
+> ⚠️ **Décomposée (2026-07-11)** en EN41.1a/b/c/d — voir les fiches enfants ; ne porte plus d'ACs propres.
+
 **Type d'enabler** : architecture · frontend (shell E16)
 
 **Objectif technique** : Un **framework réutilisable** d'onboarding in-app, dans lequel **chaque module se branche** (catalogue F41.5) sans réinventer la mécanique :
@@ -20,7 +22,7 @@
 
 ---
 Item Type: Enabler · Parent: E41 · Module: core · Phase: phase-3 · Size: XL · Priority: High
-Stage: ⬜
+Stage: Decomposed
 Profils: Tous
 Justification: Socle commun d'onboarding in-app pour tous les modules
 Dépendances: E16 Shell applicatif & UX · E19 Session (présentiel)
