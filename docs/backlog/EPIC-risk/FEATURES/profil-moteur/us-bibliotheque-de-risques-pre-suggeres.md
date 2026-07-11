@@ -16,6 +16,7 @@ Catalogue de risques types filtré par typologie, proposé au cadrage.
 | Given la liste de risques types proposée, when le Chef de projet en sélectionne un ou plusieurs, then les risques choisis sont ajoutés au registre du projet en tant que risques réels, modifiables comme n'importe quel risque saisi manuellement | ⬜ |
 | Error : given une typologie sans aucun risque type associé dans le catalogue, system affiche une liste vide avec message explicite, sans bloquer la poursuite du cadrage | ⬜ |
 | Security : la lecture du catalogue de risques types est ouverte à tout membre de l'équipe projet ; seuls les rôles Archi et admin peuvent créer, modifier ou retirer un risque type du catalogue partagé (impact transverse sur tous les projets de la typologie) | ⬜ |
+| A11y : la liste de risques types proposée et sa sélection multiple (libellés, cases à cocher, message de liste vide, navigation clavier) respectent WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
 - La définition des typologies et de leurs familles dominantes, dont dépend le filtrage — couverte par US21.1.2.

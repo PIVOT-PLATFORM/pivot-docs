@@ -4,6 +4,13 @@
 
 **Sortie :** form-builder cœur livré + premier tour guidé actif sur les modules en prod (S8-S11)
 
+**Gate 1 READINESS passé (2026-07-11)** — **15/17 Ready**. ⚠️ **2 enablers XL non décomposés
+bloquent le cœur** : **EN42.1** (moteur + schéma Forms, score 60) bloque **10 US** (F42.1/F42.2/F42.3)
+et **EN41.1** (framework onboarding, score 55) bloque US41.1.1 → **la décomposition est la 1re action
+du sprint** (même précédent que les XL pilotage EN27.1/EN43.7). Implémentables sans le moteur :
+US42.4.1 / US42.4.2 / US42.5.1. Dépendances externes : bus ADR-025/EN28.4 (US42.5.4, critère
+`form.submitted`), ADR-009 Thème/liens profonds (US42.2.4, US42.3.2). Décisions → commentaire de la PR Gate 1.
+
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
 | EN42.1 | Moteur & schéma de formulaire *(XL → décomposer avant impl.)* | XL | Critical | ⬜ |

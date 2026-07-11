@@ -12,6 +12,7 @@
 | Given un champ calculé référençant d'autres champs numériques, when une valeur source change avant soumission, then le champ calculé se met à jour en temps réel | ⬜ |
 | Error : given un barème incohérent (ex. seuils de résultat qui se chevauchent ou somme de points impossible à atteindre), when le concepteur tente de le publier, then l'éditeur bloque la publication et signale l'incohérence | ⬜ |
 | Security : le calcul du score est rejoué et vérifié côté serveur à la soumission — un score envoyé depuis le client n'est jamais accepté tel quel | ⬜ |
+| A11y : le score et le verdict affichés après soumission sont annoncés aux technologies d'assistance (zone live ARIA) et lisibles indépendamment de la couleur (« réussi »/« à revoir » ne reposant pas uniquement sur un code couleur) | ⬜ |
 
 ## Hors périmètre
 

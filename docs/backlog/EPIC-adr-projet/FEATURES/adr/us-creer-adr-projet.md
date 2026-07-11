@@ -11,7 +11,8 @@
 | Given un projet existant, when l'architecte crée un ADR avec titre, statut, contexte, décision et conséquences, then POST `/api/pilotage/roadmap/projects/{id}/adrs` persiste l'ADR et le retourne avec un statut parmi PROPOSED · ACCEPTED · DEPRECATED · SUPERSEDED | ⬜ |
 | Given un ADR existant, when il est mis à jour ou supprimé (CRUD complet), then les modifications sont persistées et l'historique reste cohérent | ⬜ |
 | Error : given une création d'ADR avec statut SUPERSEDED sans référence à l'ADR remplaçant, system retourne 400 | ⬜ |
-| Security : un ADR n'est accessible en lecture/écriture qu'aux membres de l'équipe rattachée au projet (FK `public.teams.id`) ; toute autre requête retourne 403 | ⬜ |
+| Security : un ADR n'est accessible qu'aux membres de l'équipe rattachée au projet (FK `public.teams.id`) ; un non-membre ou une requête cross-tenant se comporte comme si le projet/ADR n'existait pas (404, jamais de fuite d'existence) | ⬜ |
+| Security : parmi les membres, la création/modification/suppression d'ADR exige le rôle habilité (architecte / chef de projet) ; un membre sans ce rôle reçoit 403 (accès révélé mais action interdite) | ⬜ |
 | A11y : le formulaire de création d'ADR (vue Angular) est navigable au clavier et les champs obligatoires sont annoncés par lecteur d'écran | ⬜ |
 
 ## Hors périmètre

@@ -12,7 +12,8 @@
 | Given un cycle validé, when il est en cours, then les objectifs ne changent plus de définition (seuls les check-ins évoluent) | ⬜ |
 | Given une fin de cycle, when je le clôture, then le scoring final est déclenché (cf. F27.5) et le cycle passe en lecture seule | ⬜ |
 | Error : given un cycle déjà gelé ou clôturé, when une tentative de modification de la définition d'un objectif est faite, then l'API retourne 409 | ⬜ |
-| Security : given un utilisateur, when il ouvre, gèle ou clôture un cycle, then seul un rôle responsable pilotage (ou admin tenant) peut effectuer ces transitions d'état | ⬜ |
+| Security : given un utilisateur, when il ouvre, gèle ou clôture un cycle, then seul un rôle responsable pilotage (ou admin tenant) peut effectuer ces transitions d'état ; un non-membre ou un accès cross-tenant reçoit 404, un membre sans le rôle requis reçoit 403 | ⬜ |
+| A11y : les commandes de transition de cycle (ouvrir/geler/clôturer) et l'état courant du cycle (ouvert/gelé/clôturé) sont utilisables au clavier et annoncés en texte aux lecteurs d'écran (état non porté par la seule couleur), conformément à WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
 - L'imbrication annuel/trimestriel et le report (carry-over) d'un OKR non atteint (cf. US27.2.2)

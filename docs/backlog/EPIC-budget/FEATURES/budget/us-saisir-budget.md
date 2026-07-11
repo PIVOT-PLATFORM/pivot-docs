@@ -10,7 +10,7 @@
 |---------|--------|
 | Given un projet existant, when le chef de projet saisit un budget avec ses postes (humain, matériel, prestation, autre), then le budget est créé via `POST /api/pilotage/roadmap/projects/{id}/budget` et le total affiché est égal à la somme des postes | ⬜ |
 | Error : given un poste de dépense avec un montant négatif ou non numérique, system retourne 400 et ne crée aucun budget | ⬜ |
-| Security : seul le chef de projet (ou rôle admin) affecté au projet peut créer/modifier le budget ; tout autre utilisateur (y compris lecture seule sur le projet) reçoit 403 | ⬜ |
+| Security : un utilisateur non membre du projet ou d'un autre tenant reçoit 404 (le projet n'est pas révélé) ; un membre du projet sans le rôle requis (chef de projet ou admin) reçoit 403 en création/modification du budget, y compris s'il est en lecture seule | ⬜ |
 | A11y : le formulaire de saisie des postes (labels associés aux champs, messages d'erreur annoncés, navigation clavier complète) est conforme WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

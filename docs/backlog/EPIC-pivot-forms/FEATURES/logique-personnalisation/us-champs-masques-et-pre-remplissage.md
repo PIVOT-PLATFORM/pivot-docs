@@ -12,6 +12,7 @@
 | Given un champ visible pré-rempli par API/recall, when le répondant l'ouvre, then la valeur est proposée et reste modifiable par le répondant sauf si le concepteur l'a explicitement verrouillée | ⬜ |
 | Error : given un paramètre d'URL de pré-remplissage absent ou malformé, when le formulaire s'ouvre, then le champ correspondant reste vide (comportement standard), sans erreur bloquante affichée au répondant | ⬜ |
 | Security : les champs cachés ne doivent jamais transporter de donnée sensible en clair dans une URL partageable (pas de PII en query string) — validé à la conception du formulaire | ⬜ |
+| A11y : un champ visible verrouillé après pré-remplissage expose son état non modifiable aux technologies d'assistance (`aria-readonly`/`aria-disabled` selon le cas) et reste annoncé avec sa valeur au parcours clavier | ⬜ |
 
 ## Hors périmètre
 
