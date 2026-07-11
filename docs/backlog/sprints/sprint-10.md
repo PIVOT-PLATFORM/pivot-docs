@@ -7,8 +7,15 @@
 **Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé), sur profil
 par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation.
 
+> **EN22.2 reséquencé depuis Sprint 9 (2026-07-11)** : cet enabler (rendu virtualisé, recalcul
+> incrémental, co-édition temps réel + undo/redo du Gantt) dépend du Gantt UI lui-même
+> (US22.4.x, ci-dessous) — inexistant tant que ce sprint n'a pas livré. Il ne peut pas être
+> implémenté avant. **Chevauchement à trancher au Gate 1** avec `US22.4.10c` (virtualisation du
+> rendu déjà présente dans cette US) — éviter un double travail sur ce point précis.
+
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
+| EN22.2 | Performance & collaboration web du Gantt *(reséquencé de Sprint 9, 2026-07-11)* | XL | High | ⬜ |
 | US22.4.1a | WBS : modèle arborescent & numérotation *(ex-US22.4.1 XL, décomposée 2026-07-10)* | M | Critical | ⬜ |
 | US22.4.1b | WBS : indent/outdent & réordonnancement | M | Critical | ⬜ |
 | US22.4.1c | WBS : agrégation tâches récapitulatives & A11y | M | Critical | ⬜ |
