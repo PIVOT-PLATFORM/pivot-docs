@@ -17,7 +17,7 @@ Planning poker interactif : rooms, tickets, votes temps réel WebSocket, partici
 
 ## Périmètre GitHub (phase-3)
 - F09.1 : Rooms planning poker (CRUD + code de rejoint) — US09.1.1, US09.1.2, US09.1.3 jeu de cartes paramétrable par équipe (Fibonacci, T-shirt, suite personnalisée)
-- F09.2 : Tickets et votes en temps réel (WebSocket) — US09.2.1, US09.2.2 (révélation simultanée + distribution des votes : moyenne/médiane/dispersion — benchmark PlanningPoker.com)
+- F09.2 : Tickets et votes en temps réel (WebSocket) — US09.2.1, US09.2.2 (révélation simultanée + distribution des votes : moyenne/médiane/dispersion — benchmark PlanningPoker.com), US09.2.3 (reset/revote + validation d'une estimation finale persistée — écart ADR-026 §2 comblé après US09.2.2, arbitrage mainteneur 2026-07-11)
 - F09.3 : Participant anonyme (join par code sans compte) — US09.3.1
 - EN09.1 : WebSocket room Scrum Poker isolation
 
