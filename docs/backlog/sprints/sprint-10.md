@@ -29,7 +29,7 @@ maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (n
 | US22.4.1b | WBS : indent/outdent & réordonnancement | M | Critical | ⬜ |
 | US22.4.1c | WBS : agrégation tâches récapitulatives & A11y | M | Critical | ⬜ |
 | US22.4.2 | Durées, effort, planification auto vs manuelle | L | Critical | ⬜ |
-| US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ⬜ |
+| US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ✅ mergé (backend [pivot-pilotage-core#47](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/47), frontend [pivot-pilotage-ui#28](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/28)) |
 | US22.4.4 | Contraintes de date & échéances | M | High | ⬜ |
 | US22.4.5 | Calendriers ouvrés & exceptions | L | High | ⬜ |
 | US22.4.6 | Jalons & tâches périodiques | M | Medium | ⬜ |
