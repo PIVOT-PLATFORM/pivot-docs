@@ -3,6 +3,13 @@
 > ✅ **Verrou Socle levé (2026-07-10)** — voir [`sprint-8.md`](./sprint-8.md). Pilotage reste
 > séquencé **après la livraison du REX templates de Sprint 8** (pilote agilité) : *« piloter petit
 > avant de piloter gros »* (voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-)).
+>
+> 🏁 **Terminé (2026-07-11)** : socle technique (EN18.1/18.2/18.9/18.10, EN22.1a/b/c) et roadmap
+> rapide v0 (US22.3.1 à 3.5) mergés — backend `pivot-pilotage-core` et frontend
+> `pivot-pilotage-ui`. Retrofit `team_id` (13 tables) effectué en cours de sprint après détection
+> d'un écart avec le pattern agilite validé au Sprint 8. **Release `pivot-pilotage-ui` v0.1.0**
+> déclenchée sur le dernier merge. `Stage` frontmatter de chaque item reste `⬜` jusqu'à la recette
+> mainteneur individuelle.
 
 **Scope :** la colonne vertébrale **technique** du domaine + la roadmap v0. Pas les satellites, et
 **pas le profil adaptatif** (E40) — voir §Re-tri ci-dessous.
@@ -39,11 +46,11 @@ toute implémentation.
 | EN22.1a | Schéma temporel `pilotage` (11 tables) *(ex-EN22.1 XL, scindé 2026-07-10)* | L | Critical | ✅ mergé ([pivot-pilotage-core#24](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/24)) |
 | EN22.1b | Moteur CPM & API (`schedule`/`reSchedule` incrémental) | L | Critical | ✅ mergé ([pivot-pilotage-core#25](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/25)) |
 | EN22.1c | Jalon partagé, agrégation, dérivation de vues & événements | L | Critical | ✅ mergé ([pivot-pilotage-core#26](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/26)) |
-| US22.3.1 | Créer une roadmap rapide | M | High | 🟡 backend mergé ([pivot-pilotage-core#32](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/32)) · frontend en cours |
-| US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ⬜ (← US22.3.1) |
+| US22.3.1 | Créer une roadmap rapide | M | High | ✅ mergé (backend [pivot-pilotage-core#32](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/32), frontend [pivot-pilotage-ui#17](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/17)) |
+| US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ✅ mergé (frontend seul, projection d'affichage — [pivot-pilotage-ui#19](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/19)) |
 | US22.3.3 | Vue Now / Next / Later | M | Should | ✅ mergé (backend [pivot-pilotage-core#39](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/39), frontend [pivot-pilotage-ui#25](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/25)) |
-| US22.3.4 | Jalons stratégiques | S | High | ⬜ (← US22.3.1) |
-| US22.3.5 | Partage & export de la roadmap | S | Should | 🟡 backend mergé ([pivot-pilotage-core#36](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/36)) · frontend en cours |
+| US22.3.4 | Jalons stratégiques | S | High | ✅ mergé (backend [pivot-pilotage-core#37](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/37), frontend [pivot-pilotage-ui#22](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/22)) |
+| US22.3.5 | Partage & export de la roadmap | S | Should | ✅ mergé (backend [pivot-pilotage-core#36](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/36), frontend [pivot-pilotage-ui#23](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/23)) |
 
 ## Pré-requis d'amorçage (première action, avant tout Dev Agent)
 
