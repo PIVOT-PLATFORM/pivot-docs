@@ -34,6 +34,7 @@
 ---
 Item Type: US · Parent: F22.8 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: animateur-facilitateur
 Profils: Tous
 Justification: Interface E22 Roadmap ↔ E12 MeetOps (plage → pré-réservation → meilleur créneau), via bus PIVOT (ADR-006/008)
 Dépendances: EN22.3 (disponibilité/calendriers) · bus PIVOT · E12 MeetOps

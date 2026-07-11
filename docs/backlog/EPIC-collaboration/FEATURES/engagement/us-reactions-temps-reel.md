@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.11 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-035 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection 3/4 (MSW, Klaxoon, FigJam)
 Justification: Dossier §5.1 : marqueur des outils orientés engagement
 Dépendances: —

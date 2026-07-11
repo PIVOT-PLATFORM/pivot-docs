@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.1 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: citizen-developer
 Source: WF-016 · MoSCoW: Should · Lot: Lot 2 · Origine: 3/6 (n8n, Zapier, Gumloop)
 Justification: Cahiers EDT/ZAP/PIP
 Dépendances: —

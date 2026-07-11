@@ -22,3 +22,4 @@
 ---
 Item Type: US · Parent: EN05.13 · Module: core · Phase: Socle · Size: M · Priority: Medium
 Stage: ✅
+Rôle: responsable-de-la-securite-si

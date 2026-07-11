@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.11 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-073 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Klaxoon
 Justification: Dossier §6.3
 Dépendances: —

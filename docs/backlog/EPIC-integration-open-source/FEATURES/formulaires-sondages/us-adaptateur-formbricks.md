@@ -17,4 +17,5 @@
 ---
 Item Type: US · Parent: F28.8 · Module: formulaires-sondages · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: product-owner
 Dépendances: EN28.3

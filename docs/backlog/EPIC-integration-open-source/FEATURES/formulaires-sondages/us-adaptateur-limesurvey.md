@@ -17,4 +17,5 @@
 ---
 Item Type: US · Parent: F28.8 · Module: formulaires-sondages · Phase: phase-3 · Size: M · Priority: Low
 Stage: ⬜
+Rôle: business-analyst
 Dépendances: EN28.3

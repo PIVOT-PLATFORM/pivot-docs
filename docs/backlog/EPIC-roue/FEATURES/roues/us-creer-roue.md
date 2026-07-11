@@ -132,3 +132,4 @@ marché. Une entrée « libre » (nom ad hoc, sans compte PIVOT) reste possible 
 ---
 Item Type: US · Parent: F14.1 · Module: agilite · Repo: pivot-agilite-core/ui · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: animateur-facilitateur

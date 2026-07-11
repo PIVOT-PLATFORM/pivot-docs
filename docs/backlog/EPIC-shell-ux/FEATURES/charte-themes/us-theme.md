@@ -24,6 +24,7 @@
 ---
 Item Type: US · Parent: F16.4 · Module: core · Phase: Socle · Size: S · Priority: Medium
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-ui` PR [#46](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/46) (Gate 4 = 80/100,
 merge documenté) + PR [#49](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/49) + PR
 [#48](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/48), spec figée

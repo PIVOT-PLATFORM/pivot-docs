@@ -30,6 +30,7 @@
 ---
 Item Type: US · Parent: F22.2 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: officier-responsable-pmo
 Source: PP-005 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 3/3
 Profils: Tous
 Justification: Dossier §4

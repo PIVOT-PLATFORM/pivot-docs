@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F12.3 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: animateur-facilitateur, utilisateur-final
 Dépendances: US12.2.1

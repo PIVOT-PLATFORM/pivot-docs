@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.8 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: ⬜
+Rôle: directeur-des-systemes-d-information
 Source: WF-041 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant n8n/Activepieces
 Justification: Dossier §5.3/§8-I3 : classe A de souveraineté — Must si données sensibles
 Dépendances: —

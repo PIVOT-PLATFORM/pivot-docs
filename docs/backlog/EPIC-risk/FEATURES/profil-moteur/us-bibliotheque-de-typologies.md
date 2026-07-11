@@ -30,4 +30,5 @@
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: officier-responsable-pmo, delegue-a-la-protection-des-donnees
 Dépendances: —

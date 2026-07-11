@@ -18,5 +18,6 @@
 ---
 Item Type: US · Parent: F50.1 · Module: agilite · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: release-train-engineer
 Source: PouetPouet v0.31.0 (PR4 #245)
 Dépendances: US11.5.1 (E11)

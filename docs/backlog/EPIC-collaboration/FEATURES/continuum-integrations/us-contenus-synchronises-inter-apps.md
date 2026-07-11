@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.7 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-054 · MoSCoW: Could · Lot: Lot 3 · Origine: Intersection 2/4 (MSW Loop, Miro cartes Jira)
 Justification: Dossier §5.2 : préfiguration du board connecté au SI
 Dépendances: —

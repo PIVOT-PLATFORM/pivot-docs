@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: architecte-d-entreprise
 Source: WF-084 · MoSCoW: Could · Lot: Lot 3 · Origine: Contexte FR
 Justification: Au-delà du dossier : exigence type des organisations françaises
 Dépendances: —

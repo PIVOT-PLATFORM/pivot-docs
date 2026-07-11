@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.5 · Module: contrats · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: contract-manager
 Dépendances: EN28.3, EN28.4

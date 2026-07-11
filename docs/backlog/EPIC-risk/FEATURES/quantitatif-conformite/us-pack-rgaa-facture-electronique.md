@@ -29,4 +29,5 @@ Risques d'accessibilité et d'échéances réglementaires FR injectés selon le 
 ---
 Item Type: US · Parent: F21.6 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: chef-de-projet
 Dépendances: US21.1.5

@@ -30,4 +30,5 @@ Formulaire de profil projet (10-15 questions : typologie, criticité, données p
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: chef-de-projet, officier-responsable-pmo
 Dépendances: —

@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.2 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-042 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection 2/4 (Miro, FigJam)
 Justification: Dossier §5.2 ; étonnamment absent chez MSW et Klaxoon
 Dépendances: —

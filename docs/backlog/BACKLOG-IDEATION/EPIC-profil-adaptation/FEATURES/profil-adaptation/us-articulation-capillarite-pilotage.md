@@ -28,6 +28,7 @@
 ---
 Item Type: US · Parent: F40.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: directeur-des-systemes-d-information
 Source: PP-A05 · MoSCoW: Should · Lot: Lot 2 · Origine: Synthèse v2
 Profils: Tous
 Justification: Synthèse v2 §4 + Insight I5 : schéma capillarité/pilotage explicite

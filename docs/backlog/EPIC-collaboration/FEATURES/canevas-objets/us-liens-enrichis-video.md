@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.1 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: Benchmark 2026-07 (cahier Microsoft Whiteboard EF-OBJ-03) · MoSCoW: Should · Lot: Lot 2 · Origine: Différenciant Microsoft Whiteboard, non repris dans le dossier de synthèse
 Justification: Cahier MS Whiteboard §2.2/§3.2 EF-OBJ-03 — distinct de l'import de fichiers (US30.1.5, images/PDF/documents avec annotation) et du contenu synchronisé inter-apps (US30.7.3, blocs type Loop) : ici, simple aperçu de lien + lecture vidéo en ligne sans compte tiers ni synchronisation bidirectionnelle
 Dépendances: —

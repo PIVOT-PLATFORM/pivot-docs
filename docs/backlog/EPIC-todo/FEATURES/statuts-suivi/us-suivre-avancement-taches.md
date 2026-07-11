@@ -19,5 +19,6 @@
 ---
 Item Type: US · Parent: F49.2 · Module: todo · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: PouetPouet v0.30.0 (statut annulé) + v0.31.0 (#244, statuts étendus/kanban/assignation — ajoutés pour PI Planning)
 Dépendances: US49.1.1

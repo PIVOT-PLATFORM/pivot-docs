@@ -30,4 +30,5 @@ Traçabilité des suggestions, localisation des traitements, validation humaine 
 ---
 Item Type: US · Parent: F21.7 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: delegue-a-la-protection-des-donnees
 Dépendances: US21.7.1

@@ -29,6 +29,7 @@
 ---
 Item Type: US · Parent: F40.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: directeur-des-systemes-d-information
 Source: PP-A01 · MoSCoW: Must · Lot: Lot 1 · Origine: Synthèse v2
 Profils: Tous
 Justification: Synthèse v2 §7 : pendant, côté organisation, du profil projet du module Risque

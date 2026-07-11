@@ -31,6 +31,7 @@
 ---
 Item Type: US · Parent: F06.2 · Module: admin · Phase: Socle · Size: S · Priority: Medium
 Stage: ✅
+Rôle: administrateur-plateforme
 Gate 5 : `pivot-core` PR [#126](https://github.com/PIVOT-PLATFORM/pivot-core/pull/126) (Gate 4 =
 98/100) · `pivot-ui` PR [#69](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/69) (Gate 4 =
 99/100, 2e passage — 1er passage 97/100 `NEEDS_HUMAN_REVIEW` sur séquencement de merge, corrigé),

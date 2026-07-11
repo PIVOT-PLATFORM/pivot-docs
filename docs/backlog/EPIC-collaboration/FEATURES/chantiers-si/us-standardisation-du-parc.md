@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: groupe:gouvernance-si
 Source: BL-091 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I7
 Justification: Dossier §8-I7 : tuer le shadow IT du whiteboard
 Dépendances: —

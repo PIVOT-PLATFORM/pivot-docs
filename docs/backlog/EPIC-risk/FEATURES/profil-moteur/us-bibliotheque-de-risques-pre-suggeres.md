@@ -30,4 +30,5 @@ Catalogue de risques types filtré par typologie, proposé au cadrage.
 ---
 Item Type: US · Parent: F21.1 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: chef-de-projet
 Dépendances: US21.1.2

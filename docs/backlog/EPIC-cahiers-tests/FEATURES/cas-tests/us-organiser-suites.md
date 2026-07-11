@@ -20,4 +20,5 @@
 ---
 Item Type: US · Parent: F13.1 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Medium
 Stage: ⬜
+Rôle: ingenieur-test-qa
 Dépendances: US13.1.1

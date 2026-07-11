@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: groupe:gouvernance-si
 Source: BL-094 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I9
 Justification: Dossier §8-I9
 Dépendances: —

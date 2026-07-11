@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.1 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: developpeur
 Source: WF-015 · MoSCoW: Must · Lot: Lot 2 · Origine: Quasi-standard 5/6
 Justification: Dossier §5.1 ; complet chez n8n
 Dépendances: —

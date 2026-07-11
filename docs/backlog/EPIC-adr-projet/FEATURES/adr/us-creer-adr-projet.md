@@ -27,4 +27,5 @@
 ---
 Item Type: US · Parent: F24.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: chef-de-projet
 Dépendances: US22.1.1

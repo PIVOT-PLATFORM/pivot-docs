@@ -24,6 +24,7 @@
 ---
 Item Type: US · Parent: F42.5 · Module: forms · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: developpeur-d-integration-api
 Source: FRM-403 · MoSCoW: Should · Origine: Tally, Formbricks, Jotform
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

@@ -26,6 +26,7 @@
 ---
 Item Type: US · Parent: F38.13 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Low
 Stage: ⬜
+Rôle: responsable-innovation, juriste-si
 Profils: Grand groupe, Publique, État
 Justification: SMI — fonctionnalités innovantes (IA gouvernée, intelligence collective, corporate venturing)
 Dépendances: EN38.1 · EN38.2 (moteur IA & graphe)

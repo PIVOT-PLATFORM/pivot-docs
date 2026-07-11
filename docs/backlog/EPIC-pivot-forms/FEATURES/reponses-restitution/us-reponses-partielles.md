@@ -24,6 +24,7 @@
 ---
 Item Type: US · Parent: F42.4 · Module: forms · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: FRM-304 · MoSCoW: Should · Origine: Formbricks, Typeform
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

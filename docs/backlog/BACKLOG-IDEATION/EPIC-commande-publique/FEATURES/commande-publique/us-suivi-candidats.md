@@ -30,4 +30,5 @@
 ---
 Item Type: US · Parent: F25.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: acheteur-informatique
 Dépendances: US25.1.1

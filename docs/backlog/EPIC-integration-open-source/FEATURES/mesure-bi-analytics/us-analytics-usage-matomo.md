@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.4 · Module: mesure · Phase: phase-3 · Size: S · Priority: Medium
 Stage: ⬜
+Rôle: directeur-des-systemes-d-information
 Dépendances: aucune

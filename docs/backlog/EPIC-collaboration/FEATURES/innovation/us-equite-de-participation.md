@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.14 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Low
 Stage: ⬜
+Rôle: animateur-facilitateur
 Source: BL-086 · MoSCoW: Could · Lot: Lot 4 · Origine: Bonus B4
 Justification: Dossier §7-B4
 Dépendances: —

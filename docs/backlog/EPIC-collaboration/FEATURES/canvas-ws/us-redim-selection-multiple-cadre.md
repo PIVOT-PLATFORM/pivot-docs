@@ -21,6 +21,7 @@
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: PouetPouet v0.32.0 (`0f66f8b`/`7114289`/`bd235f7`/`ddc0a97`/`782a0d9`/`4ba4b2e` — série de
 correctifs "confort des boards")
 Dépendances: US08.3.2a (canvas local, sélection multiple et groupement) — item net-new découvert

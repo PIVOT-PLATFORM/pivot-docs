@@ -26,6 +26,7 @@
 ---
 Item Type: US · Parent: F36.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: directeur-des-systemes-d-information
 Source: PP-026 · MoSCoW: Must · Lot: Lot 2 · Origine: PM (Datamart) + MS (Power BI)
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §5.2

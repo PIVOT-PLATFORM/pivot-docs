@@ -40,3 +40,4 @@
 ---
 Item Type: US · Parent: F08.2 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: ✅
+Rôle: utilisateur-final

@@ -75,4 +75,5 @@ collision au sein du même format — cette `key` est celle que US20.1.2a persis
 ---
 Item Type: US · Parent: F20.2 · Module: agilite · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: scrum-master
 Dépendances: US20.1.1

@@ -25,6 +25,7 @@
 ---
 Item Type: US · Parent: F41.4 · Module: core · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-cle-referent-metier, formateur-ingenieur-pedagogique
 Profils: Tous
 Justification: Formation & onboarding — adoption de Pivot (in-app, supports, présentiel) ; cf. Insight I8 (réseau de référents)
 Dépendances: US41.3.1 · E19 (Session)

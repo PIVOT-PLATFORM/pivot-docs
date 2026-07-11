@@ -186,4 +186,5 @@ couvert par US14.2.1.
 ---
 Item Type: US · Parent: F14.3 · Module: agilite · Repo: pivot-agilite-core/ui · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Dépendances: US14.2.1

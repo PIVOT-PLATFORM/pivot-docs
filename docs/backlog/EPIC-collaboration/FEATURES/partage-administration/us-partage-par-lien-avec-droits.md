@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.8 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-014 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4
 Justification: Dossier §4
 Dépendances: —

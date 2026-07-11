@@ -47,4 +47,5 @@
 ---
 Item Type: US · Parent: F09.1 · Module: agilite · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: scrum-master
 Dépendances: aucune (Vague 1, Sprint 8 — parallélisable avec EN09.1)

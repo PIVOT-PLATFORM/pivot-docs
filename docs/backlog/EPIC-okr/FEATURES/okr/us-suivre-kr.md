@@ -30,4 +30,5 @@
 ---
 Item Type: US · Parent: F27.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: macro:ingenierie-developpement
 Dépendances: US27.1.1

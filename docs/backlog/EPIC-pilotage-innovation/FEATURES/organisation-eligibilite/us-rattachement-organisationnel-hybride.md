@@ -26,6 +26,7 @@
 ---
 Item Type: US · Parent: F38.16 · Module: pilotage · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: responsable-innovation
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: SMI — rattachement organisationnel, source POC PouetPouet v0.29.0 (PR3 #225, ADR-0012)
 Dépendances: EN38.1 · E25 (pattern `mock-service-kit`/`external-client` réutilisé, pas de FK directe)

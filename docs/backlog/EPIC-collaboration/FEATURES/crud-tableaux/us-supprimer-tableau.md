@@ -46,4 +46,5 @@ différée) après constat que le frontmatter était resté à `In progress` mal
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: Critical
 Stage: ✅
+Rôle: utilisateur-final
 Dépendances: US08.1.1

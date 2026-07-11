@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.10 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-071 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant MSW
 Justification: Dossier §6.2
 Dépendances: —

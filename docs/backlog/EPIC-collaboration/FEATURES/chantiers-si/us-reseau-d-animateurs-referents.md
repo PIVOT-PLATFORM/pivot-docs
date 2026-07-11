@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: groupe:gouvernance-si
 Source: BL-095 · MoSCoW: Should · Lot: Lot 2 · Origine: Insight I8
 Justification: Dossier §8-I8 : 'l'adoption est un projet, pas un déploiement'
 Dépendances: —

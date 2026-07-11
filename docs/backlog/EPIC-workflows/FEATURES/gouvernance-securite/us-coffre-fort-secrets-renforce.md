@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: responsable-de-la-securite-si
 Source: WF-029 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I4
 Justification: Dossier §8-I4 : 'les clés du royaume' — critère sécurité n°1
 Dépendances: —

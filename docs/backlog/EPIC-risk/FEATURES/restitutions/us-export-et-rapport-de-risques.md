@@ -31,4 +31,5 @@ Export CSV/PDF du registre et rapport d'instance.
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: S · Priority: Medium
 Stage: ⬜
+Rôle: officier-responsable-pmo, chef-de-projet
 Dépendances: US21.3.1

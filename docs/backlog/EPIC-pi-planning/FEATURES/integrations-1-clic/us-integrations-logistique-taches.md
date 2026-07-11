@@ -17,5 +17,6 @@
 ---
 Item Type: US · Parent: F50.2 · Module: agilite · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: release-train-engineer, scrum-master
 Source: PouetPouet v0.31.0 (PR1/2 #240 Formulaires · PR3 #244 To-Do · PR4 #245 intégrations)
 Dépendances: US50.1.1, E42 Pivot Forms, E49 Module To-Do

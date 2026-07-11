@@ -33,4 +33,5 @@
 ---
 Item Type: US · Parent: F01.4 · Module: auth · Phase: Socle · Size: M · Priority: High
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-core` PR [#105](https://github.com/PIVOT-PLATFORM/pivot-core/pull/105) (Gate 4 = 87/100) + `pivot-ui` PR [#11](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/11) (Gate 4 = 82/100), spec figée `docs/specs/EPIC-auth-iam/us01-4-1-confirmation-appareil-otp.md` (rétroactif, 2026-07-08)

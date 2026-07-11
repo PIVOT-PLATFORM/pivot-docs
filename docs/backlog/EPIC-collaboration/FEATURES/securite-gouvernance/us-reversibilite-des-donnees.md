@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: administrateur-plateforme
 Source: BL-048 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I9 + Bonus B6
 Justification: Dossier §8-I9 : lock-in total chez les 4 = risque majeur
 Dépendances: —

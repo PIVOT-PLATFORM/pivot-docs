@@ -28,6 +28,7 @@
 ---
 Item Type: US · Parent: F40.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: officier-responsable-pmo
 Source: PP-A04 · MoSCoW: Must · Lot: Lot 1 · Origine: Synthèse v2
 Profils: TPE, PME, Grand groupe, Privée sous droit public
 Justification: Synthèse v2 §6-I1 (modularité Sciforma) ; cf. PP-051

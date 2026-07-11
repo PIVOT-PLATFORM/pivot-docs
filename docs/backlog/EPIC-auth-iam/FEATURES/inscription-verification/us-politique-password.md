@@ -27,4 +27,5 @@
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: S · Priority: High
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-core` PR [#120](https://github.com/PIVOT-PLATFORM/pivot-core/pull/120) (Gate 4 = 100/100) + `pivot-ui` PR [#65](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/65) (Gate 4 = 98/100), spec figée `docs/specs/EPIC-auth-iam/us01-2-4-politique-password.md` (rétroactif, 2026-07-08)

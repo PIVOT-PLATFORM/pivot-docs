@@ -26,4 +26,5 @@
 ---
 Item Type: US · Parent: F24.1 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Medium
 Stage: ⬜
+Rôle: macro:ingenierie-developpement
 Dépendances: US24.1.1

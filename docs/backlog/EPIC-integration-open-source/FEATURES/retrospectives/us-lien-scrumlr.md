@@ -17,4 +17,5 @@
 ---
 Item Type: US · Parent: F28.7 · Module: retrospectives · Phase: phase-3 · Size: S · Priority: Low
 Stage: ⬜
+Rôle: scrum-master, macro:ingenierie-developpement
 Dépendances: aucune

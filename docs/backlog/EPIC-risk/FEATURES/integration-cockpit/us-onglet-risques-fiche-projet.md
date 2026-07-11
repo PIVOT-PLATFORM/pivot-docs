@@ -32,4 +32,5 @@ Chaînon de navigation Pilotage → Risque. L'onglet « Risques » de la fiche p
 ---
 Item Type: US · Parent: F21.9 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: chef-de-projet
 Dépendances: US21.9.1, US21.8.1

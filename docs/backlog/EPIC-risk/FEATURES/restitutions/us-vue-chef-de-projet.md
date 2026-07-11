@@ -32,4 +32,5 @@ Matrice, top risques, plan d'action, échéances.
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: chef-de-projet
 Dépendances: US21.2.4, US21.3.2

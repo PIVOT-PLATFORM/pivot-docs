@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.3 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: animateur-facilitateur
 Source: BL-030 · MoSCoW: Must · Lot: Lot 2 · Origine: Intersection 3/4
 Justification: Dossier §5.1
 Dépendances: —

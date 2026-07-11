@@ -23,4 +23,5 @@
 ---
 Item Type: US · Parent: F44.2 · Module: signdoc · Repo: pivot-signdoc-core/ui · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Dépendances: US44.1.2 (envoi des invitations)
