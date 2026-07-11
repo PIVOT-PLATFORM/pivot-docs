@@ -18,8 +18,8 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 5](./sprint-5.md) | Infra multi-repo (E17) + Module Whiteboard (Socle) | 🚀 Démarré (2026-07-07) — Gate 1 passé 25/25 items · Vague 0 (E17) 🔄 7/8 (EN17.1 partiel, voir `pivot-core#171`) · Vague 1+ (whiteboard) 🔄 En cours |
 | [Sprint 6](./sprint-6.md) | Durcissement & recette Socle 🏁 | ✅ Socle terminé (déclaré 2026-07-09 — Axe 2 écarté, Axe 3 différé en fin de tous les sprints) |
 | [Sprint 7](./sprint-7.md) | Gouvernance ADR (phase-3) + Migration BFF Auth (EN01.14-18) | 🔄 Gouvernance ADR ✅ Terminé (2026-07-09) — ADR-008→016 et ADR-023→026 tous Accepté · Migration BFF (EN01.14-18) ⬜ pas démarrée |
-| [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | 🚀 Démarré (2026-07-10, verrou Socle levé) — vagues US09/14/20 en cours sur `pivot-agilite-*` |
-| [Sprint 9](./sprint-9.md) | Socle **technique** Pilotage + Roadmap v0 *(re-trié 2026-07-10)* | 🔓 Débloqué, en attente REX Sprint 8 — E40 (profil adaptatif) sorti → queue idéation |
+| [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ✅ Terminé (2026-07-11) — templates satellites validés (EN17.11), TAXO-2 fait, écart ADR-026 §2 comblé (US09.2.3) |
+| [Sprint 9](./sprint-9.md) | Socle **technique** Pilotage + Roadmap v0 *(re-trié 2026-07-10)* | 🔓 Débloqué (2026-07-11, Sprint 8 clos — REX satisfait) — E40 (profil adaptatif) sorti → queue idéation |
 | [Sprint 10](./sprint-10.md) | Pilotage cœur PPM | 🔓 Débloqué (suite S9) — inchangé au re-tri |
 | [Sprint 11](./sprint-11.md) | Risques + plan de contrôle sécurité | 🔓 Débloqué — inchangé au re-tri |
 | [Sprint 12](./sprint-12.md) | Forms (cœur) + framework onboarding | 🔓 Débloqué — inchangé au re-tri |
@@ -32,10 +32,12 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 ## Sprints 7–13 — Plan phase-3 (conditionnel au jalon « Socle terminé »)
 
 > ✅ **Verrou Socle levé (2026-07-10)** — déclaration « Socle terminé » actée (Sprint 6), gouvernance
-> ADR terminée (Sprint 7). Ces sprints sont désormais **débloqués** ; seule contrainte de
-> séquencement restante : le principe « piloter petit avant de piloter gros » (valider les templates
-> satellites issus de Sprint 5 sur l'agilité — **Sprint 8** — avant d'engager le domaine Pilotage en
-> Sprint 9).
+> ADR terminée (Sprint 7, dont **ADR-025** bus d'événements/schéma inter-briques, Accepté — le
+> goulot invisible de chemin critique dès S9+). Ces sprints sont désormais **débloqués** ; seule
+> contrainte de séquencement restante : le principe « piloter petit avant de piloter gros »
+> (valider les templates satellites issus de Sprint 5 sur l'agilité — **Sprint 8** — avant
+> d'engager le domaine Pilotage en Sprint 9). **Sprint 8 clos le 2026-07-11** — les deux goulots
+> sont maintenant levés, Sprint 9 démarre.
 >
 > **Re-tri du 2026-07-10 — valeur pilotage avant idéation :** le domaine Pilotage était bâti sur deux
 > blocs d'idéation qui bloquaient son démarrage et n'apportaient pas de valeur directe :
