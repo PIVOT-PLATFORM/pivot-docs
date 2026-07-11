@@ -23,12 +23,12 @@
 ## Notes d'implémentation
 
 - L'échelle floue est une projection d'affichage sur le modèle temporel unique (EN22.1) : les bornes de période (mois/trimestre/semestre) sont calculées, pas stockées comme dates distinctes.
-- Le choix d'échelle est un réglage de vue par roadmap, cohérent avec l'altitude pilotée par le profil d'organisation (E40).
+- Le choix d'échelle est un réglage de vue par roadmap, cohérent avec l'altitude par défaut (EN18.10 ; adaptée par profil via E40 ultérieurement).
 
 ---
 Item Type: US · Parent: F22.3 · Module: pilotage · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
 Rôle: macro:direction-pilotage
 Profils: Tous
-Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)
+Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude par défaut EN18.10 (E40 adaptatif ultérieur)
 Dépendances: EN22.1 (modèle temporel unique)

@@ -6,7 +6,7 @@
 
 ## Objectif
 
-Planifier dans le temps, de la **roadmap stratégique** au **Gantt opérationnel**, avec une **parité fonctionnelle MS Project mais en mode web**. Le module porte l'entité **Projet** (rattachée à une **Application**, 1 Application → 1..n Projet, cf. [EN18.9](../BACKLOG-IDEATION/EPIC-pilotage/ENABLERS/en-modele-application-projet.md)).
+Planifier dans le temps, de la **roadmap stratégique** au **Gantt opérationnel**, avec une **parité fonctionnelle MS Project mais en mode web**. Le module porte l'entité **Projet** (rattachée à une **Application**, 1 Application → 1..n Projet, cf. [EN18.9](../EPIC-pilotage/ENABLERS/en-modele-application-projet.md)).
 
 ## Principe directeur — deux vues d'un **modèle temporel unique**
 
@@ -21,14 +21,14 @@ Planifier dans le temps, de la **roadmap stratégique** au **Gantt opérationnel
 | Création | **Minutes** | Détaillée |
 | Utilisateurs | Direction, sponsor, PO | PMO, chef de projet |
 
-## Altitude pilotée par le **profil** (E40)
+## Altitude pilotée par le **profil**
 
-Le curseur roadmap↔Gantt est **indexé sur le profil d'organisation** ([E40](../BACKLOG-IDEATION/EPIC-profil-adaptation/README.md)) :
+Le curseur roadmap↔Gantt est **indexé sur le profil d'organisation** :
 
 - **TPE / PME** → roadmap rapide (F22.3) ; le Gantt lourd est de la sur-ingénierie (chemin critique « peu utile en TPE »).
 - **Grand groupe / Publique / État** → Gantt complet (F22.4), ressources & nivellement (F22.5), baselines, hybride cascade/agile, consolidation 100+ projets.
 
-L'activation des features par profil est gérée par **PP-A02** (E40).
+**Découplage (re-tri 2026-07-10).** Au Socle ([Sprint 9](../sprints/sprint-9.md)), l'altitude et l'ensemble de features activées sont fournis par une **couture à altitude fixe — [EN18.10 Profil d'organisation par défaut](../EPIC-pilotage/ENABLERS/en-profil-organisation-defaut.md)** : le curseur et l'activation des features fonctionnent **sans** le moteur adaptatif. Le **profil adaptatif [E40](../BACKLOG-IDEATION/EPIC-profil-adaptation/README.md)** (phase-3, idéation) viendra ensuite **se substituer** à cette couture — même contrat de résolution — pour rendre l'altitude *dynamique* selon le profil ; l'activation par profil est alors portée par **PP-A02 (E40)**. Au Socle, c'est l'ensemble par défaut d'EN18.10 qui s'applique.
 
 ## Parité MS Project — mais web-native
 
@@ -93,7 +93,7 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 ## Dépendances
 
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E15 Équipes transverses (projet ↔ équipe)
-- Dépend de : E18 Domaine Pilotage (EN18.1/EN18.2/EN18.9) · E40 Profil & adaptation (altitude par profil)
+- Dépend de : E18 Domaine Pilotage (EN18.1/EN18.2/EN18.9 · **EN18.10** couture altitude/activation par défaut) · E40 Profil & adaptation (altitude *adaptative* — substitution future d'EN18.10, non bloquant au Socle)
 - Coordonné avec : E32 Ressources & temps (capacité transverse) · E26 Budget (coûts)
 
 ## Statut global

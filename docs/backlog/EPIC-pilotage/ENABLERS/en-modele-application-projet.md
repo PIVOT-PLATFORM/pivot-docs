@@ -38,6 +38,14 @@ produit à travers ses versions, relier budget/risques/roadmap d'une même appli
 - [ ] Toute donnée projet (jalon, budget, risque, décision, demande…) traçable jusqu'à l'Application
 - [ ] Vue/consolidation « par Application » exposée aux modules du domaine (E21–E27, E32–E39)
 
+**Critères d'acceptation (Given/When/Then)** :
+- [ ] Given le schéma `pilotage` avec les entités Application et Project (EN18.1), when on crée un Project avec un `application_id` valide, then la relation Application 1 — 1..n Project est établie et `project.application_id` référence l'Application parente.
+- [ ] Given une Application possédant plusieurs Projects (versions successives), when on interroge le contrat de consolidation « par Application », then le système retourne l'agrégation des données de tous ses Projects rattachés, **sans** traverser de FK inter-modules (agrégation via bus PIVOT / API, cf. ADR-006 et ADR-008).
+- [ ] Given une donnée du domaine portant un `project_id` (jalon, budget, risque, décision…), when on remonte la chaîne `project_id → project.application_id`, then la donnée est traçable de manière déterministe jusqu'à exactement une Application parente.
+- [ ] Given une Application rattachée à une team/tenant, when on crée ou consolide un Project sous cette Application, then le Project hérite du même périmètre tenant que son Application et aucune donnée ne franchit la frontière `pilotage → public` en écriture (isolation EN17.4).
+- [ ] Error case: given une création/mise à jour de Project avec un `application_id` nul, inexistant, ou pointant vers une Application d'un autre tenant, when la contrainte « un Projet = exactement une Application du même tenant » est évaluée, then l'opération est rejetée (violation d'intégrité / 400 pour `application_id` absent/invalide), aucun Project orphelin ou multi-rattaché n'est persisté.
+- [ ] Security: given un utilisateur authentifié et le contrat de consolidation « par Application », when il demande la vue consolidée d'une Application, then un non-membre du tenant reçoit `404` (ressource invisible cross-tenant), un membre sans le rôle requis reçoit `403`, et la consolidation n'agrège jamais les données d'une Application d'un autre tenant.
+
 ---
 Item Type: Enabler · Parent: E18 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
