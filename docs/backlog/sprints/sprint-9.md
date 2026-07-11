@@ -27,21 +27,23 @@ toute implémentation.
 
 ## Items
 
+> **EN22.2 reséquencé vers Sprint 10 (2026-07-11)** : dépend du Gantt UI (US22.4.x) qui n'existe
+> pas encore — ne peut pas être implémenté avant. Voir `sprint-10.md`.
+
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| EN18.1 | Schéma Flyway `pilotage` + entités JPA (Application, Project, Milestone…) | M | Critical | ⬜ |
-| EN18.2 | Guard Angular module pilotage | S | Critical | ⬜ |
-| EN18.9 | Modèle Application → Projet | M | High | ⬜ |
-| EN18.10 | **Profil d'organisation par défaut (altitude fixe, sans adaptation)** — couture de découplage d'E40 *(net-new 2026-07-10)* | S | Critical | ⬜ |
-| EN22.1a | Schéma temporel `pilotage` (11 tables) *(ex-EN22.1 XL, scindé 2026-07-10)* | L | Critical | ⬜ |
-| EN22.1b | Moteur CPM & API (`schedule`/`reSchedule` incrémental) | L | Critical | ⬜ |
-| EN22.1c | Jalon partagé, agrégation, dérivation de vues & événements | L | Critical | ⬜ |
-| EN22.2 | Performance & collaboration web du Gantt | XL | High | ⬜ |
-| US22.3.1 | Créer une roadmap rapide | M | High | ⬜ |
-| US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ⬜ |
-| US22.3.3 | Vue Now / Next / Later | M | Should | ⬜ |
-| US22.3.4 | Jalons stratégiques | S | High | ⬜ |
-| US22.3.5 | Partage & export de la roadmap | S | Should | ⬜ |
+| EN18.1 | Schéma Flyway `pilotage` + entités JPA (Application, Project, Milestone…) | M | Critical | ✅ mergé ([pivot-pilotage-core#23](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/23)) |
+| EN18.2 | Guard Angular module pilotage | S | Critical | ✅ mergé ([pivot-pilotage-ui#15](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/15)) |
+| EN18.9 | Modèle Application → Projet | M | High | ✅ mergé ([pivot-pilotage-core#28](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/28)) |
+| EN18.10 | **Profil d'organisation par défaut (altitude fixe, sans adaptation)** — couture de découplage d'E40 *(net-new 2026-07-10)* | S | Critical | ✅ mergé ([pivot-pilotage-core#27](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/27), retrofit `team_id` [#30](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/30)) |
+| EN22.1a | Schéma temporel `pilotage` (11 tables) *(ex-EN22.1 XL, scindé 2026-07-10)* | L | Critical | ✅ mergé ([pivot-pilotage-core#24](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/24)) |
+| EN22.1b | Moteur CPM & API (`schedule`/`reSchedule` incrémental) | L | Critical | ✅ mergé ([pivot-pilotage-core#25](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/25)) |
+| EN22.1c | Jalon partagé, agrégation, dérivation de vues & événements | L | Critical | ✅ mergé ([pivot-pilotage-core#26](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/26)) |
+| US22.3.1 | Créer une roadmap rapide | M | High | 🟡 backend mergé ([pivot-pilotage-core#32](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/32)) · frontend en cours |
+| US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ⬜ (← US22.3.1) |
+| US22.3.3 | Vue Now / Next / Later | M | Should | ⬜ (← US22.3.1) |
+| US22.3.4 | Jalons stratégiques | S | High | ⬜ (← US22.3.1) |
+| US22.3.5 | Partage & export de la roadmap | S | Should | ⬜ (← US22.3.1) |
 
 ## Pré-requis d'amorçage (première action, avant tout Dev Agent)
 
@@ -50,9 +52,10 @@ toute implémentation.
    PR `pivot-docs` dédiée, liens entrants/sortants vérifiés + `npm run build` vert (précédent liens
    cassés : commit `f26f4ab`).
 2. **Rédiger EN18.10** (profil par défaut) dans le backlog opérationnel — enabler net-new.
-3. **Gate 1 (PO Agent)** sur les 4 enablers socle + EN22.1/22.2 + US22.3.x — DoR complet, ACs
+3. **Gate 1 (PO Agent)** sur les 4 enablers socle + EN22.1 + US22.3.x — DoR complet, ACs
    Given/When/Then, erreur + sécurité. Ces fiches étaient des stubs (`ACs à détailler au Gate 1`).
 
 > **Blocker :** EN18.1 précède tout · EN18.10 précède l'activation des features (évite la dépendance
 > dure à E40) · EN22.1a→b→c (contrat figé) précèdent F22.3 et tout le Sprint 10. E40 (profil adaptatif) **n'est plus un
-> prérequis** de ce sprint — reséquencé en queue idéation.
+> prérequis** de ce sprint — reséquencé en queue idéation. EN22.2 reséquencé vers Sprint 10 (dépend
+> du Gantt UI, US22.4.x — voir note ci-dessus).
