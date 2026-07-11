@@ -9,10 +9,11 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Given deux tâches, when je crée un lien FS/SS/FF/SF, then l'ordonnancement respecte le type et le retard/avance (± jours) | ⬜ |
-| Given un cycle de dépendances, when je tente de le créer, then le système le détecte et le refuse | ⬜ |
+| Given un cycle de dépendances, when je tente de le créer, then le moteur (EN22.1) rejette le `ChangeSet` entier avec `SCHEDULE_CYCLE`, aucun lien n'est persisté (atomicité) et l'événement `DependencyChanged(cycle_rejected:true)` est émis | ⬜ |
 | Given un lien, when je le crée à la souris entre deux barres, then il est typé FS par défaut et modifiable | ⬜ |
 | Error : given une tentative de créer un lien vers la tâche elle-même ou un doublon d'un lien existant, then le système refuse la création avec un message explicite | ⬜ |
 | Security : seul un utilisateur avec un rôle d'édition sur le projet peut créer/modifier/supprimer une dépendance ; les tentatives refusées sont journalisées | ⬜ |
+| Security : given la création d'un lien entre deux tâches appartenant à un autre `tenant_id` (ou sur un projet dont l'utilisateur n'est pas membre), then le système retourne 404 (non-divulgation d'existence) ; given un lien mélangeant deux `tenant_id`, then le moteur rejette avec `TENANT_VIOLATION` (jamais de graphe multi-tenant) | ⬜ |
 | A11y : la création/modification d'un lien de dépendance est réalisable sans souris (sélection clavier des deux tâches + choix du type via menu accessible), avec annonce du lien créé pour les lecteurs d'écran | ⬜ |
 
 ## Hors périmètre

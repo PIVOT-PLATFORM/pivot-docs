@@ -12,6 +12,7 @@
 | Given une tâche déplacée sous un nouveau parent, when la hiérarchie change, then le moteur d'ordonnancement (`EN22.1`) recalcule côté serveur les codes WBS de toutes les tâches impactées et les diffuse aux clients connectés | ⬜ |
 | Given deux tâches de même niveau sous un même parent, when elles coexistent, then leurs codes WBS sont uniques et ordonnés selon leur rang parmi leurs frères | ⬜ |
 | Error : given une requête créant un cycle dans la hiérarchie (une tâche référencée comme son propre ancêtre), then l'opération est refusée avec un statut `409 Conflict` et la structure existante n'est pas modifiée | ⬜ |
+| Error : given une tentative d'écriture directe du champ dérivé `wbs_code` (PATCH/PUT positionnant explicitement le code WBS), then l'opération est refusée avec un statut `422 Unprocessable Entity` car le code WBS est calculé côté serveur et non éditable (`EN22.1`, contrat figé) | ⬜ |
 | Security : un utilisateur non-membre du projet ou d'un autre tenant reçoit `404 Not Found` sur le plan WBS (isolation multi-tenant) ; le recalcul WBS n'expose aucune tâche hors du périmètre du projet demandé | ⬜ |
 | A11y : la structure arborescente est exposée via `role="tree"`/`role="treeitem"` avec `aria-level`, `aria-setsize` et `aria-posinset`, et le code WBS de chaque tâche est annoncé aux lecteurs d'écran | ⬜ |
 

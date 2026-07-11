@@ -12,6 +12,7 @@
 | Given `format=csv`, when le rapport est généré, then le fichier est correctement formaté avec en-têtes de colonnes et peut être ouvert dans un tableur | ⬜ |
 | Error : given un `format` non supporté (ni `json` ni `csv`), system retourne 400 avec message d'erreur explicite | ⬜ |
 | Security : le rapport n'inclut que les projets des équipes du tenant de l'utilisateur authentifié (même périmètre que US23.1.1) | ⬜ |
+| Security : given une demande de rapport ciblant une équipe/un projet d'un autre tenant, system retourne 404 (non-divulgation d'existence) et ne fuite aucune donnée cross-tenant dans le fichier généré | ⬜ |
 | A11y : le bouton d'export CSV et l'aperçu JSON dans la vue Angular sont accessibles au clavier et annoncés par lecteur d'écran | ⬜ |
 
 ## Hors périmètre

@@ -14,6 +14,7 @@
 | Given un plan volumineux (10 000+ tâches, EN22.2), when j'ouvre la vue Gantt, then le rendu reste fluide grâce à la virtualisation (pas de rendu naïf de toutes les lignes) | ⬜ |
 | Error : given un projet sans aucune tâche ni jalon planifié, when j'ouvre une vue temporelle, then le système affiche un état vide explicite (message d'invitation à planifier) plutôt qu'une grille vide ambiguë | ⬜ |
 | Security : given un utilisateur non membre de l'équipe rattachée au projet (EN18.2), when il tente d'ouvrir une vue via l'API, then le système répond 404 (non-membre et cross-tenant traités de façon identique) et n'expose aucune donnée temporelle ; isolation multi-tenant garantie quelle que soit la vue | ⬜ |
+| Security : given un utilisateur authentifié membre du tenant mais sans droit de lecture sur ce projet, when il tente d'ouvrir une vue via l'API, then le système répond 403 (droit insuffisant, distinct du 404 de non-divulgation) et n'affiche aucune vue | ⬜ |
 | A11y : chaque vue temporelle est navigable intégralement au clavier (déplacement de focus sur tâches/jalons, changement de vue via menu accessible), les changements de vue sont annoncés (`aria-live`), conforme WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

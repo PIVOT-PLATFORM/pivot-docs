@@ -13,6 +13,15 @@ par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation
 > implémenté avant. **Chevauchement à trancher au Gate 1** avec `US22.4.10c` (virtualisation du
 > rendu déjà présente dans cette US) — éviter un double travail sur ce point précis.
 
+**Gate 1 READINESS passé (2026-07-11)** — **24/24 items Ready** (≥ 70/100 ; 15 items ≥ 90).
+ACs DoR complétés (erreur / sécurité 404-403 / A11y, cohérence avec le contrat figé EN22.1) sur
+19 fiches. **1 réserve : US22.4.7 (72)** — le fractionnement (split) n'a **aucun porteur dans le
+schéma EN22.1** (`pilotage.task` sans segments) → décision **D1** mainteneur (avenant schéma vs
+enabler dédié) ; la moitié « chemin critique/marges » de l'US reste, elle, implémentable.
+**Le socle S9 (schéma + moteur CPM + projection) permet d'attaquer la couche calcul/données
+maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (non publié).**
+8 décisions consolidées (D1-D8) + ordre d'attaque → commentaire de la PR de ce Gate 1.
+
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
 | EN22.2 | Performance & collaboration web du Gantt *(reséquencé de Sprint 9, 2026-07-11)* | XL | High | ⬜ |
