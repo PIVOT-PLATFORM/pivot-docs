@@ -264,3 +264,24 @@ dernier audit du même type (2026-07-08, `c62a710`, qui couvrait le CHANGELOG ju
 ajoutées à E42, 1 enabler mis à jour (EN30.13, sans nouvel item), 4 US ajoutées au noyau Socle
 E30/F08.3. Une décision d'architecture nouvellement identifiée tracée en D5, à trancher avec le
 mainteneur avant Gate 1 d'E38/F38.15.*
+
+*Re-tri sprints Pilotage 2026-07-10 (Scrum Master + PO Agent + Architecte Modules) — « valeur
+pilotage avant idéation ». Objectif : ordonnancer tout le pilotage à forte valeur avant les items
+d'idéation qui bloquaient son démarrage. Décision d'architecture pivot validée par le mainteneur :
+**découpler E40 (profil adaptatif) de la roadmap** via un nouvel enabler net-new **EN18.10 (profil
+d'organisation par défaut, altitude fixe)** — le couplage roadmap→profil est mou (curseur d'altitude
+et activation de features seulement). Changements de séquencement (fichiers `sprints/` uniquement,
+aucun renommage d'EPIC/US, aucune promotion de `Stage`) :*
+- ***Sprint 9** recentré « Socle technique Pilotage + Roadmap v0 » : sortie d'US40.1.1-6 (E40) et
+  d'EN18.3-8 (habillage entreprise) ; conservés EN18.1/18.2/18.9 (socle technique, à extraire de
+  `BACKLOG-IDEATION/EPIC-pilotage` + Gate 1 comme 1re action) + EN18.10 (net-new) + EN22.1/22.2 +
+  US22.3.x.*
+- ***Sprint 13** créé — satellites Pilotage à valeur (E24 ADR projet, E26 Budget socle, E27 OKR socle,
+  E23 vague 2 US23.2.3/2.5/2.6) remontés de `backlog-post-s12.md`, avant la queue idéation.*
+- *Sprints 10/11/12 inchangés au fond (aucune dépendance E40/EN18.3-8) ; entêtes de verrou
+  actualisés (verrou Socle levé 2026-07-10). Section README « Sprints 7–12 » → « 7–13 ».*
+- *Reséquencés en **queue idéation** (`backlog-post-s12.md` §Queue idéation, promotion = décision
+  mainteneur) : **E40** profil adaptatif (se greffera sur EN18.10) et **E18 EN18.3-8**. L'extraction
+  physique des fiches EN18.1/18.2/18.9 hors de `BACKLOG-IDEATION` n'a pas été pré-exécutée ici (risque
+  de liens Docusaurus cassés, cf. commit `f26f4ab`) : elle est cadrée comme 1re action de Sprint 9,
+  PR dédiée avec `npm run build` vert.*

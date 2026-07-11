@@ -1,6 +1,6 @@
 # Sprint 12 — Forms (cœur) + framework onboarding
 
-> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+> ✅ **Verrou Socle levé (2026-07-10).** Inchangé au re-tri du 2026-07-10. Voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
 **Sortie :** form-builder cœur livré + premier tour guidé actif sur les modules en prod (S8-S11)
 

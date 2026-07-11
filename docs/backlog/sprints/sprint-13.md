@@ -1,0 +1,47 @@
+# Sprint 13 — Satellites Pilotage à valeur
+
+> ✅ **Verrou Socle levé (2026-07-10).** Enchaîne la v0 Pilotage (S9-S10) + risques (S11). Créé au
+> re-tri du 2026-07-10 : remonte les **satellites Pilotage à forte valeur** (E24/E26/E27 + E23
+> vague 2) depuis [`backlog-post-s12.md`](./backlog-post-s12.md), **avant** la queue idéation (E40
+> profil adaptatif, EN18.3-8 habillage entreprise). Voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+
+**Scope :** satellites du domaine Pilotage qui s'appuient sur la colonne vertébrale v0 (roadmap,
+Gantt, portefeuille) sans requérir le profil adaptatif ni l'habillage entreprise.
+**Sortie :** ADR projet + budget projet + OKR socle + portefeuille vague 2 opérationnels.
+
+> **Préparation PO Agent :** items encore au stade stub — **Gate 1 (AC Given/When/Then + erreur +
+> sécurité) réalisé par l'agent d'implémentation de chaque item**, même précédent que Sprint 8.
+> Les US marquées `→ idéation` dans les READMEs d'EPIC restent hors périmètre (`BACKLOG-IDEATION`).
+
+## Vague 1 — ADR projet + OKR socle + Budget (aucune dépendance mutuelle)
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| US24.1.1 | Créer un ADR (Architecture Decision Record) projet | M | High | ⬜ |
+| US24.1.2 | Consulter et rechercher les ADRs d'un projet | S | Medium | ⬜ |
+| EN27.1 | Modèle OKR & moteur | L | Critical | ⬜ |
+| US27.1.1 | Créer un OKR (objectif + Key Results) | M | Critical | ⬜ |
+| US27.1.2 | Suivre un Key Result | M | Critical | ⬜ |
+| US27.1.3 | Types de KR (métrique/jalon/booléen, pondération) | M | High | ⬜ |
+| US26.1.1 | Saisir le budget d'un projet | M | High | ⬜ |
+| US26.1.2 | Suivre la consommation budgétaire en temps réel | M | High | ⬜ |
+
+## Vague 2 — OKR alignement/cadence + Budget avancé + Portefeuille vague 2
+
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| US27.1.4 | Engageant vs aspirationnel + garde-fous | S | High | ⬜ |
+| US27.2.1 | Cycles (trimestriel/annuel) | M | High | ⬜ |
+| US27.3.1 | Arbre d'alignement | M | High | ⬜ |
+| US27.6.1 | Initiatives ↔ KR | M | High | ⬜ |
+| US27.6.2 | Interfaces pilotage (roadmap E22 / portefeuille E23 / risques E21) | M | Medium | ⬜ |
+| US26.2.1 | Coûts au niveau projet | M | High | ⬜ |
+| US26.2.3 | Flux de trésorerie | M | Medium | ⬜ |
+| US23.2.3 | Revues & comités de portefeuille | M | High | ⬜ |
+| US23.2.5 | Programmes | M | High | ⬜ |
+| US23.2.6 | Plans stratégiques | M | Medium | ⬜ |
+
+> **Dépendances :** EN27.1 précède toutes les US27.x · US27.6.2 dépend de la v0 E22/E23/E21 (S9-S11).
+> **Restent en queue idéation / post-S13** : E27 F27.4-10 (check-ins, scoring, gouvernance),
+> E26 F26.2 vague 2 (US26.2.2/2.4/2.5/2.6 → idéation), E23 US23.2.7/23.2.8 (what-if & business
+> cases), US23.2.9/23.2.10 (livrables & valeur publique → idéation).

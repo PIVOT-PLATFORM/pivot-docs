@@ -1,8 +1,11 @@
 # Sprint 10 — Pilotage cœur PPM
 
-> ⏸️ **Verrou :** conditionnel au jalon « Socle terminé » — voir [README](./README.md#sprints-712--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+> ✅ **Verrou Socle levé (2026-07-10).** Enchaîne Sprint 9 (dépend d'EN22.1). Contenu **inchangé au
+> re-tri du 2026-07-10** : aucune dépendance à E40 (profil adaptatif) ni à l'habillage entreprise
+> EN18.3-8 — pure valeur PPM. Voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
-**Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé)
+**Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé), sur profil
+par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation.
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
