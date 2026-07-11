@@ -39,9 +39,10 @@ l'altitude — tout cela reste à E40 ([`BACKLOG-IDEATION/EPIC-profil-adaptation
 - [ ] Error case: given un `tenantId` inexistant (ou sans enregistrement `teams`), when la résolution est tentée, then `404` (ressource introuvable), aucun profil fantôme fabriqué.
 - [ ] Security: given un utilisateur authentifié ciblant un tenant dont il n'est pas membre / cross-tenant, when il appelle le contrat, then `404` (isolation systématique, FK `public.teams(id)`) ; si un override des valeurs par défaut est exposé, il est réservé à un rôle habilité (DSI / admin plateforme), sinon `403`.
 
-**Valeurs par défaut proposées** (à confirmer — mainteneur) : altitude = **roadmap rapide (macro)** ;
-modules = socle roadmap minimal (E22, sans AP/CP ni PPI) ; souveraineté = classe la plus neutre ;
-matérialisation = **config versionnée résolue à la volée + override optionnel en base**.
+**Valeurs par défaut** (confirmées par le mainteneur, 2026-07-11) : altitude = **roadmap rapide
+(macro)** ; modules = socle roadmap minimal (E22, sans AP/CP ni PPI) ; souveraineté = classe la
+plus neutre ; matérialisation = **config versionnée résolue à la volée + override optionnel en
+base**.
 
 **Statut** : ⬜ À faire — couture net-new (re-tri 2026-07-10)
 
