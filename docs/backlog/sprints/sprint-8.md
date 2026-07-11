@@ -36,7 +36,7 @@
 | US20.3.1 | Créer et assigner des actions de rétro | M | High | ⬜ |
 | US20.3.2 | Revoir les actions de la rétro précédente | S | Medium | ⬜ |
 | TAXO-1 | Merge `check-taxonomie.mjs` + câblage `lint:taxonomie` en CI | S | High | ✅ — déjà fait (`scripts/check-taxonomie.mjs` existe, `npm run lint`/`docs-checks.yml` le lancent, vérifié 2026-07-10) |
-| TAXO-2 | Backfill champ `Rôle:` sur ~700 US/EN (résolution vers le référentiel) | M | High | ⬜ |
+| TAXO-2 | Backfill champ `Rôle:` sur ~700 US/EN (résolution vers le référentiel) | M | High | 🟡 backfill fait, PR ouverte ([pivot-docs#212](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/212)) — 600/674 US résolus (référentiel `docs/taxonomie/roles.json` + table §18, 0 valeur inventée), 73 US et les 113 Enablers documentés comme non résolus plutôt que devinés (détail : `zones-ombre.md` #5 + commentaire PR) — merge volontairement laissé à la revue humaine (modification à grande échelle) |
 
 > **Parallélisable par vagues** (dépendances intra-epic) :
 > - **Vague 1** (aucune dépendance) : EN09.1 ‖ US09.1.1 ‖ US14.1.1 ‖ US20.1.1 ‖ TAXO-2
