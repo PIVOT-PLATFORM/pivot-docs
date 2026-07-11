@@ -16,6 +16,9 @@
 >   dépend explicitement — ajouté ci-dessous, même précédent qu'EN08.1 au Sprint 5.
 > - **US20.1.2** (XL) décomposée en **US20.1.2a/b/c** (contribution & révélation / vote / action)
 >   avant toute implémentation — même précédent que US08.3.2 (whiteboard) au Sprint 5.
+> - **US09.2.3** (2026-07-11) : ajoutée en cours de sprint — écart documenté par le Gate 1 de
+>   US09.2.2 vs ADR-026 §2 (reset/revote + estimation finale persistée, hors périmètre de
+>   US09.2.2), arbitrage mainteneur : nouvelle US plutôt qu'amendement d'ADR-026.
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
@@ -24,6 +27,7 @@
 | US09.1.2 | Rejoindre une room via code | S | High | ⬜ |
 | US09.2.1 | Voter sur un ticket en temps réel | M | High | 🟡 Gate 1 AC 100/100 ([pivot-docs#198](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/198), non fusionnée — pas bloquant, recette humaine restante) · backend fusionné ([pivot-agilite-core#42](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/42), Gate 4 100/100, 477 tests, merge admin — incident CI `ci.yml` `pull_request` documenté en commentaire, même incident que #33/#35/#36, rebase sur US09.3.1/US20.1.2b avec conflit réel résolu sur `PokerFacilitatorOnlyException`/`TicketFacilitatorOnlyException`) · frontend fusionné ([pivot-agilite-ui#37](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/37), Gate 4 100/100, 269 tests, CI 100% verte, merge admin — contrainte d'auto-approbation) — 🤖 Dev des deux repos passé à `✅`, recette humaine (Stage frontmatter US) restante |
 | US09.2.2 | Révéler les votes et calculer le consensus | S | High | 🟡 Gate 1 AC 100/100 ([pivot-docs#202](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/202), fusionnée) — écart documenté vs ADR-026 §2 (reset/revote + persistance de l'estimation finale hors périmètre de cette US, arbitrage mainteneur : nouvelle US de suivi à écrire, ADR-026 inchangé) · backend/frontend en cours |
+| US09.2.3 | Reset et revote, validation de l'estimation finale *(ajoutée 2026-07-11 — écart ADR-026 §2 comblé)* | S | High | 🟡 Gate 1 AC 100/100 (voir `FEATURES/votes/us-reset-revote-finaliser-estimation.md`) · backend/frontend non démarrés |
 | US09.3.1 | Participer anonymement (sans compte) | M | Medium | 🟢 livré et fusionné — voir statut détaillé ci-dessous |
 | US14.1.1 | Créer et gérer une roue de tirage | M | High | 🟡 frontend mergé ([pivot-agilite-ui#19](https://github.com/PIVOT-PLATFORM/pivot-agilite-ui/pull/19), Gate 4 100/100) · backend PR ouverte, `needs-human-review` ([pivot-agilite-core#27](https://github.com/PIVOT-PLATFORM/pivot-agilite-core/pull/27)) — hard block CLAUDE.md sur l'ajout de `pivot-core-starter`, jamais de merge autonome quel que soit le score |
 | US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
@@ -43,7 +47,7 @@
 > - **Vague 2** : US09.1.2 (← US09.1.1) ‖ US14.2.1 (← US14.1.1) ‖ US20.2.1 (← US20.1.1) ‖ US20.1.2a (← US20.1.1)
 > - **Vague 3** : US09.2.1 (← US09.1.2, EN09.1) ‖ US09.3.1 (← US09.1.2) ‖ US14.3.1 (← US14.2.1) ‖ US20.1.2b (← US20.1.2a)
 > - **Vague 4** : US09.2.2 (← US09.2.1) ‖ US20.1.2c (← US20.1.2b)
-> - **Vague 5** : US20.3.1 (← US20.1.2c)
+> - **Vague 5** : US09.2.3 (← US09.2.2) ‖ US20.3.1 (← US20.1.2c)
 > - **Vague 6** : US20.3.2 (← US20.3.1)
 >
 > E09 ‖ E14 ‖ E20 restent parallélisables entre eux à chaque vague (même repo `pivot-agilite-*`,
