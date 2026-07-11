@@ -1,5 +1,7 @@
 # EN43.7 — Autorisation externalisée (policy-as-code)
 
+> ⚠️ **Décomposée (2026-07-10)** en EN43.7a, EN43.7b, EN43.7c, EN43.7d, EN43.7e — voir les fiches enfants ; cette US/enabler ne porte plus d'ACs propres (hors score Gate 1).
+
 **Type d'enabler** : gouvernance · sécurité
 
 **Objectif technique** : Les décisions d'accès ne sont pas codées en dur dans les modules mais exprimées en politiques versionnées (OPA/Rego ou Cedar), évaluées à chaque appel — c'est là que s'appliquent le RBAC par rôle (taxonomie), l'ABAC fin (par entité, par action) et la classification de souveraineté (EN43.11).
@@ -18,4 +20,4 @@
 
 ---
 Item Type: Enabler · Parent: E43 · Type: gouvernance · Module: securite · Phase: phase-3 · Size: XL
-Stage: ⬜ · Priority: Critical
+Stage: Decomposed · Priority: Critical

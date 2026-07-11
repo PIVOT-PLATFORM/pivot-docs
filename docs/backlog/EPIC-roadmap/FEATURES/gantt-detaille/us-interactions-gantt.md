@@ -1,5 +1,7 @@
 # US22.4.10 — Interactions Gantt directes
 
+> ⚠️ **Décomposée (2026-07-10)** en US22.4.10a, US22.4.10b, US22.4.10c — voir les fiches enfants ; cette US/enabler ne porte plus d'ACs propres (hors score Gate 1).
+
 **En tant que** chef de projet
 **Je veux** manipuler le Gantt à la souris : déplacer/redimensionner les barres, lier par glisser, zoomer l'échelle de temps, ajuster l'avancement à la poignée
 **Afin de** éditer le planning aussi fluidement qu'un client lourd, dans le navigateur
@@ -27,7 +29,7 @@
 
 ---
 Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Critical
-Stage: ⬜
+Stage: Decomposed
 Rôle: chef-de-projet
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)

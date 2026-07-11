@@ -23,6 +23,10 @@
 | US21.3.5 | Revues de risques | M | High | ⬜ |
 | EN43.5 | Plan de contrôle : Identité | L | Critical | ⬜ |
 | EN43.6 | Plan de contrôle : Secrets (OpenBao) | L | Critical | ⬜ |
-| EN43.7 | Autorisation externalisée (policy-as-code) | XL | Critical | ⬜ |
+| EN43.7a | Moteur de politique : PDP/PEP & fail-closed *(ex-EN43.7 XL, décomposé 2026-07-10)* | L | Critical | ⬜ |
+| EN43.7b | Politiques RBAC par rôle (taxonomie) | M | Critical | ⬜ |
+| EN43.7c | Politiques ABAC fines (par entité, par action) | M | Critical | ⬜ |
+| EN43.7d | Contrainte de souveraineté dans la décision d'accès *(bloqué : dépend EN43.11 non livré)* | M | Critical | ⬜ |
+| EN43.7e | Politiques versionnées en Git (policy-as-code) | M | Critical | ⬜ |
 
 > **US21.2.5/21.2.6 (mode AMDEC, exposition & vélocité — Medium) → post-S12.** EN43.5-7 = prérequis de tout module manipulant des données sensibles (checklist EN43.13). F21.4 boucle vivante dépend d'ADR-019 (bus) → post-S12.

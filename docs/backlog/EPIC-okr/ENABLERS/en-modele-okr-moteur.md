@@ -1,5 +1,7 @@
 # EN27.1 — Modèle OKR & moteur (scoring, statut, alignement)
 
+> ⚠️ **Décomposée (2026-07-10)** en EN27.1a, EN27.1b, EN27.1c, EN27.1d — voir les fiches enfants ; cette US/enabler ne porte plus d'ACs propres (hors score Gate 1).
+
 **Type d'enabler** : architecture
 
 **Objectif technique** : Poser le modèle et le moteur OKR de l'état de l'art.
@@ -33,7 +35,7 @@ deep-links pilotage (roadmap E22, portefeuille E23, risque E21) — **pas de FK 
 
 ---
 Item Type: Enabler · Parent: E27 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: High
-Stage: ⬜
+Stage: Decomposed
 Profils: Tous
 Justification: Fondation OKR (modèle + moteur scoring/alignement) — état de l'art Doerr/Google
 Dépendances: EN18.1 (schéma pilotage) · bus PIVOT (ADR-008)
