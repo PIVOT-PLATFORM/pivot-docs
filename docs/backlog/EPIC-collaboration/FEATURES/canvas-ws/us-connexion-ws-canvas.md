@@ -13,7 +13,7 @@
 | Messages : JOIN, LEAVE, DRAW, CURSOR_MOVE, UNDO | ⬜ |
 | Broadcast aux participants du même tableau uniquement | ⬜ |
 | Tests TI WebSocket board session (Testcontainers + WS client) | ⬜ |
-| À la souscription STOMP sur /topic/whiteboard/{boardId}, backend vérifie que l'user est membre actif (owner/editor/viewer) ET board.tenantId == token.tenantId. Souscription non autorisée → déconnexion WS code 1008 | ⬜ |
+| À la souscription STOMP sur /topic/whiteboard/{boardId} (et /presence), backend vérifie que l'user est membre actif (owner/editor/viewer) ET board.tenantId == token.tenantId. Souscription non autorisée → souscription rejetée (frame droppée, jamais établie) + erreur délivrée sur /user/queue/errors ; la session WS n'est pas fermée (les autres souscriptions valides de la même session restent actives) | ⬜ |
 | Handler STOMP rejette tout message dont le type n'est pas dans la whitelist {JOIN, LEAVE, DRAW, CURSOR_MOVE, UNDO} avec log WARN | ⬜ |
 | Payload DRAW limité à 64 Ko. Payload > limite → STOMP ERROR frame sans déconnecter les autres participants | ⬜ |
 | Rate limit par connexion WS : maximum 30 messages DRAW/seconde par user par board. Dépassement → STOMP ERROR + fermeture après 3 violations consécutives | ⬜ |
@@ -54,6 +54,16 @@
   chaque `JOIN`/`LEAVE` avec la liste complète des participants.
 - **Dépend de EN08.1** (isolation WebSocket room par board) pour la vérification d'appartenance à
   la souscription.
+- **Comportement sur souscription non autorisée (AC alignée sur le livré, 2026-07-12)** : l'AC
+  demandait initialement « déconnexion WS code 1008 ». Le design livré et testé **rejette** la
+  souscription refusée (frame droppée, jamais établie) et notifie le client sur
+  `/user/queue/errors`, **sans fermer la session WS** — un membre légitime de plusieurs boards ne
+  perd pas ses souscriptions valides parce qu'une souscription à un board dont il n'est pas membre
+  a été refusée. Comportement couvert par l'IT `denied_subscribe_does_not_close_session`
+  (`pivot-collaboratif-core`, `WhiteboardWebSocketIT`). L'AC ci-dessus est alignée sur ce choix
+  (décision mainteneur 2026-07-12, US déjà `Stage: ✅`). La fermeture forcée
+  (`CloseStatus.POLICY_VIOLATION`, code 1008) reste réservée à l'abus caractérisé : 3 violations
+  consécutives du rate limit (voir AC dédiée).
 - Le champ `payload` de `DRAW` reste **opaque et spécifique à l'outil** pour le transport (pas de
   schéma STOMP rigide par type) : il porte notamment les attributs de style ajoutés côté canvas
   (`strokeColor`/`fillColor`/`groupId`, cf. US08.3.2a) sans qu'aucune évolution du contrat
