@@ -12,8 +12,10 @@
 L'[EPIC E15](pathname:///pivot-docs/backlog/EPIC-equipes/) était jusqu'ici spécifiée comme un
 simple modèle d'équipes plates : `teams(name, parent_team_id)` + `team_members(team_id, user_id)`
 en association N-N pure, avec une hiérarchie d'arbre anticipée sur `parent_team_id`
-([EN17.1](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage),
-`pivot-core#171`, entités créées en avance de phase comme fondation Socle). Cette forme minimale
+(EN17.1, `pivot-core#171`, entités créées en avance de phase comme fondation Socle ;
+principal d'authentification minimal partagé tranché par
+[ADR-022](pathname:///pivot-docs/adr/ADR-022-principal-authentification-minimal-partage)).
+Cette forme minimale
 ne dit rien de la **sémantique** que les modules attendent réellement d'une hiérarchie
 d'organisation :
 
