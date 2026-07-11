@@ -41,7 +41,7 @@ toute implémentation.
 | EN22.1c | Jalon partagé, agrégation, dérivation de vues & événements | L | Critical | ✅ mergé ([pivot-pilotage-core#26](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/26)) |
 | US22.3.1 | Créer une roadmap rapide | M | High | 🟡 backend mergé ([pivot-pilotage-core#32](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/32)) · frontend en cours |
 | US22.3.2 | Échelle de temps floue (trimestres/semestres) | S | High | ⬜ (← US22.3.1) |
-| US22.3.3 | Vue Now / Next / Later | M | Should | ⬜ (← US22.3.1) |
+| US22.3.3 | Vue Now / Next / Later | M | Should | ✅ mergé (backend [pivot-pilotage-core#39](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/39), frontend [pivot-pilotage-ui#25](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/25)) |
 | US22.3.4 | Jalons stratégiques | S | High | ⬜ (← US22.3.1) |
 | US22.3.5 | Partage & export de la roadmap | S | Should | 🟡 backend mergé ([pivot-pilotage-core#36](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/36)) · frontend en cours |
 
