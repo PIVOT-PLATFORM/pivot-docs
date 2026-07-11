@@ -15,7 +15,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 2](./sprint-2.md) | Système de modules + Auth manquant | ✅ Terminé |
 | [Sprint 3](./sprint-3.md) | Espace compte + Administration | 🔎 15/15 mergées — en attente de recette |
 | [Sprint 4](./sprint-4.md) | Infrastructure prod + Auth avancé + Notifications | ✅ 16/16 mergées |
-| [Sprint 5](./sprint-5.md) | Infra multi-repo (E17) + Module Whiteboard (Socle) | 🚀 Démarré (2026-07-07) — Gate 1 passé 25/25 items · Vague 0 (E17) 🔄 7/8 (EN17.1 partiel, voir `pivot-core#171`) · Vague 1+ (whiteboard) 🔄 En cours |
+| [Sprint 5](./sprint-5.md) | Infra multi-repo (E17) + Module Whiteboard (Socle) | 🔎 Dev terminé — Vague 0 (E17) 10/10 mergés (EN17.1 clos 2026-07-08, `pivot-core#171` fermée) · Vague 1+ (whiteboard) 17/17 mergés · en attente de recette mainteneur |
 | [Sprint 6](./sprint-6.md) | Durcissement & recette Socle 🏁 | ✅ Socle terminé (déclaré 2026-07-09 — Axe 2 écarté, Axe 3 différé en fin de tous les sprints) |
 | [Sprint 7](./sprint-7.md) | Gouvernance ADR (phase-3) + Migration BFF Auth (EN01.14-18) | 🔄 Gouvernance ADR ✅ Terminé (2026-07-09) — ADR-008→016 et ADR-023→026 tous Accepté · Migration BFF (EN01.14-18) ⬜ pas démarrée |
 | [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ✅ Terminé (2026-07-11) — templates satellites validés (EN17.11), TAXO-2 fait, écart ADR-026 §2 comblé (US09.2.3) |
