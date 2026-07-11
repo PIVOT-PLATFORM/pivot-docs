@@ -1,21 +1,49 @@
 # US09.3.1 — Participer anonymement à une room (sans compte)
 
-> Stub phase-3 — ACs à détailler par PO Agent lors de Gate 1 avant implémentation.
+**En tant qu'** invité externe sans compte PIVOT
+**Je veux** rejoindre une room de planning poker via un code, sous un pseudonyme
+**Afin de** participer à l'estimation sans avoir à créer de compte
 
-**En tant que** invité externe sans compte PIVOT
-**Je veux** rejoindre une room de planning poker via un code
-**Afin de** participer à l'estimation sans avoir à créer un compte
-
-## Critères d'acceptation (outline — Gate 1 PO Agent)
+## Critères d'acceptation
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Accès room via code sans authentification (ROLE_GUEST) | ⬜ |
-| Invité saisit un pseudonyme avant de rejoindre | ⬜ |
-| Invité peut voter mais ne peut pas créer de tickets ni révéler les votes | ⬜ |
-| Session invité expirée à la fermeture de la room ou après 2h d'inactivité | ⬜ |
-| Invité identifié uniquement par `sessionId` temporaire (pas de persistance BDD) | ⬜ |
-| Sécurité : token invité ne donne accès qu'à cette room spécifique | ⬜ |
+| Given un code d'invitation valide, actif et non expiré, et aucun header `Authorization`, when l'invité appelle `POST /api/agilite/poker/rooms/join-anonymous` avec `{ "code": "ABC234" }` (pseudonyme omis), then l'API retourne 200 avec un pseudonyme généré serveur (ex. `Invité-XXXX`), un `sessionId` (UUID temporaire), un `accessToken` opaque, `roomId`, `name`, `sequence`, `cardValues`, `active`, `expiresAt` (de la room), `wsTopic`, et `guestSessionExpiresAt` | ⬜ |
+| Given le même code valide, when l'invité fournit `{ "code": "ABC234", "pseudonym": "Alex" }`, then la réponse renvoie ce pseudonyme (après `trim()`), sans autre transformation | ⬜ |
+| Given l'`accessToken` reçu à la jonction anonyme, when l'invité l'utilise comme header natif STOMP `access-token` pour s'abonner à `wsTopic`, then l'abonnement est accepté exactement comme pour un participant authentifié (`RoomAccessGrantService#hasAccess` vrai) — aucune modification du mécanisme d'isolation WebSocket EN09.1 n'est nécessaire pour cet AC : le même octroi `(roomId, accessToken)` gouverne les deux cas | ⬜ |
+| Given une room dont `expiresAt` est à moins de 2h de maintenant, when un invité rejoint anonymement, then `guestSessionExpiresAt` = `expiresAt` de la room (jamais après) — la session invité ne peut jamais survivre à la fermeture de la room | ⬜ |
+| Given une room dont `expiresAt` est à plus de 2h de maintenant, when un invité rejoint anonymement, then `guestSessionExpiresAt` = maintenant + 2h | ⬜ |
+| Given une session invité active (avant expiration), when le frontend appelle `POST /api/agilite/poker/rooms/{roomId}/guest-sessions/heartbeat` avec `{ "accessToken": "…" }`, then l'API retourne 200 avec un `expiresAt` recalculé (= min(maintenant + 2h, `expiresAt` de la room)) et l'octroi d'accès WebSocket sous-jacent voit son TTL Redis rafraîchi d'autant | ⬜ |
+| Given une session invité valide, then l'invité peut voter (US09.2.1, dépendance sœur — la grille d'accès ne distingue pas les rôles pour un SUBSCRIBE/SEND générique) mais ne peut déclencher aucune action réservée au facilitateur (création de ticket, révélation) — mécanisme de distinction détaillé dans les AC Security ci-dessous | ⬜ |
+| Error : given un code inconnu, une room désactivée, ou une room expirée, when `POST /api/agilite/poker/rooms/join-anonymous` est appelé, then 404 — même `InviteCodeNotFoundException` que le join authentifié (US09.1.2), jamais distinguée (ADR-026 §2, convention étendue au join anonyme) | ⬜ |
+| Error : given un `code` absent, vide, ou de longueur ≠ 6, when `POST /api/agilite/poker/rooms/join-anonymous` est appelé, then 400 avec code `INVALID_CODE` | ⬜ |
+| Error : given un `pseudonym` fourni de plus de 40 caractères, when `POST /api/agilite/poker/rooms/join-anonymous` est appelé, then 400 avec code `INVALID_PSEUDONYM` | ⬜ |
+| Error : given un `accessToken` invalide, inconnu, ou dont la session a expiré (> 2h d'inactivité ou room fermée/expirée entre-temps), when `POST .../guest-sessions/heartbeat` est appelé, then 410 Gone avec code `GUEST_SESSION_EXPIRED` — jamais un succès silencieux, jamais un 200 déguisé | ⬜ |
+| Error : given un header `Authorization: Bearer` fourni malgré tout sur `join-anonymous`/`heartbeat`, when l'appel est fait, then il est ignoré (ni lu, ni validé) — ces deux endpoints ne déclarent aucun paramètre `RequestPrincipal`, donc aucune tentative de résolution de token n'a lieu ; le succès ou l'échec d'un éventuel token n'a aucun effet sur la réponse | ⬜ |
+| Security : aucune persistance en base pour l'invité — ni `sessionId`, ni `pseudonym`, ni `accessToken` ne sont écrits dans une table (aucune entité JPA, aucune ligne `public.users` ni `agilite.*`) ; le seul état serveur est la grille Redis déjà utilisée par `RoomAccessGrantService` (EN09.1) pour les participants authentifiés, TTL borné à 2h maximum — aucun nouveau mécanisme de stockage introduit (ADR-026 §2 : "aucune persistance BDD") | ⬜ |
+| Security : distinction facilitateur/participant authentifié vs invité anonyme — (a) toute action réservée au facilitateur (création de ticket, révélation — US09.2.1/US09.2.2) exige un paramètre `RequestPrincipal` obligatoire résolu depuis un header `Authorization: Bearer` valide, comparé à `PokerRoom#getFacilitatorUserId()` : un invité, par construction sans token, échoue avant même d'atteindre cette comparaison (401 côté `RequestPrincipalResolver`) ; (b) côté grille d'accès WebSocket, `RoomAccessGrantService` distingue désormais un octroi "invité" (`grantGuestAccess`, marqueur dédié en valeur Redis) d'un octroi standard (`grantAccess`, inchangé) — une future action réservée exposée en STOMP appelle `RoomAccessGrantService#isGuest`/`#requireNonGuest`, qui lève `PokerFacilitatorOnlyException` (mappée 403, code `FACILITATOR_ONLY_ACTION`) pour tout jeton marqué invité. Les endpoints de vote/création de ticket/révélation eux-mêmes relèvent de US09.2.1/US09.2.2 (même vague 3/4, sprint-8.md — pas une dépendance de cette US) ; cette US livre et prouve par test direct le mécanisme que ces US doivent consommer (même précédent que `RoomAccessGrantService#grantAccess`/`#hasAccess` eux-mêmes : contrat défini avant tout appelant réel) | ⬜ |
+| Security : cette US introduit une exception délibérée à la règle habituelle de ce repo ("tenantId/userId toujours dérivés d'un token porteur authentifié") — bornée et justifiée : l'invité n'obtient jamais de `tenantId`/`userId`, jamais accès à une autre room que celle dont il connaît déjà le code d'invitation, jamais un privilège supérieur à "lire + voter dans cette room précise" (jamais d'action facilitateur, jamais d'accès à `public.users`/`public.tenants`/aux autres endpoints authentifiés qui continuent tous d'exiger `RequestPrincipal` sans exception). Le rayon d'action de cette exception est strictement identique à celui déjà couvert par la grille `RoomAccessGrantService` existante (EN09.1) — pas un nouveau périmètre de confiance, juste un second chemin pour l'obtenir | ⬜ |
+| Security : test TI obligatoire prouvant qu'une session invité ne peut pas exécuter une action réservée au facilitateur — 403 explicite (`PokerFacilitatorOnlyException` → `GlobalExceptionHandler`), jamais un succès silencieux ni un 404 masquant l'échec | ⬜ |
+| Security : le pseudonyme est une donnée d'affichage inerte — jamais interprétée côté serveur (pas de rendu HTML/markdown), jamais utilisée pour une décision d'autorisation ; les caractères de contrôle sont retirés côté serveur en défense en profondeur (le rendu côté Angular échappe déjà par défaut via l'interpolation de template, XSS hors surface) | ⬜ |
+| A11y : le formulaire "rejoindre anonymement" a un champ pseudonyme optionnel avec label associé (`<label for>`), explicitement annoncé comme facultatif (`aria-required="false"` ou équivalent textuel) ; le statut de connexion WebSocket réutilise le motif `aria-live="polite"` déjà établi par `join-room.component` (US09.1.2) | ⬜ |
+| A11y : pendant la soumission, le bouton est désactivé avec `aria-busy="true"` ; une erreur (code invalide, pseudonyme trop long, session expirée) est annoncée via `role="alert"`, jamais uniquement par une couleur | ⬜ |
+
+## Hors périmètre
+
+- Vote lui-même, création de ticket, révélation des votes (US09.2.1/US09.2.2) — dépendances **sœurs** de cette US (vague 3/4, `sprints/sprint-8.md`), pas une dépendance amont ni aval ; cette US livre uniquement le mécanisme d'exclusion (`isGuest`/`PokerFacilitatorOnlyException`) que ces US devront appeler.
+- Fermeture de room à la demande du facilitateur — non spécifiée par une US existante, hors périmètre de celle-ci.
+- Rafraîchissement automatique de la session invité par simple trafic WebSocket passif (vote, abonnement) — v1 se limite au heartbeat REST explicite ; étendre le rafraîchissement au trafic STOMP réel toucherait `PokerChannelInterceptor`, activement modifié en parallèle par US09.2.1 dans ce même sprint — différé pour éviter un conflit inutile, à revisiter une fois US09.2.1 mergée si le besoin est confirmé.
+- Limitation du nombre d'invités simultanés par room — non spécifiée, hors périmètre.
+- Compte invité persistant, historique de participation, réutilisation d'un pseudonyme entre sessions — explicitement exclu par ADR-026 §2.
+- Modération (expulsion d'un invité par le facilitateur) — non spécifiée, hors périmètre.
+
+## Notes d'implémentation
+
+- **Backend** (`pivot-agilite-core`) : deux nouveaux endpoints sur `PokerRoomController`, aucun des deux ne déclare de paramètre `RequestPrincipal` — c'est le mécanisme même par lequel ils restent accessibles sans bearer token (confirmé : `pivot-core-starter` 0.28.0 marque les dépendances Spring Security `optional`, aucun `SecurityConfig` n'existe dans ce repo, rien n'impose une authentification globale). Nouveaux DTOs `AnonymousJoinRequest`/`AnonymousJoinResponse`/`GuestHeartbeatRequest`/`GuestHeartbeatResponse` (`poker.dto`). Nouvelles méthodes `PokerRoomService#joinAnonymous`/`#refreshGuestSession`, réutilisant `InviteCodeNotFoundException` (même convention 404 unifiée que US09.1.2) et le `PokerRoomRepository#findByInviteCode` existant — **sans filtre tenant**, l'invité anonyme n'en ayant aucun.
+- `RoomAccessGrantService` étendu de façon strictement **additive** : `grantGuestAccess(roomId, token, ttl)`, `isGuest(roomId, token)`, `requireNonGuest(roomId, token)` (lève `PokerFacilitatorOnlyException`). La surcharge `grantAccess(roomId, token, ttl)` existante (US09.1.2) n'est pas modifiée — zéro régression, zéro changement de comportement pour le join authentifié déjà mergé.
+- Nouvelles exceptions : `GuestSessionExpiredException` (410, code `GUEST_SESSION_EXPIRED`) et `PokerFacilitatorOnlyException` (403, code `FACILITATOR_ONLY_ACTION`), toutes deux ajoutées à `GlobalExceptionHandler` en suivant le patron déjà établi par `RetroSessionExpiredException`/`RetroFacilitatorOnlyException` (US20.1.1/US20.1.2a) dans ce même fichier.
+- Aucune nouvelle table Flyway — respecte "aucune persistance BDD" (ADR-026 §2) ; `sessionId` est un UUID généré à la volée, jamais écrit nulle part côté serveur au-delà de la réponse HTTP elle-même.
+- **Frontend** (`pivot-agilite-ui`) : extension du composant `join-room` existant (US09.1.2) avec un second mode "rejoindre anonymement" (champ pseudonyme optionnel), appelant `join-anonymous` au lieu de `join` ; programme un heartbeat périodique (ex. toutes les 5 minutes) tant que la connexion STOMP reste ouverte, via `RxJS` piloté par le cycle de vie du composant (nettoyé dans `ngOnDestroy`, même discipline que `RoomWsService#disconnect`).
 
 ---
 Item Type: US · Parent: F09.3 · Module: agilite · Phase: phase-3 · Size: M · Priority: Medium
