@@ -13,6 +13,7 @@
 | Given un récapitulatif, when ses sous-tâches avancent, then son % réalisé s'agrège | ⬜ |
 | Error : given une saisie de % réalisé hors de l'intervalle [0, 100] ou une date réelle de fin antérieure à la date réelle de début, then la saisie est rejetée avec un message explicite | ⬜ |
 | Security : seul un utilisateur avec un rôle d'édition sur le projet (ou affecté à la tâche) peut saisir l'avancement ; l'historique des saisies est tracé (auteur, date) | ⬜ |
+| Security : given une saisie/lecture d'avancement visant un projet d'un autre `tenant_id` (ou inexistant), then 404 sans divulgation ; given un membre du tenant ni éditeur ni affecté à la tâche, then 403 | ⬜ |
 | A11y : la barre d'avancement et la ligne de progression (progress line) exposent leur valeur en texte (pourcentage, retard) accessible aux lecteurs d'écran, pas uniquement via un remplissage visuel | ⬜ |
 
 ## Hors périmètre

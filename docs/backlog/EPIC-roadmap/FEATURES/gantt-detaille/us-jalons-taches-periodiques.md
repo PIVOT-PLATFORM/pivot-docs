@@ -12,6 +12,7 @@
 | Given une tâche périodique (fréquence, occurrences), when je la crée, then les occurrences sont générées selon le calendrier | ⬜ |
 | Error : given une tâche périodique sans fréquence ni nombre d'occurrences valide, then la création est refusée avec un message explicite | ⬜ |
 | Security : seul un utilisateur avec un rôle d'édition sur le projet peut créer un jalon ou une tâche périodique ; la génération des occurrences est tracée comme une action unique (pas une par occurrence) dans l'historique | ⬜ |
+| Security : given une requête de création/lecture visant un projet d'un autre `tenant_id` (ou un projet inexistant), then le système retourne 404 sans divulguer l'existence de la ressource ; given un membre du tenant sans rôle d'édition, then 403 | ⬜ |
 | A11y : le jalon (symbole losange) et les occurrences d'une tâche périodique sont identifiables dans le Gantt par un libellé texte accessible, pas uniquement par leur forme ou leur couleur | ⬜ |
 
 ## Hors périmètre

@@ -12,7 +12,7 @@
 | Given un filtre (ex. tâches critiques en retard), when je l'applique, then seules les tâches concernées restent visibles | ⬜ |
 | Given un regroupement (par ressource), when je l'applique, then les tâches se groupent avec sous-totaux | ⬜ |
 | Error : given un filtre combinant des critères contradictoires (ex. date fin < date début) ou un champ de tri inexistant, when je l'applique, then le système ignore le critère invalide et affiche un message expliquant qu'aucun résultat ne correspond, sans planter la vue | ⬜ |
-| Security : la préférence de colonnes/filtres/groupes est mémorisée par utilisateur et par projet — un utilisateur n'ayant pas accès au projet (droits de l'équipe rattachée, EN18.2) ne peut ni lire ni écrire ces préférences via l'API | ⬜ |
+| Security : la préférence de colonnes/filtres/groupes est mémorisée par utilisateur et par projet (persistée avec `tenant_id`, schéma `pilotage` EN18.1) — un utilisateur non membre ou d'un autre tenant reçoit 404 (non-divulgation) et un membre du tenant sans droit sur le projet reçoit 403 en lecture comme en écriture de ces préférences via l'API | ⬜ |
 | A11y : ajout/retrait de colonnes, application de filtres et de regroupements pilotables intégralement au clavier (menus et cases à cocher accessibles), changements d'état annoncés aux lecteurs d'écran (`aria-live`), conforme WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

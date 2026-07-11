@@ -13,6 +13,7 @@
 | Given une tâche interrompue, when je la fractionne, then elle apparaît en segments avec un creux | ⬜ |
 | Error : given une tentative de fractionnement qui produirait un segment de durée nulle ou négative, then l'action est refusée avec un message explicite | ⬜ |
 | Security : seul un utilisateur avec un rôle d'édition sur le projet peut fractionner une tâche ; le calcul du chemin critique et des marges reste accessible en lecture à tout utilisateur ayant accès au projet | ⬜ |
+| Security : given une requête (lecture du chemin critique ou fractionnement) visant un projet d'un autre `tenant_id` (ou inexistant), then 404 sans divulgation ; given un membre du tenant sans droit d'accès au projet, then 403 | ⬜ |
 | A11y : les tâches critiques et les marges affichées dans le Gantt ne reposent pas uniquement sur la couleur (icône/motif + texte alternatif) et sont consultables via une vue tabulaire accessible au clavier | ⬜ |
 
 ## Hors périmètre
@@ -23,7 +24,8 @@
 ## Notes d'implémentation
 - Le calcul de marge libre/totale et du chemin critique (méthode CPM) doit être assuré par le moteur d'ordonnancement EN22.1, en recalcul incrémental (EN22.2) pour rester performant sur 10 000+ tâches
 - Le fractionnement (split) d'une tâche doit être représenté comme une même tâche logique avec plusieurs segments temporels, pas comme des tâches distinctes, pour ne pas casser les dépendances et l'agrégation WBS (US22.4.1)
-- Une tâche critique est définie par une marge totale ≤ 0 ; ce seuil doit être configurable si un profil (E40) le nécessite, sinon garder la valeur standard MS Project
+- Une tâche critique est définie par une marge totale ≤ 0 ; ce seuil correspond au `is_critical` dérivé du moteur (`totalFloat ≤ ε`, ε=0 par défaut, cf. contrat figé EN22.1 §b) — la lecture reflète les champs dérivés `is_critical`/`free_slack_minutes`/`total_slack_minutes` (écriture refusée 422). Rendre ε configurable via profil (E40) si nécessaire, sinon garder la valeur standard MS Project
+- **Décision à trancher (mainteneur)** : le fractionnement (split) n'a PAS de représentation dans le contrat figé EN22.1 (§a `pilotage.task` ne porte ni segments ni interruption). Deux options ⇒ (1) ajouter un porteur de segments (nouvelle table `task_split_segment` ou champ JSONB) via un avenant au contrat, ou (2) sortir le split de cette US et le traiter dans un enabler dédié. Tant que ce point n'est pas tranché, les ACs « fractionnement » ne peuvent pas encore s'appuyer sur le schéma actuel
 
 ---
 Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High

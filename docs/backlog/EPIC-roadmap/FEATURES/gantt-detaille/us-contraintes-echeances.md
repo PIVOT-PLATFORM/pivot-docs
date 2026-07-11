@@ -10,8 +10,10 @@
 |---------|--------|
 | Given une contrainte de type « Doit finir le », when l'ordonnancement s'exécute, then elle est respectée ou un conflit est signalé | ⬜ |
 | Given une échéance (deadline), when la date de fin la dépasse, then un indicateur d'alerte apparaît sans bloquer | ⬜ |
-| Error : given une contrainte incompatible avec une dépendance, then le conflit est explicité | ⬜ |
+| Error : given une contrainte incompatible avec une dépendance, then la dépendance dure est honorée et le conflit est explicité via un `SchedulingWarning` typé (`CONSTRAINT_CONFLICT`), sans que le moteur ne casse la dépendance | ⬜ |
+| Error : given une contrainte de type ≠ ASAP/ALAP saisie sans `constraint_date`, then la saisie est rejetée avec un message explicite (date requise pour ce type de contrainte) | ⬜ |
 | Security : seul un utilisateur avec un rôle d'édition sur le projet peut poser ou modifier une contrainte/échéance ; la levée d'un conflit reste visible en lecture seule pour les autres rôles | ⬜ |
+| Security : given la pose d'une contrainte/échéance sur une tâche d'un projet appartenant à un autre `tenant_id` (ou dont l'utilisateur n'est pas membre), then le système retourne 404 (non-divulgation d'existence, jamais 403 exposant la ressource) | ⬜ |
 | A11y : l'indicateur d'alerte de dépassement d'échéance et le message de conflit de contrainte ne reposent pas uniquement sur la couleur (icône + texte) et sont annoncés aux lecteurs d'écran via `aria-live` | ⬜ |
 
 ## Hors périmètre

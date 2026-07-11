@@ -9,10 +9,12 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Given un calendrier projet, when une tâche est planifiée, then elle n'occupe que des jours/heures ouvrés | ⬜ |
+| Error : given un `calendar_id` inconnu référencé par une tâche lors du recalcul, then le moteur (EN22.1) retourne `UNKNOWN_CALENDAR` sans planifier la tâche | ⬜ |
 | Given une exception (férié), when elle tombe dans une tâche, then la durée s'étend en conséquence | ⬜ |
 | Given une ressource avec son propre calendrier, when elle est affectée, then son calendrier prime pour son travail | ⬜ |
 | Error : given une exception de calendrier avec une date de fin antérieure à sa date de début, then la saisie est rejetée avec un message explicite | ⬜ |
 | Security : seul un utilisateur avec un rôle d'administration du projet peut créer/modifier un calendrier projet ou ressource ; un contributeur planning ne peut que consulter les calendriers | ⬜ |
+| Security : given l'accès ou l'édition d'un calendrier rattaché à un projet appartenant à un autre `tenant_id` (ou dont l'utilisateur n'est pas membre), then le système retourne 404 (non-divulgation d'existence, jamais 403 exposant la ressource) | ⬜ |
 | A11y : l'éditeur de calendrier (jours ouvrés, horaires, exceptions) est intégralement pilotable au clavier, avec les jours fériés/exceptions annoncés par leur libellé (pas seulement une couleur) pour les lecteurs d'écran | ⬜ |
 
 ## Hors périmètre

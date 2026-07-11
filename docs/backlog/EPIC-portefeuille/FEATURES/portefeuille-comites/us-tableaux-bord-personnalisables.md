@@ -8,11 +8,14 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un profil, when l'utilisateur ouvre son tableau de bord, then une vue synthétique ou détaillée adaptée au profil s'affiche | ⬜ |
-| Des alertes sont déclenchées et affichées sur les points de tension (retard, dépassement, surcharge) | ⬜ |
-| Error : given un indicateur sans données, system l'affiche comme indisponible plutôt que vide | ⬜ |
-| Security : la personnalisation d'un tableau de bord (widgets, alertes) est propre à l'utilisateur et n'est visible/modifiable que par lui (ou son rôle) | ⬜ |
-| A11y : les tableaux de bord sont conformes RGAA 4 / WCAG 2.1 AA (alertes non uniquement couleur) | ⬜ |
+| Given un profil et un layout personnalisé persisté, when l'utilisateur ouvre son tableau de bord, then une vue synthétique ou détaillée adaptée au profil s'affiche avec ses widgets configurés | ⬜ |
+| Given des indicateurs source (avancement, météo) en état de tension (retard, dépassement, surcharge), when le tableau de bord est rendu, then des alertes correspondantes sont déclenchées et affichées sur les widgets concernés | ⬜ |
+| Given une modification du layout (ajout/retrait de widget, disposition), when l'utilisateur enregistre, then la configuration est persistée par utilisateur dans le schéma `pilotage` et rechargée à la prochaine ouverture | ⬜ |
+| Error : given un indicateur sans données, system l'affiche comme « indisponible » (état explicite) plutôt que vide ou nul | ⬜ |
+| Error : given une configuration de widget invalide (widget inconnu, disposition hors bornes) à l'enregistrement, system retourne 400 avec message explicite et ne persiste pas | ⬜ |
+| Security : la personnalisation d'un tableau de bord (widgets, alertes) est propre à l'utilisateur et n'est visible/modifiable que par lui ; given un accès à la configuration d'un autre utilisateur, system retourne 404 (non-divulgation) | ⬜ |
+| Security : seuls les indicateurs des projets des équipes du tenant de l'utilisateur authentifié alimentent le tableau de bord (isolation multi-tenant, `public.teams.id`) | ⬜ |
+| A11y : les tableaux de bord sont conformes RGAA 4 / WCAG 2.1 AA ; les alertes ne sont pas restituées uniquement par la couleur (icône/texte associé) et sont annoncées par lecteur d'écran | ⬜ |
 
 ## Hors périmètre
 - La définition des seuils métier déclenchant une alerte (retard, dépassement, surcharge) est traitée au niveau du calcul source (US23.2.4 météo), pas dans cette US qui se limite à l'affichage/personnalisation.

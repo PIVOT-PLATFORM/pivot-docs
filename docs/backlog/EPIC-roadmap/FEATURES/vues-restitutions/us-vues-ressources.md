@@ -13,6 +13,7 @@
 | Given un projet, when j'ouvre la vue Utilisation des tâches, then chaque tâche affiche ses ressources affectées et la répartition de charge associée, sans dupliquer le modèle temporel (EN22.1) | ⬜ |
 | Error : given un projet dont aucune tâche n'a de ressource affectée, when j'ouvre une vue ressources, then le système affiche un état vide explicite (invitation à affecter des ressources) plutôt qu'un tableau vide ambigu | ⬜ |
 | Security : given un utilisateur non membre de l'équipe rattachée au projet (EN18.2), when il tente d'ouvrir une vue ressources via l'API, then le système répond 404 (non-membre et cross-tenant traités de façon identique) sans exposer ressources ni charges ; isolation multi-tenant garantie | ⬜ |
+| Security : given un utilisateur authentifié membre du tenant mais sans droit de lecture sur ce projet, when il tente d'ouvrir une vue ressources via l'API, then le système répond 403 (droit insuffisant, distinct du 404 de non-divulgation) sans exposer ressources ni charges | ⬜ |
 | A11y : les vues ressources (tableaux de charge et d'affectation) sont navigables au clavier avec en-têtes de colonnes/lignes associés (`scope`/`aria`), et les sur-affectations sont signalées autrement que par la seule couleur, conforme WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

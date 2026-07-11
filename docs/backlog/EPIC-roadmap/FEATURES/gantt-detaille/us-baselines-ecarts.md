@@ -13,6 +13,7 @@
 | Given deux baselines, when je les compare, then l'évolution entre références est visible | ⬜ |
 | Error : given une tentative de poser une 12e baseline (au-delà de la limite de 11), then le système refuse et invite à écraser ou supprimer une baseline existante | ⬜ |
 | Security : seul un utilisateur avec un rôle PMO ou chef de projet peut poser, écraser ou supprimer une baseline ; un contributeur planning ne peut que consulter les écarts | ⬜ |
+| Security : given une requête baseline/écarts visant un projet d'un autre `tenant_id` (ou inexistant), then 404 sans divulgation ; given un membre du tenant sans droit PMO/chef de projet tentant de poser/écraser/supprimer une baseline, then 403 | ⬜ |
 | A11y : le tableau de comparaison des écarts (planifié vs réel) est navigable au clavier et les écarts positifs/négatifs ne sont pas signalés uniquement par la couleur (texte/icône associés) | ⬜ |
 
 ## Hors périmètre
@@ -21,7 +22,8 @@
 - L'export des écarts en rapport formaté (PDF/Excel) : couvert par F22.6/F22.7
 
 ## Notes d'implémentation
-- La limite de 11 baselines reprend celle de MS Project (Baseline + Baseline 1 à 10) ; chaque baseline fige un instantané (dates, durée, travail, coût) de l'ensemble des tâches du projet à un instant T
+- La limite de 11 baselines reprend celle de MS Project (Baseline + Baseline 1 à 10) et correspond au contrat figé EN22.1 §a : `pilotage.baseline.baseline_index` SMALLINT, CHECK 0..10, UNIQUE (`project_id`,`baseline_index`) ; l'instantané par tâche vit dans `pilotage.baseline_snapshot` (`bl_start`/`bl_finish`/`bl_duration_minutes`/`bl_work_minutes`/`bl_cost_amount`)
+- Comparer une baseline roadmap floue à un réel Gantt précis nécessite de figer aussi l'altitude : `bl_temporal_precision` est prévu au contrat pour rendre l'écart interprétable quand la précision temporelle a changé entre la baseline et le courant
 - Le calcul des écarts (variance) doit comparer les valeurs courantes du graphe temporel unique (EN22.1) à l'instantané figé, sans recalculer rétroactivement la baseline elle-même
 - Prévoir que poser une baseline sur un plan de 10 000+ tâches reste performant (EN22.2) : l'instantané doit être une copie légère, pas une duplication complète synchrone bloquante
 

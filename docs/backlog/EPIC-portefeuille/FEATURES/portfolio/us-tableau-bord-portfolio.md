@@ -13,6 +13,8 @@
 | Given la liste des projets, when l'utilisateur filtre par équipe, responsable ou période, then seuls les projets correspondants sont affichés | ⬜ |
 | Error : given un `teamId` ou une période de filtre invalide, system retourne 400 avec message d'erreur explicite | ⬜ |
 | Security : seuls les projets rattachés aux équipes du tenant de l'utilisateur authentifié sont retournés (isolation multi-tenant, FK `public.teams.id`) | ⬜ |
+| Security : given un accès direct (ou drill-down) au KPI d'un projet appartenant à un autre tenant, system retourne 404 (non-divulgation d'existence, jamais 403 exposant la ressource) | ⬜ |
+| Security : given un utilisateur authentifié sans droit de consultation du portefeuille sur son propre tenant, system retourne 403 | ⬜ |
 | A11y : le RAG n'est pas restitué uniquement par la couleur (icône/texte associé) et le tableau de bord est conforme WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

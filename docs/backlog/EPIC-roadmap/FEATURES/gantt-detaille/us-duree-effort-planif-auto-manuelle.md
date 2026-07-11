@@ -13,6 +13,8 @@
 | Given durée et effort, when les unités de ressource changent, then la relation travail = durée × unités est respectée | ⬜ |
 | Error : given une durée ou un effort saisi négatif, nul (hors jalon) ou non numérique, then la saisie est rejetée avec un message d'erreur et la tâche conserve ses valeurs précédentes | ⬜ |
 | Security : seul un utilisateur avec un rôle d'édition sur le projet peut basculer une tâche entre planification automatique et manuelle ou modifier durée/effort ; une action refusée est journalisée | ⬜ |
+| Security : given une requête d'édition durée/effort ou de bascule auto/manuel sur une tâche d'un projet appartenant à un autre `tenant_id` (ou dont l'utilisateur n'est pas membre), then le système retourne 404 (non-divulgation d'existence, jamais 403 exposant la ressource) | ⬜ |
+| Error : given une écriture sur un champ dérivé du moteur (`early_*`/`late_*`, marges, `is_critical`, agrégat récapitulatif) accompagnant la saisie durée/effort, then le système retourne 422 (champ en lecture seule, EN22.1) | ⬜ |
 | A11y : le sélecteur auto/manuel et les champs durée/effort sont accessibles au clavier, avec un état (auto/manuel) annoncé par les lecteurs d'écran via `aria-pressed`/`aria-live` lors du recalcul | ⬜ |
 
 ## Hors périmètre

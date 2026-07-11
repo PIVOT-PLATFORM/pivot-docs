@@ -8,11 +8,13 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un ensemble de projets, when la direction consulte le portefeuille, then santé, avancement, phases, jalons et dates clés sont consolidés | ⬜ |
-| Le drill-down permet de descendre d'un indicateur consolidé au détail du projet | ⬜ |
-| Error : given un projet sans indicateur de santé, system le signale comme non renseigné | ⬜ |
-| Security : seuls les projets des équipes du tenant de l'utilisateur authentifié apparaissent dans la vue consolidée | ⬜ |
-| A11y : la vue consolidée est conforme RGAA 4 / WCAG 2.1 AA | ⬜ |
+| Given un ensemble de projets, when la direction consulte le portefeuille, then santé, avancement, phases, jalons et dates clés sont consolidés (lecture `plan macro multi-projets`, cf. EN22.1 §e) | ⬜ |
+| Given un indicateur consolidé (santé, jalon, avancement), when l'utilisateur active le drill-down, then il navigue vers le détail du projet correspondant (fiche projet existante, module Roadmap E22) sans duplication de contenu | ⬜ |
+| Error : given un projet sans indicateur de santé, system le signale comme « non renseigné » (état explicite) plutôt que de l'omettre ou d'afficher une valeur par défaut trompeuse | ⬜ |
+| Security : seuls les projets des équipes du tenant de l'utilisateur authentifié apparaissent dans la vue consolidée (isolation multi-tenant, filtrage par `public.teams.id`) | ⬜ |
+| Security : given un drill-down (ou un accès direct) vers un projet appartenant à un autre tenant, system retourne 404 (non-divulgation d'existence, jamais 403 exposant la ressource — cf. EN22.1 §Sécurité) | ⬜ |
+| Security : given un utilisateur authentifié sans droit de lecture sur un projet de son propre tenant, system retourne 403 | ⬜ |
+| A11y : la vue consolidée est conforme RGAA 4 / WCAG 2.1 AA ; les indicateurs de santé/météo ne sont pas restitués uniquement par la couleur (icône/texte associé) | ⬜ |
 
 ## Hors périmètre
 - La personnalisation de la vue (choix des indicateurs affichés) relève de US23.2.2 (tableaux de bord personnalisables).

@@ -13,6 +13,7 @@
 | Given un projet, when j'ouvre la vue Tableau/Kanban, then les tâches se répartissent en colonnes par statut et la charge de rendu reste fluide en forte volumétrie via la virtualisation (EN22.2) | ⬜ |
 | Error : given un projet sans tâches ni dépendances exploitables, when j'ouvre la vue Réseau, then le système affiche un état vide explicite plutôt qu'un diagramme cassé | ⬜ |
 | Security : given un utilisateur non membre de l'équipe rattachée au projet (EN18.2), when il tente d'ouvrir la vue Réseau ou Tableau via l'API, then le système répond 404 (non-membre et cross-tenant traités de façon identique) sans exposer tâches ni dépendances ; isolation multi-tenant garantie | ⬜ |
+| Security : given un utilisateur authentifié membre du tenant mais sans droit de lecture sur ce projet, when il tente d'ouvrir la vue Réseau ou Tableau via l'API, then le système répond 403 (droit insuffisant, distinct du 404 de non-divulgation) sans exposer tâches ni dépendances | ⬜ |
 | A11y : la vue Réseau expose une représentation navigable au clavier (parcours des nœuds et de leurs liens, alternative textuelle des dépendances) et la vue Tableau/Kanban est pilotable au clavier (déplacement de focus entre colonnes et cartes), conforme WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
