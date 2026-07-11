@@ -24,7 +24,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E05 — CI/CD & Supply-chain](EPIC-cicd-supply-chain/README.md) | E05 | — | 15 | 7 | 🔄 EN05.1-12 ✅ |
 | [E06 — Administration](EPIC-administration/README.md) | E06 | 2 | — | 7 | 🔎 Sprint 3 — US mergées, en attente de recette |
 | [E07 — Infrastructure & Déploiement](EPIC-infrastructure/README.md) | E07 | — | 9 | — | ✅ Sprint 4 terminé (EN07.1/2/5) |
-| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 8 (EN17.1–8) | — | 🔄 7/8 Done — EN17.1 In progress (extraction `modules`/`tenant`/`auth` incomplète, `team` jamais implémenté, [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171)) |
+| [E17 — Infrastructure multi-repo](EPIC-infra-multi-repo/README.md) | E17 | — | 10 (EN17.1–10) | — | 🔎 10/10 mergés — EN17.1 clos 2026-07-08 (8/8 volets `db`/`modules`/`tenant`/`team`/`auth`, [pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) fermée) · en attente de recette mainteneur |
 | [E09 — Module Scrum Poker](EPIC-scrum-poker/README.md) | E09 | 3 | 1 | 5 | ⏸️ phase-3 |
 | [E10 — Module Daily Standup](EPIC-daily-standup/README.md) | E10 | 3 | — | 5 | ⏸️ phase-3 |
 | [E11 — Module Capacity Planning](EPIC-capacity-planning/README.md) | E11 | 8 | 1 | 16 | ⏸️ phase-3 |
@@ -44,7 +44,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E27 — Module OKR](EPIC-okr/README.md) | E27 | 10 | 1 | 25 | ⬜ phase-3 · pilotage |
 | [E28 — Intégration open source](EPIC-integration-open-source/README.md) | E28 | 11 | 12 | 38 | ⬜ phase-3 — dépend ADR-009 |
 | [E29 — Workflows & Automatisation](EPIC-workflows/README.md) | E29 | 14 | 6 | 79 | ⬜ phase-3 |
-| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 107 (dont 19 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔄 En cours, Sprint 5 Vague 1+) |
+| [E30 — Collaboration](EPIC-collaboration/README.md) | E30 | 19 (dont 4 Socle, ex-E08) | 14 (dont 2 Socle, ex-E08) | 107 (dont 19 Socle, ex-E08) | ⏸️ phase-3 (noyau F08.x/EN08.x : 🔎 17/17 mergés Sprint 5 Vague 1+, en attente de recette) |
 | [E38 — Management de l'innovation (SMI, pilotage)](EPIC-pilotage-innovation/README.md) | E38 | 16 | 2 | 46 | ⬜ phase-3 · pilotage |
 | [E41 — Formation & Onboarding](EPIC-formation-onboarding/README.md) | E41 | 6 | 1 | 42 | ⬜ phase-3 |
 | [E42 — Pivot Forms](EPIC-pivot-forms/README.md) | E42 | 11 | 2 | 34 | ⬜ phase-3 |
@@ -120,8 +120,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 **Phase active : Socle.** Seuls les items `Phase: Socle` sont implémentables.
 
 - Modules collaboratifs E09–E15 = `phase-3` — **verrouillés**
-- E17 Infrastructure multi-repo = Socle (reséquencé 2026-07-07) → 🔄 7/8 enablers Done (Sprint 5 Vague 0) — EN17.1 reste `In progress` (voir détail dans la synthèse EPICs ci-dessus)
-- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle, Gate 1 PO Agent passé (2026-07-07, 17/17 items Ready) → 🔄 en cours (Sprint 5 Vague 1+, 0/17 encore Done — majorité en Review)
+- E17 Infrastructure multi-repo = Socle (reséquencé 2026-07-07) → 🔎 10/10 enablers mergés (Sprint 5 Vague 0) — EN17.1 clos le 2026-07-08 ([pivot-core#171](https://github.com/PIVOT-PLATFORM/pivot-core/issues/171) fermée) · en attente de recette mainteneur
+- E30 noyau F08.x/EN08.x (ex-E08 Whiteboard) = Socle, Gate 1 PO Agent passé (2026-07-07, 17/17 items Ready) → 🔎 17/17 mergés (Sprint 5 Vague 1+) · en attente de recette mainteneur
 - E02/E06 = Sprint 3, mergés, en attente de recette · E04/E07 = Sprint 4, mergés, en attente de recette
 
 Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
@@ -143,8 +143,8 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | Medium | EN-NOTIF + US03.3.1/3.2/3.3 (notifications in-app + SUPER_ADMIN plans) | Socle | 🔎 Sprint 4 — mergé, en attente de recette |
 | Medium | US16.1.3 Badge notifications | Socle | 🔎 Review |
 | Medium | US16.2.2 Section modules à venir | Socle | 🔎 Review |
-| Critical | E17 Infrastructure multi-repo (EN17.1–8 + nginx gateway) | Socle (reséquencé 2026-07-07) | 🔄 7/8 Done — EN17.1 In progress (pivot-core#171) |
-| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | 🔄 En cours — Sprint 5 Vague 1+, Gate 1 passé (17/17 Ready) |
+| Critical | E17 Infrastructure multi-repo (EN17.1–10 + nginx gateway) | Socle (reséquencé 2026-07-07) | 🔎 10/10 mergés — EN17.1 clos (pivot-core#171 fermée) · en attente de recette |
+| — | E30 — noyau F08.x/EN08.x (ex-E08 Whiteboard) | Socle | 🔎 17/17 mergés — Sprint 5 Vague 1+ · en attente de recette |
 | — | E09–E15 Modules collaboratifs | phase-3 | ⏸️ Verrouillé |
 | High | E18 Domaine Pilotage — ombrelle (ADR-008), éclaté en E21–E30 + E32–E40 | phase-3 | ⬜ Backlog |
 | High | E19 Module Session (QUIZ multijoueur/POLL/WORDCLOUD/BRAINSTORM/QA/VOTE) | phase-3 | ⬜ Backlog |
@@ -285,3 +285,15 @@ aucun renommage d'EPIC/US, aucune promotion de `Stage`) :*
   physique des fiches EN18.1/18.2/18.9 hors de `BACKLOG-IDEATION` n'a pas été pré-exécutée ici (risque
   de liens Docusaurus cassés, cf. commit `f26f4ab`) : elle est cadrée comme 1re action de Sprint 9,
   PR dédiée avec `npm run build` vert.*
+
+*Resync Sprint 5 (2026-07-11) — formulation uniquement, **aucun `Stage` frontmatter touché**
+(recette = mainteneur, jamais Claude). Les résumés (synthèse E17/E30, Verrou Socle, Plan de
+priorisation) et la ligne Sprint 5 de `sprints/README.md` affirmaient encore « Vague 0 7/8,
+EN17.1 In progress (`pivot-core#171`), Vague 1+ en cours / 0/17 Done » — état antérieur au
+2026-07-08. Réalité (source : `sprints/sprint-5.md`, resynchronisé le 2026-07-09 depuis le
+frontmatter réel) : **Vague 0 = 10/10 enablers mergés** (EN17.1 clos le 2026-07-08, 8/8 volets
+`db`/`modules`/`tenant`/`team`/`auth`, `pivot-core#171` fermée) et **Vague 1+ = 17/17 items
+mergés**. Le Sprint 5 est **dev-terminé, en attente de recette mainteneur** — les fiches restent
+`Stage: ⬜` tant que la recette n'est pas actée (EN17.1/17.2/17.5 déjà `✅` = déjà recettés). Le
+compte d'enablers E17 corrigé 8→10 (EN17.9/17.10 ajoutés en cours de sprint, jamais répercutés
+dans la synthèse). Aucune promotion de statut de recette, aucun changement de périmètre.*
