@@ -38,10 +38,11 @@ que du scaffolding de contexte, pas un passage noté, conformément à la règle
 Le socle `public` (pivot-core) est solide : contraintes d'intégrité systématiques, indexation
 réfléchie (y compris des index partiels ciblés sur les patterns de requête réels), conventions
 cohérentes et documentées inline. Les trois repos modules respectent tous la convention "V1
-unique" et n'ont introduit aucune FK cross-schéma illégale — mais c'est en bonne partie parce que
-la pièce centrale qui permettrait de le faire correctement (`public.teams`/`team_members`) n'existe
-pas encore, et que `collaboratif` (seul module avec des tables métier réelles) a été modélisé avec
-une stratégie de clé primaire (UUID) incompatible avec celle de `public` (BIGSERIAL) — un point de
+unique" et n'ont introduit aucune FK cross-schéma illégale. La pièce centrale qui permettrait de le
+faire correctement (`public.teams`/`team_members`), absente au moment de l'audit initial, a été
+**livrée depuis** (EN17.1/`pivot-core#171`) — la convention FK est désormais applicable côté cible.
+Reste que `collaboratif` (seul module avec des tables métier réelles) a été modélisé avec une
+stratégie de clé primaire (UUID) incompatible avec celle de `public` (BIGSERIAL) — un point de
 friction concret et non documenté qu'il vaut mieux corriger maintenant, pendant que les tables
 sont vides, plutôt qu'au moment de l'intégration `pivot-core-starter` (EN17.1).
 
@@ -129,20 +130,22 @@ améliorations de performance/robustesse à faible effort, sans risque immédiat
   maintenant (harmoniser `collaboratif` sur `BIGINT`, ou documenter formellement une stratégie
   UUID plateforme avec plan de conversion pour `public`) pendant que la table `board` est vide,
   plutôt qu'au moment de brancher `pivot-core-starter`.
-- **[HIGH] `public.teams` / `public.team_members` documentés mais absents du schéma réel.** Trois
+- **[RÉSOLU depuis l'audit initial] `public.teams` / `public.team_members` désormais livrés (EN17.1/`pivot-core#171`).** Trois
   documents d'architecture (`pivot-docs/docs/architecture/bdd-multi-schema.md` ligne 13,
   `platform-overview.md` ligne 119, `modules-system.md` ligne 141) et le Javadoc de
   `ModuleFlywayConfigurer.java` (ligne 35) citent `public.teams(id)` comme cible de FK autorisée
-  au même titre que `public.tenants(id)`. Or `V1__schema_init.sql` de pivot-core ne contient
-  aucune table `teams`/`team_members`, et aucune classe `Team`/`TeamMember` n'existe dans tout le
-  codebase (recherche exhaustive). Ce gap est déjà tracké côté backlog
+  au même titre que `public.tenants(id)`. Au moment de l'audit initial, `V1__schema_init.sql` de
+  pivot-core ne contenait aucune table `teams`/`team_members`, et aucune classe `Team`/`TeamMember`
+  n'existait dans le codebase — **ce n'est plus le cas** : EN17.1/`pivot-core#171` a livré les
+  entités, les tables et leurs repositories. Ce gap est déjà tracké côté backlog
   (`EPIC-infra-multi-repo/ENABLERS/en-pivot-core-starter.md`, EN17.1, vérifié 2026-07-08 : "Aucune
   classe Team/TeamMember dans le codebase à ce jour : pas une extraction, une feature jamais
   implémentée — bloque la convention FK cross-schéma public.teams(id) déjà documentée par
   EN17.4") — ce premier audit BDD formel confirme et documente ce gap dans le domaine BDD
-  lui-même, ce qui n'avait jamais été fait explicitement ici. Conséquence concrète : la moitié de
-  la règle de FK cross-schéma documentée (`public.teams`) est aujourd'hui inapplicable par
-  construction pour les trois modules.
+  lui-même, ce qui n'avait jamais été fait explicitement ici. Conséquence : le gap est **clos** —
+  la convention FK cross-schéma `public.teams(id)` est désormais applicable ; les trois modules ne
+  l'ont simplement pas encore câblée (bootstrap). Le concept est en cours de raffinage en modèle
+  organisationnel — voir [ADR-027](pathname:///pivot-docs/adr/ADR-027-modele-organisationnel-unites-equipes).
 - **[MEDIUM] Isolation tenant/team non vérifiable au niveau BDD dans `collaboratif` tant que les
   deux points ci-dessus ne sont pas résolus.** `collaboratif.board.tenant_id`/`owner_id` et
   `board_member.user_id` sont aujourd'hui des colonnes `UUID` sans aucune contrainte de référence
