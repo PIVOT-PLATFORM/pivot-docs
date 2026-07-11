@@ -43,3 +43,4 @@
 ---
 Item Type: US · Parent: F16.3 · Module: core · Phase: Socle · Size: M · Priority: Low
 Stage: ✅
+Rôle: utilisateur-final

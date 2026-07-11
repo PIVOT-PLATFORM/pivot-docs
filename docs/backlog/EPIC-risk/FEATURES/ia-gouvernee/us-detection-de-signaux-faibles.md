@@ -30,4 +30,5 @@ Repérer dégradation de vélocité, glissement budget, obstacles récurrents da
 ---
 Item Type: US · Parent: F21.7 · Module: risk · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: officier-responsable-pmo, chef-de-projet
 Dépendances: US21.4.1

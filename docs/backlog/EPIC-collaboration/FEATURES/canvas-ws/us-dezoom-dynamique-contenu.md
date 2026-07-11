@@ -18,6 +18,7 @@
 ---
 Item Type: US · Parent: F08.3 · Module: whiteboard · Phase: Socle · Size: S · Priority: Low
 Stage: ⬜
+Rôle: utilisateur-final
 Source: PouetPouet v0.32.0 (`322123f` feat(board): borne de dézoom dynamique selon la taille du contenu)
 Dépendances: US08.3.2a (canvas local) — item net-new découvert lors de l'audit de parité POC
 2026-07-10, distinct des 17 items Done du noyau F08.x ; à vérifier au Gate 1 contre l'état réel

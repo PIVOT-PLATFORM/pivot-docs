@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: administrateur-plateforme
 Source: BL-047 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I2
 Justification: Dossier §8-I2 ; atout documenté Klaxoon
 Dépendances: —

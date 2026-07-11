@@ -61,6 +61,7 @@ global existant, sinon `404`. AC et test correspondants mis à jour en conséque
 ---
 Item Type: US · Parent: F08.4 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
 Stage: ✅
+Rôle: utilisateur-final
 Dépendances: US08.1.1, US08.1.3 — `pivot-collaboratif-core` PR
 [#31](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/31) (Gate 4 = 100/100,
 mergée), `pivot-collaboratif-ui` PR

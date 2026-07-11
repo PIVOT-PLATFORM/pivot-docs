@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.6 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-026 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection 3/4
 Justification: Dossier §5.1
 Dépendances: —

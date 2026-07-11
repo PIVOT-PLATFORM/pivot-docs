@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F46.2 · Module: core · Phase: phase-3 · Size: S · Priority: Low
 Stage: ⬜
+Rôle: administrateur-plateforme
 Dépendances: US46.1.1 (soumission et vote)

@@ -19,4 +19,5 @@
 ---
 Item Type: US · Parent: F09.2 · Module: agilite · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: animateur-facilitateur
 Dépendances: US09.2.1

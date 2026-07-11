@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.3 · Module: workflows · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: developpeur
 Dépendances: US28.3.1, EN28.4

@@ -26,4 +26,5 @@
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: chef-de-projet, developpeur
 Dépendances: US21.3.3, US21.4.1

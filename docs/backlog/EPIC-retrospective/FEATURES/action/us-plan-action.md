@@ -57,4 +57,5 @@ la session.
 ---
 Item Type: US · Parent: F20.3 · Module: agilite · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: macro:ingenierie-developpement
 Dépendances: US20.1.2c (US20.1.2 décomposée en US20.1.2a/b/c, 2026-07-10)

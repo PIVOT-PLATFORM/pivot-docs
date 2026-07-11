@@ -31,4 +31,5 @@ Terminer / Traiter / Transférer / Tolérer avec responsable et échéance.
 ---
 Item Type: US · Parent: F21.3 · Module: risk · Phase: phase-3 · Size: M · Priority: Critical
 Stage: ⬜
+Rôle: chef-de-projet, contract-manager
 Dépendances: US21.3.1

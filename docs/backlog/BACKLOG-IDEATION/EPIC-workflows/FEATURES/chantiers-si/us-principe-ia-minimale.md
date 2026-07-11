@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: architecte-d-entreprise
 Source: WF-079 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I6 (Gumloop)
 Justification: Dossier §8-I6
 Dépendances: —

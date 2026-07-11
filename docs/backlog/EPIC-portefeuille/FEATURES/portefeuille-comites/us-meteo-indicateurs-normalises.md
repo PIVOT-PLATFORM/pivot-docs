@@ -27,6 +27,7 @@
 ---
 Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: macro:direction-pilotage
 Source: PP-024 · MoSCoW: Should · Lot: Lot 1 · Origine: PM généralisé
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Cahier PM EF-PIL-02

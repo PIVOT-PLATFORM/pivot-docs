@@ -30,4 +30,5 @@ Suggérer des plans d'action de mitigation, tracés et validés, en s'appuyant s
 ---
 Item Type: US · Parent: F21.7 · Module: risk · Phase: phase-3 · Size: M · Priority: Low
 Stage: ⬜
+Rôle: chef-de-projet
 Dépendances: US21.3.3

@@ -29,3 +29,4 @@
 ---
 Item Type: US · Parent: F03.3 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: ✅
+Rôle: administrateur-plateforme

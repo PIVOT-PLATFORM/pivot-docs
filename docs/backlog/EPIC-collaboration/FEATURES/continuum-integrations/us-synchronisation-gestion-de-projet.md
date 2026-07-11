@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.7 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-039 · MoSCoW: Must · Lot: Lot 2 · Origine: Intersection 3/4 + Insight I5
 Justification: Dossier §8-I5 : 'un board isolé est un cimetière d'idées' — Must absolu
 Dépendances: —

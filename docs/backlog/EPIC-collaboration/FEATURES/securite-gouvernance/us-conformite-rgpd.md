@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.9 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Critical
 Stage: ⬜
+Rôle: administrateur-plateforme
 Source: BL-020 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4
 Justification: Cahiers ENF-SEC des 4 outils
 Dépendances: —

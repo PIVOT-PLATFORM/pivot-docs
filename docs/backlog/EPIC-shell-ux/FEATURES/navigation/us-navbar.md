@@ -24,6 +24,7 @@
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: Socle · Size: L · Priority: High
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-ui` PR [#49](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/49) (Gate 4 =
 93/100), spec figée `docs/specs/EPIC-shell-ux/us16-1-1-navigation-principale.md` (rétroactif,
 2026-07-08)

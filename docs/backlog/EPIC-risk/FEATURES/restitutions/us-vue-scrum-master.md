@@ -32,4 +32,5 @@ Risques du sprint, vélocité de risque, obstacles.
 ---
 Item Type: US · Parent: F21.8 · Module: risk · Phase: phase-3 · Size: S · Priority: Medium
 Stage: ⬜
+Rôle: scrum-master
 Dépendances: US21.4.2

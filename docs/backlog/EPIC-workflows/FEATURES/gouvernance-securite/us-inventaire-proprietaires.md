@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F29.7 · Module: automatisation · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: administrateur-plateforme
 Source: WF-034 · MoSCoW: Must · Lot: Lot 2 · Origine: PA (admin center) généralisé + I5
 Justification: Dossier §8-I5 : contre le shadow IT de workflows ; AC de transfert de propriété ajoutée lors du raffinage benchmark 2026-07-08 (cahier Zapier §2.2 : dossiers avec propriétaires et transfert de propriété — nuance absente du dossier de synthèse, l'inventaire seul ne suffit pas si le départ d'un propriétaire n'a pas d'action de transfert explicite)
 Dépendances: —

@@ -31,4 +31,5 @@
 ---
 Item Type: US · Parent: F21.5 · Module: risk · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: officier-responsable-pmo
 Dépendances: US21.1.5, US21.3.1

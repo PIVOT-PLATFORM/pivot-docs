@@ -27,6 +27,7 @@
 ---
 Item Type: US · Parent: F38.2 · Module: pilotage · Phase: phase-3 · Size: S · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Profils: Tous
 Justification: SMI — Système de Management de l'Innovation (état de l'art, ISO 56002/56000)
 Dépendances: EN38.1 (modèle SMI & moteur)

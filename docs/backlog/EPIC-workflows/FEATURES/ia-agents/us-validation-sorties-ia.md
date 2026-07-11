@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.5 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: citizen-developer
 Source: WF-032 · MoSCoW: Must · Lot: Lot 3 · Origine: Insight I6 (règle 'IA minimale')
 Justification: Dossier §8-I6 : principe d'architecture universel
 Dépendances: —

@@ -18,4 +18,5 @@
 ---
 Item Type: US · Parent: F28.10 · Module: scm-cicd · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: developpeur
 Dépendances: EN28.3

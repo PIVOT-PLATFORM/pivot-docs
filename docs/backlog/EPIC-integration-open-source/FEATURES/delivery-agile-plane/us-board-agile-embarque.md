@@ -15,4 +15,5 @@
 ---
 Item Type: US · Parent: F28.1 · Module: delivery-agile · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: scrum-master, product-owner
 Dépendances: US28.1.1

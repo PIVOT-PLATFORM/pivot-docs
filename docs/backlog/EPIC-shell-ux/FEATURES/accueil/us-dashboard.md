@@ -19,3 +19,4 @@
 ---
 Item Type: US (hors GitHub) · Parent: F16.2 · Module: core · Phase: Socle · Size: XS · Priority: Medium
 Stage: ✅
+Rôle: utilisateur-final

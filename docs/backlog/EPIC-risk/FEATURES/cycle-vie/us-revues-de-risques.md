@@ -31,4 +31,5 @@ Revues planifiées avec réévaluation et journal des décisions.
 ---
 Item Type: US · Parent: F21.3 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: officier-responsable-pmo, chef-de-projet
 Dépendances: US21.3.1

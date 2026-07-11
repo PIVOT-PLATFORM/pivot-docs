@@ -23,3 +23,4 @@
 ---
 Item Type: US · Parent: EN05.14 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: ✅
+Rôle: mainteneur-produit

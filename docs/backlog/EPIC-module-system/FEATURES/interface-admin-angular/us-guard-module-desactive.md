@@ -40,5 +40,6 @@ tests Vitest/Playwright) sur la branche `feat/en03-2-module-guard` (pivot-ui) �
 ---
 Item Type: US · Parent: F03.2 · Module: core · Phase: Socle · Size: S · Priority: Critical
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : couverte par la spec d'EN03.2 (même implémentation, mêmes PR core#123/ui#67) —
 `docs/specs/EPIC-module-system/en03-2-guard-angular-status-api.md`, non dupliquée (rétroactif, 2026-07-08)

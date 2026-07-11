@@ -35,5 +35,6 @@
 ---
 Item Type: US · Parent: F03.2 · Module: core · Phase: Socle · Size: M · Priority: High
 Stage: ✅
+Rôle: administrateur-plateforme
 Dépendances : alignement `description`/`PivotModule` à statuer (coordination EN03.1 + repos modules) ; E2E Playwright en suivi.
 Gate 5 : `pivot-core` PR [#122](https://github.com/PIVOT-PLATFORM/pivot-core/pull/122) (Gate 4 = 98/100) · `pivot-ui` PR [#66](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/66) (Gate 4 = 92/100), spec figée `docs/specs/EPIC-module-system/us03-2-1-liste-modules-statut.md` (rétroactif, 2026-07-08).

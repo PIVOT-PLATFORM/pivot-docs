@@ -26,4 +26,5 @@
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: L · Priority: Critical
 Stage: ⬜
+Rôle: developpeur, officier-responsable-pmo
 Dépendances: US21.1.6

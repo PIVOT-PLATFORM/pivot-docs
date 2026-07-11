@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.3 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: animateur-facilitateur
 Source: BL-072 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Klaxoon
 Justification: Dossier §6.3 : 'unique sur le marché' ; clé si formation/animation
 Dépendances: —

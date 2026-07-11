@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: responsable-de-la-securite-si
 Source: WF-082 · MoSCoW: Must · Lot: Lot 2 · Origine: Insight I4
 Justification: Dossier §8-I4 : composant le plus sensible après l'annuaire
 Dépendances: —

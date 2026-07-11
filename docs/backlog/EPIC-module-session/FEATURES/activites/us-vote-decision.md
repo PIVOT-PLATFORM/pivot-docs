@@ -22,4 +22,5 @@
 ---
 Item Type: US · Parent: F19.3 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: animateur-facilitateur
 Dépendances: US19.1.2

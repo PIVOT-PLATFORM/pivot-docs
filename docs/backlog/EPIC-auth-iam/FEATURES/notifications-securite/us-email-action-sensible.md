@@ -20,6 +20,7 @@
 ---
 Item Type: US · Parent: F01.5 · Module: auth · Phase: Socle · Size: S · Priority: Medium
 Stage: ✅
+Rôle: utilisateur-final
 
 **Implémentation** (pivot-core) : [PR #154](https://github.com/PIVOT-PLATFORM/pivot-core/pull/154)
 — Gate 4 = 100/100. Spec technique figée : [`docs/specs/EPIC-auth-iam/us01-5-1-email-action-sensible.md`](pathname:///pivot-docs/specs/EPIC-auth-iam/us01-5-1-email-action-sensible).

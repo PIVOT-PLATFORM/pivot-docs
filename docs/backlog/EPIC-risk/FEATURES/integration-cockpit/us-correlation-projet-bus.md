@@ -31,4 +31,5 @@ Le chaînon d'intégration entre le domaine Pilotage (E18) et le module Risque (
 ---
 Item Type: US · Parent: F21.9 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Dépendances: US21.1.6, US21.4.1

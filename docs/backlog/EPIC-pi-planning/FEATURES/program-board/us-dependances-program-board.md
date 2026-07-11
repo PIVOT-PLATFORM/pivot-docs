@@ -17,5 +17,6 @@
 ---
 Item Type: US · Parent: F50.3 · Module: agilite · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: release-train-engineer, scrum-master
 Source: PouetPouet v0.31.0 (PR5 #247 données/API — dépendances OK/bloquant + anti-cycle, PR6 #248 UI)
 Dépendances: US50.3.1

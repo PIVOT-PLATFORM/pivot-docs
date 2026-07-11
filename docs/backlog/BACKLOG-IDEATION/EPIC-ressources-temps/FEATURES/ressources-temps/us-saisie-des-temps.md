@@ -28,6 +28,7 @@
 ---
 Item Type: US · Parent: F32.1 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: PP-018 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma)
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §5.1 : alimentation du réel

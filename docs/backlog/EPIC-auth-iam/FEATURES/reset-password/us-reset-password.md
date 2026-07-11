@@ -22,4 +22,5 @@
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: Socle · Size: S · Priority: Critical
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-core` PR [#105](https://github.com/PIVOT-PLATFORM/pivot-core/pull/105) (Gate 4 = 87/100) + `pivot-ui` PR [#39](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/39) (Gate 4 = 86/100), spec figée `docs/specs/EPIC-auth-iam/us01-3-2-reset-password.md` (rétroactif, 2026-07-08)

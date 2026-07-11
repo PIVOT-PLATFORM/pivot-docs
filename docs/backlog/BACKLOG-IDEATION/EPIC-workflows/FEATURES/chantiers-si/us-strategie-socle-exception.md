@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.14 · Module: automatisation · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: architecte-d-entreprise
 Source: WF-077 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I8
 Justification: Dossier §8-I8
 Dépendances: —

@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.10 · Module: automatisation · Phase: phase-3 · Size: XL · Priority: Medium
 Stage: ⬜
+Rôle: ingenieur-d-exploitation-pilote
 Source: WF-047 · MoSCoW: Could · Lot: Lot 4 · Origine: Différenciant Power Automate
 Justification: Dossier §6.3 : seul à couvrir le legacy sans API
 Dépendances: —

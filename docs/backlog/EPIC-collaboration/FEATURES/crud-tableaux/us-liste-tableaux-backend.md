@@ -39,6 +39,7 @@
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: S · Priority: High
 Stage: ✅
+Rôle: utilisateur-final
 Dépendances: US08.1.1
 Gate 5 : `pivot-collaboratif-core` PR [#19](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/19)
 (Gate 4 = 88/100, même PR que US08.1.1), spec figée

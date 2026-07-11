@@ -26,6 +26,7 @@
 ---
 Item Type: US · Parent: F36.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: officier-responsable-pmo
 Source: PP-052 · MoSCoW: Should · Lot: Lot 1 · Origine: Différenciant PM (300 implémentations, PM Club)
 Profils: PME, Privée sous droit public, Publique, État
 Justification: Dossier §6.1 + §8-I6 : conditionne la réussite

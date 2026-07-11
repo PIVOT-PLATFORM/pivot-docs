@@ -16,4 +16,5 @@
 ---
 Item Type: US · Parent: F28.1 · Module: delivery-agile · Phase: phase-3 · Size: S · Priority: Highest
 Stage: ⬜
+Rôle: utilisateur-final
 Dépendances: US28.1.1

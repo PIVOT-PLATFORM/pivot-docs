@@ -42,4 +42,5 @@
 ---
 Item Type: US · Parent: F02.2 · Module: auth · Phase: Socle · Size: M · Priority: Medium
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-core` PR [#140](https://github.com/PIVOT-PLATFORM/pivot-core/pull/140) (Gate 4 = 94/100, needs-human-review) + `pivot-ui` PR [#83](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/83) (Gate 4 = 100/100, needs-human-review) + PR [#97](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/97) (fix bannière, Gate 4 = 98/100), spec figée `docs/specs/EPIC-espace-compte/us02-2-4-suppression-compte.md` (rétroactif, 2026-07-08)

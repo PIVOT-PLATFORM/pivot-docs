@@ -21,4 +21,5 @@
 ---
 Item Type: US · Parent: F01.2 · Module: auth · Phase: Socle · Size: XS · Priority: High
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-core` PR [#105](https://github.com/PIVOT-PLATFORM/pivot-core/pull/105) (Gate 4 = 87/100) + `pivot-ui` PR [#39](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/39) (Gate 4 = 86/100), spec figée `docs/specs/EPIC-auth-iam/us01-2-3-renvoi-lien-activation.md` (rétroactif, 2026-07-08) — écarts vs AC initiaux documentés dans la spec (nommage route/i18n, rate limiting par IP, pas d'invalidation explicite de l'ancien token, renvoi automatique depuis le login non livré)

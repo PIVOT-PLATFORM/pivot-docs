@@ -21,4 +21,5 @@
 ---
 Item Type: US · Parent: F19.2 · Module: collaboratif · Phase: phase-3 · Size: XL · Priority: Critical
 Stage: ⬜
+Rôle: utilisateur-final
 Dépendances: US19.2.1, US19.3.1 → US19.3.5

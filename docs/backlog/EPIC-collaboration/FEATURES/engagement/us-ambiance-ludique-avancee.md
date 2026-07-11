@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.11 · Module: collaboratif · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-078 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant FigJam
 Justification: Dossier §6.4 : 'l'outil le plus fun'
 Dépendances: —

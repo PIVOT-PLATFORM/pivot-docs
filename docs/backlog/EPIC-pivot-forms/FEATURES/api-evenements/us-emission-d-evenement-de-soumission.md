@@ -25,6 +25,7 @@
 ---
 Item Type: US · Parent: F42.5 · Module: forms · Phase: phase-3 · Size: S · Priority: Critical
 Stage: ⬜
+Rôle: developpeur
 Source: FRM-404 · MoSCoW: Must · Origine: Contrat d'intégration PIVOT
 Justification: Benchmark formulaires (Typeform/Jotform/Tally/Formbricks/Qualtrics/Google) — recentré PIVOT
 Dépendances: EN42.1 (moteur & schéma de formulaire)

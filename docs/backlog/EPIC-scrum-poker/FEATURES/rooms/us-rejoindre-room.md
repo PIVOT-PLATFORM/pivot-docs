@@ -45,4 +45,5 @@
 ---
 Item Type: US · Parent: F09.1 · Module: agilite · Phase: phase-3 · Size: S · Priority: High
 Stage: ⬜
+Rôle: developpeur
 Dépendances: US09.1.1

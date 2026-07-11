@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.1 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-043 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection 2/4 (MSW, Miro)
 Justification: Dossier §5.2 ; force historique Microsoft
 Dépendances: —

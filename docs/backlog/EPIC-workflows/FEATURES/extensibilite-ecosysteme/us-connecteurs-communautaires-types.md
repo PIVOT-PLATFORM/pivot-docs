@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.11 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: developpeur
 Source: WF-045 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Activepieces/n8n
 Justification: Dossier §5.3 : 60 % des pieces communautaires
 Dépendances: —

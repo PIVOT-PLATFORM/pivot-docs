@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.3 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: animateur-facilitateur
 Source: BL-034 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection 2/4 (Klaxoon, MSW via Forms)
 Justification: Dossier §5.2 ; cœur de métier Klaxoon en voie de généralisation
 Dépendances: —

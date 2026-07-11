@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.8 · Module: collaboratif · Phase: phase-3 · Size: S · Priority: Critical
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-016 · MoSCoW: Must · Lot: Lot 1 · Origine: Socle 4/4 + limite Klaxoon
 Justification: Dossier §4 ; export absent du gratuit Klaxoon = anti-pattern
 Dépendances: —

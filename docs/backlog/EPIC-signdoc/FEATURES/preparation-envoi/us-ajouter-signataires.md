@@ -20,4 +20,5 @@
 ---
 Item Type: US · Parent: F44.1 · Module: signdoc · Repo: pivot-signdoc-core/ui · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Dépendances: US44.1.1 (préparation du document)

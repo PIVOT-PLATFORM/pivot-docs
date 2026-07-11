@@ -27,6 +27,7 @@
 ---
 Item Type: US · Parent: F23.2 · Module: pilotage · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: officier-responsable-pmo
 Source: PP-021 · MoSCoW: Must · Lot: Lot 2 · Origine: 2/3 (PM, Sciforma) + Insight I9
 Profils: Grand groupe, Privée sous droit public, Publique, État
 Justification: Dossier §5.1 + §8-I9

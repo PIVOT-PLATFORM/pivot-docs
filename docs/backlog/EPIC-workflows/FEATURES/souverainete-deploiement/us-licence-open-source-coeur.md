@@ -14,6 +14,7 @@
 ---
 Item Type: US · Parent: F29.8 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: directeur-des-systemes-d-information
 Source: WF-043 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Activepieces
 Justification: Dossier §6.2 : seule vraie MIT de la catégorie
 Dépendances: —

@@ -35,4 +35,5 @@
 ---
 Item Type: US · Parent: F06.1 · Module: admin · Phase: Socle · Size: S · Priority: High
 Stage: ✅
+Rôle: administrateur-plateforme
 Gate 5 : `pivot-ui` PR [#82](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/82) (Gate 4 = 100/100), spec figée `docs/specs/EPIC-administration/us06-1-2-liste-utilisateurs-frontend.md` (rétroactif, 2026-07-08)

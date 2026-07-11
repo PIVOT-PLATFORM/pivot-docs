@@ -20,6 +20,7 @@ Couvert par l'implémentation existante de la NavbarComponent (US16.1.1 legacy).
 ---
 Item Type: US · Parent: F16.1 · Module: core · Phase: Socle · Size: S · Priority: High
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-ui` PR [#49](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/49) (Gate 4 = 93/100),
 spec figée `docs/specs/EPIC-shell-ux/us16-1-2-menu-utilisateur.md` (rétroactif, 2026-07-08) —
 divergences AC documentées dans la spec (verbe HTTP logout, stub profil, focus trap absent,

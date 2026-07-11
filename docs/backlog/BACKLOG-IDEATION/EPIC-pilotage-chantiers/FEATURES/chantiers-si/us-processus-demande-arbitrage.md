@@ -26,6 +26,7 @@
 ---
 Item Type: US · Parent: F39.1 · Module: pilotage · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: officier-responsable-pmo
 Source: PP-063 · MoSCoW: Must · Lot: Lot 1 · Origine: Insight I3
 Profils: Tous
 Justification: Dossier §8-I3

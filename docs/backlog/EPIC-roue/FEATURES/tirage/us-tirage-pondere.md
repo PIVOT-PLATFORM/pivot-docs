@@ -142,4 +142,5 @@ Prolonge US14.1.1 (roue/entrées/poids déjà en place, marqueur `lastDrawnEntry
 ---
 Item Type: US · Parent: F14.2 · Module: agilite · Repo: pivot-agilite-core/ui · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: animateur-facilitateur
 Dépendances: US14.1.1

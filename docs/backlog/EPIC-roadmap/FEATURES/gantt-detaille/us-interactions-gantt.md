@@ -28,6 +28,7 @@
 ---
 Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Size: XL · Priority: Critical
 Stage: ⬜
+Rôle: chef-de-projet
 Profils: PME, Grand groupe, Privée sous droit public, Publique, État
 Justification: Parité MS Project en mode web — modèle temporel unique (EN22.1), altitude pilotée par le profil (E40)
 Dépendances: EN22.1 (modèle temporel unique)

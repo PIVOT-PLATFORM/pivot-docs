@@ -19,6 +19,7 @@
 ---
 Item Type: US · Parent: F01.3 · Module: auth · Phase: Socle · Size: S · Priority: Critical
 Stage: ✅
+Rôle: utilisateur-final
 Gate 5 : `pivot-core` PR [#105](https://github.com/PIVOT-PLATFORM/pivot-core/pull/105) (87/100) +
 `pivot-ui` PR [#39](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/39) (86/100) — lot MVP E01,
 implémentation d'origine dans `pivot-core` [#67](https://github.com/PIVOT-PLATFORM/pivot-core/pull/67)

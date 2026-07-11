@@ -20,5 +20,6 @@
 ---
 Item Type: US · Parent: F49.3 · Module: todo · Phase: phase-3 · Size: M · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: PouetPouet v0.30.0 (PR2 #238, TodoDashboard)
 Dépendances: US49.1.1

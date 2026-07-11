@@ -15,6 +15,7 @@
 ---
 Item Type: US · Parent: F29.9 · Module: automatisation · Phase: phase-3 · Size: L · Priority: Medium
 Stage: ⬜
+Rôle: utilisateur-final
 Source: WF-052 · MoSCoW: Could · Lot: Lot 3 · Origine: Différenciant Zapier
 Justification: Dossier §6.4 : unique sur le marché ; sert I9 (documentation)
 Dépendances: —

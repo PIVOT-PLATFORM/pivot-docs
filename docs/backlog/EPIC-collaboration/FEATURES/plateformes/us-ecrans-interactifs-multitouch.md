@@ -16,6 +16,7 @@
 ---
 Item Type: US · Parent: F30.10 · Module: collaboratif · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
+Rôle: utilisateur-final
 Source: BL-052 · MoSCoW: Should · Lot: Lot 2 · Origine: Intersection 2/4 (MSW, Klaxoon)
 Justification: Dossier §5.2 : le présentiel équipé
 Dépendances: —

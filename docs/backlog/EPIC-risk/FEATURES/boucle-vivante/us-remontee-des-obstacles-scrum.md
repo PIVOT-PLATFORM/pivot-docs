@@ -26,4 +26,5 @@
 ---
 Item Type: US · Parent: F21.4 · Module: risk · Phase: phase-3 · Size: M · Priority: High
 Stage: ⬜
+Rôle: scrum-master
 Dépendances: US21.4.1
