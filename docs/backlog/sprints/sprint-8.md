@@ -4,6 +4,18 @@
 > (gouvernance ADR) terminé — ADR-023 (catalogue) et ADR-024 (forks) notamment, pertinents pour ce
 > sprint, Accepté. Démarré en solo (Sprint 9 volontairement pas en parallèle — voir §Séquencement
 > du README des sprints : valider les templates satellites sur l'agilité avant d'engager Pilotage).
+>
+> 🏁 **Terminé (2026-07-11) :** tous les items du tableau ci-dessous livrés — implémentation
+> mergée dans `pivot-agilite-core`/`pivot-agilite-ui` (EN09.1, US09.1.x, US09.2.x, US09.3.1,
+> US14.1.1-3.1, US20.1.1-3.2), Gate 1 AC complètes + statuts sprint mergés côté `pivot-docs`
+> (#195-202, #206, #208-209, #213), TAXO-2 backfillé (#212, 600/674 US résolus, reste documenté
+> `zones-ombre.md` #5), EN17.11 câblage shell + seed `module_activations` mergé (#211). Écart
+> ADR-026 §2 découvert en cours de sprint (reset/revote + estimation finale) comblé par une US
+> dédiée (US09.2.3, #213) plutôt qu'un amendement d'ADR-026. `Stage` frontmatter de chaque US
+> reste `⬜` jusqu'à la recette mainteneur individuelle (§5 du backlog) — le sprint est clos au
+> sens du plan de charge, pas de la recette item par item. **Objectif "valider les templates
+> satellites sur l'agilité avant d'engager Pilotage" (§Séquencement du README des sprints)
+> atteint — condition de déverrouillage du Sprint 9 remplie.**
 
 **Scope :** premiers modules satellites sur `pivot-agilite-*` — périmètres volontairement petits pour valider les templates EN17.5/6 avant d'engager le domaine Pilotage
 **Sortie :** 1er repo satellite en prod + retour d'expérience sur les templates
