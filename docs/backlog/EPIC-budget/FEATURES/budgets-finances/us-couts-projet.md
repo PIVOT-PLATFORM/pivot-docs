@@ -10,7 +10,7 @@
 |---------|--------|
 | Given un projet, when le contrôleur saisit les coûts, then prévu, engagé et réalisé sont enregistrés et distingués, et l'écart entre ces trois valeurs est calculé et visualisable | ⬜ |
 | Error : given un montant réalisé supérieur au prévu, system signale le dépassement sans bloquer la saisie | ⬜ |
-| Security : seuls le contrôleur de gestion et le chef de projet affectés au projet peuvent saisir ou modifier les montants prévu/engagé/réalisé ; les autres profils (dont lecture seule) ont un accès en consultation uniquement, filtré par leur périmètre de visibilité par rôle | ⬜ |
+| Security : un utilisateur non membre du projet ou d'un autre tenant reçoit 404 ; un membre affecté sans le rôle requis (contrôleur de gestion ou chef de projet) reçoit 403 en saisie/modification des montants prévu/engagé/réalisé ; les autres profils (dont lecture seule) ont un accès en consultation uniquement, filtré par leur périmètre de visibilité par rôle | ⬜ |
 | A11y : la vue de suivi des coûts (tableau prévu/engagé/réalisé, visualisation d'écart) est navigable au clavier et lisible par lecteur d'écran, conformément WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

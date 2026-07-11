@@ -16,6 +16,7 @@ Vecteur de poids par typologie sur 6 dimensions (Délai, Coût, Qualité, Sécur
 | Given un profil projet rattaché à une typologie pondérée, when le score de gravité multidimensionnelle est calculé (US21.2.2), then les poids d'impact de la typologie du projet sont appliqués automatiquement sans saisie manuelle | ⬜ |
 | Error : given une tentative d'enregistrement d'un vecteur de poids incomplet (dimension manquante) ou hors des bornes autorisées, system rejette l'enregistrement et retourne les dimensions invalides | ⬜ |
 | Security : seuls les rôles Archi et admin peuvent créer ou modifier une matrice de pondération ; une modification impacte le scoring de tous les projets rattachés à la typologie, donc l'action est journalisée (auteur, date, ancien/nouveau vecteur) | ⬜ |
+| A11y : l'éditeur de vecteur de poids sur les 6 dimensions (libellés de dimensions, champs de saisie, messages d'erreur sur dimension manquante ou hors bornes, navigation clavier) respecte WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
 - Le calcul du score de gravité multidimensionnelle lui-même, qui consomme cette matrice — couvert par US21.2.2.

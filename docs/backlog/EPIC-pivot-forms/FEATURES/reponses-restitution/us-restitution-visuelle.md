@@ -11,7 +11,8 @@
 | Given un formulaire ayant reçu des réponses, when j'ouvre la restitution, then chaque type de champ affiche une visualisation adaptée (barres pour choix unique/multiple, moyenne+distribution pour échelle/NPS, liste pour texte libre) | ⬜ |
 | Given un filtre de période ou de segment appliqué sur le tableau de réponses (US42.4.1), when la restitution est consultée, then elle reflète le même sous-ensemble filtré | ⬜ |
 | Error : given un formulaire sans aucune réponse encore reçue, when la restitution est ouverte, then un état vide explicite s'affiche (pas de graphique cassé ni de division par zéro) | ⬜ |
-| Security : la restitution respecte le même RBAC que le tableau de réponses (US42.4.1) — pas de vue publique de la restitution sans configuration explicite | ⬜ |
+| Security : la restitution respecte le même RBAC que le tableau de réponses (US42.4.1) — un non-membre du formulaire (ou une requête cross-tenant) reçoit un 404, pas un 403 ; pas de vue publique de la restitution sans configuration explicite | ⬜ |
+| A11y : chaque visualisation graphique expose une alternative accessible (tableau de données équivalent ou description textuelle des valeurs agrégées) exploitable au lecteur d'écran ; l'information n'est jamais portée par la seule couleur (libellés/motifs sur les barres et segments) ; les contrastes respectent WCAG AA | ⬜ |
 
 ## Hors périmètre
 

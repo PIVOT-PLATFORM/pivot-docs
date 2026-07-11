@@ -11,7 +11,7 @@
 | Given une instance planifiée, when le PMO prépare la revue, then un support structuré / diaporama du portefeuille est généré | ⬜ |
 | Les décisions et comptes rendus sont saisis et convertis en actions assignables | ⬜ |
 | Error : given un compte rendu sans décision tracée, system le signale avant clôture de l'instance | ⬜ |
-| Security/Gouvernance : décisions et comptes rendus sont horodatés et historisés (traçabilité des instances) ; seuls les membres de l'équipe rattachée à l'instance peuvent créer/modifier une décision | ⬜ |
+| Security/Gouvernance : décisions et comptes rendus sont horodatés et historisés (traçabilité des instances) ; un non-membre de l'équipe rattachée ou une instance d'un autre tenant renvoie 404 (isolation multi-tenant, pas de fuite d'existence) et un membre au rôle insuffisant reçoit 403 en création/modification d'une décision | ⬜ |
 | A11y : le support de revue et la liste des actions assignables sont conformes RGAA 4 / WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

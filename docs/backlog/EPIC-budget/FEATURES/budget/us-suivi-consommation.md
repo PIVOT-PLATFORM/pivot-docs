@@ -10,7 +10,7 @@
 |---------|--------|
 | Given un budget saisi (US26.1.1), when une dépense est enregistrée via `POST .../projects/{id}/expenses` (poste, montant, date, description), then le tableau de bord affiche budget alloué, dépensé, restant et % consommé par poste, et une alerte est déclenchée si la consommation dépasse le seuil configurable (80% par défaut) | ⬜ |
 | Error : given une dépense dont le poste ne correspond à aucun poste budgétaire existant, system retourne 400 sans enregistrer la dépense | ⬜ |
-| Security : seuls le chef de projet et le responsable financier affectés au projet peuvent enregistrer une dépense ou consulter le détail des montants ; un utilisateur en lecture seule sur le projet n'a pas accès à l'écriture | ⬜ |
+| Security : un utilisateur non membre du projet ou d'un autre tenant reçoit 404 sur les endpoints de dépenses ; un membre affecté sans le rôle requis (chef de projet ou responsable financier) reçoit 403 en enregistrement de dépense, et un membre en lecture seule n'a pas accès à l'écriture ni au détail des montants | ⬜ |
 | A11y : le tableau de bord (indicateurs, graphique d'évolution, alertes) est consultable au clavier et les alertes de dérive sont annoncées aux lecteurs d'écran, conformément WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

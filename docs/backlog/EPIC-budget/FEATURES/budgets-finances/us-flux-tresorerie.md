@@ -11,7 +11,7 @@
 | Given un portefeuille budgété, when le contrôleur consulte la trésorerie, then une projection par période est produite | ⬜ |
 | Given un budget pluriannuel existant, when le contrôleur applique la répartition en un clic, then les montants sont ventilés sur les exercices sans ressaisie manuelle | ⬜ |
 | Error : given des données budgétaires incomplètes (exercice sans budget pluriannuel saisi), system indique que la projection est partielle et identifie les exercices manquants | ⬜ |
-| Security : seul le contrôleur de gestion (ou rôle admin du portefeuille) peut déclencher la répartition en un clic (action d'écriture sur les exercices) ; la consultation de la projection reste soumise aux périmètres de visibilité par rôle | ⬜ |
+| Security : un utilisateur non membre du portefeuille ou d'un autre tenant reçoit 404 ; un membre sans le rôle requis (contrôleur de gestion ou admin du portefeuille) reçoit 403 en déclenchant la répartition en un clic (action d'écriture sur les exercices) ; la consultation de la projection reste soumise aux périmètres de visibilité par rôle | ⬜ |
 | A11y : le graphique de projection de trésorerie par période est doublé d'une restitution tabulaire accessible au clavier et au lecteur d'écran, conformément WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre

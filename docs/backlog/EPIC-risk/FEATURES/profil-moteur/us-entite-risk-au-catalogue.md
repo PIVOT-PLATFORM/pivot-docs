@@ -16,6 +16,7 @@ Déclarer l'entité Risk (YAML versionnable) rattachée à Project, Portfolio, V
 | Given l'entité Risk déclarée, when un PMO consulte le catalogue, then les champs structurants du risque (famille, typologie d'origine, statut, rattachement projet) apparaissent avec leur type et leur relation documentée | ⬜ |
 | Error : given une déclaration YAML référençant une relation vers une entité inexistante au catalogue ou utilisant une FK directe interdite entre modules, system rejette la déclaration au moment de la validation/build du catalogue et retourne l'erreur de schéma | ⬜ |
 | Security : la déclaration ou modification de l'entité Risk au catalogue est réservée aux rôles Dev et admin (impact structurant sur le schéma partagé) ; le catalogue documente si le risque référence des données sensibles (ex. données perso via profil projet) sans les exposer directement | ⬜ |
+| A11y : la vue de consultation du catalogue par le PMO (tableau des champs, types et relations, en-têtes de colonnes, navigation clavier) respecte WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
 - Le contenu métier détaillé du risque (score, gravité, statut de cycle de vie, plans de traitement) — couvert par les US de scoring (F21.2) et de cycle de vie (F21.3).

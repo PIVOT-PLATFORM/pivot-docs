@@ -4,6 +4,12 @@
 
 **Sortie :** registre de risques opérationnel + socle Zero Trust posé
 
+**Gate 1 READINESS passé (2026-07-11)** — **22/22 items Ready** (fourchette 88-100). ACs complétés
+sur ~7 fiches (stubs Zero Trust EN43.5/6, A11y F21.1, sécurité 404-403 F21.3). **2 blocages
+d'implémentation** (pas de Gate 1) : **EN43.7d** → EN43.11 (classification A/B/C non livrée) ;
+**US21.1.6 + la persistance de tout F21.1** → **EN21.1** (schéma Flyway `risk` + entités JPA) ⬜
+**non planifié dans ce sprint** — à ordonnancer en tête. Décisions consolidées → commentaire de la PR Gate 1.
+
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
 | US21.1.1 | Questionnaire de cadrage | M | Critical | ⬜ |

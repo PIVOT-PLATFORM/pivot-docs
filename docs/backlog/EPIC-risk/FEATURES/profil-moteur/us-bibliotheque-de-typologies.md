@@ -16,6 +16,7 @@
 | Given une typologie existante, when un Archi l'édite ou en crée une nouvelle (nom, familles dominantes rattachées), then la typologie est enregistrée et devient sélectionnable dans le questionnaire de cadrage (US21.1.1) | ⬜ |
 | Error : given une tentative de création d'une typologie sans famille dominante rattachée ou avec un nom déjà utilisé, system rejette la création et retourne un message d'erreur explicite | ⬜ |
 | Security : seuls les rôles Archi et admin peuvent créer, modifier ou désactiver une typologie ; la consultation de la bibliothèque reste ouverte à tout membre de l'équipe projet (PMO, Chef de projet) | ⬜ |
+| A11y : la liste des typologies et le formulaire d'édition (nom, sélection des familles dominantes, libellés, messages d'erreur, navigation clavier) respectent WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
 - Le calcul du poids d'impact par typologie sur les 6 dimensions (Délai, Coût, Qualité, Sécurité, Conformité, Réputation) — couvert par la matrice de pondération (US21.1.4), qui consomme cette bibliothèque.

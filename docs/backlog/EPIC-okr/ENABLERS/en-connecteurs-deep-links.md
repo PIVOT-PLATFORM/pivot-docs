@@ -6,7 +6,8 @@
 inter-modules : auto-update des `KeyResult` depuis des sources externes (BI/API/tableur), rappels
 de `CheckIn` publiés sur le **bus PIVOT** (→ Slack/Teams), et **deep-links** de pilotage vers la
 roadmap (E22), le portefeuille (E23) et le risque (E21). **Pas de FK inter-modules** — liens
-logiques par identifiant + événements, conformément à ADR-006/008.
+logiques par identifiant + événements, conformément à ADR-006 (multi-repo, pas de FK inter-modules)
+et ADR-025 (bus d'événements & schéma inter-briques ; implémentation `EN28.4` ⬜).
 
 **Justification** : Les OKR ne vivent pas isolés : l'auto-update supprime la saisie manuelle, les
 rappels entretiennent la cadence de check-in, les deep-links relient l'intention à l'exécution.
@@ -16,8 +17,8 @@ autres modules et concentre le respect d'ADR-006/008 (pas de FK inter-modules) e
 **Critères de complétion** :
 - [ ] Point d'entrée d'auto-update d'un `KeyResult` (valeur `actuel`) depuis une source externe
   (connecteur BI/API/tableur), traçant l'origine de la mise à jour
-- [ ] Émission de rappels de `CheckIn` sur le bus PIVOT (ADR-008) à destination des canaux
-  Slack/Teams, sans appel synchrone direct au module de notification
+- [ ] Émission de rappels de `CheckIn` sur le bus PIVOT (ADR-025, implémentation `EN28.4` ⬜) à
+  destination des canaux Slack/Teams, sans appel synchrone direct au module de notification
 - [ ] Deep-links sortants vers roadmap (E22), portefeuille (E23), risque (E21) construits par
   identifiant logique, **sans clé étrangère** vers les schémas de ces modules
 - [ ] Confidentialité RGPD respectée : les rappels et deep-links relatifs à un `Objective`
@@ -32,7 +33,7 @@ autres modules et concentre le respect d'ADR-006/008 (pas de FK inter-modules) e
   message de rappel est publié sur le bus PIVOT vers le canal configuré (Slack/Teams).
 - [ ] Given un `KeyResult` lié logiquement à un projet roadmap (E22), when j'ouvre le deep-link,
   then je suis redirigé vers l'item E22 par identifiant, sans qu'aucune FK inter-modules n'existe en
-  base (conforme ADR-006/008).
+  base (conforme ADR-006 multi-repo / ADR-025 bus & schéma inter-briques).
 - [ ] Error case: given une source externe indisponible ou un payload d'auto-update malformé, when
   la mise à jour est tentée, then elle est rejetée/ignorée proprement (log + `4xx` côté connecteur)
   sans corrompre la valeur `actuel` existante ni bloquer le module.
@@ -49,4 +50,4 @@ Item Type: Enabler · Parent: E27 · Module: pilotage · Phase: phase-3 · Size:
 Stage: ⬜
 Profils: Tous
 Justification: Connecteurs auto-update KR + rappels bus PIVOT + deep-links pilotage sans FK inter-modules (ADR-006/008) — issu de la décomposition d'EN27.1 XL
-Dépendances: EN27.1a (modèle & persistance OKR) · EN27.1b (moteur, pour statut/rappels) · bus PIVOT (ADR-008)
+Dépendances: EN27.1a (modèle & persistance OKR) · EN27.1b (moteur, pour statut/rappels) · bus PIVOT (ADR-025, implémentation EN28.4 ⬜)

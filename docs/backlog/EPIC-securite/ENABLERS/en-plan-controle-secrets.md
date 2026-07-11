@@ -13,6 +13,13 @@
 - [ ] Une clé fuitée est révocable en une action
 - [ ] Portée (scope) limitée par module — aucun accès croisé aux secrets d'un autre module
 
+**Critères d'acceptation (Given/When/Then)** :
+- [ ] Given un adaptateur ayant besoin d'un credential externe, when il le demande à OpenBao à l'exécution, then il reçoit un secret dynamique à courte durée de vie, scopé à son module, sans jamais le stocker de façon persistante.
+- [ ] Given un secret dynamique arrivé à échéance de son bail, when l'adaptateur tente de le réutiliser, then le secret est déjà révoqué et l'adaptateur doit en redemander un nouveau (pas de secret longue durée réutilisable).
+- [ ] Given un secret suspecté compromis, when le mainteneur déclenche la révocation, then la clé est révoquée en une seule action et tout usage ultérieur est refusé.
+- [ ] Error case: given OpenBao injoignable ou une demande de secret refusée (scope insuffisant), when l'adaptateur sollicite le secret, then l'opération échoue de façon fermée (fail-closed, pas de fallback vers un secret en dur) et l'échec est journalisé sans divulguer la valeur du secret.
+- [ ] Security: un module ne peut lire que les secrets de sa propre portée — une demande de secret hors scope est refusée (`403`) ; aucun secret n'apparaît en clair dans les logs, les variables d'environnement persistées ou le code ; l'accès aux secrets d'un autre tenant/module est impossible (isolation par policy OpenBao).
+
 **Dépendances** : EN07.2, EN07.11
 
 **Statut** : ⬜ À faire

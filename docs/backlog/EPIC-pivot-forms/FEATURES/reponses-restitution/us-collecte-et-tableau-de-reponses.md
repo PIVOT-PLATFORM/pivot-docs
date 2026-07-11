@@ -11,7 +11,8 @@
 | Given un formulaire ayant reçu des réponses, when j'ouvre le tableau de réponses, then je peux filtrer/trier par champ et par date de soumission | ⬜ |
 | Given un filtre appliqué sur le tableau, when je lance un export CSV/Excel, then l'export ne contient que les lignes filtrées, pas l'intégralité des réponses | ⬜ |
 | Error : given un export demandé sur un très gros volume de réponses, when il dépasse un seuil de taille, then l'export est proposé de façon asynchrone (lien de téléchargement différé) plutôt que de bloquer ou d'échouer silencieusement | ⬜ |
-| Security : l'accès au tableau et à l'export est réservé aux propriétaires/collaborateurs déclarés du formulaire (RBAC) — un export ne doit jamais être accessible par URL directe non authentifiée | ⬜ |
+| Security : l'accès au tableau et à l'export est réservé aux propriétaires/collaborateurs déclarés du formulaire (RBAC) — un non-membre du formulaire (ou une requête cross-tenant) reçoit un 404, jamais un 403 révélant l'existence du formulaire ; un export ne doit jamais être accessible par URL directe non authentifiée | ⬜ |
+| A11y : le tableau est navigable au clavier (en-têtes de colonnes triables activables au clavier, ordre de tabulation cohérent) ; les contrôles de filtre et le déclencheur d'export ont un libellé accessible ; le tri appliqué est annoncé au lecteur d'écran (`aria-sort`) et l'export asynchrone signale sa disponibilité via une région live | ⬜ |
 
 ## Hors périmètre
 

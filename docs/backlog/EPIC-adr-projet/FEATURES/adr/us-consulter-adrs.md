@@ -11,7 +11,7 @@
 | Given un projet ayant des ADRs, when le membre liste les ADRs, then GET `/api/pilotage/roadmap/projects/{id}/adrs` retourne une liste paginée, filtrable par statut, affichée en vue Angular avec badge de statut et aperçu de la décision | ⬜ |
 | Given une recherche full-text sur titre, contexte ou décision, when l'utilisateur lance la recherche, then les ADRs pertinents sont retournés et la vue détail affiche contexte, décision, conséquences et historique des versions | ⬜ |
 | Error : given un paramètre de pagination invalide (page négative, limite hors bornes), system retourne 400 | ⬜ |
-| Security : seuls les membres de l'équipe rattachée au projet peuvent consulter ses ADRs ; toute autre requête retourne 403 | ⬜ |
+| Security : seuls les membres de l'équipe rattachée au projet peuvent consulter ses ADRs ; un non-membre ou une requête cross-tenant se comporte comme si le projet/ADR n'existait pas (404, jamais de fuite d'existence via un 403 révélateur) | ⬜ |
 | A11y : la liste et la vue détail des ADRs sont navigables au clavier, le badge de statut n'est pas porté uniquement par la couleur | ⬜ |
 
 ## Hors périmètre

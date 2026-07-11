@@ -16,6 +16,7 @@ Référentiel unique de familles (Technique, Données, Sécurité, Compétences,
 | Given un risque en cours de création ou d'édition, when l'utilisateur le rattache à une famille, then une seule famille parmi les 12 est sélectionnable et ce rattachement est requis pour enregistrer le risque | ⬜ |
 | Error : given une tentative de rattacher un risque à une famille hors de la taxonomie (valeur libre ou obsolète), system rejette l'enregistrement et retourne un message d'erreur listant les 12 familles valides | ⬜ |
 | Security : la taxonomie est un référentiel en lecture seule pour tous les rôles applicatifs (Chef de projet, PMO, Archi) ; seul le rôle admin peut modifier la liste des 12 familles, action journalisée car elle impacte la comparabilité inter-projets de l'historique existant | ⬜ |
+| A11y : la consultation de la taxonomie et le sélecteur de famille au rattachement d'un risque (libellés des 12 familles, message d'erreur listant les familles valides, navigation clavier) respectent WCAG 2.1 AA | ⬜ |
 
 ## Hors périmètre
 - La pondération des impacts par famille selon la typologie du projet — couverte par la matrice de pondération (US21.1.4).

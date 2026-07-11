@@ -9,6 +9,12 @@
 Gantt, portefeuille) sans requérir le profil adaptatif ni l'habillage entreprise.
 **Sortie :** ADR projet + budget projet + OKR socle + portefeuille vague 2 opérationnels.
 
+**Gate 1 READINESS passé (2026-07-11)** — **22/23 Ready**. Seul non-ready : **US26.2.3** → dépend de
+**US26.2.2** (budgets pluriannuels PPI, en idéation). Implémentables sur le socle S9 mergé : **EN27.1a**
+(fondation OKR) → b/c, cluster **E24** (US24.1.x), cluster **E26** (US26.1.x, US26.2.1), cluster
+**E23** (US23.2.3/2.5, chaîne 6a→6b→6c). Dépendances externes : bus ADR-025/EN28.4 (EN27.1d volet
+rappels, US27.6.2). Décisions consolidées → commentaire de la PR Gate 1.
+
 > **Préparation PO Agent :** items encore au stade stub — **Gate 1 (AC Given/When/Then + erreur +
 > sécurité) réalisé par l'agent d'implémentation de chaque item**, même précédent que Sprint 8.
 > Les US marquées `→ idéation` dans les READMEs d'EPIC restent hors périmètre (`BACKLOG-IDEATION`).

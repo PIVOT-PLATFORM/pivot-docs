@@ -12,6 +12,7 @@
 | Given une date de fermeture ou un quota de réponses configuré, when la limite est atteinte, then le lien affiche un message de fermeture et n'accepte plus de nouvelle soumission | ⬜ |
 | Error : given un lien de formulaire non publié ou supprimé, when il est ouvert, then une page d'erreur explicite s'affiche (pas de 500 ni de formulaire partiellement chargé) | ⬜ |
 | Security : le lien utilise un identifiant non devinable (pas d'ID séquentiel) ; les tentatives de mot de passe sont limitées en fréquence (anti brute-force) | ⬜ |
+| A11y : les pages d'état (saisie du mot de passe, fermeture, quota atteint, erreur) sont perceptibles et navigables au clavier, avec un message d'erreur associé programmatiquement au champ mot de passe (`aria-describedby`), pas seulement un indice visuel | ⬜ |
 
 ## Hors périmètre
 

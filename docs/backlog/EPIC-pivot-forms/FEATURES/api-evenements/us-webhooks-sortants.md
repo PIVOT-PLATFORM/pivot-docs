@@ -11,7 +11,8 @@
 | Given un webhook configuré avec une URL cible, when une réponse est soumise, then le JSON complet de la réponse est envoyé en POST à cette URL | ⬜ |
 | Given un webhook dont l'URL cible répond en erreur ou timeout, when l'envoi échoue, then il est retenté selon une politique de backoff, puis journalisé comme échec définitif après épuisement des tentatives | ⬜ |
 | Error : given une URL de webhook invalide ou non joignable configurée par erreur, when le concepteur l'enregistre, then une validation de base (format, résolution DNS) le signale avant d'attendre la première soumission réelle | ⬜ |
-| Security : l'URL cible doit être HTTPS ; chaque envoi est signé (secret partagé ou HMAC) pour que le récepteur vérifie l'authenticité de l'origine | ⬜ |
+| Security : l'URL cible doit être HTTPS ; chaque envoi est signé (secret partagé ou HMAC) pour que le récepteur vérifie l'authenticité de l'origine ; les cibles pointant vers des adresses internes/privées (loopback, RFC 1918, link-local, métadonnées cloud) sont refusées pour prévenir le SSRF | ⬜ |
+| Security : la configuration d'un webhook et de son secret est réservée aux propriétaires/collaborateurs déclarés du formulaire (RBAC) — un non-membre (ou une requête cross-tenant) reçoit un 404 ; le secret n'est jamais réaffiché en clair après enregistrement | ⬜ |
 
 ## Hors périmètre
 

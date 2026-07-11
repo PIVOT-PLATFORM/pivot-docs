@@ -12,6 +12,7 @@
 | Given un formulaire embarqué qui se termine (soumission), when la confirmation s'affiche, then elle reste dans le composant embed, sans redirection qui ferait perdre le contexte de la page hôte | ⬜ |
 | Error : given un formulaire embarqué supprimé ou dépublié après intégration dans une page hôte, when la page hôte est chargée, then le composant affiche un état vide explicite plutôt qu'une erreur JavaScript qui casserait la page hôte | ⬜ |
 | Security : le composant d'intégration s'exécute en isolation (sandbox) — un script du formulaire ne peut pas accéder au DOM ou aux cookies de la page hôte, et réciproquement | ⬜ |
+| A11y : le formulaire embarqué reste atteignable au clavier depuis la page hôte (ordre de tabulation continu, pas de piège de focus dans le sandbox), et la confirmation de soumission affichée dans le composant est annoncée aux technologies d'assistance (zone live ARIA) | ⬜ |
 
 ## Hors périmètre
 
