@@ -217,7 +217,9 @@ le bus et les deep-links »*) et [ADR-009](pathname:///pivot-docs/adr/ADR-009-ca
 - **Données — module → cockpit** : le module alimente la card via le **bus d'événements**
   ([ADR-025](pathname:///pivot-docs/adr/ADR-025-bus-evenements-schema-inter-briques)) et son **statut
   de santé**. La card est une **projection** ; **jamais de FK inter-modules**
-  ([ADR-006](pathname:///pivot-docs/adr/ADR-006-multi-repo-architecture)).
+  ([ADR-006](pathname:///pivot-docs/adr/ADR-006-multi-repo-architecture)). Le contrat de chaque
+  événement (payload, émetteurs, consommateurs, cards) est détaillé dans le
+  [catalogue d'événements](pathname:///pivot-docs/events/).
 - **Navigation — cockpit → module** : l'action/drill-down d'une card est un **deep-link** qui ouvre le
   module sur le bon contexte (`?project={ref}`), en propageant l'identité (SSO).
 
