@@ -35,7 +35,7 @@ maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (n
 | US22.4.6 | Jalons & tâches périodiques | M | Medium | ⬜ |
 | US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ |
 | US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ⬜ |
-| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ⬜ |
+| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ⬜ backend mergé ([pivot-pilotage-core#63](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/63)) — frontend `pivot-pilotage-ui` restant |
 | US22.4.10a | Déplacement/redimensionnement des barres & lien par glisser *(ex-US22.4.10 XL)* | L | Critical | ⬜ |
 | US22.4.10b | Zoom de l'échelle de temps & poignée d'avancement | M | Critical | ⬜ |
 | US22.4.10c | Virtualisation du rendu & édition clavier accessible | L | Critical | ⬜ |
