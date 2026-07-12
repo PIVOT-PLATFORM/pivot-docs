@@ -206,7 +206,55 @@ En 3 s → Cards → Drill-down → Action → Vue externe**.
 - **Action** : **Lancer une formation** / relancer une campagne d'adoption.
 - **Vue externe** : ◐ agrégé, jamais de nominatif (usage anonymisé) ; verbatims NPS 🔴 masqués.
 
-## 6. Ce que ce cadrage fige (et ce qui reste à affiner)
+## 6. Parcours global — du cockpit aux modules
+
+Une card **n'est pas** le module : le cockpit **supervise**, le module **fait le travail**. Le lien
+entre les deux est déjà cadré par [ADR-008](pathname:///pivot-docs/adr/ADR-008-domaines-modules-cockpits)
+(*« un cockpit est une composition de modules, orchestrée par le shell, alimentée par les modules via
+le bus et les deep-links »*) et [ADR-009](pathname:///pivot-docs/adr/ADR-009-cadre-integration-open-source)
+(cadre d'intégration). Deux sens de circulation :
+
+- **Données — module → cockpit** : le module alimente la card via le **bus d'événements**
+  ([ADR-025](pathname:///pivot-docs/adr/ADR-025-bus-evenements-schema-inter-briques)) et son **statut
+  de santé**. La card est une **projection** ; **jamais de FK inter-modules**
+  ([ADR-006](pathname:///pivot-docs/adr/ADR-006-multi-repo-architecture)).
+- **Navigation — cockpit → module** : l'action/drill-down d'une card est un **deep-link** qui ouvre le
+  module sur le bon contexte (`?project={ref}`), en propageant l'identité (SSO).
+
+### Le cockpit ne connaît pas la nature du module
+
+Qu'un module soit développé par PIVOT, intégré depuis l'open source, ou externe au tenant, il se
+branche au cockpit par le **même contrat à six capacités** (ADR-009 §4) : **Identité** (SSO) ·
+**Entités** (catalogue) · **Événements** (bus → *donnée de la card*) · **Santé** (→ *bandeau*) ·
+**Liens profonds** (→ *drill-down*) · **Thème** (tokens). La card est donc **agnostique au mode
+d'intégration** :
+
+| Type de module | La card est alimentée par | Le drill-down / l'action ouvre… | Exemples |
+| --- | --- | --- | --- |
+| **Natif PIVOT** (`pivot-*-core/ui`) | événements du module sur le bus | une **route Angular interne**, dans le même shell | Roadmap (E22), Whiteboard, Planning poker |
+| **Adaptateur OSS** (ADR-009) | `adapter.toEvents()` / `adapter.health()` | un **deep-link** (embarqué ou SSO) via `adapter.deepLink()` | OpenProject (PPM), Plane (agile), Formbricks |
+| **Lien (SSO + widget statut)** | `health()` — un simple widget de statut | **SSO + lien profond** vers l'outil tel quel | Keycloak, BookStack |
+| **Externe / ITSM du tenant** (EN51.10) | **API agrégats** du tenant | un **`href` profond** vers l'ITSM (ServiceNow…) | Files de support, incidents |
+
+![Parcours cockpit vers modules](diagrams/cockpits-dsi-parcours-modules.png)
+
+> Source PlantUML : [`diagrams/cockpits-dsi-parcours-modules.puml`](diagrams/cockpits-dsi-parcours-modules.puml) — le PNG est généré en CI.
+
+### Aller-retour & continuité
+
+- **L'identité voyage avec le deep-link** : la classe d'identité (interne/externe,
+  [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-identites-externes)) est portée par le SSO, donc
+  un externe retrouve **dans le module** les mêmes restrictions (scoping, masquage) que sur la card —
+  la sécurité n'est pas seulement au niveau de la card.
+- **Activation (E03)** : module désactivé ou WIP → card en état `module-wip`, aucune navigation ;
+  module activé → card *live* + deep-link ouvert. C'est le même interrupteur qui compose le cockpit.
+- **Cohérence visuelle** : tout module (natif ou intégré) respecte les tokens du design-system → la
+  transition cockpit → module ne casse pas le fil.
+- **Recomposition** : une card peut agréger **plusieurs** modules (ex. *Santé du portefeuille* =
+  pilotage + risques) et un module alimente **plusieurs** cockpits — la composition est orchestrée par
+  le shell (EN51.2), jamais possédée par un module (ADR-008 §3).
+
+## 7. Ce que ce cadrage fige (et ce qui reste à affiner)
 
 - **Figé** : l'anatomie, les 6 états, les 4 modes de rendu par identité, la règle des 3 s — ce sont
   les contrats des enablers EN51.1/51.2/51.4/51.5.
