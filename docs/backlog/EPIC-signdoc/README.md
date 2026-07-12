@@ -29,6 +29,7 @@ Signature électronique de documents auto-hébergée : dépôt d'un PDF, positio
 ### Enablers
 
 - **EN44.1** — Stockage chiffré des documents (source + finalisé) et horodatage du certificat numérique
+- **EN44.2** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Hors périmètre
 
@@ -70,6 +71,7 @@ d'extension de périmètre) :
 |---------|--------|
 | **Enablers** | |
 | EN44.1 — Stockage chiffré des documents | ⬜ |
+| [EN44.2 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F44.1 — Préparation et envoi** | |
 | [US44.1.1 — Préparer un document et positionner les champs](FEATURES/preparation-envoi/us-preparer-document.md) | ⬜ |
 | [US44.1.2 — Ajouter des signataires et envoyer les invitations](FEATURES/preparation-envoi/us-ajouter-signataires.md) | ⬜ |

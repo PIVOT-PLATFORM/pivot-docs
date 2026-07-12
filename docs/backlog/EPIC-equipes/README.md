@@ -70,6 +70,7 @@ gens). Détail, colonnes et invariants dans [ADR-027](pathname:///pivot-docs/adr
 - **EN15.4** : Délégations — `org_delegation`, délégataire pair par défaut, bornée dans le temps → **pivot-core + pivot-ui**
 - **EN15.5** : Partage d'un projet/module par équipe — **résolution stricte** (membres directs de l'équipe ciblée), niveau de permission `view`/`edit` → **pivot-core**
 - **EN15.6** : Appartenance effective (double notion) — agrégation sur l'arbre `org_units`, exposée distinctement des membres directs → **pivot-core**
+- **EN15.7** : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) — producteur KpiRef (contrat EN28.14) → **pivot-core**
 
 **Hors périmètre E15 (différé)** : les **droits gradués / seuils d'escalade** (`X`, `X+Y` par
 niveau) ne sont pas modélisés ici. La structure (ligne des responsables, niveaux) est posée ; la

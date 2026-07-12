@@ -25,6 +25,10 @@ Petits jeux d'équipe temps réel pour animer une pause ou un icebreaker : bingo
 - **F47.3 — Trivia Agile** — questions Scrum/agile, timer, score final
   - US47.3.1 : Jouer à Trivia Agile à plusieurs
 
+### Enablers
+
+- **EN47.1** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+
 ## Repères marché (benchmark POC)
 
 Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahiers Kahoot!, Mentimeter (+ Slido, cahier
@@ -63,6 +67,8 @@ mainteneur avant toute création de Feature** :
 
 | Élément | 🤖 Dev |
 |---------|--------|
+| **Enablers** | |
+| [EN47.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F47.1 — Bingo des réunions** | |
 | [US47.1.1 — Jouer au Bingo des réunions à plusieurs](FEATURES/bingo-reunions/us-bingo-reunions.md) | ⬜ |
 | **F47.2 — Post-it Rush** | |

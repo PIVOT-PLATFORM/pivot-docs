@@ -49,6 +49,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 
 ### Enablers
 - **[EN38.1](ENABLERS/en-modele-smi-moteur.md)** — Modèle SMI & moteur (entonnoir, stage-gate, scoring, portefeuille, KPIs)
+- **[EN38.3](ENABLERS/en-exposer-kpi.md)** — Exposer les KPI du domaine
 - *(EN38.2 — Moteur IA & graphe d'innovation → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/ENABLERS/en-moteur-ia-graphe.md) 2026-07-09 — over-ambitious, dépend de F38.14 déplacée)*
 
 ## Dépendances
@@ -68,6 +69,7 @@ Module-EPIC du **Domaine Pilotage** ([E18](../BACKLOG-IDEATION/EPIC-pilotage/REA
 |---------|--------|
 | **Enablers** | |
 | [EN38.1 — Modèle SMI & moteur](ENABLERS/en-modele-smi-moteur.md) | ⬜ |
+| [EN38.3 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | *(EN38.2 → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-pilotage-innovation/ENABLERS/en-moteur-ia-graphe.md))* | — |
 | **F38.1 — Stratégie & politique d'innovation** | |
 | [US38.1.1 — Politique & ambition d'innovation](FEATURES/strategie-innovation/us-politique-ambition.md) | ⬜ |

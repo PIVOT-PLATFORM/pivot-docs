@@ -20,6 +20,7 @@ Planning poker interactif : rooms, tickets, votes temps réel WebSocket, partici
 - F09.2 : Tickets et votes en temps réel (WebSocket) — US09.2.1, US09.2.2 (révélation simultanée + distribution des votes : moyenne/médiane/dispersion — benchmark PlanningPoker.com), US09.2.3 (reset/revote + validation d'une estimation finale persistée — écart ADR-026 §2 comblé après US09.2.2, arbitrage mainteneur 2026-07-11)
 - F09.3 : Participant anonyme (join par code sans compte) — US09.3.1
 - EN09.1 : WebSocket room Scrum Poker isolation
+- EN09.2 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo

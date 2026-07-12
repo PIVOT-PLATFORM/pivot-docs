@@ -30,6 +30,7 @@ Construire le socle qui permet à PIVOT d'intégrer des outils open source matur
 - **EN28.11** — [ADR-018 : stratégie de forks](ENABLERS/en-adr-012-strategie-forks.md)
 - **EN28.12** — [Intendance upstream](ENABLERS/en-intendance-upstream.md)
 - **EN28.13** — [Veille licences & versions](ENABLERS/en-veille-licences-versions.md)
+- **EN28.14** — [Contrat producteur de KPI (endpoint unifié + `kpi.updated`)](ENABLERS/en-contrat-producteur-kpi.md)
 
 ### Features
 
@@ -122,6 +123,7 @@ Restent hors de cet EPIC, pour des raisons **distinctes** du principe ci-dessus 
 | [EN28.11 — ADR-018 stratégie de forks](ENABLERS/en-adr-012-strategie-forks.md) | ⬜ |
 | [EN28.12 — Intendance upstream](ENABLERS/en-intendance-upstream.md) | ⬜ |
 | [EN28.13 — Veille licences & versions](ENABLERS/en-veille-licences-versions.md) | ⬜ |
+| [EN28.14 — Contrat producteur de KPI](ENABLERS/en-contrat-producteur-kpi.md) | ⬜ |
 | **F28.1 — Delivery agile** | |
 | [US28.1.1 — Adaptateur Plane backlog & sprints](FEATURES/delivery-agile-plane/us-adaptateur-plane-backlog-sprints.md) | ⬜ |
 | [US28.1.2 — SSO Plane](FEATURES/delivery-agile-plane/us-sso-plane.md) | ⬜ |

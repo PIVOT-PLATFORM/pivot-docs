@@ -33,6 +33,7 @@ Assistant conversationnel contextuel, disponible depuis le shell dans tous les m
 ### Enablers
 
 - **EN48.1** — Fournisseur LLM interchangeable, rate-limit et audit des échanges
+- **EN48.2** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Repères marché (benchmark POC)
 
@@ -69,6 +70,7 @@ résolution autonome en conditions réelles documentées.
 |---------|--------|
 | **Enablers** | |
 | EN48.1 — Fournisseur LLM, rate-limit et audit | ⬜ |
+| [EN48.2 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F48.1 — Chat contextuel** | |
 | [US48.1.1 — Consulter l'assistant contextuel depuis n'importe quel module](FEATURES/chat-contextuel/us-assistant-contextuel.md) | ⬜ |
 

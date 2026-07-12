@@ -27,6 +27,7 @@ Architecture Decision Records par projet : création, statuts, recherche full-te
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
+- **EN24.1** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 
@@ -53,3 +54,5 @@ Architecture Decision Records par projet : création, statuts, recherche full-te
 | **F24.1 — ADR projet** | |
 | [US24.1.1 — Créer un ADR (Architecture Decision Record) projet](FEATURES/adr/us-creer-adr-projet.md) | ⬜ |
 | [US24.1.2 — Consulter et rechercher les ADRs d'un projet](FEATURES/adr/us-consulter-adrs.md) | ⬜ |
+| **Enablers** | |
+| [EN24.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

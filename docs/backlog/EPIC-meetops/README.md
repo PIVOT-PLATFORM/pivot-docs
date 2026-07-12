@@ -34,6 +34,7 @@ Gestion des réunions : préparation d'agenda, animation en temps réel, compte-
 ### Enablers
 - **EN12.1** — Schéma Flyway `collaboratif` — tables `meetings` (statut `PRE_RESERVED` / `CONFIRMED`, `booking_window`, `event_ref`, `project_ref`), `agenda_items`, `meeting_decisions`, `meeting_actions`, `proposed_slots`
 - **EN12.2** — Guard Angular module meetops + STOMP room `/topic/collaboratif/meeting/{meetingId}`
+- **EN12.3** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 

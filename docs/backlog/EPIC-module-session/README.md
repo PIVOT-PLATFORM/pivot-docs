@@ -40,6 +40,7 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
 - **EN19.1** — Schéma Flyway `collaboratif` sessions (Session, Activity, Participant, Response)
 - **EN19.2** — WebSocket room session isolation (salle dédiée par session)
 - **EN19.3** — Guard Angular module session (moduleGuard `moduleId: 'collaboratif'`)
+- **EN19.4** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 
@@ -65,6 +66,7 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
 | EN19.1 — Schéma Flyway `collaboratif` sessions | ⬜ |
 | EN19.2 — WebSocket room session isolation | ⬜ |
 | EN19.3 — Guard Angular module session | ⬜ |
+| [EN19.4 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F19.1 — Création session** | |
 | [US19.1.1 — Créer une session live](FEATURES/creation/us-creer-session.md) | ⬜ |
 | [US19.1.2 — Piloter la session](FEATURES/creation/us-gerer-session.md) | ⬜ |

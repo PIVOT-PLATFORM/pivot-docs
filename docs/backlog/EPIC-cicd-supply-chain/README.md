@@ -19,6 +19,9 @@ Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité
 - EN05.11 — Gate E2E (Playwright)
 - EN05.12 — Gate Lighthouse (a11y)
 
+### Enablers — à faire
+- EN05.16 — Exposer les KPI du domaine
+
 ## Modules impactés
 `core`
 
@@ -54,3 +57,4 @@ EN05.14 réglé après mise à jour du token `gh` avec la permission "Administra
 | **EN05.15 — Standardisation CI core ↔ ui** | |
 | [US05.15.1 — Composite action setup partagée](ENABLERS/us-composite-action.md) | ✅ |
 | [US05.15.2 — Aligner workflows ui sur conventions core](ENABLERS/us-aligner-workflows.md) | ✅ |
+| [EN05.16 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

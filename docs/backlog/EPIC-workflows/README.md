@@ -36,6 +36,7 @@ faute de porter sur plus d'un outil).
   - EN29.4 : Montée en charge
   - EN29.5 : Localisation FR
   - EN29.6 : Estimation avant batch
+  - EN29.7 : Exposer les KPI du domaine
 - **F29.1 — Éditeur & logique** — US29.1.1, US29.1.2, US29.1.3, US29.1.4, US29.1.5, US29.1.6, US29.1.7, US29.1.8
   - US29.1.1 : Modèle déclencheur → actions
   - US29.1.2 : Constructeur visuel no-code
@@ -132,6 +133,7 @@ faute de porter sur plus d'un outil).
 | [EN29.4 — Montée en charge](ENABLERS/en-montee-en-charge.md) | ⬜ |
 | [EN29.5 — Localisation FR](ENABLERS/en-localisation-fr.md) | ⬜ |
 | [EN29.6 — Estimation avant batch](ENABLERS/en-estimation-avant-batch.md) | ⬜ |
+| [EN29.7 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F29.1 — Éditeur & logique** | |
 | [US29.1.1 — Modèle déclencheur → actions](FEATURES/editeur-logique/us-modele-declencheur-actions.md) | ⬜ |
 | [US29.1.2 — Constructeur visuel no-code](FEATURES/editeur-logique/us-constructeur-visuel-nocode.md) | ⬜ |

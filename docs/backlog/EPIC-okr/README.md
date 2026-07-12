@@ -39,12 +39,13 @@ Piloter par les **OKR** (Objectives & Key Results) de bout en bout : définition
 - **F27.5 — Scoring & clôture** — US27.5.1 scoring 0.0–1.0 · US27.5.2 clôture & grading · US27.5.3 rétrospective OKR
 - **F27.6 — Initiatives & lien delivery** — US27.6.1 initiatives ↔ KR · US27.6.2 interfaces pilotage (roadmap E22 / portefeuille E23 / risques E21)
 - **F27.7 — CFR** — US27.7.1 conversations & 1:1 · US27.7.2 feedback & reconnaissance
-- **F27.8 — Intégrations & auto-update KR** — US27.8.1 mise à jour auto des KR (BI/API/tableur) · US27.8.2 import/export & format ouvert
+- **F27.8 — Intégrations & auto-update KR** — US27.8.1 mise à jour auto des KR (BI/API/tableur) · US27.8.2 import/export & format ouvert · US27.8.3 lien KR ↔ KPI PIVOT interne
 - **F27.9 — Tableaux de bord & restitutions** — US27.9.1 dashboards (mes/équipe/entreprise/à risque/heatmap) · US27.9.2 export & rapports de comité
 - **F27.10 — Gouvernance & bonnes pratiques** — US27.10.1 découplage rémunération & transparence · US27.10.2 RGPD & confidentialité des OKR individuels
 
 ### Enablers
 - **[EN27.1](ENABLERS/en-modele-okr-moteur.md)** — Modèle OKR & moteur (scoring, statut, alignement, connecteurs) — gouvernance-by-design
+- **[EN27.2](ENABLERS/en-exposer-kpi.md)** — Exposer les KPI du domaine
 - Partagés domaine : **EN18.1** (schéma `pilotage`) · **EN18.2** (guard)
 
 ## Modules impactés
@@ -68,6 +69,7 @@ Piloter par les **OKR** (Objectives & Key Results) de bout en bout : définition
 |---------|--------|
 | **Enablers** | |
 | [EN27.1 — Modèle OKR & moteur](ENABLERS/en-modele-okr-moteur.md) | ⬜ |
+| [EN27.2 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F27.1 — Objectifs & Key Results (socle)** | |
 | [US27.1.1 — Créer des objectifs et résultats-clés (OKR)](FEATURES/okr/us-creer-objectif.md) | ⬜ |
 | [US27.1.2 — Mettre à jour et suivre l'avancement des Key Results](FEATURES/okr/us-suivre-kr.md) | ⬜ |
@@ -97,6 +99,7 @@ Piloter par les **OKR** (Objectives & Key Results) de bout en bout : définition
 | **F27.8 — Intégrations & auto-update KR** | |
 | [US27.8.1 — Mise à jour automatique des KR](FEATURES/integrations/us-auto-update-kr.md) | ⬜ |
 | [US27.8.2 — Import / export & format ouvert](FEATURES/integrations/us-import-export-format-ouvert.md) | ⬜ |
+| [US27.8.3 — Lier un KR à un KPI PIVOT interne](FEATURES/integrations/us-lier-kr-kpi-interne.md) | ⬜ |
 | **F27.9 — Tableaux de bord & restitutions** | |
 | [US27.9.1 — Tableaux de bord OKR](FEATURES/dashboards/us-dashboards-okr.md) | ⬜ |
 | [US27.9.2 — Export & rapports de comité](FEATURES/dashboards/us-export-rapports-comite.md) | ⬜ |
