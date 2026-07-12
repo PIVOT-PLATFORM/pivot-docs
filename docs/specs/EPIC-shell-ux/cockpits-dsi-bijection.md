@@ -317,6 +317,12 @@ un collaborateur DSI ou par un prestataire : le cockpit fonctionnel est le même
 être exposé ne l'est pas**. On ajoute donc au moteur de composition une entrée `périmètre de
 l'identité` (interne / externe) et une entrée `sensibilité de la card`.
 
+> **Ce qu'est un « externe » et ce qu'il voit** est fixé par
+> [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-identites-externes) : une identité externe a un
+> **compte** (OIDC, via un **fragment externe** dédié), une **organisation d'origine** distincte et un
+> **engagement** borné (projets + durée) ; son accès aux projets et au transverse est scopé **côté
+> serveur**, avec le principe directeur de **minimisation de la fuite de données et de patrimoine**.
+
 ![Filtre d'accès interne / externe](diagrams/cockpits-dsi-acces-externe.png)
 
 > Source PlantUML : [`diagrams/cockpits-dsi-acces-externe.puml`](diagrams/cockpits-dsi-acces-externe.puml) — le PNG est généré en CI.
@@ -367,7 +373,11 @@ par classe d'identité**. C'est le **contrat du catalogue** à figer en Gate 4 :
 posée sur un cockpit que si sa ligne ici est renseignée.
 
 **Niveau de sensibilité** — 🟢 Standard · 🟡 Restreint · 🔴 Sensible  
-(répartition : 🟢 12 · 🟡 19 · 🔴 9)
+(répartition : 🟢 13 · 🟡 18 · 🔴 9)
+
+**Couche transverse** — les cards marquées **T** (7) forment la couche transverse
+**toujours présente** : elles apparaissent sur **tous** les cockpits (pas seulement le leur) et sont
+**non masquables en interne** (posture sécurité, RGPD, RGAA, AGPL, adoption globale, ROI, santé).
 
 **Visibilité** — ● complet (selon RBAC) · ◑ complet mais **limité au scope de l'engagement** ·
 ◐ **agrégé / anonymisé** (ni détail nominatif, ni détail sécurité) · ○ **masqué par défaut**
@@ -376,32 +386,35 @@ posée sur un cockpit que si sa ligne ici est renseignée.
 > **🔗 Externe pur** (prestataire / éditeur / auditeur). La colonne Externe pur est la **politique par
 > défaut** ; le *type d'engagement* peut l'élever sur les cards de son périmètre (cf. § « L'externe
 > n'est pas monolithique ») — un infogérant passe ◐→◑/● sur les cards Run de son scope, jamais sur les 🔴.
+> Le cadre juridique/technique de l'accès externe (identité, périmètre) est fixé par
+> [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-identites-externes).
 
 ### Transverse (couche toujours présente)
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| Bandeau santé instance | 🟢 | ● | ◑ | ◐ | État global ; agrégé pour l'externe (pas de détail infra hors scope). |
-| Adoption globale | 🟡 | ● | ◑ | ◐ | Taux d'usage agrégé ; pas de détail par utilisateur. |
+| Bandeau santé instance · **T** | 🟢 | ● | ◑ | ◐ | État global ; agrégé pour l'externe (pas de détail infra hors scope). |
+| Adoption globale · **T** | 🟡 | ● | ◑ | ◐ | Taux d'usage agrégé ; pas de détail par utilisateur. |
 
 ### C1 · Pilotage / Gouvernance
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| ROI vs SaaS | 🔴 | ● | ○ | ○ | Donnée financière/stratégique : masquée à tout externe. |
+| ROI vs SaaS · **T** | 🔴 | ● | ○ | ○ | Donnée financière/stratégique : masquée à tout externe. |
 | Roadmap d'adoption | 🟡 | ● | ◑ | ◐ | Trajectoire ; visible agrégée si dans le scope de mission. |
 | Santé du portefeuille projets | 🟡 | ● | ◑ | ◐ | Externe : limité à SON projet, sinon masqué. |
 | Budget / coût SI | 🔴 | ● | ○ | ○ | Données financières : jamais exposées à un externe. |
-| Activation des domaines | 🟡 | ● | ○ | ○ | Action de gouvernance : lecture interne, jamais actionnable externe. |
+| Activation des domaines | 🟡 | ● | ○ | ○ | Action de gouvernance : lecture interne, jamais actionnable externe (minimisation de fuite). |
 | Staffing / capacité RH | 🔴 | ● | ○ | ○ | Données RH nominatives : masquées. |
+| Risques projet & portefeuille | 🟡 | ● | ◑ | ◐ | Risques **projet/portefeuille** — module `pivot-pilotage` (E21). Distinct des Risques SSI (C5). |
 
 ### C2 · Agilité
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| Vélocité | 🟢 | ● | ◑ | ◑ | Externe : SA squad / SON lot uniquement. |
-| Régularité des standups | 🟢 | ● | ◑ | ◑ | Limité à l'équipe de la mission. |
-| Capacity | 🟡 | ● | ◑ | ◐ | Détail nominatif de charge agrégé pour l'externe. |
+| Vélocité | 🟢 | ● | ◑ | ◑ | Agrégat **équipe** (100% Équipe, jamais individuel) — cohérence RGPD PIVOT. Externe : SA squad. |
+| Régularité des standups | 🟢 | ● | ◑ | ◑ | Agrégat **équipe** (jamais individuel) — cohérence RGPD PIVOT. Externe : son équipe de mission. |
+| Capacity | 🟢 | ● | ◑ | ◑ | Agrégat **équipe** (jamais individuel) — cohérence RGPD PIVOT. Externe : son équipe. |
 | Qualité de code / couverture tests | 🟢 | ● | ◑ | ◑ | Prestataire dev : sur SON périmètre de code. |
 | Releases / mises en production | 🟡 | ● | ◑ | ◐ | Historique de livraison, scopé à la mission. |
 
@@ -409,42 +422,41 @@ posée sur un cockpit que si sa ligne ici est renseignée.
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| Cartographie applicative | 🟡 | ● | ◑ | ◐ | Révèle la structure du SI : agrégée/scopée pour l'externe. |
+| Cartographie applicative | 🟡 | ● | ◑ | ◐ | Révèle la structure du SI (patrimoine) : agrégée/scopée pour l'externe. |
 | Dette d'urbanisation | 🟡 | ● | ◑ | ◐ | Vue technique ; scope de mission. |
 | Catalogue & qualité des données | 🟡 | ● | ◑ | ◐ | Métadonnées ; **contenu des données 🔴 jamais exposé**. |
 | Pipelines de données | 🟡 | ● | ◑ | ◐ | Peut contenir de la donnée métier : agrégé/scopé. |
-| Conformité IA / AI Act | 🟢 | ● | ◑ | ◐ | Statut de conformité ; non sensible. |
+| Conformité IA / AI Act | 🟢 | ● | ◑ | ◐ | Statut de conformité des features IA de PIVOT (module **Assistant IA E48**) — intégration **interne**, pas d'API tierce. |
 
 ### C4 · Exploitation (Run)
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| Incidents en cours | 🟡 | ● | ◑ | ◑ | Infogérant/éditeur : incidents de SON périmètre. |
-| SLA / disponibilité | 🟢 | ● | ◑ | ◑ | Externe run : sur SON périmètre contractuel. |
+| Incidents en cours | 🟡 | ● | ◑ | ◑ | Via **connecteur ITSM du tenant** (EN51.10) — agrégats API ou lien profond. Infogérant/éditeur : SON périmètre. |
+| SLA / disponibilité | 🟢 | ● | ◑ | ◑ | Externe run : sur SON périmètre contractuel (source actuator ou ITSM). |
 | Capacité / dimensionnement | 🟢 | ● | ◑ | ◑ | Métriques techniques, scopées. |
-| Files de support | 🟡 | ● | ◑ | ◐ | Peut contenir des données utilisateurs : agrégé. |
-| Changements en production | 🟡 | ● | ◑ | ◑ | Scope d'exploitation contractuel. |
+| Files de support | 🟡 | ● | ◑ | ◐ | Via **connecteur ITSM du tenant** (ServiceNow…, EN51.10) : agrégats API ou lien profond (href). **Contenu des tickets 🔴 reste dans l'ITSM** — aucune PII ticket dans PIVOT. |
+| Changements en production | 🟡 | ● | ◑ | ◑ | Scope d'exploitation contractuel (source ITSM/CI, EN51.10). |
 
 ### C5 · Sécurité & Continuité
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| Posture de sécurité | 🔴 | ● | ○ | ○ | Révèle la surface d'attaque : jamais exposée à un externe. |
+| Posture de sécurité · **T** | 🔴 | ● | ○ | ○ | Révèle la surface d'attaque : jamais exposée à un externe. |
 | OIDC / IAM | 🔴 | ● | ○ | ○ | Identités & habilitations : masqué hors DSI. |
 | Correctifs de sécurité en attente | 🔴 | ● | ○ | ○ | Expose des vulnérabilités non corrigées. |
 | Alertes SOC & réponse à incident | 🔴 | ● | ◐ | ○ | Analyste SOC externalisé : agrégé, sans détail nominatif. |
 | État PCA / PRA | 🟡 | ● | ◑ | ◐ | Statut de continuité ; détail des plans réservé interne. |
-| Risques SSI | 🔴 | ● | ◐ | ○ | Registre des risques sécurité : masqué à l'externe pur. |
+| Risques SSI | 🔴 | ● | ◐ | ○ | Risques **sécurité** — distinct des Risques projet (C1/E21). Masqué à l'externe pur. |
 
 ### C6 · Conformité, Qualité & Risques
 
 | Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
 | --- | :---: | :---: | :---: | :---: | --- |
-| Conformité RGPD | 🟡 | ● | ◑ | ◐ | Statut agrégé visible ; **détail nominatif 🔴 masqué**. |
-| Accessibilité RGAA / WCAG | 🟢 | ● | ◑ | ◐ | Peu sensible ; un auditeur RGAA externe y a accès en lecture seule. |
-| Conformité licence AGPL | 🟢 | ● | ◑ | ◐ | Obligation de licence ; non sensible. |
+| Conformité RGPD · **T** | 🟡 | ● | ◑ | ◐ | Statut agrégé visible ; **détail nominatif 🔴 masqué**. |
+| Accessibilité RGAA / WCAG · **T** | 🟢 | ● | ◑ | ◐ | Peu sensible ; un auditeur RGAA externe y a accès en lecture seule. |
+| Conformité licence AGPL · **T** | 🟢 | ● | ◑ | ◐ | Obligation de licence ; non sensible. |
 | Journal d'audit | 🔴 | ● | ◐ | ○ | Traçabilité complète : masqué (sauf auditeur, RO scopé — voir plus haut). |
-| Risques SI | 🟡 | ● | ◑ | ◐ | Registre risques ; agrégé pour l'externe. |
 | Empreinte numérique responsable | 🟢 | ● | ◑ | ◐ | Reporting RSE ; non sensible. |
 
 ### C7 · Collaboratif / Adoption
@@ -459,9 +471,16 @@ posée sur un cockpit que si sa ligne ici est renseignée.
 
 ### Règle de cohérence (invariant du contrat)
 
-- **Toute card 🔴 Sensible est ○ (masquée) pour l'Externe pur** par défaut : 9/9 vérifiées ; les 🔴 non masquées (0) ne le sont que sous forme agrégée pour un rôle externalisé qui en a besoin (ex. Alertes SOC, Journal d'audit).
+- **Principe directeur — minimiser la fuite de données et de patrimoine.** En cas de doute, la card
+  est **plus restrictive** : ex. *Activation des domaines* reste ○ pour tout externe, même en lecture.
+- **Externe pur** : les **9 cards 🔴** sont **○ (masquées)** — 9/9, aucune fuite.
+- **Externalisé** : 3 des 9 cards 🔴 (Alertes SOC & réponse à incident, Risques SSI, Journal d'audit) sont **◐ (agrégé)** car un rôle sécurité/audit externalisé en a besoin ; les autres restent **○**.
+- **Règle 🟢 → Externe pur** : une card 🟢 **opérationnelle dans le scope** de l'engagement est **◑**
+  (SLA, Capacité, Vélocité, Qualité de code) ; une card 🟢 **globale/gouvernance** est **◐** (santé
+  instance, RGAA, AGPL, empreinte…). Distinction fixée par [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-identites-externes).
 - **Aucune card n'est actionnable par un externe** : les actions de gouvernance (activation, invitation, désactivation) restent 🏛 uniquement.
-- **Les cards transverses obligatoires** (Posture sécurité, RGPD, RGAA, AGPL) sont **● non masquables en interne** et suivent la politique ci-dessus en externe — l'inversion documentée plus haut.
+- **Les cards de la couche transverse (T)** sont **● non masquables en interne** et suivent la politique externe ci-dessus — l'inversion documentée plus haut.
+- **Cards support/ITSM** (Files de support, Incidents, Changements) : la donnée métier (tickets, PII) **reste dans l'ITSM du tenant** ; PIVOT n'affiche que des agrégats API ou un lien profond (EN51.10).
 - Cette matrice est la **source de vérité** ; un composant `pivot-design-system` implémentant une card doit déclarer sa `sensibilité` et respecter la visibilité par classe d'identité.
 
 ## Points à valider (arbitrages produit)

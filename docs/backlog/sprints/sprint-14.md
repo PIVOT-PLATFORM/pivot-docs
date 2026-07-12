@@ -41,6 +41,8 @@ placeholder — sur profil d'organisation par défaut (EN18.10).
 | EN51.7 | Endpoint de lecture du journal d'audit | M | High | ⬜ |
 | EN51.8 | Intégration GitHub Code-Scanning | M | Medium | ⬜ |
 | EN51.9 | Agrégat portefeuille cross-projet | M | Medium | ⬜ |
+| EN51.10 | Interfaçage ITSM (connecteurs par tenant) | M | Medium | ⬜ |
+| ADR-028 | Accès & identités externes *(décision d'architecture, pré-requis EN51.5)* | — | High | ⬜ |
 
 > **Cards gouvernance v0 (F51.2)** — Journal d'audit *(EN51.7)*, Correctifs sécurité *(EN51.8)*,
 > Santé du portefeuille *(EN51.9)*, Adoption globale *(EN51.6)* — à ouvrir dès que leur enabler de

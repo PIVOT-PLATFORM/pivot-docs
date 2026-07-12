@@ -36,6 +36,7 @@ composable** : il affiche les cards Socle réelles + les cards WIP en attente.
 | [EN51.7 — Endpoint lecture journal d'audit](ENABLERS/en-endpoint-lecture-audit.md) | API de lecture admin de `audit_events` | Maintenant |
 | [EN51.8 — Intégration GitHub Code-Scanning](ENABLERS/en-integration-code-scanning.md) | Remonte alertes SARIF/Dependabot comme donnée | Maintenant |
 | [EN51.9 — Agrégat portefeuille cross-projet](ENABLERS/en-agregat-portefeuille.md) | Consolidation multi-projets du pilotage | Maintenant |
+| [EN51.10 — Interfaçage ITSM](ENABLERS/en-interfacage-itsm.md) | Connecteurs ITSM par tenant (ServiceNow…) : agrégats API / lien profond, PII hors PIVOT | Maintenant |
 
 ### Features — cards
 
@@ -47,10 +48,15 @@ composable** : il affiche les cards Socle réelles + les cards WIP en attente.
 - **F51.2 — Cards gouvernance v0** (après EN51.6–51.9) : Journal d'audit *(EN51.7)*, Correctifs de
   sécurité *(EN51.8)*, Santé du portefeuille *(EN51.9)*, Adoption globale *(EN51.6)*.
 - **F51.3 — Cards modules WIP** (rendues `module-wip` jusqu'à livraison du module porteur) : Vélocité
-  / Standups / Capacity *(agilité E10/E11)*, Usage whiteboard/live/quiz *(collaboratif + EN51.6)*,
-  Budget / ROI vs SaaS *(E26)*, Risques SSI / Risques SI *(E21/E43)*, Alertes SOC / PCA-PRA /
-  Incidents / Files de support *(ITSM/SOC non planifiés)*, Catalogue & qualité données / Pipelines /
-  AI Act *(module données)*, Formation *(E41)*, Satisfaction NPS *(E46)*.
+  / Standups / Capacity *(agilité E10/E11 — cards **100% Équipe**, agrégat jamais individuel, cohérence
+  RGPD)*, Usage whiteboard/live/quiz *(collaboratif + EN51.6)*, Budget / ROI vs SaaS *(E26)*, **Risques
+  projet & portefeuille** *(pilotage E21)*, **Risques SSI** *(sécurité E43)*, Alertes SOC / PCA-PRA
+  *(SOC non planifié)*, Incidents / Files de support / Changements *(via connecteur **ITSM du tenant**,
+  EN51.10 — PII hors PIVOT)*, Catalogue & qualité données / Pipelines *(module données)*, **Conformité
+  IA / AI Act** *(Assistant IA E48, intégration interne)*, Formation *(E41)*, Satisfaction NPS *(E46)*.
+
+Les règles d'accès des identités externes (définition, OIDC fragment externe, scoping projets +
+transverse) sont fixées par [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-identites-externes).
 
 ## Hors périmètre
 

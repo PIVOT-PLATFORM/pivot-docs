@@ -4,9 +4,10 @@
 
 **Objectif technique** : Appliquer, à la composition d'un cockpit, la politique d'accès spécifiée
 dans [cockpits-dsi-bijection.md](pathname:///pivot-docs/specs/EPIC-shell-ux/cockpits-dsi-bijection)
-(§ Accès interne / externe) : selon la **classe d'identité** (Interne / Interne externalisé / Externe
-pur) et la **sensibilité** de la card, décider `● complet` / `◑ scope engagement` / `◐ agrégé` /
-`○ masqué`.
+(§ Accès interne / externe) et fixée par [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-identites-externes)
+(définition de l'externe, OIDC fragment externe, scoping projets + transverse) : selon la **classe
+d'identité** (Interne / Interne externalisé / Externe pur) et la **sensibilité** de la card, décider
+`● complet` / `◑ scope engagement` / `◐ agrégé` / `○ masqué`.
 
 **Justification** : La bijection dit *quel* cockpit ; ce filtre dit *combien* on en montre. Sans lui,
 un prestataire externe verrait des données financières, de sécurité ou nominatives. C'est le
@@ -40,4 +41,4 @@ garde-fou de **protection des données**.
 ---
 Item Type: Enabler · Parent: E51 · Type: securite · Module: core · Phase: phase-3
 Stage: ⬜ · Priority: Critical
-Dépendances: EN51.2, EN51.3, E01 (identité/périmètre), EN51.7 (journalisation)
+Dépendances: ADR-028 (accès externe), EN51.2, EN51.3, E01 (identité/périmètre), EN51.7 (journalisation)
