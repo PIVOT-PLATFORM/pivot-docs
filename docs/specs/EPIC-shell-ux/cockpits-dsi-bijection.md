@@ -483,6 +483,63 @@ posée sur un cockpit que si sa ligne ici est renseignée.
 - **Cards support/ITSM** (Files de support, Incidents, Changements) : la donnée métier (tickets, PII) **reste dans l'ITSM du tenant** ; PIVOT n'affiche que des agrégats API ou un lien profond (EN51.10).
 - Cette matrice est la **source de vérité** ; un composant `pivot-design-system` implémentant une card doit déclarer sa `sensibilité` et respecter la visibilité par classe d'identité.
 
+## Source de données par card (mapping inverse)
+
+Complément du [catalogue d'événements](pathname:///pivot-docs/events/) (qui liste, par événement,
+les *cards alimentées*) : ici l'**inverse** — pour chaque card, son ou ses **événement(s) source**
+et, à défaut, sa **source hors-bus** (REST, actuator, ITSM, GitHub, lecture audit) ou le fait
+qu'elle reste **à définir**. C'est ce mapping que porte, machine-readable, le registre du catalogue
+(EN51.3).
+
+| Card | Événement(s) source (bus) | Source hors-bus / statut |
+| --- | --- | --- |
+| Bandeau santé instance | `core.health.changed` | actuator /health (E04) |
+| Adoption globale | `collaboratif.*`, `agilite.*` | télémétrie d'usage (EN51.6) |
+| ROI vs SaaS | `pilotage.budget.alert` | module Budget E26 — **non livré** |
+| Roadmap d'adoption | `pilotage.roadmap.published`, `pilotage.milestone.*` | REST RoadmapController (E22, livré) |
+| Santé du portefeuille projets | `pilotage.project.*`, `pilotage.portfolio.weather_changed` | agrégat cross-projet (EN51.9) |
+| Budget / coût SI | `pilotage.budget.alert` | module Budget E26 — **non livré** |
+| Activation des domaines | `core.module.activated`, `core.module.deactivated` | REST /modules (E03, livré) |
+| Staffing / capacité RH | — | — pas de module RH — **à définir** |
+| Risques projet & portefeuille | `risk.raised`, `risk.threshold.exceeded`, `risk.mitigation.due`, `risk.closed` | module Risques E21 (category ≠ security) |
+| Vélocité | `agilite.sprint.closed` | — |
+| Régularité des standups | `agilite.standup.completed` | — |
+| Capacity | `agilite.capacity.updated` | — |
+| Qualité de code / couverture tests | — | CI jacoco (E05) — hors-bus, endpoint **à définir** |
+| Releases / mises en production | — | CI / GitHub releases — hors-bus |
+| Cartographie applicative | — | entités Application/Project (E18.9) — endpoint **à définir** |
+| Dette d'urbanisation | — | — **à définir** |
+| Catalogue & qualité des données | — | module Données — **non livré** |
+| Pipelines de données | — | module Données — **non livré** |
+| Conformité IA / AI Act | — | Assistant IA E48 (statut interne) — **à définir** |
+| Incidents en cours | — | connecteur ITSM du tenant (EN51.10) |
+| SLA / disponibilité | `core.health.changed` | actuator / Prometheus + ITSM (EN51.10) |
+| Capacité / dimensionnement | — | métriques Prometheus (E04) — hors-bus |
+| Files de support | — | connecteur ITSM du tenant (EN51.10) |
+| Changements en production | — | ITSM / CI (EN51.10) |
+| Posture de sécurité | `securite.posture.changed` | — |
+| OIDC / IAM | `auth.session.started`, `auth.session.revoked`, `auth.user.role_changed` | REST /admin/users, /account/sessions (E01, livré) |
+| Correctifs de sécurité en attente | `securite.scan.completed`, `securite.vulnerability.detected` | intégration GitHub code-scanning (EN51.8) |
+| Alertes SOC & réponse à incident | `securite.incident.raised` | SOC/SIEM (E43) — **non livré** |
+| État PCA / PRA | `securite.pca.tested` | — |
+| Risques SSI | `risk.raised`, `risk.threshold.exceeded`, `risk.closed` | module Risques E21 (category = security) |
+| Conformité RGPD | — | mécanismes RGPD export/suppression (E02, livré) — statut à définir |
+| Accessibilité RGAA / WCAG | — | CI Lighthouse a11y / documentaire — hors-bus |
+| Conformité licence AGPL | — | documentaire / statique |
+| Journal d'audit | — | endpoint de lecture `audit_events` (EN51.7) — **hors-bus** (donnée en base) |
+| Empreinte numérique responsable | — | — **à définir** |
+| Usage whiteboard / live / quiz | `collaboratif.whiteboard.session.ended`, `collaboratif.session.live.ended`, `collaboratif.quiz.completed` | via télémétrie EN51.6 |
+| Adoption par direction métier | `collaboratif.*`, `agilite.*` | via télémétrie EN51.6 |
+| Conduite du changement | `agilite.retro.closed` | module Formation/Changement E41/E20 — partiel |
+| Formation | — | module Formation E41 — **non livré** |
+| Satisfaction (NPS) | — | module Feedback E46 — **non livré** |
+
+- **21/40** cards ont au moins un **événement bus** défini.
+- **14** cards restent **sans source** (module non livré ou à définir) — elles se rendent en
+  `module-wip` (cf. [parcours §6](cockpits-dsi-parcours.md)).
+- Sources **hors-bus** assumées : *Journal d'audit* (lecture `audit_events`, EN51.7), cards ITSM
+  (EN51.10), métriques Prometheus (E04), code-scanning (EN51.8) — toutes ne passent pas par le bus.
+
 ## Points à valider (arbitrages produit)
 
 Trois choix de regroupement méritent une validation explicite avant figeage :
