@@ -32,7 +32,7 @@ maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (n
 | US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ✅ mergé (backend [pivot-pilotage-core#47](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/47), frontend [pivot-pilotage-ui#28](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/28)) |
 | US22.4.4 | Contraintes de date & échéances | M | High | ⬜ |
 | US22.4.5 | Calendriers ouvrés & exceptions | L | High | ✅ mergé (backend [pivot-pilotage-core#45](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/45), frontend [pivot-pilotage-ui#30](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/30)) |
-| US22.4.6 | Jalons & tâches périodiques | M | Medium | ⬜ backend mergé ([pivot-pilotage-core#55](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/55)) — frontend `pivot-pilotage-ui` restant |
+| US22.4.6 | Jalons & tâches périodiques | M | Medium | ⬜ |
 | US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ |
 | US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ⬜ |
 | US22.4.9 | Baselines multiples & analyse des écarts | L | High | ⬜ |
