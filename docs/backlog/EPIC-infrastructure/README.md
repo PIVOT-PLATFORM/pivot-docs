@@ -21,6 +21,7 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 - EN07.11 : mTLS interne & intégration Service Mesh (socle infra pour E43 EN43.3)
 - EN07.12 : Bascule infrastructure MVP → cible cloud managée/orchestrée
 - EN07.13 : Politique de versioning API publique & portail développeur
+- EN07.14 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 `core`
@@ -59,3 +60,4 @@ EN07.7-10 différés (v1-enterprise) · EN07.11-13 différés (phase-3)
 | [EN07.11 — mTLS interne & intégration Service Mesh](ENABLERS/en-mtls-service-mesh.md) | ⬜ |
 | [EN07.12 — Bascule infrastructure MVP → cible cloud managée/orchestrée](ENABLERS/en-bascule-cloud-manage.md) | ⬜ |
 | [EN07.13 — Politique de versioning API publique & portail développeur](ENABLERS/en-politique-versioning-api-publique.md) | ⬜ |
+| [EN07.14 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

@@ -37,6 +37,7 @@ Gestion des tests manuels et de recette : création de cas de test, organisation
 ### Enablers
 - **EN13.1** — Schéma Flyway `pilotage` — tables `test_cases`, `test_suites`, `test_campaigns`, `test_executions`
 - **EN13.2** — Guard Angular module cahiers-tests (moduleGuard `moduleId: 'cahiers-tests'`)
+- **EN13.3** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 
@@ -66,6 +67,8 @@ Gestion des tests manuels et de recette : création de cas de test, organisation
 | [US13.2.2 — Exécuter une campagne (guided mode)](FEATURES/campagnes/us-executer-campagne.md) | ⬜ |
 | **F13.3 — Reporting qualité** | |
 | [US13.3.1 — Tableau de bord campagne](FEATURES/reporting/us-tableau-bord-campagne.md) | ⬜ |
+| **Enablers** | |
+| [EN13.3 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 
 ---
 

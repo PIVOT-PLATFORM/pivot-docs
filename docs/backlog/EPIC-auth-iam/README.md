@@ -9,6 +9,7 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 - Feature F01.3 : Réinitialisation mot de passe
 - Feature F01.4 : MFA par appareil (OTP + gestion appareils)
 - Feature F01.5 : Notifications de sécurité
+- Enabler EN01.19 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) (producteur KPI EN28.14)
 
 ## Périmètre GitHub (v1-enterprise)
 - EN01.11 : OIDC multi-tenant (PKCE S256) — ⚠️ cible remplacée par ADR-004 v2 (BFF), voir EN01.14/EN01.18
@@ -79,6 +80,7 @@ Système d'authentification complet et sécurisé : connexion email/password, in
 | EN01.11 — OIDC multi-tenant PKCE S256 *(v1-enterprise, couvert F01.7)* — ⚠️ implémente le flux PKCE côté Angular remplacé par ADR-004 v2, voir EN01.18 | ✅ |
 | [EN01.12 — Infrastructure Multi-tenant (Tenant, TenantOidcConfig)](ENABLERS/en-tenant-infrastructure.md) *(hors GitHub)* | ✅ |
 | [EN01.13 — Token Exchange & identité propagée](ENABLERS/en-token-exchange.md) *(phase-3)* | ⬜ |
+| [EN01.19 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) *(phase-3)* | ⬜ |
 | **Migration BFF (ADR-004 v2 / ADR-005 v2, cible pas encore livrée) — planifiée [Sprint 7](../sprints/sprint-7.md)** | |
 | [EN01.14 — ClientRegistrationRepository dynamique par tenant](ENABLERS/en-oidc-client-registration-dynamique.md) *(v1-enterprise, Sprint 7)* | ⬜ |
 | [EN01.15 — Migration auth interne vers Spring Session JDBC](ENABLERS/en-session-spring-jdbc.md) *(v1-enterprise, Sprint 7)* | ⬜ |

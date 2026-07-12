@@ -17,6 +17,7 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 - [Enabler EN17.9 : Compose dev — modules satellites manquants](ENABLERS/en-compose-dev-satellites.md)
 - [Enabler EN17.10 : Publication `@pivot-platform/collaboratif-ui` + câblage shell route whiteboard](ENABLERS/en-collaboratif-ui-shell-wiring.md) — ✅ terminé, oubli de mise à jour de ce README, corrigé au passage
 - [Enabler EN17.11 : Publication `@pivot-platform/agilite-ui` + câblage shell route agilite](ENABLERS/en-agilite-ui-shell-wiring.md)
+- [Enabler EN17.12 : Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Phase
 

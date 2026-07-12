@@ -11,6 +11,7 @@ Permettre aux utilisateurs de gérer leur profil, leur sécurité (mot de passe,
 ## Périmètre GitHub (v1-enterprise)
 - Enabler EN02.4 : Purge des comptes inactifs
 - Enabler EN02.5 : Cron / job planifié RGPD
+- Enabler EN02.6 : Exposer les KPI du domaine
 
 ## Modules impactés
 `auth` (pivot-core + pivot-ui)
@@ -41,3 +42,4 @@ Permettre aux utilisateurs de gérer leur profil, leur sécurité (mot de passe,
 | **Enablers v1-enterprise** | |
 | EN02.4 — Purge des comptes inactifs | ⏸️ |
 | EN02.5 — Cron / job planifié RGPD | ⏸️ |
+| [EN02.6 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

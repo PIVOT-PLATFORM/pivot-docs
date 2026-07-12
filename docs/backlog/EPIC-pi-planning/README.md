@@ -28,6 +28,10 @@ Organiser un **Program Increment SAFe** par **composition de modules existants**
   - US50.3.1 : Planifier le Program Board par équipe × itération
   - US50.3.2 : Gérer les dépendances entre tickets du Program Board
 
+### Enablers
+
+- **EN50.1** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+
 ## Hors périmètre (socle)
 
 - **Temps réel Socket.io sur le Program board**, **ROAM des risques**, **confidence vote**, **duplication d'un PI**, **export PDF/image du board** — candidats v2 identifiés dans le POC, non livrés en socle (v0.31.0 reste en rafraîchissement manuel / sans ces extensions).
@@ -53,6 +57,8 @@ Organiser un **Program Increment SAFe** par **composition de modules existants**
 
 | Élément | 🤖 Dev |
 |---------|--------|
+| **Enablers** | |
+| [EN50.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F50.1 — Cycle PI et équipes du Train** | |
 | [US50.1.1 — Créer un cycle PI avec itérations et équipes du Train](FEATURES/cycle-equipes-train/us-creer-cycle-pi.md) | ⬜ |
 | **F50.2 — Intégrations en un clic** | |

@@ -18,6 +18,7 @@ Animation de daily standups : sessions CRUD, minuteur configurable + rotation pa
 - F10.1 : Sessions daily CRUD — US10.1.1, US10.1.2
 - F10.2 : Animation temps réel (minuteur + rotation WS) — US10.2.1, US10.2.2, US10.2.3 signalement explicite de blocage par participant (benchmark Geekbot)
 - F10.3 : Statistiques sessions terminées — US10.3.1, US10.3.2 taux de participation par membre/équipe (benchmark Geekbot)
+- EN10.1 : Exposer les KPI du domaine (producteur KpiRef) — [en-exposer-kpi.md](ENABLERS/en-exposer-kpi.md)
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo

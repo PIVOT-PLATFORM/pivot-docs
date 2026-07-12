@@ -59,6 +59,7 @@ Outil d'aide à la **planification de capacité pour le sprint, l'incrément (lo
 
 ### Enablers
 - **[EN11.1](ENABLERS/en-moteur-capacite-connecteurs.md)** — Moteur de capacité & connecteurs (période sprint, absences SI RH, calendriers/fériés via EN22.3) — **RGPD-by-design**
+- **[EN11.2](ENABLERS/en-exposer-kpi.md)** — Exposer les KPI du domaine
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo · E15 Équipes transverses

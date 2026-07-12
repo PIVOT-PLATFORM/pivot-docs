@@ -82,6 +82,7 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 - **EN21.1** — Schéma Flyway `risk` + entités JPA (Risk, RiskProfile, Typology, RiskFamily, ImpactWeight, Mitigation, RiskEvent, PortfolioRisk)
 - **EN21.2** — Guard Angular module risk (moduleGuard `moduleId: 'risk'`)
 - **EN21.3** — Adaptateur bus PIVOT : consommation (`task.completed`, `budget.alert`, `sprint.closed`) + émission (`risk.raised`, `risk.threshold.exceeded`, `risk.mitigation.due`)
+- **EN21.4** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 
@@ -110,6 +111,7 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 | EN21.1 — Schéma Flyway `risk` + entités JPA | ⬜ |
 | EN21.2 — Guard Angular module risk | ⬜ |
 | EN21.3 — Adaptateur bus PIVOT (consumer/producer `risk.*`) | ⬜ |
+| [EN21.4 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F21.1 — Profil & moteur adaptatif** | |
 | [US21.1.1 — Questionnaire de cadrage](FEATURES/profil-moteur/us-questionnaire-de-cadrage.md) | ⬜ |
 | [US21.1.2 — Bibliothèque de typologies](FEATURES/profil-moteur/us-bibliotheque-de-typologies.md) | ⬜ |

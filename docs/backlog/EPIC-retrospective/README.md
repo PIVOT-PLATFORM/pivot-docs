@@ -33,6 +33,7 @@ Animer des rétrospectives d'équipe structurées avec formats multiples (Start/
 ### Enablers
 - **EN20.1** — Schéma Flyway `agilite` — tables `retro_sessions`, `retro_cards`, `retro_actions`
 - **EN20.2** — Guard Angular module retrospective + isolation STOMP room `/topic/agilite/retro/{sessionId}`
+- **EN20.3** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 

@@ -28,6 +28,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 
 ### Enablers
 - **[EN41.1](ENABLERS/en-framework-onboarding.md)** — Framework d'onboarding in-app (moteur réutilisable, ciblage rôle/module/étape/profil, i18n, a11y, analytics RGPD)
+- **[EN41.2](ENABLERS/en-exposer-kpi.md)** — Exposer les KPI du domaine
 
 ## Hors périmètre
 
@@ -64,6 +65,7 @@ Former les utilisateurs et **faire adopter Pivot** — dans l'outil et hors de l
 | [EN41.1b — API parcours & progression](ENABLERS/en-api-parcours-progression.md) | ⬜ |
 | [EN41.1c — Ciblage rôle/module/étape](ENABLERS/en-ciblage-role-module-etape.md) | ⬜ |
 | [EN41.1d — Analytics d'adoption (RGPD)](ENABLERS/en-analytics-adoption-rgpd.md) | ⬜ |
+| [EN41.2 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F41.1 — Onboarding in-app** | |
 | [US41.1.1 — Tour guidé au premier accès](FEATURES/onboarding-in-app/us-tour-guide.md) | ⬜ |
 | [US41.1.2 — Tooltips & aide contextuelle](FEATURES/onboarding-in-app/us-tooltips-aide-contextuelle.md) | ⬜ |

@@ -3,7 +3,8 @@
 **Type d'enabler** : intégration
 
 **Objectif technique** : Câbler les points d'intégration du module OKR sans couplage fort
-inter-modules : auto-update des `KeyResult` depuis des sources externes (BI/API/tableur), rappels
+inter-modules : auto-update des `KeyResult` depuis des sources **externes** (BI/API/tableur) **et
+des KPI PIVOT internes** (autres cockpits : portefeuille E23, innovation E38, adoption E30), rappels
 de `CheckIn` publiés sur le **bus PIVOT** (→ Slack/Teams), et **deep-links** de pilotage vers la
 roadmap (E22), le portefeuille (E23) et le risque (E21). **Pas de FK inter-modules** — liens
 logiques par identifiant + événements, conformément à ADR-006 (multi-repo, pas de FK inter-modules)
@@ -17,6 +18,10 @@ autres modules et concentre le respect d'ADR-006/008 (pas de FK inter-modules) e
 **Critères de complétion** :
 - [ ] Point d'entrée d'auto-update d'un `KeyResult` (valeur `actuel`) depuis une source externe
   (connecteur BI/API/tableur), traçant l'origine de la mise à jour
+- [ ] Point d'entrée d'auto-update d'un `KeyResult` depuis un **KPI PIVOT interne** (autre cockpit) :
+  résolution d'un `KpiRef` en **pull** (liste `GET /api/{domaine}/kpi` + valeur) et consommation de
+  l'événement `kpi.updated` en **push** (bus PIVOT, ADR-025), par identifiant logique
+  (tenant + source + kpiKey + scope), **sans FK inter-modules** — cf. US27.8.3
 - [ ] Émission de rappels de `CheckIn` sur le bus PIVOT (ADR-025, implémentation `EN28.4` ⬜) à
   destination des canaux Slack/Teams, sans appel synchrone direct au module de notification
 - [ ] Deep-links sortants vers roadmap (E22), portefeuille (E23), risque (E21) construits par
@@ -29,6 +34,10 @@ autres modules et concentre le respect d'ADR-006/008 (pas de FK inter-modules) e
 **Critères d'acceptation (Given/When/Then)** :
 - [ ] Given un `KeyResult` métrique et une source d'auto-update configurée, when une nouvelle valeur
   arrive, then l'`actuel` du KR est mis à jour et l'origine (source, horodatage) est tracée.
+- [ ] Given un `KeyResult` métrique lié à un **KPI PIVOT interne** (`KpiRef` = tenant, source,
+  kpiKey, scope), when le producteur émet `kpi.updated` ou when la synchro pull s'exécute, then
+  l'`actuel` du KR est mis à jour, historisé et l'origine (source interne, horodatage) tracée —
+  **sans aucune FK** vers le schéma du module producteur (ADR-006).
 - [ ] Given un `Objective` dont le `CheckIn` est dû, when l'échéance de rappel est atteinte, then un
   message de rappel est publié sur le bus PIVOT vers le canal configuré (Slack/Teams).
 - [ ] Given un `KeyResult` lié logiquement à un projet roadmap (E22), when j'ouvre le deep-link,

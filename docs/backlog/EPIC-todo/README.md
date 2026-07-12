@@ -25,6 +25,10 @@ Gestion de tâches personnelles ou partagées : listes avec priorité et échéa
 - **F49.3 — Tableau de bord consolidé**
   - US49.3.1 : Consolider plusieurs listes de tâches en un tableau de bord avec rapports
 
+### Enablers
+
+- **EN49.1** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+
 ## Repères marché (source POC)
 
 Livré dans le POC PouetPouet en v0.30.0 (socle + dashboard) puis v0.31.0 (statuts En cours/Bloqué, vue
@@ -58,6 +62,8 @@ dashboard donne un accès lecture aux listes rattachées sans partage individuel
 | [US49.2.1 — Suivre l'avancement des tâches](FEATURES/statuts-suivi/us-suivre-avancement-taches.md) | ⬜ |
 | **F49.3 — Tableau de bord consolidé** | |
 | [US49.3.1 — Consolider plusieurs listes en un tableau de bord](FEATURES/dashboard-consolide/us-dashboard-consolide.md) | ⬜ |
+| **Enablers** | |
+| [EN49.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 
 ---
 Item Type: Epic · Clé: E49 · Phase: phase-3 · Module: todo
