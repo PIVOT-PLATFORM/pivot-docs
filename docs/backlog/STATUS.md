@@ -56,6 +56,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
 | [E49 — Module To-Do](EPIC-todo/README.md) | E49 | 3 | — | 3 | ⬜ phase-3 |
 | [E50 — Module PI Planning](EPIC-pi-planning/README.md) | E50 | 3 | — | 4 | ⬜ phase-3 · agilite |
+| [E51 — Cockpits DSI](EPIC-cockpits/README.md) | E51 | 3 | 9 | 4+ | ⬜ phase-3 · transverse — [Sprint 14](sprints/sprint-14.md) (framework + cards Socle v0, marche même si modules WIP) |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **78** | 🔄 En cours |
 | **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~158** | **~68** | **~554** | ⏸️ Verrouillé |
 | **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
