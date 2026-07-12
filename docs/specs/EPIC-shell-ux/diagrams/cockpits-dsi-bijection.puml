@@ -1,0 +1,57 @@
+@startuml cockpits-dsi-bijection
+title Bijection : 145 profils DSI -> 7 cockpits (axe job-to-be-done)
+
+skinparam shadowing false
+skinparam defaultFontName sans-serif
+skinparam ArrowColor #73726c
+skinparam rectangle {
+  BorderColor #73726c
+  BackgroundColor #F1EFE8
+}
+
+rectangle "145 profils\n(~200 intitules avec appellations)\nperimetre DSI / Metier / Externe" as profils
+
+package "13 macro-roles (taxonomie)" {
+  rectangle "direction-pilotage\ngestion-projet-portefeuille\nachats-contrats-fournisseurs" as m1 #EEEDFE
+  rectangle "produit-agilite\ningenierie-developpement" as m2 #EEEDFE
+  rectangle "architecture-urbanisation\ndonnees-ia" as m3 #EEEDFE
+  rectangle "infrastructure-exploitation\nsupport-services" as m4 #EEEDFE
+  rectangle "cybersecurite-continuite" as m5 #EEEDFE
+  rectangle "qualite-conformite-audit" as m6 #EEEDFE
+  rectangle "relation-metier-changement" as m7 #EEEDFE
+}
+
+package "7 cockpits (JTBD)" {
+  rectangle "C1 Gouvernance & Strategie SI\n(29)" as c1 #E1F5EE
+  rectangle "C2 Delivery & Agilite\n(26)" as c2 #E1F5EE
+  rectangle "C3 Architecture & Donnees\n(21)" as c3 #E1F5EE
+  rectangle "C4 Exploitation & Services (Run)\n(34)" as c4 #E1F5EE
+  rectangle "C5 Securite & Continuite\n(11)" as c5 #FAEEDA
+  rectangle "C6 Conformite, Qualite & Risques\n(12)" as c6 #FAEEDA
+  rectangle "C7 Adoption, Metier & Changement\n(12)" as c7 #E1F5EE
+}
+
+profils --> m1
+profils --> m2
+profils --> m3
+profils --> m4
+profils --> m5
+profils --> m6
+profils --> m7
+
+m1 --> c1
+m2 --> c2
+m3 --> c3
+m4 --> c4
+m5 --> c5
+m6 --> c6
+m7 --> c7
+
+note bottom of profils
+  Regle : profil -> macro-role -> cockpit.
+  Application totale (145/145 couverts)
+  et fonctionnelle (un seul cockpit par profil).
+  macro transverses-externes reparti au role.
+end note
+
+@enduml

@@ -44,6 +44,10 @@ plus **3 exceptions** justifiées. La liste complète des règles est en fin de 
 | C7 | **Adoption, Métier & Changement** | Est-ce que c'est adopté ? Usage réel (whiteboard/live/quiz/formulaires), conduite du changement, formation, satisfaction. | Collaboratif + Transverse (adoption globale) | 12 |
 | | | | **Total** | **145** |
 
+![Bijection 145 profils DSI vers 7 cockpits](diagrams/cockpits-dsi-bijection.png)
+
+> Source PlantUML : [`diagrams/cockpits-dsi-bijection.puml`](diagrams/cockpits-dsi-bijection.puml) — le PNG est généré en CI.
+
 ## Bijection détaillée — chaque profil, son cockpit
 
 Périmètre : 🏛 DSI · 🧩 Métier · 🔗 Externe. Un profil marqué de plusieurs périmètres apparaît
@@ -305,6 +309,56 @@ de sa famille d'origine (typiquement : externes et profils émergents du domaine
 - Contrôle reproductible : ce tableau est **généré** depuis `docs/taxonomie/roles.json` ;
   toute évolution de la taxonomie se répercute par régénération, pas par édition manuelle.
 
+## Accès interne / externe — moindre privilège & protection des données
+
+La bijection dit **quel** cockpit sert un profil ; elle ne dit pas **combien** de ce cockpit une
+identité a le droit de voir. Un même rôle (ex. *Ingénieur DevOps*, `DSI/Externe`) peut être tenu par
+un collaborateur DSI ou par un prestataire : le cockpit fonctionnel est le même, mais **ce qui doit
+être exposé ne l'est pas**. On ajoute donc au moteur de composition une entrée `périmètre de
+l'identité` (interne / externe) et une entrée `sensibilité de la card`.
+
+![Filtre d'accès interne / externe](diagrams/cockpits-dsi-acces-externe.png)
+
+> Source PlantUML : [`diagrams/cockpits-dsi-acces-externe.puml`](diagrams/cockpits-dsi-acces-externe.puml) — le PNG est généré en CI.
+
+### Trois classes d'identité
+
+| Classe | Périmètre taxonomie | Cockpit | Règle de données |
+| --- | --- | --- | --- |
+| **Interne** | 🏛 DSI | Complet selon RBAC | Cards transverses obligatoires (sécurité, RGPD, RGAA, AGPL) **toujours visibles, jamais masquables**. |
+| **Interne externalisé** | 🏛🔗 (rôle DSI tenu par un externe) | Même cockpit fonctionnel | Restreint au périmètre de la mission ; données personnelles/sensibles hors périmètre masquées. |
+| **Externe pur** | 🔗 Externe | Cockpit scopé à l'engagement | Lecture seule par défaut, données sensibles agrégées/masquées, accès time-boxé et tracé. |
+
+### Cinq garde-fous appliqués aux identités externes
+
+1. **Scoping par engagement** — un externe ne voit que le(s) tenant(s), domaine(s) ou projet(s) de son
+   contrat. Un *Prestataire TMA* voit le Run de **ses** applications, pas tout le SI ; un
+   *Prestataire de développement* voit **son** périmètre de delivery, pas le portefeuille complet.
+2. **Masquage par sensibilité** — les cards à données personnelles (RGPD nominatif), secrets, posture
+   de sécurité détaillée et journaux d'audit complets sont **masquées ou agrégées**. C'est
+   l'**inversion de la règle interne** : ce qui est « obligatoire, jamais masquable » pour la DSI
+   devient « masqué par défaut » pour une identité externe.
+3. **Lecture seule par défaut** — la capacité d'action (activer un domaine, inviter, désactiver) reste
+   **réservée à l'interne**. Un externe peut consulter et proposer, jamais exécuter une action de
+   gouvernance.
+4. **Time-box & révocation** — l'accès est lié à la durée du contrat, expire automatiquement et se
+   révoque d'un geste en fin de mission.
+5. **Traçabilité renforcée** — toute consultation par une identité externe est journalisée (qui, quoi,
+   quand), cohérent avec la card *journal d'audit*.
+
+### L'externe n'est pas monolithique
+
+Le scoping est **fonctionnel**, pas un blanc-seing binaire : certains externes ont légitimement besoin
+de cards que d'autres n'auront jamais.
+
+| Profil externe | Cockpit | Ce qu'il voit | Ce qui reste masqué |
+| --- | --- | --- | --- |
+| Auditeur externe · Régulateur | C6 Conformité | Dossier de preuve de conformité, en **lecture seule**, scopé à la période auditée | Données personnelles au-delà du strict nécessaire, opérations hors audit |
+| Éditeur logiciel (support N3) | C4 Run | Incidents techniques de **son** produit | Données métier, autres applications |
+| Infogérant / MSP | C4 Run | Run de **son** périmètre d'exploitation contractuel | Données applicatives métier |
+| Prestataire de développement · TRA | C2 Delivery | Delivery / recette de **son** lot | Portefeuille, budget, sécurité |
+| Consultant / cabinet conseil | C1 Gouvernance | Vues agrégées de sa mission de conseil | Données nominatives, secrets, détail sécurité |
+
 ## Points à valider (arbitrages produit)
 
 Trois choix de regroupement méritent une validation explicite avant figeage :
@@ -315,6 +369,8 @@ Trois choix de regroupement méritent une validation explicite avant figeage :
 2. **Coût / FinOps rangé dans Gouvernance** (C1) comme cluster de cards (ROI, budget) plutôt que
    comme cockpit « Coût » autonome — le volume de profils (contrôleur de gestion, FinOps) ne
    justifie pas un écran séparé.
-3. **Profils Externe (🔗) et Métier (🧩)** : ils reçoivent ici un cockpit par cohérence de la
-   taxonomie, mais un DSI peut vouloir les traiter hors périmètre « console d'administration » ou
-   en lecture seule. C'est un réglage de la **couche gouvernance**, pas de la bijection.
+3. **Profils Externe (🔗) et Métier (🧩)** : ils reçoivent un cockpit par cohérence de la taxonomie,
+   mais l'exposition réelle est bornée par le filtre d'accès (voir *Accès interne / externe*) —
+   scoping, masquage des données sensibles, lecture seule, time-box. À valider : la liste des cards
+   marquées « sensibles » (donc masquées aux externes) et la politique par défaut par type de
+   prestataire. C'est un réglage de la **couche gouvernance**, pas de la bijection.
