@@ -359,6 +359,111 @@ de cards que d'autres n'auront jamais.
 | Prestataire de développement · TRA | C2 Delivery | Delivery / recette de **son** lot | Portefeuille, budget, sécurité |
 | Consultant / cabinet conseil | C1 Gouvernance | Vues agrégées de sa mission de conseil | Données nominatives, secrets, détail sécurité |
 
+## Catalogue de cards & matrice de sensibilité
+
+Décline le point **à valider n°3** : le **catalogue canonique** (40 cards — l'ordre de
+grandeur des « ~30 cards » de [cockpits-dsi.md](cockpits-dsi.md)) et, pour chacune, sa **visibilité
+par classe d'identité**. C'est le **contrat du catalogue** à figer en Gate 4 : une card ne peut être
+posée sur un cockpit que si sa ligne ici est renseignée.
+
+**Niveau de sensibilité** — 🟢 Standard · 🟡 Restreint · 🔴 Sensible  
+(répartition : 🟢 12 · 🟡 19 · 🔴 9)
+
+**Visibilité** — ● complet (selon RBAC) · ◑ complet mais **limité au scope de l'engagement** ·
+◐ **agrégé / anonymisé** (ni détail nominatif, ni détail sécurité) · ○ **masqué par défaut**
+
+> Colonnes : **🏛 Interne** (collaborateur DSI) · **🏛🔗 Externalisé** (rôle DSI tenu par un externe) ·
+> **🔗 Externe pur** (prestataire / éditeur / auditeur). La colonne Externe pur est la **politique par
+> défaut** ; le *type d'engagement* peut l'élever sur les cards de son périmètre (cf. § « L'externe
+> n'est pas monolithique ») — un infogérant passe ◐→◑/● sur les cards Run de son scope, jamais sur les 🔴.
+
+### Transverse (couche toujours présente)
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Bandeau santé instance | 🟢 | ● | ◑ | ◐ | État global ; agrégé pour l'externe (pas de détail infra hors scope). |
+| Adoption globale | 🟡 | ● | ◑ | ◐ | Taux d'usage agrégé ; pas de détail par utilisateur. |
+
+### C1 · Pilotage / Gouvernance
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| ROI vs SaaS | 🔴 | ● | ○ | ○ | Donnée financière/stratégique : masquée à tout externe. |
+| Roadmap d'adoption | 🟡 | ● | ◑ | ◐ | Trajectoire ; visible agrégée si dans le scope de mission. |
+| Santé du portefeuille projets | 🟡 | ● | ◑ | ◐ | Externe : limité à SON projet, sinon masqué. |
+| Budget / coût SI | 🔴 | ● | ○ | ○ | Données financières : jamais exposées à un externe. |
+| Activation des domaines | 🟡 | ● | ○ | ○ | Action de gouvernance : lecture interne, jamais actionnable externe. |
+| Staffing / capacité RH | 🔴 | ● | ○ | ○ | Données RH nominatives : masquées. |
+
+### C2 · Agilité
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Vélocité | 🟢 | ● | ◑ | ◑ | Externe : SA squad / SON lot uniquement. |
+| Régularité des standups | 🟢 | ● | ◑ | ◑ | Limité à l'équipe de la mission. |
+| Capacity | 🟡 | ● | ◑ | ◐ | Détail nominatif de charge agrégé pour l'externe. |
+| Qualité de code / couverture tests | 🟢 | ● | ◑ | ◑ | Prestataire dev : sur SON périmètre de code. |
+| Releases / mises en production | 🟡 | ● | ◑ | ◐ | Historique de livraison, scopé à la mission. |
+
+### C3 · Architecture & Données
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Cartographie applicative | 🟡 | ● | ◑ | ◐ | Révèle la structure du SI : agrégée/scopée pour l'externe. |
+| Dette d'urbanisation | 🟡 | ● | ◑ | ◐ | Vue technique ; scope de mission. |
+| Catalogue & qualité des données | 🟡 | ● | ◑ | ◐ | Métadonnées ; **contenu des données 🔴 jamais exposé**. |
+| Pipelines de données | 🟡 | ● | ◑ | ◐ | Peut contenir de la donnée métier : agrégé/scopé. |
+| Conformité IA / AI Act | 🟢 | ● | ◑ | ◐ | Statut de conformité ; non sensible. |
+
+### C4 · Exploitation (Run)
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Incidents en cours | 🟡 | ● | ◑ | ◑ | Infogérant/éditeur : incidents de SON périmètre. |
+| SLA / disponibilité | 🟢 | ● | ◑ | ◑ | Externe run : sur SON périmètre contractuel. |
+| Capacité / dimensionnement | 🟢 | ● | ◑ | ◑ | Métriques techniques, scopées. |
+| Files de support | 🟡 | ● | ◑ | ◐ | Peut contenir des données utilisateurs : agrégé. |
+| Changements en production | 🟡 | ● | ◑ | ◑ | Scope d'exploitation contractuel. |
+
+### C5 · Sécurité & Continuité
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Posture de sécurité | 🔴 | ● | ○ | ○ | Révèle la surface d'attaque : jamais exposée à un externe. |
+| OIDC / IAM | 🔴 | ● | ○ | ○ | Identités & habilitations : masqué hors DSI. |
+| Correctifs de sécurité en attente | 🔴 | ● | ○ | ○ | Expose des vulnérabilités non corrigées. |
+| Alertes SOC & réponse à incident | 🔴 | ● | ◐ | ○ | Analyste SOC externalisé : agrégé, sans détail nominatif. |
+| État PCA / PRA | 🟡 | ● | ◑ | ◐ | Statut de continuité ; détail des plans réservé interne. |
+| Risques SSI | 🔴 | ● | ◐ | ○ | Registre des risques sécurité : masqué à l'externe pur. |
+
+### C6 · Conformité, Qualité & Risques
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Conformité RGPD | 🟡 | ● | ◑ | ◐ | Statut agrégé visible ; **détail nominatif 🔴 masqué**. |
+| Accessibilité RGAA / WCAG | 🟢 | ● | ◑ | ◐ | Peu sensible ; un auditeur RGAA externe y a accès en lecture seule. |
+| Conformité licence AGPL | 🟢 | ● | ◑ | ◐ | Obligation de licence ; non sensible. |
+| Journal d'audit | 🔴 | ● | ◐ | ○ | Traçabilité complète : masqué (sauf auditeur, RO scopé — voir plus haut). |
+| Risques SI | 🟡 | ● | ◑ | ◐ | Registre risques ; agrégé pour l'externe. |
+| Empreinte numérique responsable | 🟢 | ● | ◑ | ◐ | Reporting RSE ; non sensible. |
+
+### C7 · Collaboratif / Adoption
+
+| Card | Sensibilité | 🏛 Interne | 🏛🔗 Externalisé | 🔗 Externe pur | Motif |
+| --- | :---: | :---: | :---: | :---: | --- |
+| Usage whiteboard / live / quiz | 🟡 | ● | ◐ | ◐ | Contenus produits par les utilisateurs : agrégés, jamais nominatifs. |
+| Adoption par direction métier | 🟡 | ● | ◐ | ◐ | Taux d'usage agrégés. |
+| Conduite du changement | 🟢 | ● | ◑ | ◐ | Plan d'accompagnement ; non sensible. |
+| Formation | 🟢 | ● | ◑ | ◐ | Catalogue et complétion agrégée. |
+| Satisfaction (NPS) | 🟡 | ● | ◐ | ◐ | Score agrégé ; **verbatims nominatifs 🔴 masqués**. |
+
+### Règle de cohérence (invariant du contrat)
+
+- **Toute card 🔴 Sensible est ○ (masquée) pour l'Externe pur** par défaut : 9/9 vérifiées ; les 🔴 non masquées (0) ne le sont que sous forme agrégée pour un rôle externalisé qui en a besoin (ex. Alertes SOC, Journal d'audit).
+- **Aucune card n'est actionnable par un externe** : les actions de gouvernance (activation, invitation, désactivation) restent 🏛 uniquement.
+- **Les cards transverses obligatoires** (Posture sécurité, RGPD, RGAA, AGPL) sont **● non masquables en interne** et suivent la politique ci-dessus en externe — l'inversion documentée plus haut.
+- Cette matrice est la **source de vérité** ; un composant `pivot-design-system` implémentant une card doit déclarer sa `sensibilité` et respecter la visibilité par classe d'identité.
+
 ## Points à valider (arbitrages produit)
 
 Trois choix de regroupement méritent une validation explicite avant figeage :
