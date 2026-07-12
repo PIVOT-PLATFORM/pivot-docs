@@ -1,0 +1,63 @@
+@startuml cockpits-dsi-acces-externe
+title Filtre d'acces interne / externe -- protection des donnees
+
+skinparam shadowing false
+skinparam defaultFontName sans-serif
+skinparam ArrowColor #73726c
+skinparam rectangle {
+  BorderColor #73726c
+  BackgroundColor #F1EFE8
+}
+
+rectangle "Identite\n(profil + perimetre)" as id
+
+package "Classe d'identite" {
+  rectangle "Interne (DSI)\ncollaborateur" as interne #E1F5EE
+  rectangle "Interne externalise\n(role DSI tenu par un externe)" as mixte #FAEEDA
+  rectangle "Externe pur\n(prestataire, editeur, auditeur...)" as externe #FADBD8
+}
+
+rectangle "Moteur de composition\nrole + domaine active\n+ PERIMETRE identite\n+ SENSIBILITE card" as moteur #EEEDFE
+
+package "Filtre d'acces (moindre privilege)" {
+  rectangle "Scoping\ntenant / domaine / projet\nde l'engagement" as scope #FAEEDA
+  rectangle "Masquage par sensibilite\nRGPD nominatif, secrets,\nposture secu, audit -> agrege/masque" as masque #FADBD8
+  rectangle "Lecture seule\nactionnabilite reservee\na l'interne" as ro #FAEEDA
+  rectangle "Time-box + tracabilite\nexpiration en fin de mission,\nchaque acces journalise" as timebox #FAEEDA
+}
+
+rectangle "Cockpit rendu\n(cards autorisees uniquement)" as cockpit #E1F5EE
+
+id --> interne
+id --> mixte
+id --> externe
+
+interne --> moteur : cards transverses\nobligatoires visibles
+mixte --> moteur
+externe --> moteur
+
+moteur --> scope
+scope --> masque
+masque --> ro
+ro --> timebox
+timebox --> cockpit
+
+note right of externe
+  L'externe n'est pas monolithique :
+  - Auditeur / Regulateur : lecture seule
+    du dossier de preuve conformite (C6),
+    scope a la periode auditee.
+  - Editeur (support N3) : incidents de
+    SON produit, pas les donnees metier.
+  - Infogerant/MSP : Run de SON perimetre
+    contractuel, donnees applicatives masquees.
+end note
+
+note bottom of masque
+  Inversion de la regle interne :
+  ce qui est "obligatoire, jamais masquable"
+  pour la DSI devient "masque par defaut"
+  pour une identite externe.
+end note
+
+@enduml

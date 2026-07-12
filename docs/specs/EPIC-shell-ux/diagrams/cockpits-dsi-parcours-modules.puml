@@ -1,0 +1,45 @@
+@startuml cockpits-dsi-parcours-modules
+title Parcours global : du cockpit aux modules (tous modes d'integration)
+
+skinparam shadowing false
+skinparam defaultFontName sans-serif
+skinparam ArrowColor #73726c
+skinparam rectangle {
+  BorderColor #73726c
+  BackgroundColor #F1EFE8
+}
+
+package "Modules (quel que soit le mode)" {
+  rectangle "Natif PIVOT\npivot-*-core/ui" as natif #E1F5EE
+  rectangle "Adaptateur OSS\nOpenProject, Plane..." as adapt #E1F5EE
+  rectangle "Lien SSO + widget\nKeycloak, BookStack" as lien #E1F5EE
+  rectangle "Externe / ITSM tenant\nServiceNow (EN51.10)" as itsm #FAEEDA
+}
+
+rectangle "Contrat a 6 capacites (ADR-009)\nIdentite . Entites . Evenements\nSante . Liens profonds . Theme" as contrat #EEEDFE
+
+package "Cockpit (composition, shell)" {
+  rectangle "Bandeau de statut\n(sante des modules)" as bandeau #FAEEDA
+  rectangle "Cards\n(projection des evenements)" as cards #E1F5EE
+  rectangle "Drill-down / action" as drill #E1F5EE
+}
+
+natif --> contrat
+adapt --> contrat
+lien --> contrat
+itsm --> contrat
+
+contrat --> bandeau : sante
+contrat --> cards : evenements (bus, ADR-025)
+cards --> drill
+
+drill ..> contrat : deep-link + SSO\n(identite ADR-028)
+contrat ..> natif : ouvre le module\nsur le bon contexte
+
+note bottom of contrat
+  Jamais de FK inter-modules (ADR-006).
+  Module desactive / WIP -> card 'module-wip'.
+  L'identite (interne/externe) suit le deep-link.
+end note
+
+@enduml

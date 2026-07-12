@@ -1,0 +1,42 @@
+@startuml cockpits-dsi-creation-objet
+title Creation d'un objet depuis le shell : shell -> module -> bus -> cockpit
+
+skinparam shadowing false
+skinparam defaultFontName sans-serif
+skinparam sequenceArrowThickness 1
+skinparam ParticipantBorderColor #73726c
+skinparam ParticipantBackgroundColor #F1EFE8
+skinparam ActorBorderColor #73726c
+skinparam ActorBackgroundColor #F1EFE8
+skinparam NoteBackgroundColor #FAEEDA
+skinparam NoteBorderColor #73726c
+
+actor "Utilisateur" as U
+participant "Shell UX\n(+ Creer)" as S
+participant "Module\n(ex. pilotage)" as M
+queue "Bus d'evenements" as B
+participant "Cockpit\n(projection)" as C
+
+U -> S : "+ Creer" > Projet
+activate S
+S -> S : filtre par modules actives\n+ droits (ADR-027)
+S -> M : deep-link /pilotage/projects/new?team=ref\n(identite SSO portee)
+deactivate S
+activate M
+U -> M : saisit & valide
+M -> M : cree l'objet\n(schema pilotage, verif droits + perimetre)
+M -> B : pilotage.project.created\n(PivotEvent, projectRef)
+deactivate M
+activate B
+B -> C : projection mise a jour
+deactivate B
+activate C
+C -> U : la card "Sante du portefeuille"\nreflete le nouveau projet
+deactivate C
+
+note over M, B
+  L'objet vit dans le module (jamais le core, ADR-006).
+  Correlation cross-module par projectRef, jamais de FK.
+end note
+
+@enduml
