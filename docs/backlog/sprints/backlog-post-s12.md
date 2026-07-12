@@ -19,6 +19,12 @@
 - E41 suites : US41.1.2-4 (tooltips, checklist, quoi de neuf), F41.2 centre d'aide, F41.3 supports, F41.4 présentiel (dépend E19), F41.5 catalogue par module (au fil des livraisons), F41.6 mesure d'adoption
 - E42 vague 2 : US42.2.5 multilingue, US42.3.3 enquêtes in-app, US42.4.3 réponses partielles, US42.5.2/42.5.3 API & MCP, F42.6 IA, F42.7 gouvernance, F42.8 souveraineté + EN42.2, F42.9-11
 - E43 vagues 2+ : EN43.1-4 topologie (BFF/Gateway/Mesh/Egress), EN43.8-13 observabilité & gouvernance
+- **E51 Cockpits DSI** *(déprogrammé du Sprint 14 le 2026-07-12 — remplacé par le raffinage E52)* :
+  ossature EN51.1-5 (composant card, moteur de composition, shell, filtre d'accès interne/externe) +
+  cards Socle v0 F51.1 + cards gouvernance F51.2 (enablers données EN51.6-10 : télémétrie, audit,
+  code-scanning, portefeuille, ITSM) + cards modules WIP F51.3 + ADR-028 (accès & identités externes).
+  EPIC intacte — à replanifier après la vague de clarification des domaines (E52). La fiche
+  d'observabilité E52 (US52.1.7) prépare naturellement la card Santé/Audit de ce futur sprint.
 
 ---
 

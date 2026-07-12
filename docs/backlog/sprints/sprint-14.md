@@ -1,67 +1,80 @@
-# Sprint 14 — Cockpits DSI (framework + cards Socle v0)
+# Sprint 14 — Raffinage & clarification des domaines (Vague 1 : Socle)
 
-> **Objet** : rendre les cockpits d'administration DSI réels et utiles **même quand les modules sont
-> WIP**. On livre l'ossature ([E51](../EPIC-cockpits/README.md)) puis les cards branchées sur les
-> briques déjà livrées ; les cards de modules non prêts se rendent en état `module-wip`.
+> **Objet** : ouvrir le programme de **raffinage** demandé — « à partir du Sprint 14, raffiner
+> énormément tout ce qui a été fait avant » — en rendant **chaque domaine déjà livré parfaitement
+> clair** sur quatre axes : **CRUD**, **qui a accès (par profil)**, **comment on y accède**, **d'où
+> viennent les infos (API externes & sources)**. Vague 1 = **domaines Socle** ; Pilotage en S15,
+> Agilité/Collaboratif + synthèse en S16 (cf. [E52](../EPIC-clarification-domaines/README.md)).
 >
-> **Additif** : ce sprint ne modifie aucun item des Sprints 1-13. Il consomme des briques Socle
-> déjà mergées (E01/E03/E04/E06) et les livrables Pilotage de S9-S10.
+> **Nature du sprint** : livrables **documentaires** dans `pivot-docs` (`docs/architecture/domaines/`).
+> Aucun code applicatif, aucun changement de contrat d'API — on **documente l'existant** et on
+> **relève les écarts** (droit non appliqué serveur, source externe non tracée) en findings à
+> arbitrer, jamais de correctif unilatéral.
 >
-> **Statut** : ⬜ planifié — non démarré. Séquencé après S13 ; les enablers EN51.1-5 et les cards
-> F51.1 sont faisables immédiatement (données déjà exposées, cf. audit de faisabilité).
+> **Remplacement** : ce sprint **remplace** l'ancien Sprint 14 « Cockpits DSI ». L'EPIC E51 Cockpits
+> reste intacte et est **reséquencée** en [backlog post-S12](./backlog-post-s12.md) (queue non
+> planifiée), à replanifier après la vague de raffinage.
+>
+> **Statut** : ⬜ planifié — non démarré. Séquencé après S13 ; framework (EN52.1-3) faisable
+> immédiatement, fiches Socle enchaînées derrière.
 
-**Sortie :** un cockpit d'administration composable de bout en bout, affichant les **4 cards Socle
-v0** réelles (Identités, Activation domaines, Santé instance, Roadmap) + les cards de modules WIP en
-placeholder — sur profil d'organisation par défaut (EN18.10).
+**Sortie :** un **référentiel de clarification des domaines Socle** — 1 template + 1 référentiel
+d'accès consolidé + 1 registre des API externes + **9 fiches de domaine** (Identités/IAM, Espace
+compte, Tenants & Équipes, Administration, Système de modules, Shell & notifications, Observabilité &
+audit, Whiteboard, Infra & CI/CD), chacune répondant aux 4 axes.
+
+## Les 4 axes (rappel du contrat de fiche — [EN52.1](../EPIC-clarification-domaines/ENABLERS/en-template-fiche-domaine.md))
+
+| # | Axe | Question | Notation |
+|---|-----|----------|----------|
+| 1 | Entités & CRUD | *Quoi ?* | `C R U D` / `—` / `(scope)` |
+| 2 | Accès par profil | *Qui ?* | `●` autorisé / `◑` conditionnel / `○` interdit |
+| 3 | Mécanisme d'accès | *Comment ?* | point d'application serveur nommé (guard/annotation/filtre) |
+| 4 | API externes & sources | *D'où ?* | sens `↓in`/`↑out`/`↕`, protocole, secret, dev/prod |
 
 ## Scope
 
-- **Ossature (faisable maintenant)** : EN51.1 (composant Card + états dont `module-wip`), EN51.2
-  (moteur de composition), EN51.3 (contrat du catalogue), EN51.4 (shell/hôte), EN51.5 (filtre
-  d'accès interne/externe).
-- **Cards Socle v0 (faisables maintenant)** : US51.1.1 à US51.1.4.
-- **Déblocage de cards gouvernance (enablers de données)** : EN51.6 (télémétrie d'usage — levier
-  n°1), EN51.7 (lecture audit), EN51.8 (code-scanning), EN51.9 (agrégat portefeuille). Les cards
-  F51.2 qui en dépendent suivent une fois l'enabler livré (dans ce sprint si capacité, sinon S15).
+- **Framework (faisable maintenant, à livrer en premier)** : EN52.1 (template + conventions),
+  EN52.2 (référentiel d'accès consolidé : rôles système/équipe/portées/mécanismes/mapping taxonomie),
+  EN52.3 (registre des API externes & sources de données).
+- **Fiches de domaine Socle (F52.1)** : US52.1.1 à US52.1.9 — une fiche par domaine livré.
 
 ## Items
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| EN51.1 | Composant Card & tous ses états (dont `module-wip`) | M | Critical | ⬜ |
-| EN51.2 | Moteur de composition de cockpit | M | Critical | ⬜ |
-| EN51.3 | Contrat / registre du catalogue de cards | M | Critical | ⬜ |
-| EN51.4 | Shell / hôte de cockpit | L | High | ⬜ |
-| EN51.5 | Filtre d'accès interne / externe & masquage | L | Critical | ⬜ |
-| US51.1.1 | Card Identités & sessions | S | High | ⬜ |
-| US51.1.2 | Card Activation des domaines | S | High | ⬜ |
-| US51.1.3 | Card Santé de l'instance | M | High | ⬜ |
-| US51.1.4 | Card Roadmap | S | Medium | ⬜ |
-| EN51.6 | Couche de télémétrie d'usage *(levier — débloque adoption/usage)* | L | High | ⬜ |
-| EN51.7 | Endpoint de lecture du journal d'audit | M | High | ⬜ |
-| EN51.8 | Intégration GitHub Code-Scanning | M | Medium | ⬜ |
-| EN51.9 | Agrégat portefeuille cross-projet | M | Medium | ⬜ |
-| EN51.10 | Interfaçage ITSM (connecteurs par tenant) | M | Medium | ⬜ |
-| ADR-028 | Accès & identités externes *(décision d'architecture, pré-requis EN51.5)* | — | High | ⬜ |
+| EN52.1 | Template de fiche de domaine & conventions de matrices | M | Critical | ⬜ |
+| EN52.2 | Référentiel d'accès consolidé (qui / comment) | M | Critical | ⬜ |
+| EN52.3 | Registre des API externes & sources de données (d'où) | M | High | ⬜ |
+| US52.1.1 | Fiche — Identités & IAM *(E01 · auth)* | M | Critical | ⬜ |
+| US52.1.2 | Fiche — Espace compte *(E02 · core)* | S | High | ⬜ |
+| US52.1.3 | Fiche — Tenants & Équipes *(E17 · core)* | M | Critical | ⬜ |
+| US52.1.4 | Fiche — Administration *(E06 · admin)* | M | Critical | ⬜ |
+| US52.1.5 | Fiche — Système de modules *(E03 · core)* | S | High | ⬜ |
+| US52.1.6 | Fiche — Shell, navigation & notifications *(E16 · core)* | S | Medium | ⬜ |
+| US52.1.7 | Fiche — Observabilité & audit *(E04 · core)* | M | High | ⬜ |
+| US52.1.8 | Fiche — Collaboratif · Whiteboard *(E30 noyau · collaboratif)* | L | High | ⬜ |
+| US52.1.9 | Fiche — Infrastructure, CI/CD & sources externes *(E05/E07/E17 · core)* | M | Medium | ⬜ |
 
-> **Cards gouvernance v0 (F51.2)** — Journal d'audit *(EN51.7)*, Correctifs sécurité *(EN51.8)*,
-> Santé du portefeuille *(EN51.9)*, Adoption globale *(EN51.6)* — à ouvrir dès que leur enabler de
-> données est mergé ; portées en fin de sprint si capacité, sinon reportées.
->
-> **Cards modules WIP (F51.3)** — restent en backlog E51, rendues `module-wip`, activées US par US au
-> fil de la livraison de leur module porteur (agilité E10/E11, budget E26, risques E21/E43, données,
-> formation E41, feedback E46…).
+> **Vagues suivantes (hors S14)** — F52.2 domaines Pilotage (Sprint 15, après recette S9-S13) ·
+> F52.3 domaines Agilité/Collaboratif + **synthèse transverse** (Sprint 16 : matrice d'accès
+> plateforme complète, cartographie des flux externes consolidée, liste des écarts arbitrés).
 
 ## Ordre d'attaque suggéré
 
-1. EN51.1 + EN51.3 (composant + contrat) en parallèle — fondations sans dépendance.
-2. EN51.2 (moteur) puis EN51.4 (shell) — consomment 1 & 3.
-3. EN51.5 (filtre d'accès) — avant toute card exposant de la donnée sensible.
-4. US51.1.1-4 (cards Socle) une fois le moteur + shell + filtre en place.
-5. EN51.6-9 (enablers de données) en parallèle du bloc cards, chacun débloquant une card F51.2.
+1. **EN52.1** (template + conventions) — bloque toutes les fiches, à livrer en premier.
+2. **EN52.2 + EN52.3** (référentiel d'accès + registre externes) en parallèle — les deux socles
+   référencés par les 9 fiches (axes 3 et 4).
+3. **US52.1.3 Tenants & Équipes** puis **US52.1.5 Système de modules** — fiches des **portées**
+   (tenant/équipe/module) que les autres fiches citent pour l'axe « accès ».
+4. **US52.1.1 / .4 / .7** (Identités, Administration, Audit) — le triangle sensible « qui a accès ».
+5. **US52.1.2 / .6 / .8 / .9** — comptes, shell, whiteboard (patron des modules métier), infra.
 
 ## Pré-requis d'amorçage
 
-- Gate 1 READINESS sur les 13 items avant tout Dev Agent.
-- Confirmer le point de branchement de la santé actuator (`:8081` non `/api`, cf. US51.1.3) et la
-  stratégie code-scanning (API live vs ingestion SARIF, cf. EN51.8) au Gate 1.
+- Gate 1 READINESS sur les 12 items avant tout Dev Agent (les US de fiches naissent en stub — DoR à
+  compléter au démarrage, gabarit E44-E50).
+- Confirmer au Gate 1 : la notation des matrices (`●/◑/○`, `C/R/U/D`) est-elle figée par EN52.1 avant
+  la première fiche ? (dépendance dure : oui.)
+- Rappel : chaque fiche **documente et relève des écarts** ; tout correctif applicatif détecté est un
+  finding à ouvrir séparément (branche `fix/…` hors E52), jamais traité dans la fiche.

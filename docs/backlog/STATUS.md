@@ -56,7 +56,8 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E48 — Assistant IA (transverse)](EPIC-assistant-ia/README.md) | E48 | 1 | 1 | 1 | ⬜ phase-3 |
 | [E49 — Module To-Do](EPIC-todo/README.md) | E49 | 3 | — | 3 | ⬜ phase-3 |
 | [E50 — Module PI Planning](EPIC-pi-planning/README.md) | E50 | 3 | — | 4 | ⬜ phase-3 · agilite |
-| [E51 — Cockpits DSI](EPIC-cockpits/README.md) | E51 | 3 | 10 | 4+ | ⬜ phase-3 · transverse — [Sprint 14](sprints/sprint-14.md) (framework + cards Socle v0, marche même si modules WIP · ADR-028 accès externe) |
+| [E51 — Cockpits DSI](EPIC-cockpits/README.md) | E51 | 3 | 10 | 4+ | ⬜ phase-3 · transverse — reséquencé en [backlog post-S12](sprints/backlog-post-s12.md) (déprogrammé du Sprint 14 le 2026-07-12, remplacé par le raffinage E52 · ADR-028 accès externe conservé) |
+| [E52 — Clarification des domaines](EPIC-clarification-domaines/README.md) | E52 | 3 | 3 | 9+ | ⬜ Socle · transverse (raffinage) — [Sprint 14](sprints/sprint-14.md) Vague 1 Socle (CRUD · accès par profil · API externes) ; Pilotage S15, Agilité/Collaboratif + synthèse S16 |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **78** | 🔄 En cours |
 | **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~158** | **~68** | **~554** | ⏸️ Verrouillé |
 | **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
@@ -298,3 +299,15 @@ mergés**. Le Sprint 5 est **dev-terminé, en attente de recette mainteneur** �
 `Stage: ⬜` tant que la recette n'est pas actée (EN17.1/17.2/17.5 déjà `✅` = déjà recettés). Le
 compte d'enablers E17 corrigé 8→10 (EN17.9/17.10 ajoutés en cours de sprint, jamais répercutés
 dans la synthèse). Aucune promotion de statut de recette, aucun changement de périmètre.*
+
+*Refonte Sprint 14 — programme de raffinage 2026-07-12 (PO Agent + Scrum Master + Architecte Modules,
+à la demande du mainteneur) : le Sprint 14 « Cockpits DSI » est **remplacé** par le lancement d'un
+programme de **clarification des domaines** — nouvelle EPIC **E52** (3 enablers framework + 9 fiches de
+domaine Socle en Vague 1). Objectif : rendre chaque domaine déjà livré parfaitement clair sur 4 axes
+(entités & CRUD · accès par profil utilisateur · mécanisme d'accès · API externes & sources de
+données). Programme multi-sprint : Vague 1 Socle (S14), Vague 2 Pilotage (S15), Vague 3
+Agilité/Collaboratif + synthèse transverse (S16). Livrables documentaires dans
+`docs/architecture/domaines/` — aucun code, les écarts détectés (droit non appliqué serveur, source
+non tracée) sont des findings à arbitrer. **E51 Cockpits DSI** n'est pas supprimée : l'EPIC reste
+intacte, reséquencée en [backlog post-S12](sprints/backlog-post-s12.md) (queue non planifiée), à
+replanifier après la vague de raffinage. Aucun `Stage` frontmatter d'un item existant touché.*

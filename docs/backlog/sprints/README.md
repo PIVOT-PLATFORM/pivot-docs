@@ -24,9 +24,14 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 11](./sprint-11.md) | Risques + plan de contrôle sécurité | 🔓 Débloqué — inchangé au re-tri |
 | [Sprint 12](./sprint-12.md) | Forms (cœur) + framework onboarding | 🔓 Débloqué — inchangé au re-tri |
 | [Sprint 13](./sprint-13.md) | Satellites Pilotage à valeur (E24 ADR · E26 Budget · E27 OKR · E23 v2) *(nouveau 2026-07-10)* | 🔓 Débloqué (suite S9-S11) — remonté de post-S12, **avant** la queue idéation |
-| [Sprint 14](./sprint-14.md) | Cockpits DSI — framework + cards Socle v0 (marche même si modules WIP) *(nouveau 2026-07-12)* | 🔓 Débloqué (additif — consomme le Socle + Pilotage S9-S10, ne touche aucun sprint existant) |
+| [Sprint 14](./sprint-14.md) | Raffinage & clarification des domaines — Vague 1 Socle (CRUD · accès par profil · API externes) *(remplace Cockpits DSI, 2026-07-12)* | 🔓 Débloqué (raffinage documentaire, [E52](../EPIC-clarification-domaines/README.md) — framework EN52.1-3 + 9 fiches Socle) |
 | [Backlog post-S12](./backlog-post-s12.md) | Queue non planifiée — dont **idéation** : E40 profil adaptatif, EN18.3-8 habillage entreprise | — |
 | [Zones d'ombre à raffiner](./zones-ombre.md) | Décisions produit/cadrage en attente | — |
+
+> **Programme de raffinage ([E52](../EPIC-clarification-domaines/README.md), à partir du S14)** :
+> Vague 1 domaines Socle (**Sprint 14**) → Vague 2 Pilotage (Sprint 15) → Vague 3
+> Agilité/Collaboratif + synthèse transverse (Sprint 16). Les fichiers `sprint-15.md`/`sprint-16.md`
+> seront créés à l'ouverture de leur vague.
 
 ---
 
