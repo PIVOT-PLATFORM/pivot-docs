@@ -35,7 +35,7 @@ plus **3 exceptions** justifiées. La liste complète des règles est en fin de 
 
 | # | Cockpit | Job-to-be-done (règle des 3 s) | Couche / domaine dominant | Profils |
 | --- | --- | --- | --- | ---: |
-| C1 | **Gouvernance & Stratégie SI** | Est-ce que la trajectoire SI tient ? Arbitrer le portefeuille, le budget/ROI, les activations de domaines. | Transverse (ROI, adoption globale) + Pilotage | 29 |
+| C1 | **Gouvernance & Stratégie SI** | Est-ce que la trajectoire SI tient ? Arbitrer le portefeuille, le budget/ROI, les risques projet, les activations de domaines. | Transverse (ROI, adoption globale) + Pilotage | 29 |
 | C2 | **Delivery & Agilité (Build)** | Est-ce qu'on livre ? Vélocité, régularité des standups, capacity, qualité de la construction. | Agilité | 26 |
 | C3 | **Architecture, Urbanisation & Données** | Est-ce que le SI et sa donnée sont sous contrôle ? Cartographie, cohérence cible, gouvernance & qualité des données, IA/AI Act. | Transverse (urbanisation, gouvernance données) | 21 |
 | C4 | **Exploitation & Services (Run)** | Est-ce que ça tourne ? Santé de l'instance, incidents, SLA, capacité, supervision, support. | Transverse (santé instance) + ITSM | 34 |
@@ -56,7 +56,7 @@ sous son périmètre principal dans la taxonomie.
 ### C1 · Gouvernance & Stratégie SI — 29 profils
 
 *JTBD : Est-ce que la trajectoire SI tient ? Arbitrer le portefeuille, le budget/ROI, les activations de domaines.*  
-*Cards types : Roadmap d'adoption, santé du portefeuille projets, ROI vs SaaS, budget/coût, activation des domaines, staffing.*
+*Cards types : Roadmap d'adoption, santé du portefeuille projets, ROI vs SaaS, budget/coût, activation des domaines, staffing, risques projet & portefeuille.*
 
 | Profil | Appellations | Périmètre | Domaine taxonomie | Macro-rôle |
 | --- | --- | --- | --- | --- |
@@ -93,7 +93,7 @@ sous son périmètre principal dans la taxonomie.
 ### C2 · Delivery & Agilité (Build) — 26 profils
 
 *JTBD : Est-ce qu'on livre ? Vélocité, régularité des standups, capacity, qualité de la construction.*  
-*Cards types : Vélocité, régularité des standups, capacity, burn-down, qualité de code / tests, releases.*
+*Cards types : Vélocité, régularité des standups, capacity, qualité de code / tests, releases.*
 
 | Profil | Appellations | Périmètre | Domaine taxonomie | Macro-rôle |
 | --- | --- | --- | --- | --- |
@@ -217,7 +217,13 @@ sous son périmètre principal dans la taxonomie.
 ### C6 · Conformité, Qualité & Risques — 12 profils
 
 *JTBD : Est-ce qu'on est en règle ? RGPD, RGAA, conformité AGPL, audits, normes, risques, numérique responsable.*  
-*Cards types : Conformité RGPD, RGAA/WCAG 2.1 AA, conformité licence AGPL, journal d'audit, risques SI, empreinte numérique responsable.*
+*Cards types : Conformité RGPD, RGAA/WCAG 2.1 AA, conformité licence AGPL, journal d'audit, empreinte numérique responsable.*
+
+> **Les risques se répartissent sur trois cockpits** (suite à la séparation F6) : *risques projet &
+> portefeuille* → **C1** (module E21, lentille pilotage) · *risques SSI/sécurité* → **C5** (E43) ·
+> *risques de conformité/réglementaires* → **C6** (lentille conformité, card candidate sur E21). Le
+> champ `category` de l'événement `risk.raised` aiguille vers la bonne card. Le « & Risques » du nom de
+> C6 désigne donc les **risques de conformité**, pas les risques projet (C1) ni SSI (C5).
 
 | Profil | Appellations | Périmètre | Domaine taxonomie | Macro-rôle |
 | --- | --- | --- | --- | --- |

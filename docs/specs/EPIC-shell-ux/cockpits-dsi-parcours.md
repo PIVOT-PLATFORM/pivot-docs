@@ -130,9 +130,10 @@ En 3 s → Cards → Drill-down → Action → Vue externe**.
 - **Qui** : DSI, directeur de programme/portefeuille, responsable stratégie SI.
 - **Déclencheur** : connexion — cockpit par défaut de l'archétype gouvernance.
 - **En 3 s** : bandeau santé instance + alertes conformité ; « la trajectoire tient-elle ? ».
-- **Cards** : Santé du portefeuille projets 🟡 · Roadmap d'adoption 🟡 · ROI vs SaaS 🔴 · Activation des
-  domaines 🟡.
-- **Drill-down** : budget/coût 🔴, staffing 🔴, détail portefeuille projet par projet.
+- **Cards** : Santé du portefeuille projets 🟡 · Roadmap d'adoption 🟡 · ROI vs SaaS 🔴 · Risques projet
+  & portefeuille 🟡 · Activation des domaines 🟡.
+- **Drill-down** : budget/coût 🔴, staffing 🔴, détail portefeuille projet par projet, registre des
+  risques projet.
 - **Action** : **Activer un domaine** (confirmation explicite) — seule action de gouvernance courante.
 - **Vue externe** (consultant) : ROI/budget/staffing 🔒 masqués ; roadmap/portefeuille ◐ agrégés au
   périmètre de mission.
