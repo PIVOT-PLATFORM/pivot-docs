@@ -30,12 +30,12 @@ maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (n
 | US22.4.1c | WBS : agrégation tâches récapitulatives & A11y | M | Critical | ✅ mergé (idem #43/#31 — livré avec US22.4.1a/b) |
 | US22.4.2 | Durées, effort, planification auto vs manuelle | L | Critical | ✅ mergé (backend [pivot-pilotage-core#49](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/49), frontend [pivot-pilotage-ui#33](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/33)) |
 | US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ✅ mergé (backend [pivot-pilotage-core#47](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/47), frontend [pivot-pilotage-ui#28](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/28)) |
-| US22.4.4 | Contraintes de date & échéances | M | High | ⬜ |
+| US22.4.4 | Contraintes de date & échéances | M | High | ✅ mergé (backend [pivot-pilotage-core#54](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/54), frontend [pivot-pilotage-ui#37](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/37)) |
 | US22.4.5 | Calendriers ouvrés & exceptions | L | High | ✅ mergé (backend [pivot-pilotage-core#45](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/45), frontend [pivot-pilotage-ui#30](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/30)) |
-| US22.4.6 | Jalons & tâches périodiques | M | Medium | ⬜ |
-| US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ |
-| US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ⬜ |
-| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ⬜ |
+| US22.4.6 | Jalons & tâches périodiques | M | Medium | ✅ mergé (backend [pivot-pilotage-core#55](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/55), frontend [pivot-pilotage-ui#38](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/38)) |
+| US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ backend mergé ([pivot-pilotage-core#64](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/64)) — frontend `pivot-pilotage-ui` restant |
+| US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ✅ mergé (backend [pivot-pilotage-core#59](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/59), frontend [pivot-pilotage-ui#42](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/42)) |
+| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ✅ mergé (backend [pivot-pilotage-core#63](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/63), frontend [pivot-pilotage-ui#43](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/43)) |
 | US22.4.10a | Déplacement/redimensionnement des barres & lien par glisser *(ex-US22.4.10 XL)* | L | Critical | ⬜ |
 | US22.4.10b | Zoom de l'échelle de temps & poignée d'avancement | M | Critical | ⬜ |
 | US22.4.10c | Virtualisation du rendu & édition clavier accessible | L | Critical | ⬜ |
@@ -45,8 +45,8 @@ maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (n
 | US22.6.2 | Colonnes, filtres, regroupements & tri | L | High | ⬜ |
 | US23.1.1 | Tableau de bord portefeuille projets | L | High | ⬜ |
 | US23.1.2 | Générer un rapport d'avancement du portefeuille | M | Medium | ⬜ |
-| US23.2.1 | Vue portefeuille consolidée | L | Critical | ⬜ |
-| US23.2.2 | Tableaux de bord personnalisables | L | Critical | ⬜ |
-| US23.2.4 | Météo et indicateurs normalisés | S | High | ⬜ |
+| US23.2.1 | Vue portefeuille consolidée | L | Critical | ⬜ backend mergé ([pivot-pilotage-core#65](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/65)) — frontend `pivot-pilotage-ui` restant |
+| US23.2.2 | Tableaux de bord personnalisables | L | Critical | ⬜ backend mergé ([pivot-pilotage-core#60](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/60)) — frontend `pivot-pilotage-ui` restant |
+| US23.2.4 | Météo et indicateurs normalisés | S | High | ✅ mergé (backend [pivot-pilotage-core#57](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/57), frontend [pivot-pilotage-ui#39](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/39)) |
 
 > **E23 vague 2 → post-S12** (US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques, US23.2.7/23.2.8 what-if & business cases, US23.2.9/23.2.10 livrables & valeur publique). US22.6.3/22.6.4 (mise en forme, exports) en fin de sprint si capacité.
