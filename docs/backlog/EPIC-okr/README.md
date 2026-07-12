@@ -45,6 +45,7 @@ Piloter par les **OKR** (Objectives & Key Results) de bout en bout : définition
 
 ### Enablers
 - **[EN27.1](ENABLERS/en-modele-okr-moteur.md)** — Modèle OKR & moteur (scoring, statut, alignement, connecteurs) — gouvernance-by-design
+- **[EN27.2](ENABLERS/en-exposer-kpi.md)** — Exposer les KPI du domaine
 - Partagés domaine : **EN18.1** (schéma `pilotage`) · **EN18.2** (guard)
 
 ## Modules impactés
@@ -68,6 +69,7 @@ Piloter par les **OKR** (Objectives & Key Results) de bout en bout : définition
 |---------|--------|
 | **Enablers** | |
 | [EN27.1 — Modèle OKR & moteur](ENABLERS/en-modele-okr-moteur.md) | ⬜ |
+| [EN27.2 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F27.1 — Objectifs & Key Results (socle)** | |
 | [US27.1.1 — Créer des objectifs et résultats-clés (OKR)](FEATURES/okr/us-creer-objectif.md) | ⬜ |
 | [US27.1.2 — Mettre à jour et suivre l'avancement des Key Results](FEATURES/okr/us-suivre-kr.md) | ⬜ |

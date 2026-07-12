@@ -24,6 +24,7 @@ qui découple le domaine du moteur adaptatif E40 (verrouillé en idéation).
 | [EN18.2](ENABLERS/en-guard-angular-pilotage.md) | Guard Angular module pilotage | S | Critical | ⬜ |
 | [EN18.9](ENABLERS/en-modele-application-projet.md) | Modèle Application → Projet | M | High | ⬜ |
 | [EN18.10](ENABLERS/en-profil-organisation-defaut.md) | Profil d'organisation par défaut (couture de découplage d'E40) | M | High | ⬜ |
+| [EN18.11](ENABLERS/en-exposer-kpi.md) | Exposer les KPI du domaine | S | Medium | ⬜ |
 
 > **Dépendances / séquencement** (cf. [`sprint-9.md`](../sprints/sprint-9.md)) : EN18.1 précède tout ·
 > EN18.1 dépend d'EN17.4 (`ModuleFlywayConfigurer`) · EN18.10 fournit l'altitude/activation par

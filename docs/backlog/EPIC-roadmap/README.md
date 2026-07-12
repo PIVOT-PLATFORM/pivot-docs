@@ -84,6 +84,7 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 - **[EN22.1](ENABLERS/en-modele-temporel-unique.md)** — Modèle temporel unique & moteur d'ordonnancement (roadmap & Gantt = deux vues)
 - **[EN22.2](ENABLERS/en-performance-gantt-web.md)** — Performance & collaboration web du Gantt (10 000+ tâches)
 - **[EN22.3](ENABLERS/en-connecteurs-calendrier-disponibilite.md)** — Connecteurs calendrier & disponibilité (fériés par pays, absences SI RH type SAP) + socle interfaces inter-modules
+- **EN22.4** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 - Partagés domaine : **EN18.1** (schéma `pilotage`) · **EN18.2** (guard) · **EN18.9** (Application→Projet)
 
 ## Modules impactés
@@ -110,6 +111,7 @@ Consommées via le **bus d'événements PIVOT** + **deep-links**, **sans FK inte
 | [EN22.1 — Modèle temporel unique & ordonnancement](ENABLERS/en-modele-temporel-unique.md) | ⬜ |
 | [EN22.2 — Performance & collaboration web du Gantt](ENABLERS/en-performance-gantt-web.md) | ⬜ |
 | [EN22.3 — Connecteurs calendrier & disponibilité](ENABLERS/en-connecteurs-calendrier-disponibilite.md) | ⬜ |
+| [EN22.4 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F22.1 — Roadmap / Gantt (socle)** | |
 | [US22.1.1 — Créer et gérer un projet sur la roadmap](FEATURES/roadmap/us-creer-projet-roadmap.md) | ⬜ |
 | [US22.1.2 — Visualiser la roadmap en vue Gantt](FEATURES/roadmap/us-vue-gantt.md) | ⬜ |

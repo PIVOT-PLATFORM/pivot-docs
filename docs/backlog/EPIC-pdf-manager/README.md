@@ -30,6 +30,7 @@ Bibliothèque documentaire centrée PDF : collections, upload, recherche, visual
 ### Enablers
 
 - **EN45.1** — Stockage objet (GCS/S3) et quotas de stockage par utilisateur
+- **EN45.2** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Hors périmètre
 
@@ -76,6 +77,7 @@ backlog, un point de suivi :
 |---------|--------|
 | **Enablers** | |
 | EN45.1 — Stockage objet et quotas | ⬜ |
+| [EN45.2 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F45.1 — Bibliothèque documentaire** | |
 | [US45.1.1 — Organiser sa bibliothèque de documents PDF](FEATURES/bibliotheque/us-organiser-bibliotheque.md) | ⬜ |
 | **F45.2 — Visualisation et annotation** | |

@@ -18,6 +18,7 @@ Roue de tirage pondéré anti-repeat pour animer des événements : CRUD roues, 
 - F14.1 : Roues CRUD (events avec liste membres) — US14.1.1, US14.1.2 import de la liste depuis les membres de l'équipe (module Agilité) sans ressaisie (benchmark Wheel of Names)
 - F14.2 : Tirage pondéré anti-repeat — US14.2.1
 - F14.3 : Diffusion temps réel du tirage (WS) — US14.3.1
+- EN14.1 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Dépendances
 - Dépend de : E03 Système de modules · E17 Infrastructure multi-repo

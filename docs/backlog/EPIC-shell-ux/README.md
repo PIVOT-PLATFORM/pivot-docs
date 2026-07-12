@@ -8,6 +8,7 @@ Shell de l'application Angular : navigation principale, page d'accueil (grille m
 - Feature F16.2 : Page d'accueil (greeting + grille modules)
 - Feature F16.3 : Page contact
 - Feature F16.4 : Charte graphique & thèmes utilisateur
+- Enabler EN16.1 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Extras implémentés (hors périmètre GitHub)
 - Footer Angular (liens légaux)
@@ -49,3 +50,5 @@ Shell de l'application Angular : navigation principale, page d'accueil (grille m
 | **Extras hors GitHub** | |
 | [Pages légales (ML/PC/CGU)](FEATURES/pages-legales/us-pages-legales.md) | ✅ |
 | [Pages coming soon](FEATURES/coming-soon-pages/us-coming-soon.md) | ✅ |
+| **Enablers** | |
+| [EN16.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

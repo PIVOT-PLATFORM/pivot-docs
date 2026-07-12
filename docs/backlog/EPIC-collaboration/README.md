@@ -75,6 +75,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - **EN30.11** — Statistiques d'usage
 - **EN30.12** — Mode dégradé consultation
 - **EN30.13** — Import de tableaux Klaxoon (.klx)
+- **EN30.14** — Exposer les KPI du domaine
 
 ### F30.1 — Canevas & objets
 - US30.1.1 : Canevas partagé infini
@@ -245,6 +246,7 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [EN30.11 — Statistiques d'usage](ENABLERS/en-statistiques-d-usage.md) | ⬜ |
 | [EN30.12 — Mode dégradé consultation](ENABLERS/en-mode-degrade-consultation.md) | ⬜ |
 | [EN30.13 — Import de tableaux Klaxoon (.klx)](ENABLERS/en-import-klaxoon.md) | ⬜ |
+| [EN30.14 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F30.1 — Canevas & objets** | |
 | [US30.1.1 — Canevas partagé infini](FEATURES/canevas-objets/us-canevas-partage-infini.md) | ⬜ |
 | [US30.1.2 — Pense-bêtes (sticky notes)](FEATURES/canevas-objets/us-pense-betes-sticky-notes.md) | ⬜ |

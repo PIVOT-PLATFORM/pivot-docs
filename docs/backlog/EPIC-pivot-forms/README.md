@@ -36,6 +36,7 @@
 ### Enablers
 - **[EN42.1](ENABLERS/en-moteur-schema-formulaire.md)** — Moteur & schéma de formulaire (logique, scoring, thème, événements bus)
 - **[EN42.2](ENABLERS/en-deploiement-souverain-forms.md)** — Déploiement souverain & sécurité (self-host/UE, SSO, RGPD)
+- **[EN42.3](ENABLERS/en-exposer-kpi.md)** — Exposer les KPI du domaine
 
 ## Hors périmètre
 
@@ -66,6 +67,7 @@
 | [EN42.1c — Événements & API](ENABLERS/en-evenements-api-forms.md) | ⬜ |
 | [EN42.1d — Thème & intégration](ENABLERS/en-theme-integration-forms.md) | ⬜ |
 | [EN42.2 — Déploiement souverain & sécurité](ENABLERS/en-deploiement-souverain-forms.md) | ⬜ |
+| [EN42.3 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F42.1 — Éditeur & champs** | |
 | [US42.1.1 — Éditeur no-code drag-and-drop](FEATURES/editeur-champs/us-editeur-no-code-drag-and-drop.md) | ⬜ |
 | [US42.1.2 — Types de champs variés](FEATURES/editeur-champs/us-types-de-champs-varies.md) | ⬜ |

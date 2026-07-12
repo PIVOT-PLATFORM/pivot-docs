@@ -37,6 +37,7 @@ La sécurité n'est pas une couche ajoutée : c'est la **fonction du tissu conjo
 - **EN43.11** — [Classification de souveraineté (zones A/B/C)](ENABLERS/en-classification-souverainete.md)
 - **EN43.12** — [Modèle de menace](ENABLERS/en-modele-menace.md)
 - **EN43.13** — [Checklist de sécurité d'admission d'un module](ENABLERS/en-checklist-admission-module.md)
+- **EN43.14** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 Pas de Feature dans cette EPIC — travail 100 % transverse/architectural (comme [E05](../EPIC-cicd-supply-chain/README.md), [E07](../EPIC-infrastructure/README.md), [E17](../EPIC-infra-multi-repo/README.md)), consommé par tous les autres modules plutôt que porteur de valeur utilisateur directe.
 
@@ -93,3 +94,4 @@ Détail complet : [EN43.12 — Modèle de menace](ENABLERS/en-modele-menace.md).
 | [EN43.11 — Classification de souveraineté (zones A/B/C)](ENABLERS/en-classification-souverainete.md) | ⬜ |
 | [EN43.12 — Modèle de menace](ENABLERS/en-modele-menace.md) | ⬜ |
 | [EN43.13 — Checklist de sécurité d'admission d'un module](ENABLERS/en-checklist-admission-module.md) | ⬜ |
+| [EN43.14 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

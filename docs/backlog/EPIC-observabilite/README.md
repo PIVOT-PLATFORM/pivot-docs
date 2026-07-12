@@ -15,6 +15,7 @@ Donner une visibilité complète sur l'état de la plateforme en production : lo
 
 - EN04.5 : Dashboard Grafana — métriques JVM + DB + Redis + ActiveMQ par module
 - EN04.6 : Alerting Grafana — SLO temps de réponse · taux d'erreur · saturation Redis/DB
+- EN04.7 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 
@@ -43,3 +44,4 @@ Tous les backends : `pivot-core` · `pivot-pilotage-core` · `pivot-agilite-core
 | **Phase v1-enterprise** | |
 | EN04.5 — Dashboard Grafana | ⏸️ |
 | EN04.6 — Alerting Grafana SLO | ⏸️ |
+| [EN04.7 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

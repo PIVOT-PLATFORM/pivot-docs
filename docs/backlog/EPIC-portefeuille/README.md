@@ -38,6 +38,7 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 
 ### Enablers
 - Partagés au niveau du domaine Pilotage : **EN18.1** (schéma Flyway `pilotage` + entités JPA) · **EN18.2** (guard Angular `moduleId: 'pilotage'`)
+- **EN23.1** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
 
 ## Modules impactés
 
@@ -75,3 +76,4 @@ Portefeuille projets : tableau de bord consolidé multi-projets (indicateurs RAG
 | [US23.2.8 — Business cases dynamiques](FEATURES/portefeuille-comites/us-business-cases-dynamiques.md) | ⬜ |
 | *(US23.2.9 — Livrables d'instance générés → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/us-livrables-instance-generes.md))* | — |
 | *(US23.2.10 — Indicateurs de valeur publique → [BACKLOG-IDEATION](../BACKLOG-IDEATION/EPIC-portefeuille/FEATURES/portefeuille-comites/us-indicateurs-valeur-publique.md))* | — |
+| [EN23.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |

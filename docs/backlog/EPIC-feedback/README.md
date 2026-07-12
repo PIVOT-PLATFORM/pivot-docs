@@ -22,6 +22,10 @@ Remontée de bugs et d'idées par les utilisateurs de la plateforme : kanban pub
 - **F46.2 — Gestion et modération**
   - US46.2.1 : Traiter et modérer les tickets de feedback
 
+### Enablers
+
+- **EN46.1** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+
 ## Repères marché (benchmark POC)
 
 Benchmark détaillé : `pivot-benchmarks/modules-poc-marche/` — cahiers Typeform, Slido, Canny, Frill, dossier
@@ -56,6 +60,8 @@ non prioritaires, cohérentes avec la Priority Low déjà affectée à E46.
 
 | Élément | 🤖 Dev |
 |---------|--------|
+| **Enablers** | |
+| [EN46.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
 | **F46.1 — Soumission et vote** | |
 | [US46.1.1 — Soumettre et voter pour un ticket de feedback](FEATURES/soumission-vote/us-soumettre-voter-ticket.md) | ⬜ |
 | **F46.2 — Gestion et modération** | |

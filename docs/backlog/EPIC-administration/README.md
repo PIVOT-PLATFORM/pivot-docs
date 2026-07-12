@@ -6,6 +6,7 @@ Permettre aux admins de gérer les utilisateurs de leur tenant et au SUPER_ADMIN
 ## Périmètre GitHub (Socle)
 - Feature F06.1 : Gestion utilisateurs tenant (backend + frontend)
 - Feature F06.2 : Gestion tenants SUPER_ADMIN (backend + frontend)
+- Enabler EN06.1 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) (producteur KPI EN28.14)
 
 ## Modules impactés
 `admin` (pivot-core + pivot-ui)
@@ -33,3 +34,5 @@ Permettre aux admins de gérer les utilisateurs de leur tenant et au SUPER_ADMIN
 | [US06.2.1 — Super admin crée un tenant](FEATURES/gestion-tenants/us-creer-tenant.md) | ✅ Done |
 | [US06.2.2 — Super admin désactive un tenant](FEATURES/gestion-tenants/us-desactiver-tenant.md) | ✅ Done |
 | [US06.2.3 — Super admin liste tous les tenants](FEATURES/gestion-tenants/us-liste-tenants.md) | ✅ Done |
+| **Enablers** | |
+| [EN06.1 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
