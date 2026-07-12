@@ -1,0 +1,38 @@
+@startuml cockpits-dsi-composition
+title Modèle de composition du cockpit DSI
+
+skinparam shadowing false
+skinparam defaultFontName sans-serif
+skinparam rectangle {
+  BorderColor #73726c
+  BackgroundColor #F1EFE8
+}
+
+rectangle "100+ profils DSI" as profils
+rectangle "5-7 archetypes\n(regroupes par besoin)" as archetypes
+rectangle "Moteur de composition\n(role + domaine active)" as moteur
+
+package "Catalogue de cards" {
+  rectangle "Pilotage\nroadmap, projets" as pilotage #E1F5EE
+  rectangle "Agilite\ncapacity, standup" as agilite #E1F5EE
+  rectangle "Collaboratif\nwhiteboard, quiz" as collab #E1F5EE
+  rectangle "Transverse\nsecu, RGPD, RGAA" as transverse #FAEEDA
+}
+
+rectangle "Cockpit assemble\n(un par archetype)" as cockpit
+
+rectangle "Fondation : pivot-design-system\ncomposants + tokens + Storybook" as ds #EEEDFE
+
+profils --> archetypes
+archetypes --> moteur
+moteur --> pilotage
+moteur --> agilite
+moteur --> collab
+moteur --> transverse
+pilotage --> cockpit
+agilite --> cockpit
+collab --> cockpit
+transverse --> cockpit
+ds ..> cockpit : sous-tend
+
+@enduml
