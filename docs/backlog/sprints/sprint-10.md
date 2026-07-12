@@ -47,6 +47,6 @@ maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (n
 | US23.1.2 | Générer un rapport d'avancement du portefeuille | M | Medium | ⬜ |
 | US23.2.1 | Vue portefeuille consolidée | L | Critical | ⬜ |
 | US23.2.2 | Tableaux de bord personnalisables | L | Critical | ⬜ |
-| US23.2.4 | Météo et indicateurs normalisés | S | High | ⬜ |
+| US23.2.4 | Météo et indicateurs normalisés | S | High | ⬜ backend mergé ([pivot-pilotage-core#57](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/57)) — frontend `pivot-pilotage-ui` restant |
 
 > **E23 vague 2 → post-S12** (US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques, US23.2.7/23.2.8 what-if & business cases, US23.2.9/23.2.10 livrables & valeur publique). US22.6.3/22.6.4 (mise en forme, exports) en fin de sprint si capacité.
