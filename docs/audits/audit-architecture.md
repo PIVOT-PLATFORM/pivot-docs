@@ -83,7 +83,7 @@ Conséquence directe de l'Axe 1 : `pivot-collaboratif-core` — le module avec l
 
 Ce n'est **pas une découverte cachée** : le code porte un commentaire explicite (`// TODO: replace with SecurityContext extraction when pivot-core-starter adds auth (EN17)`), et `pivot-collaboratif-core/CLAUDE.md` a une section dédiée "Authentification (différée)" qui l'assume. De la même façon, `WhiteboardModuleCheck`/`DefaultWhiteboardModuleCheck.java:26-27` retourne toujours `true` (module considéré actif pour tous les tenants) en attendant le registre réel — bonne pratique d'anticipation (interface posée, implémentation par défaut isolée et documentée), mais qui matérialise la même dépendance non résolue.
 
-Le point d'attention réel : la table `collaboratif.board` (`V1__schema_init.sql:9-17`) stocke `tenant_id UUID NOT NULL` sans aucune contrainte FK (ni vers `public.tenants`, ni vers une table `teams` qui n'existe pas — voir Axe 1). Isolation tenant actuellement **non vérifiable en base**, entièrement portée par la couche applicative — qui elle-même dépend d'en-têtes non authentifiés.
+Le point d'attention réel : la table `collaboratif.board` (`V1__schema_init.sql:9-17`) stocke `tenant_id UUID NOT NULL` sans aucune contrainte FK (ni vers `public.tenants`, ni vers `public.teams` — cette dernière **existe désormais** depuis EN17.1/`pivot-core#171`, mais `board` ne la référence pas encore, et une FK resterait de toute façon bloquée par l'incompatibilité de type UUID↔BIGSERIAL ; voir Axe 1). Isolation tenant actuellement **non vérifiable en base**, entièrement portée par la couche applicative — qui elle-même dépend d'en-têtes non authentifiés.
 
 ### Axe 6 — Infrastructure multi-repo (gateway nginx / parité dev-prod) — Score : 7/10
 
@@ -177,7 +177,7 @@ Aucune évolution possible vs version précédente (premier audit formel).
 ### P1 — Dette architecturale majeure (effort élevé, coût du report croissant)
 
 - Extraction réelle de `fr.pivot.core.auth` vers `pivot-core-starter` (issue `pivot-core#171`, point 3) — nécessite un tri architectural préalable (générique vs spécifique-app), pas un déplacement mécanique. Bloque toute authentification réelle pour les modules.
-- Création de la feature `Team`/`TeamMember` (`fr.pivot.core.team`, table `public.teams`/`team_members`) — actuellement une feature jamais commencée, pas une extraction ; bloque la convention FK cross-schéma `public.teams(id)` déjà documentée pour `pilotage`/`agilite`/`collaboratif`.
+- **RÉALISÉ depuis l'audit initial** — Création de la feature `Team`/`TeamMember` (`fr.pivot.core.team`, tables `public.teams`/`team_members`) : livrée par EN17.1/`pivot-core#171` (entités + migration + repositories), débloquant la convention FK cross-schéma `public.teams(id)` documentée pour `pilotage`/`agilite`/`collaboratif`. Le concept est en cours de raffinage en modèle organisationnel (unités/équipes) — voir [ADR-027](pathname:///pivot-docs/adr/ADR-027-modele-organisationnel-unites-equipes).
 - Une fois l'auth extraite : brancher `pivot-collaboratif-core` sur `pivot-core-starter` pour remplacer `RequestPrincipalResolver` (en-têtes HTTP non signés) par une extraction réelle depuis le token porteur — actuellement le module le plus avancé de la plateforme n'a aucune isolation tenant vérifiable.
 
 ### P2 — Amélioration architecture (planifiable, non urgent)
