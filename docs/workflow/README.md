@@ -102,6 +102,7 @@ Scores continus 0–100 — postés en **commentaire de PR** (aucun fichier comm
 | **3 — QUALITY** | Après CI | Hard blocks : Gitleaks · `security` · `breaking-change` · contrat module |
 | **4 — MERGE CONFIDENCE** | Avant merge | = 100/100 → sortie du mode draft (merge autonome) · 60–99 → merge documenté · < 60 → Breaking Point 2 (escalade) |
 | **5 — SPEC FREEZE** | Gate 4 = 100/100, dans l'Autoloop (avant merge) | Doc Agent génère la spec fonctionnelle et technique figée · indépendant de la recette humaine du mainteneur |
+| **6 — RECETTE ACCEPTANCE** | Après déploiement recette (post-merge) | Playwright rejoue les AC contre `recette.pivot-platform.fr` réel · échec = alerte régression, pas blocage merge |
 
 Format commentaire :
 ```yaml
@@ -188,6 +189,49 @@ ultérieur — y compris une modification demandée pendant une revue humaine po
 Point 2) — crée une nouvelle US qui référence la spec existante et ajoute un
 `## Addendum {date} — US-{id}` en fin de fichier — jamais une édition silencieuse de la section
 figée initiale.
+
+---
+
+## Gate 6 — RECETTE ACCEPTANCE (post-déploiement)
+
+Les Gates 1→5 sont **pré-merge** et s'appuient sur des tests **éphémères** : Gate 2 (coverage) et
+`e2e.yml` montent une stack jetable dans le runner et **mockent** le backend (`page.route`). Rapide
+et bloquant, mais ça ne prouve rien sur l'**infra réellement déployée** — le premier déploiement
+réel de la recette a d'ailleurs révélé des bugs invisibles jusque-là (voir `EPIC-infrastructure`
+EN07.6). **Gate 6** ferme cet écart : après chaque déploiement sur `recette.pivot-platform.fr`,
+Playwright rejoue les critères d'acceptation contre le **site réel** — la recette qu'un PO ferait à
+la main, automatisée.
+
+| Aspect | Gate 2 / `e2e.yml` (éphémère) | Gate 6 / `e2e-recette.yml` (réel) |
+|--------|-------------------------------|-----------------------------------|
+| Backend | stack jetable dans le runner | pivot-core déployé en recette |
+| Données | mockées (`page.route`) | réelles, tenant de test dédié |
+| baseURL | `localhost:4200` | `https://recette.pivot-platform.fr` |
+| Moment | chaque PR/push (bloquant merge) | après déploiement recette |
+| Détecte | régressions de code | contrat backend réel, config d'env, intégration inter-modules, seed |
+
+**Déclencheur :** `e2e-recette.yml` se lance sur `workflow_run` du **Deploy** concluant `success`
+(donc après le smoke test `/health` de `deploy.yml`) + `workflow_dispatch`. **Jamais sur PR**
+(recette est partagée : éviter les courses de données).
+
+**Portée :** un workflow **par repo UI**, chacun validant ses propres AC au plus près de l'US
+(vision PO) — `pivot-ui` (shell : accès, login, grille modules, protection de route) +
+`pivot-agilite-ui` / `pivot-collaboratif-ui` / `pivot-pilotage-ui` (parcours de leur module).
+
+**Données :** les specs recette **agissent** via un **compte + tenant de test dédiés** (secrets
+`RECETTE_E2E_*`) ; les AC destructifs créent leurs données sur le tenant de test et les nettoient
+en `afterEach`/`afterAll` — jamais sur un tenant réel.
+
+**Traçabilité :** convention inchangée — chaque spec recette porte l'identifiant de l'AC
+(`AC-{module}-{n}`). La différence : la preuve vaut sur l'**infra réelle**, pas en mock.
+
+**En cas d'échec :** régression sur la recette déployée (le code a mergé, mais le comportement réel
+diverge de l'AC). Ce n'est **pas un blocage de merge** (le merge a déjà eu lieu) mais une **alerte
+post-déploiement** — rapport Playwright en artefact, notification via Environments/Deployments,
+puis ouverture d'une US/`fix` traçant l'écart. `deploy.yml` couvre déjà le rollback sur smoke test
+`/health` KO ; Gate 6 couvre les régressions **fonctionnelles** que ce smoke test ne voit pas.
+
+**Suivi backlog :** `EPIC-infrastructure` EN07.15.
 
 ---
 
