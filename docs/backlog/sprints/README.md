@@ -24,13 +24,41 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 11](./sprint-11.md) | Risques + plan de contrôle sécurité | 🔓 Débloqué — inchangé au re-tri |
 | [Sprint 12](./sprint-12.md) | Forms (cœur) + framework onboarding | 🔓 Débloqué — inchangé au re-tri |
 | [Sprint 13](./sprint-13.md) | Satellites Pilotage à valeur (E24 ADR · E26 Budget · E27 OKR · E23 v2) *(nouveau 2026-07-10)* | 🔓 Débloqué (suite S9-S11) — remonté de post-S12, **avant** la queue idéation |
-| [Sprint 14](./sprint-14.md) | Raffinage & clarification des domaines — Vague 1 Socle (CRUD · accès par profil · API externes) *(remplace Cockpits DSI, 2026-07-12)* | 🔓 Débloqué (raffinage documentaire, [E52](../EPIC-clarification-domaines/README.md) — framework EN52.1-3 + 9 fiches Socle) |
-| [Backlog post-S12](./backlog-post-s12.md) | Queue non planifiée — dont **idéation** : E40 profil adaptatif, EN18.3-8 habillage entreprise | — |
+| [Sprint 14](./sprint-14.md) | E18 Pilotage — Référentiels & socle activité (14) | ⬜ planifié |
+| [Sprint 15](./sprint-15.md) | E18 Pilotage — Création d'une activité (13) | ⬜ planifié |
+| [Sprint 16](./sprint-16.md) | E18 Pilotage — Informations générales & portefeuille (13) | ⬜ planifié |
+| [Sprint 17](./sprint-17.md) | E18 Pilotage — Activité : Élaboration PMT (19) | ⬜ planifié |
+| [Sprint 18](./sprint-18.md) | E18 Pilotage — Activité : écran Budget (19) | ⬜ planifié |
+| [Sprint 19](./sprint-19.md) | E18 Pilotage — Activité : écran Jalons (17) | ⬜ planifié |
+| [Sprint 20](./sprint-20.md) | E18 Pilotage — Gestion budgétaire & jalons (16) | ⬜ planifié |
+| [Sprint 21](./sprint-21.md) | E18 Pilotage — Portefeuilles d'activités (14) | ⬜ planifié |
+| [Sprint 22](./sprint-22.md) | E18 Pilotage — Reporting, intégrations & qualité (15) | ⬜ planifié |
+| [Sprint 23](./sprint-23.md) | E18 Pilotage — Habillage entreprise (6) | ⬜ planifié |
+| [Sprint 24](./sprint-24.md) | E21 Risques — Boucle vivante, portefeuille & quantitatif (19) | ⬜ planifié |
+| [Sprint 25](./sprint-25.md) | E21 Risques — IA, restitutions, cockpit & méthode DIT (13) | ⬜ planifié |
+| [Sprint 26](./sprint-26.md) | E22 Roadmap — Socle Gantt & PPM (11) | ⬜ planifié |
+| [Sprint 27](./sprint-27.md) | E22 Roadmap — Interopérabilité MS Project & vues (11) | ⬜ planifié |
+| [Sprint 28](./sprint-28.md) | E22 Roadmap — Ressources & interfaces SI (10) | ⬜ planifié |
+| [Sprint 29](./sprint-29.md) | E27 OKR — Cadence, alignement, check-ins & scoring (15) | ⬜ planifié |
+| [Sprint 30](./sprint-30.md) | E27 OKR (dashboards) + Satellites Pilotage (16) | ⬜ planifié |
+| [Sprint 31](./sprint-31.md) | E38 Innovation — Stratégie, idéation & stage-gate (14) | ⬜ planifié |
+| [Sprint 32](./sprint-32.md) | E38 Innovation — Portefeuille & écosystème (13) | ⬜ planifié |
+| [Sprint 33](./sprint-33.md) | E38 Innovation — IA, communautés & événements (14) | ⬜ planifié |
+| [Sprint 34](./sprint-34.md) | Raffinage E52 — Vague 1 Socle *(ex-S14, repoussé)* | ⬜ planifié |
+| *Sprint 35* | Raffinage E52 — Vague 2 Pilotage *(fichier créé à l'ouverture)* | 📋 planifié |
+| *Sprint 36* | Raffinage E52 — Vague 3 Agilité/Collaboratif + synthèse *(fichier créé à l'ouverture)* | 📋 planifié |
+| [Backlog post-S12](./backlog-post-s12.md) | Queue non planifiée — dont **idéation** : E40 profil adaptatif | — |
 | [Zones d'ombre à raffiner](./zones-ombre.md) | Décisions produit/cadrage en attente | — |
 
-> **Programme de raffinage ([E52](../EPIC-clarification-domaines/README.md), à partir du S14)** :
-> Vague 1 domaines Socle (**Sprint 14**) → Vague 2 Pilotage (Sprint 15) → Vague 3
-> Agilité/Collaboratif + synthèse transverse (Sprint 16). Les fichiers `sprint-15.md`/`sprint-16.md`
+> **Complétion 100 % Pilotage & Risques (S14→S33)** — plan établi le 2026-07-13 : les sprints
+> **S14 à S33** planifient l'intégralité des **282 items restants** des domaines **Pilotage (E18)**
+> et **Risques (E21)**, ordre de priorité **E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> Innovation (*en surplus*)**, satellites (E23/E24/E26/E13) intercalés. Détail par bloc :
+> [§Complétion Pilotage & Risques](#complétion-100--pilotage--risques-s14s33).
+>
+> **Programme de raffinage ([E52](../EPIC-clarification-domaines/README.md), repoussé après S33)** :
+> Vague 1 domaines Socle (**Sprint 34**, ex-S14) → Vague 2 Pilotage (Sprint 35) → Vague 3
+> Agilité/Collaboratif + synthèse transverse (Sprint 36). Les fichiers `sprint-35.md`/`sprint-36.md`
 > seront créés à l'ouverture de leur vague.
 
 ---
@@ -59,9 +87,38 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 > désormais relégués en [`backlog-post-s12.md`](./backlog-post-s12.md). Promotion hors idéation d'E40
 > et EN18.3-8 = décision explicite du mainteneur (voir `STATUS.md` §Décisions ouvertes).
 >
+> **Superseded (2026-07-13)** : le mainteneur a demandé la **complétion à 100 % des domaines Pilotage
+> & Risques**. **EN18.3-8 (habillage entreprise) sont réintégrés** au plan (Sprint 23) — voir
+> [§Complétion Pilotage & Risques](#complétion-100--pilotage--risques-s14s33) ci-dessous. Seul **E40
+> profil adaptatif** reste en queue idéation.
+>
 > **Hypothèse de capacité :** ~11-19 items/sprint (vélocité observée S1-S3, agents parallèles).
 
 ---
+
+## Complétion 100 % Pilotage & Risques (S14→S33)
+
+> Plan établi le **2026-07-13** à la demande du mainteneur : *« modifie les sprints de 14 à N pour
+> inclure 100 % des domaines Pilotage et Risques »*. Périmètre = domaine **Pilotage (E18)** dans son
+> intégralité + module **Risques (E21)**. Ordre de priorité imposé : **E18 la base → E22 Roadmap →
+> E27 OKR → E38 Innovation *en surplus*** ; E21 Risques placé juste après la base E18 (2ᵉ domaine
+> nommé) ; satellites (E23/E24/E26/E13) intercalés. **282 items** restants, ~11-19 par sprint.
+
+| Sprints | Bloc | EPICs / périmètre | Items |
+|---------|------|-------------------|-------|
+| **S14–S23** | **E18 Pilotage — la base** | référentiels & socle activité → création → informations générales → PMT → budget → jalons → gestion budget/jalons → portefeuilles → reporting/intégrations/qualité → habillage entreprise | 146 |
+| **S24–S25** | **E21 Risques** (2ᵉ domaine nommé) | boucle vivante · portefeuille · quantitatif/conformité · IA gouvernée · restitutions · cockpit · méthode DIT · EN21.4 | 32 |
+| **S26–S28** | **E22 Roadmap** (priorité 2) | socle Gantt & PPM · interopérabilité MS Project · vues · ressources · interfaces SI · EN22.3/4 | 32 |
+| **S29–S30** | **E27 OKR** (priorité 3) | cadence · alignement · check-ins · scoring · CFR · intégrations · dashboards · gouvernance · EN27.2 | 19 |
+| **S30** | **Satellites Pilotage** | E23 (what-if/business cases) · E24 ADR · E26 budget · E13 cahiers de tests | 12 |
+| **S31–S33** | **E38 Innovation** — *en surplus* | modèle SMI · stratégie · idéation · stage-gate · évaluation · portefeuille · expérimentation · open innovation · IA · communautés · événements · ISO 56000 | 41 |
+| **puis S34–S36** | **Raffinage E52** (repoussé) | Vague 1 Socle (ex-S14) → Vague 2 Pilotage → Vague 3 Agilité/synthèse | — |
+
+**Garantie de couverture** : à l'issue de S33, **aucune US/Enabler des domaines Pilotage (E18) et
+Risques (E21) n'est laissée hors sprint**. Les items étaient au stade backlog `⬜` ; leur **Gate 1
+READINESS (DoR)** est réalisé au démarrage de chaque sprint (même protocole que S8-S13). Les
+dépendances externes (bus PIVOT ADR-025, `pivot-core-starter` publié, socles S9-S13) conditionnent
+l'ordre d'attaque, rappelé dans chaque fichier de sprint.
 
 ## Règles d'utilisation
 

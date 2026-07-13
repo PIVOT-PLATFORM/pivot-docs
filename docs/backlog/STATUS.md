@@ -57,7 +57,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E49 — Module To-Do](EPIC-todo/README.md) | E49 | 3 | — | 3 | ⬜ phase-3 |
 | [E50 — Module PI Planning](EPIC-pi-planning/README.md) | E50 | 3 | — | 4 | ⬜ phase-3 · agilite |
 | [E51 — Cockpits DSI](EPIC-cockpits/README.md) | E51 | 3 | 10 | 4+ | ⬜ phase-3 · transverse — reséquencé en [backlog post-S12](sprints/backlog-post-s12.md) (déprogrammé du Sprint 14 le 2026-07-12, remplacé par le raffinage E52 · ADR-028 accès externe conservé) |
-| [E52 — Clarification des domaines](EPIC-clarification-domaines/README.md) | E52 | 3 | 3 | 9+ | ⬜ Socle · transverse (raffinage) — [Sprint 14](sprints/sprint-14.md) Vague 1 Socle (CRUD · accès par profil · API externes) ; Pilotage S15, Agilité/Collaboratif + synthèse S16 |
+| [E52 — Clarification des domaines](EPIC-clarification-domaines/README.md) | E52 | 3 | 3 | 9+ | ⬜ Socle · transverse (raffinage) — **repoussé après S33** (complétion Pilotage/Risques) : [Sprint 34](sprints/sprint-34.md) Vague 1 Socle ; Pilotage S35, Agilité/Collaboratif + synthèse S36 |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **78** | 🔄 En cours |
 | **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~159** | **~69** | **~561** | ⏸️ Verrouillé |
 | **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
@@ -311,3 +311,14 @@ Agilité/Collaboratif + synthèse transverse (S16). Livrables documentaires dans
 non tracée) sont des findings à arbitrer. **E51 Cockpits DSI** n'est pas supprimée : l'EPIC reste
 intacte, reséquencée en [backlog post-S12](sprints/backlog-post-s12.md) (queue non planifiée), à
 replanifier après la vague de raffinage. Aucun `Stage` frontmatter d'un item existant touché.*
+
+*Complétion 100 % Pilotage & Risques — 2026-07-13 (PO Agent + Scrum Master + Architecte Modules, à la
+demande du mainteneur : « modifie les sprints de 14 à N pour inclure 100 % des domaines Pilotage et
+Risques »). Les sprints **S14→S33** sont créés pour planifier l'intégralité des **282 items restants**
+des domaines **Pilotage (E18)** et **Risques (E21)**, dans l'ordre de priorité imposé **E18 base →
+E22 Roadmap → E27 OKR → E38 Innovation (en surplus)**, E21 Risques placé juste après la base E18,
+satellites (E23/E24/E26/E13) intercalés en S30. Détail du séquencement : [sprints/README §Complétion
+Pilotage & Risques](sprints/README.md). Le **programme de raffinage E52** (ex-S14) est **repoussé
+après S33** (S34 Vague 1 Socle, S35 Pilotage, S36 Agilité/synthèse). Aucun `Stage` frontmatter d'un
+item existant touché ; les items planifiés restent `⬜` (Gate 1 READINESS au démarrage de chaque
+sprint).*
