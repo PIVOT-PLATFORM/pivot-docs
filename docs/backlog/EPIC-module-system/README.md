@@ -11,6 +11,7 @@ Infrastructure d'activation/désactivation de modules par tenant : registre back
 - EN03.3 : Cache Redis statut modules TTL 60s
 - EN03.4 : Contrat de module frontend (TypeScript)
 - EN03.5 : [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+- EN-I18N : [Convention i18n des modules — scope Transloco embarqué par lib](ENABLERS/en-i18n-scope-modules.md)
 
 ### Features
 - F03.1 : Activation modules par admin tenant (enterprise self-hosted)
@@ -41,6 +42,7 @@ F03.3 (SUPER_ADMIN, SaaS) reste `phase-3`, non démarré
 | [EN03.4 — Contrat de module frontend (TypeScript)](ENABLERS/en-module-contrat-frontend.md) | ✅ |
 | [EN-NOTIF — Infrastructure notifications in-app](ENABLERS/en-notifications.md) *(transversal, prérequis US16.1.3)* | ✅ Done |
 | [EN03.5 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
+| [EN-I18N — Convention i18n des modules — scope Transloco embarqué par lib](ENABLERS/en-i18n-scope-modules.md) *(transversal, ADR-029)* | ⬜ |
 | **F03.1 — Activation modules admin tenant** | |
 | [US03.1.1 — Admin active un module pour son tenant](FEATURES/activation-admin/us-admin-active-module.md) | ✅ |
 | [US03.1.2 — Admin désactive un module pour son tenant](FEATURES/activation-admin/us-admin-desactive-module.md) | ✅ |
