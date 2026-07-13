@@ -34,6 +34,19 @@ couverture déjà large : les 8 propositions « bonus » du dossier de synthèse
 insights SI (§8, I1-I9) sont déjà portés respectivement par F30.14 Innovation et F30.15 Chantiers
 SI.
 
+**Raffinement 2026-07-13 (voix des utilisateurs)** : croisement contre l'[étude interne Klaxoon EDF](https://pivot-platform.github.io/pivot-benchmarks/collaboration-visuelle/etude-interne-klaxoon-edf)
+(2 enquêtes terrain, 91 + 226 répondants — données d'usage réel, complément aux cahiers marché).
+Le croisement confirme la couverture existante et fait remonter **8 écarts fonctionnels concrets**
+(peu visibles dans l'analyse marché pure), ajoutés sous leur Feature existante avec la source
+`Étude interne Klaxoon (EDF) 2026-07` (sans identifiant `BL-###`) :
+US30.1.12 (filtres/vues par couleur-catégorie), US30.1.13 (mini-carte / navigation grands boards),
+US30.3.10 (mode *private* en atelier), US30.6.7 (IA génération de CR), US30.8.5 (export structuré
+des contenus), US30.11.4 (classement / scoring temps réel), US30.15.9 (plan de reprise du
+patrimoine — action Critique n°1 de l'étude), US30.15.10 (conduite du changement). Les priorités
+métier de l'étude (unification, accès sans friction, réversibilité du patrimoine) sont déjà portées
+par le périmètre existant. Le levier « licence créateur/contributeur » de l'étude reste **hors
+périmètre** (PIVOT sans modèle payant — voir §Hors périmètre).
+
 ## Couverture existante (note de rationalisation)
 
 F08.x/EN08.x (ex-EPIC-whiteboard, fusionné dans E30 — E08 était le noyau incrémental de socle
@@ -89,6 +102,8 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.1.9 : Capture de pense-bêtes physiques
 - US30.1.10 : Ink-to-table
 - US30.1.11 : Liens enrichis et lecture vidéo intégrée
+- US30.1.12 : Filtres et vues par couleur / catégorie
+- US30.1.13 : Mini-carte et navigation sur grands boards
 
 ### F30.2 — Collaboration temps réel
 - US30.2.1 : Édition simultanée temps réel
@@ -109,6 +124,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.3.7 : Visites guidées asynchrones
 - US30.3.8 : Séquençage d'atelier (Session)
 - US30.3.9 : Question instantanée & Mémo
+- US30.3.10 : Mode private (contribution masquée avant révélation)
 
 ### F30.4 — Modèles
 - US30.4.1 : Bibliothèque de modèles
@@ -129,6 +145,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.6.4 : Gouvernance de l'IA
 - US30.6.5 : Outils générés par prompt
 - US30.6.6 : Agents IA collaboratifs
+- US30.6.7 : IA : génération de compte-rendu d'atelier
 
 ### F30.7 — Continuum & intégrations
 - US30.7.1 : Intégration visioconférence 1-clic
@@ -141,6 +158,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.8.2 : Hiérarchie des espaces
 - US30.8.3 : Export image et PDF
 - US30.8.4 : Accès invité sans compte
+- US30.8.5 : Export structuré des contenus
 
 ### F30.9 — Sécurité & gouvernance
 - US30.9.1 : SSO d'entreprise
@@ -165,6 +183,7 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.11.1 : Réactions temps réel
 - US30.11.2 : Parcours gamifié (Aventure)
 - US30.11.3 : Ambiance ludique avancée
+- US30.11.4 : Classement et scoring temps réel des parcours
 
 ### F30.12 — Extensibilité
 - US30.12.1 : API publique documentée
@@ -190,6 +209,8 @@ nativement sous ce même EPIC sans mapping F30.x.
 - US30.15.5 : Réseau d'animateurs référents
 - US30.15.6 : Mesure d'adoption
 - US30.15.7 : Archivage GED des boards critiques
+- US30.15.9 : Plan de reprise & capitalisation du patrimoine
+- US30.15.10 : Conduite du changement & accompagnement à la transition
 
 ### F08.x/EN08.x — Noyau whiteboard (ex-E08, `Phase: Socle`, non verrouillé)
 - **EN08.1** — Isolation WebSocket room par board
@@ -259,6 +280,8 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [US30.1.9 — Capture de pense-bêtes physiques](FEATURES/canevas-objets/us-capture-de-pense-betes-physiques.md) | ⬜ |
 | [US30.1.10 — Ink-to-table](FEATURES/canevas-objets/us-ink-to-table.md) | ⬜ |
 | [US30.1.11 — Liens enrichis et lecture vidéo intégrée](FEATURES/canevas-objets/us-liens-enrichis-video.md) | ⬜ |
+| [US30.1.12 — Filtres et vues par couleur / catégorie](FEATURES/canevas-objets/us-filtres-vues-couleur-categorie.md) | ⬜ |
+| [US30.1.13 — Mini-carte et navigation sur grands boards](FEATURES/canevas-objets/us-mini-carte-navigation-grands-boards.md) | ⬜ |
 | **F30.2 — Collaboration temps réel** | |
 | [US30.2.1 — Édition simultanée temps réel](FEATURES/temps-reel/us-edition-simultanee-temps-reel.md) | ⬜ |
 | [US30.2.2 — Présence et curseurs nommés](FEATURES/temps-reel/us-presence-et-curseurs-nommes.md) | ⬜ |
@@ -277,6 +300,7 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [US30.3.7 — Visites guidées asynchrones](FEATURES/facilitation-ateliers/us-visites-guidees-asynchrones.md) | ⬜ |
 | [US30.3.8 — Séquençage d'atelier (Session)](FEATURES/facilitation-ateliers/us-sequencage-d-atelier-session.md) | ⬜ |
 | [US30.3.9 — Question instantanée & Mémo](FEATURES/facilitation-ateliers/us-question-instantanee-memo.md) | ⬜ |
+| [US30.3.10 — Mode private (contribution masquée avant révélation)](FEATURES/facilitation-ateliers/us-mode-private-contribution-masquee.md) | ⬜ |
 | **F30.4 — Modèles** | |
 | [US30.4.1 — Bibliothèque de modèles](FEATURES/modeles/us-bibliotheque-de-modeles.md) | ⬜ |
 | [US30.4.2 — Modèles personnalisés d'organisation](FEATURES/modeles/us-modeles-personnalises-d-organisation.md) | ⬜ |
@@ -294,6 +318,7 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [US30.6.4 — Gouvernance de l'IA](FEATURES/ia/us-gouvernance-de-l-ia.md) | ⬜ |
 | [US30.6.5 — Outils générés par prompt](FEATURES/ia/us-outils-generes-par-prompt.md) | ⬜ |
 | [US30.6.6 — Agents IA collaboratifs](FEATURES/ia/us-agents-ia-collaboratifs.md) | ⬜ |
+| [US30.6.7 — IA : génération de compte-rendu d'atelier](FEATURES/ia/us-ia-generation-compte-rendu.md) | ⬜ |
 | **F30.7 — Continuum & intégrations** | |
 | [US30.7.1 — Intégration visioconférence 1-clic](FEATURES/continuum-integrations/us-integration-visioconference-1-clic.md) | ⬜ |
 | [US30.7.2 — Synchronisation gestion de projet](FEATURES/continuum-integrations/us-synchronisation-gestion-de-projet.md) | ⬜ |
@@ -304,6 +329,7 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [US30.8.2 — Hiérarchie des espaces](FEATURES/partage-administration/us-hierarchie-des-espaces.md) | ⬜ |
 | [US30.8.3 — Export image et PDF](FEATURES/partage-administration/us-export-image-et-pdf.md) | ⬜ |
 | [US30.8.4 — Accès invité sans compte](FEATURES/partage-administration/us-acces-invite-sans-compte.md) | ⬜ |
+| [US30.8.5 — Export structuré des contenus](FEATURES/partage-administration/us-export-structure-contenus.md) | ⬜ |
 | **F30.9 — Sécurité & gouvernance** | |
 | [US30.9.1 — SSO d'entreprise](FEATURES/securite-gouvernance/us-sso-d-entreprise.md) | ⬜ |
 | [US30.9.2 — Chiffrement](FEATURES/securite-gouvernance/us-chiffrement.md) | ⬜ |
@@ -325,6 +351,7 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [US30.11.1 — Réactions temps réel](FEATURES/engagement/us-reactions-temps-reel.md) | ⬜ |
 | [US30.11.2 — Parcours gamifié (Aventure)](FEATURES/engagement/us-parcours-gamifie-aventure.md) | ⬜ |
 | [US30.11.3 — Ambiance ludique avancée](FEATURES/engagement/us-ambiance-ludique-avancee.md) | ⬜ |
+| [US30.11.4 — Classement et scoring temps réel des parcours](FEATURES/engagement/us-classement-scoring-temps-reel.md) | ⬜ |
 | **F30.12 — Extensibilité** | |
 | [US30.12.1 — API publique documentée](FEATURES/extensibilite/us-api-publique-documentee.md) | ⬜ |
 | [US30.12.2 — Marketplace d'intégrations](FEATURES/extensibilite/us-marketplace-d-integrations.md) | ⬜ |
@@ -346,6 +373,8 @@ fichiers, crédits IA) sont un risque opérationnel indépendant de tout modèle
 | [US30.15.5 — Réseau d'animateurs référents](FEATURES/chantiers-si/us-reseau-d-animateurs-referents.md) | ⬜ |
 | [US30.15.6 — Mesure d'adoption](FEATURES/chantiers-si/us-mesure-d-adoption.md) | ⬜ |
 | [US30.15.7 — Archivage GED des boards critiques](FEATURES/chantiers-si/us-archivage-ged-des-boards-critiques.md) | ⬜ |
+| [US30.15.9 — Plan de reprise & capitalisation du patrimoine](FEATURES/chantiers-si/us-plan-de-reprise-patrimoine.md) | ⬜ |
+| [US30.15.10 — Conduite du changement & accompagnement à la transition](FEATURES/chantiers-si/us-conduite-du-changement.md) | ⬜ |
 
 ---
 
