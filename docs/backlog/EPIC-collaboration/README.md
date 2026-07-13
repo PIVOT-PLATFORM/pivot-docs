@@ -215,8 +215,10 @@ nativement sous ce même EPIC sans mapping F30.x.
 ### F08.x/EN08.x — Noyau whiteboard (ex-E08, `Phase: Socle`, non verrouillé)
 - **EN08.1** — Isolation WebSocket room par board
 - **EN08.2** — Guard Angular module whiteboard
-- **F08.1** — CRUD tableaux (backend + Angular)
-- **F08.2** — Partage et rôles (backend + Angular)
+- **F08.1** — CRUD tableaux (backend + Angular) — **+ parité visible PouetPouet (2026-07-13,
+  Sprint 37)** : favoris (US08.1.6), corbeille/restauration (US08.1.7), recherche (US08.1.8)
+- **F08.2** — Partage et rôles (backend + Angular) — **+ parité visible PouetPouet (2026-07-13,
+  Sprint 37)** : paramètres de tableau modal OWNER (US08.2.4)
 - **F08.3** — Canvas collaboratif temps réel (backend WS + Angular)
 - **F08.4** — Templates de tableau
 
@@ -412,6 +414,11 @@ collaboratif open-source).
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ✅ Done |
+| **Parité visible PouetPouet (Sprint 37, 2026-07-13)** | |
+| [US08.1.6 — Favoris de tableaux](FEATURES/crud-tableaux/us-favoris-tableau.md) | ⬜ |
+| [US08.1.7 — Corbeille et restauration d'un tableau](FEATURES/crud-tableaux/us-corbeille-tableau.md) | ⬜ |
+| [US08.1.8 — Recherche de tableaux](FEATURES/crud-tableaux/us-recherche-tableau.md) | ⬜ |
+| [US08.2.4 — Paramètres de tableau (modal OWNER) + câblage Reset board](FEATURES/partage-roles/us-parametres-tableau.md) | ⬜ |
 
 > **Resynchronisé le 2026-07-09** depuis le frontmatter `Stage:` de chaque fichier (source de
 > vérité, grep direct des 17 fichiers) : ce tableau affichait encore « 17 Review » alors que
@@ -428,3 +435,13 @@ collaboratif open-source).
 > Gate 1 contre l'état réel de `pivot-collaboratif-ui` (le redimensionnement par handles sur objet
 > unique et le groupement `Ctrl+G` sont déjà couverts par US08.3.2a — seul le raffinement listé
 > dans chaque US est net-new).
+>
+> **Ajout 2026-07-13 (audit de recette fonctionnelle Socle, parité visible PouetPouet)** :
+> [`docs/audits/audit-recette-fonctionnelle.md`](../../audits/audit-recette-fonctionnelle.md)
+> confirme le noyau F08.x conforme au périmètre annoncé et classe l'écart de parité vs PouetPouet
+> (Vote, Timer, Session, favoris, corbeille, recherche…) en `⬜ Backlog` F30.x, **non-KO**. Le
+> mainteneur a néanmoins décidé d'étendre le périmètre Socle F08.x à **4 capacités de parité
+> visible** jugées structurantes pour la gestion de tableaux : favoris (US08.1.6), corbeille +
+> restauration (US08.1.7 — révise le hard-delete d'US08.1.5), recherche (US08.1.8), paramètres de
+> tableau modal OWNER + câblage Reset board (US08.2.4). Net-new, `Stage: Backlog`, tracées dans
+> **`sprints/sprint-37.md`** — ne remettent pas en cause le 17/17 Done du noyau initial.
