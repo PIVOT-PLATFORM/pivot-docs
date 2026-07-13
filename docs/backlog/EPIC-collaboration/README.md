@@ -483,7 +483,7 @@ collaboratif open-source).
 > dans chaque US est net-new).
 >
 > **Ajout 2026-07-13 (audit de recette fonctionnelle Socle, parité visible PouetPouet)** :
-> [`docs/audits/audit-recette-fonctionnelle.md`](../../audits/audit-recette-fonctionnelle.md)
+> [`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
 > confirme le noyau F08.x conforme au périmètre annoncé et classe l'écart de parité vs PouetPouet
 > (Vote, Timer, Session, favoris, corbeille, recherche…) en `⬜ Backlog` F30.x, **non-KO**. Le
 > mainteneur a néanmoins décidé d'étendre le périmètre Socle F08.x à **4 capacités de parité

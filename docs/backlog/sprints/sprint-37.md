@@ -3,7 +3,7 @@
 **Branches :** une branche par US — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
 **Scope :** 4 items de parité **visible** du noyau whiteboard (F08.x) vs le POC de référence
 PouetPouet, décidés par le mainteneur suite à
-[`docs/audits/audit-recette-fonctionnelle.md`](../../audits/audit-recette-fonctionnelle.md)
+[`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
 (§Écarts de parité vs POC, 2026-07-13) — extension du périmètre F08.x « noyau + parité visible »,
 `Phase: Socle` (non verrouillé, même statut que le reste du noyau F08.x/EN08.x).
 **Jalon d'entrée :** aucune dépendance nouvelle — s'appuie sur le noyau F08.1/F08.2/F08.3 déjà
