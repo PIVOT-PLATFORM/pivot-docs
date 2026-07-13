@@ -18,6 +18,11 @@ Mettre en place les prérequis techniques permettant de créer les repos modules
 - [Enabler EN17.10 : Publication `@pivot-platform/collaboratif-ui` + câblage shell route whiteboard](ENABLERS/en-collaboratif-ui-shell-wiring.md) — ✅ terminé, oubli de mise à jour de ce README, corrigé au passage
 - [Enabler EN17.11 : Publication `@pivot-platform/agilite-ui` + câblage shell route agilite](ENABLERS/en-agilite-ui-shell-wiring.md)
 - [Enabler EN17.12 : Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+- [Enabler EN17.13 : DS Vague 0 — fondations & dette](ENABLERS/en-ds-vague0-fondations.md)
+- [Enabler EN17.14 : DS Vague 1 — socle formulaires](ENABLERS/en-ds-vague1-formulaires.md)
+- [Enabler EN17.15 : DS Vague 2 — overlays & feedback](ENABLERS/en-ds-vague2-overlays-feedback.md)
+- [Enabler EN17.16 : DS Vague 3 — affichage de données & navigation](ENABLERS/en-ds-vague3-donnees-navigation.md)
+- [Enabler EN17.17 : DS Vague 4 — composants avancés](ENABLERS/en-ds-vague4-avance.md)
 
 ## Phase
 
@@ -41,5 +46,5 @@ valeur de verrou de sprint.
 
 ---
 
-Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 11 (EN17.1–11)
+Item Type: Epic · Clé: E17 · Phase: Socle (reséquencé 2026-07-07, ex-phase-3) · Enablers: 17 (EN17.1–17)
 Stage: ⬜ · Priority: Critical
