@@ -35,3 +35,4 @@ avance) :
 | Dépendances / Supply chain | [audit-dependances.md](audit-dependances.md) | Expert DevSecOps |
 | Observabilité | [audit-observabilite.md](audit-observabilite.md) | Expert DevSecOps |
 | Backlog | [audit-backlog.md](audit-backlog.md) | Product Owner + Scrum Master |
+| Recette fonctionnelle (Socle) | [audit-recette-fonctionnelle.md](audit-recette-fonctionnelle.md) | Expert QA + Product Owner |

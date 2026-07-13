@@ -37,8 +37,9 @@ cohérence : le fichier de domaine (`docs/audits/audit-{domaine}.md`), ce bilan,
 | Dépendances / Supply chain | Audité | 7.0/10 | — (premier) | v2 — 2026-07-08 | Aucun blocage — surface de production propre |
 | Observabilité | Audité | 4.5/10 | — (premier) | v2 — 2026-07-08 | `pivot-core` solide mais aveugle (zéro alerte) ; modules `-core` sans aucune brique avant déploiement |
 | Backlog | Audité | 7.2/10 | — (premier) | v2 — 2026-07-08 | Dette de cohérence maîtrisée, pas bloquante — zéro item fantôme sur les 8 repos |
+| Recette fonctionnelle (Socle) | Audité | 5.0/10 | — (premier) | v1 — 2026-07-13 | **Recette Socle NON validable en l'état** — 6 bloquants dont l'i18n de l'éditeur whiteboard (clés brutes), OTP appareil inopérant, SUPER_ADMIN injoignable, avatar 500, Prometheus KO |
 
-**Score moyen : 6.1/10** (11/11 audits formels publiés, premier cycle — pas de tendance historique
+**Score moyen : 6.0/10** (12/12 audits formels publiés, premier cycle — pas de tendance historique
 possible).
 
 ---

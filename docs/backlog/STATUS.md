@@ -203,6 +203,7 @@ Passage à `v1-enterprise` ou `phase-3` : décision explicite du mainteneur.
 | D3 | **E29 vs moteur Parcours** — E29 ne référence pas le moteur Parcours livré dans le POC (étapes typées, classification C0–C3, GCS) | E29 | Aligner ou créer l'EPIC manquant |
 | D4 | **Chevauchement E48/E29** — assistant IA transverse (E48) vs chatbots connectés (E29 US29.9.4) partiellement clarifié côté E48 uniquement | E48, E29 | Compléter côté E29 |
 | D5 | **Dépôt d'idée E38 vs POC Innovation** — F38.15 route *tout* dépôt d'idée via Pivot Forms (US38.15.3, par conception) alors que le POC PouetPouet capture la fiche idée de base nativement et ne route que le dépôt via challenge par formulaire | E38, E42 | Confirmer le choix Forms-driven avec le mainteneur avant Gate 1 (cf. EPIC-pilotage-innovation/README.md) |
+| D6 | **Recette fonctionnelle Socle KO** — la recette bout-en-bout du 2026-07-13 ([audit-recette-fonctionnelle](../audits/audit-recette-fonctionnelle.md)) révèle **6 bloquants + 7 majeurs** sur des items déclarés `✅` / mergés : i18n éditeur whiteboard en clés brutes (E30 F08.x), OTP appareil inopérant (US01.4.1), langue connectée cassée (US02.1.2), avatar 500 (US02.1.1), SUPER_ADMIN injoignable (E06/F06.2, bloqué par E01), Prometheus KO 4/4 backends (EN04.3). Aucun `Stage` modifié (recette = mainteneur) — **ces items ne doivent pas passer `✅` en l'état.** | E01, E02, E03, E06, E16, E30, E04, E07 | Trancher le plan de correction avant recette (cf. §Recommandations de l'audit) |
 
 ---
 
@@ -322,3 +323,20 @@ Pilotage & Risques](sprints/README.md). Le **programme de raffinage E52** (ex-S1
 après S33** (S34 Vague 1 Socle, S35 Pilotage, S36 Agilité/synthèse). Aucun `Stage` frontmatter d'un
 item existant touché ; les items planifiés restent `⬜` (Gate 1 READINESS au démarrage de chaque
 sprint).*
+
+*Recette fonctionnelle Socle 2026-07-13 : première recette **bout-en-bout en conditions réelles**
+(stack Docker en marche, Playwright, 4 agents parallèles + reprise manuelle du parcours whiteboard)
+des items du Socle déclarés faits, contre le POC de référence PouetPouet. Résultat consigné dans le
+nouvel [audit-recette-fonctionnelle](../audits/audit-recette-fonctionnelle.md) (score 5/10) et tracé
+en **décision ouverte D6** ci-dessus : **6 bloquants + 7 majeurs** sur des items `✅`/mergés. Le
+symptôme signalé par le mainteneur (« titres de boutons KO type `whiteboard.board.untitled` ») est
+**reproduit** dans l'éditeur whiteboard au sein du shell — cause : clés absentes des catalogues i18n
+et dérive de version entre la lib publiée `@pivot-platform/collaboratif-ui@0.2.0` et les fichiers de
+traduction, sur fond d'un bug systémique `transloco.translate()` synchrone (aussi visible sur le
+guard de module `modules.guard.names.whiteboard`, `nav.theme_to_dark`, `nav.notifications`, la grille
+de modules). Plusieurs features `✅ Done` sont codées mais **branchées nulle part** (partage
+whiteboard US08.2.3, changement d'e-mail US02.2.2, sessions US02.2.3, suppression compte RGPD
+US02.2.4). **Aucun `Stage` modifié** (recette = mainteneur) — ces items ne doivent pas passer `✅`
+avant correction. Correction positive au passage : E17 `pivot-core-starter` est publié **et déjà
+consommé** par `pivot-collaboratif-core`/`pivot-agilite-core` (la note « aucun module ne consomme
+encore » était obsolète).*
