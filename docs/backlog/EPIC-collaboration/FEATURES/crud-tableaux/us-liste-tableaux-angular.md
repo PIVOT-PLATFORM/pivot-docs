@@ -31,8 +31,11 @@
 
 ## Hors périmètre
 - Renommage et suppression : couverts par US08.1.4 et US08.1.5 (menu ⋯ exposé ici, actions déléguées)
-- Recherche/filtre de tableaux dans la grille : hors scope (dépend de US08.1.2, marquée hors scope Socle)
-- Tri personnalisé par l'utilisateur : hors scope, ordre fixe `updatedAt DESC` hérité du backend
+- Recherche/filtre de tableaux dans la grille : **désormais en scope Socle, voir US08.1.8** (parité
+  visible PouetPouet, 2026-07-13) — front-only, filtre client sur les tableaux déjà chargés
+- Tri personnalisé par l'utilisateur : ordre fixe `updatedAt DESC` hérité du backend reste la base,
+  **à l'exception du tri favoris-d'abord introduit par US08.1.6** (parité visible PouetPouet,
+  2026-07-13) — aucun réordonnancement manuel au-delà de ces deux critères
 
 ## Notes d'implémentation
 - Frontend `pivot-collaboratif-ui`, route lazy `whiteboard/whiteboard.routes.ts`, composant `BoardListComponent`
