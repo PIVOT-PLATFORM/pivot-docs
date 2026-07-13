@@ -11,7 +11,7 @@
 | Given un tableau dont je suis membre (owner/editor/viewer), when je clique l'étoile de sa carte dans la grille, then le tableau est marqué favori et l'étoile passe à l'état plein (persistant après rechargement) | ⬜ |
 | Given un tableau déjà favori, when je clique à nouveau l'étoile, then le favori est retiré (toggle) et l'étoile revient à l'état vide | ⬜ |
 | Given au moins un tableau favori, when la liste des tableaux est affichée, then les tableaux favoris apparaissent en tête (tri stable : favoris d'abord par `updatedAt DESC`, puis non-favoris par `updatedAt DESC`) | ⬜ |
-| Given un tri favoris déjà appliqué côté client, when je bascule le favori d'une carte, then la liste se retrie immédiatement sans rechargement serveur (tri optimiste côté Angular sur la page déjà chargée) | ⬜ |
+| Given un tri favoris déjà appliqué côté client, when je bascule le favori d'une carte, then la liste est immédiatement réordonnée sans rechargement serveur (tri optimiste côté Angular sur la page déjà chargée) | ⬜ |
 | Given le favori est propre à chaque utilisateur, when deux utilisateurs différents consultent le même tableau partagé, then chacun voit son propre état favori indépendant de l'autre | ⬜ |
 | Error : given un échec réseau ou 5xx lors du toggle, when la requête échoue, then l'étoile revient à son état précédent + toast `role="alert"` — pas de mise à jour optimiste non confirmée | ⬜ |
 | Error : given un boardId inexistant ou dont l'utilisateur n'est plus membre, when POST/DELETE favori est appelé, then 404 (cohérent avec la convention anti-énumération des autres endpoints CRUD tableaux) | ⬜ |
