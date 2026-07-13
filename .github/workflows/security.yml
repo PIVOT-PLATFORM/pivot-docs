@@ -30,6 +30,12 @@ jobs:
           fetch-depth: 0
 
       - name: Gitleaks
+        # Skip pour les PR Dependabot : GitHub ne transmet pas les secrets du dépôt aux workflows
+        # déclenchés par Dependabot (secrets.GITLEAKS_LICENCE_KEY est vide), donc gitleaks-action v2
+        # — qui exige une licence pour les organisations — échoue systématiquement. Un bump de
+        # dépendance ne peut de toute façon pas introduire de secret. Le job reste présent (le
+        # check requis passe au vert), seul le scan est sauté pour cet acteur.
+        if: github.actor != 'dependabot[bot]'
         uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
