@@ -3,7 +3,7 @@
 ## Contexte
 
 - **US** : `docs/backlog/EPIC-portefeuille/FEATURES/portefeuille-comites/us-meteo-indicateurs-normalises.md`
-  (F23.2, E23 — Portefeuille, Phase phase-3, Sprint 10)
+  (F23.2, E23 — Portefeuille, Phase phase-3, Sprint 17)
 - **PR** : `pivot-pilotage-core` [#57](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/57)
   (`feat/us23-2-4-meteo-indicateurs`)
 - **Dernier commit au moment du figeage** : squash-merge sur `main` le 2026-07-12
@@ -176,8 +176,8 @@ l'implémentation (PO Agent self-challenge, Gate 1) :
 
 | Item | Relation |
 |---|---|
-| US23.2.1 (vue portefeuille consolidée, Sprint 10, non livrée au moment du figeage) | Consommateur attendu de `computeWeatherForApplication` — évite tout recalcul divergent par vue (AC2). Aucune dépendance inverse : cette US n'a pas attendu US23.2.1. |
-| US23.2.2 (dashboards personnalisables, Sprint 10, non livrée au moment du figeage) | Consommateur attendu de `computeWeather`/`computeWeatherForApplication` pour l'affichage de l'indicateur dans un widget de dashboard. |
+| US23.2.1 (vue portefeuille consolidée, Sprint 17, non livrée au moment du figeage) | Consommateur attendu de `computeWeatherForApplication` — évite tout recalcul divergent par vue (AC2). Aucune dépendance inverse : cette US n'a pas attendu US23.2.1. |
+| US23.2.2 (dashboards personnalisables, Sprint 17, non livrée au moment du figeage) | Consommateur attendu de `computeWeather`/`computeWeatherForApplication` pour l'affichage de l'indicateur dans un widget de dashboard. |
 | EN18.9 (`consolidation`, mergé) | Fournit `ProjectNotFoundException`/`ApplicationNotFoundException`, réutilisées telles quelles (pas de duplication) pour l'isolation tenant. |
 | EN22.1a (schéma temporel, mergé) | Source unique des données lues (`task`, `task_progress`, `project.status_date`) — aucune nouvelle colonne/table. |
 | Futur contrôleur REST `/api/pilotage/*` (post `pivot-core-starter`) | Mappera `ProjectNotFoundException`/`ApplicationNotFoundException` → 404 et `UnauthorizedWeatherRuleChangeException` → 403, sans changement de signature de service. |

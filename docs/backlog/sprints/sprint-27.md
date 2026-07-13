@@ -1,33 +1,38 @@
-# Sprint 27 — E22 Roadmap — Interopérabilité MS Project & vues
+# Sprint 27 — E18 Pilotage — Gestion budgétaire & jalons (logique métier)
 
 > **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
 > Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
 >
-> **Phase** : phase-3 · E22. **Sortie** : l'interopérabilité (import/export MS Project & formats) et les vues & restitutions restantes.
+> **Phase** : phase-3 · E18. **Sortie** : la logique métier transverse budget + jalons, au-delà des écrans de saisie.
 >
-> **Dépendances** : Dépend du socle Gantt (S10, S26).
+> **Dépendances** : Alimente les écrans Budget (S25) et Jalons (S26).
 >
 > **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
 > (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
 > même précédent que les sprints précédents.
 
-## Items (11)
+## Items (16)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US22.7.1 | Import de plannings MS Project | XL | High | ⬜ |
-| US22.7.2 | Export MS Project & Excel | L | High | ⬜ |
-| US22.7.3 | Format d'échange ouvert (réversibilité) | L | Medium | ⬜ |
-| US22.7.4 | Import/export Primavera P6 (XER / P6 XML) | XL | Medium | ⬜ |
-| US22.7.5 | Formats tableur & données (CSV, XLSX, JSON, API) | L | High | ⬜ |
-| US22.7.6 | Export iCalendar (.ics) | M | Medium | ⬜ |
-| US22.7.7 | Interop outils agiles & de travail (Jira, Azure DevOps, Asana…) | XL | High | ⬜ |
-| US22.7.8 | Interop outils PM open source | L | Medium | ⬜ |
-| US22.7.9 | Export documents & présentation (PDF, PNG/SVG, PowerPoint) | M | Medium | ⬜ |
-| US22.6.1 | Vues multiples (Gantt, chronologie, calendrier, réseau, ressources) | XL | High | ⬜ |
-| US22.6.4 | Export & rapports de pilotage | M | High | ⬜ |
+| US18.2.1 | Créer une ligne budgétaire | M | High | ⬜ |
+| US18.2.2 | Modifier une ligne budgétaire | M | High | ⬜ |
+| US18.2.3 | Dupliquer une ligne budgétaire | S | Medium | ⬜ |
+| US18.2.4 | Supprimer une ligne budgétaire | S | High | ⬜ |
+| US18.2.5 | Classer et filtrer les données budgétaires | S | Medium | ⬜ |
+| US18.2.6 | Naviguer entre les années | XS | Medium | ⬜ |
+| US18.2.7 | Distinguer numéro et libellé de contrat | XS | Medium | ⬜ |
+| US18.2.8 | Consulter la dernière modification budgétaire | XS | Medium | ⬜ |
+| US18.3.1 | Piloter les jalons du cycle (J4–J7, PMPG) | M | High | ⬜ |
+| US18.3.2 | Valider un jalon avec date de passage obligatoire | S | High | ⬜ |
+| US18.3.3 | Gérer le jalon CEN | S | High | ⬜ |
+| US18.3.4 | Gérer le jalon J7 « Mise en Service (MES) » | M | High | ⬜ |
+| US18.3.5 | Gérer le jalon J6 « Mise en Production (MEP) » | S | Medium | ⬜ |
+| US18.3.6 | Filtrer / isoler un jalon dans la vue planning | XS | Medium | ⬜ |
+| US18.3.7 | Réinitialiser les champs de jalon (vue planning) | XS | Medium | ⬜ |
+| US18.3.8 | Accéder aux revues de sécurisation (Jalons B, C, D) | XS | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
+> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
 > domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
 > les dépendances ci-dessus.

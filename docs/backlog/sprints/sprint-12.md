@@ -1,40 +1,49 @@
-# Sprint 12 — Forms (cœur) + framework onboarding
+# Sprint 12 — Parité whiteboard — Objets typés & connecteurs
 
-> ✅ **Verrou Socle levé (2026-07-10).** Inchangé au re-tri du 2026-07-10. Voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+**Branches :** une branche par US — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
+**Scope :** 8 items de **parité complète** whiteboard — les 6 types de carte (texte, étiquette,
+forme, image, lien+aperçu, tableau) et les connecteurs, suite à la décision mainteneur du
+2026-07-13 d'absorber tout le spec de référence `Détails tableau blanc backlog.md` (POC PouetPouet)
+dans le Socle E08 (lève le verrou phase-3, zone d'ombre #11). `Phase: Socle`, module whiteboard.
+**Jalon d'entrée :** dépend du modèle `Card` typé (EN08.4, Sprint 11) — les objets typés de ce
+sprint sont des `Card` de type `TEXT`/`LABEL`/`SHAPE`/`IMAGE`/`LINK`/`TABLE` et des connecteurs.
 
-**Sortie :** form-builder cœur livré + premier tour guidé actif sur les modules en prod (S8-S11)
+## Contexte
 
-**Gate 1 READINESS passé (2026-07-11)** — **15/17 Ready**. ⚠️ **2 enablers XL non décomposés
-bloquent le cœur** : **EN42.1** (moteur + schéma Forms, score 60) bloque **10 US** (F42.1/F42.2/F42.3)
-et **EN41.1** (framework onboarding, score 55) bloque US41.1.1 → **la décomposition est la 1re action
-du sprint** (même précédent que les XL pilotage EN27.1/EN43.7). Implémentables sans le moteur :
-US42.4.1 / US42.4.2 / US42.5.1. Dépendances externes : bus ADR-025/EN28.4 (US42.5.4, critère
-`form.submitted`), ADR-009 Thème/liens profonds (US42.2.4, US42.3.2). Décisions → commentaire de la PR Gate 1.
+Suite de la fondation posée au Sprint 11 (EN08.4, modèle `Card` typé). Ce sprint livre les
+**objets typés** du board — les 6 types de carte du spec de référence PouetPouet — et les
+**connecteurs** reliant les cartes. Il absorbe les Features benchmark US30.1.2/.3/.5/.11 (objets)
+et US30.1.3 (connecteurs).
 
-| Item | Titre | Size | Priorité | 🤖 Dev |
-|------|-------|------|----------|--------|
-| EN42.1a | Schéma & validation de formulaire *(ex-EN42.1 XL, décomposé 2026-07-11)* | M | Critical | ⬜ |
-| EN42.1b | Moteur logique & scoring | L | Critical | ⬜ |
-| EN42.1c | Événements & API (soumission, webhooks) | L | Critical | ⬜ |
-| EN42.1d | Thème & intégration | M | Critical | ⬜ |
-| US42.1.1 | Éditeur no-code drag-and-drop | M | Critical | ⬜ |
-| US42.1.2 | Types de champs variés | L | Critical | ⬜ |
-| US42.1.3 | Validation des saisies | M | Critical | ⬜ |
-| US42.1.4 | Multi-pages et sections | M | High | ⬜ |
-| US42.2.1 | Logique conditionnelle | L | Critical | ⬜ |
-| US42.2.2 | Calculs et scoring (quiz) | M | High | ⬜ |
-| US42.2.3 | Champs masqués et pré-remplissage | M | High | ⬜ |
-| US42.2.4 | Thème PIVOT | M | High | ⬜ |
-| US42.3.1 | Lien partageable | S | Critical | ⬜ |
-| US42.3.2 | Intégration embarquée dans le portail | M | High | ⬜ |
-| US42.4.1 | Collecte et tableau de réponses | M | Critical | ⬜ |
-| US42.4.2 | Restitution visuelle | M | Critical | ⬜ |
-| US42.5.1 | Webhooks sortants | S | Critical | ⬜ |
-| US42.5.4 | Émission d'événement de soumission (`form.submitted` — dépend ADR-019) | S | Critical | ⬜ |
-| EN41.1a | Moteur d'affichage in-app *(ex-EN41.1 XL, décomposé 2026-07-11)* | L | High | ⬜ |
-| EN41.1b | API d'enregistrement de parcours & progression | M | High | ⬜ |
-| EN41.1c | Ciblage rôle / module / étape | M | High | ⬜ |
-| EN41.1d | Analytics d'adoption (RGPD) | M | High | ⬜ |
-| US41.1.1 | Tour guidé au premier accès | M | High | ⬜ |
+| Item | Titre | Priority | Size | 🤖 Dev |
+|------|-------|----------|------|--------|
+| [US08.6.1](../EPIC-collaboration/FEATURES/objets-types/us-carte-texte.md) | Pense-bête texte (TEXT) | High | M | ⬜ |
+| [US08.6.2](../EPIC-collaboration/FEATURES/objets-types/us-carte-etiquette.md) | Étiquette (LABEL) | Medium | S | ⬜ |
+| [US08.6.3](../EPIC-collaboration/FEATURES/objets-types/us-carte-forme.md) | Forme (SHAPE) | Medium | M | ⬜ |
+| [US08.6.4](../EPIC-collaboration/FEATURES/objets-types/us-carte-image.md) | Image (IMAGE) | Medium | M | ⬜ |
+| [US08.6.5](../EPIC-collaboration/FEATURES/objets-types/us-carte-lien-apercu.md) | Carte lien (LINK) + aperçu OpenGraph | High | L | ⬜ |
+| [US08.6.6](../EPIC-collaboration/FEATURES/objets-types/us-carte-tableau.md) | Tableau (TABLE) + collage tableur | Medium | L | ⬜ |
+| [US08.7.1](../EPIC-collaboration/FEATURES/connecteurs/us-creer-connecteur.md) | Créer / supprimer un connecteur | High | M | ⬜ |
+| [US08.7.2](../EPIC-collaboration/FEATURES/connecteurs/us-styler-connecteur.md) | Styler un connecteur | Medium | S | ⬜ |
+| [US08.1.9](../EPIC-collaboration/FEATURES/crud-tableaux/us-chargement-tableau.md) | Chargement d'un tableau & présence agrégée (§2.2) | Medium | M | ⬜ |
 
-> **E42 vague 2 → post-S12** (US42.2.5 multilingue, US42.3.3 enquêtes in-app, US42.4.3 réponses partielles, US42.5.2/42.5.3 API & MCP, F42.6 IA, F42.7 gouvernance, F42.8 souveraineté + EN42.2, F42.9-11). US41.1.2-4 (tooltips, checklist, quoi de neuf) suivent EN41.1.
+## Notes de séquencement
+
+- Les 6 types de carte (US08.6.1 à US08.6.6) sont **parallélisables entre agents** : branches
+  séparées, chacun une variante de type sur le modèle `Card` d'EN08.4 (fichiers disjoints par type).
+- Les connecteurs (US08.7.1 puis US08.7.2) dépendent de l'existence d'au moins un type de carte à
+  relier — US08.7.1 (créer/supprimer) précède US08.7.2 (styler).
+- Gate 1 (PO Agent, DoR) à effectuer au démarrage de chaque item.
+
+## Dépendances
+
+- Dépend de : **Sprint 11 (EN08.4)** — modèle `Card` typé + contrats WS. Bloquant pour tous les
+  items de ce sprint.
+- Repo cible inchangé (`pivot-collaboratif-core`/`pivot-collaboratif-ui`).
+- **Bloque :** Sprint 14 (objets à manipuler pour le canvas UX & présence) et Sprint 16 (l'import
+  Klaxoon crée des cartes typées).
+
+---
+*Créé le 2026-07-13, suite à la décision mainteneur d'absorber le spec de référence
+`Détails tableau blanc backlog.md` (POC PouetPouet) dans le Socle E08 — parité complète, Sprints
+38-43.*

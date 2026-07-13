@@ -2,7 +2,7 @@
 
 ## Contexte
 
-- **US** : [`us-baselines-ecarts.md`](pathname:///pivot-docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-baselines-ecarts) · Parent `F22.4` · Module `pilotage` · Phase `phase-3` · Sprint 10
+- **US** : [`us-baselines-ecarts.md`](pathname:///pivot-docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-baselines-ecarts) · Parent `F22.4` · Module `pilotage` · Phase `phase-3` · Sprint 17
 - **PR backend** : `pivot-pilotage-core` [#63](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/63) — **Commit figé** : `3098971` (squash-merge, package `fr.pivot.pilotage.baseline`)
 - **PR frontend** : `pivot-pilotage-ui` [#43](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/43) (`feat/us22-4-9-baselines-ecarts`) — **Commit au figeage** : `b0e26bd` (PR non fusionnée au moment du figeage — Gate 5 a lieu dès convergence de l'Autoloop, avant merge, voir `docs/specs/README.md` ; fusion différée, séquencée séparément par le mainteneur, une autre US du même sprint — US22.4.8 — étant active en parallèle sur des fichiers partagés `pivot-pilotage-ui`)
 - **Périmètre** : backend **et** frontend, contrairement aux autres specs Gate 5 de ce même
@@ -247,5 +247,5 @@ chaque pose/écrasement/suppression réussie.
 
 ---
 
-Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Sprint 10
+Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Sprint 17
 Stage: Review
