@@ -18,5 +18,5 @@ Item Type: US · Parent: F30.15 · Module: collaboratif · Phase: phase-3 · Siz
 Stage: ⬜
 Rôle: groupe:gouvernance-si
 Source: Étude interne Klaxoon (EDF) 2026-07 · MoSCoW: Should · Lot: Lot 2 · Origine: Écart terrain (angle mort)
-Justification: Étude interne §3.6 / §5 (action Fort) : « 72 % n'ont rien anticipé ; confiance fragilisée » — complète US30.15.5 (réseau d'animateurs) et US30.15.6 (mesure d'adoption) ; onboarding in-app couvert par [E41](../../EPIC-formation-onboarding/README.md)
+Justification: Étude interne §3.6 / §5 (action Fort) : « 72 % n'ont rien anticipé ; confiance fragilisée » — complète US30.15.5 (réseau d'animateurs) et US30.15.6 (mesure d'adoption) ; onboarding in-app couvert par [E41](../../../EPIC-formation-onboarding/README.md)
 Dépendances: US30.15.5, US30.15.6
