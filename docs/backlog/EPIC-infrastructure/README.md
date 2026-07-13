@@ -10,6 +10,7 @@ Stack de production complète : Docker Compose prod, gestion des secrets, Active
 - EN07.4 : PgBouncer session mode configuration prod
 - EN07.5 : deploy.yml GitHub Actions CI/CD vers prod
 - EN07.6 : Hébergement GCP en IaC (Terraform + Ansible) — test MVP
+- EN07.15 : Validation des AC contre la recette réelle (Gate 6)
 
 ## Périmètre GitHub (v1-enterprise)
 - EN07.7 : TLS interne nginx↔core cert CA entreprise
@@ -51,6 +52,7 @@ EN07.7-10 différés (v1-enterprise) · EN07.11-13 différés (phase-3)
 | [EN07.4 — PgBouncer session mode prod](ENABLERS/en-pgbouncer.md) | ✅ Done |
 | [EN07.5 — deploy.yml GitHub Actions CI/CD vers prod](ENABLERS/en-deploy-ci.md) | ✅ Done |
 | [EN07.6 — Hébergement GCP en IaC (Terraform + Ansible) — test MVP](ENABLERS/en-gcp-hosting-iac.md) | ✅ |
+| [EN07.15 — Validation des AC contre la recette réelle (Gate 6)](ENABLERS/en-e2e-recette.md) | 🔎 |
 | **Phase v1-enterprise** | |
 | EN07.7 — TLS interne nginx↔core cert CA entreprise | ⏸️ |
 | EN07.8 — Redis TLS prod requirepass + tls-port | ⏸️ |
