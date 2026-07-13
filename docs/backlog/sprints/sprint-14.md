@@ -1,36 +1,48 @@
-# Sprint 14 — E18 Pilotage — Référentiels & socle activité
+# Sprint 14 — Parité whiteboard — Canvas UX & présence
 
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
->
-> **Phase** : phase-3 · E18. **Sortie** : les objets de gestion (référentiels), les habilitations et la gestion/recherche d'activités posés comme socle du domaine Pilotage.
->
-> **Dépendances** : Socle terminé + EN17 (pivot-core-starter publié). S'appuie sur EN18.1 / EN18.2 / EN18.9 / EN18.10 livrés en S9 (schéma `pilotage`, guard, modèle Application→Projet, profil par défaut).
->
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+**Branches :** une branche par US — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
+**Scope :** 5 items de **parité complète** whiteboard — confort du canevas (aimantation grille,
+zoom avancé, collage presse-papiers) et présence étendue (curseurs nommés throttlés, verrou doux
+d'édition), suite à la décision mainteneur du 2026-07-13 d'absorber tout le spec de référence
+`Détails tableau blanc backlog.md` (POC PouetPouet) dans le Socle E08 (lève le verrou phase-3, zone
+d'ombre #11). `Phase: Socle`, module whiteboard.
+**Jalon d'entrée :** dépend du modèle `Card` typé (EN08.4, Sprint 11) et des objets typés (Sprint
+39) — les fonctions UX et de présence opèrent sur des cartes typées existantes.
 
-## Items (14)
+## Contexte
 
-| Item | Titre | Size | Priorité | 🤖 Dev |
-|------|-------|------|----------|--------|
-| US18.7.1 | Mettre à jour les objets de gestion (OI, EOTP) | M | High | ⬜ |
-| US18.7.2 | Mettre à jour les produits | S | High | ⬜ |
-| US18.7.3 | Gérer les référentiels métiers | M | High | ⬜ |
-| US18.8.1 | Accéder au menu d'administration | S | High | ⬜ |
-| US18.1.1 | Renseigner les informations générales d'une activité | S | High | ⬜ |
-| US18.1.2 | Renseigner les informations structurelles d'une activité | S | High | ⬜ |
-| US18.1.3 | Contrôler la validité du nom d'activité | S | High | ⬜ |
-| US18.1.4 | Consulter la dernière modification d'une activité | XS | Medium | ⬜ |
-| US18.1.5 | Identifier rapidement une activité par son trigramme | XS | Medium | ⬜ |
-| US18.1.6 | Visualiser les activités liées Parents / Enfants | S | Medium | ⬜ |
-| US18.6.1 | Rechercher activités et portefeuilles | S | Medium | ⬜ |
-| US18.6.2 | Filtrer par produit associé | XS | Medium | ⬜ |
-| US18.6.3 | Sécuriser la navigation | S | Medium | ⬜ |
-| EN18.14 | Gestion des habilitations par groupe AD | M | High | ⬜ |
+Suite des Sprints 38 (fondation `Card`) et 39 (objets typés). Ce sprint livre le **confort du
+canevas** (aimantation à la grille, zoom avancé, collage presse-papiers) et l'**extension de la
+présence** temps réel (curseurs nommés throttlés, verrou doux d'édition). Il absorbe la Feature
+benchmark US30.2.2 (présence & curseurs nommés).
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+| Item | Titre | Priority | Size | 🤖 Dev |
+|------|-------|----------|------|--------|
+| [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | ⬜ |
+| [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | ⬜ |
+| [US08.11.3](../EPIC-collaboration/FEATURES/canvas-ux/us-collage-presse-papiers.md) | Collage presse-papiers (image / tableur / texte) | Medium | M | ⬜ |
+| [US08.11.4](../EPIC-collaboration/FEATURES/canvas-ux/us-guides-alignement.md) | Guides d'alignement (§4.3, supersède 8 px d'US08.3.2a) | Medium | M | ⬜ |
+| [US08.11.5](../EPIC-collaboration/FEATURES/canvas-ux/us-undo-redo-parite.md) | Undo / redo (§4.5, HISTORY_LIMIT 30, supersède pile 50 d'US08.3.3) | Medium | M | ⬜ |
+| [US08.11.6](../EPIC-collaboration/FEATURES/canvas-ux/us-raccourcis-clavier.md) | Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a) | Medium | M | ⬜ |
+| [US08.11.7](../EPIC-collaboration/FEATURES/canvas-ux/us-redimensionnement-fin.md) | Redimensionnement fin & lasso (§4.4/§4.9, supersède US08.3.6) | Medium | M | ⬜ |
+| [US08.5.2](../EPIC-collaboration/FEATURES/presence/us-curseurs-nommes.md) | Curseurs nommés throttlés | Medium | S | ⬜ |
+| [US08.5.3](../EPIC-collaboration/FEATURES/presence/us-verrou-edition.md) | Verrou doux d'édition | Medium | S | ⬜ |
+
+## Notes de séquencement
+
+- Les trois items canvas UX (US08.11.1/.2/.3) et les deux items présence (US08.5.2/.3) sont
+  parallélisables entre agents (branches séparées, fichiers disjoints).
+- **US08.11.3** (collage presse-papiers) recoupe le collage tableur d'US08.6.6 (Sprint 12) : à
+  vérifier au Gate 1 pour éviter la duplication de la logique de détection de source presse-papiers.
+- Gate 1 (PO Agent, DoR) à effectuer au démarrage de chaque item.
+
+## Dépendances
+
+- Dépend de : **Sprint 11 (EN08.4)** — modèle `Card` typé — et **Sprint 12** (objets typés à
+  manipuler par les fonctions UX et de présence).
+- Repo cible inchangé (`pivot-collaboratif-core`/`pivot-collaboratif-ui`).
+
+---
+*Créé le 2026-07-13, suite à la décision mainteneur d'absorber le spec de référence
+`Détails tableau blanc backlog.md` (POC PouetPouet) dans le Socle E08 — parité complète, Sprints
+38-43.*

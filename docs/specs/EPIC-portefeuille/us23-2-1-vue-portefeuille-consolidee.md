@@ -3,7 +3,7 @@
 ## Contexte
 
 - **US** : `docs/backlog/EPIC-portefeuille/FEATURES/portefeuille-comites/us-vue-portefeuille-consolidee.md`
-  (F23.2 — Portefeuille, EPIC-portefeuille), Sprint 10
+  (F23.2 — Portefeuille, EPIC-portefeuille), Sprint 17
 - **PR** : `pivot-pilotage-core`
   [#65](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/65)
   (`feat/us23-2-1-vue-portefeuille-consolidee`) — backend uniquement, `pivot-pilotage-ui` restant

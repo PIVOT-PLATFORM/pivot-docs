@@ -1,35 +1,41 @@
-# Sprint 25 — E21 Risques — IA gouvernée, restitutions, cockpit & méthode DIT
+# Sprint 25 — E18 Pilotage — Activité : écran Budget
 
 > **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
 > Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
 >
-> **Phase** : phase-3 · E21. **Sortie** : l'IA gouvernée, les restitutions par rôle, l'intégration cockpit projet et la méthode DIT (héritage SANDRA).
+> **Phase** : phase-3 · E18. **Sortie** : l'écran Budget d'une activité complet.
 >
-> **Dépendances** : Dépend du scoring/cycle de vie (S11) et de la boucle vivante (S24). F21.9 (cockpit) dépend de E22/E23 (S10+) ; F21.10 (méthode DIT) dépend d'EN21.1 étendu (RiskFactor/FactorImpact).
+> **Dépendances** : Dépend de S24 (PMT) ; la logique budgétaire transverse (F18.2) est livrée en parallèle en S27.
 >
 > **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
 > (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
 > même précédent que les sprints précédents.
 
-## Items (13)
+## Items (19)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US21.7.1 | Suggestion de risques par IA | L | Medium | ⬜ |
-| US21.7.2 | Détection de signaux faibles | L | Medium | ⬜ |
-| US21.7.3 | Aide à la rédaction d'actions | M | Low | ⬜ |
-| US21.7.4 | Gouvernance de l'IA de risque | M | Medium | ⬜ |
-| US21.8.1 | Vue chef de projet | M | High | ⬜ |
-| US21.8.2 | Vue sponsor / COMEX | M | Medium | ⬜ |
-| US21.8.3 | Vue Scrum Master | S | Medium | ⬜ |
-| US21.8.4 | Vue Contract Manager | M | Medium | ⬜ |
-| US21.8.5 | Export et rapport de risques | S | Medium | ⬜ |
-| US21.8.6 | Accessibilité RGAA des vues | M | High | ⬜ |
-| US21.9.1 | Corréler un risque à son projet via le bus PIVOT | M | High | ⬜ |
-| US21.9.2 | Ouvrir les risques depuis la fiche projet (onglet + deep-link) | M | High | ⬜ |
-| US21.9.3 | Widget « Top risques » composable dans un cockpit | M | Medium | ⬜ |
+| US18.18.1 | Affichage de l'écran Budget | S | High | ⬜ |
+| US18.18.2 | Affichage de l'onglet PDS Pluriannuel | M | High | ⬜ |
+| US18.18.3 | Affichage de l'onglet Élaboration PMT | M | High | ⬜ |
+| US18.18.4 | Tableau budgétaire (colonnes) | L | High | ⬜ |
+| US18.18.5 | Affichage de l'onglet Photo financière | M | Medium | ⬜ |
+| US18.18.6 | Liste déroulante de sélection des photos financières | S | Medium | ⬜ |
+| US18.18.7 | Bouton de mise à jour des données des tableaux | S | Medium | ⬜ |
+| US18.18.8 | Bouton Synthèse (afficher/rétracter toutes les lignes) | XS | Medium | ⬜ |
+| US18.18.9 | Barre de recherche | S | Medium | ⬜ |
+| US18.18.10 | Dupliquer une ligne budgétaire | S | Medium | ⬜ |
+| US18.18.11 | Modifier une ligne budgétaire (onglet PDS Pluriannuel) | M | High | ⬜ |
+| US18.18.12 | Modifier une ligne budgétaire (onglets Élaboration PMT / Photos financières) | M | Medium | ⬜ |
+| US18.18.13 | Supprimer une ligne budgétaire | M | High | ⬜ |
+| US18.18.14 | Enregistrer (onglets PDS Pluriannuel et Élaboration PMT) | M | High | ⬜ |
+| US18.18.15 | Bouton « + Ligne budgétaire » — création d'une nouvelle ligne | L | High | ⬜ |
+| US18.18.16 | Enregistrer — onglet Photo financière | M | Medium | ⬜ |
+| US18.18.17 | Historique des modifications (logs) — Budget | M | Medium | ⬜ |
+| US18.18.18 | Historique des modifications — onglets PDS / ELAB_PMT | S | Medium | ⬜ |
+| US18.18.19 | Comparaison des photos financières | M | Low | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
+> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
 > domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
 > les dépendances ci-dessus.

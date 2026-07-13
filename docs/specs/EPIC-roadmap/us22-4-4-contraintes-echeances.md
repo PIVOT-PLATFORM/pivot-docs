@@ -2,7 +2,7 @@
 
 ## Contexte
 
-- **US** : [`us-contraintes-echeances.md`](pathname:///pivot-docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-contraintes-echeances) · Parent `F22.4` · Module `pilotage` · Phase `phase-3` · Sprint 10
+- **US** : [`us-contraintes-echeances.md`](pathname:///pivot-docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-contraintes-echeances) · Parent `F22.4` · Module `pilotage` · Phase `phase-3` · Sprint 17
 - **PR** : `pivot-pilotage-core` [#54](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/54)
 - **Commit figé** : `4748198` (squash-merge, `feat(gantt): US22.4.4 — contraintes de date & échéances`)
 - **Gate 4 au figeage** : 100/100 — MERGE_AUTONOMOUS (détail complet dans le commentaire de review de la PR)
@@ -147,5 +147,5 @@ CREATE TABLE IF NOT EXISTS pilotage.task_constraint (
 
 ---
 
-Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Sprint 10
+Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Sprint 17
 Stage: Review

@@ -3,7 +3,7 @@
 ## Contexte
 
 - **US** : `docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-suivi-avancement.md`
-  (F22.4 — Gantt détaillé, EPIC-roadmap), Sprint 10
+  (F22.4 — Gantt détaillé, EPIC-roadmap), Sprint 17
 - **PR** : `pivot-pilotage-core`
   [#59](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/59)
   (`feat/us22-4-8-suivi-avancement`) — backend uniquement, `pivot-pilotage-ui` restant (non créé

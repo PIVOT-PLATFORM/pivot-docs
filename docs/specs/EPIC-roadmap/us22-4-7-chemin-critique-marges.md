@@ -3,7 +3,7 @@
 ## Contexte
 
 - **US** : `docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-chemin-critique-marges-split.md`
-  (F22.4 — Gantt détaillé, EPIC-roadmap), Sprint 10
+  (F22.4 — Gantt détaillé, EPIC-roadmap), Sprint 17
 - **PR** : `pivot-pilotage-core`
   [#64](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/64)
   (`feat/us22-4-7-chemin-critique-marges`) — backend uniquement, `pivot-pilotage-ui` restant (non
@@ -15,7 +15,7 @@
 - **Dépend de** : EN22.1b (moteur CPM — `SchedulingService`, déjà mergé, calcule et persiste
   `is_critical`/`total_slack_minutes`/`free_slack_minutes`), EN22.1c (`SummaryAggregate#critical`,
   contrat figé — sémantique du rollup summary)
-- **Portée réduite** : Sprint 10 Gate 1 READINESS, réserve D1 (2026-07-11) — le fractionnement
+- **Portée réduite** : Sprint 17 Gate 1 READINESS, réserve D1 (2026-07-11) — le fractionnement
   (split) est hors scope de cette PR (issue #51), décision réservée au mainteneur
 - Closes #51
 
@@ -48,7 +48,7 @@ WBS). Une tentative d'écriture d'un des 4 champs dérivés est rejetée `422` �
 
 ### Fractionnement (split) — hors périmètre de cette PR
 
-Réserve D1 (Sprint 10 Gate 1 READINESS, 2026-07-11, cf. issue #51) : le fractionnement d'une
+Réserve D1 (Sprint 17 Gate 1 READINESS, 2026-07-11, cf. issue #51) : le fractionnement d'une
 tâche n'a aucun porteur dans le schéma EN22.1 actuel (`pilotage.task` sans notion de segments).
 Seule la moitié « chemin critique / marges » de l'US est traitée ici ; le split reste réservé au
 mainteneur (avenant schéma vs. enabler dédié — cf. § Écarts vs AC initiaux).

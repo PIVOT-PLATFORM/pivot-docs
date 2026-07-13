@@ -79,5 +79,5 @@ transverse) sont fixées par [ADR-028](pathname:///pivot-docs/adr/ADR-028-acces-
 
 ⬜ phase-3 · transverse — **déprogrammé du Sprint 14 le 2026-07-12** (remplacé par le raffinage
 [E52 — Clarification des domaines](../EPIC-clarification-domaines/README.md)). EPIC intacte,
-reséquencée en [backlog post-S12](../sprints/backlog-post-s12.md), à replanifier après la vague de
+reséquencée en [backlog post-S19](../sprints/backlog-post-s12.md), à replanifier après la vague de
 clarification des domaines. Contrat UX/accès (specs `cockpits-dsi*.md`, ADR-028) conservé tel quel.

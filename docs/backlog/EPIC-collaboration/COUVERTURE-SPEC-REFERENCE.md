@@ -23,10 +23,10 @@
 |---|---|---|---|
 | Board CRUD (name/description/maxParticipants/enabledActivities) | §1.1, §2.2 | US08.1.1-1.5 | ✅ existant |
 | Chargement board `GET /:id` (cards+fieldValues+role, omet frames/connexions/champs) · `GET /presence` (comptes agrégés, dédup userId) · `shareCount` sur `GET /boards/` · schéma `POST /boards/` complet (maxParticipants/enabledActivities/coverImage) + remap connexions au clone | §2.2 | US08.1.9 | 🆕 |
-| Favoris (BoardFavorite) | §1.3, §2.2 | US08.1.6 | ✅ Sprint 37 |
-| Corbeille / suppression douce | — | US08.1.7 | ✅ Sprint 37 |
-| Recherche de tableaux | — | US08.1.8 | ✅ Sprint 37 |
-| Paramètres board (modal OWNER) + **reset board** (§3.8) | §2.2, §3.8 | US08.2.4 | ✅ Sprint 37 |
+| Favoris (BoardFavorite) | §1.3, §2.2 | US08.1.6 | ✅ Sprint 10 |
+| Corbeille / suppression douce | — | US08.1.7 | ✅ Sprint 10 |
+| Recherche de tableaux | — | US08.1.8 | ✅ Sprint 10 |
+| Paramètres board (modal OWNER) + **reset board** (§3.8) | §2.2, §3.8 | US08.2.4 | ✅ Sprint 10 |
 | Image de couverture (upload, limite 1,5 Mo) | §2.7 | US08.13.3 | 🆕 |
 | Partage lien + rôles VIEWER/EDITOR/OWNER | §2.3 | US08.2.1-2.3 | ✅ existant |
 | Invitation par email + gouvernance des rôles | §2.3, §5.5 | US08.2.5 | 🆕 (fix §6.1 scoping boardId) |
@@ -52,7 +52,7 @@
 | Présence — stockage Redis (hash `board:presence:{id}`, **TTL 3600 s**) | §3.1 | US08.5.2 | 🆕 (raffine heartbeat 30 s d'US08.5.1) |
 | Curseurs nommés throttlés (50 ms) | §3.2 | US08.5.2 | 🆕 ↩︎ US30.2.2 |
 | Verrou doux d'édition (card:editing) | §3.3 | US08.5.3 | 🆕 |
-| Reset du board (OWNER, REST) | §3.8 | US08.2.4 | ✅ Sprint 37 |
+| Reset du board (OWNER, REST) | §3.8 | US08.2.4 | ✅ Sprint 10 |
 | Reset du board — contrat WS `board:resetted` + **préservation champs/votes (§6.10)** | §3.8, §6.10 | US08.13.4 | 🆕 (complète US08.2.4) |
 | Minuteur partagé (Redis, extend, serverNow) | §3.10, §5.4 | US08.12.1 | 🆕 ↩︎ US30.3.2 |
 | Vote / dot-vote (quota Serializable, uncast) | §1.9, §3.11, §5.3 | US08.12.2 | 🆕 ↩︎ US30.3.1 (fix §6.7/§6.9) |
