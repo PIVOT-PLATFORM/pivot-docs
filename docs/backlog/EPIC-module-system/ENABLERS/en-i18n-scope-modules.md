@@ -22,7 +22,7 @@ modules, présents et futurs.
 - [x] Chaque lib UI de module porte son propre scope Transloco (nommé d'après sa clé de module),
       enregistré via sa fonction `provideXxxUi()` au moyen d'un `InlineLoader` — traductions
       compilées dans le bundle npm de la lib, aucun asset externe côté host
-- [x] Implémentation de référence livrée : `pivot-collaboratif-ui` PR #93, scope `whiteboard`
+- [ ] Implémentation de référence — PR pivot-collaboratif-ui #93 (draft, en attente de merge), scope `whiteboard`
 - [ ] Test anti-fuite côté host (`pivot-ui`) : assertion qu'aucune clé de namespace de module
       (`whiteboard`, `pilotage`, `agilite`, …) n'existe dans le catalogue global du shell
 - [ ] Catalogue global de `pivot-ui` nettoyé du sous-arbre `whiteboard` — clôture de
@@ -33,7 +33,7 @@ modules, présents et futurs.
 - [ ] Skill i18n frontend mise à jour (les libs de module ownent leur scope ; les hosts ne
       recopient jamais)
 
-**Statut** : ⬜ En cours — implémentation de référence `pivot-collaboratif-ui` livrée (PR #93),
+**Statut** : ⬜ En cours — implémentation de référence `pivot-collaboratif-ui` PR #93 (draft, en attente de merge),
 convention actée par ADR-029 ; nettoyage `pivot-ui` (retrait du sous-arbre `whiteboard`, test
 anti-fuite) et mise à jour de la skill i18n en attente de leur PR dédiée dans leurs repos
 respectifs (isolation par repo — une PR par repo concerné).
