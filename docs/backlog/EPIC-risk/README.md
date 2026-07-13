@@ -77,12 +77,21 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
   - US21.9.1 : Corréler un risque à son projet via le bus PIVOT (`project_ref`, sans FK)
   - US21.9.2 : Ouvrir les risques depuis la fiche projet (onglet + deep-link)
   - US21.9.3 : Widget « Top risques » composable dans un cockpit
+- **[F21.10 — Méthode DIT & Facteurs de Risque (héritage SANDRA)](FEATURES/methode-dit/README.md)** — modèle à deux niveaux FR → Risque, hérité du classeur Excel SANDRA (méthode DIT). Profil activable, sans remplacer la cotation directe du Risque.
+  - US21.10.1 : Modèle à deux niveaux Facteur de Risque → Risque
+  - US21.10.2 : Classification EFQM & 5M d'un facteur
+  - US21.10.3 : Cotation en criticité 1–6 (table DIT)
+  - US21.10.4 : Grille d'impacts Facteur × Risque
+  - US21.10.5 : Niveau de risque agrégé = Σ(criticité × impact)
+  - US21.10.6 : Extraction automatique des FR critiques (règle DIT)
+  - US21.10.7 : Fiche de contribution d'un facteur aux risques
 
 ### Enablers
-- **EN21.1** — Schéma Flyway `risk` + entités JPA (Risk, RiskProfile, Typology, RiskFamily, ImpactWeight, Mitigation, RiskEvent, PortfolioRisk)
+- **EN21.1** — Schéma Flyway `risk` + entités JPA (Risk, RiskProfile, Typology, RiskFamily, ImpactWeight, Mitigation, RiskEvent, PortfolioRisk ; **étendu par F21.10** : RiskFactor, MacroRisk, FactorImpact)
 - **EN21.2** — Guard Angular module risk (moduleGuard `moduleId: 'risk'`)
 - **EN21.3** — Adaptateur bus PIVOT : consommation (`task.completed`, `budget.alert`, `sprint.closed`) + émission (`risk.raised`, `risk.threshold.exceeded`, `risk.mitigation.due`)
 - **EN21.4** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+- **EN21.5** — [Migration des analyses SANDRA (`.xlsm`)](ENABLERS/en-migration-classeurs-sandra.md)
 
 ## Modules impactés
 
@@ -112,6 +121,7 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 | EN21.2 — Guard Angular module risk | ⬜ |
 | EN21.3 — Adaptateur bus PIVOT (consumer/producer `risk.*`) | ⬜ |
 | [EN21.4 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
+| [EN21.5 — Migration des analyses SANDRA (`.xlsm`)](ENABLERS/en-migration-classeurs-sandra.md) | ⬜ |
 | **F21.1 — Profil & moteur adaptatif** | |
 | [US21.1.1 — Questionnaire de cadrage](FEATURES/profil-moteur/us-questionnaire-de-cadrage.md) | ⬜ |
 | [US21.1.2 — Bibliothèque de typologies](FEATURES/profil-moteur/us-bibliotheque-de-typologies.md) | ⬜ |
@@ -168,3 +178,11 @@ Module de gestion des risques projet et portefeuille, **data-centric et gouvern�
 | [US21.9.1 — Corréler un risque à son projet via le bus](FEATURES/integration-cockpit/us-correlation-projet-bus.md) | ⬜ |
 | [US21.9.2 — Onglet Risques dans la fiche projet](FEATURES/integration-cockpit/us-onglet-risques-fiche-projet.md) | ⬜ |
 | [US21.9.3 — Widget Top risques composable](FEATURES/integration-cockpit/us-widget-top-risques.md) | ⬜ |
+| **[F21.10 — Méthode DIT & Facteurs de Risque (héritage SANDRA)](FEATURES/methode-dit/README.md)** | |
+| [US21.10.1 — Modèle à deux niveaux Facteur de Risque → Risque](FEATURES/methode-dit/us-modele-facteur-de-risque.md) | ⬜ |
+| [US21.10.2 — Classification EFQM & 5M d'un facteur](FEATURES/methode-dit/us-classification-efqm-5m.md) | ⬜ |
+| [US21.10.3 — Cotation en criticité 1–6 (table DIT)](FEATURES/methode-dit/us-cotation-criticite-1-6.md) | ⬜ |
+| [US21.10.4 — Grille d'impacts Facteur × Risque](FEATURES/methode-dit/us-grille-impacts-fr-risque.md) | ⬜ |
+| [US21.10.5 — Niveau de risque agrégé = Σ(criticité × impact)](FEATURES/methode-dit/us-niveau-risque-agrege.md) | ⬜ |
+| [US21.10.6 — Extraction automatique des FR critiques (règle DIT)](FEATURES/methode-dit/us-extraction-fr-critiques.md) | ⬜ |
+| [US21.10.7 — Fiche de contribution d'un facteur aux risques](FEATURES/methode-dit/us-fiche-contribution-fr.md) | ⬜ |

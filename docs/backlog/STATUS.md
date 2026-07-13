@@ -35,7 +35,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E16 — Shell applicatif & UX](EPIC-shell-ux/README.md) | E16 | 4+extras | — | 5+extras | 🔄 Sprint 1 Done + badge notifs/modules à venir (Sprint 4, 🔎 Review) |
 | [E19 — Module Session](EPIC-module-session/README.md) | E19 | 5 (F19.1–4 + VOTE) | 3 (EN19.1–3) | 12 | ⬜ phase-3 |
 | [E20 — Module Retrospective](EPIC-retrospective/README.md) | E20 | 3 (F20.1–3) | 2 (EN20.1–2) | 5 | ⬜ phase-3 · agilite |
-| [E21 — Module Gestion des risques](EPIC-risk/README.md) | E21 | 9 | 3 | 47 | ⬜ phase-3 · pilotage |
+| [E21 — Module Gestion des risques](EPIC-risk/README.md) | E21 | 10 | 5 | 54 | ⬜ phase-3 · pilotage |
 | [E22 — Module Roadmap & Planification](EPIC-roadmap/README.md) | E22 | 8 | 3 | 47 | ⬜ phase-3 · pilotage |
 | [E23 — Module Portefeuille projets](EPIC-portefeuille/README.md) | E23 | 2 | — | 12 | ⬜ phase-3 · pilotage |
 | [E24 — Module ADR projet](EPIC-adr-projet/README.md) | E24 | 1 | — | 2 | ⬜ phase-3 · pilotage |
@@ -59,7 +59,7 @@ Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / sessi
 | [E51 — Cockpits DSI](EPIC-cockpits/README.md) | E51 | 3 | 10 | 4+ | ⬜ phase-3 · transverse — reséquencé en [backlog post-S12](sprints/backlog-post-s12.md) (déprogrammé du Sprint 14 le 2026-07-12, remplacé par le raffinage E52 · ADR-028 accès externe conservé) |
 | [E52 — Clarification des domaines](EPIC-clarification-domaines/README.md) | E52 | 3 | 3 | 9+ | ⬜ Socle · transverse (raffinage) — [Sprint 14](sprints/sprint-14.md) Vague 1 Socle (CRUD · accès par profil · API externes) ; Pilotage S15, Agilité/Collaboratif + synthèse S16 |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **78** | 🔄 En cours |
-| **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~158** | **~68** | **~554** | ⏸️ Verrouillé |
+| **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~159** | **~69** | **~561** | ⏸️ Verrouillé |
 | **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
 
 ---
