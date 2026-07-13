@@ -261,11 +261,20 @@ dernier audit du même type (2026-07-08, `c62a710`, qui couvrait le CHANGELOG ju
   clic droit) — raffinements du noyau **F08.x/EN08.x (Socle, 17/17 Done au 2026-07-09)**, non
   couverts par les 17 items déjà clos → **US08.3.4 à US08.3.7** ajoutées en `Stage: Backlog`,
   net-new, sans remettre en cause le 17/17 Done (voir `EPIC-collaboration/README.md`).*
+- *2026-07-13 — audit de recette fonctionnelle Socle (parité visible vs POC PouetPouet,
+  `docs/audits/audit-recette-fonctionnelle.md`) : noyau F08.x confirmé conforme, écart de parité
+  restant classé `⬜ Backlog` F30.x (non-KO). Le mainteneur décide néanmoins d'étendre le périmètre
+  Socle F08.x à 4 capacités de parité visible — favoris (**US08.1.6**), corbeille + restauration
+  (**US08.1.7**, révise le hard-delete d'US08.1.5), recherche (**US08.1.8**), paramètres de
+  tableau modal OWNER + câblage Reset board (**US08.2.4**) — `Stage: Backlog`, net-new, tracées
+  dans **`sprints/sprint-37.md`**, sans remettre en cause le 17/17 Done (voir
+  `EPIC-collaboration/README.md`).*
 
 *Total : 2 EPICs créées (E49, E50 : 6 Features, 7 US), 1 Feature + 1 US ajoutées à E38, 2 US
 ajoutées à E42, 1 enabler mis à jour (EN30.13, sans nouvel item), 4 US ajoutées au noyau Socle
-E30/F08.3. Une décision d'architecture nouvellement identifiée tracée en D5, à trancher avec le
-mainteneur avant Gate 1 d'E38/F38.15.*
+E30/F08.3, puis 4 US supplémentaires ajoutées au noyau Socle E30/F08.1-F08.2 (parité visible
+PouetPouet, 2026-07-13, Sprint 37). Une décision d'architecture nouvellement identifiée tracée en
+D5, à trancher avec le mainteneur avant Gate 1 d'E38/F38.15.*
 
 *Re-tri sprints Pilotage 2026-07-10 (Scrum Master + PO Agent + Architecte Modules) — « valeur
 pilotage avant idéation ». Objectif : ordonnancer tout le pilotage à forte valeur avant les items

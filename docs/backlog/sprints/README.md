@@ -47,6 +47,13 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 34](./sprint-34.md) | Raffinage E52 — Vague 1 Socle *(ex-S14, repoussé)* | ⬜ planifié |
 | *Sprint 35* | Raffinage E52 — Vague 2 Pilotage *(fichier créé à l'ouverture)* | 📋 planifié |
 | *Sprint 36* | Raffinage E52 — Vague 3 Agilité/Collaboratif + synthèse *(fichier créé à l'ouverture)* | 📋 planifié |
+| [Sprint 37](./sprint-37.md) | Parité whiteboard visible (remédiation Socle) — favoris, corbeille, recherche, paramètres tableau *(nouveau 2026-07-13)* | ⬜ planifié — Gate 1 à passer au démarrage |
+| [Sprint 38](./sprint-38.md) | Parité whiteboard — Fondation modèle `Card` (EN08.4) *(nouveau 2026-07-13)* | ⬜ planifié — bloquant S39-43 |
+| [Sprint 39](./sprint-39.md) | Parité whiteboard — Objets typés & connecteurs (F08.6/F08.7) | ⬜ planifié |
+| [Sprint 40](./sprint-40.md) | Parité whiteboard — Cadres, organisation, champs (F08.8/F08.9/F08.10) | ⬜ planifié |
+| [Sprint 41](./sprint-41.md) | Parité whiteboard — Canvas UX & présence (F08.11/F08.5) | ⬜ planifié |
+| [Sprint 42](./sprint-42.md) | Parité whiteboard — Facilitation : minuteur, vote (F08.12) | ⬜ planifié |
+| [Sprint 43](./sprint-43.md) | Parité whiteboard — Cycle de vie & partage (F08.13/US08.2.5) | ⬜ planifié |
 | [Backlog post-S12](./backlog-post-s12.md) | Queue non planifiée — dont **idéation** : E40 profil adaptatif | — |
 | [Zones d'ombre à raffiner](./zones-ombre.md) | Décisions produit/cadrage en attente | — |
 
@@ -60,6 +67,16 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 > Vague 1 domaines Socle (**Sprint 34**, ex-S14) → Vague 2 Pilotage (Sprint 35) → Vague 3
 > Agilité/Collaboratif + synthèse transverse (Sprint 36). Les fichiers `sprint-35.md`/`sprint-36.md`
 > seront créés à l'ouverture de leur vague.
+>
+> **Piste whiteboard — parité complète PouetPouet (Sprints 38-43, nouveau 2026-07-13)** : décision
+> mainteneur d'absorber **tout** le spec de référence `Détails tableau blanc backlog.md` dans le
+> Socle E08 (lève le verrou `phase-3`, cf. [zone d'ombre #11](./zones-ombre.md) tranchée). Piste
+> **prioritaire pour les prochains travaux de dev**, en tête de la file whiteboard (après la parité
+> visible du Sprint 37) : **S38** fondation modèle `Card` (bloquant) → **S39** objets & connecteurs
+> → **S40** cadres/organisation/champs → **S41** canvas UX & présence → **S42** facilitation
+> (minuteur/vote) → **S43** cycle de vie & partage. La file Pilotage (S14→S33) est **décalée**
+> derrière cette piste. Détail par item : `EPIC-collaboration/README.md` §Suivi noyau F08.x + la
+> matrice de traçabilité `EPIC-collaboration/COUVERTURE-SPEC-REFERENCE.md`.
 
 ---
 

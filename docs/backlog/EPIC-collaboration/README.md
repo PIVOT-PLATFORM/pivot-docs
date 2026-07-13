@@ -215,8 +215,10 @@ nativement sous ce même EPIC sans mapping F30.x.
 ### F08.x/EN08.x — Noyau whiteboard (ex-E08, `Phase: Socle`, non verrouillé)
 - **EN08.1** — Isolation WebSocket room par board
 - **EN08.2** — Guard Angular module whiteboard
-- **F08.1** — CRUD tableaux (backend + Angular)
-- **F08.2** — Partage et rôles (backend + Angular)
+- **F08.1** — CRUD tableaux (backend + Angular) — **+ parité visible PouetPouet (2026-07-13,
+  Sprint 37)** : favoris (US08.1.6), corbeille/restauration (US08.1.7), recherche (US08.1.8)
+- **F08.2** — Partage et rôles (backend + Angular) — **+ parité visible PouetPouet (2026-07-13,
+  Sprint 37)** : paramètres de tableau modal OWNER (US08.2.4)
 - **F08.3** — Canvas collaboratif temps réel (backend WS + Angular)
 - **F08.4** — Templates de tableau
 
@@ -412,6 +414,57 @@ collaboratif open-source).
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ✅ Done |
+| **Parité visible PouetPouet (Sprint 37, 2026-07-13)** | |
+| [US08.1.6 — Favoris de tableaux](FEATURES/crud-tableaux/us-favoris-tableau.md) | ⬜ |
+| [US08.1.7 — Corbeille et restauration d'un tableau](FEATURES/crud-tableaux/us-corbeille-tableau.md) | ⬜ |
+| [US08.1.8 — Recherche de tableaux](FEATURES/crud-tableaux/us-recherche-tableau.md) | ⬜ |
+| [US08.2.4 — Paramètres de tableau (modal OWNER) + câblage Reset board](FEATURES/partage-roles/us-parametres-tableau.md) | ⬜ |
+| **Parité complète PouetPouet — spec de référence absorbée (Sprints 38-43, 2026-07-13)** | |
+| [EN08.4 — Modèle `Card` typé + contrats WS](ENABLERS/en-modele-card-type.md) | ⬜ |
+| **F08.6 — Objets typés** *(absorbe US30.1.2/.3/.5/.11)* | |
+| [US08.6.1 — Pense-bête texte (TEXT)](FEATURES/objets-types/us-carte-texte.md) | ⬜ |
+| [US08.6.2 — Étiquette (LABEL)](FEATURES/objets-types/us-carte-etiquette.md) | ⬜ |
+| [US08.6.3 — Forme (SHAPE)](FEATURES/objets-types/us-carte-forme.md) | ⬜ |
+| [US08.6.4 — Image (IMAGE)](FEATURES/objets-types/us-carte-image.md) | ⬜ |
+| [US08.6.5 — Carte lien (LINK) + aperçu OpenGraph](FEATURES/objets-types/us-carte-lien-apercu.md) | ⬜ |
+| [US08.6.6 — Tableau (TABLE) + collage tableur](FEATURES/objets-types/us-carte-tableau.md) | ⬜ |
+| **F08.7 — Connecteurs** *(absorbe US30.1.3)* | |
+| [US08.7.1 — Créer / supprimer un connecteur](FEATURES/connecteurs/us-creer-connecteur.md) | ⬜ |
+| [US08.7.2 — Styler un connecteur](FEATURES/connecteurs/us-styler-connecteur.md) | ⬜ |
+| **F08.8 — Cadres (frames)** *(absorbe US30.1.7)* | |
+| [US08.8.1 — Créer / supprimer un cadre](FEATURES/cadres/us-creer-cadre.md) | ⬜ |
+| [US08.8.2 — Déplacer / redimensionner / renommer / calque un cadre](FEATURES/cadres/us-manipuler-cadre.md) | ⬜ |
+| **F08.9 — Organisation & calque** *(absorbe US30.1.6)* | |
+| [US08.9.1 — Grouper / dégrouper / couleur de groupe](FEATURES/organisation-calque/us-grouper-cartes.md) | ⬜ |
+| [US08.9.2 — Verrouiller / déverrouiller (matrice complète)](FEATURES/organisation-calque/us-verrouiller-cartes.md) | ⬜ |
+| [US08.9.3 — Calque / z-order (premier plan / arrière-plan)](FEATURES/organisation-calque/us-calque-z-order.md) | ⬜ |
+| **F08.10 — Champs personnalisés** | |
+| [US08.10.1 — Définir des champs de board](FEATURES/champs-personnalises/us-definir-champs.md) | ⬜ |
+| [US08.10.2 — Renseigner / effacer une valeur de champ](FEATURES/champs-personnalises/us-valeurs-champs.md) | ⬜ |
+| **F08.11 — Canvas UX** | |
+| [US08.11.1 — Aimantation à la grille](FEATURES/canvas-ux/us-aimantation-grille.md) | ⬜ |
+| [US08.11.2 — Zoom avancé (boutons + ajuster)](FEATURES/canvas-ux/us-zoom-avance.md) | ⬜ |
+| [US08.11.3 — Collage presse-papiers (image / tableur / texte)](FEATURES/canvas-ux/us-collage-presse-papiers.md) | ⬜ |
+| [US08.11.4 — Guides d'alignement (§4.3, supersède le 8 px d'US08.3.2a)](FEATURES/canvas-ux/us-guides-alignement.md) | ⬜ |
+| [US08.11.5 — Undo / redo (§4.5, HISTORY_LIMIT 30, supersède la pile 50 d'US08.3.3)](FEATURES/canvas-ux/us-undo-redo-parite.md) | ⬜ |
+| [US08.11.6 — Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a)](FEATURES/canvas-ux/us-raccourcis-clavier.md) | ⬜ |
+| [US08.11.7 — Redimensionnement fin & lasso (§4.4/§4.9, min ~24 px, supersède US08.3.6)](FEATURES/canvas-ux/us-redimensionnement-fin.md) | ⬜ |
+| **F08.5 — Présence (étendue)** | |
+| [US08.5.2 — Curseurs nommés throttlés](FEATURES/presence/us-curseurs-nommes.md) | ⬜ |
+| [US08.5.3 — Verrou doux d'édition](FEATURES/presence/us-verrou-edition.md) | ⬜ |
+| **F08.12 — Facilitation Socle** *(absorbe US30.3.1/.2)* | |
+| [US08.12.1 — Minuteur partagé](FEATURES/facilitation-socle/us-minuteur-partage.md) | ⬜ |
+| [US08.12.2 — Vote / dot-vote](FEATURES/facilitation-socle/us-vote-dot-vote.md) | ⬜ |
+| **F08.13 — Cycle de vie du board & import** *(absorbe EN30.13)* | |
+| [US08.13.1 — Import Klaxoon + annulation](FEATURES/cycle-vie-board/us-import-klaxoon.md) | ⬜ |
+| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | ⬜ |
+| [US08.13.3 — Image de couverture](FEATURES/cycle-vie-board/us-image-couverture.md) | ⬜ |
+| [US08.13.4 — Réinitialisation du canvas (§3.8, préservation champs/votes §6.10)](FEATURES/cycle-vie-board/us-reset-board.md) | ⬜ |
+| **F08.1 — CRUD tableaux (étendue)** | |
+| [US08.1.9 — Chargement d'un tableau & présence agrégée (§2.2)](FEATURES/crud-tableaux/us-chargement-tableau.md) | ⬜ |
+| **F08.2 — Partage et rôles (étendue)** | |
+| [US08.2.5 — Inviter par email + gouvernance des rôles](FEATURES/partage-roles/us-inviter-email.md) | ⬜ |
+| [US08.2.6 — Lien de partage : lecture & gestion (§2.3)](FEATURES/partage-roles/us-lien-partage-parite.md) | ⬜ |
 
 > **Resynchronisé le 2026-07-09** depuis le frontmatter `Stage:` de chaque fichier (source de
 > vérité, grep direct des 17 fichiers) : ce tableau affichait encore « 17 Review » alors que
@@ -428,3 +481,29 @@ collaboratif open-source).
 > Gate 1 contre l'état réel de `pivot-collaboratif-ui` (le redimensionnement par handles sur objet
 > unique et le groupement `Ctrl+G` sont déjà couverts par US08.3.2a — seul le raffinement listé
 > dans chaque US est net-new).
+>
+> **Ajout 2026-07-13 (audit de recette fonctionnelle Socle, parité visible PouetPouet)** :
+> [`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
+> confirme le noyau F08.x conforme au périmètre annoncé et classe l'écart de parité vs PouetPouet
+> (Vote, Timer, Session, favoris, corbeille, recherche…) en `⬜ Backlog` F30.x, **non-KO**. Le
+> mainteneur a néanmoins décidé d'étendre le périmètre Socle F08.x à **4 capacités de parité
+> visible** jugées structurantes pour la gestion de tableaux : favoris (US08.1.6), corbeille +
+> restauration (US08.1.7 — révise le hard-delete d'US08.1.5), recherche (US08.1.8), paramètres de
+> tableau modal OWNER + câblage Reset board (US08.2.4). Net-new, `Stage: Backlog`, tracées dans
+> **`sprints/sprint-37.md`** — ne remettent pas en cause le 17/17 Done du noyau initial.
+>
+> **Ajout 2026-07-13 (absorption intégrale du spec de référence PouetPouet) :** décision mainteneur
+> d'aller **au-delà** de la parité visible du Sprint 37 et de **rapatrier tout le contenu** de
+> `Détails tableau blanc backlog.md` (spec de réimplémentation fine du POC) dans le périmètre Socle
+> E08 — ce qui **lève le verrou `phase-3`** posé par la décision #2 + zone d'ombre #11
+> (`sprints/zones-ombre.md`). Nouvel enabler pré-requis **EN08.4** (modèle `Card` typé remplaçant
+> l'objet `DRAW` générique d'US08.3.2a) + **33 US** sous F08.6→F08.13 (objets typés, connecteurs,
+> cadres, organisation/calque, champs personnalisés, canvas UX — dont guides d'alignement, undo/redo,
+> raccourcis, redimensionnement fin en **parité fine §4** supersédant les valeurs des US08.3.x
+> livrées —, présence étendue, facilitation minuteur/vote, cycle de vie/import Klaxoon/reset,
+> chargement & lien de partage, invitation email). Ces US **absorbent** les
+> Features benchmark US30.1.2/.3/.5/.6/.7/.11, US30.2.2, US30.3.1/.2, EN30.13 (voir
+> `COUVERTURE-SPEC-REFERENCE.md` pour la traçabilité spec §→US). Réactions (US30.11.1) et commentaires
+> ancrés (US30.2.3) **restent `phase-3`** : absents du spec de référence. Séquencement :
+> **Sprints 38-43** (`sprints/README.md`). `Stage: Backlog`, Gate 1 PO Agent à passer au démarrage
+> de chaque item. Ne remet pas en cause le 17/17 Done du noyau initial.
