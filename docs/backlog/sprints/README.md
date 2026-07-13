@@ -47,6 +47,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 34](./sprint-34.md) | Raffinage E52 — Vague 1 Socle *(ex-S14, repoussé)* | ⬜ planifié |
 | *Sprint 35* | Raffinage E52 — Vague 2 Pilotage *(fichier créé à l'ouverture)* | 📋 planifié |
 | *Sprint 36* | Raffinage E52 — Vague 3 Agilité/Collaboratif + synthèse *(fichier créé à l'ouverture)* | 📋 planifié |
+| [Sprint 37](./sprint-37.md) | Parité whiteboard visible (remédiation Socle) — favoris, corbeille, recherche, paramètres tableau *(nouveau 2026-07-13)* | ⬜ planifié — Gate 1 à passer au démarrage |
 | [Backlog post-S12](./backlog-post-s12.md) | Queue non planifiée — dont **idéation** : E40 profil adaptatif | — |
 | [Zones d'ombre à raffiner](./zones-ombre.md) | Décisions produit/cadrage en attente | — |
 
