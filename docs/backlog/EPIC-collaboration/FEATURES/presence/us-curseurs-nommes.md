@@ -14,6 +14,7 @@
 | Given aucun curseur reçu, when un tick de flush ne trouve aucun buffer non vide, then le timer **s'auto-arrête** (pas de tourne-à-vide permanent) et redémarre au premier `board:cursor` suivant | ⬜ |
 | Given un `board:cursor` reçu, when l'émetteur n'a **pas** de rôle résolu sur ce board (ou pas d'`userInfo`), then le serveur **ignore silencieusement** l'événement (return, pas d'erreur) — un non-membre ne peut pas diffuser de curseur | ⬜ |
 | Given un participant `VIEWER` (lecture seule), when il déplace sa souris, then son curseur nommé est **diffusé** (le curseur relève de la présence, garde `canAccess` incluant VIEWER — pas `canWrite`) | ⬜ |
+| Given un `board:join`, when le participant rejoint, then sa présence est enregistrée dans un **registre Redis** (hash, clé `board:presence:{boardId}`, **TTL 3600 s**) puis diffusée (`board:presence`) à toute la room ; l'entrée expire d'elle-même après 3600 s sans activité — raffine le modèle heartbeat 30 s d'US08.5.1 vers le stockage Redis TTL 3600 s du spec (§3.1) | ⬜ |
 | Error : given un `board:cursors` reçu pour un `userId` sans `board:join`/présence préalable (message tardif après reconnexion), when le client le traite, then il l'ignore (log `console.warn`), pas de curseur fantôme créé — cohérent avec le repli d'US08.3.2c | ⬜ |
 | Security : `displayName` rendu **échappé** (texte SVG `<text>`/`textContent`, jamais `innerHTML`) dans l'overlay curseurs — prévention XSS via le nom du participant | ⬜ |
 | Security : isolation héritée d'EN08.1 — un client abonné à `/topic/board/{boardId}` ne reçoit jamais les `board:cursor(s)` d'un autre board ni d'un autre tenant ; `board:cursor` sans rôle sur le board → rejeté serveur (aucune fuite de position cross-board) | ⬜ |
@@ -31,7 +32,7 @@
 ## Notes d'implémentation
 
 - **Contrat WS (§3.2)** : entrant `board:cursor {boardId, x, y}` (écrit dans un buffer serveur par `(boardId, userId)`, **écrase** la position précédente — dernier arrivé gagne, pas de queue ; requiert `userInfo` + un rôle sur le board, sinon return silencieux). Sortant `board:cursors` (`CursorUpdate[]`) : flush **toutes les 50 ms (20 Hz)** via un `setInterval` **global partagé entre tous les boards**, diffusé à toute la room (émetteur inclus). Le timer démarre au premier curseur reçu et **s'auto-arrête** si un tick ne trouve aucun buffer non vide.
-- **Constante (§7)** : flush curseurs (throttle) = **50 ms** (20 Hz).
+- **Constante (§7)** : flush curseurs (throttle) = **50 ms** (20 Hz) ; **TTL présence Redis = 3600 s** (hash `board:presence:{boardId}`, §3.1) — raffine le heartbeat 30 s d'US08.5.1.
 - **Garde de rôle** : `board:cursor` exige un rôle résolu (`canAccess`, VIEWER inclus — le curseur est de la présence, pas une mutation). Sans rôle/userInfo → ignoré silencieusement.
 - **Traduction stack** : côté backend Spring, le buffer `(boardId, userId) → dernière position` est agrégé et flushé par un ordonnanceur unique à 50 ms sur `/topic/board/{boardId}` ; tenant/user résolus depuis le `SecurityContext` (jamais du payload). Côté `pivot-collaboratif-ui`, consommé par l'overlay SVG d'US08.3.2c (échappement `displayName` inchangé). Isolation room héritée d'EN08.1.
 - Dépend d'EN08.4/EN08.1 (contrat WS, isolation room), d'US08.5.1 (présence backend, couleur) et d'US08.3.2c (overlay curseurs — complété, non dupliqué).

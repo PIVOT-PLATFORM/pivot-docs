@@ -21,6 +21,10 @@ benchmark US30.2.2 (présence & curseurs nommés).
 | [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | ⬜ |
 | [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | ⬜ |
 | [US08.11.3](../EPIC-collaboration/FEATURES/canvas-ux/us-collage-presse-papiers.md) | Collage presse-papiers (image / tableur / texte) | Medium | M | ⬜ |
+| [US08.11.4](../EPIC-collaboration/FEATURES/canvas-ux/us-guides-alignement.md) | Guides d'alignement (§4.3, supersède 8 px d'US08.3.2a) | Medium | M | ⬜ |
+| [US08.11.5](../EPIC-collaboration/FEATURES/canvas-ux/us-undo-redo-parite.md) | Undo / redo (§4.5, HISTORY_LIMIT 30, supersède pile 50 d'US08.3.3) | Medium | M | ⬜ |
+| [US08.11.6](../EPIC-collaboration/FEATURES/canvas-ux/us-raccourcis-clavier.md) | Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a) | Medium | M | ⬜ |
+| [US08.11.7](../EPIC-collaboration/FEATURES/canvas-ux/us-redimensionnement-fin.md) | Redimensionnement fin & lasso (§4.4/§4.9, supersède US08.3.6) | Medium | M | ⬜ |
 | [US08.5.2](../EPIC-collaboration/FEATURES/presence/us-curseurs-nommes.md) | Curseurs nommés throttlés | Medium | S | ⬜ |
 | [US08.5.3](../EPIC-collaboration/FEATURES/presence/us-verrou-edition.md) | Verrou doux d'édition | Medium | S | ⬜ |
 
