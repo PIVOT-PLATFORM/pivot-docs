@@ -216,9 +216,9 @@ nativement sous ce même EPIC sans mapping F30.x.
 - **EN08.1** — Isolation WebSocket room par board
 - **EN08.2** — Guard Angular module whiteboard
 - **F08.1** — CRUD tableaux (backend + Angular) — **+ parité visible PouetPouet (2026-07-13,
-  Sprint 37)** : favoris (US08.1.6), corbeille/restauration (US08.1.7), recherche (US08.1.8)
+  Sprint 10)** : favoris (US08.1.6), corbeille/restauration (US08.1.7), recherche (US08.1.8)
 - **F08.2** — Partage et rôles (backend + Angular) — **+ parité visible PouetPouet (2026-07-13,
-  Sprint 37)** : paramètres de tableau modal OWNER (US08.2.4)
+  Sprint 10)** : paramètres de tableau modal OWNER (US08.2.4)
 - **F08.3** — Canvas collaboratif temps réel (backend WS + Angular)
 - **F08.4** — Templates de tableau
 
@@ -414,7 +414,7 @@ collaboratif open-source).
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ✅ Done |
-| **Parité visible PouetPouet (Sprint 37, 2026-07-13)** | |
+| **Parité visible PouetPouet (Sprint 10, 2026-07-13)** | |
 | [US08.1.6 — Favoris de tableaux](FEATURES/crud-tableaux/us-favoris-tableau.md) | ⬜ |
 | [US08.1.7 — Corbeille et restauration d'un tableau](FEATURES/crud-tableaux/us-corbeille-tableau.md) | ⬜ |
 | [US08.1.8 — Recherche de tableaux](FEATURES/crud-tableaux/us-recherche-tableau.md) | ⬜ |
@@ -483,17 +483,17 @@ collaboratif open-source).
 > dans chaque US est net-new).
 >
 > **Ajout 2026-07-13 (audit de recette fonctionnelle Socle, parité visible PouetPouet)** :
-> [`docs/audits/audit-recette-fonctionnelle.md`](../../audits/audit-recette-fonctionnelle.md)
+> [`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
 > confirme le noyau F08.x conforme au périmètre annoncé et classe l'écart de parité vs PouetPouet
 > (Vote, Timer, Session, favoris, corbeille, recherche…) en `⬜ Backlog` F30.x, **non-KO**. Le
 > mainteneur a néanmoins décidé d'étendre le périmètre Socle F08.x à **4 capacités de parité
 > visible** jugées structurantes pour la gestion de tableaux : favoris (US08.1.6), corbeille +
 > restauration (US08.1.7 — révise le hard-delete d'US08.1.5), recherche (US08.1.8), paramètres de
 > tableau modal OWNER + câblage Reset board (US08.2.4). Net-new, `Stage: Backlog`, tracées dans
-> **`sprints/sprint-37.md`** — ne remettent pas en cause le 17/17 Done du noyau initial.
+> **`sprints/sprint-10.md`** — ne remettent pas en cause le 17/17 Done du noyau initial.
 >
 > **Ajout 2026-07-13 (absorption intégrale du spec de référence PouetPouet) :** décision mainteneur
-> d'aller **au-delà** de la parité visible du Sprint 37 et de **rapatrier tout le contenu** de
+> d'aller **au-delà** de la parité visible du Sprint 10 et de **rapatrier tout le contenu** de
 > `Détails tableau blanc backlog.md` (spec de réimplémentation fine du POC) dans le périmètre Socle
 > E08 — ce qui **lève le verrou `phase-3`** posé par la décision #2 + zone d'ombre #11
 > (`sprints/zones-ombre.md`). Nouvel enabler pré-requis **EN08.4** (modèle `Card` typé remplaçant

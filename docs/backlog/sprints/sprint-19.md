@@ -1,39 +1,40 @@
-# Sprint 19 — E18 Pilotage — Activité : écran Jalons
+# Sprint 19 — Forms (cœur) + framework onboarding
 
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
->
-> **Phase** : phase-3 · E18. **Sortie** : l'écran Jalons d'une activité complet.
->
-> **Dépendances** : Dépend de S17 (PMT) ; la logique jalons transverse (F18.3) est livrée en S20.
->
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> ✅ **Verrou Socle levé (2026-07-10).** Inchangé au re-tri du 2026-07-10. Voir [README §Séquencement](./README.md#sprints-79-1720--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
 
-## Items (17)
+**Sortie :** form-builder cœur livré + premier tour guidé actif sur les modules en prod (S8-S18)
+
+**Gate 1 READINESS passé (2026-07-11)** — **15/17 Ready**. ⚠️ **2 enablers XL non décomposés
+bloquent le cœur** : **EN42.1** (moteur + schéma Forms, score 60) bloque **10 US** (F42.1/F42.2/F42.3)
+et **EN41.1** (framework onboarding, score 55) bloque US41.1.1 → **la décomposition est la 1re action
+du sprint** (même précédent que les XL pilotage EN27.1/EN43.7). Implémentables sans le moteur :
+US42.4.1 / US42.4.2 / US42.5.1. Dépendances externes : bus ADR-025/EN28.4 (US42.5.4, critère
+`form.submitted`), ADR-009 Thème/liens profonds (US42.2.4, US42.3.2). Décisions → commentaire de la PR Gate 1.
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.19.1 | Création de l'écran Jalon | M | High | ⬜ |
-| US18.19.2 | Affichage et tri des jalons | S | Medium | ⬜ |
-| US18.19.3 | Structure du bloc Jalon A | M | High | ⬜ |
-| US18.19.4 | Structure du bloc Jalon B / C / D / ABC / BC | M | High | ⬜ |
-| US18.19.5 | Structure des blocs jalons à date simple | S | Medium | ⬜ |
-| US18.19.6 | Structure du bloc Jalon CEN | S | Medium | ⬜ |
-| US18.19.7 | Structure du bloc J7 - Mise en Service (MES) | M | High | ⬜ |
-| US18.19.8 | Structure du bloc J6 - Mise en Production (MEP) | S | Medium | ⬜ |
-| US18.19.9 | Créer un jalon | M | High | ⬜ |
-| US18.19.10 | Valider un jalon A / B / C / D | L | Critical | ⬜ |
-| US18.19.11 | Modifier un jalon à la volée | S | Medium | ⬜ |
-| US18.19.12 | Supprimer un jalon | S | Medium | ⬜ |
-| US18.19.13 | Modifier un jalon grisé | M | High | ⬜ |
-| US18.19.14 | Workflow des jalons | S | Medium | ⬜ |
-| US18.19.15 | Affichage des jalons (grisés) | S | Medium | ⬜ |
-| US18.19.16 | Enregistrer l'écran Jalon | S | High | ⬜ |
-| US18.19.17 | Historique des modifications (logs) — Jalons | S | Medium | ⬜ |
+| EN42.1a | Schéma & validation de formulaire *(ex-EN42.1 XL, décomposé 2026-07-11)* | M | Critical | ⬜ |
+| EN42.1b | Moteur logique & scoring | L | Critical | ⬜ |
+| EN42.1c | Événements & API (soumission, webhooks) | L | Critical | ⬜ |
+| EN42.1d | Thème & intégration | M | Critical | ⬜ |
+| US42.1.1 | Éditeur no-code drag-and-drop | M | Critical | ⬜ |
+| US42.1.2 | Types de champs variés | L | Critical | ⬜ |
+| US42.1.3 | Validation des saisies | M | Critical | ⬜ |
+| US42.1.4 | Multi-pages et sections | M | High | ⬜ |
+| US42.2.1 | Logique conditionnelle | L | Critical | ⬜ |
+| US42.2.2 | Calculs et scoring (quiz) | M | High | ⬜ |
+| US42.2.3 | Champs masqués et pré-remplissage | M | High | ⬜ |
+| US42.2.4 | Thème PIVOT | M | High | ⬜ |
+| US42.3.1 | Lien partageable | S | Critical | ⬜ |
+| US42.3.2 | Intégration embarquée dans le portail | M | High | ⬜ |
+| US42.4.1 | Collecte et tableau de réponses | M | Critical | ⬜ |
+| US42.4.2 | Restitution visuelle | M | Critical | ⬜ |
+| US42.5.1 | Webhooks sortants | S | Critical | ⬜ |
+| US42.5.4 | Émission d'événement de soumission (`form.submitted` — dépend ADR-019) | S | Critical | ⬜ |
+| EN41.1a | Moteur d'affichage in-app *(ex-EN41.1 XL, décomposé 2026-07-11)* | L | High | ⬜ |
+| EN41.1b | API d'enregistrement de parcours & progression | M | High | ⬜ |
+| EN41.1c | Ciblage rôle / module / étape | M | High | ⬜ |
+| EN41.1d | Analytics d'adoption (RGPD) | M | High | ⬜ |
+| US41.1.1 | Tour guidé au premier accès | M | High | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **E42 vague 2 → post-S19** (US42.2.5 multilingue, US42.3.3 enquêtes in-app, US42.4.3 réponses partielles, US42.5.2/42.5.3 API & MCP, F42.6 IA, F42.7 gouvernance, F42.8 souveraineté + EN42.2, F42.9-11). US41.1.2-4 (tooltips, checklist, quoi de neuf) suivent EN41.1.

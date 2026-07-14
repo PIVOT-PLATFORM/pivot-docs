@@ -3,7 +3,7 @@
 ## Contexte
 
 - **US** : `docs/backlog/EPIC-portefeuille/FEATURES/portefeuille-comites/us-tableaux-bord-personnalisables.md`
-  (F23.2 — Portefeuille, EPIC-portefeuille), Sprint 10
+  (F23.2 — Portefeuille, EPIC-portefeuille), Sprint 17
 - **PR** : `pivot-pilotage-core`
   [#60](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/60)
   (`feat/us23-2-2-dashboards-personnalisables`) — backend uniquement, `pivot-pilotage-ui` restant

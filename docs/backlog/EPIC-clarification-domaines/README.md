@@ -1,6 +1,6 @@
 # E52 — Clarification & raffinage des domaines
 
-**Intention** : rendre **chaque domaine déjà livré** (Socle S1-S8, puis Pilotage S9-S13) parfaitement
+**Intention** : rendre **chaque domaine déjà livré** (Socle S1-S8, puis Pilotage S9-S20) parfaitement
 lisible sur quatre axes — **quelles entités et quel CRUD**, **qui y a accès (par profil)**, **comment
 on y accède (mécanisme d'autorisation)**, **d'où viennent les données (API externes & sources)**.
 
@@ -12,7 +12,7 @@ vérifiable, pas de code neuf.
 
 **Périmètre** : un **framework** (template de fiche, référentiel d'accès consolidé, registre des API
 externes) + **une fiche de clarification par domaine**. Découpé en vagues, une par sprint, **à partir
-du Sprint 14**.
+du Sprint 21**.
 
 **Hors périmètre** :
 - Aucune fonctionnalité neuve, aucun changement de contrat d'API — E52 **documente l'existant** et
@@ -51,7 +51,7 @@ Chaque **fiche de domaine** répond, dans cet ordre, aux quatre questions de la 
 
 ## Structure
 
-### Enablers — framework (Vague 1, Sprint 14)
+### Enablers — framework (Vague 1, Sprint 21)
 
 | Enabler | Rôle | Livrable |
 |---------|------|----------|
@@ -61,7 +61,7 @@ Chaque **fiche de domaine** répond, dans cet ordre, aux quatre questions de la 
 
 ### Features — fiches par domaine
 
-- **F52.1 — Fiches des domaines Socle** *(Vague 1, Sprint 14)* — 9 fiches :
+- **F52.1 — Fiches des domaines Socle** *(Vague 1, Sprint 21)* — 9 fiches :
   - [US52.1.1 — Identités & IAM](FEATURES/fiches-socle/us-fiche-identites-iam.md) *(E01 · auth)*
   - [US52.1.2 — Espace compte](FEATURES/fiches-socle/us-fiche-espace-compte.md) *(E02 · core)*
   - [US52.1.3 — Tenants & Équipes](FEATURES/fiches-socle/us-fiche-tenants-equipes.md) *(E17/core)*
@@ -71,10 +71,10 @@ Chaque **fiche de domaine** répond, dans cet ordre, aux quatre questions de la 
   - [US52.1.7 — Observabilité & audit](FEATURES/fiches-socle/us-fiche-observabilite-audit.md) *(E04 · core)*
   - [US52.1.8 — Collaboratif — Whiteboard](FEATURES/fiches-socle/us-fiche-whiteboard.md) *(E30 noyau · collaboratif)*
   - [US52.1.9 — Infrastructure, CI/CD & sources externes](FEATURES/fiches-socle/us-fiche-infra-cicd.md) *(E05/E07/E17 · core)*
-- **F52.2 — Fiches des domaines Pilotage** *(Vague 2, Sprint 15 — stub)* : roadmap (E22), portefeuille
+- **F52.2 — Fiches des domaines Pilotage** *(Vague 2, Sprint 22 — stub)* : roadmap (E22), portefeuille
   (E23), risques (E21), budget (E26), OKR (E27), ADR projet (E24), forms (E42). Ouvertes une fois les
-  domaines Pilotage recettés (S9-S13) — Gate 1 au démarrage de S15.
-- **F52.3 — Fiches Agilité/Collaboratif + consolidation** *(Vague 3, Sprint 16 — stub)* : domaines
+  domaines Pilotage recettés (S9-S20) — Gate 1 au démarrage de S22.
+- **F52.3 — Fiches Agilité/Collaboratif + consolidation** *(Vague 3, Sprint 23 — stub)* : domaines
   agilité (E09-E11, E19, E20, E50) au fil de leur livraison + **synthèse transverse** (matrice
   d'accès plateforme complète, cartographie des flux externes consolidée, liste des écarts arbitrés).
 
@@ -82,18 +82,18 @@ Chaque **fiche de domaine** répond, dans cet ordre, aux quatre questions de la 
 
 ## Programme multi-sprint
 
-> « À partir du Sprint 14, raffiner énormément tout ce qui a été fait avant. » E52 est le véhicule de
+> « À partir du Sprint 21, raffiner énormément tout ce qui a été fait avant. » E52 est le véhicule de
 > ce raffinage. Une vague = un sprint ; on ne clarifie que des domaines **déjà livrés** (pas de
 > rétro-doc de l'inexistant).
 
 | Vague | Sprint | Contenu | Statut |
 |-------|--------|---------|--------|
-| 1 | [Sprint 14](../sprints/sprint-14.md) | Framework (EN52.1-3) + 9 fiches Socle (F52.1) | ⬜ planifié |
-| 2 | Sprint 15 | Fiches Pilotage (F52.2) — après recette S9-S13 | ⬜ stub |
-| 3 | Sprint 16 | Fiches Agilité/Collaboratif (F52.3) + synthèse transverse | ⬜ stub |
+| 1 | [Sprint 21](../sprints/sprint-21.md) | Framework (EN52.1-3) + 9 fiches Socle (F52.1) | ⬜ planifié |
+| 2 | Sprint 22 | Fiches Pilotage (F52.2) — après recette S9-S20 | ⬜ stub |
+| 3 | Sprint 23 | Fiches Agilité/Collaboratif (F52.3) + synthèse transverse | ⬜ stub |
 
 ## Statut global
 
-⬜ Socle · transverse (raffinage) — **Vague 1 planifiée en [Sprint 14](../sprints/sprint-14.md)**. Créé
+⬜ Socle · transverse (raffinage) — **Vague 1 planifiée en [Sprint 21](../sprints/sprint-21.md)**. Créé
 le 2026-07-12 en remplacement du Sprint 14 Cockpits DSI (E51 reséquencé en
-[backlog post-S12](../sprints/backlog-post-s12.md)).
+[backlog post-S19](../sprints/backlog-post-s12.md)).

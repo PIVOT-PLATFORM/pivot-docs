@@ -2,7 +2,7 @@
 
 > ✅ **Verrou Socle levé (2026-07-10)** — voir [`sprint-8.md`](./sprint-8.md). Pilotage reste
 > séquencé **après la livraison du REX templates de Sprint 8** (pilote agilité) : *« piloter petit
-> avant de piloter gros »* (voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-)).
+> avant de piloter gros »* (voir [README §Séquencement](./README.md#sprints-79-1720--plan-phase-3-conditionnel-au-jalon--socle-terminé-)).
 >
 > 🏁 **Terminé (2026-07-11)** : socle technique (EN18.1/18.2/18.9/18.10, EN22.1a/b/c) et roadmap
 > rapide v0 (US22.3.1 à 3.5) mergés — backend `pivot-pilotage-core` et frontend

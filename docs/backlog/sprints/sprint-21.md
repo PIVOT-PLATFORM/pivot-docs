@@ -1,12 +1,12 @@
-# Sprint 21 — E18 Pilotage — Portefeuilles d'activités
+# Sprint 21 — E18 Pilotage — Référentiels & socle activité
 
 > **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
 > Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
 >
-> **Phase** : phase-3 · E18. **Sortie** : les portefeuilles d'activités : liste & gestion, filtres & création, recherche.
+> **Phase** : phase-3 · E18. **Sortie** : les objets de gestion (référentiels), les habilitations et la gestion/recherche d'activités posés comme socle du domaine Pilotage.
 >
-> **Dépendances** : Dépend de la gestion d'activités (S14-S16).
+> **Dépendances** : Socle terminé + EN17 (pivot-core-starter publié). S'appuie sur EN18.1 / EN18.2 / EN18.9 / EN18.10 livrés en S9 (schéma `pilotage`, guard, modèle Application→Projet, profil par défaut).
 >
 > **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
 > (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
@@ -16,21 +16,21 @@
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.12.1 | Affichage de la liste des portefeuilles | XS | Medium | ⬜ |
-| US18.12.2 | Modification d'un portefeuille existant | S | High | ⬜ |
-| US18.12.3 | Suppression d'un portefeuille existant | S | High | ⬜ |
-| US18.12.4 | Sélection et affichage d'un portefeuille | M | High | ⬜ |
-| US18.12.5 | Recherche d'une activité dans un portefeuille | S | Medium | ⬜ |
-| US18.12.6 | Création d'un nouveau portefeuille | M | High | ⬜ |
-| US18.13.1 | Utiliser les filtres pour créer un portefeuille | L | High | ⬜ |
-| US18.13.2 | Réinitialisation des filtres | S | Medium | ⬜ |
-| US18.13.3 | Enregistrement d'un nouveau portefeuille | M | High | ⬜ |
-| US18.13.4 | Bouton Annuler | XS | Medium | ⬜ |
-| US18.14.1 | Affichage de la liste des activités | M | High | ⬜ |
-| US18.14.2 | Recherche d'une activité | M | High | ⬜ |
-| US18.14.3 | Réactualisation de la liste | XS | Medium | ⬜ |
-| US18.14.4 | Affichage des activités archivées | S | Medium | ⬜ |
+| US18.7.1 | Mettre à jour les objets de gestion (OI, EOTP) | M | High | ⬜ |
+| US18.7.2 | Mettre à jour les produits | S | High | ⬜ |
+| US18.7.3 | Gérer les référentiels métiers | M | High | ⬜ |
+| US18.8.1 | Accéder au menu d'administration | S | High | ⬜ |
+| US18.1.1 | Renseigner les informations générales d'une activité | S | High | ⬜ |
+| US18.1.2 | Renseigner les informations structurelles d'une activité | S | High | ⬜ |
+| US18.1.3 | Contrôler la validité du nom d'activité | S | High | ⬜ |
+| US18.1.4 | Consulter la dernière modification d'une activité | XS | Medium | ⬜ |
+| US18.1.5 | Identifier rapidement une activité par son trigramme | XS | Medium | ⬜ |
+| US18.1.6 | Visualiser les activités liées Parents / Enfants | S | Medium | ⬜ |
+| US18.6.1 | Rechercher activités et portefeuilles | S | Medium | ⬜ |
+| US18.6.2 | Filtrer par produit associé | XS | Medium | ⬜ |
+| US18.6.3 | Sécuriser la navigation | S | Medium | ⬜ |
+| EN18.14 | Gestion des habilitations par groupe AD | M | High | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
+> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
 > domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
 > les dépendances ci-dessus.

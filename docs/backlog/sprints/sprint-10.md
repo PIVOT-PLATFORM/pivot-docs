@@ -1,52 +1,56 @@
-# Sprint 10 — Pilotage cœur PPM
+# Sprint 10 — Parité whiteboard visible (remédiation Socle)
 
-> ✅ **Verrou Socle levé (2026-07-10).** Enchaîne Sprint 9 (dépend d'EN22.1). Contenu **inchangé au
-> re-tri du 2026-07-10** : aucune dépendance à E40 (profil adaptatif) ni à l'habillage entreprise
-> EN18.3-8 — pure valeur PPM. Voir [README §Séquencement](./README.md#sprints-713--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+**Branches :** une branche par US — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
+**Scope :** 4 items de parité **visible** du noyau whiteboard (F08.x) vs le POC de référence
+PouetPouet, décidés par le mainteneur suite à
+[`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
+(§Écarts de parité vs POC, 2026-07-13) — extension du périmètre F08.x « noyau + parité visible »,
+`Phase: Socle` (non verrouillé, même statut que le reste du noyau F08.x/EN08.x).
+**Jalon d'entrée :** aucune dépendance nouvelle — s'appuie sur le noyau F08.1/F08.2/F08.3 déjà
+`Stage: ✅ Done` (Sprint 5, Vague 1+).
 
-**Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé), sur profil
-par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation.
+## Contexte
 
-> **EN22.2 reséquencé depuis Sprint 9 (2026-07-11)** : cet enabler (rendu virtualisé, recalcul
-> incrémental, co-édition temps réel + undo/redo du Gantt) dépend du Gantt UI lui-même
-> (US22.4.x, ci-dessous) — inexistant tant que ce sprint n'a pas livré. Il ne peut pas être
-> implémenté avant. **Chevauchement à trancher au Gate 1** avec `US22.4.10c` (virtualisation du
-> rendu déjà présente dans cette US) — éviter un double travail sur ce point précis.
+L'audit de recette fonctionnelle (2026-07-13) a confirmé que le noyau whiteboard livré (CRUD
+tableaux, canvas temps réel, présence, undo/redo, templates) est conforme au périmètre annoncé, et
+que l'écart de parité vs PouetPouet (Vote, Timer, Session, favoris, corbeille, recherche, etc.) est
+`⬜ Backlog` sous F30.x — **pas un KO**. Le mainteneur a cependant décidé d'étendre le périmètre
+Socle à **4 capacités de parité visible** jugées suffisamment structurantes pour l'expérience
+utilisateur de la liste/gestion de tableaux pour ne pas attendre le déverrouillage phase-3 complet
+d'E30 :
 
-**Gate 1 READINESS passé (2026-07-11)** — **24/24 items Ready** (≥ 70/100 ; 15 items ≥ 90).
-ACs DoR complétés (erreur / sécurité 404-403 / A11y, cohérence avec le contrat figé EN22.1) sur
-19 fiches. **1 réserve : US22.4.7 (72)** — le fractionnement (split) n'a **aucun porteur dans le
-schéma EN22.1** (`pilotage.task` sans segments) → décision **D1** mainteneur (avenant schéma vs
-enabler dédié) ; la moitié « chemin critique/marges » de l'US reste, elle, implémentable.
-**Le socle S9 (schéma + moteur CPM + projection) permet d'attaquer la couche calcul/données
-maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (non publié).**
-8 décisions consolidées (D1-D8) + ordre d'attaque → commentaire de la PR de ce Gate 1.
+1. Favoris de tableaux (étoile + tri client)
+2. Corbeille / suppression douce + restauration
+3. Recherche de tableaux (filtre client)
+4. Paramètres de tableau (modal OWNER : nom/description, toggles activités, enregistrer comme
+   template) + câblage du bouton Reset board
 
-| Item | Titre | Size | Priorité | 🤖 Dev |
-|------|-------|------|----------|--------|
-| EN22.2 | Performance & collaboration web du Gantt *(reséquencé de Sprint 9, 2026-07-11)* | XL | High | ⬜ |
-| US22.4.1a | WBS : modèle arborescent & numérotation *(ex-US22.4.1 XL, décomposée 2026-07-10)* | M | Critical | ✅ mergé (backend [pivot-pilotage-core#43](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/43), frontend [pivot-pilotage-ui#31](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/31)) |
-| US22.4.1b | WBS : indent/outdent & réordonnancement | M | Critical | ✅ mergé (idem #43/#31 — livré avec US22.4.1a/c) |
-| US22.4.1c | WBS : agrégation tâches récapitulatives & A11y | M | Critical | ✅ mergé (idem #43/#31 — livré avec US22.4.1a/b) |
-| US22.4.2 | Durées, effort, planification auto vs manuelle | L | Critical | ✅ mergé (backend [pivot-pilotage-core#49](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/49), frontend [pivot-pilotage-ui#33](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/33)) |
-| US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ✅ mergé (backend [pivot-pilotage-core#47](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/47), frontend [pivot-pilotage-ui#28](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/28)) |
-| US22.4.4 | Contraintes de date & échéances | M | High | ✅ mergé (backend [pivot-pilotage-core#54](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/54), frontend [pivot-pilotage-ui#37](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/37)) |
-| US22.4.5 | Calendriers ouvrés & exceptions | L | High | ✅ mergé (backend [pivot-pilotage-core#45](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/45), frontend [pivot-pilotage-ui#30](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/30)) |
-| US22.4.6 | Jalons & tâches périodiques | M | Medium | ✅ mergé (backend [pivot-pilotage-core#55](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/55), frontend [pivot-pilotage-ui#38](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/38)) |
-| US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ backend mergé ([pivot-pilotage-core#64](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/64)) — frontend `pivot-pilotage-ui` restant |
-| US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ✅ mergé (backend [pivot-pilotage-core#59](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/59), frontend [pivot-pilotage-ui#42](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/42)) |
-| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ✅ mergé (backend [pivot-pilotage-core#63](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/63), frontend [pivot-pilotage-ui#43](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/43)) |
-| US22.4.10a | Déplacement/redimensionnement des barres & lien par glisser *(ex-US22.4.10 XL)* | L | Critical | ⬜ |
-| US22.4.10b | Zoom de l'échelle de temps & poignée d'avancement | M | Critical | ⬜ |
-| US22.4.10c | Virtualisation du rendu & édition clavier accessible | L | Critical | ⬜ |
-| US22.6.1a | Socle multi-vues & vues temporelles (Gantt, Chronologie, Calendrier) *(ex-US22.6.1 XL)* | L | High | ⬜ |
-| US22.6.1b | Vues Réseau (PERT) & Tableau/Kanban | L | High | ⬜ |
-| US22.6.1c | Vues ressources (Feuille de ressources & Utilisation) | M | High | ⬜ |
-| US22.6.2 | Colonnes, filtres, regroupements & tri | L | High | ⬜ |
-| US23.1.1 | Tableau de bord portefeuille projets | L | High | ⬜ |
-| US23.1.2 | Générer un rapport d'avancement du portefeuille | M | Medium | ⬜ |
-| US23.2.1 | Vue portefeuille consolidée | L | Critical | ⬜ backend mergé ([pivot-pilotage-core#65](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/65)) — frontend `pivot-pilotage-ui` restant |
-| US23.2.2 | Tableaux de bord personnalisables | L | Critical | ⬜ backend mergé ([pivot-pilotage-core#60](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/60)) — frontend `pivot-pilotage-ui` restant |
-| US23.2.4 | Météo et indicateurs normalisés | S | High | ✅ mergé (backend [pivot-pilotage-core#57](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/57), frontend [pivot-pilotage-ui#39](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/39)) |
+| Item | Titre | Priority | Size | 🤖 Dev |
+|------|-------|----------|------|--------|
+| [US08.1.6](../EPIC-collaboration/FEATURES/crud-tableaux/us-favoris-tableau.md) | Favoris de tableaux | Medium | S | ⬜ |
+| [US08.1.7](../EPIC-collaboration/FEATURES/crud-tableaux/us-corbeille-tableau.md) | Corbeille et restauration d'un tableau | Medium | M | ⬜ |
+| [US08.1.8](../EPIC-collaboration/FEATURES/crud-tableaux/us-recherche-tableau.md) | Recherche de tableaux | Medium | XS | ⬜ |
+| [US08.2.4](../EPIC-collaboration/FEATURES/partage-roles/us-parametres-tableau.md) | Paramètres de tableau (modal OWNER) + câblage Reset board | Medium | M | ⬜ |
 
-> **E23 vague 2 → post-S12** (US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques, US23.2.7/23.2.8 what-if & business cases, US23.2.9/23.2.10 livrables & valeur publique). US22.6.3/22.6.4 (mise en forme, exports) en fin de sprint si capacité.
+## Notes de séquencement
+
+- **US08.1.7** (corbeille) révise la décision hard-delete d'US08.1.5 (`Done`) — le soft-delete
+  remplace la cascade physique ; aucune donnée de production n'est concernée (Socle non encore en
+  usage réel), pas de migration de données à prévoir au-delà du schéma.
+- **US08.1.8** (recherche) et le tri favoris d'US08.1.6 révisent la note Hors périmètre d'US08.1.3
+  (`Done`) — front-only, pas de nouvel endpoint de recherche côté backend.
+- **US08.2.4** dépend techniquement d'US08.1.4 (contrat PATCH réutilisé) et d'US08.4.1 (templates)
+  déjà `Done` — pas de blocage de séquencement, les 4 items de ce sprint sont parallélisables entre
+  agents (branches séparées, fichiers backend/frontend disjoints par item).
+- Gate 1 (PO Agent, DoR) à effectuer au démarrage de chaque item comme pour tout sprint — ce fichier
+  ne préjuge pas d'un Gate 1 déjà passé au niveau sprint.
+
+## Dépendances
+
+- Aucune dépendance externe nouvelle — repo cible inchangé (`pivot-collaboratif-core`/
+  `pivot-collaboratif-ui`), mêmes conventions d'accès (tenantId via SecurityContext, 404
+  anti-énumération, OWNER-only sur les actions de gestion) que le reste de F08.x.
+
+---
+*Créé le 2026-07-13, suite à la décision mainteneur d'extension du périmètre Socle F08.x (audit de
+recette fonctionnelle, parité visible vs POC PouetPouet).*

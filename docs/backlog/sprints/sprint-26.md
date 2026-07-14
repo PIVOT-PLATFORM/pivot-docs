@@ -1,33 +1,39 @@
-# Sprint 26 — E22 Roadmap — Socle Gantt & planification PPM
+# Sprint 26 — E18 Pilotage — Activité : écran Jalons
 
 > **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
 > Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
 >
-> **Phase** : phase-3 · E22. **Sortie** : le socle Roadmap/Gantt restant et la planification benchmark PPM.
+> **Phase** : phase-3 · E18. **Sortie** : l'écran Jalons d'une activité complet.
 >
-> **Dépendances** : Priorité 2 après la base Pilotage. Dépend d'EN22.1 (modèle temporel, S9) et du Gantt v0 (S10).
+> **Dépendances** : Dépend de S24 (PMT) ; la logique jalons transverse (F18.3) est livrée en S27.
 >
 > **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
 > (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
 > même précédent que les sprints précédents.
 
-## Items (11)
+## Items (17)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US22.1.1 | Créer et gérer un projet sur la roadmap | M | High | ⬜ |
-| US22.1.2 | Visualiser la roadmap en vue Gantt | XL | High | ⬜ |
-| US22.1.3 | Gérer les jalons et dépendances entre projets | L | Medium | ⬜ |
-| US22.2.1 | Gantt, dépendances, jalons | L | Critical | ⬜ |
-| US22.2.2 | Chemin critique | M | Critical | ⬜ |
-| US22.2.3 | Vues multiples | M | Critical | ⬜ |
-| US22.2.4 | Modèles de projets | M | Critical | ⬜ |
-| US22.2.5 | Baselines et historisation | M | High | ⬜ |
-| US22.2.6 | Hybride cascade/agile | L | Medium | ⬜ |
-| EN22.3 | Connecteurs calendrier & disponibilité (fériés, absences SI RH) | L | High | ⬜ |
-| EN22.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US18.19.1 | Création de l'écran Jalon | M | High | ⬜ |
+| US18.19.2 | Affichage et tri des jalons | S | Medium | ⬜ |
+| US18.19.3 | Structure du bloc Jalon A | M | High | ⬜ |
+| US18.19.4 | Structure du bloc Jalon B / C / D / ABC / BC | M | High | ⬜ |
+| US18.19.5 | Structure des blocs jalons à date simple | S | Medium | ⬜ |
+| US18.19.6 | Structure du bloc Jalon CEN | S | Medium | ⬜ |
+| US18.19.7 | Structure du bloc J7 - Mise en Service (MES) | M | High | ⬜ |
+| US18.19.8 | Structure du bloc J6 - Mise en Production (MEP) | S | Medium | ⬜ |
+| US18.19.9 | Créer un jalon | M | High | ⬜ |
+| US18.19.10 | Valider un jalon A / B / C / D | L | Critical | ⬜ |
+| US18.19.11 | Modifier un jalon à la volée | S | Medium | ⬜ |
+| US18.19.12 | Supprimer un jalon | S | Medium | ⬜ |
+| US18.19.13 | Modifier un jalon grisé | M | High | ⬜ |
+| US18.19.14 | Workflow des jalons | S | Medium | ⬜ |
+| US18.19.15 | Affichage des jalons (grisés) | S | Medium | ⬜ |
+| US18.19.16 | Enregistrer l'écran Jalon | S | High | ⬜ |
+| US18.19.17 | Historique des modifications (logs) — Jalons | S | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
+> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
 > domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
 > les dépendances ci-dessus.

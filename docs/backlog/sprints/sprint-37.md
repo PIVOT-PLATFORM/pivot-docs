@@ -1,56 +1,38 @@
-# Sprint 37 — Parité whiteboard visible (remédiation Socle)
+# Sprint 37 — E27 OKR (dashboards) + Satellites Pilotage
 
-**Branches :** une branche par US — `feat/{us-id}-{slug}` (voir [§Règles d'utilisation](./README.md#règles-dutilisation))
-**Scope :** 4 items de parité **visible** du noyau whiteboard (F08.x) vs le POC de référence
-PouetPouet, décidés par le mainteneur suite à
-[`docs/audits/audit-recette-fonctionnelle.md`](../../audits/audit-recette-fonctionnelle.md)
-(§Écarts de parité vs POC, 2026-07-13) — extension du périmètre F08.x « noyau + parité visible »,
-`Phase: Socle` (non verrouillé, même statut que le reste du noyau F08.x/EN08.x).
-**Jalon d'entrée :** aucune dépendance nouvelle — s'appuie sur le noyau F08.1/F08.2/F08.3 déjà
-`Stage: ✅ Done` (Sprint 5, Vague 1+).
+> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
+> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+>
+> **Phase** : phase-3 · E27 · satellites. **Sortie** : les tableaux de bord OKR + gouvernance, et la complétion des satellites Pilotage : portefeuille (what-if & business cases), ADR, budget, cahiers de tests.
+>
+> **Dépendances** : Ferme le domaine OKR et les tails E23 / E24 / E26 / E13.
+>
+> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
+> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
+> même précédent que les sprints précédents.
 
-## Contexte
+## Items (16)
 
-L'audit de recette fonctionnelle (2026-07-13) a confirmé que le noyau whiteboard livré (CRUD
-tableaux, canvas temps réel, présence, undo/redo, templates) est conforme au périmètre annoncé, et
-que l'écart de parité vs PouetPouet (Vote, Timer, Session, favoris, corbeille, recherche, etc.) est
-`⬜ Backlog` sous F30.x — **pas un KO**. Le mainteneur a cependant décidé d'étendre le périmètre
-Socle à **4 capacités de parité visible** jugées suffisamment structurantes pour l'expérience
-utilisateur de la liste/gestion de tableaux pour ne pas attendre le déverrouillage phase-3 complet
-d'E30 :
+| Item | Titre | Size | Priorité | 🤖 Dev |
+|------|-------|------|----------|--------|
+| US27.9.1 | Tableaux de bord OKR (mes OKR / équipe / entreprise / à risque) | L | High | ⬜ |
+| US27.9.2 | Export & rapports de comité | M | Medium | ⬜ |
+| US27.10.1 | Découplage rémunération & transparence | M | High | ⬜ |
+| US27.10.2 | RGPD & confidentialité des OKR individuels | M | High | ⬜ |
+| US23.2.6 | Pilotage des plans stratégiques | XL | Medium | ⬜ |
+| US23.2.7 | Scénarios what-if | XL | Medium | ⬜ |
+| US23.2.8 | Business cases dynamiques | L | Medium | ⬜ |
+| US13.1.1 | Créer et gérer des cas de test | M | Medium | ⬜ |
+| US13.1.2 | Organiser les cas de test en suites | S | Medium | ⬜ |
+| US13.2.1 | Créer une campagne de test | M | Medium | ⬜ |
+| US13.2.2 | Exécuter une campagne de test (guided mode) | L | Medium | ⬜ |
+| US13.3.1 | Tableau de bord campagne | S | Medium | ⬜ |
+| EN23.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| EN24.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| EN26.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| EN13.3 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
-1. Favoris de tableaux (étoile + tri client)
-2. Corbeille / suppression douce + restauration
-3. Recherche de tableaux (filtre client)
-4. Paramètres de tableau (modal OWNER : nom/description, toggles activités, enregistrer comme
-   template) + câblage du bouton Reset board
-
-| Item | Titre | Priority | Size | 🤖 Dev |
-|------|-------|----------|------|--------|
-| [US08.1.6](../EPIC-collaboration/FEATURES/crud-tableaux/us-favoris-tableau.md) | Favoris de tableaux | Medium | S | ⬜ |
-| [US08.1.7](../EPIC-collaboration/FEATURES/crud-tableaux/us-corbeille-tableau.md) | Corbeille et restauration d'un tableau | Medium | M | ⬜ |
-| [US08.1.8](../EPIC-collaboration/FEATURES/crud-tableaux/us-recherche-tableau.md) | Recherche de tableaux | Medium | XS | ⬜ |
-| [US08.2.4](../EPIC-collaboration/FEATURES/partage-roles/us-parametres-tableau.md) | Paramètres de tableau (modal OWNER) + câblage Reset board | Medium | M | ⬜ |
-
-## Notes de séquencement
-
-- **US08.1.7** (corbeille) révise la décision hard-delete d'US08.1.5 (`Done`) — le soft-delete
-  remplace la cascade physique ; aucune donnée de production n'est concernée (Socle non encore en
-  usage réel), pas de migration de données à prévoir au-delà du schéma.
-- **US08.1.8** (recherche) et le tri favoris d'US08.1.6 révisent la note Hors périmètre d'US08.1.3
-  (`Done`) — front-only, pas de nouvel endpoint de recherche côté backend.
-- **US08.2.4** dépend techniquement d'US08.1.4 (contrat PATCH réutilisé) et d'US08.4.1 (templates)
-  déjà `Done` — pas de blocage de séquencement, les 4 items de ce sprint sont parallélisables entre
-  agents (branches séparées, fichiers backend/frontend disjoints par item).
-- Gate 1 (PO Agent, DoR) à effectuer au démarrage de chaque item comme pour tout sprint — ce fichier
-  ne préjuge pas d'un Gate 1 déjà passé au niveau sprint.
-
-## Dépendances
-
-- Aucune dépendance externe nouvelle — repo cible inchangé (`pivot-collaboratif-core`/
-  `pivot-collaboratif-ui`), mêmes conventions d'accès (tenantId via SecurityContext, 404
-  anti-énumération, OWNER-only sur les actions de gestion) que le reste de F08.x.
-
----
-*Créé le 2026-07-13, suite à la décision mainteneur d'extension du périmètre Socle F08.x (audit de
-recette fonctionnelle, parité visible vs POC PouetPouet).*
+> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
+> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
+> les dépendances ci-dessus.
