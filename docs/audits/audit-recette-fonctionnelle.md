@@ -1,8 +1,8 @@
 # Audit — recette fonctionnelle (Socle)
 
-**Statut :** 5/10 — v1
-**Dernière révision :** 2026-07-13
-**Profil agent responsable :** Expert QA + Product Owner
+**Statut :** 5/10 — v1 (score global Socle, non revérifié en v2 — voir v2 pour le scope E30/F08.x)
+**Dernière révision :** 2026-07-14 (v2, scope E30/F08.x — Sprint 10/11)
+**Profil agent responsable :** Expert QA + Product Owner + Architecte Temps Réel / WebSocket
 
 ## Date : 2026-07-13 — v1
 
@@ -171,8 +171,69 @@ Rapports détaillés par domaine, tableaux Item/statut/preuve et captures d'écr
 produits lors de la campagne du 2026-07-13 (77 screenshots : préfixes `wb-`, `auth-`, `admin-`,
 `shell-`). Détail des fichiers/lignes de code référencés dans chaque finding ci-dessus.
 
+## Date : 2026-07-14 — v2 (Sprint 10/11, E30/F08.x uniquement)
+
+## Expert : Expert QA + Architecte Temps Réel / WebSocket
+
+### Périmètre
+
+Recette fonctionnelle du **Sprint 10** (US08.1.6 favoris, US08.1.7 corbeille, US08.1.8 recherche,
+US08.2.4 paramètres+reset) et du **Sprint 11** (EN08.4, modèle `Card` typé) — **pas** un nouveau
+balayage du Socle entier (E01-E17 restent à l'état v1 ci-dessus, non revérifiés). Déclenchée par
+une question directe du mainteneur (« as-tu bien fini le Sprint 10 ? ») après la découverte d'un
+bug bloquant en recette manuelle sur EN08.4.
+
+**Méthode** : E2E Playwright réels contre un backend `pivot-collaboratif-core` **réellement
+déployé** (images GHCR successives `v0.1.2`→`v0.2.0`→`v0.2.1`→`v0.3.0`, pas un mock ni un
+Testcontainers isolé) pour Sprint 10 ; recette manuelle bout-en-bout par le mainteneur (frontend
+`@pivot-platform/collaboratif-ui@0.3.0` + backend `main`) pour EN08.4, complétée par des tests
+d'intégration rejouant le vocabulaire wire réel sur une vraie connexion STOMP (Testcontainers) pour
+la vérification post-fix.
+
+### Constat central : les mocks encodaient la même hypothèse fausse que le code testé
+
+Les 4 bugs ci-dessous ont un point commun : **chacun était couvert par des tests qui passaient**
+(Vitest côté front avec des réponses HTTP mockées à la main, tests d'intégration backend appelant
+les handlers avec les noms d'action « corrects » supposés) — mais le mock lui-même reproduisait la
+mauvaise hypothèse (casse, nom de champ, nom wire) plutôt que le contrat réel de l'autre côté.
+Aucun de ces bugs n'a été détecté avant qu'un test exerce **le vrai réseau contre le vrai backend**
+(E2E réel, ou recette manuelle). Prévention proposée : voir Recommandations.
+
+### Findings
+
+| # | Item | Constat | Localisation | Fix |
+|---|------|---------|---------------|-----|
+| S1 | US08.2.4 — bouton Paramètres (settings) | `BoardResponse.role` sérialisé en **minuscules** (`"owner"`) côté REST, incohérent avec `MemberResponse`/le broadcast WS JOIN (**majuscules**, `"OWNER"`). Le frontend ne compare qu'en majuscules → `isOwner()` toujours faux via le chemin REST. Le mock Vitest du composant utilisait déjà `role: 'OWNER'` (majuscules) — jamais exercé contre la vraie réponse HTTP. | `pivot-collaboratif-core` `BoardResponse.java` | `pivot-collaboratif-core#70` (mergé, publié `v0.2.1`) |
+| S2 | Page canvas — titre du board | `board.store.ts#loadBoard()` typait/lisait la réponse `GET /whiteboard/boards/{id}` comme ayant un champ `name`, alors que le backend renvoie `title`. Le H1 du canvas n'a donc jamais affiché de titre réel, repli permanent sur « Tableau sans titre » — bug préexistant au Sprint 10 (noyau Socle), jamais détecté car aucun test front ne comparait au vrai payload REST. | `pivot-collaboratif-ui` `board.store.ts` | Corrigé directement dans `pivot-collaboratif-ui#95` (mergé, publié `v0.4.0`) |
+| S3 | US08.2.4 — reset board, notification temps réel | `WhiteboardBroadcastService#broadcastReset` diffusait le type wire `"RESET"` (nom d'enum Java brut) ; le front écoute `'board:resetted'` (participe passé, vocabulaire PouetPouet). L'appel REST réussissait toujours (204) et l'auteur du reset voyait sa modale se fermer, mais **aucun autre client déjà connecté ne voyait le canvas se vider en temps réel**. Couverture existante (`BoardParityControllerIT` MockMvc + broadcaster mocké, `WhiteboardBroadcastServiceTest` Mockito) vérifiait seulement que le broadcaster était *appelé*, jamais ce qu'un vrai client *recevait*. | `pivot-collaboratif-core` `WhiteboardBroadcastService.java` | `pivot-collaboratif-core#72` (mergé, publié `v0.3.0`) |
+| S4 | EN08.4 — toutes les actions `CARD_*` + JOIN/LEAVE/CURSOR_MOVE | **Bloquant** — désync de contrat wire complet entre `board.store.ts` (vocabulaire PouetPouet `card:create`/`board:join`/`board:cursor`, minuscules deux-points) et `CanvasActionService` (résolution `CanvasEventType.valueOf(type.toUpperCase())`, majuscules). Toute action carte était **jetée silencieusement** côté serveur (`Unknown canvas action type … dropped`) ; `board:join`/`board:leave` envoient en plus un `data` **scalaire** (chaîne, pas objet) → `MessageConversionException` avant même la résolution du type. Symptôme utilisateur : impossible d'ajouter un post-it. Trouvé en creusant le même contrat : le rejeu d'état initial (`board:state`) partait sur `/queue/board-state` (queue STOMP par utilisateur), à laquelle le transport front ne s'abonne jamais. | `pivot-collaboratif-core` `CanvasEventType`/`CanvasActionService`/`CanvasActionMessage`/`WhiteboardBroadcastService.java` | `pivot-collaboratif-core#68` (mergé, publié `v0.3.0`) — voir correctif détaillé dans `en-modele-card-type.md` |
+
+### Ce qui est confirmé conforme (Sprint 10, hors S1-S4)
+
+- US08.1.6 (favoris), US08.1.7 (corbeille/restauration), US08.1.8 (recherche) : **purement REST**,
+  aucun chemin WebSocket — vérifié qu'aucune de ces 3 US n'appelle `emit`/`on` du transport WS,
+  hors du périmètre de la classe de bug S3/S4. 12/12 E2E réels verts.
+- US08.2.4 (édition nom/description/activités, save-as-template) : vérifié bout-en-bout, y compris
+  la persistance server-side après reload.
+
+### Recommandations (complète les recommandations v1)
+
+1. **Test de contrat wire partagé** (déjà suggéré par le mainteneur en recette sur `#68`, non
+   traité) : `en-modele-card-type.md` comme source de vérité vivante du vocabulaire `card:*`/
+   `board:*`, vérifiée par un test automatisé plutôt que redéfinie indépendamment de chaque côté.
+   Devient plus urgent à mesure que F08.7 (connecteurs), F08.8 (cadres), F08.12 (facilitation)
+   étendent le même contrat en Sprint 12-16.
+2. **Mocks/tests unitaires front-back** : lors de la création d'un mock de réponse HTTP/WS, copier
+   le payload réel observé (capture réseau ou fixture générée depuis le DTO backend réel), pas une
+   reconstruction manuelle supposée — les 4 bugs S1-S4 auraient tous été détectés par un mock
+   généré depuis la vraie réponse plutôt qu'écrit à la main.
+3. **Étendre la classe de vérification E2E réel** (déjà en place pour Sprint 10 REST) **aux
+   échanges WebSocket** — aucune des ITs backend existantes (avant `#68`/`#72`) n'exerçait le vrai
+   chemin de désérialisation JSON → dispatch → rediffusion sur une vraie connexion STOMP.
+
 ## Historique des révisions
 
 | Version | Date | Score | Note |
 |---------|------|-------|------|
 | v1 | 2026-07-13 | 5/10 | Première recette fonctionnelle bout-en-bout du Socle déclaré fait, contre le POC PouetPouet. 6 bloquants, 7 majeurs. |
+| v2 | 2026-07-14 | — (scope E30/F08.x uniquement, pas un rescore Socle global) | Sprint 10 (US08.1.6/7/8, US08.2.4) + Sprint 11 (EN08.4) : 4 bugs réels trouvés et corrigés (S1-S4), tous invisibles aux tests unitaires/mocks existants, détectés uniquement par recette manuelle ou E2E contre le vrai backend. |
