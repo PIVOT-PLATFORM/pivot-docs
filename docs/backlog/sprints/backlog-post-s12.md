@@ -1,7 +1,7 @@
-# Backlog post-S12 (non planifié)
+# Backlog post-S19 (non planifié)
 
 > **Re-tri 2026-07-10 :** les satellites Pilotage à valeur (E24 ADR · E26 Budget · E27 OKR socle ·
-> E23 vague 2) ont été **remontés en [Sprint 13](./sprint-13.md)** — voir aussi la §Queue idéation
+> E23 vague 2) ont été **remontés en [Sprint 20](./sprint-20.md)** — voir aussi la §Queue idéation
 > en bas de page (E40 profil adaptatif + E18 EN18.3-8, promotion = décision mainteneur).
 
 - US01.4.3b Alerte IP suspecte (v1-enterprise — nécessite ADR GeoIP) + 4 autres items v1-enterprise
@@ -9,8 +9,8 @@
 - E19 Module Session (phase-3 — pivot-collaboratif-core/ui) : ⚠️ dépendance de E41 F41.4 (sessions live) et E38 F38.15
 - E21 vagues 2+ : US21.2.5/21.2.6 (AMDEC, exposition & vélocité), F21.4 boucle vivante (dépend ADR-019 bus), F21.5 portefeuille, F21.6 quantitatif/conformité, F21.7 IA gouvernée, F21.8/21.9 restitutions & cockpit
 - E22 vagues 2+ : US22.6.3/22.6.4 (mise en forme, exports), F22.5 ressources dans le plan, F22.7 interop MS Project, F22.8 interfaces inter-modules & SI, EN22.3 connecteurs calendrier
-- E23 vague 2 : ~~US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques~~ **→ [Sprint 13](./sprint-13.md)** · restent ici : US23.2.7/23.2.8 what-if & business cases (ex-E31), US23.2.9/23.2.10 livrables & valeur publique (idéation)
-- ~~E24 ADR projet · E26 Budget · E27 OKR~~ **→ [Sprint 13](./sprint-13.md)** (satellites Pilotage à valeur, remontés au re-tri 2026-07-10) · E27 F27.4-10 (check-ins, scoring, gouvernance) + E26 F26.2 vague 2 restent post-S13 · **E25 Commande publique** reste en idéation (`BACKLOG-IDEATION`)
+- E23 vague 2 : ~~US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques~~ **→ [Sprint 20](./sprint-20.md)** · restent ici : US23.2.7/23.2.8 what-if & business cases (ex-E31), US23.2.9/23.2.10 livrables & valeur publique (idéation)
+- ~~E24 ADR projet · E26 Budget · E27 OKR~~ **→ [Sprint 20](./sprint-20.md)** (satellites Pilotage à valeur, remontés au re-tri 2026-07-10) · E27 F27.4-10 (check-ins, scoring, gouvernance) + E26 F26.2 vague 2 restent post-S20 · **E25 Commande publique** reste en idéation (`BACKLOG-IDEATION`)
 - E28 Intégration open source (dépend ADR-009 accepté S7 + gouvernance forks ADR-018)
 - E29 Workflows & Automatisation (78 US — passe DoR à faire au sprint précédant son implémentation)
 - E30 Collaboration (86 US benchmark hors noyau F08.x/EN08.x déjà en Socle, ex-E08 — arbitrage résolu, voir [§Zones d'ombre n°2](./zones-ombre.md) ; passe DoR à faire)

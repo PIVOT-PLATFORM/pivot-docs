@@ -2,7 +2,7 @@
 
 ## Contexte
 
-- **US** : [`us-jalons-taches-periodiques.md`](pathname:///pivot-docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-jalons-taches-periodiques) · Parent `F22.4` · Module `pilotage` · Phase `phase-3` · Sprint 10
+- **US** : [`us-jalons-taches-periodiques.md`](pathname:///pivot-docs/backlog/EPIC-roadmap/FEATURES/gantt-detaille/us-jalons-taches-periodiques) · Parent `F22.4` · Module `pilotage` · Phase `phase-3` · Sprint 17
 - **PR** : `pivot-pilotage-core` [#55](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/55)
 - **Commit figé** : `817adaa` (squash-merge, `feat(gantt): US22.4.6 — jalons & tâches périodiques`)
 - **Gate 4 au figeage** : 100/100 — MERGE_AUTONOMOUS (détail complet dans le commentaire de review de la PR)
@@ -175,5 +175,5 @@ jamais reparsé ailleurs à ce stade.
 
 ---
 
-Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Sprint 10
+Item Type: US · Parent: F22.4 · Module: pilotage · Phase: phase-3 · Sprint 17
 Stage: Review

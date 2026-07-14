@@ -1,12 +1,12 @@
-# Sprint 24 — E21 Risques — Boucle vivante, portefeuille & quantitatif
+# Sprint 24 — E18 Pilotage — Activité : Élaboration PMT
 
 > **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S14→S33** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
+> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
 > Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
 >
-> **Phase** : phase-3 · E21. **Sortie** : la boucle vivante (bus), la consolidation de portefeuille et l'analyse quantitative & conformité du module Risques.
+> **Phase** : phase-3 · E18. **Sortie** : l'écran d'élaboration PMT (informations structurelles) complet.
 >
-> **Dépendances** : Second des deux domaines nommés (Pilotage **et** Risques), placé juste après la base E18. Dépend du cœur Risques livré en S11 (F21.1/F21.2/F21.3 + EN21.1) ; F21.4 dépend du bus PIVOT (ADR-025 / EN21.3).
+> **Dépendances** : Dépend de S22/S23 (activité + informations générales). Feature volumineuse (19 US) livrée en un sprint dédié.
 >
 > **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
 > (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
@@ -16,26 +16,26 @@
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US21.4.1 | Consommation du bus PIVOT | L | Critical | ⬜ |
-| US21.4.2 | Remontée des obstacles Scrum | M | High | ⬜ |
-| US21.4.3 | Actions → tâches delivery | M | High | ⬜ |
-| US21.4.4 | Événements de risque émis | M | High | ⬜ |
-| US21.4.5 | Liens vers Vendor/Contract | S | Medium | ⬜ |
-| US21.5.1 | Consolidation de portefeuille | L | High | ⬜ |
-| US21.5.2 | Risques systémiques | L | High | ⬜ |
-| US21.5.3 | Bibliothèque vivante (REX) | M | Medium | ⬜ |
-| US21.5.4 | Suggestion par similarité | M | Medium | ⬜ |
-| US21.5.5 | Tendance et historique | M | Medium | ⬜ |
-| US21.6.1 | Valeur monétaire attendue (EMV) | M | Medium | ⬜ |
-| US21.6.2 | Provision pour risques | M | Medium | ⬜ |
-| US21.6.3 | Simulation Monte Carlo | L | Medium | ⬜ |
-| US21.6.4 | Interface EBIOS RM | L | Medium | ⬜ |
-| US21.6.5 | Pack RGPD | M | High | ⬜ |
-| US21.6.6 | Pack AI Act | M | Medium | ⬜ |
-| US21.6.7 | Pack RGAA & facture électronique | M | Medium | ⬜ |
-| US21.2.6 | Exposition et vélocité | M | Medium | ⬜ |
-| EN21.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US18.17.1 | Plan Moyen Terme (PMT) | S | High | ⬜ |
+| US18.17.2 | Plan de production de l'année | S | High | ⬜ |
+| US18.17.3 | Priorisation | S | High | ⬜ |
+| US18.17.4 | Macro Processus Métier concerné | S | Medium | ⬜ |
+| US18.17.5 | Présence schéma directeur | XS | Medium | ⬜ |
+| US18.17.6 | Commentaires schéma directeur | S | Medium | ⬜ |
+| US18.17.7 | Pilote d'activité | M | Medium | ⬜ |
+| US18.17.8 | Produits associés | M | High | ⬜ |
+| US18.17.9 | Propriétaire | S | High | ⬜ |
+| US18.17.10 | Département / Programme / Mission | S | High | ⬜ |
+| US18.17.11 | Pôle / Usine | S | High | ⬜ |
+| US18.17.12 | Domaine métier | S | High | ⬜ |
+| US18.17.13 | Sous-domaine métier | S | High | ⬜ |
+| US18.17.14 | Sous-domaine métier (niveau 2) | S | Medium | ⬜ |
+| US18.17.15 | Capacité métier | S | High | ⬜ |
+| US18.17.16 | Sous-capacité métier | S | Medium | ⬜ |
+| US18.17.17 | Typologie principale de l'activité | S | High | ⬜ |
+| US18.17.18 | Zone Activités liées | M | Medium | ⬜ |
+| US18.17.19 | Enregistrer informations structurelles | S | High | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S14→S33 garantissant **aucune US des
+> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
 > domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
 > les dépendances ci-dessus.
