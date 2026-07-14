@@ -8,7 +8,7 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given je suis OWNER ou EDITOR sur un board avec deux cartes distinctes A et B, when j'émets `connection:create {boardId, fromId, toId}` via STOMP, then une `CardConnection` est créée avec les défauts `shape="curved"`, `arrow="none"`, `dashed=false`, `width=2` (label/color null) et l'objet complet est diffusé à toute la room (émetteur inclus) sur `/topic/board/{boardId}` en `connection:created` | ⬜ |
+| Given je suis OWNER ou EDITOR sur un board avec deux cartes distinctes A et B, when j'émets `connection:create {boardId, fromId, toId}` via STOMP, then une `CardConnection` est créée avec les défauts `shape="curved"`, `arrow="none"`, `dashed=false`, `width=2` (label/color null) et l'objet complet est diffusé à toute la room (émetteur inclus) sur `/topic/whiteboard/{boardId}` en `connection:created` | ⬜ |
 | Given je crée un connecteur, when `fromId === toId` (auto-lien sur la même carte), then aucune connexion n'est créée et rien n'est diffusé (refus silencieux, cohérent avec la convention « rien ne se passe » du POC — pas de message d'erreur STOMP dédié) | ⬜ |
 | Given un connecteur existe déjà entre A et B, when j'émets `connection:create` pour la même paire dans un sens **ou** dans l'autre (`{fromId:A,toId:B}` ou `{fromId:B,toId:A}`), then aucun doublon n'est créé et rien n'est diffusé (anti-doublon bidirectionnel : `findFirst` sur `{fromId,toId} OU {toId,fromId}` → refus silencieux) | ⬜ |
 | Given je crée un connecteur, when `fromId` **ou** `toId` ne référence aucune carte existante de ce board, then la création est refusée proprement (aucune connexion créée, aucun broadcast, aucune exception non gérée remontée au handler) — **correction du défaut §6.5** : les deux extrémités sont validées comme cartes existantes du board avant l'écriture, au lieu de laisser Prisma lever une erreur FK non catchée | ⬜ |
@@ -31,7 +31,7 @@
 
 ## Notes d'implémentation
 
-- **Traduction de stack** : le POC Node/Prisma/Socket.io (`connection:create`/`connection:delete` sur `board.sockets.ts`, §3.6) est porté sur Spring Boot + Angular + STOMP. Realtime sur `/topic/board/{boardId}` ; garde `canWrite` = rôles OWNER+EDITOR résolus depuis le SecurityContext ; aucune route REST dédiée (mutations connecteurs uniquement via STOMP, comme le POC).
+- **Traduction de stack** : le POC Node/Prisma/Socket.io (`connection:create`/`connection:delete` sur `board.sockets.ts`, §3.6) est porté sur Spring Boot + Angular + STOMP. Realtime sur `/topic/whiteboard/{boardId}` ; garde `canWrite` = rôles OWNER+EDITOR résolus depuis le SecurityContext ; aucune route REST dédiée (mutations connecteurs uniquement via STOMP, comme le POC).
 - Backend `pivot-collaboratif-core` : entité `card_connection` (schéma `collaboratif`) — colonnes `board_id`, `from_id`, `to_id`, `label` (null), `color` (null), `shape` (défaut `curved`), `arrow` (défaut `none`), `dashed` (défaut `false`), `width` (défaut `2`), `created_at`. FK `from_id`/`to_id` → `card` avec `onDelete: Cascade` (la suppression d'une carte extrémité supprime le connecteur ; le handler `connection:delete` doit donc tolérer un id déjà cascadé).
 - **Fix défaut §6.5** : avant l'insertion, valider que `from_id` **et** `to_id` correspondent à des cartes existantes **du board `board_id`** (une seule requête `count` ou `findMany` sur les deux ids scopés par board) → si l'une manque, refus silencieux sans exception. Contrairement au POC qui laisse Prisma lever une erreur FK non catchée sur ce handler précis.
 - Anti auto-lien : `fromId === toId` → return avant toute écriture. Anti-doublon bidirectionnel : rechercher une connexion existante `(fromId,toId)` OU `(toId,fromId)` sur ce board → si trouvée, return silencieux.
@@ -44,5 +44,5 @@
 Item Type: US · Parent: F08.7 · Module: whiteboard · Phase: Socle · Size: M · Priority: High
 Stage: ⬜
 Rôle: utilisateur-final
-Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.8/§3.6/§6.5) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08
-Dépendances: EN08.4 (modèle Card typé + contrats WebSocket) + EN08.1 (isolation WS room, canal STOMP `/topic/board/{boardId}`)
+Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.8/§3.6/§6.5) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08. **AC réalignées le 2026-07-14 (Gate 1 PO Agent)** contre le contrat WebSocket réel — voir US08.6.1 (topic `/topic/whiteboard/{boardId}`).
+Dépendances: EN08.4 (modèle Card typé + contrats WebSocket) + EN08.1 (isolation WS room, canal STOMP `/topic/whiteboard/{boardId}`)

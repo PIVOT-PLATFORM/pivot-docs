@@ -8,10 +8,10 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un tableau où je suis OWNER/EDITOR, when j'envoie `card:create` avec `type=SHAPE` et `{content, posX, posY}`, then une carte de type `SHAPE` est créée avec les défauts du modèle `Card` (`width=192`, `height=128`, `color=#FFEB3B`, `layer=1`, `locked=false`) et `card:created` (objet complet) est diffusé à toute la room `/topic/board/{boardId}` (émetteur inclus) | ⬜ |
+| Given un tableau où je suis OWNER/EDITOR, when j'envoie `card:create` avec `type=SHAPE` et `{content, posX, posY}`, then une carte de type `SHAPE` est créée avec les défauts du modèle `Card` (`width=192`, `height=128`, `color=#FFEB3B`, `layer=1`, `locked=false`) et `card:created` (objet complet) est diffusé à toute la room `/topic/whiteboard/{boardId}` (émetteur inclus) | ⬜ |
 | Given une forme à créer avec des dimensions ou une couleur explicites, when le `card:create` porte `{type=SHAPE, width, height, color, layer}`, then ces valeurs sont respectées à la création (sinon défauts modèle) | ⬜ |
 | Given le variant de forme (rectangle/ellipse/…) et les attributs de style de contour/remplissage, when la forme est créée ou mise à jour, then ces attributs sont portés par le `content` (structure applicative JSON, ex. `{variant, fill, stroke}`) — **aucune colonne dédiée** au variant ni enum de forme en base (cohérent avec l'absence d'enum de forme dans le modèle de référence) ; la couleur principale reste `Card.color` | ⬜ |
-| Given une forme existante non verrouillée, when j'envoie `card:move {id, posX, posY}` ou `card:resize {id, width, height}`, then la mutation applique la garde `locked=false` dans le `WHERE` et diffuse `card:moved`/`card:resized` à la room **sauf l'émetteur** si au moins une ligne affectée, sinon refus silencieux | ⬜ |
+| Given une forme existante non verrouillée, when j'envoie `card:move {id, posX, posY}` ou `card:resize {id, width, height}`, then la mutation applique la garde `locked=false` dans le `WHERE` et diffuse `card:moved`/`card:resized` à **toute la room** (émetteur inclus — pas d'exclusion, cf. US08.6.1) si au moins une ligne affectée, sinon refus silencieux | ⬜ |
 | Given une forme non verrouillée, when j'envoie `card:recolor {id, color}`, then la couleur de remplissage principale (`Card.color`) est mise à jour (garde `locked=false`) et `card:recolored` diffusé à toute la room si au moins une ligne affectée | ⬜ |
 | Given une forme non verrouillée, when j'envoie `card:update {id, content}` avec un nouveau JSON de style (variant/fill/stroke), then le `content` est mis à jour (garde `locked=false`) et `card:updated` (objet complet) est diffusé à **toute la room** (émetteur inclus) si au moins une ligne affectée | ⬜ |
 | Given une forme, when j'envoie `card:delete {id}`, then le serveur lit `locked` explicitement (refus silencieux si verrouillée), sinon supprime (tolérant à l'absence) et diffuse `card:deleted` (id brut) à toute la room | ⬜ |
@@ -38,12 +38,12 @@
 - **Réutilisation des contrats** : `card:create/move/resize/update/recolor/delete` d'EN08.4/US08.6.1, appliqués au type `SHAPE`.
 - **Correctif §6.4 (décision de fix, non simple reproduction)** : le POC de référence laisse les attributs de style (`shape`/`arrow` des connexions) en `String` libre non contraint en base. Pour les formes SHAPE, PIVOT **borne le jeu de valeurs de style** (variant dans un ensemble fini, couleurs validées en hex) côté serveur avant persistance — flaggé et corrigé dans l'AC Security, pas laissé ouvert. Ceci évite l'injection de contenu arbitraire dans le rendu SVG/canvas.
 - **Rendu client `pivot-collaboratif-ui`** : composant paramétré par `type=SHAPE` + variant lu dans `content` ; deux sélecteurs de couleur (remplissage `Card.color`, contour dans `content`).
-- **Décision §6 (parité)** : reproduction fidèle des mécaniques `card:*` (refus silencieux, asymétrie de broadcast, garde verrou par `WHERE`) ; seul le point §6.4 fait l'objet d'un correctif explicite.
+- **Décision §6 (parité)** : reproduction fidèle des mécaniques `card:*` (refus silencieux, garde verrou par `WHERE`) ; seul le point §6.4 fait l'objet d'un correctif explicite. **Pas d'asymétrie de portée de broadcast** (corrigé, voir US08.6.1).
 - i18n : clés `whiteboard.card.shape.*` (fr.json / en.json).
 
 ---
 Item Type: US · Parent: F08.6 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
 Stage: ⬜
 Rôle: utilisateur-final
-Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.5, §1.10, §3.4, §6, §7) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08 ; absorbe la part « forme » de US30.1.3 (formes/connecteurs/texte)
+Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.5, §1.10, §3.4, §6, §7) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08 ; absorbe la part « forme » de US30.1.3 (formes/connecteurs/texte). **AC réalignées le 2026-07-14 (Gate 1 PO Agent)** contre le contrat WebSocket réel — voir US08.6.1 (topic `/topic/whiteboard/{boardId}`, pas d'exclusion émetteur).
 Dépendances: EN08.4 (modèle Card typé, enum `CardType.SHAPE` + contrats WebSocket `card:*`) + EN08.1 (isolation WS room) + US08.6.1 (contrats `card:*` mutualisés)
