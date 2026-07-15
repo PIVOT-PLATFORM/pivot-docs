@@ -21,13 +21,16 @@ Pipeline CI/CD complet avec supply-chain sécurisée : build/test/lint, qualité
 
 ### Enablers — à faire
 - EN05.16 — Exposer les KPI du domaine
+- EN05.17 — Mutualisation CI/CD (repo `pivot-cicd`) — source unique reusable workflows + composite actions
 
 ## Modules impactés
 `core`
 
 ## Statut global
-✅ Done — EN05.1-15 tous terminés (2026-07-09, recette différée pour les items de code ;
-EN05.14 réglé après mise à jour du token `gh` avec la permission "Administration: Read and write")
+🟡 Socle initial Done (EN05.1-15, 2026-07-09, recette différée pour les items de code ;
+EN05.14 réglé après mise à jour du token `gh` avec la permission "Administration: Read and write").
+**EN05.17 ouvert (2026-07-16)** — mutualisation CI/CD via un repo dédié `pivot-cicd`, vague pilote
+`High` (bootstrap + `ci-core`/`ci-ui`), vagues suivantes en `Medium`/`Low`.
 
 ---
 
@@ -58,3 +61,7 @@ EN05.14 réglé après mise à jour du token `gh` avec la permission "Administra
 | [US05.15.1 — Composite action setup partagée](ENABLERS/us-composite-action.md) | ✅ |
 | [US05.15.2 — Aligner workflows ui sur conventions core](ENABLERS/us-aligner-workflows.md) | ✅ |
 | [EN05.16 — Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) | ⬜ |
+| **[EN05.17 — Mutualisation CI/CD (repo `pivot-cicd`)](ENABLERS/en-mutualisation-pivot-cicd.md)** | ⬜ |
+| [US05.17.1 — Bootstrap du repo pivot-cicd](ENABLERS/us-bootstrap-pivot-cicd.md) | ⬜ |
+| [US05.17.2 — Reusable ci-core + pilote agilite-core](ENABLERS/us-reusable-ci-core.md) | ⬜ |
+| [US05.17.3 — Reusable ci-ui + pilote agilite-ui](ENABLERS/us-reusable-ci-ui.md) | ⬜ |
