@@ -414,6 +414,7 @@ collaboratif open-source).
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
 | **F08.4 — Templates** | |
 | [US08.4.1 — Utilisateur crée un tableau depuis un template](FEATURES/templates/us-tableau-depuis-template.md) | ✅ Done |
+| [US08.4.2 — Clone de template en cartes typées + remap des connecteurs](FEATURES/templates/us-clone-template-cartes-typees.md) *(carve-out US08.1.9 L18, prérequis archi)* | ⬜ |
 | **Parité visible PouetPouet (Sprint 10, 2026-07-13)** | |
 | [US08.1.6 — Favoris de tableaux](FEATURES/crud-tableaux/us-favoris-tableau.md) | ⬜ |
 | [US08.1.7 — Corbeille et restauration d'un tableau](FEATURES/crud-tableaux/us-corbeille-tableau.md) | ⬜ |
