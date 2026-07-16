@@ -27,10 +27,10 @@ d'E30 :
 
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
-| [US08.1.6](../EPIC-collaboration/FEATURES/crud-tableaux/us-favoris-tableau.md) | Favoris de tableaux | Medium | S | ⬜ |
-| [US08.1.7](../EPIC-collaboration/FEATURES/crud-tableaux/us-corbeille-tableau.md) | Corbeille et restauration d'un tableau | Medium | M | ⬜ |
-| [US08.1.8](../EPIC-collaboration/FEATURES/crud-tableaux/us-recherche-tableau.md) | Recherche de tableaux | Medium | XS | ⬜ |
-| [US08.2.4](../EPIC-collaboration/FEATURES/partage-roles/us-parametres-tableau.md) | Paramètres de tableau (modal OWNER) + câblage Reset board | Medium | M | ⬜ |
+| [US08.1.6](../EPIC-collaboration/FEATURES/crud-tableaux/us-favoris-tableau.md) | Favoris de tableaux | Medium | S | ✅ |
+| [US08.1.7](../EPIC-collaboration/FEATURES/crud-tableaux/us-corbeille-tableau.md) | Corbeille et restauration d'un tableau | Medium | M | ✅ |
+| [US08.1.8](../EPIC-collaboration/FEATURES/crud-tableaux/us-recherche-tableau.md) | Recherche de tableaux | Medium | XS | ✅ |
+| [US08.2.4](../EPIC-collaboration/FEATURES/partage-roles/us-parametres-tableau.md) | Paramètres de tableau (modal OWNER) + câblage Reset board | Medium | M | ✅ |
 
 ## Notes de séquencement
 
