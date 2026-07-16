@@ -39,7 +39,7 @@
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
-Stage: ⬜
+Stage: ✅
 Rôle: utilisateur-final
 Source: Parité visible PouetPouet (audit recette fonctionnelle Socle, 2026-07-13) — décision mainteneur d'extension du périmètre F08.x « noyau + parité visible ». Révise la décision hard-delete d'US08.1.5 (soft-delete désormais requis)
 Dépendances: US08.1.5 (supprimer un tableau — révisée par cette US)
