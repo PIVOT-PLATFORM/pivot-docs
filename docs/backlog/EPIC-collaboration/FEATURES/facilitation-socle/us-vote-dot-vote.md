@@ -56,7 +56,7 @@
 
 ---
 Item Type: US · Parent: F08.12 · Module: whiteboard · Phase: Socle · Size: L · Priority: Medium
-Stage: ⬜
+Stage: ✅
 Rôle: utilisateur-final
 Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.9, §3.11, §5.3, §5.4, §6.7/§6.8/§6.9) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08 (activité Vote / dot-vote US30.3.1 absorbée, défauts §6.7/§6.9 corrigés)
 Dépendances: EN08.4 (modèle Card typé — FK `BoardVote.cardId → Card`), EN08.1 (isolation WS room, canal STOMP `/topic/board/{boardId}`) + Postgres (transaction Serializable pour la garde de quota) + US08.12.1 (sémantique timer partagé réutilisée pour le timer de vote)
