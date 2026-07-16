@@ -32,6 +32,24 @@ d'E30 :
 | [US08.1.8](../EPIC-collaboration/FEATURES/crud-tableaux/us-recherche-tableau.md) | Recherche de tableaux | Medium | XS | ✅ |
 | [US08.2.4](../EPIC-collaboration/FEATURES/partage-roles/us-parametres-tableau.md) | Paramètres de tableau (modal OWNER) + câblage Reset board | Medium | M | ✅ |
 
+## Statut détaillé (2026-07-14)
+
+Les 4 US ont été livrées ensemble : une seule PR backend, une seule PR frontend (fichiers
+disjoints par item, mais découpage en PR séparées jugé inutile en pratique par les Dev Agents).
+
+- **Backend** fusionné et publié — [`pivot-collaboratif-core#66`](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/66)
+  (Gate 4 final **98/100**, contre-vérifié indépendamment — voir commentaire PR), release `v0.2.1`.
+- **Frontend** fusionné et publié — [`pivot-collaboratif-ui#95`](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/95)
+  (Gate 4 final **99/100**, 12/12 specs E2E réelles contre le backend déployé), release `v0.4.0`.
+- **3 bugs réels trouvés et corrigés** en vérifiant la livraison contre le vrai backend (jamais
+  détectés par les tests unitaires/mocks existants) — détail dans
+  [`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
+  §v2 : casse du champ `role` (S1, `pivot-collaboratif-core#70`), titre du board jamais affiché sur
+  la page canvas (S2, corrigé dans `#95`), notification temps réel du reset board sur le mauvais
+  nom wire (S3, `pivot-collaboratif-core#72`).
+- **Recette humaine restante** — `Stage` frontmatter des 4 US reste `⬜` jusqu'à validation par le
+  mainteneur (`docs/backlog/README.md`, jamais modifié par un agent).
+
 ## Notes de séquencement
 
 - **US08.1.7** (corbeille) révise la décision hard-delete d'US08.1.5 (`Done`) — le soft-delete

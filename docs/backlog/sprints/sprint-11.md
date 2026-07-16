@@ -22,7 +22,28 @@ Sprints 39-43 s'appuient sur ce modèle — **rien ne peut démarrer avant EN08.
 
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
-| [EN08.4](../EPIC-collaboration/ENABLERS/en-modele-card-type.md) | Modèle `Card` typé + contrats WebSocket temps réel | Critical | L | ⬜ |
+| [EN08.4](../EPIC-collaboration/ENABLERS/en-modele-card-type.md) | Modèle `Card` typé + contrats WebSocket temps réel | Critical | L | 🟢 livré et fusionné — voir statut détaillé ci-dessous |
+
+## Statut détaillé (2026-07-14)
+
+Backend fusionné et publié — [`pivot-collaboratif-core#68`](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/68),
+release `v0.3.0`.
+
+**Bug bloquant réel trouvé en recette manuelle et corrigé dans la même PR** (S4 dans
+[`docs/audits/audit-recette-fonctionnelle.md`](pathname:///pivot-docs/audits/audit-recette-fonctionnelle)
+§v2) : le contrat WebSocket décrit dans `en-modele-card-type.md` au Gate 1 était **faux** — il
+présumait que le front devait parler le vocabulaire d'enum Java, alors que
+`pivot-collaboratif-ui` (déjà écrit, en attente de ce contrat) parle le vocabulaire PouetPouet
+(`card:*`/`board:*`, minuscules deux-points). Toute action carte était jetée silencieusement côté
+serveur ; symptôme utilisateur : impossible d'ajouter un post-it. Contrat corrigé et **vérifié par
+3 tests d'intégration rejouant le vocabulaire wire réel du front sur une vraie connexion STOMP**
+(pas des mocks) — voir le détail complet et corrigé dans
+[`en-modele-card-type.md`](../EPIC-collaboration/ENABLERS/en-modele-card-type.md) (section
+« Correctif post-recette »).
+
+**Recette humaine restante** — `Stage` frontmatter reste `⬜` jusqu'à validation par le mainteneur.
+Sprints 12-16 (objets typés, connecteurs, cadres) doivent lire le contrat WebSocket **corrigé**
+dans `en-modele-card-type.md`, pas la version originale du Gate 1.
 
 ## Notes de séquencement
 
