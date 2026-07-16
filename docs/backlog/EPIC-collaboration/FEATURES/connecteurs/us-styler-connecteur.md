@@ -30,7 +30,7 @@
 
 ## Notes d'implémentation
 
-- **Traduction de stack** : le POC Node/Prisma/Socket.io (`connection:update` sur `board.sockets.ts`, §3.6) est porté sur Spring Boot + Angular + STOMP. Realtime sur `/topic/board/{boardId}` ; garde `canWrite` = OWNER+EDITOR depuis le SecurityContext ; mutation via STOMP uniquement (pas de route REST dédiée, comme le POC).
+- **Traduction de stack** : le POC Node/Prisma/Socket.io (`connection:update` sur `board.sockets.ts`, §3.6) est porté sur Spring Boot + Angular + STOMP. Realtime sur `/topic/whiteboard/{boardId}` ; garde `canWrite` = OWNER+EDITOR depuis le SecurityContext ; mutation via STOMP uniquement (pas de route REST dédiée, comme le POC).
 - Backend `pivot-collaboratif-core` : mise à jour partielle de l'entité `card_connection` (US08.7.1). Ne construire l'ensemble des colonnes à écrire qu'à partir des champs **présents** dans le payload (`!= null` au sens « clé présente ») — un `label` explicitement `null` **est** un champ présent (efface la valeur) ; un champ absent n'est pas touché. Patch résultant vide → aucun `UPDATE`, aucun broadcast.
 - **Distinction null explicite vs absent** : au niveau du DTO d'entrée STOMP, distinguer « clé absente » de « valeur null » (ex. champ `Optional<...>` ou map de champs présents) pour reproduire le comportement POC où `label:null` efface et où l'absence préserve.
 - Formes `{droit, courbe, orthogonal}` × flèches `{aucune, début, fin, deux}` : convention applicative, stockée en `String`. Valider le jeu de valeurs à l'entrée (rejet/normalisation applicative) sans introduire d'enum SQL, conformément à §1.8 (aucun `ConnectionShape`/`ConnectionArrow` en base).
@@ -41,5 +41,5 @@
 Item Type: US · Parent: F08.7 · Module: whiteboard · Phase: Socle · Size: S · Priority: Medium
 Stage: ⬜
 Rôle: utilisateur-final
-Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.8/§3.6) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08
+Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.8/§3.6) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08. **AC réalignées le 2026-07-14 (Gate 1 PO Agent)** contre le contrat WebSocket réel — voir US08.6.1 (topic `/topic/whiteboard/{boardId}`).
 Dépendances: EN08.4 (modèle Card typé + contrats WebSocket) + US08.7.1 (création du connecteur, entité `card_connection`)

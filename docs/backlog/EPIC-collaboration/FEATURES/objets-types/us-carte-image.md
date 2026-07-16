@@ -8,11 +8,11 @@
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un tableau où je suis OWNER/EDITOR, when je colle une image depuis le presse-papiers (`item.kind==='file'`, `type` commençant par `image/`), then une carte de type `IMAGE` est créée à la position courante et `card:created` (objet complet) est diffusé à toute la room `/topic/board/{boardId}` (émetteur inclus) | ⬜ |
+| Given un tableau où je suis OWNER/EDITOR, when je colle une image depuis le presse-papiers (`item.kind==='file'`, `type` commençant par `image/`), then une carte de type `IMAGE` est créée à la position courante et `card:created` (objet complet) est diffusé à toute la room `/topic/whiteboard/{boardId}` (émetteur inclus) | ⬜ |
 | Given une image collée dont le fichier n'a pas de type MIME (ex. copie depuis l'explorateur OS), when son nom correspond à la regex `\.(png\|jpe?g\|gif\|webp\|bmp)$` (insensible à la casse), then elle est traitée comme image en repli (fallback extension) et une carte `IMAGE` est créée | ⬜ |
 | Given une image insérée par upload explicite (bouton d'insertion), when l'image est sélectionnée, then elle est insérée comme carte `IMAGE` avec la même logique de dimensionnement que le collage | ⬜ |
 | Given une image de dimensions naturelles `naturalW × naturalH`, when la carte IMAGE est dimensionnée, then le facteur appliqué est **exactement** `min(700/naturalW, 600/naturalH, 1)` (jamais d'agrandissement au-delà de la taille native), donnant `width = naturalW × facteur`, `height = naturalH × facteur` — le ratio est conservé et la carte tient dans **700 × 600 px** max | ⬜ |
-| Given une image existante non verrouillée, when j'envoie `card:move {id, posX, posY}` ou `card:resize {id, width, height}`, then la mutation applique la garde `locked=false` dans le `WHERE` et diffuse `card:moved`/`card:resized` à la room **sauf l'émetteur** si au moins une ligne affectée, sinon refus silencieux | ⬜ |
+| Given une image existante non verrouillée, when j'envoie `card:move {id, posX, posY}` ou `card:resize {id, width, height}`, then la mutation applique la garde `locked=false` dans le `WHERE` et diffuse `card:moved`/`card:resized` à **toute la room** (émetteur inclus — pas d'exclusion, cf. US08.6.1) si au moins une ligne affectée, sinon refus silencieux | ⬜ |
 | Given une carte IMAGE, when j'envoie `card:delete {id}`, then le serveur lit `locked` explicitement (refus silencieux si verrouillée), sinon supprime (tolérant à l'absence) et diffuse `card:deleted` (id brut) à toute la room | ⬜ |
 | Given le focus est dans un champ éditable (hors cellule TABLE tabulaire), when je colle, then **rien ne se passe** (`if (inEditable) return`) — l'insertion d'image par collage ne se déclenche pas dans un champ texte, conformément à l'ordre de priorité presse-papiers §4.8 | ⬜ |
 | Error : given un fichier collé ni image (MIME hors `image/*` et extension non reconnue) ni tableur, when il est collé hors champ éditable, then il retombe sur le fallback texte (carte `TEXT` avec le texte trimé), aucune carte `IMAGE` créée | ⬜ |
@@ -40,12 +40,12 @@
 - **Presse-papiers (§4.8, ordre exact)** : (1) cellule TABLE focalisée + contenu tabulaire → remplit la grille ; (2) focus champ éditable → no-op ; (3) **fichier image** (MIME `image/*` ou extension `\.(png|jpe?g|gif|webp|bmp)$` en repli) → carte IMAGE dimensionnée ; (4) tableau HTML/TSV → carte TABLE (US08.6.6) ; (5) fallback texte → carte TEXT. Cette US couvre le cas (3).
 - **Réutilisation des contrats** : `card:create/move/resize/delete` d'EN08.4/US08.6.1, appliqués au type `IMAGE`. La recoloration (`card:recolor`) n'a pas de sens métier sur une image mais reste tolérée par le contrat commun (pas de rejet dédié — parité).
 - **Sécurité (renforcement)** : le POC de référence stocke le `coverImage` en data-URL base64 sans validation serveur forte (§2.7/§6.12). Pour les cartes IMAGE, PIVOT **valide le MIME réel et borne la taille côté serveur** et isole le stockage par tenant — flaggé dans l'AC Security.
-- **Décision §6 (parité)** : mécaniques `card:*` reproduites fidèlement (refus silencieux, asymétrie de broadcast) ; la validation image serveur est un renforcement explicite.
+- **Décision §6 (parité)** : mécaniques `card:*` reproduites fidèlement (refus silencieux) ; la validation image serveur est un renforcement explicite. **Pas d'asymétrie de portée de broadcast** (corrigé, voir US08.6.1).
 - i18n : clés `whiteboard.card.image.*` (fr.json / en.json).
 
 ---
 Item Type: US · Parent: F08.6 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
 Stage: ⬜
 Rôle: utilisateur-final
-Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.5, §3.4, §4.8, §7) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08 ; absorbe US30.1.5 (insertion d'images et fichiers)
+Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §1.5, §3.4, §4.8, §7) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08 ; absorbe US30.1.5 (insertion d'images et fichiers). **AC réalignées le 2026-07-14 (Gate 1 PO Agent)** contre le contrat WebSocket réel — voir US08.6.1 (topic `/topic/whiteboard/{boardId}`, pas d'exclusion émetteur).
 Dépendances: EN08.4 (modèle Card typé, enum `CardType.IMAGE` + contrats WebSocket `card:*`) + EN08.1 (isolation WS room) + US08.6.1 (contrats `card:*` mutualisés)

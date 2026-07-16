@@ -40,12 +40,12 @@
   - `GET /api/collaboratif/whiteboard/boards/` (US08.1.2) enrichi de `shareCount` par board, en plus de `role`/`isFavorite` (US08.1.2/US08.1.6) — parité §2.2, ligne 311
   - `POST /api/collaboratif/whiteboard/boards/` : schéma de création complété — `name` requis (US08.1.1) + `maxParticipants:int().positive().nullable()`, `enabledActivities:array(string()).nullable()`, `coverImage:nullable()` ; clone template (`templateId`) = remap séquentiel des `cardId` via table de correspondance puis remap/filtre des connexions vers les cartes survivantes (parité §2.2, ligne 313)
 - Ces routes **complètent** les US existantes sans les contredire : US08.1.1 (création, titre) et US08.4.1 (templates/clone) sont la base ; cette US en fixe le contrat complet côté parité
-- Stack : Spring Boot + STOMP ; realtime room `/topic/board/{boardId}` ; tenant/user depuis SecurityContext ; 404 anti-énumération ; rôles OWNER/EDITOR/VIEWER
+- Stack : Spring Boot + STOMP ; realtime room `/topic/whiteboard/{boardId}` ; tenant/user depuis SecurityContext ; 404 anti-énumération ; rôles OWNER/EDITOR/VIEWER
 - i18n : clés `whiteboard.board.presence.*` (libellé accessible du compteur, pluriel fr/en)
 
 ---
 Item Type: US · Parent: F08.1 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
 Stage: ⬜
 Rôle: utilisateur-final
-Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §2.2) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08
+Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §2.2) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08. **AC réalignées le 2026-07-14 (Gate 1 PO Agent)** contre le contrat WebSocket réel — voir US08.6.1 (topic `/topic/whiteboard/{boardId}`).
 Dépendances: US08.1.1 (création tableau, base complétée), US08.1.2 (liste + enrichissement role/isFavorite), US08.1.6 (favoris), US08.4.1 (templates/clone, base complétée), EN08.1 (isolation room WS, registre de présence)
