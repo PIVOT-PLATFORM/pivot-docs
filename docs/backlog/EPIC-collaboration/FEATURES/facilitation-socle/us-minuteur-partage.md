@@ -47,7 +47,7 @@
 
 ---
 Item Type: US · Parent: F08.12 · Module: whiteboard · Phase: Socle · Size: M · Priority: Medium
-Stage: ⬜
+Stage: ✅
 Rôle: utilisateur-final
 Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §3.10, §5.4, §7) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08 (activité Minuteur US30.3.2 absorbée)
 Dépendances: EN08.4 (modèle Card typé), EN08.1 (isolation WS room, canal STOMP `/topic/board/{boardId}`, présence Redis) + Redis (persistance timer + fallback mémoire)

@@ -17,8 +17,8 @@ US30.3.2 (minuteur partagé).
 
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
-| [US08.12.1](../EPIC-collaboration/FEATURES/facilitation-socle/us-minuteur-partage.md) | Minuteur partagé (facilitation) | Medium | M | ⬜ |
-| [US08.12.2](../EPIC-collaboration/FEATURES/facilitation-socle/us-vote-dot-vote.md) | Vote / dot-vote (facilitation) | Medium | L | ⬜ |
+| [US08.12.1](../EPIC-collaboration/FEATURES/facilitation-socle/us-minuteur-partage.md) | Minuteur partagé (facilitation) | Medium | M | ✅ |
+| [US08.12.2](../EPIC-collaboration/FEATURES/facilitation-socle/us-vote-dot-vote.md) | Vote / dot-vote (facilitation) | Medium | L | ✅ |
 
 ## Notes de séquencement
 
