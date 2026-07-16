@@ -21,9 +21,9 @@ cartes. Il absorbe les Features benchmark US30.1.7 (cadres) et US30.1.6 (organis
 | [US08.8.2](../EPIC-collaboration/FEATURES/cadres/us-manipuler-cadre.md) | Déplacer / redimensionner / renommer / calque d'un cadre | High | M | 🔎 code livré (core #85 / ui #120) — recette |
 | [US08.9.1](../EPIC-collaboration/FEATURES/organisation-calque/us-grouper-cartes.md) | Grouper / dégrouper / couleur de groupe | High | M | 🔎 backend dans `main` — UI en cours (branche `perf`) |
 | [US08.9.2](../EPIC-collaboration/FEATURES/organisation-calque/us-verrouiller-cartes.md) | Verrouiller / déverrouiller des cartes (matrice complète) | High | M | 🔎 backend dans `main` — UI en cours (branche `perf`) |
-| [US08.9.3](../EPIC-collaboration/FEATURES/organisation-calque/us-calque-z-order.md) | Calque / z-order (premier plan / arrière-plan) | Medium | S | 🔄 backend dans `main` — finition UI + tests |
-| [US08.10.1](../EPIC-collaboration/FEATURES/champs-personnalises/us-definir-champs.md) | Définir des champs personnalisés de board (`BoardField` CRUD) | Medium | M | ⬜ backend non commencé |
-| [US08.10.2](../EPIC-collaboration/FEATURES/champs-personnalises/us-valeurs-champs.md) | Renseigner / effacer une valeur de champ sur une carte (`CardFieldValue`) | Medium | S | ⬜ backend non commencé |
+| [US08.9.3](../EPIC-collaboration/FEATURES/organisation-calque/us-calque-z-order.md) | Calque / z-order (premier plan / arrière-plan) | Medium | S | 🔎 code livré (ui #133) — recette |
+| [US08.10.1](../EPIC-collaboration/FEATURES/champs-personnalises/us-definir-champs.md) | Définir des champs personnalisés de board (`BoardField` CRUD) | Medium | M | 🔎 code livré (core #93 / ui #129) — recette |
+| [US08.10.2](../EPIC-collaboration/FEATURES/champs-personnalises/us-valeurs-champs.md) | Renseigner / effacer une valeur de champ sur une carte (`CardFieldValue`) | Medium | S | 🔎 code livré (core #95 / ui #131) — recette |
 
 ## État réel (constaté dans le code le 2026-07-16)
 
@@ -36,12 +36,13 @@ cartes. Il absorbe les Features benchmark US30.1.7 (cadres) et US30.1.6 (organis
 |---------|-----------|--------|
 | **Cadres** (US08.8.1/.2) | ✅ livré, **recette en attente** | Backend `pivot-collaboratif-core` #85 (`feat(EN08): Frames — STOMP + persistence`, mergé) ; frontend `pivot-collaboratif-ui` #120 (outil cadre toolbar, remplace #119, mergé). Branches hors-convention `feat/en08-frames-backend` / `feat/frames-frontend-toolbar`. |
 | **Organisation — groupe/verrou** (US08.9.1/.2) | 🔎 backend dans `main`, UI en cours | Colonnes `group_id`/`group_color`/`locked` sur `card`, handlers STOMP `cards:group`/`ungroup`/`group-color` + `card:lock`, IT `WhiteboardGroupLockEditIT` déjà dans `main`. UI (lock via `selection-toolbar`, `groups-panel`) portée par les branches `perf/*` actives — **hors périmètre de la reprise ACDD** ci-dessous. |
-| **Organisation — z-order** (US08.9.3) | 🔄 backend dans `main`, finition | Colonne `layer` (card + frame) + handlers `card:layer`/`frame:layer` dans `main`. Reste : handlers inbound `card:layered`/`frame:layered` côté store + boutons premier/arrière-plan + tests. |
-| **Champs** (US08.10.1/.2) | ⬜ backend non commencé | Store frontend prêt (mutators `createField`/`setFieldValue` + inbound handlers + chips rendues), mais **aucune** entité/handler/migration côté backend (placeholder `fields: []` réservé dans `board:state`). Seul vrai greenfield du sprint. |
+| **Organisation — z-order** (US08.9.3) | 🔎 code livré (ui #133) — recette | Backend `card:layer`/`frame:layer` + inbound `card:layered`/`frame:layered` déjà dans `main` ; UI premier/arrière-plan (cartes + cadres) livrée. |
+| **Champs** (US08.10.1/.2) | 🔎 code livré — recette | US08.10.1 : `BoardField`/`CardFieldValue`, enum `FieldType`, handlers `boardfield:*`, migration **V5**, fix §6.6, UI de définition (core #93 / ui #129). US08.10.2 : `cardfield:set/clear` (tolérance FK), `CardDto.fieldValues`, éditeur de valeur par carte (core #95 / ui #131). |
 
-**Reprise ACDD en cours** (branches conventionnelles `feat/{us-id}-{slug}`) : US08.10.1 → US08.10.2
-(champs, greenfield) puis US08.9.3 (z-order). US08.9.1/US08.9.2 (groupe/verrou) restent sur les
-branches `perf/*` et seront réconciliées à leur merge. Migration BDD champs = nouveau `V5`.
+**Reprise ACDD réalisée** (branches conventionnelles `feat/{us-id}-{slug}`, cycle ACDD complet,
+CI verte) : US08.10.1 → US08.10.2 (champs) + US08.9.3 (z-order) **mergés dans `main` le 2026-07-16**.
+US08.9.1/US08.9.2 (groupe/verrou) restent sur les branches `perf/*` et seront réconciliées à leur
+merge. Migration BDD champs = nouveau `V5`. `Stage:` des US reste `⬜` jusqu'à recette mainteneur.
 
 ## Notes de séquencement
 
