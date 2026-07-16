@@ -23,7 +23,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 10](./sprint-10.md) | Parité whiteboard visible (remédiation Socle) — favoris, corbeille, recherche, paramètres tableau *(nouveau 2026-07-13)* | ✅ Terminé (2026-07-16) — 4/4 US mergées (collaboratif-core #66) + recette mainteneur validée, 3 correctifs recette mergés (collaboratif-ui #124, pivot-ui #204) |
 | [Sprint 11](./sprint-11.md) | Parité whiteboard — Fondation modèle `Card` (EN08.4) *(nouveau 2026-07-13)* | ⬜ planifié — bloquant S12-43 |
 | [Sprint 12](./sprint-12.md) | Parité whiteboard — Objets typés & connecteurs (F08.6/F08.7) | ⬜ planifié |
-| [Sprint 13](./sprint-13.md) | Parité whiteboard — Cadres, organisation, champs (F08.8/F08.9/F08.10) | ⬜ planifié |
+| [Sprint 13](./sprint-13.md) | Parité whiteboard — Cadres, organisation, champs (F08.8/F08.9/F08.10) | 🟡 en cours (2026-07-16) — cadres (US08.8.1/.2) + organisation backend (US08.9.1/.2) livrés dans `collaboratif` main **hors convention** (recette en attente) ; z-order (US08.9.3) + champs (US08.10.1/.2) restants — voir sprint-13.md |
 | [Sprint 14](./sprint-14.md) | Parité whiteboard — Canvas UX & présence (F08.11/F08.5) | ⬜ planifié |
 | [Sprint 15](./sprint-15.md) | Parité whiteboard — Facilitation : minuteur, vote (F08.12) | ✅ Terminé (2026-07-16) — US08.12.1/2 câblées UI + recette live (collaboratif-ui #126, enabler /me collaboratif-core #89) |
 | [Sprint 16](./sprint-16.md) | Parité whiteboard — Cycle de vie & partage (F08.13/US08.2.5) | ⬜ planifié |
