@@ -23,7 +23,7 @@ et US30.1.3 (connecteurs).
 | [US08.6.4](../EPIC-collaboration/FEATURES/objets-types/us-carte-image.md) | Image (IMAGE) | Medium | M | ⬜ |
 | [US08.6.5](../EPIC-collaboration/FEATURES/objets-types/us-carte-lien-apercu.md) | Carte lien (LINK) + aperçu OpenGraph | High | L | ⬜ |
 | [US08.6.6](../EPIC-collaboration/FEATURES/objets-types/us-carte-tableau.md) | Tableau (TABLE) + collage tableur | Medium | L | ⬜ |
-| [US08.7.1](../EPIC-collaboration/FEATURES/connecteurs/us-creer-connecteur.md) | Créer / supprimer un connecteur | High | M | ⬜ |
+| [US08.7.1](../EPIC-collaboration/FEATURES/connecteurs/us-creer-connecteur.md) | Créer / supprimer un connecteur | High | M | ✅ |
 | [US08.7.2](../EPIC-collaboration/FEATURES/connecteurs/us-styler-connecteur.md) | Styler un connecteur | Medium | S | ⬜ |
 | [US08.1.9](../EPIC-collaboration/FEATURES/crud-tableaux/us-chargement-tableau.md) | Chargement d'un tableau & présence agrégée (§2.2) | Medium | M | ⬜ |
 
