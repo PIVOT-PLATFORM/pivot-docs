@@ -34,6 +34,14 @@ benchmark EN30.13 (import de tableaux Klaxoon).
   les autres items (domaines disjoints).
 - Gate 1 (PO Agent, DoR) à effectuer au démarrage de chaque item.
 
+## Avancement (état interne — non persisté dans `Stage`)
+
+- **US08.2.5** (inviter par email + gouvernance des rôles) — **en revue** :
+  - Backend `pivot-collaboratif-core` PR [#108](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/108) — `ready`, label `security` (fix IDOR §6.1, revue humaine obligatoire, Breaking Point 2). CI verte, coverage 90,5 %.
+  - Frontend `pivot-collaboratif-ui` PR [#169](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui/pull/169) — `ready`, Gate 4 90/100. Suite librairie 1026 tests verts.
+  - Spec figée : [`docs/specs/EPIC-collaboration/us08-2-5-inviter-email.md`](../../specs/EPIC-collaboration/us08-2-5-inviter-email).
+  - `Stage` frontmatter reste `⬜` (passe `✅` à la recette mainteneur uniquement).
+
 ## Dépendances
 
 - Dépend de : **Sprint 11 (EN08.4)** — modèle `Card` typé — et **Sprint 12** (objets typés, car
