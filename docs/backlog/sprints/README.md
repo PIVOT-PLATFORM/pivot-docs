@@ -98,7 +98,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 > (Forms + onboarding). Le texte ci-dessous est conservé pour l'historique. Voir
 > [§Trajectoire PIVOT resserrée](#trajectoire-pivot-resserrée-après-s16).
 
-<!-- séparateur de blockquotes (MD028) -->
+<!-- séparateur de blocs de citation (MD028) -->
 
 > ✅ **Verrou Socle levé (2026-07-10)** — déclaration « Socle terminé » actée (Sprint 6), gouvernance
 > ADR terminée (Sprint 7, dont **ADR-025** bus d'événements/schéma inter-briques, Accepté — le
