@@ -2,6 +2,22 @@
 
 Vue macro de l'avancement. Mis à jour manuellement après chaque sprint / session.
 
+> ⚠️ **Domaine Pilotage retiré de PIVOT — roadmap Pilotage à revoir ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md)).**
+>
+> La bascule Spring Modulith (ADR-030, mergée 2026-07-17) **extrait le domaine Pilotage de PIVOT**
+> vers un produit distinct (contrat de reprise : `pivot-core/PILOTAGE-HANDOFF.md`). `agilite` et
+> `collaboratif` deviennent des **modules internes** de `pivot-core` ; il n'y a plus de repos
+> `pivot-{agilite,collaboratif,pilotage}-{core,ui}` ni `pivot-design-system` (archivés).
+>
+> **Conséquence sur ce tableau :** toute la trajectoire Pilotage encore planifiée ci-dessous —
+> **E18** (ombrelle Pilotage), **E21** Risques, **E22** Roadmap, **E23** Portefeuille, **E24** ADR
+> projet, **E26** Budget, **E27** OKR, **E38** SMI/Innovation, **E13** Cahiers de tests, et le
+> programme **Sprints 17→40** de « complétion 100 % Pilotage & Risques » — planifie un domaine
+> **sortant**. Cette roadmap est **conservée en l'état** (décision produit du mainteneur) mais
+> doit être **rejugée** à la lumière d'ADR-030 avant tout redémarrage : replanifier, reporter ou
+> transférer ces items vers le produit Pilotage extrait relève d'une **décision explicite du
+> mainteneur**. Ne pas démarrer un sprint Pilotage sans cet arbitrage.
+
 ## Légende
 
 | Colonne | Signification |

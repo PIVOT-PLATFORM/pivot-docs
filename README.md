@@ -50,15 +50,17 @@ Les PNG générés ne sont **jamais committés** (divergence avec le `.puml` sou
 
 ## Repos
 
+Depuis la bascule Spring Modulith ([ADR-030](docs/adr/ADR-030-bascule-spring-modulith.md), mergée
+2026-07-17), les domaines métier ne sont plus des repos séparés : `agilite` et `collaboratif` sont
+des **modules internes** de `pivot-core`, le frontend est rapatrié dans le workspace unique
+`pivot-ui`, et **Pilotage est retiré de PIVOT** (extraction).
+
 | Repo | Rôle |
 |------|------|
-| [pivot-core](https://github.com/PIVOT-PLATFORM/pivot-core) | Backend Java 25 · Spring Boot 4.x · PostgreSQL 18 · Flyway · Redis |
-| [pivot-design-system](https://github.com/PIVOT-PLATFORM/pivot-design-system) | Angular CDK + SCSS BEM, composants UI, Storybook |
-| [pivot-ui](https://github.com/PIVOT-PLATFORM/pivot-ui) | Frontend Angular 22 · TypeScript strict · Vitest · Playwright |
+| [pivot-core](https://github.com/PIVOT-PLATFORM/pivot-core) | Backend modulith Java 25 · Spring Boot 4.x · PostgreSQL 18 · Flyway · Redis — inclut les modules internes `agilite` et `collaboratif` |
+| [pivot-ui](https://github.com/PIVOT-PLATFORM/pivot-ui) | Frontend Angular 22 · TypeScript strict · Vitest · Playwright — workspace unique intégrant les libs `agilite-ui`, `collaboratif-ui` et `design-system` (Angular CDK + SCSS BEM) |
 | [pivot-docs](https://github.com/PIVOT-PLATFORM/pivot-docs) | Ce repo — documentation plateforme |
-| pivot-pilotage-core / -ui | Domaine Pilotage — roadmap, portefeuille projets |
-| pivot-agilite-core / -ui | Domaine Agilité — capacity planning, standup, scrum poker |
-| pivot-collaboratif-core / -ui | Domaine Collaboratif — whiteboard, quiz, session live, formulaire |
+| ~~pivot-{agilite,collaboratif,pilotage}-{core,ui}~~, ~~pivot-design-system~~ | **Archivés (lecture seule)** — internalisés dans pivot-core / pivot-ui (ADR-030). Pilotage extrait vers un produit distinct |
 
 Détail complet des dépôts et de leurs relations → [`docs/setup/pivot-platform-claude-template.md`](docs/setup/pivot-platform-claude-template.md).
 

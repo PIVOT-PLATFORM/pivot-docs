@@ -53,33 +53,36 @@ rectangle "INTERNET" as zone_internet #E8F5E9 {
 ' DMZ — nginx : TLS termination + API Gateway
 ' ═══════════════════════════════════════════════
 rectangle "DMZ — nginx  |  TLS 1.3  +  API Gateway  (routing par prefixe URL)" as zone_dmz #C8E6C9 {
-  component "nginx  :443  /  :80\n══════════════════════════════════════════════════════\nTLS 1.3  ·  HTTP/2  ·  HSTS  ·  CSP  ·  X-Frame-Options DENY\nX-Content-Type-Options nosniff  ·  Referrer-Policy  ·  Permissions-Policy\n──────────────────────────────────────────────────────\nStatic  →  Angular SPA (pivot-ui shell + lazy bundles modules)\nRedirect :80 → :443\n──────────────────────────────────────────────────────\nRouting par prefixe URL (upstream distinct par module) :\n  /api/auth/**         →  pivot-core :8080\n  /api/admin/**        →  pivot-core :8080\n  /api/superadmin/**   →  pivot-core :8080\n  /api/pilotage/**     →  pivot-pilotage-core :8081\n  /api/agilite/**      →  pivot-agilite-core  :8082\n  /api/collaboratif/** →  pivot-collaboratif-core :8083\n  /ws/pilotage/**      →  pivot-pilotage-core :8081  (ip_hash)\n  /ws/agilite/**       →  pivot-agilite-core  :8082  (ip_hash)\n  /ws/collaboratif/**  →  pivot-collaboratif-core :8083 (ip_hash)\n──────────────────────────────────────────────────────\nFault isolation : module KO → 503 sur son prefixe uniquement" as nginx #DCEDC8
+  component "nginx  :443  /  :80\n══════════════════════════════════════════════════════\nTLS 1.3  ·  HTTP/2  ·  HSTS  ·  CSP  ·  X-Frame-Options DENY\nX-Content-Type-Options nosniff  ·  Referrer-Policy  ·  Permissions-Policy\n──────────────────────────────────────────────────────\nStatic  →  Angular SPA (pivot-ui shell + lazy bundles modules)\nRedirect :80 → :443\n──────────────────────────────────────────────────────\nRouting par prefixe URL — cible modulith (tout vers pivot-core) :\n  /api/auth/**         →  pivot-core :8080\n  /api/admin/**        →  pivot-core :8080\n  /api/superadmin/**   →  pivot-core :8080\n  /api/agilite/**      →  pivot-core :8080\n  /api/collaboratif/** →  pivot-core :8080\n  /ws/agilite/**       →  pivot-core :8080\n  /ws/collaboratif/**  →  pivot-core :8080\n──────────────────────────────────────────────────────\n[transition] bascule runtime non terminee : le nginx dev & prod\nroute encore /api/{agilite,collaboratif} vers les services\nstandalone archives (cf. ADR-030) — a basculer vers :8080" as nginx #DCEDC8
 }
 
 ' ═══════════════════════════════════════════════
-' APPLICATION TIER — 4 JVMs indépendantes
+' APPLICATION TIER — JVM unique (Spring Modulith)
 ' ═══════════════════════════════════════════════
-rectangle "APPLICATION TIER — reseau Docker pivot-net-app  (4 JVMs independantes)" as zone_app #FFF8E1 {
+rectangle "APPLICATION TIER — reseau Docker pivot-net-app  (JVM unique · Spring Modulith)" as zone_app #FFF8E1 {
 
-  component "pivot-core  :8080\n══════════════════════════════\nSpring Boot 4.x  ·  Java 25  ·  schema public\n──────────────────────────────\n/api/auth/**  ·  /api/admin/**  ·  /api/superadmin/**\n──────────────────────────────\nAuth : opaque tokens SHA-256  ·  OIDC resource server JWKS\nTenant  ·  Team  ·  TeamMember  ·  OidcConfig\nModule registry  (PivotModule interface)\nActivation modules par tenant  ·  ApplicationEventPublisher\n──────────────────────────────\nPublie  fr.pivot:pivot-core-starter  (Maven release)" as core #FFE082
+  rectangle "pivot-core  :8080  —  modulith  (artefact & process uniques · pivot-core-app)" as core_boundary #FFECB3 {
 
-  component "pivot-pilotage-core  :8081\n──────────────────────────────\nroadmap  ·  survey  ·  quiz\n/api/pilotage/**  ·  /ws/pilotage/**\nschema pilotage  ·  FK → public.*\nConsomme  fr.pivot:pivot-core-starter" as pilotage_core #FFF3E0
+    component "shell  (fr.pivot.core.*)\n══════════════════════════════\nSpring Boot 4.x  ·  Java 25  ·  schema public\n──────────────────────────────\n/api/auth/**  ·  /api/admin/**  ·  /api/superadmin/**\n──────────────────────────────\nAuth : opaque tokens SHA-256  ·  OIDC resource server JWKS\nTenant  ·  Team  ·  TeamMember  ·  OidcConfig\nModule registry  (PivotModule interface)\nActivation modules par tenant  ·  ApplicationEventPublisher\n──────────────────────────────\nPublie  fr.pivot:pivot-core-starter  (Maven release)" as core #FFE082
 
-  component "pivot-agilite-core  :8082\n──────────────────────────────\nscrum-poker  ·  standup  ·  capacity\n/api/agilite/**  ·  /ws/agilite/**\nschema agilite  ·  FK → public.*\nConsomme  fr.pivot:pivot-core-starter" as agilite_core #FFF3E0
+    component "module  agilite  (fr.pivot.agilite.*)\n──────────────────────────────\nscrum-poker  ·  standup  ·  capacity\n/api/agilite/**  ·  /ws/agilite/**\nschema agilite  ·  FK → public.*\nDepend de fr.pivot.core.* (starter)" as agilite_mod #FFF3E0
 
-  component "pivot-collaboratif-core  :8083\n──────────────────────────────\nwhiteboard  ·  session\n/api/collaboratif/**  ·  /ws/collaboratif/**\nschema collaboratif  ·  FK → public.*\nConsomme  fr.pivot:pivot-core-starter" as collaboratif_core #FFF3E0
+    component "module  collaboratif  (fr.pivot.collaboratif.*)\n──────────────────────────────\nwhiteboard  ·  session  ·  quiz\n/api/collaboratif/**  ·  /ws/collaboratif/**\nschema collaboratif  ·  FK → public.*\nDepend de fr.pivot.core.* (starter)" as collaboratif_mod #FFF3E0
+
+  }
 
 }
 
 note right of zone_app
-  <b>Fault isolation :</b>
-  Chaque module = JVM separee = deploiement independant
-  Module KO → 503 sur son prefixe nginx uniquement
-  pivot-core (auth/tenant) toujours disponible
-  Migrations Flyway isolees par module (verrou DB propre)
-  <b>Dependance build-time :</b>
-  pivot-xxx-core consomme fr.pivot:pivot-core-starter
-  (TenantContext · PivotModule · opaque token filter)
+  <b>Frontieres de modules (Spring Modulith) :</b>
+  Modules internes verifies par ApplicationModules.verify()
+  Aucun import croise (agilite ⇎ collaboratif)
+  Chacun ne depend que du starter fr.pivot.core.*
+  Isolation des donnees conservee par schema PostgreSQL
+  Migrations Flyway isolees par module (meme JVM)
+  <b>Pilotage retire de PIVOT</b> (extraction — ADR-030 / EN53.3)
+  <b>Dette transitionnelle :</b> bascule runtime non terminee
+  (compose.yml + nginx routent encore vers services archives)
 end note
 
 ' ═══════════════════════════════════════════════
@@ -87,13 +90,13 @@ end note
 ' ═══════════════════════════════════════════════
 rectangle "DATA TIER — reseau Docker pivot-net-data" as zone_data #EDE7F6 {
 
-  database "PostgreSQL 18  :5432\n══════════════════════════════\nschema public    (pivot-core)\n  TENANTS · USERS · ACCESS_TOKENS\n  OIDC_CONFIGS · MODULES_STATE\n  TEAMS · TEAM_MEMBERS · AUDIT_EVENTS\n  PASSWORD_RESET · EMAIL_VERIF · DEVICE_TOKENS\n──────────────────────────────\nschema pilotage  (pivot-pilotage-core)\n  FK → public.tenants · public.teams\n──────────────────────────────\nschema agilite   (pivot-agilite-core)\n  FK → public.tenants · public.teams\n──────────────────────────────\nschema collaboratif  (pivot-collaboratif-core)\n  FK → public.tenants · public.teams\n══════════════════════════════\nFlyway isole par module · V1__ dans schema propre\nIndex : token_hash · user_id · tenant_id" as postgres #BBDEFB
+  database "PostgreSQL 18  :5432\n══════════════════════════════\nschema public    (pivot-core shell)\n  TENANTS · USERS · ACCESS_TOKENS\n  OIDC_CONFIGS · MODULES_STATE\n  TEAMS · TEAM_MEMBERS · AUDIT_EVENTS\n  PASSWORD_RESET · EMAIL_VERIF · DEVICE_TOKENS\n──────────────────────────────\nschema agilite   (module interne agilite)\n  FK → public.tenants · public.teams\n──────────────────────────────\nschema collaboratif  (module interne collaboratif)\n  FK → public.tenants · public.teams\n══════════════════════════════\nFlyway isole par module · V1__ dans schema propre\nIndex : token_hash · user_id · tenant_id" as postgres #BBDEFB
 
-  database "Redis 7  :6379\n──────────────────────\nModule status cache  TTL 60 s\nPartage tous les backends\nRate limiting [gap Socle]\n──────────────────────────────\n[dev]  no-auth\n[prod] requirepass + TLS 1.3" as redis #B3E5FC
+  database "Redis 7  :6379\n──────────────────────\nModule status cache  TTL 60 s\nRate limiting [gap Socle]\n──────────────────────────────\n[dev]  no-auth\n[prod] requirepass + TLS 1.3" as redis #B3E5FC
 
-  component "ActiveMQ  :61613  [dev STOMP]\n           :61617  [prod STOMP+TLS]\n──────────────────────────────\nBroker STOMP — topics isoles par domaine :\n  /topic/pilotage/**\n  /topic/agilite/**\n  /topic/collaboratif/**\nenableStompBrokerRelay() par module-core\n[prod] console :8161 non expose" as activemq #F8BBD9
+  component "ActiveMQ  :61613  [dev STOMP]\n           :61617  [prod STOMP+TLS]\n──────────────────────────────\nBroker STOMP — topics isoles par domaine :\n  /topic/agilite/**\n  /topic/collaboratif/**\nenableStompBrokerRelay() par module\n[prod] console :8161 non expose" as activemq #F8BBD9
 
-  component "SMTP\n─────────────────\nMailpit :1025  [dev]\nSMTPS   :465   [prod]\n─────────────────\nEmail verif · Reset pwd\nDevice OTP\n(pivot-core uniquement)" as smtp #FFCCBC
+  component "SMTP\n─────────────────\nMailpit :1025  [dev]\nSMTPS   :465   [prod]\n─────────────────\nEmail verif · Reset pwd\nDevice OTP\n(shell pivot-core uniquement)" as smtp #FFCCBC
 
 }
 
@@ -101,9 +104,8 @@ rectangle "DATA TIER — reseau Docker pivot-net-data" as zone_data #EDE7F6 {
 ' LIBRAIRIES PARTAGÉES (build-time, non instanciées)
 ' ═══════════════════════════════════════════════
 rectangle "Librairies partagees — GitHub Packages  (build-time · non instanciees en runtime)" as zone_libs #FFF8F0 {
-  component "fr.pivot:pivot-core-starter\n──────────────────────────────\nMaven  ·  publie par pivot-core\nfr.pivot.core.{auth,tenant,team,modules,db}\nTenantContext · PivotModule · opaque token filter" as maven_lib #FFE0B2
-  component "@pivot/design-system\n──────────────────────────────\nnpm  ·  publie par pivot-design-system\nAngular CDK (headless a11y)\n+ SCSS BEM custom + tokens CSS\nStorybook  ·  axe-core a11y CI" as npm_ds #FFF9C4
-  component "@pivot/ui-core\n──────────────────────────────\nnpm  ·  publie par pivot-ui\nAuthService  ·  AuthGuard  ·  ModuleGuard\nHeaderComponent  ·  FooterComponent\nre-exporte @pivot/design-system" as npm_ui_core #FFF9C4
+  component "fr.pivot:pivot-core-starter\n──────────────────────────────\nMaven  ·  publie par pivot-core\nfr.pivot.core.{auth,tenant,team,modules,db}\nTenantContext · PivotModule · opaque token filter\nConsomme en interne par les modules agilite/collaboratif" as maven_lib #FFE0B2
+  component "@pivot/ui-core\n──────────────────────────────\nnpm  ·  publie par pivot-ui\nAuthService  ·  AuthGuard  ·  ModuleGuard\nHeaderComponent  ·  FooterComponent\n──────────────────────────────\ndesign-system (Angular CDK + SCSS BEM) et libs\nagilite-ui / collaboratif-ui rapatriees dans\nle workspace unique pivot-ui/projects/* (ADR-030)" as npm_ui_core #FFF9C4
 }
 
 ' ═══════════════════════════════════════════════
@@ -113,32 +115,25 @@ browser -[#0D47A1]--> nginx : <b>HTTPS :443  TLS 1.3  HTTP/2</b>\nstatic assets 
 browser -[#006064]..> nginx : <b>WSS :443  TLS 1.3</b>\nWebSocket Upgrade  /ws/**\nSTOMP CONNECT (Authorization: Bearer)
 
 ' ═══════════════════════════════════════════════
-' FLUX : DMZ → Application
+' FLUX : DMZ → Application (modulith, port unique)
 ' ═══════════════════════════════════════════════
 nginx -[#1B5E20]--> core : <b>HTTP :8080</b>  /api/auth/**  /api/admin/**
-nginx -[#33691E]--> pilotage_core : <b>HTTP :8081</b>  /api/pilotage/**
-nginx -[#33691E]--> agilite_core : <b>HTTP :8082</b>  /api/agilite/**
-nginx -[#33691E]--> collaboratif_core : <b>HTTP :8083</b>  /api/collaboratif/**
-nginx -[#004D40]..> pilotage_core : <b>WS :8081</b>  /ws/pilotage/**  ip_hash
-nginx -[#004D40]..> agilite_core : <b>WS :8082</b>  /ws/agilite/**  ip_hash
-nginx -[#004D40]..> collaboratif_core : <b>WS :8083</b>  /ws/collaboratif/**  ip_hash
+nginx -[#33691E]--> agilite_mod : <b>HTTP :8080</b>  /api/agilite/**
+nginx -[#33691E]--> collaboratif_mod : <b>HTTP :8080</b>  /api/collaboratif/**
+nginx -[#004D40]..> agilite_mod : <b>WS :8080</b>  /ws/agilite/**  ip_hash
+nginx -[#004D40]..> collaboratif_mod : <b>WS :8080</b>  /ws/collaboratif/**  ip_hash
 
 ' ═══════════════════════════════════════════════
 ' FLUX : Application → Data
 ' ═══════════════════════════════════════════════
 core -[#1A237E]--> postgres : <b>JDBC  schema public</b>\n[prod] TLS 1.3  sslmode=verify-full
-pilotage_core -[#283593]--> postgres : <b>JDBC  schema pilotage</b>
-agilite_core -[#283593]--> postgres : <b>JDBC  schema agilite</b>
-collaboratif_core -[#283593]--> postgres : <b>JDBC  schema collaboratif</b>
+agilite_mod -[#283593]--> postgres : <b>JDBC  schema agilite</b>
+collaboratif_mod -[#283593]--> postgres : <b>JDBC  schema collaboratif</b>
 
 core -[#4A148C]--> redis : <b>RESP :6379</b>  module cache · rate-limit
-pilotage_core -[#4A148C]..> redis : <b>RESP :6379</b>  module cache
-agilite_core -[#4A148C]..> redis : <b>RESP :6379</b>  module cache
-collaboratif_core -[#4A148C]..> redis : <b>RESP :6379</b>  module cache
 
-pilotage_core -[#880E4F]--> activemq : <b>STOMP :61613</b>  /topic/pilotage/**
-agilite_core -[#880E4F]--> activemq : <b>STOMP :61613</b>  /topic/agilite/**
-collaboratif_core -[#880E4F]--> activemq : <b>STOMP :61613</b>  /topic/collaboratif/**
+agilite_mod -[#880E4F]--> activemq : <b>STOMP :61613</b>  /topic/agilite/**
+collaboratif_mod -[#880E4F]--> activemq : <b>STOMP :61613</b>  /topic/collaboratif/**
 
 core -[#BF360C]--> smtp : <b>SMTP :1025  [dev · Mailpit]</b>\n<b>SMTPS :465  TLS 1.3  [prod]</b>
 
@@ -155,7 +150,7 @@ note bottom of postgres
   <b>Multi-schema :</b>
   Toutes FK cross-schema → public uniquement
   Pas de FK entre schemas modules
-  Chaque module-core = proprietaire de son schema
+  Chaque module interne = proprietaire de son schema
   <b>Tables publiques partages cross-modules :</b>
   TEAMS · TEAM_MEMBERS → acces via API pivot-core
   MODULES_STATE → status activation par tenant
@@ -163,13 +158,13 @@ end note
 
 note bottom of activemq
   <b>Topics STOMP isoles par domaine :</b>
-  Chaque module-core gere ses propres topics
-  enableStompBrokerRelay() dans chaque module-core
+  Chaque module gere ses propres topics
+  enableStompBrokerRelay() par module (meme JVM)
   Pas de cross-talk entre domaines
 end note
 
 note bottom of redis
-  <b>Cache partage entre tous les backends :</b>
+  <b>Cache module status (JVM unique) :</b>
   module:{tenantId}:{moduleId}  TTL 60 s
   Evite appel DB a chaque requete ModuleGuard
   Rate limiting counters  [gap Socle]
@@ -183,41 +178,39 @@ legend right
   ──────────────────────────────────────────
   <color:#0D47A1>────  HTTPS :443</color>          TLS 1.3 · Internet
   <color:#006064>····  WSS :443</color>             WebSocket Secure · Internet
-  <color:#1B5E20>────  HTTP :8080</color>           [dev] pivot-core interne
-  <color:#33691E>────  HTTP :808x</color>           [dev] pivot-xxx-core interne
-  <color:#004D40>····  WS :808x</color>              WebSocket module interne (ip_hash)
-  <color:#1A237E>────  JDBC public</color>          schema public (pivot-core)
+  <color:#1B5E20>────  HTTP :8080</color>           [dev] pivot-core shell interne
+  <color:#33691E>────  HTTP :8080</color>           [dev] modules internes (meme port)
+  <color:#004D40>····  WS :8080</color>              WebSocket module interne (ip_hash)
+  <color:#1A237E>────  JDBC public</color>          schema public (pivot-core shell)
   <color:#283593>────  JDBC module</color>          schemas module (FK → public)
   <color:#880E4F>────  STOMP :61613</color>         topics isoles par domaine
-  <color:#4A148C>────  RESP :6379</color>           Redis partage (cache TTL 60s)
+  <color:#4A148C>────  RESP :6379</color>           Redis (cache module TTL 60s)
   <color:#BF360C>────  SMTPS :465</color>           [prod] TLS 1.3 · email
   <color:#6A1B9A>────  OIDC HTTPS</color>           PKCE S256 · enterprise uniquement
   ──────────────────────────────────────────
   [dev]  = configuration developpement locale
   [prod] = configuration production (TLS 1.3 partout)
   ──────────────────────────────────────────
-  <b>Fault isolation (objectif cle)</b>
-  nginx route par prefixe URL vers JVM dediee
-  Module KO → 503 sur son prefixe nginx seulement
-  Auth/tenant (pivot-core) independant de tous les modules
-  4 deploiements Docker independants · releases distinctes
+  <b>Spring Modulith (ADR-030)</b>
+  Domaines metier = modules internes de pivot-core
+  Un seul artefact / une seule JVM / un seul deploiement
+  Frontieres verifiees (ApplicationModules.verify())
+  Pilotage retire de PIVOT (extraction)
+  [transition] bascule runtime nginx/compose non terminee
   ──────────────────────────────────────────
   <b>Multi-schema PostgreSQL</b>
   FK cross-schema → public uniquement
-  Flyway isole par module (verrou DB propre)
+  Flyway isole par module (schema propre)
   ──────────────────────────────────────────
   <b>Librairies partagees (build-time)</b>
   fr.pivot:pivot-core-starter → Maven (publie par pivot-core)
-  @pivot/design-system → npm (publie par pivot-design-system)
   @pivot/ui-core → npm (publie par pivot-ui)
+  design-system + libs modules → workspace pivot-ui/projects/*
   ──────────────────────────────────────────
   <b>Gaps → Enablers backlog (E17)</b>
   EN17.1  pivot-core-starter Maven · GitHub Packages
-  EN17.2  @pivot/design-system npm · Angular CDK + SCSS BEM
   EN17.3  @pivot/ui-core npm · AuthGuard · ModuleGuard
   EN17.4  BDD multi-schema convention · Flyway isolation
-  EN17.5  Template pivot-xxx-core · Spring Boot starter
-  EN17.6  Template pivot-xxx-ui · lazy-loading
 endlegend
 
 @enduml

@@ -16,41 +16,52 @@ sidebar_label: "CLAUDE.md racine (modèle)"
 
 ## Dépôts de l'organisation
 
+> **Bascule Spring Modulith ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md), mergée 2026-07-17).**
+> Les domaines métier ne sont **plus des repos séparés**. `agilite` et `collaboratif` sont des
+> **modules internes** de `pivot-core` (`pivot-core/agilite/`, `pivot-core/collaboratif/`, packages
+> `fr.pivot.agilite.*` / `fr.pivot.collaboratif.*`) ; le frontend est rapatrié dans le workspace
+> unique `pivot-ui/projects/*`. Le domaine **Pilotage est retiré de PIVOT** (extraction, cf.
+> `pivot-core/PILOTAGE-HANDOFF.md`). Les anciens repos `pivot-{agilite,collaboratif,pilotage}-{core,ui}`
+> et `pivot-design-system` sont **archivés** (lecture seule). [ADR-006](../adr/ADR-006-multi-repo-architecture.md)
+> est supersédée pour les domaines métier.
+
 | Dépôt | Rôle | Règles détaillées |
 |-------|------|--------------------|
-| **pivot-core** | Backend shell — auth, tenant, équipes, API commune · publie `fr.pivot:pivot-core-starter` (Maven) | `pivot-core/CLAUDE.md` |
-| **pivot-design-system** | Angular CDK (comportement/a11y) + SCSS BEM custom (visuel), composants UI, Storybook · publie `@pivot/design-system` (npm) | à créer avec le repo — pas de dépendance réelle aujourd'hui (vérifié : absent de `pivot-ui/package.json`). Repo différé, **pas le choix technique** : stack actée par `ADR-007` (`docs/adr/ADR-007-design-system-angular-cdk.md`) — CDK + SCSS custom, aucune lib visuelle tierce (Material/Taiga/PrimeNG/Tailwind explicitement rejetés). Suivi backlog : `EN17.2`, `Stage: Backlog`, `Phase: phase-3` |
-| **pivot-ui** | Frontend shell — header/footer, OIDC client, portail admin · publie `@pivot/ui-core` (npm) | `pivot-ui/CLAUDE.md` |
+| **pivot-core** | Backend modulith — auth, tenant, équipes, API commune **+ modules internes `agilite` et `collaboratif`** (`fr.pivot.agilite.*` / `fr.pivot.collaboratif.*`), frontières vérifiées par `ApplicationModules.verify()`, artefact et process uniques · publie `fr.pivot:pivot-core-starter` (Maven) | `pivot-core/CLAUDE.md` |
+| **pivot-ui** | Frontend shell — header/footer, OIDC client, portail admin **+ workspace unique `projects/*`** rapatriant les libs `agilite-ui`, `collaboratif-ui` et `design-system` (Angular CDK + SCSS BEM custom, ADR-007) · publie `@pivot/ui-core` (npm) | `pivot-ui/CLAUDE.md` |
 | **pivot-docs** | Documentation, ADR, backlog, audits, workflow — **source de vérité du backlog** | `pivot-docs/CLAUDE.md` |
-| **pivot-pilotage-core** / **-ui** | Domaine Pilotage — roadmap/Gantt, portefeuille projets, ADR projet | à créer avec le repo |
-| **pivot-agilite-core** / **-ui** | Domaine Agilité — capacity planning, daily standup timer, scrum poker | à créer avec le repo |
-| **pivot-collaboratif-core** / **-ui** | Domaine Collaboratif — whiteboard, quiz, session live, formulaire | à créer avec le repo |
+| ~~**pivot-{agilite,collaboratif,pilotage}-{core,ui}**~~, ~~**pivot-design-system**~~ | **Archivés (lecture seule)** — internalisés dans `pivot-core` / `pivot-ui` (ADR-030). Pilotage extrait vers un produit distinct (`pivot-core/PILOTAGE-HANDOFF.md`) | — |
 
 Setup complet (clone, WSL, Docker Compose, commits signés) → page précédente de cette section.
 
-## Architecture BDD — schémas PostgreSQL (vue d'ensemble multi-repo)
+## Architecture BDD — schémas PostgreSQL (vue d'ensemble)
 
-Une seule instance PostgreSQL partagée. Chaque module-core gère ses migrations Flyway dans son
-propre schéma. FK cross-schéma autorisées uniquement vers `public` (entités pivot-core).
+Une seule instance PostgreSQL partagée. Chaque module (interne à `pivot-core`) gère ses migrations
+Flyway dans son propre schéma, au sein d'une **JVM unique** (modulith). FK cross-schéma autorisées
+uniquement vers `public` (entités pivot-core). L'isolation des données par schéma est **conservée**
+malgré l'internalisation.
 
 | Schéma | Propriétaire | Contenu |
 |--------|-------------|---------|
-| `public` | pivot-core | tenants, users, teams, team_members, access_tokens, module_access |
-| `pilotage` | pivot-pilotage-core | roadmap_projects, roadmap_tasks, portfolio… → FK → `public.teams.id` |
-| `agilite` | pivot-agilite-core | capacity_plans, standup_sessions… → FK → `public.teams.id` |
-| `collaboratif` | pivot-collaboratif-core | whiteboards, quiz_sessions… → FK → `public.teams.id` |
+| `public` | pivot-core (shell) | tenants, users, teams, team_members, access_tokens, module_access |
+| `agilite` | pivot-core · module interne `agilite` | capacity_plans, standup_sessions… → FK → `public.teams.id` |
+| `collaboratif` | pivot-core · module interne `collaboratif` | whiteboards, quiz_sessions… → FK → `public.teams.id` |
+
+> Le schéma `pilotage` **quitte PIVOT** avec le domaine Pilotage (extraction ADR-030 / EN53.3). Le
+> `DROP SCHEMA pilotage` reste une action irréversible en attente de décision explicite du mainteneur.
 
 ## Démarrage de session — orchestration multi-repo
 
 Procédure à exécuter **depuis `pivot-platform/`**, avant de basculer dans un repo spécifique :
 
-1. `git pull origin main` dans les repos concernés par le sprint courant — toujours `pivot-core`,
-   `pivot-ui`, `pivot-docs` ; + les repos module concernés si le sprint en touche un
+1. `git pull origin main` dans les repos concernés par le sprint courant — `pivot-core`,
+   `pivot-ui`, `pivot-docs` (depuis ADR-030 il n'y a plus de repos module séparés : le backend
+   métier vit dans `pivot-core`, le frontend métier dans `pivot-ui`)
 2. Lire `pivot-docs/docs/backlog/sprints/README.md` — identifier le sprint courant et les US éligibles
    (protocole détaillé : `pivot-docs/CLAUDE.md`, skill `pivot-backlog-workflow`)
 3. Lancer **un agent par US éligible, en parallèle** — chaque agent :
-   - Se place dans **le repo concerné par son US** (`pivot-core` pour du backend, `pivot-ui`
-     pour du frontend, un repo module pour une feature métier, etc.)
+   - Se place dans **le repo concerné par son US** (`pivot-core` pour du backend, y compris une
+     feature métier d'un module interne `agilite`/`collaboratif` ; `pivot-ui` pour du frontend)
    - Crée sa branche dans **ce repo**, applique les règles du `CLAUDE.md` **de ce repo**
      (gates, commits, standards — jamais celles d'un autre repo)
    - Ouvre sa propre PR, dans ce repo

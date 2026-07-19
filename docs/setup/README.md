@@ -40,31 +40,22 @@ permissions Git).
 
 ## Clonage
 
-Dépôts socle (toujours nécessaires) :
+Depuis la bascule Spring Modulith ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md), mergée
+2026-07-17), les domaines métier sont internalisés : `agilite` et `collaboratif` vivent dans
+`pivot-core` (modules internes) et `pivot-ui` (workspace unique). Il n'y a donc plus que **trois
+dépôts à cloner** ; les anciens repos domaine (`pivot-{agilite,collaboratif,pilotage}-{core,ui}`)
+et `pivot-design-system` sont **archivés** (lecture seule) et ne sont plus nécessaires au dev.
 
 ```bash
 mkdir -p pivot-platform && cd pivot-platform
 git clone https://github.com/PIVOT-PLATFORM/pivot-core.git
 git clone https://github.com/PIVOT-PLATFORM/pivot-ui.git
 git clone https://github.com/PIVOT-PLATFORM/pivot-docs.git
-git clone https://github.com/PIVOT-PLATFORM/pivot-design-system.git
 ```
 
-Dépôts modules (selon le(s) domaine(s) sur lequel vous travaillez) :
-
-```bash
-# Pilotage
-git clone https://github.com/PIVOT-PLATFORM/pivot-pilotage-core.git
-git clone https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui.git
-
-# Agilité
-git clone https://github.com/PIVOT-PLATFORM/pivot-agilite-core.git
-git clone https://github.com/PIVOT-PLATFORM/pivot-agilite-ui.git
-
-# Collaboratif
-git clone https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core.git
-git clone https://github.com/PIVOT-PLATFORM/pivot-collaboratif-ui.git
-```
+> Les dépôts archivés restent consultables sur GitHub (historique préservé) — utiles seulement
+> pour une reprise d'historique ou l'extraction de Pilotage (`pivot-core/PILOTAGE-HANDOFF.md`),
+> pas pour le développement courant.
 
 `pivot-platform/` lui-même **n'est pas un repo** — c'est un simple dossier de travail qui
 regroupe les clones ci-dessus. Chaque sous-dossier est versionné indépendamment sur son propre

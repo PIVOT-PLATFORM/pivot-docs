@@ -6,14 +6,19 @@ sidebar_label: BDD multi-schéma
 ## Vue d'ensemble
 
 PIVOT utilise une **instance PostgreSQL partagée** avec un schéma par domaine fonctionnel.
-Chaque repo `pivot-xxx-core` gère ses migrations Flyway dans son propre schéma isolé.
+
+Depuis la bascule Spring Modulith ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md), mergée
+2026-07-17), les domaines métier sont des **modules internes** de `pivot-core` (`agilite`,
+`collaboratif`) et non plus des repos séparés. Chaque module gère ses migrations Flyway dans son
+propre schéma isolé, au sein d'une **JVM unique** (le modulith) — l'isolation des données par
+schéma est **conservée**. Le domaine **Pilotage est retiré de PIVOT** (extraction, cf.
+`pivot-core/PILOTAGE-HANDOFF.md`) : son schéma `pilotage` quitte la plateforme avec lui.
 
 | Schéma | Propriétaire | Contenu |
 |--------|-------------|---------|
-| `public` | pivot-core | `tenants`, `users`, `teams`, `team_members`, `access_tokens`, `module_activations` |
-| `pilotage` | pivot-pilotage-core | `roadmap_projects`, `roadmap_tasks`, `portfolio_items`… |
-| `agilite` | pivot-agilite-core | `capacity_plans`, `standup_sessions`… |
-| `collaboratif` | pivot-collaboratif-core | `whiteboards`, `quiz_sessions`… |
+| `public` | pivot-core (shell) | `tenants`, `users`, `teams`, `team_members`, `access_tokens`, `module_activations` |
+| `agilite` | pivot-core · module interne `agilite` | `capacity_plans`, `standup_sessions`… |
+| `collaboratif` | pivot-core · module interne `collaboratif` | `whiteboards`, `quiz_sessions`… |
 
 ## Règle FK cross-schéma
 
@@ -26,12 +31,12 @@ Chaque repo `pivot-xxx-core` gère ses migrations Flyway dans son propre schéma
 ### Exemples corrects
 
 ```sql
--- Dans le schéma "pilotage" — FK autorisée vers public.teams(id)
-CONSTRAINT fk_roadmap_project_team
+-- Dans le schéma "agilite" — FK autorisée vers public.teams(id)
+CONSTRAINT fk_capacity_plan_team
     FOREIGN KEY (team_id) REFERENCES public.teams (id) ON DELETE CASCADE,
 
 -- FK autorisée vers public.tenants(id)
-CONSTRAINT fk_roadmap_project_tenant
+CONSTRAINT fk_capacity_plan_tenant
     FOREIGN KEY (tenant_id) REFERENCES public.tenants (id) ON DELETE CASCADE
 ```
 
@@ -41,33 +46,35 @@ CONSTRAINT fk_roadmap_project_tenant
 -- INTERDIT : FK d'un module vers une autre table du schéma public
 CONSTRAINT fk_bad FOREIGN KEY (user_id) REFERENCES public.users (id)
 
--- INTERDIT : FK cross-module (pilotage → agilite)
+-- INTERDIT : FK cross-module (collaboratif → agilite)
 CONSTRAINT fk_bad FOREIGN KEY (standup_id) REFERENCES agilite.standup_sessions (id)
 
--- INTERDIT : INSERT/UPDATE dans le schéma public depuis un repo module
+-- INTERDIT : INSERT/UPDATE dans le schéma public depuis un module métier
 INSERT INTO public.users ...
 ```
 
 ## Configuration Flyway par module (EN17.4)
 
-Chaque `pivot-xxx-core` déclare un bean `ModuleFlywayConfigurer` fourni par `fr.pivot:pivot-core-starter` :
+Chaque module interne déclare un bean `ModuleFlywayConfigurer` fourni par `fr.pivot:pivot-core-starter`.
+Les modules partagent la **même JVM** (modulith) mais restent isolés par schéma, chacun pilotant ses
+propres migrations :
 
 ```java
-// pivot-pilotage-core — PilotageFlywayConfig.java
+// pivot-core/agilite — AgiliteFlywayConfig.java (fr.pivot.agilite.db)
 @Configuration
-public class PilotageFlywayConfig {
+public class AgiliteFlywayConfig {
 
     @Bean
-    public ModuleFlywayConfigurer pilotageFlywayConfigurer() {
-        return new ModuleFlywayConfigurer("pilotage", "classpath:db/pilotage");
+    public ModuleFlywayConfigurer agiliteFlywayConfigurer() {
+        return new ModuleFlywayConfigurer("agilite", "classpath:db/agilite");
     }
 }
 ```
 
 `ModuleFlywayConfigurer` applique automatiquement :
-- `schemas("pilotage")` — Flyway cible ce schéma uniquement
-- `defaultSchema("pilotage")` — les noms non qualifiés résolvent dans ce schéma
-- `locations("classpath:db/pilotage")` — scripts de migration du module
+- `schemas("agilite")` — Flyway cible ce schéma uniquement
+- `defaultSchema("agilite")` — les noms non qualifiés résolvent dans ce schéma
+- `locations("classpath:db/agilite")` — scripts de migration du module
 - `createSchemas(true)` — création idempotente du schéma (`CREATE SCHEMA IF NOT EXISTS`)
 
 ## Template de migration V1 par module
@@ -80,7 +87,7 @@ Le fichier template est disponible dans ce répertoire :
 ```sql
 -- V1__init_{schema}.sql — Template de bootstrap pour un schéma de module PIVOT
 --
--- Remplacer {schema} par le nom du schéma du module (ex. "pilotage", "agilite").
+-- Remplacer {schema} par le nom du schéma du module (ex. "agilite", "collaboratif").
 -- Règle FK cross-schéma (EN17.4) : seules public.teams(id) et public.tenants(id)
 -- sont des cibles autorisées.
 
@@ -128,20 +135,20 @@ Pour une isolation réseau maximale, chaque schéma de module devrait être poss
 PostgreSQL dédié avec des droits limités au schéma concerné :
 
 ```sql
--- Exemple pour le module "pilotage"
-CREATE ROLE pivot_pilotage_app LOGIN PASSWORD '…';
-GRANT USAGE ON SCHEMA pilotage TO pivot_pilotage_app;
-GRANT ALL ON ALL TABLES IN SCHEMA pilotage TO pivot_pilotage_app;
+-- Exemple pour le module "agilite"
+CREATE ROLE pivot_agilite_app LOGIN PASSWORD '…';
+GRANT USAGE ON SCHEMA agilite TO pivot_agilite_app;
+GRANT ALL ON ALL TABLES IN SCHEMA agilite TO pivot_agilite_app;
 -- Accès lecture seule aux tables pivot-core référencées par FK
-GRANT SELECT ON public.teams   TO pivot_pilotage_app;
-GRANT SELECT ON public.tenants TO pivot_pilotage_app;
+GRANT SELECT ON public.teams   TO pivot_agilite_app;
+GRANT SELECT ON public.tenants TO pivot_agilite_app;
 ```
 
 Cette configuration est optionnelle en développement mais recommandée en production.
 
 ## Tests d'isolation schéma (Testcontainers)
 
-Chaque repo module doit inclure un test Testcontainers validant :
+Chaque module interne doit inclure un test Testcontainers validant :
 1. Le schéma module est créé par Flyway.
 2. Les migrations s'exécutent dans le schéma module uniquement.
 3. Aucune écriture dans le schéma `public`.
