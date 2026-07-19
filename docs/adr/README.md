@@ -37,6 +37,7 @@ sidebar_label: "Vue d'ensemble"
 | [ADR-027](ADR-027-modele-organisationnel-unites-equipes.md) | Modèle organisationnel : unités & équipes, deux plans (partage vs management) | Accepté |
 | [ADR-028](ADR-028-acces-identites-externes.md) | Accès & identités externes (définition, OIDC fragment externe, scoping projets/transverse) | Proposé |
 | [ADR-029](ADR-029-i18n-modules-scope-transloco.md) | i18n des modules : scope Transloco embarqué par la lib | Accepté |
+| [ADR-030](ADR-030-bascule-spring-modulith.md) | Bascule Spring Modulith : domaines internalisés dans le Socle, extraction de Pilotage (supersède ADR-006 pour les domaines métier) | Accepté |
 
 > **Numérotation ADR-017 à ADR-020** : à l'origine réservées textuellement par ADR-009
 > §« ADR à produire » (modèle d'entités, stratégie de forks, bus d'événements, briques natives).
