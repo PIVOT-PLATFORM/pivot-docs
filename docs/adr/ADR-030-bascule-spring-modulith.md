@@ -69,7 +69,11 @@ explicite du mainteneur.
   services standalone `../pivot-{agilite,collaboratif}-core`, et le nginx `pivot-ui` (dev **et** prod
   Cloud Run) route toujours `/api/{agilite,collaboratif}` vers ces services. Tant que ce routage
   n'est pas basculé vers le backend, les repos archivés restent le chemin runtime actif et le code
-  est **dupliqué** (risque de divergence). → **Vague de suivi à planifier.**
+  est **dupliqué** (risque de divergence). → **Vague de suivi (bascule du déploiement) livrée** dans
+  `pivot-ui#209` (routing nginx dev/prod/Cloud Run + URLs frontend), `pivot-core#230` (retrait des
+  services standalone du compose dev/prod) et `pivot-infra#11` (retrait des Cloud Run agilite/
+  collaboratif). Une fois ces PR mergées, les marqueurs `[transition]` de la doc d'architecture
+  (`platform-overview.puml`/`.md`) devront être retirés.
 - **Écart de portage.** `collaboratif` a été absorbé au niveau `V6` ; le repo source était à `V7`
   (US08.2.5 — invite par email + gouvernance des rôles + notifications). Cette feature n'appartient
   pas à un sprint terminé (Sprint 16 planifié) mais reste du code réel dans le repo archivé, à
