@@ -7,7 +7,7 @@ sidebar_label: BDD multi-schéma
 
 PIVOT utilise une **instance PostgreSQL partagée** avec un schéma par domaine fonctionnel.
 
-Depuis la bascule Spring Modulith ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md), mergée
+Depuis la bascule Spring Modulith ([ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith), mergée
 2026-07-17), les domaines métier sont des **modules internes** de `pivot-core` (`agilite`,
 `collaboratif`) et non plus des repos séparés. Chaque module gère ses migrations Flyway dans son
 propre schéma isolé, au sein d'une **JVM unique** (le modulith) — l'isolation des données par

@@ -40,7 +40,7 @@ permissions Git).
 
 ## Clonage
 
-Depuis la bascule Spring Modulith ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md), mergée
+Depuis la bascule Spring Modulith ([ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith), mergée
 2026-07-17), les domaines métier sont internalisés : `agilite` et `collaboratif` vivent dans
 `pivot-core` (modules internes) et `pivot-ui` (workspace unique). Il n'y a donc plus que **trois
 dépôts à cloner** ; les anciens repos domaine (`pivot-{agilite,collaboratif,pilotage}-{core,ui}`)

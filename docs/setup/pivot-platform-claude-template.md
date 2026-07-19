@@ -16,13 +16,13 @@ sidebar_label: "CLAUDE.md racine (modèle)"
 
 ## Dépôts de l'organisation
 
-> **Bascule Spring Modulith ([ADR-030](../adr/ADR-030-bascule-spring-modulith.md), mergée 2026-07-17).**
+> **Bascule Spring Modulith ([ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith), mergée 2026-07-17).**
 > Les domaines métier ne sont **plus des repos séparés**. `agilite` et `collaboratif` sont des
 > **modules internes** de `pivot-core` (`pivot-core/agilite/`, `pivot-core/collaboratif/`, packages
 > `fr.pivot.agilite.*` / `fr.pivot.collaboratif.*`) ; le frontend est rapatrié dans le workspace
 > unique `pivot-ui/projects/*`. Le domaine **Pilotage est retiré de PIVOT** (extraction, cf.
 > `pivot-core/PILOTAGE-HANDOFF.md`). Les anciens repos `pivot-{agilite,collaboratif,pilotage}-{core,ui}`
-> et `pivot-design-system` sont **archivés** (lecture seule). [ADR-006](../adr/ADR-006-multi-repo-architecture.md)
+> et `pivot-design-system` sont **archivés** (lecture seule). [ADR-006](pathname:///pivot-docs/adr/ADR-006-multi-repo-architecture)
 > est supersédée pour les domaines métier.
 
 | Dépôt | Rôle | Règles détaillées |
