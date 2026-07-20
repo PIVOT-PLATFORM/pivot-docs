@@ -50,7 +50,7 @@ benchmark US30.2.2 (présence & curseurs nommés).
 boutons/ajuster d'US08.11.2 — à porter du canvas retiré vers `structured-canvas`, ou réécrire
 nativement. US08.11.1 est livrée (ui #241, 2026-07-20) ; comme tout le reste du sprint, son
 `Stage` reste `⬜` jusqu'à la recette mainteneur —
-voir [checklist de recette](../../workflow/checklist-recette-whiteboard.md).
+voir [checklist de recette](pathname:///pivot-docs/workflow/checklist-recette-whiteboard).
 
 ## Notes de séquencement
 
