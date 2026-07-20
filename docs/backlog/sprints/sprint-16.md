@@ -38,7 +38,7 @@ benchmark EN30.13 (import de tableaux Klaxoon).
 
 | Item | État réel | Détail |
 |------|-----------|--------|
-| US08.13.1 (import Klaxoon) | Fait | `whiteboard/klx-import/{archive,converter}.ts` + `import-klaxoon-modal` (frontend) ; endpoints `/import/klaxoon` + `/import/undo` (backend) |
+| US08.13.1 (import Klaxoon) | Fait — 1 écart assumé | `whiteboard/klx-import/{archive,converter}.ts` + `import-klaxoon-modal` (frontend) ; endpoints `/import/klaxoon` + `/import/undo` (backend). **Écart assumé** : l'AC « publier `collaboratif.board.imported` sur le bus d'événements » n'est pas implémentée — aucun publisher dans `pivot-core` (le premier publisher dépasse le périmètre de l'US), `TODO(F08.x/ADR-025)` laissé dans le code, **follow-up backlog à ouvrir**. Le broadcast STOMP temps réel `board:imported`/`board:import-undone` est bien livré. |
 | US08.13.2 (brouillon de template) | **Absent** | Seul `templateDraftOf: null` existe comme placeholder passif sur `BoardDetail` — aucune méthode save-from-draft/discard-draft ni côté `board.service.ts` ni côté backend |
 | US08.13.3 (image de couverture) | Fait | `coverImage` sur `Board`/`BoardSettingsPatch`, réservé OWNER |
 | US08.13.4 (reset canvas) | Fait | `resetBoard()` → `board:reset` / écoute `board:resetted` dans `board.store.ts` |
