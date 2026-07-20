@@ -442,7 +442,7 @@ collaboratif open-source).
 | [US08.10.1 — Définir des champs de board](FEATURES/champs-personnalises/us-definir-champs.md) | 🔎 code livré — recette |
 | [US08.10.2 — Renseigner / effacer une valeur de champ](FEATURES/champs-personnalises/us-valeurs-champs.md) | 🔎 code livré — recette |
 | **F08.11 — Canvas UX** | |
-| [US08.11.1 — Aimantation à la grille](FEATURES/canvas-ux/us-aimantation-grille.md) | ⬜ absent |
+| [US08.11.1 — Aimantation à la grille](FEATURES/canvas-ux/us-aimantation-grille.md) | 🔎 code livré (ui #241) — recette |
 | [US08.11.2 — Zoom avancé (boutons + ajuster)](FEATURES/canvas-ux/us-zoom-avance.md) | 🔎 partiel (molette OK, boutons/ajuster absents du canvas routé) |
 | [US08.11.3 — Collage presse-papiers (image / tableur / texte)](FEATURES/canvas-ux/us-collage-presse-papiers.md) | 🔎 code livré — recette |
 | [US08.11.4 — Guides d'alignement (§4.3, supersède le 8 px d'US08.3.2a)](FEATURES/canvas-ux/us-guides-alignement.md) | ⬜ absent |
@@ -513,9 +513,9 @@ collaboratif open-source).
 > 2026-07-16). Vérification directe du code (`pivot-core`/`pivot-ui` post-bascule Spring Modulith,
 > ADR-030) : **EN08.4, F08.6, F08.7, F08.8, F08.9, F08.10, F08.13 (hors US08.13.2), US08.1.9,
 > US08.2.6, F08.12 sont code-complets** (recette mainteneur restante, `Stage` inchangé). Trois
-> écarts réels identifiés : **US08.11.1** (aimantation grille) et **US08.11.4** (guides
-> d'alignement) absents du canvas réellement routé ; **US08.11.2** (zoom avancé) partiel (molette
-> seule) ; **US08.13.2** (brouillon de template) non commencé ; **US08.2.5** (inviter par email) —
+> écarts réels identifiés : **US08.11.4** (guides d'alignement) absent du canvas réellement
+> routé ; **US08.11.2** (zoom avancé) partiel (molette seule) ; *(**US08.11.1** — aimantation
+> grille — était de ce lot, livrée depuis par `pivot-ui#241`, 2026-07-20)* ; **US08.13.2** (brouillon de template) non commencé ; **US08.2.5** (inviter par email) —
 > ⚠️ **régression de la bascule modulith** : codé et mergé sur les repos pré-migration
 > (`pivot-collaboratif-core#108`/`pivot-collaboratif-ui#169`, 2026-07-17) mais absent du monolith
 > actuel, à réimporter plutôt qu'à réécrire. Détail par sprint : `sprints/sprint-12.md`,
