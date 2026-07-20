@@ -104,3 +104,63 @@ PR contre l'implémentation réelle de `TemplateResponse` (`WhiteboardTemplateCo
 - Création/édition de template par un utilisateur final
 - Test IT bout-en-bout `GET /whiteboard/templates` avec module désactivé (gap préexistant sur
   `BoardControllerIT`, non introduit par cette US — noté au Gate 4)
+
+---
+
+## Addendum 2026-07-20 — US08.4.1 (correction : option « Aucun template » explicite + défaut vierge)
+
+> Correction du comportement livré, pas une nouvelle US (décision mainteneur). Le corps figé
+> ci-dessus reste inchangé ; cet addendum acte l'écart de comportement.
+
+- **PR frontend** : `pivot-ui` [#218](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/218)
+  (`feat/us08-4-1-blank-template-default`) — issue [#217](https://github.com/PIVOT-PLATFORM/pivot-ui/issues/217).
+  Depuis EN53.4 (ADR-030), `collaboratif-ui` est un projet interne de `pivot-ui`
+  (`projects/collaboratif-ui`) ; les anciens repos `pivot-collaboratif-{core,ui}` cités dans le
+  corps figé sont archivés.
+- **Backend** : aucun changement — la plomberie « tableau vierge » existante
+  (`POST /whiteboard/boards` sans `templateId`) est réutilisée telle quelle.
+
+### Écart de comportement vs corps figé
+
+| Aspect | Corps figé (livraison initiale) | Après correction |
+|--------|--------------------------------|------------------|
+| Option de création vierge dans la galerie | Absente — « Vierge » non seedé, création vierge seulement via fallback silencieux (catalogue vide / erreur) | **Carte « Aucun template » explicite** en 1re position de la `listbox`, sélectionnable |
+| Sélection par défaut à l'ouverture | « Brainstorm » (auto-sélection) | **« Aucun template » (vierge)** — plus d'auto-sélection d'un modèle |
+| Émission de la galerie | id du template par défaut | `null` par défaut → `createBoard(title, undefined)` (contrat inchangé) |
+
+Le backend reste inchangé : « Vierge » n'est toujours pas un template seedé côté API. La carte
+« Aucun template » est une option **cliente** qui n'émet aucun `templateId` — sémantiquement
+identique au flux de création vierge d'US08.1.1, désormais rendu explicite dans l'UI.
+
+### Spec fonctionnelle (delta)
+
+- Carte « Aucun template » rendue **hors de la boucle des templates** → visible même si le
+  catalogue est vide ou en erreur (l'utilisateur garde toujours une option cliquable).
+- Participe au roving-tabindex et à la navigation clavier (flèches, Home/End, Entrée/Espace) au
+  même titre que les cartes de modèle ; index clavier unifié (position 0 = carte vierge).
+- Sélectionner un modèle retire la sélection de la carte vierge et inversement (`aria-selected`
+  exclusif, une seule option `tabindex=0`).
+- i18n : nouvelle clé `whiteboard.template.blank` (`name` / `description`), fr + en.
+
+### Contrat technique (delta) — `projects/collaboratif-ui`
+
+| Fichier (modifié) | Delta |
+|-------------------|-------|
+| `whiteboard/template-gallery/template-gallery.component.ts` | Suppression de l'auto-sélection Brainstorm ; `selectBlank()`, `selectByIndex()`, `optionTabIndex(key)` ; index clavier unifié |
+| `whiteboard/template-gallery/template-gallery.component.html` | Carte `role="option"` « Aucun template » avant le `@for`, index modèles décalés (`i + 1`) |
+| `whiteboard/template-gallery/template-gallery.component.scss` | Styles `--blank` (aperçu décoratif pointillé) |
+| `whiteboard/template-gallery/template-gallery.component.spec.ts` | Réindexation galerie + cas carte vierge |
+| `whiteboard/board-list/board-list.component.spec.ts` | Attendu de défaut mis à jour (aucun `templateId` par défaut) — aucun code prod `board-list` modifié |
+| i18n `{fr,en}.json` | Clé `whiteboard.template.blank` |
+
+> Note : le corps figé mentionne `WhiteboardTemplate { id, code, previewUrl }` ; le code réel
+> utilise `thumbnailUrl`. Écart de nommage préexistant (hors périmètre de cette correction),
+> laissé tel quel — le modèle n'est pas touché ici.
+
+### Scores
+
+- Gate 2 (frontend) : vitest vert — collaboratif-ui 1021 tests (dont `template-gallery` et
+  `board-list`) ; vérifications locales `tsc`/`lint`/`build` prod à 0 erreur / 0 warning.
+- Gate 4 : à consigner sur la PR `pivot-ui#218` (workflow en cours).
+
+**Statut** : addendum figé le 2026-07-20.
