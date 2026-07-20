@@ -20,3 +20,11 @@ updates:
     groups:
       npm:
         patterns: ["*"]
+    # Les majeures de PrimeReact/PrimeIcons cassent le build Docusaurus (chemins
+    # d'export supprimés en v11 : ./api, ./resources/*.css). PrimeReact 11 est de
+    # surcroît en pré-release. On garde minor/patch, on bloque la majeure.
+    ignore:
+      - dependency-name: "primereact"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "primeicons"
+        update-types: ["version-update:semver-major"]
