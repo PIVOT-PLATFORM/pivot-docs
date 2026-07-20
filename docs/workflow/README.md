@@ -150,6 +150,15 @@ Chaque AC mappe à au moins un test nommé avec son identifiant :
 
 AC sans test = non implémenté, peu importe le code présent.
 
+## Recette mainteneur
+
+Une CI verte ne vaut pas recette : elle prouve que le code compile et que les tests écrits
+passent, pas que la fonctionnalité rend le service attendu à l'écran. Le passage
+`Stage: ⬜ → ✅` reste donc réservé au mainteneur, après vérification sur l'application déployée.
+
+Support opérationnel : [Checklist de recette — whiteboard](./checklist-recette-whiteboard.md)
+(Sprints 11 → 16, cases à cocher, anomalies connues à ne pas confondre avec des régressions).
+
 ---
 
 ## Gate 5 — SPEC fonctionnelle et technique figée
