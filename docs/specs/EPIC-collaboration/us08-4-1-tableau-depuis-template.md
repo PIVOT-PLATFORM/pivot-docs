@@ -151,6 +151,7 @@ identique au flux de création vierge d'US08.1.1, désormais rendu explicite dan
 | `whiteboard/template-gallery/template-gallery.component.scss` | Styles `--blank` (aperçu décoratif pointillé) |
 | `whiteboard/template-gallery/template-gallery.component.spec.ts` | Réindexation galerie + cas carte vierge |
 | `whiteboard/board-list/board-list.component.spec.ts` | Attendu de défaut mis à jour (aucun `templateId` par défaut) — aucun code prod `board-list` modifié |
+| `e2e/modules/whiteboard-blank-template.spec.ts` (nouveau) | E2E Playwright : modale → carte vierge présélectionnée → création sans `templateId` |
 | i18n `{fr,en}.json` | Clé `whiteboard.template.blank` |
 
 > Note : le corps figé mentionne `WhiteboardTemplate { id, code, previewUrl }` ; le code réel
@@ -160,7 +161,10 @@ identique au flux de création vierge d'US08.1.1, désormais rendu explicite dan
 ### Scores
 
 - Gate 2 (frontend) : vitest vert — collaboratif-ui 1021 tests (dont `template-gallery` et
-  `board-list`) ; vérifications locales `tsc`/`lint`/`build` prod à 0 erreur / 0 warning.
-- Gate 4 : à consigner sur la PR `pivot-ui#218` (workflow en cours).
+  `board-list`) + E2E Playwright `whiteboard-blank-template` vert ; vérifications locales
+  `tsc`/`lint`/`build` prod à 0 erreur / 0 warning.
+- Gate 4 : **100/100** (MERGE_AUTONOMOUS) sur `pivot-ui#218` — CI intégralement verte (Vitest,
+  SonarCloud, CodeQL, Semgrep, Trivy, E2E, Lighthouse a11y, build prod). Merge laissé à la main du
+  mainteneur (pause explicite).
 
 **Statut** : addendum figé le 2026-07-20.
