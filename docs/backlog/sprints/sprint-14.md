@@ -18,15 +18,37 @@ benchmark US30.2.2 (présence & curseurs nommés).
 
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
-| [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | ⬜ |
-| [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | ⬜ |
-| [US08.11.3](../EPIC-collaboration/FEATURES/canvas-ux/us-collage-presse-papiers.md) | Collage presse-papiers (image / tableur / texte) | Medium | M | ⬜ |
-| [US08.11.4](../EPIC-collaboration/FEATURES/canvas-ux/us-guides-alignement.md) | Guides d'alignement (§4.3, supersède 8 px d'US08.3.2a) | Medium | M | ⬜ |
-| [US08.11.5](../EPIC-collaboration/FEATURES/canvas-ux/us-undo-redo-parite.md) | Undo / redo (§4.5, HISTORY_LIMIT 30, supersède pile 50 d'US08.3.3) | Medium | M | ⬜ |
-| [US08.11.6](../EPIC-collaboration/FEATURES/canvas-ux/us-raccourcis-clavier.md) | Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a) | Medium | M | ⬜ |
-| [US08.11.7](../EPIC-collaboration/FEATURES/canvas-ux/us-redimensionnement-fin.md) | Redimensionnement fin & lasso (§4.4/§4.9, supersède US08.3.6) | Medium | M | ⬜ |
-| [US08.5.2](../EPIC-collaboration/FEATURES/presence/us-curseurs-nommes.md) | Curseurs nommés throttlés | Medium | S | ⬜ |
-| [US08.5.3](../EPIC-collaboration/FEATURES/presence/us-verrou-edition.md) | Verrou doux d'édition | Medium | S | ⬜ |
+| [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | ⬜ absent — voir État réel |
+| [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | 🔎 partiel — voir État réel |
+| [US08.11.3](../EPIC-collaboration/FEATURES/canvas-ux/us-collage-presse-papiers.md) | Collage presse-papiers (image / tableur / texte) | Medium | M | 🔎 code livré — recette |
+| [US08.11.4](../EPIC-collaboration/FEATURES/canvas-ux/us-guides-alignement.md) | Guides d'alignement (§4.3, supersède 8 px d'US08.3.2a) | Medium | M | ⬜ absent — voir État réel |
+| [US08.11.5](../EPIC-collaboration/FEATURES/canvas-ux/us-undo-redo-parite.md) | Undo / redo (§4.5, HISTORY_LIMIT 30, supersède pile 50 d'US08.3.3) | Medium | M | 🔎 code livré — recette |
+| [US08.11.6](../EPIC-collaboration/FEATURES/canvas-ux/us-raccourcis-clavier.md) | Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a) | Medium | M | 🔎 code livré, écart mineur — voir État réel |
+| [US08.11.7](../EPIC-collaboration/FEATURES/canvas-ux/us-redimensionnement-fin.md) | Redimensionnement fin & lasso (§4.4/§4.9, supersède US08.3.6) | Medium | M | 🔎 code livré — recette |
+| [US08.5.2](../EPIC-collaboration/FEATURES/presence/us-curseurs-nommes.md) | Curseurs nommés throttlés | Medium | S | 🔎 code livré — recette |
+| [US08.5.3](../EPIC-collaboration/FEATURES/presence/us-verrou-edition.md) | Verrou doux d'édition | Medium | S | 🔎 code livré — recette |
+
+## État réel (constaté dans le code le 2026-07-20)
+
+> ⚠️ **Désync backlog↔code partielle**, même schéma que Sprint 13 : contrairement aux Sprints 11/12
+> (100% code-complets), ce sprint a un **vrai reste à faire** — vérifié sur `structured-canvas`, le
+> composant canvas réellement routé (`pivot-ui`, `projects/collaboratif-ui/src/lib/whiteboard/`).
+
+| Item | État réel | Détail |
+|------|-----------|--------|
+| US08.11.1 (aimantation grille) | **Absent** | Seule une grille cosmétique existe (`DOT_SPACING`/`gridSize`) ; aucun snap-to-grid au déplacement d'une carte |
+| US08.11.2 (zoom avancé) | **Partiel** | Zoom molette OK (`MIN_ZOOM`/`MAX_ZOOM`, `board-constants.ts`) ; boutons zoom +/- et « ajuster au contenu/sélection » n'existent que dans l'ancien canvas retiré (`whiteboard-canvas.component.ts`, non routé depuis EN08.4) |
+| US08.11.3 (collage presse-papiers) | Fait | `isImageClipboardItem`/`decideTablePaste`/`isUrlOnlyPaste` câblés sur `@HostListener('document:paste')` dans `structured-canvas.component.ts` |
+| US08.11.4 (guides d'alignement) | **Absent** | Les « smart alignment guides » n'existent que dans l'ancien canvas retiré (`canvas/model/canvas.model.ts`), pas sur `structured-canvas` |
+| US08.11.5 (undo/redo, HISTORY_LIMIT 30) | Fait | `board.store.ts` — pile 30 niveaux (`undoStack`/`redoStack`) |
+| US08.11.6 (raccourcis & nudge) | Fait, écart mineur | `board-page.component.ts` — undo/redo/select-all/copy/cut/paste/duplicate/delete/escape + nudge flèches ; nudge = 1px (20px avec Shift) contre 24px spécifié — écart mineur à trancher au Gate 1 |
+| US08.11.7 (redimensionnement fin & lasso) | Fait | Handles 8 directions + sélection marquee dans `structured-canvas.component.ts` |
+| US08.5.2 (curseurs nommés) | Fait | Signal `cursors` (`CursorState`), event `board:cursors` dans `board.store.ts` |
+| US08.5.3 (verrou doux d'édition) | Fait | Map `remoteEditors` `{userId, name}` dans `board.store.ts` |
+
+**Reste réellement à faire pour clore ce sprint :** US08.11.1 (aimantation grille), US08.11.4
+(guides d'alignement), et la partie boutons/ajuster d'US08.11.2 — à porter du canvas retiré vers
+`structured-canvas`, ou réécrire nativement.
 
 ## Notes de séquencement
 
@@ -39,8 +61,10 @@ benchmark US30.2.2 (présence & curseurs nommés).
 ## Dépendances
 
 - Dépend de : **Sprint 11 (EN08.4)** — modèle `Card` typé — et **Sprint 12** (objets typés à
-  manipuler par les fonctions UX et de présence).
-- Repo cible inchangé (`pivot-collaboratif-core`/`pivot-collaboratif-ui`).
+  manipuler par les fonctions UX et de présence). **Levées.**
+- Repo cible : bascule Spring Modulith (ADR-030, 2026-07-17) — le code vit désormais dans
+  `pivot-core` (module `fr.pivot.collaboratif.whiteboard`) et `pivot-ui`
+  (`projects/collaboratif-ui`) ; `pivot-collaboratif-core`/`pivot-collaboratif-ui` sont archivés.
 
 ---
 *Créé le 2026-07-13, suite à la décision mainteneur d'absorber le spec de référence
