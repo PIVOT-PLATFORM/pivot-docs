@@ -420,51 +420,51 @@ collaboratif open-source).
 | [US08.1.8 — Recherche de tableaux](FEATURES/crud-tableaux/us-recherche-tableau.md) | ⬜ |
 | [US08.2.4 — Paramètres de tableau (modal OWNER) + câblage Reset board](FEATURES/partage-roles/us-parametres-tableau.md) | ⬜ |
 | **Parité complète PouetPouet — spec de référence absorbée (Sprints 38-43, 2026-07-13)** | |
-| [EN08.4 — Modèle `Card` typé + contrats WS](ENABLERS/en-modele-card-type.md) | ⬜ |
+| [EN08.4 — Modèle `Card` typé + contrats WS](ENABLERS/en-modele-card-type.md) | 🔎 code livré — recette |
 | **F08.6 — Objets typés** *(absorbe US30.1.2/.3/.5/.11)* | |
-| [US08.6.1 — Pense-bête texte (TEXT)](FEATURES/objets-types/us-carte-texte.md) | ⬜ |
-| [US08.6.2 — Étiquette (LABEL)](FEATURES/objets-types/us-carte-etiquette.md) | ⬜ |
-| [US08.6.3 — Forme (SHAPE)](FEATURES/objets-types/us-carte-forme.md) | ⬜ |
-| [US08.6.4 — Image (IMAGE)](FEATURES/objets-types/us-carte-image.md) | ⬜ |
-| [US08.6.5 — Carte lien (LINK) + aperçu OpenGraph](FEATURES/objets-types/us-carte-lien-apercu.md) | ⬜ |
-| [US08.6.6 — Tableau (TABLE) + collage tableur](FEATURES/objets-types/us-carte-tableau.md) | ⬜ |
+| [US08.6.1 — Pense-bête texte (TEXT)](FEATURES/objets-types/us-carte-texte.md) | 🔎 code livré — recette |
+| [US08.6.2 — Étiquette (LABEL)](FEATURES/objets-types/us-carte-etiquette.md) | 🔎 code livré — recette |
+| [US08.6.3 — Forme (SHAPE)](FEATURES/objets-types/us-carte-forme.md) | 🔎 code livré — recette |
+| [US08.6.4 — Image (IMAGE)](FEATURES/objets-types/us-carte-image.md) | 🔎 code livré — recette |
+| [US08.6.5 — Carte lien (LINK) + aperçu OpenGraph](FEATURES/objets-types/us-carte-lien-apercu.md) | 🔎 code livré — recette |
+| [US08.6.6 — Tableau (TABLE) + collage tableur](FEATURES/objets-types/us-carte-tableau.md) | 🔎 code livré — recette |
 | **F08.7 — Connecteurs** *(absorbe US30.1.3)* | |
-| [US08.7.1 — Créer / supprimer un connecteur](FEATURES/connecteurs/us-creer-connecteur.md) | ⬜ |
-| [US08.7.2 — Styler un connecteur](FEATURES/connecteurs/us-styler-connecteur.md) | ⬜ |
+| [US08.7.1 — Créer / supprimer un connecteur](FEATURES/connecteurs/us-creer-connecteur.md) | ✅ |
+| [US08.7.2 — Styler un connecteur](FEATURES/connecteurs/us-styler-connecteur.md) | 🔎 code livré — recette |
 | **F08.8 — Cadres (frames)** *(absorbe US30.1.7)* | |
-| [US08.8.1 — Créer / supprimer un cadre](FEATURES/cadres/us-creer-cadre.md) | ⬜ |
-| [US08.8.2 — Déplacer / redimensionner / renommer / calque un cadre](FEATURES/cadres/us-manipuler-cadre.md) | ⬜ |
+| [US08.8.1 — Créer / supprimer un cadre](FEATURES/cadres/us-creer-cadre.md) | 🔎 code livré — recette |
+| [US08.8.2 — Déplacer / redimensionner / renommer / calque un cadre](FEATURES/cadres/us-manipuler-cadre.md) | 🔎 code livré — recette |
 | **F08.9 — Organisation & calque** *(absorbe US30.1.6)* | |
-| [US08.9.1 — Grouper / dégrouper / couleur de groupe](FEATURES/organisation-calque/us-grouper-cartes.md) | ⬜ |
-| [US08.9.2 — Verrouiller / déverrouiller (matrice complète)](FEATURES/organisation-calque/us-verrouiller-cartes.md) | ⬜ |
-| [US08.9.3 — Calque / z-order (premier plan / arrière-plan)](FEATURES/organisation-calque/us-calque-z-order.md) | ⬜ |
+| [US08.9.1 — Grouper / dégrouper / couleur de groupe](FEATURES/organisation-calque/us-grouper-cartes.md) | 🔎 code livré — recette |
+| [US08.9.2 — Verrouiller / déverrouiller (matrice complète)](FEATURES/organisation-calque/us-verrouiller-cartes.md) | 🔎 code livré — recette |
+| [US08.9.3 — Calque / z-order (premier plan / arrière-plan)](FEATURES/organisation-calque/us-calque-z-order.md) | 🔎 code livré — recette |
 | **F08.10 — Champs personnalisés** | |
-| [US08.10.1 — Définir des champs de board](FEATURES/champs-personnalises/us-definir-champs.md) | ⬜ |
-| [US08.10.2 — Renseigner / effacer une valeur de champ](FEATURES/champs-personnalises/us-valeurs-champs.md) | ⬜ |
+| [US08.10.1 — Définir des champs de board](FEATURES/champs-personnalises/us-definir-champs.md) | 🔎 code livré — recette |
+| [US08.10.2 — Renseigner / effacer une valeur de champ](FEATURES/champs-personnalises/us-valeurs-champs.md) | 🔎 code livré — recette |
 | **F08.11 — Canvas UX** | |
-| [US08.11.1 — Aimantation à la grille](FEATURES/canvas-ux/us-aimantation-grille.md) | ⬜ |
-| [US08.11.2 — Zoom avancé (boutons + ajuster)](FEATURES/canvas-ux/us-zoom-avance.md) | ⬜ |
-| [US08.11.3 — Collage presse-papiers (image / tableur / texte)](FEATURES/canvas-ux/us-collage-presse-papiers.md) | ⬜ |
-| [US08.11.4 — Guides d'alignement (§4.3, supersède le 8 px d'US08.3.2a)](FEATURES/canvas-ux/us-guides-alignement.md) | ⬜ |
-| [US08.11.5 — Undo / redo (§4.5, HISTORY_LIMIT 30, supersède la pile 50 d'US08.3.3)](FEATURES/canvas-ux/us-undo-redo-parite.md) | ⬜ |
-| [US08.11.6 — Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a)](FEATURES/canvas-ux/us-raccourcis-clavier.md) | ⬜ |
-| [US08.11.7 — Redimensionnement fin & lasso (§4.4/§4.9, min ~24 px, supersède US08.3.6)](FEATURES/canvas-ux/us-redimensionnement-fin.md) | ⬜ |
+| [US08.11.1 — Aimantation à la grille](FEATURES/canvas-ux/us-aimantation-grille.md) | ⬜ absent |
+| [US08.11.2 — Zoom avancé (boutons + ajuster)](FEATURES/canvas-ux/us-zoom-avance.md) | 🔎 partiel (molette OK, boutons/ajuster absents du canvas routé) |
+| [US08.11.3 — Collage presse-papiers (image / tableur / texte)](FEATURES/canvas-ux/us-collage-presse-papiers.md) | 🔎 code livré — recette |
+| [US08.11.4 — Guides d'alignement (§4.3, supersède le 8 px d'US08.3.2a)](FEATURES/canvas-ux/us-guides-alignement.md) | ⬜ absent |
+| [US08.11.5 — Undo / redo (§4.5, HISTORY_LIMIT 30, supersède la pile 50 d'US08.3.3)](FEATURES/canvas-ux/us-undo-redo-parite.md) | 🔎 code livré — recette |
+| [US08.11.6 — Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a)](FEATURES/canvas-ux/us-raccourcis-clavier.md) | 🔎 code livré, écart mineur (nudge 1/20px vs 24px spécifié) |
+| [US08.11.7 — Redimensionnement fin & lasso (§4.4/§4.9, min ~24 px, supersède US08.3.6)](FEATURES/canvas-ux/us-redimensionnement-fin.md) | 🔎 code livré — recette |
 | **F08.5 — Présence (étendue)** | |
-| [US08.5.2 — Curseurs nommés throttlés](FEATURES/presence/us-curseurs-nommes.md) | ⬜ |
-| [US08.5.3 — Verrou doux d'édition](FEATURES/presence/us-verrou-edition.md) | ⬜ |
+| [US08.5.2 — Curseurs nommés throttlés](FEATURES/presence/us-curseurs-nommes.md) | 🔎 code livré — recette |
+| [US08.5.3 — Verrou doux d'édition](FEATURES/presence/us-verrou-edition.md) | 🔎 code livré — recette |
 | **F08.12 — Facilitation Socle** *(absorbe US30.3.1/.2)* | |
-| [US08.12.1 — Minuteur partagé](FEATURES/facilitation-socle/us-minuteur-partage.md) | ⬜ |
-| [US08.12.2 — Vote / dot-vote](FEATURES/facilitation-socle/us-vote-dot-vote.md) | ⬜ |
+| [US08.12.1 — Minuteur partagé](FEATURES/facilitation-socle/us-minuteur-partage.md) | ✅ Terminé (Sprint 15, 2026-07-16) |
+| [US08.12.2 — Vote / dot-vote](FEATURES/facilitation-socle/us-vote-dot-vote.md) | ✅ Terminé (Sprint 15, 2026-07-16) |
 | **F08.13 — Cycle de vie du board & import** *(absorbe EN30.13)* | |
-| [US08.13.1 — Import Klaxoon + annulation](FEATURES/cycle-vie-board/us-import-klaxoon.md) | ⬜ |
-| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | ⬜ |
-| [US08.13.3 — Image de couverture](FEATURES/cycle-vie-board/us-image-couverture.md) | ⬜ |
-| [US08.13.4 — Réinitialisation du canvas (§3.8, préservation champs/votes §6.10)](FEATURES/cycle-vie-board/us-reset-board.md) | ⬜ |
+| [US08.13.1 — Import Klaxoon + annulation](FEATURES/cycle-vie-board/us-import-klaxoon.md) | 🔎 code livré — recette |
+| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | ⬜ non commencé |
+| [US08.13.3 — Image de couverture](FEATURES/cycle-vie-board/us-image-couverture.md) | 🔎 code livré — recette |
+| [US08.13.4 — Réinitialisation du canvas (§3.8, préservation champs/votes §6.10)](FEATURES/cycle-vie-board/us-reset-board.md) | 🔎 code livré — recette |
 | **F08.1 — CRUD tableaux (étendue)** | |
-| [US08.1.9 — Chargement d'un tableau & présence agrégée (§2.2)](FEATURES/crud-tableaux/us-chargement-tableau.md) | ⬜ |
+| [US08.1.9 — Chargement d'un tableau & présence agrégée (§2.2)](FEATURES/crud-tableaux/us-chargement-tableau.md) | 🔎 code livré — recette |
 | **F08.2 — Partage et rôles (étendue)** | |
-| [US08.2.5 — Inviter par email + gouvernance des rôles](FEATURES/partage-roles/us-inviter-email.md) | ⬜ |
-| [US08.2.6 — Lien de partage : lecture & gestion (§2.3)](FEATURES/partage-roles/us-lien-partage-parite.md) | ⬜ |
+| [US08.2.5 — Inviter par email + gouvernance des rôles](FEATURES/partage-roles/us-inviter-email.md) | ⚠️ régression de migration — codé/mergé pré-modulith, absent du monolith actuel (voir sprint-16.md) |
+| [US08.2.6 — Lien de partage : lecture & gestion (§2.3)](FEATURES/partage-roles/us-lien-partage-parite.md) | 🔎 code livré — recette |
 
 > **Resynchronisé le 2026-07-09** depuis le frontmatter `Stage:` de chaque fichier (source de
 > vérité, grep direct des 17 fichiers) : ce tableau affichait encore « 17 Review » alors que
@@ -507,3 +507,22 @@ collaboratif open-source).
 > ancrés (US30.2.3) **restent `phase-3`** : absents du spec de référence. Séquencement :
 > **Sprints 38-43** (`sprints/README.md`). `Stage: Backlog`, Gate 1 PO Agent à passer au démarrage
 > de chaque item. Ne remet pas en cause le 17/17 Done du noyau initial.
+>
+> **Réconciliation 2026-07-20 (backlog↔code, Sprints 11/12/14/16) :** ce tableau affichait encore
+> tout `⬜` faute d'avoir été mis à jour depuis sa création (seul Sprint 13 avait été réconcilié le
+> 2026-07-16). Vérification directe du code (`pivot-core`/`pivot-ui` post-bascule Spring Modulith,
+> ADR-030) : **EN08.4, F08.6, F08.7, F08.8, F08.9, F08.10, F08.13 (hors US08.13.2), US08.1.9,
+> US08.2.6, F08.12 sont code-complets** (recette mainteneur restante, `Stage` inchangé). Trois
+> écarts réels identifiés : **US08.11.1** (aimantation grille) et **US08.11.4** (guides
+> d'alignement) absents du canvas réellement routé ; **US08.11.2** (zoom avancé) partiel (molette
+> seule) ; **US08.13.2** (brouillon de template) non commencé ; **US08.2.5** (inviter par email) —
+> ⚠️ **régression de la bascule modulith** : codé et mergé sur les repos pré-migration
+> (`pivot-collaboratif-core#108`/`pivot-collaboratif-ui#169`, 2026-07-17) mais absent du monolith
+> actuel, à réimporter plutôt qu'à réécrire. Détail par sprint : `sprints/sprint-12.md`,
+> `sprint-14.md`, `sprint-16.md`.
+>
+> **Items orphelins non séquencés (constatés 2026-07-20) :** US08.3.4 (texte proportionnel à la
+> carte), US08.3.5 (dézoom dynamique selon le contenu) et US08.3.7 (navigation au clic droit) —
+> ajoutés en `Stage: Backlog` le 2026-07-10 (raffinements UX post-audit de parité) — n'ont jamais
+> été assignés à un sprint et sont absents du code. US08.3.6 est distinct : superseded par
+> US08.11.7 (Sprint 14), déjà code-complet.

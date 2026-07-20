@@ -57,10 +57,11 @@ merge. Migration BDD champs = nouveau `V5`. `Stage:` des US reste `⬜` jusqu'à
 ## Dépendances
 
 - Dépend de : **Sprint 11 (EN08.4)** — modèle `Card` typé + contrats WS. **Levée** : EN08.4 est
-  déjà dans `pivot-collaboratif-core` main (entité `Card` typée avec `groupId`/`groupColor`/`locked`/
-  `layer`, contrats `CARD_*`). *(NB : le Sprint 11 apparaît encore « ⬜ planifié » dans `README.md`
-  — désync backlog à réconcilier séparément, hors périmètre de cette PR.)*
-- Repo cible inchangé (`pivot-collaboratif-core`/`pivot-collaboratif-ui`).
+  déjà dans `pivot-core` main (entité `Card` typée avec `groupId`/`groupColor`/`locked`/
+  `layer`, contrats `CARD_*`). *(Désync `README.md` réconciliée le 2026-07-20 — voir sprint-11.md.)*
+- Repo cible : bascule Spring Modulith (ADR-030, 2026-07-17) — le code vit désormais dans
+  `pivot-core` (module `fr.pivot.collaboratif.whiteboard`) et `pivot-ui`
+  (`projects/collaboratif-ui`) ; `pivot-collaboratif-core`/`pivot-collaboratif-ui` sont archivés.
 
 ---
 *Créé le 2026-07-13, suite à la décision mainteneur d'absorber le spec de référence

@@ -21,12 +21,12 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ✅ Terminé (2026-07-11) — templates satellites validés (EN17.11), TAXO-2 fait, écart ADR-026 §2 comblé (US09.2.3) |
 | [Sprint 9](./sprint-9.md) | Socle **technique** Pilotage + Roadmap v0 *(re-trié 2026-07-10)* | 🔓 Débloqué (2026-07-11, Sprint 8 clos — REX satisfait) — E40 (profil adaptatif) sorti → queue idéation |
 | [Sprint 10](./sprint-10.md) | Parité whiteboard visible (remédiation Socle) — favoris, corbeille, recherche, paramètres tableau *(nouveau 2026-07-13)* | ✅ Terminé (2026-07-16) — 4/4 US mergées (collaboratif-core #66) + recette mainteneur validée, 3 correctifs recette mergés (collaboratif-ui #124, pivot-ui #204) |
-| [Sprint 11](./sprint-11.md) | Parité whiteboard — Fondation modèle `Card` (EN08.4) *(nouveau 2026-07-13)* | ⬜ planifié — bloquant S12-43 |
-| [Sprint 12](./sprint-12.md) | Parité whiteboard — Objets typés & connecteurs (F08.6/F08.7) | ⬜ planifié |
+| [Sprint 11](./sprint-11.md) | Parité whiteboard — Fondation modèle `Card` (EN08.4) *(nouveau 2026-07-13)* | 🔎 Code livré et fusionné (`collaboratif-core#68`) — **recette mainteneur restante**, `Stage` reste ⬜ (réconcilié 2026-07-20, voir sprint-11.md) |
+| [Sprint 12](./sprint-12.md) | Parité whiteboard — Objets typés & connecteurs (F08.6/F08.7) | 🔎 9/9 items code-complets (constaté dans `pivot-core`/`pivot-ui` le 2026-07-20) — recette mainteneur restante, voir sprint-12.md |
 | [Sprint 13](./sprint-13.md) | Parité whiteboard — Cadres, organisation, champs (F08.8/F08.9/F08.10) | 🟡 en cours (2026-07-16) — cadres (US08.8.1/.2) + organisation backend (US08.9.1/.2) livrés dans `collaboratif` main **hors convention** (recette en attente) ; z-order (US08.9.3) + champs (US08.10.1/.2) restants — voir sprint-13.md |
-| [Sprint 14](./sprint-14.md) | Parité whiteboard — Canvas UX & présence (F08.11/F08.5) | ⬜ planifié |
+| [Sprint 14](./sprint-14.md) | Parité whiteboard — Canvas UX & présence (F08.11/F08.5) | 🟡 6/9 items code-complets — **manquent** US08.11.1 (aimantation grille), US08.11.4 (guides d'alignement), US08.11.2 partiel (boutons zoom/ajuster) — réconcilié 2026-07-20, voir sprint-14.md |
 | [Sprint 15](./sprint-15.md) | Parité whiteboard — Facilitation : minuteur, vote (F08.12) | ✅ Terminé (2026-07-16) — US08.12.1/2 câblées UI + recette live (collaboratif-ui #126, enabler /me collaboratif-core #89) |
-| [Sprint 16](./sprint-16.md) | Parité whiteboard — Cycle de vie & partage (F08.13/US08.2.5) | ⬜ planifié |
+| [Sprint 16](./sprint-16.md) | Parité whiteboard — Cycle de vie & partage (F08.13/US08.2.5) | 🟡 4/6 items code-complets — ⚠️ **US08.2.5 (inviter par email) régression de bascule modulith** (codé et mergé pré-migration, absent du monolith actuel) ; US08.13.2 (brouillon de template) non commencé — réconcilié 2026-07-20, voir sprint-16.md |
 | [Sprint 17](./sprint-17.md) | Pilotage cœur PPM | ⏸️ Extrait — produit Pilotage distinct (hors trajectoire PIVOT) |
 | [Sprint 18](./sprint-18.md) | Risques + plan de contrôle sécurité | 🔓 Débloqué — **reste dans PIVOT** (E21 Risques, schéma `risk`) |
 | [Sprint 19](./sprint-19.md) | Forms (cœur) + framework onboarding | 🔓 Débloqué — **reste dans PIVOT** (E42 Forms, E41 onboarding) |
