@@ -18,7 +18,7 @@ benchmark US30.2.2 (présence & curseurs nommés).
 
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
-| [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | ⬜ absent — voir État réel |
+| [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | 🔎 code livré (ui #241) — recette |
 | [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | 🔎 partiel — voir État réel |
 | [US08.11.3](../EPIC-collaboration/FEATURES/canvas-ux/us-collage-presse-papiers.md) | Collage presse-papiers (image / tableur / texte) | Medium | M | 🔎 code livré — recette |
 | [US08.11.4](../EPIC-collaboration/FEATURES/canvas-ux/us-guides-alignement.md) | Guides d'alignement (§4.3, supersède 8 px d'US08.3.2a) | Medium | M | ⬜ absent — voir État réel |
@@ -36,7 +36,7 @@ benchmark US30.2.2 (présence & curseurs nommés).
 
 | Item | État réel | Détail |
 |------|-----------|--------|
-| US08.11.1 (aimantation grille) | **Absent** | Seule une grille cosmétique existe (`DOT_SPACING`/`gridSize`) ; aucun snap-to-grid au déplacement d'une carte |
+| US08.11.1 (aimantation grille) | Fait — **1 écart de spec à arbitrer** | Bouton « Grille » (`floating-toolbar`), snap dur `Math.round(c / 24) * 24` appliqué au déplacement **et** au redimensionnement, bascule points/quadrillage, préférence locale `localStorage['klx_board_grid']` (off par défaut). État détenu par `board-page`, partagé entre barre d'outils et canvas. `applySnap()` est le point de passage unique où la grille court-circuitera les guides d'alignement (§5.9) — ceux-ci n'existent pas encore, la branche est réservée à US08.11.4. **Écart** : l'US impose `Math.round(c / 24) * 24` *et* liste `36 -> 24` en valeur limite ; les deux se contredisent (36 est le point milieu exact, `Math.round(1.5) === 2`, donc la formule rend 48). La formule, normative et répétée, l'a emporté ; un test dédié verrouille et documente le choix — **arbitrage PO attendu**. |
 | US08.11.2 (zoom avancé) | **Partiel** | Zoom molette OK (`MIN_ZOOM`/`MAX_ZOOM`, `board-constants.ts`) ; boutons zoom +/- et « ajuster au contenu/sélection » n'existent que dans l'ancien canvas retiré (`whiteboard-canvas.component.ts`, non routé depuis EN08.4) |
 | US08.11.3 (collage presse-papiers) | Fait | `isImageClipboardItem`/`decideTablePaste`/`isUrlOnlyPaste` câblés sur `@HostListener('document:paste')` dans `structured-canvas.component.ts` |
 | US08.11.4 (guides d'alignement) | **Absent** | Les « smart alignment guides » n'existent que dans l'ancien canvas retiré (`canvas/model/canvas.model.ts`), pas sur `structured-canvas` |
@@ -46,9 +46,11 @@ benchmark US30.2.2 (présence & curseurs nommés).
 | US08.5.2 (curseurs nommés) | Fait | Signal `cursors` (`CursorState`), event `board:cursors` dans `board.store.ts` |
 | US08.5.3 (verrou doux d'édition) | Fait | Map `remoteEditors` `{userId, name}` dans `board.store.ts` |
 
-**Reste réellement à faire pour clore ce sprint :** US08.11.1 (aimantation grille), US08.11.4
-(guides d'alignement), et la partie boutons/ajuster d'US08.11.2 — à porter du canvas retiré vers
-`structured-canvas`, ou réécrire nativement.
+**Reste réellement à faire pour clore ce sprint :** US08.11.4 (guides d'alignement) et la partie
+boutons/ajuster d'US08.11.2 — à porter du canvas retiré vers `structured-canvas`, ou réécrire
+nativement. US08.11.1 est livrée (ui #241, 2026-07-20) ; comme tout le reste du sprint, son
+`Stage` reste `⬜` jusqu'à la recette mainteneur —
+voir [checklist de recette](../../workflow/checklist-recette-whiteboard.md).
 
 ## Notes de séquencement
 
