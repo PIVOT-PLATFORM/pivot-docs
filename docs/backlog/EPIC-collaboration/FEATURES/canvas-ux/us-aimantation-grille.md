@@ -19,7 +19,7 @@
 | A11y : le bouton "Grille" est un `<button>` natif avec `aria-label="Aimantation à la grille"` et `aria-pressed` reflétant l'état actif/inactif, activable au clavier (Tab, Entrée/Espace) sans dépendre du survol souris | ⬜ |
 | A11y : le passage points ↔ quadrillage est purement décoratif (fond `aria-hidden`) — il ne modifie ni l'ordre de tabulation ni les libellés des cartes, et ne repose pas uniquement sur la couleur pour signaler l'état actif (état porté par `aria-pressed`) | ⬜ |
 | Tests TI : mutation `card:move`/`card:resize` reçue serveur avec coordonnées arbitraires → persistées telles quelles (le snap est purement client, le serveur ne ré-arrondit pas) — la grille n'introduit aucun contrat WS nouveau | ⬜ |
-| Tests Vitest : arrondi 24 px sur X/Y (valeurs limites : 11→0, 12→24, 36→24, 37→48), persistance localStorage (`'1'`/`'0'`/absent/corrompu), court-circuit des guides quand grille active, bascule du rendu points/quadrillage, a11y `aria-pressed` (axe-core) | ⬜ |
+| Tests Vitest : arrondi 24 px sur X/Y (valeurs limites : 11→0, 12→24, **36→48**, 37→48 — voir §Amendement), persistance localStorage (`'1'`/`'0'`/absent/corrompu), court-circuit des guides quand grille active, bascule du rendu points/quadrillage, a11y `aria-pressed` (axe-core) | ⬜ |
 
 ## Hors périmètre
 
@@ -43,3 +43,29 @@ Stage: ⬜
 Rôle: utilisateur-final
 Source: Parité complète vs POC PouetPouet (`Détails tableau blanc backlog.md` §4.2, §5.9, §7) — décision mainteneur d'absorption intégrale du spec de référence dans le Socle E08
 Dépendances: EN08.4 (modèle Card typé) + US08.3.2a (canvas local, guides d'alignement mutuellement exclusifs §5.9)
+
+---
+
+## Amendement 2026-07-21 — le point milieu (`36`) arrondit vers le haut
+
+**Incohérence interne corrigée.** La rédaction initiale imposait la formule
+`Math.round(coord / 24) * 24` **et** listait `36 → 24` parmi les valeurs limites de test. Les deux
+sont contradictoires : 36 est le point milieu exact entre 24 et 48, et `Math.round(1.5)` vaut `2`
+en JavaScript (les demis vont vers +∞). La formule rend donc **48**, jamais 24.
+
+**Arbitrage : la formule l'emporte**, et la valeur d'exemple est corrigée en `36 → 48`.
+
+Trois raisons :
+1. La formule est **normative et répétée** — dans l'AC de comportement comme dans les notes
+   d'implémentation — tandis que `36 → 24` n'apparaît qu'une fois, dans une liste d'exemples.
+2. C'est le comportement d'arrondi **standard** de la plateforme. Obtenir `36 → 24` imposerait un
+   arrondi des demis vers le bas (`Math.ceil(x / 24 - 0.5) * 24`), une exception qu'aucun AC ne
+   justifie et qui surprendrait à la lecture du code.
+3. Le point milieu est **imperceptible à l'usage** : à 36 px, la carte est à égale distance des deux
+   lignes de grille ; qu'elle aille vers l'une ou l'autre ne change rien à l'expérience. Aucun AC
+   fonctionnel ne dépend de ce choix.
+
+Un test dédié (`grid-snap.spec.ts`) verrouille ce comportement et porte la justification, pour que
+l'arbitrage reste visible plutôt que d'être re-tranché en silence à la prochaine lecture.
+
+Implémenté dans `pivot-ui#241`.
