@@ -32,8 +32,8 @@
 | US09.1.1 | Créer une room de planning poker | M | High | 🔎 code livré (core#239-241, ui#234-236) — recette |
 | US09.1.2 | Rejoindre une room de planning poker via code | S | High | 🔎 code livré (core#239-241, ui#234-236) — recette |
 | US09.2.1 | Voter sur un ticket en temps réel | M | High | 🔎 code livré — recette (écart AC : pick-then-Valider, voir §État réel) |
-| US09.2.2 | Révéler les votes et calculer le consensus | S | High | 🔎 code livré, **régression front à corriger** (voir §État réel) |
-| US09.2.3 | Reset et revote, validation de l'estimation finale | S | High | 🔎 backend livré ([core#253](https://github.com/PIVOT-PLATFORM/pivot-core/pull/253)) — **frontend à faire** |
+| US09.2.2 | Révéler les votes et calculer le consensus | S | High | 🔎 code livré, régression front **corrigée** ([ui#259](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/259)) — recette |
+| US09.2.3 | Reset et revote, validation de l'estimation finale | S | High | 🔎 code livré ([core#253](https://github.com/PIVOT-PLATFORM/pivot-core/pull/253) + [ui#259](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/259)) — recette |
 | US09.3.1 | Participer anonymement à une room (sans compte) | M | Medium | 🔎 code livré — recette |
 | EN09.2 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14 (contrat socle producteur KPI), non implémenté et non planifié |
 | EN15.7 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — même dépendance EN28.14 |
@@ -44,27 +44,30 @@
 > (`agilite/poker/`) — rooms, jonction par code, vote temps réel masqué, participation anonyme
 > avec heartbeat de session invité. Recette mainteneur restante.
 >
-> ⚠️ **US09.2.2 : régression de contrat front/back.** Le backend (`core#241`, "attributed reveal")
-> envoie désormais `attributedVotes: {name, value}[]` au lieu du `values: string[]` anonyme prévu
-> par l'AC d'origine — mais `pivot-ui` (`ticket.model.ts`/`room-board.component.ts`) attend encore
-> `values` : la liste des cartes révélées ne s'affiche jamais côté front (moyenne/médiane/majorité
-> fonctionnent, ce sont des champs inchangés). L'attribution nominative elle-même est un choix
-> délibéré du mainteneur (2026-07-21, "classic parity" façon Klaxoon) qui amende la garantie
-> d'anonymat écrite dans l'AC — **AC à mettre à jour séparément**, correctif frontend à faire dans
-> le cadre de la finition de ce sprint.
+> ✅ **US09.2.2 : régression de contrat front/back résorbée** ([`pivot-ui#259`](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/259)).
+> Le backend (`core#241`, "attributed reveal") envoyait `attributedVotes: {name, value}[]` alors
+> que `pivot-ui` (`ticket.model.ts`/`room-board.component.ts`) attendait encore `values` — la
+> liste des cartes révélées ne s'affichait jamais côté front. Corrigé avec la même PR qu'US09.2.3
+> (même composant). L'attribution nominative elle-même reste un choix délibéré du mainteneur
+> (2026-07-21, "classic parity" façon Klaxoon) qui amende la garantie d'anonymat écrite dans l'AC
+> d'origine — **AC US09.2.2 à amender séparément** pour refléter ce choix (non fait dans cette PR).
 >
 > **US09.2.1** : écart mineur non bloquant — l'AC décrit un vote envoyé au clic sur la carte,
 > l'implémentation ajoute une étape "Valider" (pick-then-Valider) avant envoi effectif. Choix UX
 > délibéré (E09), à réconcilier avec l'AC au Gate 1 de recette.
 >
-> ✅ **US09.2.3 : backend livré** ([`pivot-core#253`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/253),
-> CI verte — 69/69 tests TU+TI, Checkstyle/SpotBugs/SonarCloud Quality Gate propres). Deux
-> endpoints `POST .../reset` et `POST .../finalize`, migration `V3` (colonne `final_estimate`
-> nullable), deux nouvelles exceptions 409 (`TicketNotRevealedException`/
-> `TicketAlreadyFinalizedException`). `GET .../recap` étend `TicketRecapEntry` avec
-> `finalEstimate`. **Frontend restant** : `TicketService.resetTicket`/`finalizeTicket`,
-> `RoomBoardComponent` (actions "Relancer un vote"/"Valider l'estimation finale"), plus le
-> correctif du contrat US09.2.2 ci-dessus (même composant).
+> ✅ **US09.2.3 : code livré, backend + frontend.** Backend
+> ([`pivot-core#253`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/253), CI verte — 69/69
+> tests TU+TI, Checkstyle/SpotBugs/SonarCloud Quality Gate propres) : deux endpoints
+> `POST .../reset` et `POST .../finalize`, migration `V3` (colonne `final_estimate` nullable),
+> deux nouvelles exceptions 409 (`TicketNotRevealedException`/`TicketAlreadyFinalizedException`).
+> `GET .../recap` étend `TicketRecapEntry` avec `finalEstimate`. Frontend
+> ([`pivot-ui#259`](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/259), CI verte — 471/471 tests
+> Vitest, E2E Playwright, Lighthouse A11y, SonarCloud) : `TicketService.resetTicket`/
+> `finalizeTicket`, actions "Relancer un vote"/"Valider l'estimation finale" sur `RoomBoardComponent`
+> (sélecteur pré-rempli sur la majorité du consensus, badge "Estimation finale", compteur de resets
+> en mémoire), UX inspirée de PouetPouet adaptée aux tokens `@pivot/design-system`. Même PR corrige
+> la régression US09.2.2 ci-dessus.
 >
 > ⛔ **EN09.2/EN15.7 bloqués** : les deux enablers "Exposer les KPI du domaine" dépendent d'**EN28.14**
 > (contrat socle producteur KPI — schéma `KpiRef`, endpoint `GET /api/{domaine}/kpi`, événement
