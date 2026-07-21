@@ -20,8 +20,14 @@
 > reste intacte et est **reséquencée** en [backlog post-S19](./backlog-post-s12.md) (queue non
 > planifiée), à replanifier après la vague de raffinage.
 >
-> **Statut** : ⬜ planifié — non démarré. Séquencé après S20 ; framework (EN52.1-3) faisable
-> immédiatement, fiches Socle enchaînées derrière.
+> **Statut** : ⬜ planifié — non démarré. Framework (EN52.1-3) faisable immédiatement, fiches
+> Socle enchaînées derrière.
+>
+> ⚠️ **Incohérence corrigée (2026-07-21)** : cette section indiquait encore "Séquencé après S20",
+> un reliquat d'une version antérieure du plan, alors que le paragraphe ci-dessus dit "repoussé
+> après S21→S40". Par ailleurs, le domaine Pilotage a depuis été extrait de PIVOT (2026-07-20,
+> ADR-030) — S21→S40 n'est donc plus le jalon d'entrée pertinent ; le séquencement réel de S41
+> reste à trancher par le mainteneur (voir `sprints/README.md` §Domaine Pilotage extrait).
 
 **Sortie :** un **référentiel de clarification des domaines Socle** — 1 template + 1 référentiel
 d'accès consolidé + 1 registre des API externes + **9 fiches de domaine** (Identités/IAM, Espace
