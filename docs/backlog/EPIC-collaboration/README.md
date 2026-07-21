@@ -457,9 +457,10 @@ collaboratif open-source).
 | [US08.12.2 — Vote / dot-vote](FEATURES/facilitation-socle/us-vote-dot-vote.md) | ✅ Terminé (Sprint 15, 2026-07-16) |
 | **F08.13 — Cycle de vie du board & import** *(absorbe EN30.13)* | |
 | [US08.13.1 — Import Klaxoon + annulation](FEATURES/cycle-vie-board/us-import-klaxoon.md) | 🔎 code livré — recette |
-| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | ⬜ non commencé |
+| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | ⬜ non commencé — **AC réalignés le 2026-07-21** sur le modèle Java réel |
 | [US08.13.3 — Image de couverture](FEATURES/cycle-vie-board/us-image-couverture.md) | 🔎 code livré — recette |
 | [US08.13.4 — Réinitialisation du canvas (§3.8, préservation champs/votes §6.10)](FEATURES/cycle-vie-board/us-reset-board.md) | 🔎 code livré — recette |
+| [US08.13.5 — Partage d'un template : privé / organisation / personnes ciblées](FEATURES/cycle-vie-board/us-partage-template.md) | ⬜ non commencé — **net-new 2026-07-21** (décision mainteneur, modèle type Klaxoon) |
 | **F08.1 — CRUD tableaux (étendue)** | |
 | [US08.1.9 — Chargement d'un tableau & présence agrégée (§2.2)](FEATURES/crud-tableaux/us-chargement-tableau.md) | 🔎 code livré — recette |
 | **F08.2 — Partage et rôles (étendue)** | |
