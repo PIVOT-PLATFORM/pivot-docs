@@ -15,18 +15,20 @@
 > domaines de ce sprint (`US10.2.3`, `US10.3.2`, `US14.1.2` restent hors fichier US écrit, non
 > repris ici).
 >
-> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
-> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
+> **Statut** : 🔎 en cours (2026-07-22) — Gate 1 READINESS à 100 sur les 5 US E10 Daily Standup
+> ([pivot-docs#296](https://github.com/PIVOT-PLATFORM/pivot-docs/pull/296)), backend `pivot-core`
+> implémenté et en review ([core#255](https://github.com/PIVOT-PLATFORM/pivot-core/pull/255)) —
+> frontend `pivot-ui` (UX inspirée de PouetPouet) et E14 La Roue restent à traiter.
 
 ## Items (10)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US10.1.1 | Créer une session de daily standup | M | High | ⬜ |
-| US10.1.2 | Démarrer et terminer une session daily standup | S | High | ⬜ |
-| US10.2.1 | Minuteur configurable et rotation participants (temps réel) | M | High | ⬜ |
-| US10.2.2 | Contrôler l'animation manuellement (passer, réordonner, étendre) | S | Medium | ⬜ |
-| US10.3.1 | Consulter les statistiques d'une session terminée | M | Medium | ⬜ |
+| US10.1.1 | Créer une session de daily standup | M | High | 🔧 backend en review ([core#255](https://github.com/PIVOT-PLATFORM/pivot-core/pull/255)) — frontend à faire |
+| US10.1.2 | Démarrer et terminer une session daily standup | S | High | 🔧 backend en review ([core#255](https://github.com/PIVOT-PLATFORM/pivot-core/pull/255)) — frontend à faire |
+| US10.2.1 | Minuteur configurable et rotation participants (temps réel) | M | High | 🔧 backend en review ([core#255](https://github.com/PIVOT-PLATFORM/pivot-core/pull/255)) — frontend à faire |
+| US10.2.2 | Contrôler l'animation manuellement (passer, réordonner, étendre) | S | Medium | 🔧 backend en review ([core#255](https://github.com/PIVOT-PLATFORM/pivot-core/pull/255)) — frontend à faire |
+| US10.3.1 | Consulter les statistiques d'une session terminée | M | Medium | 🔧 backend en review ([core#255](https://github.com/PIVOT-PLATFORM/pivot-core/pull/255)) — frontend à faire |
 | EN10.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 | US14.1.1 | Créer et gérer une roue de tirage | M | High | ⬜ |
 | US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
