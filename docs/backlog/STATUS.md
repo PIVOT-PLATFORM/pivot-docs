@@ -57,8 +57,8 @@ Le repo/schéma cible de chaque EPIC, déclaré dans son propre README, tranche 
 > **produit Pilotage extrait** (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT.
 >
 > **Traçabilité :** les lignes des EPICs extraits sont **conservées** dans les tables ci-dessous,
-> annotées `⏸️ Extrait — produit Pilotage distinct`. Un bandeau par fichier `sprint-17.md`…
-> `sprint-40.md` reste un **follow-up** (non traité ici pour éviter d'éditer ~24 fichiers).
+> annotées `⏸️ Extrait — produit Pilotage distinct`. Bandeau par fichier ajouté le 2026-07-21 sur
+> `sprint-17.md`, `sprint-20.md`…`sprint-30.md`, `sprint-33.md`…`sprint-40.md` (20 fichiers).
 
 ## Légende
 
@@ -401,5 +401,6 @@ PIVOT** : E21 Gestion des risques (schéma `risk`, `pivot-risk-core` — à ne p
 Pilotage), E42 Forms, E41 onboarding, E43 sécurité, E52 raffinage, whiteboard/collaboration et tout
 le Socle livré. Aucune ligne supprimée, aucun `Stage` frontmatter touché. Voir la nouvelle section
 [Domaine Pilotage — EXTRAIT de PIVOT](#domaine-pilotage--extrait-de-pivot) en tête et
-[sprints/README.md](sprints/README.md). Follow-up non traité : bandeau par fichier `sprint-17.md`…
-`sprint-40.md`.*
+[sprints/README.md](sprints/README.md). Bandeau par fichier `sprint-17.md`…`sprint-40.md` ajouté le
+2026-07-21 (20 fichiers extraits, `sprint-18.md`/`sprint-19.md`/`sprint-31.md`/`sprint-32.md`
+restent dans PIVOT, non concernés).*
