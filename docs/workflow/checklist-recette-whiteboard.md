@@ -67,6 +67,9 @@ Application sur `http://localhost` — **port 80**, pas 4200.
   - avec **plusieurs cartes sélectionnées**, aucun guide n'apparaît *(voulu — hors périmètre)*
   - **grille activée en même temps → aucun guide** *(voulu — la grille est prioritaire, §5.9)*
   - état conservé après rechargement de la page
+- [ ] **Dézoom dynamique** (US08.3.5) — `Ctrl` + molette vers le bas jusqu'à la butée. Vérifier :
+  - sur un tableau **de taille normale**, la butée reste à **10 %** (comportement inchangé)
+  - sur un tableau **très étalé** (éloigner deux post-it de plusieurs écrans), la butée descend **en dessous de 10 %**, jusqu'à voir tout le contenu d'un seul coup d'œil
 - [ ] **Collage** (US08.11.3) — coller une image, un tableau tableur, du texte
 - [ ] **Undo / redo** (US08.11.5) — `Ctrl+Z` / `Ctrl+Y` sur création, déplacement, suppression
 - [ ] **Raccourcis & nudge** (US08.11.6) — flèches pour décaler une carte de 24 px, touches d'outils
