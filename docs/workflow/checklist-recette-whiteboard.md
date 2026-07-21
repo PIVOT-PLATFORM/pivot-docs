@@ -61,6 +61,12 @@ Application sur `http://localhost` — **port 80**, pas 4200.
 
 ## Sprint 14 — Canvas UX
 
+- [ ] **Guides d'alignement** (US08.11.4) — bouton « Guides d'alignement » (actif par défaut) → déplacer une carte près d'une autre fait apparaître une **ligne rose** quand les bords ou les centres s'alignent, et la carte s'y accroche. Vérifier :
+  - au plus **une ligne verticale + une horizontale** à la fois (jamais un faisceau)
+  - la ligne **disparaît** dès le relâchement
+  - avec **plusieurs cartes sélectionnées**, aucun guide n'apparaît *(voulu — hors périmètre)*
+  - **grille activée en même temps → aucun guide** *(voulu — la grille est prioritaire, §5.9)*
+  - état conservé après rechargement de la page
 - [ ] **Collage** (US08.11.3) — coller une image, un tableau tableur, du texte
 - [ ] **Undo / redo** (US08.11.5) — `Ctrl+Z` / `Ctrl+Y` sur création, déplacement, suppression
 - [ ] **Raccourcis & nudge** (US08.11.6) — flèches pour décaler une carte de 24 px, touches d'outils
