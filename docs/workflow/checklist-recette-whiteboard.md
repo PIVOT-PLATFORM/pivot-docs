@@ -67,6 +67,14 @@ Application sur `http://localhost` — **port 80**, pas 4200.
   - avec **plusieurs cartes sélectionnées**, aucun guide n'apparaît *(voulu — hors périmètre)*
   - **grille activée en même temps → aucun guide** *(voulu — la grille est prioritaire, §5.9)*
   - état conservé après rechargement de la page
+- [ ] **Zoom avancé** (US08.11.2) — cluster de zoom en **bas à droite**. Vérifier :
+  - **+** et **−** changent le zoom d'un quart à chaque clic (100 → 125 → 156 %)
+  - cliquer le **pourcentage** revient à 100 %
+  - **ajuster au contenu** cadre tout le tableau, **sans jamais dépasser 100 %**
+  - **ajuster à la sélection** (une carte sélectionnée) peut monter **jusqu'à 150 %**
+  - sans sélection, le bouton « ajuster à la sélection » est grisé et **ne fait rien**
+  - à l'ouverture d'un tableau ayant du contenu, la vue **se cadre toute seule** et le contenu apparaît en fondu — sans clignoter à 100 % avant
+  - ⚠️ **La molette seule zoome maintenant**, elle ne fait plus défiler la vue *(changement voulu, validé le 2026-07-21)*. Pour se déplacer : clic-milieu, outil main, ou Espace+glisser
 - [ ] **Dézoom dynamique** (US08.3.5) — `Ctrl` + molette vers le bas jusqu'à la butée. Vérifier :
   - sur un tableau **de taille normale**, la butée reste à **10 %** (comportement inchangé)
   - sur un tableau **très étalé** (éloigner deux post-it de plusieurs écrans), la butée descend **en dessous de 10 %**, jusqu'à voir tout le contenu d'un seul coup d'œil
@@ -102,7 +110,7 @@ Application sur `http://localhost` — **port 80**, pas 4200.
 |----------|--------|
 | `404` sur `GET /whiteboard/boards/{id}/preview` (aperçu SVG de la liste) | Endpoint backend inexistant — **non corrigé**, à tracer |
 | Clés i18n brutes dans l'en-tête (`nav.notifications`, `nav.theme_to_dark`) | Drift i18n connu du shell |
-| Boutons de zoom +/− et « ajuster au contenu » absents | US08.11.2 **partielle** — non développée |
+| ~~Boutons de zoom +/− et « ajuster au contenu » absents~~ | **Résolu le 2026-07-21** — US08.11.2 livrée (ui #253) |
 | `Ctrl+Z` pendant une saisie annule le **texte**, pas l'action board | **Décision mainteneur du 2026-07-20** — US08.11.5 à amender |
 
 ## Après la recette
