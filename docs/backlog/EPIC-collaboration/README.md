@@ -464,7 +464,7 @@ collaboratif open-source).
 | **F08.1 — CRUD tableaux (étendue)** | |
 | [US08.1.9 — Chargement d'un tableau & présence agrégée (§2.2)](FEATURES/crud-tableaux/us-chargement-tableau.md) | 🔎 code livré — recette |
 | **F08.2 — Partage et rôles (étendue)** | |
-| [US08.2.5 — Inviter par email + gouvernance des rôles](FEATURES/partage-roles/us-inviter-email.md) | ⚠️ régression de migration — codé/mergé pré-modulith, absent du monolith actuel (voir sprint-16.md) |
+| [US08.2.5 — Inviter par email + gouvernance des rôles](FEATURES/partage-roles/us-inviter-email.md) | 🔎 code livré — recette (ré-implémenté dans le modulith, core #236 + ui #237 ; régression de bascule résorbée, voir sprint-16.md) |
 | [US08.2.6 — Lien de partage : lecture & gestion (§2.3)](FEATURES/partage-roles/us-lien-partage-parite.md) | 🔎 code livré — recette |
 
 > **Resynchronisé le 2026-07-09** depuis le frontmatter `Stage:` de chaque fichier (source de
@@ -519,11 +519,11 @@ collaboratif open-source).
 > *(**US08.11.1** — aimantation grille — était de ce lot, livrée depuis par `pivot-ui#241`,
 > 2026-07-20)* ; **US08.13.2** (brouillon de template) — backend livré (`pivot-core#251`,
 > 2026-07-21), front toujours à faire. Sprint 14 est désormais 10/10 code-complet. **US08.2.5**
-> (inviter par email) —
-> ⚠️ **régression de la bascule modulith** : codé et mergé sur les repos pré-migration
-> (`pivot-collaboratif-core#108`/`pivot-collaboratif-ui#169`, 2026-07-17) mais absent du monolith
-> actuel, à réimporter plutôt qu'à réécrire. Détail par sprint : `sprints/sprint-12.md`,
-> `sprint-14.md`, `sprint-16.md`.
+> (inviter par email) : la
+> ⚠️ régression de la bascule modulith (codé/mergé sur les repos pré-migration
+> `pivot-collaboratif-core#108`/`pivot-collaboratif-ui#169` du 2026-07-17, absent du monolith) est
+> désormais **résorbée** — ré-implémentée nativement dans le modulith (`pivot-core#236` + `pivot-ui#237`,
+> mergés). Détail par sprint : `sprints/sprint-12.md`, `sprint-14.md`, `sprint-16.md`.
 >
 > **Items orphelins non séquencés (constatés 2026-07-20) :** US08.3.4 (texte proportionnel à la
 > carte) et US08.3.7 (navigation au clic droit) — ajoutés en `Stage: Backlog` le 2026-07-10
