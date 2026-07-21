@@ -19,7 +19,7 @@ benchmark EN30.13 (import de tableaux Klaxoon).
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
 | [US08.13.1](../EPIC-collaboration/FEATURES/cycle-vie-board/us-import-klaxoon.md) | Import Klaxoon + annulation | Medium | L | 🔎 code livré — recette |
-| [US08.13.2](../EPIC-collaboration/FEATURES/cycle-vie-board/us-brouillon-template.md) | Cycle de vie du brouillon de template | Medium | M | ⬜ non commencé |
+| [US08.13.2](../EPIC-collaboration/FEATURES/cycle-vie-board/us-brouillon-template.md) | Cycle de vie du brouillon de template | Medium | M | 🔎 backend livré (core #251) — **front à faire** |
 | [US08.13.3](../EPIC-collaboration/FEATURES/cycle-vie-board/us-image-couverture.md) | Image de couverture de tableau | Medium | S | 🔎 code livré — recette |
 | [US08.13.4](../EPIC-collaboration/FEATURES/cycle-vie-board/us-reset-board.md) | Réinitialisation du canvas (§3.8, préservation champs/votes §6.10) | Medium | S | 🔎 code livré — recette |
 | [US08.2.5](../EPIC-collaboration/FEATURES/partage-roles/us-inviter-email.md) | Inviter par email + gouvernance des rôles | High | M | ⚠️ régression de migration — voir État réel |
@@ -39,7 +39,7 @@ benchmark EN30.13 (import de tableaux Klaxoon).
 | Item | État réel | Détail |
 |------|-----------|--------|
 | US08.13.1 (import Klaxoon) | Fait — 1 écart assumé | `whiteboard/klx-import/{archive,converter}.ts` + `import-klaxoon-modal` (frontend) ; endpoints `/import/klaxoon` + `/import/undo` (backend). **Écart assumé** : l'AC « publier `collaboratif.board.imported` sur le bus d'événements » n'est pas implémentée — aucun publisher dans `pivot-core` (le premier publisher dépasse le périmètre de l'US), `TODO(F08.x/ADR-025)` laissé dans le code, **follow-up backlog à ouvrir**. Le broadcast STOMP temps réel `board:imported`/`board:import-undone` est bien livré. |
-| US08.13.2 (brouillon de template) | **Absent** | Seul `templateDraftOf: null` existe comme placeholder passif sur `BoardDetail` — aucune méthode save-from-draft/discard-draft ni côté `board.service.ts` ni côté backend |
+| US08.13.2 (brouillon de template) | **Backend fait, front absent** | Backend livré le 2026-07-21 (core #251) : `whiteboard_template.owner_id`/`updated_at`, `board.template_draft_of` (V11), six routes sous `/whiteboard/templates` (create avec `fromBoardId?`, patch, delete, `edit-content`, `save-from-draft`, `discard-draft`), capture factorisée `captureBoardInto`, filtre `templateDraftOf IS NULL` sur la requête **et** la `countQuery` du listing. **Prérequis levé** : `resolveInstantiableTemplate` accepte désormais un template possédé — auparavant un template créé par `save-as-template` n'était rejouable par personne, pas même son auteur. Corrige aussi `materializeFrame`, qui ne lisait `frame.active` dans **aucun** des deux chemins de clonage (le §6 constat 13 ne notait l'omission que d'un côté). Côté front, rien : `templateDraftOf: null` reste un placeholder passif sur `BoardDetail`, aucun appel aux nouvelles routes. |
 | US08.13.3 (image de couverture) | Fait | `coverImage` sur `Board`/`BoardSettingsPatch`, réservé OWNER |
 | US08.13.4 (reset canvas) | Fait | `resetBoard()` → `board:reset` / écoute `board:resetted` dans `board.store.ts` |
 | US08.2.5 (inviter par email) | **Régression de migration** — voir encart ci-dessus | — |
