@@ -25,10 +25,10 @@ détail des événements.
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un appelant authentifié membre de l'équipe `teamId`, when `POST /api/agilite/standup/sessions` avec `{ name, teamId, timePerPersonSeconds?, participantUserIds }`, then 201 Created avec la session créée (`status: "PENDING"`, `currentIndex: 0`), chaque `participantUserId` devenant un `StandupParticipant` dans l'ordre du tableau reçu (`order` 0..n-1, `status: "WAITING"`) | ⬜ |
+| Given un appelant authentifié membre de l'équipe `teamId`, when `POST /api/agilite/standup/sessions` avec `{ name, teamId, timePerPersonSeconds?, participantTeamMemberIds }`, then 201 Created avec la session créée (`status: "PENDING"`, `currentIndex: 0`), chaque `participantTeamMemberId` devenant un `StandupParticipant` dans l'ordre du tableau reçu (`order` 0..n-1, `status: "WAITING"`) | ⬜ |
 | Given `timePerPersonSeconds` omis, when la session est créée, then la valeur par défaut **120** (2 min) est appliquée | ⬜ |
-| Given `participantUserIds` fourni dans un ordre choisi par l'appelant (aléatoire ou manuel — mélange/réordonnancement fait côté client avant l'envoi), when la session est créée, then cet ordre est conservé tel quel — aucune randomisation serveur | ⬜ |
-| Given chaque `participantUserId`, when la session est créée, then le nom affiché de chaque participant est résolu via `TeamMembershipService` (même mécanisme que `WheelService#buildTeamMemberEntry`, US14.1.1) et persisté sur `StandupParticipant.name` (dénormalisé — un départ d'équipe ultérieur ne doit pas casser l'historique) | ⬜ |
+| Given `participantTeamMemberIds` fourni dans un ordre choisi par l'appelant (aléatoire ou manuel — mélange/réordonnancement fait côté client avant l'envoi), when la session est créée, then cet ordre est conservé tel quel — aucune randomisation serveur | ⬜ |
+| Given chaque `participantTeamMemberId`, when la session est créée, then le nom affiché de chaque participant est résolu via `TeamMembershipService` (même mécanisme que `WheelService#buildTeamMemberEntry`, US14.1.1) et persisté sur `StandupParticipant.name` (dénormalisé — un départ d'équipe ultérieur ne doit pas casser l'historique) | ⬜ |
 
 ### Lecture
 
@@ -49,9 +49,9 @@ détail des événements.
 | Critère | 🤖 Dev |
 |---------|--------|
 | Error : given `name` vide ou > 100 caractères, when création, then 400 code `INVALID_NAME` | ⬜ |
-| Error : given `participantUserIds` vide, when création, then 400 code `EMPTY_PARTICIPANTS` | ⬜ |
+| Error : given `participantTeamMemberIds` vide, when création, then 400 code `EMPTY_PARTICIPANTS` | ⬜ |
 | Error : given `timePerPersonSeconds` fourni hors bornes [30, 1800] (30s à 30min), when création, then 400 code `INVALID_TIME_PER_PERSON` | ⬜ |
-| Error : given un `participantUserId` qui n'est pas membre de l'équipe `teamId`, when création, then 400 code `INVALID_PARTICIPANT` | ⬜ |
+| Error : given un `participantTeamMemberId` qui n'est pas membre de l'équipe `teamId`, when création, then 400 code `INVALID_PARTICIPANT` | ⬜ |
 | Error : given un `teamId` inexistant ou d'un autre tenant, when création/lecture/suppression, then 404 — anti-énumération, même convention que `WheelController` (jamais 403 sur une ressource cross-tenant) | ⬜ |
 | Error : given un `id` de session inexistant ou d'un autre tenant, when lecture/suppression, then 404 | ⬜ |
 
