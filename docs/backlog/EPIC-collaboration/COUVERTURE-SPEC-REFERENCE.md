@@ -32,7 +32,8 @@
 | Invitation par email + gouvernance des rôles | §2.3, §5.5 | US08.2.5 | 🆕 (fix §6.1 scoping boardId) |
 | Lien de partage : `GET /:id/shares` + `POST/PATCH/DELETE /:id/shares/link` (regen token, shareLinkRole, disable-sans-révoquer) | §2.3 | US08.2.6 | 🆕 (réconcilié avec le modèle token d'US08.2.1) |
 | Templates : créer-depuis-template | §2.5 | US08.4.1 | ✅ existant |
-| Templates : CRUD + cycle brouillon (edit-content/save/discard) | §2.5, §5.6 | US08.13.2 | 🆕 |
+| Templates : CRUD + cycle brouillon (edit-content/save/discard) | §2.5, §5.6 | US08.13.2 | 🆕 (AC réalignés 2026-07-21 sur le modèle Java : éléments normalisés, pas de blob JSON) |
+| Templates : partage privé / organisation / personnes ciblées | *(hors spec réf.)* | US08.13.5 | 🆕 **net-new 2026-07-21** — décision mainteneur, au-delà du POC (qui ne partage pas les templates) |
 | **Modèle `Card` typé** (TEXT/IMAGE/LINK/SHAPE/DRAW/LABEL/TABLE + `meta`) | §1.5, §3.1, §3.4 | **EN08.4** | 🆕 (remplace l'objet `DRAW` d'US08.3.2a) |
 | Pense-bête texte (TEXT) | §1.5, §3.4 | US08.6.1 | 🆕 ↩︎ US30.1.2 |
 | Étiquette (LABEL) | §1.10, §3.4 | US08.6.2 | 🆕 |
