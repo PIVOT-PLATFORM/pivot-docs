@@ -64,7 +64,7 @@ extensibilité, licences, innovation, chantiers SI) est **net-new**.
 
 | Exigence benchmark (E30) | Portée par (ex-E08) | Écart / reste à faire |
 |--------------------------|----------------------|-----------------------|
-| F30.1 Canevas & objets (BL-001…007) | F08.3 Canvas WS | formes/connecteurs, dessin main levée, images, frames = à étendre |
+| F30.1 Canevas & objets (BL-001…007) | F08.3 Canvas WS + F08.6 Objets typés + F08.7 Connecteurs + F08.8 Cadres | formes (SHAPE), connecteurs, images (IMAGE), cadres et dessin main levée (DRAW) sont désormais couverts (Sprints 12/13, 2026-07-20/21) — écart résiduel à revérifier au prochain audit de parité benchmark E30 (98 items `BL-###`) |
 | F30.2 Collaboration temps réel (BL-008…011) | F08.3 + F08.5 Présence + EN08.1 | commentaires ancrés, historique de versions = à étendre |
 | F30.4 Modèles (BL-012…013) | F08.4 Templates | modèles d'organisation chartés = à étendre |
 | F30.8 Partage & administration (BL-014…016) | F08.2 Partage & rôles | hiérarchie d'espaces, export PNG/PDF = à étendre |
