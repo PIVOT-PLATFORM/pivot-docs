@@ -21,21 +21,60 @@
 > (référentiel Équipes) livré ici lève un pré-requis pour E20 Rétrospective (S19) et E11 Capacity
 > Planning (S20-S21), qui en dépendent tous deux.
 >
-> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
-> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
+> **Statut** : 🔎 en cours (réconcilié 2026-07-21) — Gate 1 READINESS déjà à 100 sur US09.2.3
+> (AC figées, DoR complète, voir §État réel). **Gate 1 restant à faire** sur EN09.2/EN15.7 une fois
+> leur dépendance EN28.14 levée (voir §État réel).
 
 ## Items (8)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US09.1.1 | Créer une room de planning poker | M | High | ⬜ |
-| US09.1.2 | Rejoindre une room de planning poker via code | S | High | ⬜ |
-| US09.2.1 | Voter sur un ticket en temps réel | M | High | ⬜ |
-| US09.2.2 | Révéler les votes et calculer le consensus | S | High | ⬜ |
-| US09.2.3 | Reset et revote, validation de l'estimation finale | S | High | ⬜ |
-| US09.3.1 | Participer anonymement à une room (sans compte) | M | Medium | ⬜ |
-| EN09.2 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
-| EN15.7 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US09.1.1 | Créer une room de planning poker | M | High | 🔎 code livré (core#239-241, ui#234-236) — recette |
+| US09.1.2 | Rejoindre une room de planning poker via code | S | High | 🔎 code livré (core#239-241, ui#234-236) — recette |
+| US09.2.1 | Voter sur un ticket en temps réel | M | High | 🔎 code livré — recette (écart AC : pick-then-Valider, voir §État réel) |
+| US09.2.2 | Révéler les votes et calculer le consensus | S | High | 🔎 code livré, **régression front à corriger** (voir §État réel) |
+| US09.2.3 | Reset et revote, validation de l'estimation finale | S | High | 🔎 backend livré ([core#253](https://github.com/PIVOT-PLATFORM/pivot-core/pull/253)) — **frontend à faire** |
+| US09.3.1 | Participer anonymement à une room (sans compte) | M | Medium | 🔎 code livré — recette |
+| EN09.2 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14 (contrat socle producteur KPI), non implémenté et non planifié |
+| EN15.7 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — même dépendance EN28.14 |
 
+## État réel (constaté dans le code le 2026-07-21)
+
+> **US09.1.1/US09.1.2/US09.2.1/US09.3.1** : code-complets, vérifiés dans `pivot-core`
+> (`agilite/poker/`) — rooms, jonction par code, vote temps réel masqué, participation anonyme
+> avec heartbeat de session invité. Recette mainteneur restante.
+>
+> ⚠️ **US09.2.2 : régression de contrat front/back.** Le backend (`core#241`, "attributed reveal")
+> envoie désormais `attributedVotes: {name, value}[]` au lieu du `values: string[]` anonyme prévu
+> par l'AC d'origine — mais `pivot-ui` (`ticket.model.ts`/`room-board.component.ts`) attend encore
+> `values` : la liste des cartes révélées ne s'affiche jamais côté front (moyenne/médiane/majorité
+> fonctionnent, ce sont des champs inchangés). L'attribution nominative elle-même est un choix
+> délibéré du mainteneur (2026-07-21, "classic parity" façon Klaxoon) qui amende la garantie
+> d'anonymat écrite dans l'AC — **AC à mettre à jour séparément**, correctif frontend à faire dans
+> le cadre de la finition de ce sprint.
+>
+> **US09.2.1** : écart mineur non bloquant — l'AC décrit un vote envoyé au clic sur la carte,
+> l'implémentation ajoute une étape "Valider" (pick-then-Valider) avant envoi effectif. Choix UX
+> délibéré (E09), à réconcilier avec l'AC au Gate 1 de recette.
+>
+> ✅ **US09.2.3 : backend livré** ([`pivot-core#253`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/253),
+> CI verte — 69/69 tests TU+TI, Checkstyle/SpotBugs/SonarCloud Quality Gate propres). Deux
+> endpoints `POST .../reset` et `POST .../finalize`, migration `V3` (colonne `final_estimate`
+> nullable), deux nouvelles exceptions 409 (`TicketNotRevealedException`/
+> `TicketAlreadyFinalizedException`). `GET .../recap` étend `TicketRecapEntry` avec
+> `finalEstimate`. **Frontend restant** : `TicketService.resetTicket`/`finalizeTicket`,
+> `RoomBoardComponent` (actions "Relancer un vote"/"Valider l'estimation finale"), plus le
+> correctif du contrat US09.2.2 ci-dessus (même composant).
+>
+> ⛔ **EN09.2/EN15.7 bloqués** : les deux enablers "Exposer les KPI du domaine" dépendent d'**EN28.14**
+> (contrat socle producteur KPI — schéma `KpiRef`, endpoint `GET /api/{domaine}/kpi`, événement
+> `kpi.updated`). Vérifié par grep exhaustif : **aucune implémentation de `KpiRef` n'existe dans le
+> code**, sur aucun des ~38 producteurs prévus à terme, EN28.14 compris — et EN28.14 (EPIC E28
+> Intégration open source) n'est planifié dans aucun sprint actif (`backlog-post-s12.md`,
+> dépend d'ADR-009 accepté S7 + gouvernance forks ADR-018). Ces deux items ne sont donc **pas
+> implémentables tels quels** dans ce sprint — proposition : les sortir en `Backlog` jusqu'à ce
+> qu'EN28.14 soit lui-même planifié, plutôt que de les laisser `⬜` comme si le travail restait
+> à portée immédiate.
+>
 > **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
 > domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

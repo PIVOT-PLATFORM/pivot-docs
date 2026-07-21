@@ -26,7 +26,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 14](./sprint-14.md) | Parité whiteboard — Canvas UX & présence (F08.11/F08.5) | 🔎 10/10 items code-complets — les trois manques du 2026-07-20 ont été livrés depuis (US08.11.1 `ui#241`, US08.11.4 `ui#247`, US08.11.2 `ui#253`) ; US08.11.8 (verrouillage d'axe) ajoutée en cours de sprint le 2026-07-21 (`ui#256`) — **recette mainteneur restante**, réconcilié 2026-07-21, voir sprint-14.md |
 | [Sprint 15](./sprint-15.md) | Parité whiteboard — Facilitation : minuteur, vote (F08.12) | ✅ Terminé (2026-07-16) — US08.12.1/2 câblées UI + recette live (collaboratif-ui #126, enabler /me collaboratif-core #89) |
 | [Sprint 16](./sprint-16.md) | Parité whiteboard — Cycle de vie & partage (F08.13/US08.2.5) | 🟡 5/6 items code-complets — ✅ **US08.2.5 (inviter par email) ré-implémentée dans le modulith** (core #236 + ui #237, la régression de bascule est résorbée) ; reste US08.13.2 (brouillon de template) — **backend livré** (core #251), front à faire — réconcilié 2026-07-21, voir sprint-16.md |
-| [Sprint 17](./sprint-17.md) | Agilité — Scrum Poker (finition) + Référentiel Équipes | ⬜ planifié |
+| [Sprint 17](./sprint-17.md) | Agilité — Scrum Poker (finition) + Référentiel Équipes | 🔎 en cours (2026-07-21) — 5/6 US poker code-complètes (recette), US09.2.3 backend livré (core#253) front à faire ; EN09.2/EN15.7 bloqués sur EN28.14 non planifié, voir sprint-17.md |
 | [Sprint 18](./sprint-18.md) | Agilité — Daily Standup + La Roue | ⬜ planifié |
 | [Sprint 19](./sprint-19.md) | Agilité — Rétrospective + PI Planning | ⬜ planifié |
 | [Sprint 20](./sprint-20.md) | Agilité — Capacity Planning (v1) | ⬜ planifié |
