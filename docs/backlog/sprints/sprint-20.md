@@ -1,5 +1,7 @@
 # Sprint 20 — Satellites Pilotage à valeur
 
+> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+>
 > ✅ **Verrou Socle levé (2026-07-10).** Enchaîne la v0 Pilotage (S9-S17) + risques (S18). Créé au
 > re-tri du 2026-07-10 : remonte les **satellites Pilotage à forte valeur** (E24/E26/E27 + E23
 > vague 2) depuis [`backlog-post-s12.md`](./backlog-post-s12.md), **avant** la queue idéation (E40
