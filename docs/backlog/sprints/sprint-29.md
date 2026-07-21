@@ -1,39 +1,40 @@
-# Sprint 29 — E18 Pilotage — Reporting, intégrations & qualité
+# Sprint 29 — Collaboration — E30 IA + Continuum & intégrations
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration) ; S32 = raffinage de clôture. Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+> **Phase** : phase-3 · E30 Collaboration. **Sortie** : les capacités IA du board (clustering,
+> génération par invite, synthèse en actions, gouvernance de l'IA, outils générés par prompt,
+> agents IA collaboratifs, génération de compte-rendu) et les intégrations du continuum d'outils
+> (visioconférence 1-clic, synchronisation gestion de projet, contenus synchronisés inter-apps,
+> intégration outils de code) sont livrées.
 >
-> **Phase** : phase-3 · E18. **Sortie** : reporting & photos financières, intégrations/liens externes, ergonomie transverse, et les enablers de qualité (KPI, données fantômes, anonymisation, perf de lancement, NFR, canaux de retours).
+> **Cible** : modulith `pivot-core` (module `fr.pivot.collaboratif.*`) + `pivot-ui` (ADR-030). (Pour S32 raffinage : livrables documentaires `docs/architecture/domaines/`, aucun code.)
 >
-> **Dépendances** : Dépend des écrans activité (S22-S26). EN18.11 expose les KPI du domaine (contrat EN28.14).
+> **Dépendances** : s'appuie sur le noyau whiteboard Socle F08.x/EN08.x (Sprints 10-16) et sur la
+> sécurité & gouvernance E30 (Sprint 28) — cadre requis avant d'ouvrir l'exécution d'agents IA et
+> les échanges de contenu inter-apps.
 >
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-## Items (15)
+## Items (11)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.9.1 | Consulter les photos financières | S | Medium | ⬜ |
-| US18.9.2 | Accéder aux rapports Power BI | S | Medium | ⬜ |
-| US18.9.3 | Suivre le financier de l'activité | M | High | ⬜ |
-| US18.10.1 | Accéder à l'application de suivi des modifications (logs) | S | Medium | ⬜ |
-| US18.10.2 | Accéder aux guides & support | XS | Medium | ⬜ |
-| US18.10.3 | Disposer de liens utiles intégrés | XS | Low | ⬜ |
-| US18.11.1 | Bénéficier de bulles d'aide harmonisées | S | Medium | ⬜ |
-| US18.11.2 | Être protégé contre la perte de saisie | S | Medium | ⬜ |
-| US18.11.3 | Réinitialiser rapidement les champs de saisie | S | Medium | ⬜ |
-| EN18.11 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
-| EN18.15 | Corriger les données « fantômes » | M | High | ⬜ |
-| EN18.16 | Anonymiser les environnements hors production | M | High | ⬜ |
-| EN18.17 | Optimiser le lancement de l'application | M | Medium | ⬜ |
-| EN18.18 | Performance, stabilité et sécurité (NFR transverse) | M | High | ⬜ |
-| EN18.19 | Canaux de retours utilisateurs | S | Medium | ⬜ |
+| US30.6.1 | IA : clustering des contributions | L | High | ⬜ |
+| US30.6.2 | IA : génération par invite | L | High | ⬜ |
+| US30.6.3 | IA : synthèse en actions | M | High | ⬜ |
+| US30.6.4 | Gouvernance de l'IA | M | High | ⬜ |
+| US30.6.5 | Outils générés par prompt | XL | Medium | ⬜ |
+| US30.6.6 | Agents IA collaboratifs | XL | Medium | ⬜ |
+| US30.6.7 | IA : génération de compte-rendu d'atelier | M | Medium | ⬜ |
+| US30.7.1 | Intégration visioconférence 1-clic | L | High | ⬜ |
+| US30.7.2 | Synchronisation gestion de projet | XL | High | ⬜ |
+| US30.7.3 | Contenus synchronisés inter-apps | XL | High | ⬜ |
+| US30.7.4 | Intégration outils de code | L | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 (+ S32 raffinage) garantissant **aucune
+> US/Enabler des domaines Agilité/Collaboration non planifiée** ; le groupe F30.13 Licences est
+> explicitement hors scope (pas de modèle payant). Items regroupés par feature.

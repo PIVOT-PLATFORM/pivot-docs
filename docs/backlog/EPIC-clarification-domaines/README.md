@@ -82,18 +82,19 @@ Chaque **fiche de domaine** répond, dans cet ordre, aux quatre questions de la 
 
 ## Programme multi-sprint
 
-> « À partir du Sprint 21, raffiner énormément tout ce qui a été fait avant. » E52 est le véhicule de
-> ce raffinage. Une vague = un sprint ; on ne clarifie que des domaines **déjà livrés** (pas de
-> rétro-doc de l'inexistant).
+> « Raffiner énormément tout ce qui a été fait avant. » E52 est le véhicule de ce raffinage. On ne
+> clarifie que des domaines **déjà livrés** (pas de rétro-doc de l'inexistant).
+>
+> **Recentrage 2026-07-21** : le domaine Pilotage étant extrait de PIVOT (ADR-030), le volet Pilotage
+> du raffinage (ex-Vague 2) est **supprimé**. Le raffinage se concentre sur les domaines **Agilité &
+> Collaboration** et clôture le programme de complétion en **[Sprint 32](../sprints/sprint-32.md)**.
 
 | Vague | Sprint | Contenu | Statut |
 |-------|--------|---------|--------|
-| 1 | [Sprint 21](../sprints/sprint-21.md) | Framework (EN52.1-3) + 9 fiches Socle (F52.1) | ⬜ planifié |
-| 2 | Sprint 22 | Fiches Pilotage (F52.2) — après recette S9-S20 | ⬜ stub |
-| 3 | Sprint 23 | Fiches Agilité/Collaboratif (F52.3) + synthèse transverse | ⬜ stub |
+| Clôture | [Sprint 32](../sprints/sprint-32.md) | Fiches Agilité (E09-E11, E19, E20, E50) + Collaboration (E30) + synthèse transverse | ⬜ planifié |
 
 ## Statut global
 
-⬜ Socle · transverse (raffinage) — **Vague 1 planifiée en [Sprint 21](../sprints/sprint-21.md)**. Créé
-le 2026-07-12 en remplacement du Sprint 14 Cockpits DSI (E51 reséquencé en
-[backlog post-S19](../sprints/backlog-post-s12.md)).
+⬜ transverse (raffinage) — **clôture planifiée en [Sprint 32](../sprints/sprint-32.md)** (domaines
+Agilité & Collaboration). Créé le 2026-07-12 en remplacement du Sprint 14 Cockpits DSI (E51 reséquencé
+en [backlog post-S16](../sprints/backlog-post-s12.md)) ; volet Pilotage supprimé le 2026-07-21.

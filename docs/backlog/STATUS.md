@@ -37,28 +37,33 @@ Le repo/schéma cible de chaque EPIC, déclaré dans son propre README, tranche 
 | E38 | Management de l'innovation (SMI) | `pivot-pilotage-core` / `pilotage` |
 | E13 | Cahiers de tests (Pilotage qualité) | `pivot-pilotage-core` / `pilotage` |
 
-### Ce qui RESTE dans PIVOT
+### Trajectoire PIVOT après S16 — recentrée Agilité & Collaboration (2026-07-21)
 
-| EPIC | Titre | Cible |
-|------|-------|-------|
-| **E21** | **Gestion des risques** | **`pivot-risk-core` / schéma `risk`** — module PIVOT propre, **à ne pas confondre avec Pilotage** |
-| E42 | Pivot Forms | module PIVOT |
-| E41 | Formation & Onboarding | module PIVOT |
-| E43 | Sécurité & Zero Trust | transverse PIVOT |
-| E52 | Clarification des domaines | transverse PIVOT (raffinage) |
-| E08 / E30 | Whiteboard / Collaboration | Socle / module PIVOT |
-| — | Tout le Socle déjà livré (E01–E07, E16, E17) | PIVOT |
+Décision mainteneur du **2026-07-21** : retirer tout le Pilotage et **recentrer le plan de sprints
+post-S16 exclusivement sur la complétion à 100 % des domaines Agilité et Collaboration**. Programme
+**S17→S31** (+ raffinage S32) — voir [`sprints/README.md` §Complétion Agilité & Collaboration](sprints/README.md).
 
-> **Conséquence sur ce tableau et sur les sprints :** la trajectoire **Sprints 17→40 « complétion
-> 100 % Pilotage & Risques »** planifiait un domaine **sortant**. Les blocs **Pilotage** de cette
-> trajectoire (schéma `pilotage`) sont désormais **hors trajectoire PIVOT** ; seule la part
-> **Risques (E21)** — et Forms / onboarding / sécurité — reste dans PIVOT. Détail du re-séquencement
-> par sprint : [`sprints/README.md`](sprints/README.md). Toute reprise des items Pilotage relève du
-> **produit Pilotage extrait** (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT.
+| EPIC | Titre | Statut trajectoire |
+|------|-------|--------------------|
+| E09/E10/E11/E14/E20/E50 (+ E15 réf.) | **Agilité** — Scrum Poker, Daily Standup, Capacity Planning, La Roue, Rétro, PI Planning | ✅ **Actif** — S17→S21 (49 items) |
+| E30 (reste F30.x), E19, E12, E47 | **Collaboration** — whiteboard étendu, Session, MeetOps, Mini-jeux | ✅ **Actif** — S22→S31 (125 net-new) |
+| E08 / E30 F08.x | Whiteboard (noyau Socle) | 🔄 Parité en cours — S10→S16 |
+| E52 | Clarification des domaines (Agilité/Collaboration) | 📋 Clôture — S32 |
+| — | Tout le Socle déjà livré (E01–E07, E16, E17) | ✅ PIVOT |
+| **E21** | Gestion des risques (`risk`) | ⏹️ **Hors plan de sprints** — à rejuger |
+| **E42 / E41** | Pivot Forms / Formation & Onboarding | ⏹️ **Hors plan de sprints** — à rejuger |
+| **E43** | Sécurité & Zero Trust | ⏹️ **Hors plan de sprints** — à rejuger |
+
+> **Conséquence :** l'ancien programme **« complétion 100 % Pilotage & Risques » (S17→S40)** est
+> **remplacé** par « complétion 100 % Agilité & Collaboration » (S17→S31). Les EPICs Risques (E21),
+> Forms (E42), Onboarding (E41) et Sécurité (E43) **sortent du plan de sprints** — conservés au
+> backlog, à replanifier séparément. Toute reprise des items **Pilotage** relève du **produit
+> Pilotage extrait** (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT.
 >
-> **Traçabilité :** les lignes des EPICs extraits sont **conservées** dans les tables ci-dessous,
-> annotées `⏸️ Extrait — produit Pilotage distinct`. Bandeau par fichier ajouté le 2026-07-21 sur
-> `sprint-17.md`, `sprint-20.md`…`sprint-30.md`, `sprint-33.md`…`sprint-40.md` (20 fichiers).
+> **Traçabilité :** les lignes des EPICs extraits sont **conservées** dans la Synthèse EPICs
+> ci-dessous, annotées `⏸️ Extrait — produit Pilotage distinct`. Les **fichiers de sprint** Pilotage
+> (`sprint-17`…`sprint-40`) ont été **supprimés** le 2026-07-21 (voir journal) — la reprise Pilotage
+> vit dans `pivot-core/PILOTAGE-HANDOFF.md`.
 
 ## Légende
 
@@ -115,7 +120,7 @@ Le repo/schéma cible de chaque EPIC, déclaré dans son propre README, tranche 
 | [E49 — Module To-Do](EPIC-todo/README.md) | E49 | 3 | — | 3 | ⬜ phase-3 |
 | [E50 — Module PI Planning](EPIC-pi-planning/README.md) | E50 | 3 | — | 4 | ⬜ phase-3 · agilite |
 | [E51 — Cockpits DSI](EPIC-cockpits/README.md) | E51 | 3 | 10 | 4+ | ⬜ phase-3 · transverse — reséquencé en [backlog post-S19](sprints/backlog-post-s12.md) (déprogrammé du Sprint 14 le 2026-07-12, remplacé par le raffinage E52 · ADR-028 accès externe conservé) |
-| [E52 — Clarification des domaines](EPIC-clarification-domaines/README.md) | E52 | 3 | 3 | 9+ | ⬜ Socle · transverse (raffinage) — **repoussé après S40** (complétion Pilotage/Risques) : [Sprint 41](sprints/sprint-41.md) Vague 1 Socle ; Pilotage S42, Agilité/Collaboratif + synthèse S43 |
+| [E52 — Clarification des domaines](EPIC-clarification-domaines/README.md) | E52 | 3 | 3 | 9+ | ⬜ transverse (raffinage) — **clôture du programme en [Sprint 32](sprints/sprint-32.md)** (domaines Agilité & Collaboration ; volet Pilotage supprimé le 2026-07-21) |
 | **Total Socle** | **E01–E07 + E16 + E17 + noyau F08.x/EN08.x (sous E30, ex-E08)** | **27** | **54** | **78** | 🔄 En cours |
 | **Total phase-3** | **E09–E50 (sauf E17 Socle, E31 dissous, E18/E32–E37/E39/E40 → Idéation)** | **~159** | **~69** | **~561** | ⏸️ Verrouillé |
 | **Total Idéation** | **E18, E32–E37, E39, E40 — hors backlog opérationnel** | **8** | **9** | **~45** | 📋 Voir `BACKLOG-IDEATION/` |
@@ -401,6 +406,21 @@ PIVOT** : E21 Gestion des risques (schéma `risk`, `pivot-risk-core` — à ne p
 Pilotage), E42 Forms, E41 onboarding, E43 sécurité, E52 raffinage, whiteboard/collaboration et tout
 le Socle livré. Aucune ligne supprimée, aucun `Stage` frontmatter touché. Voir la nouvelle section
 [Domaine Pilotage — EXTRAIT de PIVOT](#domaine-pilotage--extrait-de-pivot) en tête et
-[sprints/README.md](sprints/README.md). Bandeau par fichier `sprint-17.md`…`sprint-40.md` ajouté le
-2026-07-21 (20 fichiers extraits, `sprint-18.md`/`sprint-19.md`/`sprint-31.md`/`sprint-32.md`
-restent dans PIVOT, non concernés).*
+[sprints/README.md](sprints/README.md). Follow-up non traité : bandeau par fichier `sprint-17.md`…
+`sprint-40.md`.*
+
+*Recentrage « Complétion 100 % Agilité & Collaboration » — 2026-07-21 (PO Agent + Scrum Master +
+Architecte Modules, décision mainteneur : « retirer tout le Pilotage, compléter à 100 % l'Agilité et
+la Collaboration »). Le follow-up « bandeau par fichier » ci-dessus est résolu par **suppression** :
+les 20 fichiers de sprint Pilotage (`sprint-17`, `sprint-20`…`sprint-30`, `sprint-33`…`sprint-40`)
+sont retirés, ainsi que l'ex-`sprint-9` (socle technique Pilotage) et les sprints hors périmètre
+Agilité/Collaboration (ex-`sprint-18` Risques+sécurité, ex-`sprint-19` Forms+onboarding, ex-`sprint-31`/
+`sprint-32` Risques, ex-`sprint-41` raffinage). Nouveau programme contigu **S17→S31** (+ raffinage
+S32) couvrant 100 % de l'**Agilité** (49 items — E09/E10/E11/E14/E20/E50 + E15 référentiel) et de la
+**Collaboration** (125 net-new — E30 reste F30.x + E19 Session + E12 MeetOps + E47 Mini-jeux).
+Exclusions : noyau whiteboard Socle F08.x (déjà séquencé S10→S16) et F30.13 Licences (pas de modèle
+payant). Les EPICs **Risques (E21), Forms (E42), Onboarding (E41), Sécurité (E43)** sortent du plan de
+sprints (conservés au backlog, à rejuger). Aucun `Stage` frontmatter touché ; les items planifiés
+restent `⬜` (Gate 1 READINESS au démarrage de chaque sprint). Détail :
+[`sprints/README.md`](sprints/README.md). Traçabilité Pilotage : `pivot-core/PILOTAGE-HANDOFF.md` +
+[ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith).*

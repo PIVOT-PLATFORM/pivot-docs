@@ -1,54 +1,41 @@
-# Sprint 17 — Pilotage cœur PPM
+# Sprint 17 — Agilité — Scrum Poker (finition) + Référentiel Équipes
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> ✅ **Verrou Socle levé (2026-07-10).** Enchaîne Sprint 9 (dépend d'EN22.1). Contenu **inchangé au
-> re-tri du 2026-07-10** : aucune dépendance à E40 (profil adaptatif) ni à l'habillage entreprise
-> EN18.3-8 — pure valeur PPM. Voir [README §Séquencement](./README.md#sprints-79-1720--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+> **Phase** : phase-3 · E09 Scrum Poker + E15 Équipes. **Sortie** : planning poker finalisé et
+> recetté (rooms, vote temps réel, participation anonyme, KPI) + référentiel Équipes (KPI) posé
+> comme fondation cross-modules pour Capacity Planning et Rétrospective.
+>
+> **Note E09** : le socle Scrum Poker a déjà du code mergé récemment (parité planning poker —
+> `pivot-core` #239/#240/#241, `pivot-ui` #234/#235/#236). Ce sprint est donc pour l'essentiel de
+> la **finition + recette** plutôt que du net-new (`US09.1.3` jeu de cartes paramétrable et
+> `EN09.1` isolation WebSocket restent hors fichier US écrit, non repris ici). Items listés
+> ci-dessous quand même `⬜` — `Stage` non recetté par le mainteneur.
+>
+> **Cible** : modulith `pivot-core` (module `fr.pivot.agilite.*`) + `pivot-ui` (ADR-030).
+>
+> **Dépendances** : E09 s'appuie sur E03 Système de modules + E17 Infrastructure multi-repo
+> (acquis, socle `agilite` déjà amorcé depuis Sprint 8). E15 dépend d'E03 uniquement. E15
+> (référentiel Équipes) livré ici lève un pré-requis pour E20 Rétrospective (S19) et E11 Capacity
+> Planning (S20-S21), qui en dépendent tous deux.
+>
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-**Sortie :** release Pilotage v0 utilisable (roadmap + Gantt + portefeuille consolidé), sur profil
-par défaut (EN18.10) — l'adaptation par profil (E40) reste en queue idéation.
-
-> **EN22.2 reséquencé depuis Sprint 9 (2026-07-11)** : cet enabler (rendu virtualisé, recalcul
-> incrémental, co-édition temps réel + undo/redo du Gantt) dépend du Gantt UI lui-même
-> (US22.4.x, ci-dessous) — inexistant tant que ce sprint n'a pas livré. Il ne peut pas être
-> implémenté avant. **Chevauchement à trancher au Gate 1** avec `US22.4.10c` (virtualisation du
-> rendu déjà présente dans cette US) — éviter un double travail sur ce point précis.
-
-**Gate 1 READINESS passé (2026-07-11)** — **24/24 items Ready** (≥ 70/100 ; 15 items ≥ 90).
-ACs DoR complétés (erreur / sécurité 404-403 / A11y, cohérence avec le contrat figé EN22.1) sur
-19 fiches. **1 réserve : US22.4.7 (72)** — le fractionnement (split) n'a **aucun porteur dans le
-schéma EN22.1** (`pilotage.task` sans segments) → décision **D1** mainteneur (avenant schéma vs
-enabler dédié) ; la moitié « chemin critique/marges » de l'US reste, elle, implémentable.
-**Le socle S9 (schéma + moteur CPM + projection) permet d'attaquer la couche calcul/données
-maintenant ; toute la surface REST/UI reste bloquée par `pivot-core-starter` (non publié).**
-8 décisions consolidées (D1-D8) + ordre d'attaque → commentaire de la PR de ce Gate 1.
+## Items (8)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| EN22.2 | Performance & collaboration web du Gantt *(reséquencé de Sprint 9, 2026-07-11)* | XL | High | ⬜ |
-| US22.4.1a | WBS : modèle arborescent & numérotation *(ex-US22.4.1 XL, décomposée 2026-07-10)* | M | Critical | ✅ mergé (backend [pivot-pilotage-core#43](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/43), frontend [pivot-pilotage-ui#31](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/31)) |
-| US22.4.1b | WBS : indent/outdent & réordonnancement | M | Critical | ✅ mergé (idem #43/#31 — livré avec US22.4.1a/c) |
-| US22.4.1c | WBS : agrégation tâches récapitulatives & A11y | M | Critical | ✅ mergé (idem #43/#31 — livré avec US22.4.1a/b) |
-| US22.4.2 | Durées, effort, planification auto vs manuelle | L | Critical | ✅ mergé (backend [pivot-pilotage-core#49](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/49), frontend [pivot-pilotage-ui#33](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/33)) |
-| US22.4.3 | Dépendances typées (FS/SS/FF/SF) + retard/avance | L | Critical | ✅ mergé (backend [pivot-pilotage-core#47](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/47), frontend [pivot-pilotage-ui#28](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/28)) |
-| US22.4.4 | Contraintes de date & échéances | M | High | ✅ mergé (backend [pivot-pilotage-core#54](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/54), frontend [pivot-pilotage-ui#37](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/37)) |
-| US22.4.5 | Calendriers ouvrés & exceptions | L | High | ✅ mergé (backend [pivot-pilotage-core#45](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/45), frontend [pivot-pilotage-ui#30](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/30)) |
-| US22.4.6 | Jalons & tâches périodiques | M | Medium | ✅ mergé (backend [pivot-pilotage-core#55](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/55), frontend [pivot-pilotage-ui#38](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/38)) |
-| US22.4.7 | Chemin critique, marges & fractionnement | L | High | ⬜ backend mergé ([pivot-pilotage-core#64](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/64)) — frontend `pivot-pilotage-ui` restant |
-| US22.4.8 | Suivi d'avancement (% réalisé, réel/restant) | L | High | ✅ mergé (backend [pivot-pilotage-core#59](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/59), frontend [pivot-pilotage-ui#42](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/42)) |
-| US22.4.9 | Baselines multiples & analyse des écarts | L | High | ✅ mergé (backend [pivot-pilotage-core#63](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/63), frontend [pivot-pilotage-ui#43](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/43)) |
-| US22.4.10a | Déplacement/redimensionnement des barres & lien par glisser *(ex-US22.4.10 XL)* | L | Critical | ⬜ |
-| US22.4.10b | Zoom de l'échelle de temps & poignée d'avancement | M | Critical | ⬜ |
-| US22.4.10c | Virtualisation du rendu & édition clavier accessible | L | Critical | ⬜ |
-| US22.6.1a | Socle multi-vues & vues temporelles (Gantt, Chronologie, Calendrier) *(ex-US22.6.1 XL)* | L | High | ⬜ |
-| US22.6.1b | Vues Réseau (PERT) & Tableau/Kanban | L | High | ⬜ |
-| US22.6.1c | Vues ressources (Feuille de ressources & Utilisation) | M | High | ⬜ |
-| US22.6.2 | Colonnes, filtres, regroupements & tri | L | High | ⬜ |
-| US23.1.1 | Tableau de bord portefeuille projets | L | High | ⬜ |
-| US23.1.2 | Générer un rapport d'avancement du portefeuille | M | Medium | ⬜ |
-| US23.2.1 | Vue portefeuille consolidée | L | Critical | ⬜ backend mergé ([pivot-pilotage-core#65](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/65)) — frontend `pivot-pilotage-ui` restant |
-| US23.2.2 | Tableaux de bord personnalisables | L | Critical | ⬜ backend mergé ([pivot-pilotage-core#60](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/60)) — frontend `pivot-pilotage-ui` restant |
-| US23.2.4 | Météo et indicateurs normalisés | S | High | ✅ mergé (backend [pivot-pilotage-core#57](https://github.com/PIVOT-PLATFORM/pivot-pilotage-core/pull/57), frontend [pivot-pilotage-ui#39](https://github.com/PIVOT-PLATFORM/pivot-pilotage-ui/pull/39)) |
+| US09.1.1 | Créer une room de planning poker | M | High | ⬜ |
+| US09.1.2 | Rejoindre une room de planning poker via code | S | High | ⬜ |
+| US09.2.1 | Voter sur un ticket en temps réel | M | High | ⬜ |
+| US09.2.2 | Révéler les votes et calculer le consensus | S | High | ⬜ |
+| US09.2.3 | Reset et revote, validation de l'estimation finale | S | High | ⬜ |
+| US09.3.1 | Participer anonymement à une room (sans compte) | M | Medium | ⬜ |
+| EN09.2 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| EN15.7 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
-> **E23 vague 2 → post-S19** (US23.2.3 revues/comités, US23.2.5 programmes, US23.2.6 plans stratégiques, US23.2.7/23.2.8 what-if & business cases, US23.2.9/23.2.10 livrables & valeur publique). US22.6.3/22.6.4 (mise en forme, exports) en fin de sprint si capacité.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

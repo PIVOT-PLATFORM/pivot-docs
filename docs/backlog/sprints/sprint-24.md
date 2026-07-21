@@ -1,43 +1,36 @@
-# Sprint 24 — E18 Pilotage — Activité : Élaboration PMT
+# Sprint 24 — Collaboration — E30 Canevas & objets (étendus)
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+> **Phase** : phase-3 · E30 Collaboration. **Sortie** : le canevas et les objets du whiteboard
+> couvrent l'ensemble des usages étendus (encre, organisation, filtres, navigation grands boards).
 >
-> **Phase** : phase-3 · E18. **Sortie** : l'écran d'élaboration PMT (informations structurelles) complet.
+> **Cible** : modulith `pivot-core` (module `fr.pivot.collaboratif.*`) + `pivot-ui` (ADR-030).
 >
-> **Dépendances** : Dépend de S22/S23 (activité + informations générales). Feature volumineuse (19 US) livrée en un sprint dédié.
+> **Dépendances** : s'appuie sur le noyau whiteboard Socle F08.x/EN08.x (Sprints 10-16).
 >
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-## Items (19)
+## Items (13)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.17.1 | Plan Moyen Terme (PMT) | S | High | ⬜ |
-| US18.17.2 | Plan de production de l'année | S | High | ⬜ |
-| US18.17.3 | Priorisation | S | High | ⬜ |
-| US18.17.4 | Macro Processus Métier concerné | S | Medium | ⬜ |
-| US18.17.5 | Présence schéma directeur | XS | Medium | ⬜ |
-| US18.17.6 | Commentaires schéma directeur | S | Medium | ⬜ |
-| US18.17.7 | Pilote d'activité | M | Medium | ⬜ |
-| US18.17.8 | Produits associés | M | High | ⬜ |
-| US18.17.9 | Propriétaire | S | High | ⬜ |
-| US18.17.10 | Département / Programme / Mission | S | High | ⬜ |
-| US18.17.11 | Pôle / Usine | S | High | ⬜ |
-| US18.17.12 | Domaine métier | S | High | ⬜ |
-| US18.17.13 | Sous-domaine métier | S | High | ⬜ |
-| US18.17.14 | Sous-domaine métier (niveau 2) | S | Medium | ⬜ |
-| US18.17.15 | Capacité métier | S | High | ⬜ |
-| US18.17.16 | Sous-capacité métier | S | Medium | ⬜ |
-| US18.17.17 | Typologie principale de l'activité | S | High | ⬜ |
-| US18.17.18 | Zone Activités liées | M | Medium | ⬜ |
-| US18.17.19 | Enregistrer informations structurelles | S | High | ⬜ |
+| US30.1.1 | Canevas partagé infini | M | Critical | ⬜ |
+| US30.1.2 | Pense-bêtes (sticky notes) | S | Critical | ⬜ |
+| US30.1.3 | Formes, connecteurs, texte | M | Critical | ⬜ |
+| US30.1.4 | Dessin à main levée | M | Critical | ⬜ |
+| US30.1.5 | Insertion d'images et fichiers | M | Critical | ⬜ |
+| US30.1.6 | Organisation des objets | M | Critical | ⬜ |
+| US30.1.7 | Sections / cadres (frames) | M | Critical | ⬜ |
+| US30.1.8 | Reconnaissance d'encre | L | High | ⬜ |
+| US30.1.9 | Capture de pense-bêtes physiques | M | Medium | ⬜ |
+| US30.1.10 | Ink-to-table | M | Medium | ⬜ |
+| US30.1.11 | Liens enrichis et lecture vidéo intégrée | M | Medium | ⬜ |
+| US30.1.12 | Filtres et vues par couleur / catégorie | M | High | ⬜ |
+| US30.1.13 | Mini-carte et navigation sur grands boards | M | High | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

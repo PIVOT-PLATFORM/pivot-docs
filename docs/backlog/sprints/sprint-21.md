@@ -1,38 +1,42 @@
-# Sprint 21 — E18 Pilotage — Référentiels & socle activité
+# Sprint 21 — Agilité — Capacity Planning (v2)
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+> **Phase** : phase-3 · E11 Capacity Planning (2e lot, F11.5→F11.8 + enablers). **Sortie** : le
+> moteur de calcul de capacité complet — cadence SAFe (sprint/incrément/PI), jours ouvrés vs
+> ouvrables, facteur de concentration, ajustement vélocité N-1 et maturité agile, capacité nette
+> consolidée, import automatique des absences (connecteur SI RH), gouvernance RGPD & éthique, et
+> le moteur/connecteurs + KPI qui les portent.
 >
-> **Phase** : phase-3 · E18. **Sortie** : les objets de gestion (référentiels), les habilitations et la gestion/recherche d'activités posés comme socle du domaine Pilotage.
+> **Cible** : modulith `pivot-core` (module `fr.pivot.agilite.*`) + `pivot-ui` (ADR-030).
 >
-> **Dépendances** : Socle terminé + EN17 (pivot-core-starter publié). S'appuie sur EN18.1 / EN18.2 / EN18.9 / EN18.10 livrés en S9 (schéma `pilotage`, guard, modèle Application→Projet, profil par défaut).
+> **Dépendances** : suite directe de S20 (F11.1→F11.4 livrés). S'appuie sur `EN22.3` (E22
+> Roadmap, calendriers/jours fériés par localité) pour `US11.6.1` — si `EN22.3` n'est pas encore
+> livré à ce stade, traiter en dépendance bloquante à lever avant Gate 1 de `US11.6.1`. E50 PI
+> Planning (S19) consomme `US11.5.1` (cadence PI SAFe) livré ici — voir note de couplage
+> croisé dans `sprint-19.md`. `US11.6.6` (alerte visuelle de dépassement de capacité, mentionnée
+> au périmètre E11) n'a pas de fichier US écrit et n'est pas reprise dans ce sprint.
 >
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-## Items (14)
+## Items (11)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.7.1 | Mettre à jour les objets de gestion (OI, EOTP) | M | High | ⬜ |
-| US18.7.2 | Mettre à jour les produits | S | High | ⬜ |
-| US18.7.3 | Gérer les référentiels métiers | M | High | ⬜ |
-| US18.8.1 | Accéder au menu d'administration | S | High | ⬜ |
-| US18.1.1 | Renseigner les informations générales d'une activité | S | High | ⬜ |
-| US18.1.2 | Renseigner les informations structurelles d'une activité | S | High | ⬜ |
-| US18.1.3 | Contrôler la validité du nom d'activité | S | High | ⬜ |
-| US18.1.4 | Consulter la dernière modification d'une activité | XS | Medium | ⬜ |
-| US18.1.5 | Identifier rapidement une activité par son trigramme | XS | Medium | ⬜ |
-| US18.1.6 | Visualiser les activités liées Parents / Enfants | S | Medium | ⬜ |
-| US18.6.1 | Rechercher activités et portefeuilles | S | Medium | ⬜ |
-| US18.6.2 | Filtrer par produit associé | XS | Medium | ⬜ |
-| US18.6.3 | Sécuriser la navigation | S | Medium | ⬜ |
-| EN18.14 | Gestion des habilitations par groupe AD | M | High | ⬜ |
+| US11.5.1 | Cadence : sprint / incrément / PI (SAFe) | M | High | ⬜ |
+| US11.5.2 | Période de sprint : API préconfigurée ou durée manuelle | L | High | ⬜ |
+| EN11.1 | Moteur de capacité & connecteurs (période, absences, calendriers) | XL | High | ⬜ |
+| US11.6.1 | Jours ouvrables vs jours ouvrés | L | High | ⬜ |
+| US11.6.2 | Facteur de concentration (% max par jour moyen) | M | High | ⬜ |
+| US11.6.3 | Ajustement par la vélocité du sprint précédent | L | High | ⬜ |
+| US11.6.4 | Ajustement par la maturité agile | M | Medium | ⬜ |
+| US11.6.5 | Capacité nette consolidée (membre → sprint → incrément/PI) | L | High | ⬜ |
+| US11.7.1 | Import automatique des absences (SI RH / absence) | XL | High | ⬜ |
+| US11.8.1 | RGPD & éthique des données de capacité | M | High | ⬜ |
+| EN11.2 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.
