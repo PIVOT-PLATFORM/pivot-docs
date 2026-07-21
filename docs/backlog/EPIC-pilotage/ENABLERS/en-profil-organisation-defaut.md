@@ -12,7 +12,7 @@ adaptatif (E40). E40 s'y greffe plus tard par **substitution**, sans casser les 
 
 **Justification** : Sans ce seam, E22 (curseur altitude) et E03 (activation des features) auraient
 une **dépendance dure sur E40** (phase-3, verrouillé), bloquant tout le socle Roadmap du
-[Sprint 9](../../sprints/sprint-9.md). EN18.10 permet de livrer « une roadmap simple créable de
+Sprint 9 (socle technique Pilotage — extrait, voir `PILOTAGE-HANDOFF.md`). EN18.10 permet de livrer « une roadmap simple créable de
 bout en bout » **avant** E40. C'est le pivot du re-tri « valeur pilotage avant idéation »
 (2026-07-10) : voir [E22 — Roadmap §Altitude](../../EPIC-roadmap/README.md).
 

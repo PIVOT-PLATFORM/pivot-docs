@@ -1,37 +1,35 @@
-# Sprint 23 — E18 Pilotage — Informations générales & gestion de portefeuille
+# Sprint 23 — Collaboration — MeetOps + Mini-jeux
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+> **Phase** : phase-3 · E12 · E47. **Sortie** : MeetOps complet — préparation, animation,
+> compte-rendu et pré-réservation de réunion depuis la roadmap — ainsi que les trois mini-jeux
+> collaboratifs (Bingo des réunions, Post-it Rush, Trivia Agile).
 >
-> **Phase** : phase-3 · E18. **Sortie** : l'écran « Informations générales » d'une activité + la gestion de portefeuille de base.
+> **Cible** : modulith `pivot-core` (module `fr.pivot.collaboratif.*`) + `pivot-ui` (ADR-030).
 >
-> **Dépendances** : Dépend de S22 (activité créée).
+> **Dépendances** : socle `collaboratif` (STOMP temps réel, isolation multi-tenant) livré lors
+> des sprints précédents du domaine Collaboration ; US12.4.1 dépend en amont de l'événement bus
+> `roadmap.event.window.created` (EPIC-roadmap, hors périmètre de ce sprint).
 >
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-## Items (13)
+## Items (9)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.16.1 | Nom de l'activité | M | High | ⬜ |
-| US18.16.2 | Statut de l'activité | S | High | ⬜ |
-| US18.16.3 | Météo du projet | S | High | ⬜ |
-| US18.16.4 | Description de l'activité | S | High | ⬜ |
-| US18.16.5 | Derniers faits marquants | S | Medium | ⬜ |
-| US18.16.6 | Projet à enjeux | XS | Medium | ⬜ |
-| US18.16.7 | Gains estimés (k€) | S | High | ⬜ |
-| US18.16.8 | Typologie Gains | S | High | ⬜ |
-| US18.16.9 | Commentaires Gains | S | Medium | ⬜ |
-| US18.16.10 | Enregistrer informations générales | M | High | ⬜ |
-| US18.5.1 | Suivre un portefeuille d'activités | M | High | ⬜ |
-| US18.5.2 | Fiabiliser les noms de portefeuille | XS | Medium | ⬜ |
-| US18.5.3 | Améliorer la lisibilité de la liste des activités | XS | Medium | ⬜ |
+| US12.1.1 | Créer une réunion avec agenda structuré | M | Medium | ⬜ |
+| US12.2.1 | Animer la réunion en temps réel (point courant + timer) | L | Medium | ⬜ |
+| US12.3.1 | Générer et partager le compte-rendu de réunion | M | Medium | ⬜ |
+| US12.4.1 | Pré-réservation depuis une plage & proposition du meilleur créneau | L | Medium | ⬜ |
+| EN12.3 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US47.1.1 | Jouer au Bingo des réunions à plusieurs | M | Low | ⬜ |
+| US47.2.1 | Jouer à Post-it Rush | M | Low | ⬜ |
+| US47.3.1 | Jouer à Trivia Agile à plusieurs | M | Low | ⬜ |
+| EN47.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

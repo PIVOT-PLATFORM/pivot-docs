@@ -1,38 +1,36 @@
-# Sprint 28 — E18 Pilotage — Portefeuilles d'activités
+# Sprint 28 — Collaboration — E30 Sécurité & gouvernance
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+> **Phase** : phase-3 · E30 Collaboration. **Sortie** : le socle sécurité et gouvernance du
+> whiteboard (SSO, chiffrement, RGPD, audit, DLP, résidence UE, réversibilité, SCIM, stockage
+> tenant, souveraineté) est complet.
 >
-> **Phase** : phase-3 · E18. **Sortie** : les portefeuilles d'activités : liste & gestion, filtres & création, recherche.
+> **Cible** : modulith `pivot-core` (module `fr.pivot.collaboratif.*`) + `pivot-ui` (ADR-030).
 >
-> **Dépendances** : Dépend de la gestion d'activités (S21-S23).
+> **Dépendances** : s'appuie sur le noyau whiteboard Socle F08.x/EN08.x (Sprints 10-16).
 >
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-## Items (14)
+## Items (12)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.12.1 | Affichage de la liste des portefeuilles | XS | Medium | ⬜ |
-| US18.12.2 | Modification d'un portefeuille existant | S | High | ⬜ |
-| US18.12.3 | Suppression d'un portefeuille existant | S | High | ⬜ |
-| US18.12.4 | Sélection et affichage d'un portefeuille | M | High | ⬜ |
-| US18.12.5 | Recherche d'une activité dans un portefeuille | S | Medium | ⬜ |
-| US18.12.6 | Création d'un nouveau portefeuille | M | High | ⬜ |
-| US18.13.1 | Utiliser les filtres pour créer un portefeuille | L | High | ⬜ |
-| US18.13.2 | Réinitialisation des filtres | S | Medium | ⬜ |
-| US18.13.3 | Enregistrement d'un nouveau portefeuille | M | High | ⬜ |
-| US18.13.4 | Bouton Annuler | XS | Medium | ⬜ |
-| US18.14.1 | Affichage de la liste des activités | M | High | ⬜ |
-| US18.14.2 | Recherche d'une activité | M | High | ⬜ |
-| US18.14.3 | Réactualisation de la liste | XS | Medium | ⬜ |
-| US18.14.4 | Affichage des activités archivées | S | Medium | ⬜ |
+| US30.9.1 | SSO d'entreprise | M | Critical | ⬜ |
+| US30.9.2 | Chiffrement | M | Critical | ⬜ |
+| US30.9.3 | Conformité RGPD | L | Critical | ⬜ |
+| US30.9.4 | Politique d'accès externes | S | High | ⬜ |
+| US30.9.5 | Journaux d'audit | M | High | ⬜ |
+| US30.9.6 | Classification et DLP | L | High | ⬜ |
+| US30.9.7 | Résidence des données UE | M | High | ⬜ |
+| US30.9.8 | Réversibilité des données | L | High | ⬜ |
+| US30.9.9 | Provisionnement SCIM | M | High | ⬜ |
+| US30.9.10 | Stockage dans le tenant | XL | Medium | ⬜ |
+| US30.9.11 | Mode hors ligne (boîtier local) | XL | Medium | ⬜ |
+| US30.9.12 | Hébergement souverain / air-gap | XL | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

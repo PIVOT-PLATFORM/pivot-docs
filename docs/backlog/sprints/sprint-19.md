@@ -1,40 +1,46 @@
-# Sprint 19 — Forms (cœur) + framework onboarding
+# Sprint 19 — Agilité — Rétrospective + PI Planning
 
-> ✅ **Verrou Socle levé (2026-07-10).** Inchangé au re-tri du 2026-07-10. Voir [README §Séquencement](./README.md#sprints-79-1720--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
+>
+> **Phase** : phase-3 · E20 Rétrospective + E50 PI Planning. **Sortie** : rétrospective d'équipe
+> complète (formats prédéfinis/custom, animation temps réel par phases, plan d'action suivi
+> inter-session) et cycle PI Planning SAFe (itérations, équipes du Train, Program Board
+> multi-équipes avec dépendances) livrés.
+>
+> **Cible** : modulith `pivot-core` (module `fr.pivot.agilite.*`) + `pivot-ui` (ADR-030).
+>
+> **Dépendances** : E20 s'appuie sur E03 Système de modules + E17 Infrastructure multi-repo
+> (EN17.1/EN17.3/EN17.5/EN17.6) + E15 Équipes transverses (livré S17). E50 s'appuie sur E01 Auth &
+> IAM + E03 + E17, et sur **E11 Capacity Planning** (cadence PI SAFe, `US11.5.1`) pour la
+> génération d'itérations du cycle PI — mais `US11.5.1` n'est livré qu'en **S21** (second lot
+> Capacity Planning, après ce sprint). Couplage à trancher explicitement au Gate 1 de `US50.1.1` :
+> soit une cadence par défaut découplée de `US11.5.1` en attendant S21, soit séquencer
+> l'implémentation de `US50.1.1` après S21. `US20.1.2` (US mère XL) a été décomposée en
+> `US20.1.2a/b/c` (Gate 1 PO Agent, 2026-07-10) — le fichier `US20.1.2` original n'est pas
+> implémenté, seules les trois sous-US le sont.
+>
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-**Sortie :** form-builder cœur livré + premier tour guidé actif sur les modules en prod (S8-S18)
-
-**Gate 1 READINESS passé (2026-07-11)** — **15/17 Ready**. ⚠️ **2 enablers XL non décomposés
-bloquent le cœur** : **EN42.1** (moteur + schéma Forms, score 60) bloque **10 US** (F42.1/F42.2/F42.3)
-et **EN41.1** (framework onboarding, score 55) bloque US41.1.1 → **la décomposition est la 1re action
-du sprint** (même précédent que les XL pilotage EN27.1/EN43.7). Implémentables sans le moteur :
-US42.4.1 / US42.4.2 / US42.5.1. Dépendances externes : bus ADR-025/EN28.4 (US42.5.4, critère
-`form.submitted`), ADR-009 Thème/liens profonds (US42.2.4, US42.3.2). Décisions → commentaire de la PR Gate 1.
+## Items (13)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| EN42.1a | Schéma & validation de formulaire *(ex-EN42.1 XL, décomposé 2026-07-11)* | M | Critical | ⬜ |
-| EN42.1b | Moteur logique & scoring | L | Critical | ⬜ |
-| EN42.1c | Événements & API (soumission, webhooks) | L | Critical | ⬜ |
-| EN42.1d | Thème & intégration | M | Critical | ⬜ |
-| US42.1.1 | Éditeur no-code drag-and-drop | M | Critical | ⬜ |
-| US42.1.2 | Types de champs variés | L | Critical | ⬜ |
-| US42.1.3 | Validation des saisies | M | Critical | ⬜ |
-| US42.1.4 | Multi-pages et sections | M | High | ⬜ |
-| US42.2.1 | Logique conditionnelle | L | Critical | ⬜ |
-| US42.2.2 | Calculs et scoring (quiz) | M | High | ⬜ |
-| US42.2.3 | Champs masqués et pré-remplissage | M | High | ⬜ |
-| US42.2.4 | Thème PIVOT | M | High | ⬜ |
-| US42.3.1 | Lien partageable | S | Critical | ⬜ |
-| US42.3.2 | Intégration embarquée dans le portail | M | High | ⬜ |
-| US42.4.1 | Collecte et tableau de réponses | M | Critical | ⬜ |
-| US42.4.2 | Restitution visuelle | M | Critical | ⬜ |
-| US42.5.1 | Webhooks sortants | S | Critical | ⬜ |
-| US42.5.4 | Émission d'événement de soumission (`form.submitted` — dépend ADR-019) | S | Critical | ⬜ |
-| EN41.1a | Moteur d'affichage in-app *(ex-EN41.1 XL, décomposé 2026-07-11)* | L | High | ⬜ |
-| EN41.1b | API d'enregistrement de parcours & progression | M | High | ⬜ |
-| EN41.1c | Ciblage rôle / module / étape | M | High | ⬜ |
-| EN41.1d | Analytics d'adoption (RGPD) | M | High | ⬜ |
-| US41.1.1 | Tour guidé au premier accès | M | High | ⬜ |
+| US20.1.1 | Créer une session de rétrospective | M | High | ⬜ |
+| US20.1.2a | Contribution & révélation des cards | M | High | ⬜ |
+| US20.1.2b | Phase Vote (dot-voting) | M | High | ⬜ |
+| US20.1.2c | Phase Action (transition en session) | S | High | ⬜ |
+| US20.2.1 | Formats de rétrospective prédéfinis et format custom | M | Medium | ⬜ |
+| US20.3.1 | Créer et assigner des actions issues de la rétrospective | M | High | ⬜ |
+| US20.3.2 | Revoir les actions de la rétro précédente au démarrage | S | Medium | ⬜ |
+| EN20.3 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US50.1.1 | Créer un cycle PI avec itérations et équipes du Train | L | Medium | ⬜ |
+| US50.2.1 | Rattacher formulaire de logistique et tâches de préparation | M | Medium | ⬜ |
+| US50.3.1 | Planifier le Program Board par équipe × itération | L | Medium | ⬜ |
+| US50.3.2 | Gérer les dépendances entre tickets du Program Board | M | Medium | ⬜ |
+| EN50.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
-> **E42 vague 2 → post-S19** (US42.2.5 multilingue, US42.3.3 enquêtes in-app, US42.4.3 réponses partielles, US42.5.2/42.5.3 API & MCP, F42.6 IA, F42.7 gouvernance, F42.8 souveraineté + EN42.2, F42.9-11). US41.1.2-4 (tooltips, checklist, quoi de neuf) suivent EN41.1.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

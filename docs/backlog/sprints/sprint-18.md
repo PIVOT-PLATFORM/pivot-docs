@@ -1,38 +1,37 @@
-# Sprint 18 — Risques + plan de contrôle sécurité
+# Sprint 18 — Agilité — Daily Standup + La Roue
 
-> ✅ **Verrou Socle levé (2026-07-10).** Inchangé au re-tri du 2026-07-10 (aucune dépendance E40/EN18.3-8). Voir [README §Séquencement](./README.md#sprints-79-1720--plan-phase-3-conditionnel-au-jalon--socle-terminé-).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
+>
+> **Phase** : phase-3 · E10 Daily Standup + E14 La Roue. **Sortie** : daily standup et roue de
+> tirage utilisables de bout en bout — sessions CRUD, animation temps réel (minuteur/rotation),
+> statistiques, tirage pondéré anti-repeat, diffusion WebSocket du résultat.
+>
+> **Cible** : modulith `pivot-core` (module `fr.pivot.agilite.*`) + `pivot-ui` (ADR-030).
+>
+> **Dépendances** : E10 et E14 s'appuient sur E03 Système de modules + E17 Infrastructure
+> multi-repo (acquis, socle `agilite` déjà amorcé). Aucune dépendance croisée entre les deux
+> domaines de ce sprint (`US10.2.3`, `US10.3.2`, `US14.1.2` restent hors fichier US écrit, non
+> repris ici).
+>
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-**Sortie :** registre de risques opérationnel + socle Zero Trust posé
-
-**Gate 1 READINESS passé (2026-07-11)** — **22/22 items Ready** (fourchette 88-100). ACs complétés
-sur ~7 fiches (stubs Zero Trust EN43.5/6, A11y F21.1, sécurité 404-403 F21.3). **2 blocages
-d'implémentation** (pas de Gate 1) : **EN43.7d** → EN43.11 (classification A/B/C non livrée) ;
-**US21.1.6 + la persistance de tout F21.1** → **EN21.1** (schéma Flyway `risk` + entités JPA) ⬜
-**non planifié dans ce sprint** — à ordonnancer en tête. Décisions consolidées → commentaire de la PR Gate 1.
+## Items (10)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US21.1.1 | Questionnaire de cadrage | M | Critical | ⬜ |
-| US21.1.2 | Bibliothèque de typologies | M | Critical | ⬜ |
-| US21.1.3 | Taxonomie universelle 12 familles | S | Critical | ⬜ |
-| US21.1.4 | Matrice de pondération des impacts | M | Critical | ⬜ |
-| US21.1.5 | Bibliothèque de risques pré-suggérés | M | Critical | ⬜ |
-| US21.1.6 | Entité Risk au catalogue | M | Critical | ⬜ |
-| US21.2.1 | Score probabilité × gravité | M | Critical | ⬜ |
-| US21.2.2 | Gravité multidimensionnelle | M | Critical | ⬜ |
-| US21.2.3 | Seuils d'appétence | S | High | ⬜ |
-| US21.2.4 | Matrice de risques visuelle | M | High | ⬜ |
-| US21.3.1 | Cycle de vie du risque | M | Critical | ⬜ |
-| US21.3.2 | Stratégies de traitement (4 T) | M | Critical | ⬜ |
-| US21.3.3 | Plan d'action | M | High | ⬜ |
-| US21.3.4 | Plan de contingence | S | Medium | ⬜ |
-| US21.3.5 | Revues de risques | M | High | ⬜ |
-| EN43.5 | Plan de contrôle : Identité | L | Critical | ⬜ |
-| EN43.6 | Plan de contrôle : Secrets (OpenBao) | L | Critical | ⬜ |
-| EN43.7a | Moteur de politique : PDP/PEP & fail-closed *(ex-EN43.7 XL, décomposé 2026-07-10)* | L | Critical | ⬜ |
-| EN43.7b | Politiques RBAC par rôle (taxonomie) | M | Critical | ⬜ |
-| EN43.7c | Politiques ABAC fines (par entité, par action) | M | Critical | ⬜ |
-| EN43.7d | Contrainte de souveraineté dans la décision d'accès *(bloqué : dépend EN43.11 non livré)* | M | Critical | ⬜ |
-| EN43.7e | Politiques versionnées en Git (policy-as-code) | M | Critical | ⬜ |
+| US10.1.1 | Créer une session de daily standup | M | High | ⬜ |
+| US10.1.2 | Démarrer et terminer une session daily standup | S | High | ⬜ |
+| US10.2.1 | Minuteur configurable et rotation participants (temps réel) | M | High | ⬜ |
+| US10.2.2 | Contrôler l'animation manuellement (passer, réordonner, étendre) | S | Medium | ⬜ |
+| US10.3.1 | Consulter les statistiques d'une session terminée | M | Medium | ⬜ |
+| EN10.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US14.1.1 | Créer et gérer une roue de tirage | M | High | ⬜ |
+| US14.2.1 | Effectuer un tirage pondéré anti-repeat | M | High | ⬜ |
+| US14.3.1 | Diffusion du résultat du tirage en temps réel (WebSocket) | M | High | ⬜ |
+| EN14.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
-> **US21.2.5/21.2.6 (mode AMDEC, exposition & vélocité — Medium) → post-S19.** EN43.5-7 = prérequis de tout module manipulant des données sensibles (checklist EN43.13). F21.4 boucle vivante dépend d'ADR-019 (bus) → post-S19.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

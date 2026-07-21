@@ -1,41 +1,38 @@
-# Sprint 26 — E18 Pilotage — Activité : écran Jalons
+# Sprint 26 — Collaboration — E30 Facilitation & ateliers + Engagement
 
-> ⏸️ **Extrait — produit Pilotage distinct (2026-07-20, [ADR-030](pathname:///pivot-docs/adr/ADR-030-bascule-spring-modulith)).** Ce sprint planifiait un domaine **Pilotage** aujourd'hui **hors trajectoire PIVOT** — sa reprise relève du produit Pilotage extrait (contrat `pivot-core/PILOTAGE-HANDOFF.md`), pas de la roadmap PIVOT. Contenu conservé ci-dessous pour traçabilité historique. Détail : [`sprints/README.md` §Trajectoire PIVOT resserrée](./README.md#trajectoire-pivot-resserrée-après-s16) et [`STATUS.md` §Domaine Pilotage extrait](../STATUS.md).
+> **Créé le 2026-07-21** — plan de **complétion à 100 % des domaines Agilité & Collaboration**,
+> séquencé **S17→S31** (Agilité d'abord, puis Collaboration). Vue d'ensemble :
+> [README §Complétion Agilité & Collaboration](./README.md).
 >
-> **Créé le 2026-07-13** — plan de **complétion à 100 % des domaines Pilotage (E18) & Risques (E21)**,
-> séquencé **S21→S40** (ordre de priorité : E18 base → E21 Risques → E22 Roadmap → E27 OKR → E38
-> Innovation *en surplus*). Vue d'ensemble : [README §Complétion Pilotage & Risques](./README.md).
+> **Phase** : phase-3 · E30 Collaboration. **Sortie** : la panoplie de facilitation d'atelier (vote,
+> minuteur, mode présentation, anonymat, quiz/sondages, séquençage) et les mécaniques d'engagement
+> (réactions, gamification) sont disponibles.
 >
-> **Phase** : phase-3 · E18. **Sortie** : l'écran Jalons d'une activité complet.
+> **Cible** : modulith `pivot-core` (module `fr.pivot.collaboratif.*`) + `pivot-ui` (ADR-030).
 >
-> **Dépendances** : Dépend de S24 (PMT) ; la logique jalons transverse (F18.3) est livrée en S27.
+> **Dépendances** : s'appuie sur le noyau whiteboard Socle F08.x/EN08.x (Sprints 10-16).
 >
-> **Statut** : ⬜ planifié — non démarré. Items encore au stade backlog : **Gate 1 READINESS
-> (PO Agent) à réaliser au démarrage du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité),
-> même précédent que les sprints précédents.
+> **Statut** : ⬜ planifié — non démarré. **Gate 1 READINESS (PO Agent) à réaliser au démarrage
+> du sprint** (DoR — AC Given/When/Then + cas d'erreur + sécurité), même protocole que les sprints précédents.
 
-## Items (17)
+## Items (14)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US18.19.1 | Création de l'écran Jalon | M | High | ⬜ |
-| US18.19.2 | Affichage et tri des jalons | S | Medium | ⬜ |
-| US18.19.3 | Structure du bloc Jalon A | M | High | ⬜ |
-| US18.19.4 | Structure du bloc Jalon B / C / D / ABC / BC | M | High | ⬜ |
-| US18.19.5 | Structure des blocs jalons à date simple | S | Medium | ⬜ |
-| US18.19.6 | Structure du bloc Jalon CEN | S | Medium | ⬜ |
-| US18.19.7 | Structure du bloc J7 - Mise en Service (MES) | M | High | ⬜ |
-| US18.19.8 | Structure du bloc J6 - Mise en Production (MEP) | S | Medium | ⬜ |
-| US18.19.9 | Créer un jalon | M | High | ⬜ |
-| US18.19.10 | Valider un jalon A / B / C / D | L | Critical | ⬜ |
-| US18.19.11 | Modifier un jalon à la volée | S | Medium | ⬜ |
-| US18.19.12 | Supprimer un jalon | S | Medium | ⬜ |
-| US18.19.13 | Modifier un jalon grisé | M | High | ⬜ |
-| US18.19.14 | Workflow des jalons | S | Medium | ⬜ |
-| US18.19.15 | Affichage des jalons (grisés) | S | Medium | ⬜ |
-| US18.19.16 | Enregistrer l'écran Jalon | S | High | ⬜ |
-| US18.19.17 | Historique des modifications (logs) — Jalons | S | Medium | ⬜ |
+| US30.3.1 | Vote structuré | M | High | ⬜ |
+| US30.3.2 | Minuteur partagé | S | High | ⬜ |
+| US30.3.3 | Mode présentation | M | High | ⬜ |
+| US30.3.4 | Gestion de l'attention | M | High | ⬜ |
+| US30.3.5 | Anonymat contrôlé | M | High | ⬜ |
+| US30.3.6 | Quiz et sondages natifs | L | High | ⬜ |
+| US30.3.7 | Visites guidées asynchrones | L | Medium | ⬜ |
+| US30.3.8 | Séquençage d'atelier (Session) | L | Medium | ⬜ |
+| US30.3.9 | Question instantanée & Mémo | M | Medium | ⬜ |
+| US30.3.10 | Mode private (contribution masquée avant révélation) | M | High | ⬜ |
+| US30.11.1 | Réactions temps réel | S | High | ⬜ |
+| US30.11.2 | Parcours gamifié (Aventure) | L | Medium | ⬜ |
+| US30.11.3 | Ambiance ludique avancée | M | Medium | ⬜ |
+| US30.11.4 | Classement et scoring temps réel des parcours | L | Medium | ⬜ |
 
-> **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
-> domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
-> les dépendances ci-dessus.
+> **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
+> domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

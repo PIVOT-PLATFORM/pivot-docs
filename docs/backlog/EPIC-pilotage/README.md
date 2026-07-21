@@ -26,7 +26,7 @@ gestion OI/EOTP, produits, contrats) et administration/habilitations.
 
 ⏸️ **phase-3** — VERROUILLÉ jusqu'à déclaration « Socle terminé » par le mainteneur (comme les
 autres modules du domaine). Les enablers de socle EN18.1/2/9/10/11 restent rattachés au
-[Sprint 9](../sprints/sprint-9.md).
+Sprint 9 (socle technique Pilotage — extrait, voir `PILOTAGE-HANDOFF.md`).
 
 ## Origine
 
