@@ -65,7 +65,7 @@ que les scans DAST tournent réellement.
 | Dette S2 | Dédupliquer `sanitizeReturnUrl` (US01.1.4/01.1.5, pivot-ui) | Low | ✅ Done — [pivot-ui#124](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/124) (mergée hors de ce lancement, découverte lors de la synchro) |
 | Recette | Passe accessibilité (WCAG 2.1 AA) sur Auth/Shell/Modules/Whiteboard | High | ⬜ — recette humaine |
 | Recette | Bug bash Socle complet + recette PO des US `Review` | Critical | ⬜ — recette humaine |
-| EN08.3 | Authentification réelle cross-service `pivot-collaboratif-core` (bearer token opaque `pivot-core`, remplace le stub headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id`, `ADR-022`) — [pivot-collaboratif-core#46](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/46), [détail](../EPIC-collaboration/ENABLERS/en-auth-cross-service-collaboratif.md) | Critical | ✅ Review — vérification manuelle `pivot-ui` (pas de déconnexion sur `/whiteboard`) restante |
+| EN08.3 | Authentification réelle cross-service `pivot-collaboratif-core` (bearer token opaque `pivot-core`, remplace le stub headers `X-Pivot-User-Id`/`X-Pivot-Tenant-Id`, `ADR-022`) — [pivot-collaboratif-core#46](https://github.com/PIVOT-PLATFORM/pivot-collaboratif-core/pull/46), [détail](../EPIC-collaboration/ENABLERS/en-auth-cross-service-collaboratif.md) | Critical | ✅ Review — vérification manuelle a révélé un vrai bug bloquant (STOMP whiteboard sans bearer token, sessions fermées côté serveur, le tableau ne s'ouvrait jamais), corrigé par `pivot-ui` `cf7ae18` (2026-07-12) |
 
 > **EN17.1** retiré de ce tableau (2026-07-08) : `Stage: Done` (2026-07-09, recette différée) —
 > `pivot-core#171` fermée, les 5 volets (`db`/`modules`/`tenant`/`team`/`auth`) extraits et livrés
@@ -103,8 +103,9 @@ Axes 1/3/4 :
 - [x] E07 : EN07.3 (ActiveMQ persistence) `Done` ✅ · EN07.4 (PgBouncer session mode) `Done` ✅
       (`pivot-core#197`)
 - [x] EN08.3 (auth cross-service `pivot-collaboratif-core`) — `pivot-collaboratif-core#46` mergée
-      (2026-07-09). Reste une vérification manuelle `pivot-ui` (non bloquante pour le code, cf.
-      détail de l'Enabler)
+      (2026-07-09). La vérification manuelle `pivot-ui` a mis au jour un vrai bug bloquant (pont
+      STOMP whiteboard sans bearer token — le tableau ne s'ouvrait jamais), corrigé le 2026-07-12
+      (`pivot-ui` `cf7ae18`)
 
 ### Axe 2 — Prod — **écarté de la déclaration (décision mainteneur, 2026-07-09)**
 
@@ -150,6 +151,7 @@ Axes 1/3/4 :
   comptait à tort comme restants) ; le noyau whiteboard a désormais 17/17 items en code mergé
   (`Review`), plus proche de la ligne d'arrivée que la précédente estimation "0/17" ne le
   suggérait — mais EN08.3 (nouvellement tracé) est un blocage fonctionnel réel pour la recette
-  E30, pas juste documentaire.
+  E30, pas juste documentaire. *(Résolu depuis : `pivot-ui` `cf7ae18`, 2026-07-12 — voir Axe 1
+  ci-dessus.)*
 - Repo cible pour US05.15.1 (composite action CI partagée) — décision non prise, bloque
   également US05.15.2 qui en dépend.

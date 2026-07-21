@@ -16,6 +16,16 @@
 > sens du plan de charge, pas de la recette item par item. **Objectif "valider les templates
 > satellites sur l'agilité avant d'engager Pilotage" (§Séquencement du README des sprints)
 > atteint — condition de déverrouillage du Sprint 9 remplie.**
+>
+> ⚠️ **Incohérence constatée (2026-07-21) :** cette bannière affirme "tous les items du tableau
+> livrés", mais le tableau ci-dessous n'a jamais été resynchronisé après la déclaration — plusieurs
+> lignes y restent `⬜`/`🟡` (EN09.1, US09.1.2, US14.2.1, US20.1.2a/b/c, US20.2.1, US20.3.1,
+> US20.3.2). `pivot-agilite-core`/`pivot-agilite-ui` sont désormais archivés (bascule modulith,
+> ADR-030) : le code retro/poker/wheel (`retro/{card,vote,phase,action,format,ws,session}`,
+> `PokerRoomIsolationIT`) existe bien dans `pivot-core`, cohérent avec une livraison effective,
+> mais la correspondance exacte item-par-item avec les PR listées ci-dessous n'a pas été
+> revérifiée après la migration — **recette mainteneur à confirmer avant de faire confiance au
+> détail du tableau**.
 
 **Scope :** premiers modules satellites sur `pivot-agilite-*` — périmètres volontairement petits pour valider les templates EN17.5/6 avant d'engager le domaine Pilotage
 **Sortie :** 1er repo satellite en prod + retour d'expérience sur les templates

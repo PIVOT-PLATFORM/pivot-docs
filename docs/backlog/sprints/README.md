@@ -11,15 +11,15 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 
 | Sprint | Titre | Statut |
 |--------|-------|--------|
-| [Sprint 1](./sprint-1.md) | Auth & Shell Socle | ✅ Terminé sauf contact |
+| [Sprint 1](./sprint-1.md) | Auth & Shell Socle | ✅ Terminé (14/14) — contact (US16.3.1) livré aussi (core #112, ui #48/#87), recette restante |
 | [Sprint 2](./sprint-2.md) | Système de modules + Auth manquant | ✅ Terminé |
 | [Sprint 3](./sprint-3.md) | Espace compte + Administration | 🔎 15/15 mergées — en attente de recette |
 | [Sprint 4](./sprint-4.md) | Infrastructure prod + Auth avancé + Notifications | ✅ 16/16 mergées |
 | [Sprint 5](./sprint-5.md) | Infra multi-repo (E17) + Module Whiteboard (Socle) | 🔎 Dev terminé — Vague 0 (E17) 10/10 mergés (EN17.1 clos 2026-07-08, `pivot-core#171` fermée) · Vague 1+ (whiteboard) 17/17 mergés · en attente de recette mainteneur |
 | [Sprint 6](./sprint-6.md) | Durcissement & recette Socle 🏁 | ✅ Socle terminé (déclaré 2026-07-09 — Axe 2 écarté, Axe 3 différé en fin de tous les sprints) |
 | [Sprint 7](./sprint-7.md) | Gouvernance ADR (phase-3) + Migration BFF Auth (EN01.14-18) | 🔄 Gouvernance ADR ✅ Terminé (2026-07-09) — ADR-008→016 et ADR-023→026 tous Accepté · Migration BFF (EN01.14-18) ⬜ pas démarrée |
-| [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ✅ Terminé (2026-07-11) — templates satellites validés (EN17.11), TAXO-2 fait, écart ADR-026 §2 comblé (US09.2.3) |
-| [Sprint 9](./sprint-9.md) | Socle **technique** Pilotage + Roadmap v0 *(re-trié 2026-07-10)* | 🔓 Débloqué (2026-07-11, Sprint 8 clos — REX satisfait) — E40 (profil adaptatif) sorti → queue idéation |
+| [Sprint 8](./sprint-8.md) | Pilote multi-repo (agilité) + enforcement taxonomie | ✅ Terminé (2026-07-11) — templates satellites validés (EN17.11), TAXO-2 fait, écart ADR-026 §2 comblé (US09.2.3) ; ⚠️ tableau détaillé du fichier jamais resynchronisé après la déclaration, voir sprint-8.md |
+| [Sprint 9](./sprint-9.md) | Socle **technique** Pilotage + Roadmap v0 *(re-trié 2026-07-10)* | ✅ Terminé (2026-07-11) — EN18.1/.2/.9/.10 + EN22.1a/b/c + roadmap v0 US22.3.1-3.5 tous mergés, `pivot-pilotage-ui` v0.1.0 publié — recette mainteneur restante, E40 (profil adaptatif) sorti → queue idéation |
 | [Sprint 10](./sprint-10.md) | Parité whiteboard visible (remédiation Socle) — favoris, corbeille, recherche, paramètres tableau *(nouveau 2026-07-13)* | ✅ Terminé (2026-07-16) — 4/4 US mergées (collaboratif-core #66) + recette mainteneur validée, 3 correctifs recette mergés (collaboratif-ui #124, pivot-ui #204) |
 | [Sprint 11](./sprint-11.md) | Parité whiteboard — Fondation modèle `Card` (EN08.4) *(nouveau 2026-07-13)* | 🔎 Code livré et fusionné (`collaboratif-core#68`) — **recette mainteneur restante**, `Stage` reste ⬜ (réconcilié 2026-07-20, voir sprint-11.md) |
 | [Sprint 12](./sprint-12.md) | Parité whiteboard — Objets typés & connecteurs (F08.6/F08.7) | 🔎 9/9 items code-complets (constaté dans `pivot-core`/`pivot-ui` le 2026-07-20) — recette mainteneur restante, voir sprint-12.md |
@@ -77,7 +77,8 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 > Agilité/Collaboratif + synthèse transverse (Sprint 43). Les fichiers `sprint-42.md`/`sprint-43.md`
 > seront créés à l'ouverture de leur vague.
 >
-> **Piste whiteboard — parité complète PouetPouet (Sprints 38-43, nouveau 2026-07-13)** : décision
+> **Piste whiteboard — parité complète PouetPouet (Sprints 11-16, ex-Sprints 38-43 avant
+> reséquencement du 2026-07-13, [décision mainteneur](./zones-ombre.md))** : décision
 > mainteneur d'absorber **tout** le spec de référence `Détails tableau blanc backlog.md` dans le
 > Socle E08 (lève le verrou `phase-3`, cf. [zone d'ombre #11](./zones-ombre.md) tranchée). Piste
 > **prioritaire pour les prochains travaux de dev**, en tête de la file whiteboard (après la parité

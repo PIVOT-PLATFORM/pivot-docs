@@ -39,3 +39,7 @@
 > **Couverture** : ce sprint fait partie de la séquence S21→S40 garantissant **aucune US des
 > domaines Pilotage/Risques non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit
 > les dépendances ci-dessus.
+>
+> ⚠️ **Nuance (2026-07-21)** : cette garantie visait à l'origine tout le bloc S21→S40. Depuis
+> l'extraction du domaine Pilotage de PIVOT (2026-07-20, ADR-030), elle ne s'applique plus qu'au
+> périmètre **Risques (E21)** qui reste dans PIVOT — voir `README.md` §Domaine Pilotage extrait.

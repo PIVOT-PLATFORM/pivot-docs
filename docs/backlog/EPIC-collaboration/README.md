@@ -408,7 +408,7 @@ collaboratif open-source).
 | [US08.3.2c — Présence, curseurs temps réel](FEATURES/canvas-ws/us-canvas-angular-08-3-2c.md) | ✅ Done |
 | [US08.3.3 — Undo / Redo sur le canvas](FEATURES/canvas-ws/us-undo-redo.md) | ✅ Done |
 | [US08.3.4 — Taille du texte proportionnelle à la taille de la carte](FEATURES/canvas-ws/us-texte-proportionnel-carte.md) | ⬜ |
-| [US08.3.5 — Dézoom dynamique selon la taille du contenu](FEATURES/canvas-ws/us-dezoom-dynamique-contenu.md) | ⬜ |
+| [US08.3.5 — Dézoom dynamique selon la taille du contenu](FEATURES/canvas-ws/us-dezoom-dynamique-contenu.md) | 🔎 code livré (ui #251, rattachée au Sprint 14) — recette |
 | [US08.3.6 — Redimensionnement d'une sélection multiple ou d'un groupe par cadre englobant](FEATURES/canvas-ws/us-redim-selection-multiple-cadre.md) | ⬜ |
 | [US08.3.7 — Navigation au clic droit](FEATURES/canvas-ws/us-navigation-clic-droit.md) | ⬜ |
 | [US08.5.1 — Présence des participants sur le canvas](FEATURES/presence/us-presence-participants.md) | ✅ Done |
@@ -443,9 +443,9 @@ collaboratif open-source).
 | [US08.10.2 — Renseigner / effacer une valeur de champ](FEATURES/champs-personnalises/us-valeurs-champs.md) | 🔎 code livré — recette |
 | **F08.11 — Canvas UX** | |
 | [US08.11.1 — Aimantation à la grille](FEATURES/canvas-ux/us-aimantation-grille.md) | 🔎 code livré (ui #241) — recette |
-| [US08.11.2 — Zoom avancé (boutons + ajuster)](FEATURES/canvas-ux/us-zoom-avance.md) | 🔎 partiel (molette OK, boutons/ajuster absents du canvas routé) |
+| [US08.11.2 — Zoom avancé (boutons + ajuster)](FEATURES/canvas-ux/us-zoom-avance.md) | 🔎 code livré (ui #253) — recette |
 | [US08.11.3 — Collage presse-papiers (image / tableur / texte)](FEATURES/canvas-ux/us-collage-presse-papiers.md) | 🔎 code livré — recette |
-| [US08.11.4 — Guides d'alignement (§4.3, supersède le 8 px d'US08.3.2a)](FEATURES/canvas-ux/us-guides-alignement.md) | ⬜ absent |
+| [US08.11.4 — Guides d'alignement (§4.3, supersède le 8 px d'US08.3.2a)](FEATURES/canvas-ux/us-guides-alignement.md) | 🔎 code livré (ui #247) — recette |
 | [US08.11.5 — Undo / redo (§4.5, HISTORY_LIMIT 30, supersède la pile 50 d'US08.3.3)](FEATURES/canvas-ux/us-undo-redo-parite.md) | 🔎 code livré — recette |
 | [US08.11.6 — Raccourcis clavier & nudge (§4.7, offset +24, supersède US08.3.2a)](FEATURES/canvas-ux/us-raccourcis-clavier.md) | 🔎 code livré, écart mineur (nudge 1/20px vs 24px spécifié) |
 | [US08.11.7 — Redimensionnement fin & lasso (§4.4/§4.9, min ~24 px, supersède US08.3.6)](FEATURES/canvas-ux/us-redimensionnement-fin.md) | 🔎 code livré — recette |
@@ -457,7 +457,7 @@ collaboratif open-source).
 | [US08.12.2 — Vote / dot-vote](FEATURES/facilitation-socle/us-vote-dot-vote.md) | ✅ Terminé (Sprint 15, 2026-07-16) |
 | **F08.13 — Cycle de vie du board & import** *(absorbe EN30.13)* | |
 | [US08.13.1 — Import Klaxoon + annulation](FEATURES/cycle-vie-board/us-import-klaxoon.md) | 🔎 code livré — recette |
-| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | ⬜ non commencé — **AC réalignés le 2026-07-21** sur le modèle Java réel |
+| [US08.13.2 — Cycle de vie du brouillon de template](FEATURES/cycle-vie-board/us-brouillon-template.md) | 🔎 backend livré (core #251) — **front à faire** (AC réalignés le 2026-07-21 sur le modèle Java réel) |
 | [US08.13.3 — Image de couverture](FEATURES/cycle-vie-board/us-image-couverture.md) | 🔎 code livré — recette |
 | [US08.13.4 — Réinitialisation du canvas (§3.8, préservation champs/votes §6.10)](FEATURES/cycle-vie-board/us-reset-board.md) | 🔎 code livré — recette |
 | [US08.13.5 — Partage d'un template : privé / organisation / personnes ciblées](FEATURES/cycle-vie-board/us-partage-template.md) | ⬜ non commencé — **net-new 2026-07-21** (décision mainteneur, modèle type Klaxoon) |
@@ -514,16 +514,20 @@ collaboratif open-source).
 > 2026-07-16). Vérification directe du code (`pivot-core`/`pivot-ui` post-bascule Spring Modulith,
 > ADR-030) : **EN08.4, F08.6, F08.7, F08.8, F08.9, F08.10, F08.13 (hors US08.13.2), US08.1.9,
 > US08.2.6, F08.12 sont code-complets** (recette mainteneur restante, `Stage` inchangé). Trois
-> écarts réels identifiés : **US08.11.4** (guides d'alignement) absent du canvas réellement
-> routé ; **US08.11.2** (zoom avancé) partiel (molette seule) ; *(**US08.11.1** — aimantation
-> grille — était de ce lot, livrée depuis par `pivot-ui#241`, 2026-07-20)* ; **US08.13.2** (brouillon de template) non commencé ; **US08.2.5** (inviter par email) —
+> écarts réels identifiés à l'époque — **tous livrés depuis** : **US08.11.4** (guides d'alignement,
+> `pivot-ui#247`, 2026-07-21) ; **US08.11.2** (zoom avancé, `pivot-ui#253`, 2026-07-21) ;
+> *(**US08.11.1** — aimantation grille — était de ce lot, livrée depuis par `pivot-ui#241`,
+> 2026-07-20)* ; **US08.13.2** (brouillon de template) — backend livré (`pivot-core#251`,
+> 2026-07-21), front toujours à faire. Sprint 14 est désormais 10/10 code-complet. **US08.2.5**
+> (inviter par email) —
 > ⚠️ **régression de la bascule modulith** : codé et mergé sur les repos pré-migration
 > (`pivot-collaboratif-core#108`/`pivot-collaboratif-ui#169`, 2026-07-17) mais absent du monolith
 > actuel, à réimporter plutôt qu'à réécrire. Détail par sprint : `sprints/sprint-12.md`,
 > `sprint-14.md`, `sprint-16.md`.
 >
 > **Items orphelins non séquencés (constatés 2026-07-20) :** US08.3.4 (texte proportionnel à la
-> carte), US08.3.5 (dézoom dynamique selon le contenu) et US08.3.7 (navigation au clic droit) —
-> ajoutés en `Stage: Backlog` le 2026-07-10 (raffinements UX post-audit de parité) — n'ont jamais
-> été assignés à un sprint et sont absents du code. US08.3.6 est distinct : superseded par
-> US08.11.7 (Sprint 14), déjà code-complet.
+> carte) et US08.3.7 (navigation au clic droit) — ajoutés en `Stage: Backlog` le 2026-07-10
+> (raffinements UX post-audit de parité) — n'ont jamais été assignés à un sprint et sont absents du
+> code. US08.3.5 (dézoom dynamique selon le contenu), qui était dans ce même lot, a depuis été
+> rattachée au Sprint 14 et livrée (`pivot-ui#251`, 2026-07-21) — n'est donc plus orpheline.
+> US08.3.6 est distinct : superseded par US08.11.7 (Sprint 14), déjà code-complet.
