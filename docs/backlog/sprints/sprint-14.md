@@ -19,7 +19,7 @@ benchmark US30.2.2 (présence & curseurs nommés).
 | Item | Titre | Priority | Size | 🤖 Dev |
 |------|-------|----------|------|--------|
 | [US08.11.1](../EPIC-collaboration/FEATURES/canvas-ux/us-aimantation-grille.md) | Aimantation à la grille | Medium | S | 🔎 code livré (ui #241) — recette |
-| [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | 🔎 partiel — voir État réel |
+| [US08.11.2](../EPIC-collaboration/FEATURES/canvas-ux/us-zoom-avance.md) | Zoom avancé (boutons + ajuster au contenu / à la sélection) | Medium | M | 🔎 code livré (ui #253) — recette |
 | [US08.11.3](../EPIC-collaboration/FEATURES/canvas-ux/us-collage-presse-papiers.md) | Collage presse-papiers (image / tableur / texte) | Medium | M | 🔎 code livré — recette |
 | [US08.11.4](../EPIC-collaboration/FEATURES/canvas-ux/us-guides-alignement.md) | Guides d'alignement (§4.3, supersède 8 px d'US08.3.2a) | Medium | M | 🔎 code livré (ui #247) — recette |
 | [US08.11.5](../EPIC-collaboration/FEATURES/canvas-ux/us-undo-redo-parite.md) | Undo / redo (§4.5, HISTORY_LIMIT 30, supersède pile 50 d'US08.3.3) | Medium | M | 🔎 code livré — recette |
@@ -38,7 +38,7 @@ benchmark US30.2.2 (présence & curseurs nommés).
 | Item | État réel | Détail |
 |------|-----------|--------|
 | US08.11.1 (aimantation grille) | Fait — **1 écart de spec à arbitrer** | Bouton « Grille » (`floating-toolbar`), snap dur `Math.round(c / 24) * 24` appliqué au déplacement **et** au redimensionnement, bascule points/quadrillage, préférence locale `localStorage['klx_board_grid']` (off par défaut). État détenu par `board-page`, partagé entre barre d'outils et canvas. `applySnap()` est le point de passage unique où la grille court-circuitera les guides d'alignement (§5.9) — ceux-ci n'existent pas encore, la branche est réservée à US08.11.4. **Écart** : l'US impose `Math.round(c / 24) * 24` *et* liste `36 -> 24` en valeur limite ; les deux se contredisent (36 est le point milieu exact, `Math.round(1.5) === 2`, donc la formule rend 48). La formule, normative et répétée, l'a emporté ; un test dédié verrouille et documente le choix — **arbitrage PO attendu**. |
-| US08.11.2 (zoom avancé) | **Partiel — constat corrigé le 2026-07-21** | Seul le zoom molette centré curseur existe (`onWheel`, `structured-canvas.component.ts`), au facteur 1,1 et **sans debounce**. ⚠️ Le constat du 2026-07-20 (« boutons et ajuster existent dans l'ancien canvas retiré ») était **inexact** : après vérification, le canvas retiré n'a que `zoomIn`/`zoomOut` au facteur ×1,2 avec des bornes codées en dur 0,1–10 — incompatibles avec la spec (×1,25) et avec les bornes du canvas actif. Il n'y a **aucun** `fitToContent`, `fitToSelection`, `fitBox`, auto-fit à l'ouverture ni debounce à porter. Cette US est donc à **écrire de zéro**, pas à porter — périmètre nettement supérieur à ce que laissait croire la ligne précédente. Sa dépendance `computeMinZoom` est désormais levée par US08.3.5 (ui #251). |
+| US08.11.2 (zoom avancé) | Fait — **1 changement de comportement à connaître** | Écrit de zéro sur `structured-canvas` (le constat « à porter du canvas retiré » était inexact, cf. correction du 2026-07-21). Molette exponentielle `zoom * exp(-deltaY * base * damp)` avec `base` 0,0008 / 0,01 selon Ctrl-Cmd et amortissement `1/sqrt(zoom)` au-dessus de 1× ; écritures du viewport différées de 80 ms. Nouveau composant `wb-zoom-controls` (boutons ×1,25 / ÷1,25, readout cliquable réinitialisant à 100 %, ajuster au contenu plafonné à 1, ajuster à la sélection plafonné à 1,5). Auto-fit unique à l'ouverture, désarmé au premier cadrage ou après 2 s, contenu masqué puis fondu 0,2 s. Fonctions pures `fitBox` / `zoomAround` / `wheelZoom` dans `board-geometry.ts`. **Changement de comportement : la molette seule zoome désormais au lieu de faire défiler la vue** — conforme aux AC et au POC, validé par le mainteneur le 2026-07-21 ; le déplacement de la vue reste au clic-milieu, à l'outil main et Espace+glisser. |
 | US08.11.3 (collage presse-papiers) | Fait | `isImageClipboardItem`/`decideTablePaste`/`isUrlOnlyPaste` câblés sur `@HostListener('document:paste')` dans `structured-canvas.component.ts` |
 | US08.11.4 (guides d'alignement) | Fait | Réécrit nativement sur `structured-canvas` (l'ancien canvas retiré n'a pas été porté). Logique pure `computeAlignGuides()` dans `board-constants.ts` : 3 repères par axe, tolérance `ALIGN_SNAP_PX = 6` px écran convertie `/ zoom`, meilleur candidat unique par axe, exclusion de la carte déplacée et des cartes `DRAW`. Bouton bascule dans `floating-toolbar` (`aria-pressed`), préférence locale `localStorage['klx_board_align']` **active par défaut**. Exclusion mutuelle §5.9 câblée dans `onPointerMove` : la grille court-circuite le calcul des guides. Guides `aria-hidden`, `#ec4899`, épaisseur `1/zoom`, `zIndex 60`, effacés au `pointerup`. |
 | US08.11.5 (undo/redo, HISTORY_LIMIT 30) | Fait | `board.store.ts` — pile 30 niveaux (`undoStack`/`redoStack`) |
@@ -48,11 +48,9 @@ benchmark US30.2.2 (présence & curseurs nommés).
 | US08.5.2 (curseurs nommés) | Fait | Signal `cursors` (`CursorState`), event `board:cursors` dans `board.store.ts` |
 | US08.5.3 (verrou doux d'édition) | Fait | Map `remoteEditors` `{userId, name}` dans `board.store.ts` |
 
-**Reste réellement à faire pour clore ce sprint :** US08.11.2 — **à écrire de zéro** (boutons
-×1,25/÷1,25, réinitialisation « % », ajuster au contenu / à la sélection, debounce molette 80 ms,
-auto-fit à l'ouverture). Sa dépendance `computeMinZoom` est levée par US08.3.5 (ui #251).
-US08.11.1 (ui #241, 2026-07-20), US08.11.4 (ui #247) et US08.3.5 (ui #251, 2026-07-21) sont
-livrées ; comme tout le reste du sprint, leur
+**Reste à faire pour clore ce sprint : plus aucun développement.** Les dix items sont livrés —
+US08.11.1 (ui #241, 2026-07-20), puis US08.11.4 (ui #247), US08.3.5 (ui #251) et US08.11.2
+(ui #253) le 2026-07-21. Le sprint est désormais **entièrement en attente de recette** ; leur
 `Stage` reste `⬜` jusqu'à la recette mainteneur —
 voir [checklist de recette](pathname:///pivot-docs/workflow/checklist-recette-whiteboard).
 
