@@ -27,7 +27,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 15](./sprint-15.md) | Parité whiteboard — Facilitation : minuteur, vote (F08.12) | ✅ Terminé (2026-07-16) — US08.12.1/2 câblées UI + recette live (collaboratif-ui #126, enabler /me collaboratif-core #89) |
 | [Sprint 16](./sprint-16.md) | Parité whiteboard — Cycle de vie & partage (F08.13/US08.2.5) | 🟡 5/6 items code-complets — ✅ **US08.2.5 (inviter par email) ré-implémentée dans le modulith** (core #236 + ui #237, la régression de bascule est résorbée) ; reste US08.13.2 (brouillon de template) — **backend livré** (core #251), front à faire — réconcilié 2026-07-21, voir sprint-16.md |
 | [Sprint 17](./sprint-17.md) | Agilité — Scrum Poker (finition) + Référentiel Équipes | 🔎 6/6 US poker code-complètes (2026-07-21, core#253+ui#259) — recette ; EN09.2/EN15.7 bloqués sur EN28.14 non planifié, voir sprint-17.md |
-| [Sprint 18](./sprint-18.md) | Agilité — Daily Standup + La Roue | ⬜ planifié |
+| [Sprint 18](./sprint-18.md) | Agilité — Daily Standup + La Roue | 🔎 E10 Daily Standup 5/5 US code-complètes (core#255+ui#262) + E14 La Roue 3/3 US déjà code-complètes (aucun gap AC) — recette ; EN10.1/EN14.1 bloqués sur EN28.14 non planifié, voir sprint-18.md |
 | [Sprint 19](./sprint-19.md) | Agilité — Rétrospective + PI Planning | ⬜ planifié |
 | [Sprint 20](./sprint-20.md) | Agilité — Capacity Planning (v1) | ⬜ planifié |
 | [Sprint 21](./sprint-21.md) | Agilité — Capacity Planning (v2) | ⬜ planifié |
