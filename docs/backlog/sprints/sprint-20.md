@@ -17,24 +17,26 @@
 > (événements, membres/absences manuelles, hiérarchie, vélocité/burndown) ; le moteur de calcul de
 > capacité (F11.5→F11.8 + enablers) est livré en S21.
 >
-> **Statut** : 🔎 en cours (réconcilié 2026-07-22) — **Gate 1 READINESS réalisé sur les 7 items**
-> (voir §État réel). Décisions Gate 1 notables : capacité nette **simplifiée et explicitement
+> **Statut** : 🔎 en cours (réconcilié 2026-07-22) — **les 7 items sont code-complets, backend +
+> frontend mergés** ([core#261](https://github.com/PIVOT-PLATFORM/pivot-core/pull/261) +
+> [ui#266](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/266), Gate 4 100/100 chacun) — recette
+> mainteneur restante. Décisions Gate 1 notables : capacité nette **simplifiée et explicitement
 > provisoire** pour ce lot (le moteur complet F11.6 reste Sprint 21, voir `US11.1.2`
 > §Architecture) ; champ `motif` des absences **supprimé** du stub d'origine (contradiction directe
-> avec la section RGPD de l'EPIC, voir `US11.2.2` §Architecture) ; aucun couplage de schéma avec
-> `PiCycle` (E50 PI Planning, voir `US11.1.1`/`US11.3.1` §Architecture).
+> avec la section RGPD de l'EPIC, voir `US11.2.2` §Architecture, vérifié dans le code livré) ;
+> aucun couplage de schéma avec `PiCycle` (E50 PI Planning, voir `US11.1.1`/`US11.3.1` §Architecture).
 
 ## Items (7)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US11.1.1 | Créer un événement de capacité | M | High | 🔧 Gate 1 fait — implémentation à faire |
-| US11.1.2 | Visualiser la capacité de l'équipe sur un calendrier | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.1.1/US11.2.2 |
-| US11.2.1 | Gérer les membres de l'équipe et leur disponibilité | S | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.1.1 |
-| US11.2.2 | Saisir les absences et jours non disponibles | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.2.1 |
-| US11.3.1 | Créer une hiérarchie d'événements (Sprint sous PI Planning) | M | Medium | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.1.1 |
-| US11.4.1 | Saisir la vélocité réelle d'un sprint | S | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.1.2 |
-| US11.4.2 | Visualiser le burndown chart du sprint | M | Medium | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.4.1 |
+| US11.1.1 | Créer un événement de capacité | M | High | 🔎 code livré (core#261 + ui#266) — recette |
+| US11.1.2 | Visualiser la capacité de l'équipe sur un calendrier | M | High | 🔎 code livré (core#261 + ui#266) — recette |
+| US11.2.1 | Gérer les membres de l'équipe et leur disponibilité | S | High | 🔎 code livré (core#261 + ui#266) — recette |
+| US11.2.2 | Saisir les absences et jours non disponibles | M | High | 🔎 code livré (core#261 + ui#266) — recette |
+| US11.3.1 | Créer une hiérarchie d'événements (Sprint sous PI Planning) | M | Medium | 🔎 code livré (core#261 + ui#266) — recette |
+| US11.4.1 | Saisir la vélocité réelle d'un sprint | S | High | 🔎 code livré (core#261 + ui#266) — recette |
+| US11.4.2 | Visualiser le burndown chart du sprint | M | Medium | 🔎 code livré (core#261 + ui#266) — recette |
 
 ## État réel — Gate 1 (2026-07-22)
 
@@ -61,6 +63,21 @@
 >   listing/formulaire/historique, **mais pas son moteur de calcul complet** (`fte`/`focusFactor`/
 >   `hoursPerDay`/`pointsPerPersonDay`), qui correspond au périmètre F11.6 différé. `US11.4.2`
 >   (burndown) n'a pas d'équivalent dans le POC — conçu directement à partir de l'AC du stub.
+>
+> ✅ **Implémentation livrée** ([`core#261`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/261)
+> et [`ui#266`](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/266), mergés 2026-07-22, Gate 4
+> 100/100 chacun). Backend : module `fr.pivot.agilite.capacity` — `CapacityEvent`/
+> `CapacityEventMember`/`CapacityAbsence`/`CapacityBurndownEntry`, `CapacityCalculator`/
+> `CapacityBurndownCalculator` (fonctions pures testées en isolation, horloge injectable),
+> migration `V6__capacity_event.sql`. Contrainte RGPD vérifiée directement dans le code livré :
+> `CreateAbsenceRequest` ne déclare que `dateDebut`/`dateFin`. Frontend : `features/capacity/` —
+> `capacity-event-list`/`capacity-event-form`/`capacity-event-detail`/`capacity-burndown-chart`
+> (SVG, deux `<polyline>`, pas de librairie tierce), badge "estimation provisoire" systématique,
+> formulaire d'absence à deux champs date uniquement (testé). `core#261` mergé avec bypass explicite
+> du mainteneur sur le check CI "Docker preview image" (Trivy) — 3ᵉ occurrence identique de ce même
+> échec inexpliqué ce sprint (après `core#255`, `core#259`), toujours non reproductible localement ;
+> pattern pointant vers un problème d'infrastructure CI, pas une vulnérabilité réelle. Recette
+> mainteneur restante sur les 7 US.
 >
 > **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
 > domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.

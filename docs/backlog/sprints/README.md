@@ -29,7 +29,7 @@ par sprint — voir [pourquoi](#pourquoi-un-fichier-par-sprint) en bas de page.
 | [Sprint 17](./sprint-17.md) | Agilité — Scrum Poker (finition) + Référentiel Équipes | 🔎 6/6 US poker code-complètes (2026-07-21, core#253+ui#259) — recette ; EN09.2/EN15.7 bloqués sur EN28.14 non planifié, voir sprint-17.md |
 | [Sprint 18](./sprint-18.md) | Agilité — Daily Standup + La Roue | 🔎 E10 Daily Standup 5/5 US code-complètes (core#255+ui#262) + E14 La Roue 3/3 US déjà code-complètes (aucun gap AC) — recette ; EN10.1/EN14.1 bloqués sur EN28.14 non planifié, voir sprint-18.md |
 | [Sprint 19](./sprint-19.md) | Agilité — Rétrospective + PI Planning | 🔎 E50 PI Planning 3/3 US retenues code-complètes (core#259+ui#264) — recette ; E20 Rétrospective déjà code-complète (reconciliation pivot-docs#298 en attente de fusion) ; EN20.3/US50.2.1/EN50.1 bloqués, voir sprint-19.md |
-| [Sprint 20](./sprint-20.md) | Agilité — Capacity Planning (v1) | ⬜ planifié |
+| [Sprint 20](./sprint-20.md) | Agilité — Capacity Planning (v1) | 🔎 7/7 US code-complètes (core#261+ui#266) — recette ; voir sprint-20.md |
 | [Sprint 21](./sprint-21.md) | Agilité — Capacity Planning (v2) | ⬜ planifié |
 | [Sprint 22](./sprint-22.md) | Collaboration — Module Session (QUIZ/POLL/WORDCLOUD/BRAINSTORM/QA/VOTE) | ⬜ planifié |
 | [Sprint 23](./sprint-23.md) | Collaboration — MeetOps + Mini-jeux | ⬜ planifié |
