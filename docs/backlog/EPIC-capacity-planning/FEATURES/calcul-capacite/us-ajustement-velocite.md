@@ -4,13 +4,53 @@
 **Je veux** pondérer la capacité prévisionnelle par la **vélocité réelle** du/des sprint(s) précédent(s)
 **Afin de** planifier sur la réalité mesurée plutôt que sur la théorie
 
+**Gate 1 réalisé le 2026-07-22** — remplace la version outline précédente. Prolonge US11.4.1 (S20,
+vélocité réelle par sprint) et US11.6.2 (facteur de concentration). Référence POC directe :
+`summarizeHistory`/`avgVelocity`/`forecastPoints` de PouetPouet (`apps/web/src/lib/capacity.ts`) —
+moyenne de vélocité réalisée (`completedPoints ÷ netPersonDays`) pondérée par la taille de chaque
+sprint passé, réutilisée telle quelle comme base de la moyenne glissante ci-dessous.
+
 ## Critères d'acceptation
+
+### Vélocité prévisionnelle (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given la vélocité des sprints précédents (F11.4), when je planifie, then une capacité prévisionnelle (en points) est proposée à partir de la **moyenne glissante des 3 derniers sprints** (fenêtre paramétrable) | ⬜ |
-| Given une vélocité **irrégulière** (**coefficient de variation = écart-type ÷ moyenne > 25 %**), when on l'exploite, then l'intervalle de confiance est **élargi** (± 1 écart-type) ; sinon **resserré** | ⬜ |
-| Given un **premier sprint sans historique**, then repli sur **capacité en jours-homme × focus × (1 − marge de maturité)** (sans vélocité) | ⬜ |
+| Given une équipe avec au moins un sprint terminé et sa vélocité saisie (US11.4.1), when `GET .../teams/{teamId}/velocity-forecast?window=3`, then 200 OK avec la **moyenne glissante des N derniers sprints terminés** (fenêtre `window`, défaut 3, bornes `[1, 10]`), pondérée par les jours ouvrés nets de chaque sprint (même principe que `summarizeHistory` du POC) | ⬜ |
+| Given la vélocité historique, when le coefficient de variation (**écart-type ÷ moyenne**) de la fenêtre dépasse **25 %**, then la réponse porte `confidenceInterval: "WIDE"` (± 1 écart-type) ; sinon `confidenceInterval: "NARROW"` | ⬜ |
+| Given une équipe **sans aucun sprint terminé avec vélocité saisie**, when la prévision est demandée, then 200 OK avec `forecastPoints: null`, `basis: "NO_HISTORY"` — le prévisionnel repli sur **capacité en jours-homme × facteur de concentration × (1 − marge de maturité)** (US11.6.4), sans vélocité | ⬜ |
+| Given un sprint sans vélocité saisie (`completedPoints` non renseigné, US11.4.1), when il tombe dans la fenêtre, then il est **exclu** du calcul de moyenne (ni compté ni pondéré à zéro) | ⬜ |
+
+### Cas d'erreur
+
+| Critère | 🤖 Dev |
+|---------|--------|
+| Error : given `window` hors bornes `[1, 10]`, when la prévision est demandée, then 400 code `INVALID_VELOCITY_WINDOW` | ⬜ |
+| Error : given un `teamId` inexistant ou d'un autre tenant, when la prévision est demandée, then 404 | ⬜ |
+
+### Sécurité
+
+| Critère | 🤖 Dev |
+|---------|--------|
+| Security : given un appelant non membre de l'équipe `teamId`, when la prévision est demandée, then 404 (jamais 403) | ⬜ |
+| Security : test TI obligatoire cross-tenant | ⬜ |
+
+## Hors périmètre
+
+- **Vélocité par sous-équipe/streams** — hors périmètre, agrégation au niveau équipe uniquement
+  (cohérent avec US11.8.1 §RGPD/éthique — agrégation équipe par défaut).
+
+## Notes d'implémentation
+
+- **Backend** : `CapacityVelocityForecastService#forecast(teamId, window)` — fonction pure une
+  fois les données chargées (mêmes entrées que `summarizeHistory` du POC : liste de sprints
+  terminés avec `completedPoints`/jours ouvrés nets), testée en isolation avec des historiques
+  synthétiques (régulier, irrégulier > 25 % CV, vide). `GET .../teams/{teamId}/velocity-forecast`
+  sur `CapacityVelocityController` (S20, étendu). Le repli « sans historique » réutilise
+  directement US11.6.2/US11.6.4 (facteur × marge), pas une formule dupliquée.
+- **Frontend** : encart "Vélocité prévisionnelle" dans `capacity-event-detail` (événement `SPRINT`
+  en préparation) — moyenne, intervalle de confiance (élargi/resserré, texte + icône jamais la
+  seule couleur), ou message explicite si `basis: "NO_HISTORY"`.
 
 ---
 Item Type: US · Parent: F11.6 · Module: agilite · Phase: phase-3 · Size: L · Priority: High
