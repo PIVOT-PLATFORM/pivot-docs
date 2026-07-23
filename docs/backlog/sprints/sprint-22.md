@@ -14,29 +14,31 @@
 > **Dépendances** : socle `collaboratif` (STOMP temps réel, isolation multi-tenant) livré lors
 > des sprints précédents du domaine Collaboration.
 >
-> **Statut** : 🔎 en cours (réconcilié 2026-07-23) — **Gate 1 READINESS réalisé sur les 12 items
-> réels** (voir §État réel). `EN19.4` reste `⬜ bloqué` sur `EN28.14`, même pattern que tous les
-> autres enablers KPI de la séquence S17→S31. `EN19.1`/`EN19.2` sont posés dans les notes
-> d'implémentation d'`US19.1.1`/`US19.1.2` (pas de fichier AC séparé) ; `EN19.3` s'avère déjà
-> **quasiment acquis** (garde de module et route placeholder déjà en place, voir §État réel).
+> **Statut** : 🔵 en cours — **vue participant + six types d'activités livrés côté frontend**
+> (`pivot-ui:main`), backend `pivot-core` et recette mainteneur en attente. Détail :
+> [§ Journal d'avancement](#journal-davancement). Gate 1 READINESS (PO Agent) réalisé au démarrage
+> (DoR — AC Given/When/Then + cas d'erreur + sécurité).
 
 ## Items (13)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US19.1.1 | Créer une session live | M | Critical | 🔧 Gate 1 fait — implémentation à faire |
-| US19.1.2 | Démarrer, mettre en pause et terminer une session live | M | Critical | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.1 |
-| US19.2.1 | Rejoindre une session via code court (authentifié ou anonyme) | M | Critical | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.1 |
-| US19.2.2 | Vue participant en temps réel (affichage adapté au type d'activité) | XL | Critical | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.2.1 + toutes les US19.3.x |
-| US19.3.1 | Activité QUIZ — quiz interactif réseau multijoueur | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.2 | Activité POLL — sondage instantané avec résultats temps réel | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.3 | Activité WORDCLOUD — nuage de mots collaboratif | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.4 | Activité BRAINSTORM — post-its virtuels collaboratifs | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.5 | Activité Q&A — questions des participants avec upvotes | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend de toutes les US19.3.x |
-| US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.4.1 |
-| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14, même situation qu'EN09.2/EN15.7/EN10.1/EN14.1/EN20.3/EN50.1/EN11.2 |
+| US19.1.1 | Créer une session live | M | Critical | ⬜ |
+| US19.1.2 | Démarrer, mettre en pause et terminer une session live | M | Critical | ⬜ |
+| US19.2.1 | Rejoindre une session via code court (authentifié ou anonyme) | M | Critical | ⬜ |
+| US19.2.2 | Vue participant en temps réel (affichage adapté au type d'activité) | XL | Critical | 🔵 FE |
+| US19.3.1 | Activité QUIZ — quiz interactif réseau multijoueur | L | High | 🔵 FE |
+| US19.3.2 | Activité POLL — sondage instantané avec résultats temps réel | M | High | 🔵 FE |
+| US19.3.3 | Activité WORDCLOUD — nuage de mots collaboratif | M | High | 🔵 FE |
+| US19.3.4 | Activité BRAINSTORM — post-its virtuels collaboratifs | M | High | 🔵 FE |
+| US19.3.5 | Activité Q&A — questions des participants avec upvotes | M | High | 🔵 FE |
+| US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔵 FE |
+| US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | ⬜ |
+| US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | ⬜ |
+| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+
+> **Légende 🤖 Dev** : `⬜` non démarré · `🔵 FE` vue frontend livrée et mergée sur `pivot-ui:main`,
+> backend `pivot-core` et/ou recette mainteneur en attente · `✅` Done (recette mainteneur — jamais posé par Claude).
 
 ## État réel (Gate 1, 2026-07-23)
 
@@ -69,3 +71,46 @@
 >
 > **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
 > domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.
+
+## Journal d'avancement
+
+> Le `Stage: ⬜` du frontmatter de chaque US reste inchangé jusqu'à la recette mainteneur ; ce journal
+> et la colonne 🤖 Dev tracent l'avancement intermédiaire (protocole sprint standard).
+
+### 2026-07-23 — Vague activités : vue participant + 6 types d'activités (frontend `pivot-ui`)
+
+Toutes les vues participant du module Session live sont livrées et **mergées sur `pivot-ui:main`**
+(squash, sans `Release-Trigger` — pas de release à ce stade). Après cette vague, `PLACEHOLDER_TYPES`
+est vide : les six types d'activité résolvent un composant lazy-loadé réel.
+
+| US | Activité | PR `pivot-ui` | Commit `main` | Spec figée (Gate 5) |
+|----|----------|---------------|---------------|---------------------|
+| US19.2.2 / 19.3.2 / 19.3.3 | Infra participant + POLL + WORDCLOUD | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — voir « Reste à faire »)_ |
+| US19.3.5 | Q&A | [#272](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/272) | `d247910` | [`us19-3-5-qa`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-5-qa) |
+| US19.3.4 | BRAINSTORM | [#274](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/274) | `10d763a` | [`us19-3-4-brainstorm`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-4-brainstorm) |
+| US19.3.6 | VOTE (Fist / pondéré) | [#276](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/276) | `e786086` | [`us19-3-6-vote-decision`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-6-vote-decision) |
+| US19.3.1 | QUIZ | [#278](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/278) | `041ad7a` | [`us19-3-1-quiz`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-1-quiz) |
+| — | Balayage a11y/ergonomie (6 activités) | [#279](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/279) | `8c8c963` | _(transverse — voir spec VOTE/QUIZ)_ |
+| US19.3.6 | VOTE — mode MATRICE (différé) | [#280](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/280) | `6e21016` | (inclus dans la spec VOTE) |
+
+**Fusion en cascade** : les PR étaient empilées (fichiers partagés `session.model.ts`, `session-api.service.ts`,
+shell, i18n). Chaque merge a été suivi d'un rebase réel `--onto main` de la PR suivante (drop des
+commits déjà mergés), CI verte (CI/PR Checks/E2E/Security) vérifiée avant chaque fusion.
+
+**Balayage a11y (#279)** — tier prioritaire de l'étude d'ergonomie : décompte QUIZ non annoncé par
+lecteur d'écran (assertif « temps écoulé » seul), VOTE/BRAINSTORM `radio`→`aria-pressed`, noms
+accessibles contextualisés Q&A/BRAINSTORM, POLL résultats en `aria-live` + barre visuelle,
+suppression BRAINSTORM en deux temps, alerte over-budget VOTE, cibles tactiles 44 px.
+
+### Reste à faire
+
+- **Backend `pivot-core`** (`fr.pivot.collaboratif.session.*`) — producteur REST/WS des six activités :
+  hors périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
+  bout-en-bout. Les specs figées documentent le contrat **tel que consommé** par le client.
+- **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
+- **Gate 5 restant** — figer les specs des US livrées au PR1 (US19.2.2 infra participant, US19.3.2 POLL,
+  US19.3.3 WORDCLOUD) sur le même modèle que les quatre specs d'activités de cette vague.
+- **US non démarrées** — US19.1.1 / US19.1.2 / US19.2.1 (création/cycle de vie/join), US19.4.1 / US19.4.2
+  (résultats animateur + export), EN19.4 (KPI).
+- **Tier polish différé** (étude d'ergonomie) — skeletons de chargement (T5), sweep `:focus-visible`
+  tokenisé (T8), copy par code d'erreur (T10), spinners de soumission (T11), urgence visuelle du timer QUIZ (T12).
