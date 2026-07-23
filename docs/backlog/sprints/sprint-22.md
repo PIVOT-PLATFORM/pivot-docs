@@ -34,11 +34,12 @@
 | US19.3.5 | Activité Q&A — questions des participants avec upvotes | M | High | 🔵 FE |
 | US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔵 FE |
 | US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | 🔵 FE |
-| US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | ⬜ |
-| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
+| US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | 🔵 FE |
+| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬛ BE |
 
 > **Légende 🤖 Dev** : `⬜` non démarré · `🔵 FE` vue frontend livrée et mergée sur `pivot-ui:main`,
-> backend `pivot-core` et/ou recette mainteneur en attente · `✅` Done (recette mainteneur — jamais posé par Claude).
+> backend `pivot-core` et/ou recette mainteneur en attente · `⬛ BE` enabler **backend pur** (`pivot-core`,
+> aucune surface frontend) · `✅` Done (recette mainteneur — jamais posé par Claude).
 
 ## État réel (Gate 1, 2026-07-23)
 
@@ -119,24 +120,37 @@ n'était qu'un placeholder (différé explicitement à « PR2/2 » au PR1).
 | US19.1.2 | Runner : cycle de vie | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
 | US19.2.1 | Join via code court | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
 | US19.4.1 | Résultats temps réel (animateur) | [#282](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/282) | `76cfba8` | [`us19-4-1-resultats-temps-reel`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-1-resultats-temps-reel) |
+| US19.4.2 | Export des résultats (animateur) | [#284](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/284) | `a4e22c5` | [`us19-4-2-export-resultats`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-2-export-resultats) |
 
 **US19.4.1 (#282)** — remplace le placeholder de résultats par la vue animateur : chargement
 autoritaire (`getSession`), snapshot par type + temps réel sur le topic STOMP partagé (POLL barres %,
 WORDCLOUD nuage ∝ fréquence, Q&A trié + badge répondu, BRAINSTORM groupé par catégorie, VOTE
 mode-aware, QUIZ leaderboard + taux/question), mode projection. Deux lectures REST additives
 (`getPollResults`, `listWordcloudWords`) pour hydrater les activités _event-sourced_. Le placeholder
-et son test sont supprimés. Après ce PR, le module Session live est **fonctionnellement complet côté
-frontend**.
+et son test sont supprimés.
+
+**US19.4.2 (#284)** — export animateur des résultats d'une session `COMPLETED` : boutons Exporter
+JSON / CSV → `GET /sessions/{id}/results?format=…` en blob, téléchargement navigateur ; contrôles
+masqués hors `COMPLETED`, `exportError` sur échec. Le contenu formaté est produit backend.
+
+**Bilan frontend** : avec US19.4.1 + US19.4.2, **toutes les US du sprint 22 sont livrées côté
+frontend** (`🔵 FE`) ; le module Session live est **fonctionnellement complet côté `pivot-ui`**. Seul
+reste **EN19.4**, un enabler **backend pur** (`⬛ BE`, `pivot-core`) sans surface frontend.
 
 ### Reste à faire
 
-- **Backend `pivot-core`** (`fr.pivot.collaboratif.session.*`) — producteur REST/WS des activités et
-  des lectures animateur (dont `getPollResults`/`listWordcloudWords` ajoutées par US19.4.1) : hors
-  périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
+- **EN19.4 — Producteur KPI (`⬛ BE`, `pivot-core`)** : `GET /api/collaboratif/kpi` + événement
+  `kpi.updated` (contrat socle EN28.14, bus EN28.4). **Aucune surface frontend** — non réalisable
+  dans `pivot-ui` ; à implémenter côté `pivot-core`.
+- **Backend `pivot-core`** (`fr.pivot.collaboratif.session.*`) — producteur REST/WS des activités,
+  des lectures animateur (`getPollResults`/`listWordcloudWords`) et de l'export (`/results?format=…`) :
+  hors périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
   bout-en-bout. Les specs figées documentent le contrat **tel que consommé** par le client.
 - **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
 - **Gate 5 restant** — figer les specs des US animateur livrées au PR1 (US19.1.1 création/liste,
   US19.1.2 runner/cycle de vie, US19.2.1 join) sur le même modèle que les autres.
-- **US non démarrées** — US19.4.2 (export des résultats), EN19.4 (KPI — producteur KpiRef).
+- **Release fin de sprint** — le déclenchement `release.yml` (`Release-Trigger: true` sur le dernier
+  merge) n'a **pas** été posé : action outward-facing (publish npm/Docker, tag) laissée à décision
+  humaine, d'autant que le backend `pivot-core` n'est pas encore mergé/déployé.
 - **Tier polish différé** (étude d'ergonomie) — skeletons de chargement (T5), sweep `:focus-visible`
   tokenisé (T8), copy par code d'erreur (T10), spinners de soumission (T11), urgence visuelle du timer QUIZ (T12).
