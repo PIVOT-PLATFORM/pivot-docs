@@ -85,7 +85,9 @@ est vide : les six types d'activité résolvent un composant lazy-loadé réel.
 
 | US | Activité | PR `pivot-ui` | Commit `main` | Spec figée (Gate 5) |
 |----|----------|---------------|---------------|---------------------|
-| US19.2.2 / 19.3.2 / 19.3.3 | Infra participant + POLL + WORDCLOUD | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — voir « Reste à faire »)_ |
+| US19.2.2 | Infra vue participant temps réel | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-2-2-vue-participant`](pathname:///pivot-docs/specs/EPIC-module-session/us19-2-2-vue-participant) |
+| US19.3.2 | POLL | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-3-2-poll`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-2-poll) |
+| US19.3.3 | WORDCLOUD | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-3-3-wordcloud`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-3-wordcloud) |
 | US19.3.5 | Q&A | [#272](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/272) | `d247910` | [`us19-3-5-qa`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-5-qa) |
 | US19.3.4 | BRAINSTORM | [#274](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/274) | `10d763a` | [`us19-3-4-brainstorm`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-4-brainstorm) |
 | US19.3.6 | VOTE (Fist / pondéré) | [#276](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/276) | `e786086` | [`us19-3-6-vote-decision`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-6-vote-decision) |
@@ -108,8 +110,6 @@ suppression BRAINSTORM en deux temps, alerte over-budget VOTE, cibles tactiles 4
   hors périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
   bout-en-bout. Les specs figées documentent le contrat **tel que consommé** par le client.
 - **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
-- **Gate 5 restant** — figer les specs des US livrées au PR1 (US19.2.2 infra participant, US19.3.2 POLL,
-  US19.3.3 WORDCLOUD) sur le même modèle que les quatre specs d'activités de cette vague.
 - **US non démarrées** — US19.1.1 / US19.1.2 / US19.2.1 (création/cycle de vie/join), US19.4.1 / US19.4.2
   (résultats animateur + export), EN19.4 (KPI).
 - **Tier polish différé** (étude d'ergonomie) — skeletons de chargement (T5), sweep `:focus-visible`
