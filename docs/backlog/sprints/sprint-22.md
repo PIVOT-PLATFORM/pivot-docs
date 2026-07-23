@@ -23,9 +23,9 @@
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US19.1.1 | Créer une session live | M | Critical | ⬜ |
-| US19.1.2 | Démarrer, mettre en pause et terminer une session live | M | Critical | ⬜ |
-| US19.2.1 | Rejoindre une session via code court (authentifié ou anonyme) | M | Critical | ⬜ |
+| US19.1.1 | Créer une session live | M | Critical | 🔵 FE |
+| US19.1.2 | Démarrer, mettre en pause et terminer une session live | M | Critical | 🔵 FE |
+| US19.2.1 | Rejoindre une session via code court (authentifié ou anonyme) | M | Critical | 🔵 FE |
 | US19.2.2 | Vue participant en temps réel (affichage adapté au type d'activité) | XL | Critical | 🔵 FE |
 | US19.3.1 | Activité QUIZ — quiz interactif réseau multijoueur | L | High | 🔵 FE |
 | US19.3.2 | Activité POLL — sondage instantané avec résultats temps réel | M | High | 🔵 FE |
@@ -33,7 +33,7 @@
 | US19.3.4 | Activité BRAINSTORM — post-its virtuels collaboratifs | M | High | 🔵 FE |
 | US19.3.5 | Activité Q&A — questions des participants avec upvotes | M | High | 🔵 FE |
 | US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔵 FE |
-| US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | ⬜ |
+| US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | 🔵 FE |
 | US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | ⬜ |
 | EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ |
 
@@ -104,13 +104,39 @@ lecteur d'écran (assertif « temps écoulé » seul), VOTE/BRAINSTORM `radio`�
 accessibles contextualisés Q&A/BRAINSTORM, POLL résultats en `aria-live` + barre visuelle,
 suppression BRAINSTORM en deux temps, alerte over-budget VOTE, cibles tactiles 44 px.
 
+### 2026-07-23 — Versant animateur : création / cycle de vie / join (déjà livré au PR1) + résultats
+
+Constat en reprenant le versant animateur : la **création** (`session-form` + `session-list`), le
+**cycle de vie** (`session-runner` — Démarrer/Pause/Reprendre/Terminer) et le **join code court**
+(`session-join`) sont des composants réels, routés et testés, **déjà livrés au PR1** (#270) — les US
+correspondantes passent donc `⬜ → 🔵 FE` (correction de suivi ; elles n'avaient pas été marquées lors
+de la vague activités). Le seul manque réel du versant animateur était la **vue résultats**, qui
+n'était qu'un placeholder (différé explicitement à « PR2/2 » au PR1).
+
+| US | Vue | PR `pivot-ui` | Commit | Spec figée (Gate 5) |
+|----|-----|---------------|--------|---------------------|
+| US19.1.1 | Créer / lister une session | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
+| US19.1.2 | Runner : cycle de vie | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
+| US19.2.1 | Join via code court | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
+| US19.4.1 | Résultats temps réel (animateur) | [#282](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/282) | `76cfba8` | [`us19-4-1-resultats-temps-reel`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-1-resultats-temps-reel) |
+
+**US19.4.1 (#282)** — remplace le placeholder de résultats par la vue animateur : chargement
+autoritaire (`getSession`), snapshot par type + temps réel sur le topic STOMP partagé (POLL barres %,
+WORDCLOUD nuage ∝ fréquence, Q&A trié + badge répondu, BRAINSTORM groupé par catégorie, VOTE
+mode-aware, QUIZ leaderboard + taux/question), mode projection. Deux lectures REST additives
+(`getPollResults`, `listWordcloudWords`) pour hydrater les activités _event-sourced_. Le placeholder
+et son test sont supprimés. Après ce PR, le module Session live est **fonctionnellement complet côté
+frontend**.
+
 ### Reste à faire
 
-- **Backend `pivot-core`** (`fr.pivot.collaboratif.session.*`) — producteur REST/WS des six activités :
-  hors périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
+- **Backend `pivot-core`** (`fr.pivot.collaboratif.session.*`) — producteur REST/WS des activités et
+  des lectures animateur (dont `getPollResults`/`listWordcloudWords` ajoutées par US19.4.1) : hors
+  périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
   bout-en-bout. Les specs figées documentent le contrat **tel que consommé** par le client.
 - **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
-- **US non démarrées** — US19.1.1 / US19.1.2 / US19.2.1 (création/cycle de vie/join), US19.4.1 / US19.4.2
-  (résultats animateur + export), EN19.4 (KPI).
+- **Gate 5 restant** — figer les specs des US animateur livrées au PR1 (US19.1.1 création/liste,
+  US19.1.2 runner/cycle de vie, US19.2.1 join) sur le même modèle que les autres.
+- **US non démarrées** — US19.4.2 (export des résultats), EN19.4 (KPI — producteur KpiRef).
 - **Tier polish différé** (étude d'ergonomie) — skeletons de chargement (T5), sweep `:focus-visible`
   tokenisé (T8), copy par code d'erreur (T10), spinners de soumission (T11), urgence visuelle du timer QUIZ (T12).
