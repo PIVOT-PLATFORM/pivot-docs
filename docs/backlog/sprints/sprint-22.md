@@ -116,9 +116,9 @@ n'était qu'un placeholder (différé explicitement à « PR2/2 » au PR1).
 
 | US | Vue | PR `pivot-ui` | Commit | Spec figée (Gate 5) |
 |----|-----|---------------|--------|---------------------|
-| US19.1.1 | Créer / lister une session | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
-| US19.1.2 | Runner : cycle de vie | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
-| US19.2.1 | Join via code court | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | _(à figer — reste à faire)_ |
+| US19.1.1 | Créer / lister une session | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-1-1-creer-session`](pathname:///pivot-docs/specs/EPIC-module-session/us19-1-1-creer-session) |
+| US19.1.2 | Runner : cycle de vie | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-1-2-gerer-session`](pathname:///pivot-docs/specs/EPIC-module-session/us19-1-2-gerer-session) |
+| US19.2.1 | Join via code court | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-2-1-rejoindre-session`](pathname:///pivot-docs/specs/EPIC-module-session/us19-2-1-rejoindre-session) |
 | US19.4.1 | Résultats temps réel (animateur) | [#282](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/282) | `76cfba8` | [`us19-4-1-resultats-temps-reel`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-1-resultats-temps-reel) |
 | US19.4.2 | Export des résultats (animateur) | [#284](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/284) | `a4e22c5` | [`us19-4-2-export-resultats`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-2-export-resultats) |
 
@@ -147,8 +147,6 @@ reste **EN19.4**, un enabler **backend pur** (`⬛ BE`, `pivot-core`) sans surfa
   hors périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
   bout-en-bout. Les specs figées documentent le contrat **tel que consommé** par le client.
 - **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
-- **Gate 5 restant** — figer les specs des US animateur livrées au PR1 (US19.1.1 création/liste,
-  US19.1.2 runner/cycle de vie, US19.2.1 join) sur le même modèle que les autres.
 - **Release fin de sprint** — le déclenchement `release.yml` (`Release-Trigger: true` sur le dernier
   merge) n'a **pas** été posé : action outward-facing (publish npm/Docker, tag) laissée à décision
   humaine, d'autant que le backend `pivot-core` n'est pas encore mergé/déployé.
