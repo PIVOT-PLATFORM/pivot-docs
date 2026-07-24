@@ -137,18 +137,51 @@ masqués hors `COMPLETED`, `exportError` sur échec. Le contenu formaté est pro
 frontend** (`🔵 FE`) ; le module Session live est **fonctionnellement complet côté `pivot-ui`**. Seul
 reste **EN19.4**, un enabler **backend pur** (`⬛ BE`, `pivot-core`) sans surface frontend.
 
+### 2026-07-24 — Backend `pivot-core` : vague activités PR2 mergée + release Sprint 22
+
+Le producteur backend des six activités est **mergé sur `pivot-core:main`** (main vert). La vague PR2
+s'appuie sur `#267` (infra Session + POLL + WORDCLOUD) et `#269` (Q&A), déjà sur `main`, puis :
+
+| PR `pivot-core` | Activité | Migration | Commit `main` |
+|-----------------|----------|-----------|---------------|
+| [#271](https://github.com/PIVOT-PLATFORM/pivot-core/pull/271) | BRAINSTORM | V14 | `e708f5b` |
+| [#273](https://github.com/PIVOT-PLATFORM/pivot-core/pull/273) | VOTE (Fist / pondéré) | V15 | `950ff2f` |
+| [#275](https://github.com/PIVOT-PLATFORM/pivot-core/pull/275) | QUIZ | V16 | `402bff9` |
+| [#276](https://github.com/PIVOT-PLATFORM/pivot-core/pull/276) | VOTE — mode MATRICE | — | `05b643a` |
+
+**Fusion en cascade** : chaque PR **rebasée `--onto main`** (jamais de merge « behind » lossy sur
+fichiers partagés), ordre de migration préservé (V15 avant V16 — Flyway sans `out-of-order` sur la
+recette persistante), CI verte vérifiée avant chaque squash-merge. Deux défauts réels corrigés en
+cours de route : registration SpotBugs perdue par un merge « behind » de `#269` (rétablie dans `#271`)
+et une **collision de bean Spring** — les nouveaux `session.{vote,quiz}.*Controller` entraient en
+conflit avec les contrôleurs homonymes du module whiteboard (nom de bean par défaut identique),
+corrigée par un nom de bean explicite `sessionVoteController` / `sessionQuizController`.
+
+**Test flaky pré-existant** hors périmètre (domaine tenant, `SuperAdminTenantIntegrationTest`) —
+documenté dans [`pivot-core#277`](https://github.com/PIVOT-PLATFORM/pivot-core/issues/277) (cause
+racine + correctif test-only pour le mainteneur), contourné par re-run jusqu'au vert, jamais patché à
+l'aveugle.
+
+**Release Sprint 22** — le trailer `Release-Trigger: true` a été posé sur le squash-merge marqueur
+[`#278`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/278) (`629c6d2`). `release.yml` a **bien
+détecté le trigger** (job _Check release trigger_ vert) mais le job _Compute release version_ a
+**échoué au checkout** : `SEMANTIC_RELEASE_TOKEN` (PAT) **n'est pas garni** dans les secrets du dépôt
+→ `fatal: could not read Username for 'https://github.com'`. Aucune publication, aucun tag (échec
+propre, pas d'état partiel). **Action mainteneur** : garnir le secret `SEMANTIC_RELEASE_TOKEN` puis
+re-lancer le run `release.yml` (30082104396) — il republiera depuis `629c6d2`.
+
 ### Reste à faire
 
 - **EN19.4 — Producteur KPI (`⬛ BE`, `pivot-core`)** : `GET /api/collaboratif/kpi` + événement
   `kpi.updated` (contrat socle EN28.14, bus EN28.4). **Aucune surface frontend** — non réalisable
   dans `pivot-ui` ; à implémenter côté `pivot-core`.
-- **Backend `pivot-core`** (`fr.pivot.collaboratif.session.*`) — producteur REST/WS des activités,
-  des lectures animateur (`getPollResults`/`listWordcloudWords`) et de l'export (`/results?format=…`) :
-  hors périmètre GitHub de la session de fusion frontend ; à merger + déployer pour un fonctionnement
-  bout-en-bout. Les specs figées documentent le contrat **tel que consommé** par le client.
+- ~~**Backend `pivot-core`** — producteur REST/WS des activités, lectures animateur, export~~
+  ✅ **Mergé sur `pivot-core:main`** (voir journal 2026-07-24) — les six activités, le cycle de vie,
+  les résultats live et l'export sont en place ; `main` vert. Les specs figées documentent le contrat
+  **tel que consommé** par le client.
 - **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
-- **Release fin de sprint** — le déclenchement `release.yml` (`Release-Trigger: true` sur le dernier
-  merge) n'a **pas** été posé : action outward-facing (publish npm/Docker, tag) laissée à décision
-  humaine, d'autant que le backend `pivot-core` n'est pas encore mergé/déployé.
+- **Release fin de sprint — bloquée sur infra** — trigger posé (`#278`, `629c6d2`) et **détecté** par
+  `release.yml`, mais le run échoue au checkout : secret `SEMANTIC_RELEASE_TOKEN` non garni. **À faire
+  côté mainteneur** : garnir le secret puis re-lancer le run `release.yml` (30082104396).
 - **Tier polish différé** (étude d'ergonomie) — skeletons de chargement (T5), sweep `:focus-visible`
   tokenisé (T8), copy par code d'erreur (T10), spinners de soumission (T11), urgence visuelle du timer QUIZ (T12).
