@@ -14,29 +14,32 @@
 > **Dépendances** : socle `collaboratif` (STOMP temps réel, isolation multi-tenant) livré lors
 > des sprints précédents du domaine Collaboration.
 >
-> **Statut** : 🔎 en cours (réconcilié 2026-07-23) — **Gate 1 READINESS réalisé sur les 12 items
-> réels** (voir §État réel). `EN19.4` reste `⬜ bloqué` sur `EN28.14`, même pattern que tous les
-> autres enablers KPI de la séquence S17→S31. `EN19.1`/`EN19.2` sont posés dans les notes
-> d'implémentation d'`US19.1.1`/`US19.1.2` (pas de fichier AC séparé) ; `EN19.3` s'avère déjà
-> **quasiment acquis** (garde de module et route placeholder déjà en place, voir §État réel).
+> **Statut** : 🔵 en cours — **vue participant + six types d'activités livrés côté frontend**
+> (`pivot-ui:main`), backend `pivot-core` et recette mainteneur en attente. Détail :
+> [§ Journal d'avancement](#journal-davancement). Gate 1 READINESS (PO Agent) réalisé au démarrage
+> (DoR — AC Given/When/Then + cas d'erreur + sécurité).
 
 ## Items (13)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US19.1.1 | Créer une session live | M | Critical | 🔧 Gate 1 fait — implémentation à faire |
-| US19.1.2 | Démarrer, mettre en pause et terminer une session live | M | Critical | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.1 |
-| US19.2.1 | Rejoindre une session via code court (authentifié ou anonyme) | M | Critical | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.1 |
-| US19.2.2 | Vue participant en temps réel (affichage adapté au type d'activité) | XL | Critical | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.2.1 + toutes les US19.3.x |
-| US19.3.1 | Activité QUIZ — quiz interactif réseau multijoueur | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.2 | Activité POLL — sondage instantané avec résultats temps réel | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.3 | Activité WORDCLOUD — nuage de mots collaboratif | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.4 | Activité BRAINSTORM — post-its virtuels collaboratifs | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.5 | Activité Q&A — questions des participants avec upvotes | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.1.2 |
-| US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend de toutes les US19.3.x |
-| US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | 🔧 Gate 1 fait — implémentation à faire, dépend d'US19.4.1 |
-| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14, même situation qu'EN09.2/EN15.7/EN10.1/EN14.1/EN20.3/EN50.1/EN11.2 |
+| US19.1.1 | Créer une session live | M | Critical | 🔵 FE |
+| US19.1.2 | Démarrer, mettre en pause et terminer une session live | M | Critical | 🔵 FE |
+| US19.2.1 | Rejoindre une session via code court (authentifié ou anonyme) | M | Critical | 🔵 FE |
+| US19.2.2 | Vue participant en temps réel (affichage adapté au type d'activité) | XL | Critical | 🔵 FE |
+| US19.3.1 | Activité QUIZ — quiz interactif réseau multijoueur | L | High | 🔵 FE |
+| US19.3.2 | Activité POLL — sondage instantané avec résultats temps réel | M | High | 🔵 FE |
+| US19.3.3 | Activité WORDCLOUD — nuage de mots collaboratif | M | High | 🔵 FE |
+| US19.3.4 | Activité BRAINSTORM — post-its virtuels collaboratifs | M | High | 🔵 FE |
+| US19.3.5 | Activité Q&A — questions des participants avec upvotes | M | High | 🔵 FE |
+| US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔵 FE |
+| US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | 🔵 FE |
+| US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | 🔵 FE |
+| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬛ BE |
+
+> **Légende 🤖 Dev** : `⬜` non démarré · `🔵 FE` vue frontend livrée et mergée sur `pivot-ui:main`,
+> backend `pivot-core` et/ou recette mainteneur en attente · `⬛ BE` enabler **backend pur** (`pivot-core`,
+> aucune surface frontend) · `✅` Done (recette mainteneur — jamais posé par Claude).
 
 ## État réel (Gate 1, 2026-07-23)
 
@@ -69,3 +72,116 @@
 >
 > **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
 > domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.
+
+## Journal d'avancement
+
+> Le `Stage: ⬜` du frontmatter de chaque US reste inchangé jusqu'à la recette mainteneur ; ce journal
+> et la colonne 🤖 Dev tracent l'avancement intermédiaire (protocole sprint standard).
+
+### 2026-07-23 — Vague activités : vue participant + 6 types d'activités (frontend `pivot-ui`)
+
+Toutes les vues participant du module Session live sont livrées et **mergées sur `pivot-ui:main`**
+(squash, sans `Release-Trigger` — pas de release à ce stade). Après cette vague, `PLACEHOLDER_TYPES`
+est vide : les six types d'activité résolvent un composant lazy-loadé réel.
+
+| US | Activité | PR `pivot-ui` | Commit `main` | Spec figée (Gate 5) |
+|----|----------|---------------|---------------|---------------------|
+| US19.2.2 | Infra vue participant temps réel | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-2-2-vue-participant`](pathname:///pivot-docs/specs/EPIC-module-session/us19-2-2-vue-participant) |
+| US19.3.2 | POLL | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-3-2-poll`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-2-poll) |
+| US19.3.3 | WORDCLOUD | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-3-3-wordcloud`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-3-wordcloud) |
+| US19.3.5 | Q&A | [#272](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/272) | `d247910` | [`us19-3-5-qa`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-5-qa) |
+| US19.3.4 | BRAINSTORM | [#274](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/274) | `10d763a` | [`us19-3-4-brainstorm`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-4-brainstorm) |
+| US19.3.6 | VOTE (Fist / pondéré) | [#276](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/276) | `e786086` | [`us19-3-6-vote-decision`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-6-vote-decision) |
+| US19.3.1 | QUIZ | [#278](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/278) | `041ad7a` | [`us19-3-1-quiz`](pathname:///pivot-docs/specs/EPIC-module-session/us19-3-1-quiz) |
+| — | Balayage a11y/ergonomie (6 activités) | [#279](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/279) | `8c8c963` | _(transverse — voir spec VOTE/QUIZ)_ |
+| US19.3.6 | VOTE — mode MATRICE (différé) | [#280](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/280) | `6e21016` | (inclus dans la spec VOTE) |
+
+**Fusion en cascade** : les PR étaient empilées (fichiers partagés `session.model.ts`, `session-api.service.ts`,
+shell, i18n). Chaque merge a été suivi d'un rebase réel `--onto main` de la PR suivante (drop des
+commits déjà mergés), CI verte (CI/PR Checks/E2E/Security) vérifiée avant chaque fusion.
+
+**Balayage a11y (#279)** — tier prioritaire de l'étude d'ergonomie : décompte QUIZ non annoncé par
+lecteur d'écran (assertif « temps écoulé » seul), VOTE/BRAINSTORM `radio`→`aria-pressed`, noms
+accessibles contextualisés Q&A/BRAINSTORM, POLL résultats en `aria-live` + barre visuelle,
+suppression BRAINSTORM en deux temps, alerte over-budget VOTE, cibles tactiles 44 px.
+
+### 2026-07-23 — Versant animateur : création / cycle de vie / join (déjà livré au PR1) + résultats
+
+Constat en reprenant le versant animateur : la **création** (`session-form` + `session-list`), le
+**cycle de vie** (`session-runner` — Démarrer/Pause/Reprendre/Terminer) et le **join code court**
+(`session-join`) sont des composants réels, routés et testés, **déjà livrés au PR1** (#270) — les US
+correspondantes passent donc `⬜ → 🔵 FE` (correction de suivi ; elles n'avaient pas été marquées lors
+de la vague activités). Le seul manque réel du versant animateur était la **vue résultats**, qui
+n'était qu'un placeholder (différé explicitement à « PR2/2 » au PR1).
+
+| US | Vue | PR `pivot-ui` | Commit | Spec figée (Gate 5) |
+|----|-----|---------------|--------|---------------------|
+| US19.1.1 | Créer / lister une session | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-1-1-creer-session`](pathname:///pivot-docs/specs/EPIC-module-session/us19-1-1-creer-session) |
+| US19.1.2 | Runner : cycle de vie | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-1-2-gerer-session`](pathname:///pivot-docs/specs/EPIC-module-session/us19-1-2-gerer-session) |
+| US19.2.1 | Join via code court | [#270](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/270) | `8581c9d` | [`us19-2-1-rejoindre-session`](pathname:///pivot-docs/specs/EPIC-module-session/us19-2-1-rejoindre-session) |
+| US19.4.1 | Résultats temps réel (animateur) | [#282](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/282) | `76cfba8` | [`us19-4-1-resultats-temps-reel`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-1-resultats-temps-reel) |
+| US19.4.2 | Export des résultats (animateur) | [#284](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/284) | `a4e22c5` | [`us19-4-2-export-resultats`](pathname:///pivot-docs/specs/EPIC-module-session/us19-4-2-export-resultats) |
+
+**US19.4.1 (#282)** — remplace le placeholder de résultats par la vue animateur : chargement
+autoritaire (`getSession`), snapshot par type + temps réel sur le topic STOMP partagé (POLL barres %,
+WORDCLOUD nuage ∝ fréquence, Q&A trié + badge répondu, BRAINSTORM groupé par catégorie, VOTE
+mode-aware, QUIZ leaderboard + taux/question), mode projection. Deux lectures REST additives
+(`getPollResults`, `listWordcloudWords`) pour hydrater les activités _event-sourced_. Le placeholder
+et son test sont supprimés.
+
+**US19.4.2 (#284)** — export animateur des résultats d'une session `COMPLETED` : boutons Exporter
+JSON / CSV → `GET /sessions/{id}/results?format=…` en blob, téléchargement navigateur ; contrôles
+masqués hors `COMPLETED`, `exportError` sur échec. Le contenu formaté est produit backend.
+
+**Bilan frontend** : avec US19.4.1 + US19.4.2, **toutes les US du sprint 22 sont livrées côté
+frontend** (`🔵 FE`) ; le module Session live est **fonctionnellement complet côté `pivot-ui`**. Seul
+reste **EN19.4**, un enabler **backend pur** (`⬛ BE`, `pivot-core`) sans surface frontend.
+
+### 2026-07-24 — Backend `pivot-core` : vague activités PR2 mergée + release Sprint 22
+
+Le producteur backend des six activités est **mergé sur `pivot-core:main`** (main vert). La vague PR2
+s'appuie sur `#267` (infra Session + POLL + WORDCLOUD) et `#269` (Q&A), déjà sur `main`, puis :
+
+| PR `pivot-core` | Activité | Migration | Commit `main` |
+|-----------------|----------|-----------|---------------|
+| [#271](https://github.com/PIVOT-PLATFORM/pivot-core/pull/271) | BRAINSTORM | V14 | `e708f5b` |
+| [#273](https://github.com/PIVOT-PLATFORM/pivot-core/pull/273) | VOTE (Fist / pondéré) | V15 | `950ff2f` |
+| [#275](https://github.com/PIVOT-PLATFORM/pivot-core/pull/275) | QUIZ | V16 | `402bff9` |
+| [#276](https://github.com/PIVOT-PLATFORM/pivot-core/pull/276) | VOTE — mode MATRICE | — | `05b643a` |
+
+**Fusion en cascade** : chaque PR **rebasée `--onto main`** (jamais de merge « behind » lossy sur
+fichiers partagés), ordre de migration préservé (V15 avant V16 — Flyway sans `out-of-order` sur la
+recette persistante), CI verte vérifiée avant chaque squash-merge. Deux défauts réels corrigés en
+cours de route : registration SpotBugs perdue par un merge « behind » de `#269` (rétablie dans `#271`)
+et une **collision de bean Spring** — les nouveaux `session.{vote,quiz}.*Controller` entraient en
+conflit avec les contrôleurs homonymes du module whiteboard (nom de bean par défaut identique),
+corrigée par un nom de bean explicite `sessionVoteController` / `sessionQuizController`.
+
+**Test flaky pré-existant** hors périmètre (domaine tenant, `SuperAdminTenantIntegrationTest`) —
+documenté dans [`pivot-core#277`](https://github.com/PIVOT-PLATFORM/pivot-core/issues/277) (cause
+racine + correctif test-only pour le mainteneur), contourné par re-run jusqu'au vert, jamais patché à
+l'aveugle.
+
+**Release Sprint 22** — le trailer `Release-Trigger: true` a été posé sur le squash-merge marqueur
+[`#278`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/278) (`629c6d2`). `release.yml` a **bien
+détecté le trigger** (job _Check release trigger_ vert) mais le job _Compute release version_ a
+**échoué au checkout** : `SEMANTIC_RELEASE_TOKEN` (PAT) **n'est pas garni** dans les secrets du dépôt
+→ `fatal: could not read Username for 'https://github.com'`. Aucune publication, aucun tag (échec
+propre, pas d'état partiel). **Action mainteneur** : garnir le secret `SEMANTIC_RELEASE_TOKEN` puis
+re-lancer le run `release.yml` (30082104396) — il republiera depuis `629c6d2`.
+
+### Reste à faire
+
+- **EN19.4 — Producteur KPI (`⬛ BE`, `pivot-core`)** : `GET /api/collaboratif/kpi` + événement
+  `kpi.updated` (contrat socle EN28.14, bus EN28.4). **Aucune surface frontend** — non réalisable
+  dans `pivot-ui` ; à implémenter côté `pivot-core`.
+- ~~**Backend `pivot-core`** — producteur REST/WS des activités, lectures animateur, export~~
+  ✅ **Mergé sur `pivot-core:main`** (voir journal 2026-07-24) — les six activités, le cycle de vie,
+  les résultats live et l'export sont en place ; `main` vert. Les specs figées documentent le contrat
+  **tel que consommé** par le client.
+- **Recette mainteneur** — `Stage: ⬜ → ✅` sur chaque US après recette (jamais posé par Claude).
+- **Release fin de sprint — bloquée sur infra** — trigger posé (`#278`, `629c6d2`) et **détecté** par
+  `release.yml`, mais le run échoue au checkout : secret `SEMANTIC_RELEASE_TOKEN` non garni. **À faire
+  côté mainteneur** : garnir le secret puis re-lancer le run `release.yml` (30082104396).
+- **Tier polish différé** (étude d'ergonomie) — skeletons de chargement (T5), sweep `:focus-visible`
+  tokenisé (T8), copy par code d'erreur (T10), spinners de soumission (T11), urgence visuelle du timer QUIZ (T12).
