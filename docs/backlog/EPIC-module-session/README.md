@@ -34,13 +34,17 @@ Sessions interactives en temps réel animées par un présentateur : QUIZ, POLL,
   - US19.3.6 : Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré)
 - **F19.4 — Résultats et diffusion**
   - US19.4.1 : Diffusion résultats temps réel aux participants (WebSocket STOMP)
-  - US19.4.2 : Export résultats session (PDF ou JSON) après clôture
+  - US19.4.2 : Export résultats session (JSON ou CSV) après clôture — corrigé au Gate 1
+    (2026-07-23), le fichier AC détaillé n'a jamais spécifié PDF, absent du codebase (ADR-007)
 
 ### Enablers
-- **EN19.1** — Schéma Flyway `collaboratif` sessions (Session, Activity, Participant, Response)
-- **EN19.2** — WebSocket room session isolation (salle dédiée par session)
-- **EN19.3** — Guard Angular module session (moduleGuard `moduleId: 'collaboratif'`)
-- **EN19.4** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md)
+- **EN19.1** — Schéma Flyway `collaboratif` sessions (Session, Activity, Participant, Response) —
+  posé dans les notes d'implémentation d'US19.1.1 (Gate 1, 2026-07-23), pas de fichier AC séparé
+- **EN19.2** — WebSocket room session isolation (salle dédiée par session) — posé dans les notes
+  d'implémentation d'US19.1.2 (Gate 1, 2026-07-23), pas de fichier AC séparé
+- **EN19.3** — Guard Angular module session (moduleGuard `moduleId: 'session'` — corrigé au Gate 1,
+  2026-07-23, pas `'collaboratif'` ; déjà quasiment acquis, voir US19.2.2 §Architecture)
+- **EN19.4** — [Exposer les KPI du domaine](ENABLERS/en-exposer-kpi.md) — bloqué sur EN28.14
 
 ## Modules impactés
 
