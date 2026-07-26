@@ -2,24 +2,46 @@
 
 **Type d'enabler** : architecture · intégration
 
-**Objectif technique** : Moteur calculant la **capacité nette** par membre → sprint → incrément/PI, à partir de :
-`jours ouvrés (jours ouvrables − weekends − fériés localité − absences) × quotité × facteur de concentration`, ajustée par la **vélocité N-1** et la **maturité agile**.
+**Gate 1 réalisé le 2026-07-22** — périmètre resserré (décision mainteneur, voir US11.5.2/
+US11.6.1/US11.7.1 pour le détail de chaque écart) : la partie **moteur** reste intégrale, la
+partie **connecteurs** est réduite à ce qui est réellement livrable dans ce sprint.
 
-Connecteurs :
-- **Période de sprint** : API agile préconfigurée (Jira, Azure DevOps…) → dates de sprint, sinon durée manuelle.
-- **Absences** : SI RH/absence (SAP, Workday, Lucca…) — périodes seules (RGPD).
-- **Calendriers & jours fériés** : réutilise [EN22.3](pathname:///pivot-docs/backlog/EPIC-roadmap/) via le bus PIVOT (pas de FK inter-modules — ADR-006/008).
+**Objectif technique** : Moteur calculant la **capacité nette** par membre → sprint → incrément/PI,
+à partir de :
+`jours ouvrés (jours ouvrables − weekends − fériés tenant − absences) × quotité × facteur de concentration`,
+ajustée par la **vélocité N-1** et la **maturité agile** — voir US11.6.1→US11.6.5 pour le détail
+Given/When/Then, portées par `CapacityCalculator` (S20, étendu ce lot).
 
-**RGPD-by-design** : minimisation (indisponibilités, pas les motifs), agrégation équipe par défaut, traçabilité, base légale.
+**Connecteurs — périmètre resserré au Gate 1** :
+
+- **Période de sprint** : ~~API agile préconfigurée (Jira, Azure DevOps…)~~ **fermé, redondant
+  avec la saisie manuelle déjà livrée** (S20, `CapacityEvent.startDate`/`endDate`) — voir
+  US11.5.2 §Décision Gate 1. Aucun connecteur agile temps réel construit.
+- **Absences** : ~~SI RH/absence nommé (SAP, Workday, Lucca…)~~ **import CSV générique** — voir
+  US11.7.1 §Architecture. Périodes seules (RGPD), fusionné avec la saisie manuelle via la même
+  entité `CapacityAbsence` (US11.2.2), déduplication exacte au import.
+- **Calendriers & jours fériés** : ~~réutilise EN22.3 via le bus PIVOT~~ **liste de jours fériés
+  interne, minimale, au niveau tenant** — voir US11.6.1 §Architecture. `EN22.3`/E22 Roadmap a été
+  extrait vers le produit Pilotage distinct, cette dépendance ne sera jamais levée à l'intérieur
+  de PIVOT.
+
+**RGPD-by-design** : minimisation (indisponibilités, pas les motifs — appliquée dans le code
+depuis US11.2.2/S20, reconduite par l'import CSV US11.7.1), agrégation équipe par défaut
+(US11.8.1), traçabilité, base légale.
 
 **Critères de complétion** :
-- [ ] Moteur capacité paramétrable (jours ouvrés, focus factor, quotité, marge par maturité, vélocité)
-- [ ] Connecteur période sprint (API préconfigurée) + fallback durée
-- [ ] Connecteur absences (SI RH) + fusion avec saisie manuelle, RGPD-minimisé
-- [ ] Réutilisation calendriers/fériés (EN22.3) via bus PIVOT
-- [ ] Recalcul en cascade membre → sprint → incrément/PI
+
+- [x] Moteur capacité paramétrable (jours ouvrés, focus factor, quotité, marge par maturité,
+      vélocité) — US11.6.1→US11.6.5
+- [x] ~~Connecteur période sprint (API préconfigurée)~~ Fallback durée manuelle (seul chemin
+      retenu) — US11.5.2, déjà livré en S20
+- [x] Connecteur absences — **import CSV** (pas SI RH nommé) + fusion avec saisie manuelle,
+      RGPD-minimisé — US11.7.1
+- [x] ~~Réutilisation calendriers/fériés (EN22.3) via bus PIVOT~~ Liste de jours fériés interne
+      minimale (substitut permanent, EN22.3 hors de portée de PIVOT) — US11.6.1
+- [x] Recalcul en cascade membre → sprint → incrément/PI — US11.6.5
 
 ---
-Item Type: Enabler · Parent: E11 · Module: agilite · Phase: phase-3 · Size: XL · Priority: High
+Item Type: Enabler · Parent: E11 · Module: agilite · Phase: phase-3 · Size: L · Priority: High
 Stage: ⬜
-Dépendances: EN22.3 (calendriers/absences) · bus PIVOT (ADR-008)
+Dépendances: aucune (dépendance `EN22.3` levée par substitution, voir US11.6.1)
