@@ -30,7 +30,7 @@
 | **Tests.** `window.created` → `PRE_RESERVED` · classement (participant occupé → créneau déclassé) · déterminisme à dispos égales · validation → `CONFIRMED` + publication `meetops.booking.confirmed` · `window.deleted` sur pré-réservation non confirmée → annulation · reprogrammation sur réunion confirmée · TI cross-tenant (404) + non-organisateur (403) · A11y (pivot-ui) | ✅ |
 
 > **Couverture Gate 2 — notes de transparence (Dev Agent).** L'implémentation backend/frontend couvre chaque AC ; deux zones de test restent volontairement plus légères et sont signalées pour Gate 3/4 : (1) le "temps réel" et l'"autorisation room STOMP" sont couverts par revue de code + tests unitaires de l'intercepteur, mais sans TI STOMP live bout-en-bout (mirroring `CollaboratifWebSocketConfigRelayIT`) ; (2) la reprogrammation sur `window.updated` (réunion déjà `CONFIRMED`) partage le même chemin de code que `window.deleted` (testé explicitement), mais n'a pas son propre TI dédié. Aucun blocage identifié, juste un follow-up de couverture recommandé.
-
+>
 > **Modèle** : étend `meetings` (statut `PRE_RESERVED` / `CONFIRMED`, `booking_window`, `event_ref`, `project_ref`) et ajoute `proposed_slots` (cf. EN12.1). Le **moteur de créneaux** (best-slot) est porté par MeetOps ; la roadmap (E22) n'émet que la plage et l'intention.
 
 ## Hors périmètre
