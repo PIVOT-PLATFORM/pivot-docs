@@ -35,11 +35,12 @@
 | US19.3.6 | Activité VOTE — prise de décision structurée (Fist-to-Five / pondéré / matrice) | L | High | 🔵 FE |
 | US19.4.1 | Afficher les résultats de la session en temps réel (vue animateur) | L | High | 🔵 FE |
 | US19.4.2 | Exporter les résultats d'une session terminée | M | Medium | 🔵 FE |
-| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬛ BE |
+| EN19.4 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | 🔵 BE |
 
 > **Légende 🤖 Dev** : `⬜` non démarré · `🔵 FE` vue frontend livrée et mergée sur `pivot-ui:main`,
 > backend `pivot-core` et/ou recette mainteneur en attente · `⬛ BE` enabler **backend pur** (`pivot-core`,
-> aucune surface frontend) · `✅` Done (recette mainteneur — jamais posé par Claude).
+> aucune surface frontend) non démarré · `🔵 BE` enabler backend pur implémenté, PR ouverte (CI/recette
+> mainteneur en attente) · `✅` Done (recette mainteneur — jamais posé par Claude).
 
 ## État réel (Gate 1, 2026-07-23)
 
@@ -170,11 +171,39 @@ détecté le trigger** (job _Check release trigger_ vert) mais le job _Compute r
 propre, pas d'état partiel). **Action mainteneur** : garnir le secret `SEMANTIC_RELEASE_TOKEN` puis
 re-lancer le run `release.yml` (30082104396) — il republiera depuis `629c6d2`.
 
+### 2026-07-25 — EN19.4 : producteur KPI Session live (backend, périmètre réduit)
+
+[`pivot-core#280`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/280) — `GET /api/collaboratif/kpi`
+(liste, filtrée par rôle) + `GET /api/collaboratif/kpi/{kpiKey}?scope=…` (pull) pour les 5 KPI du
+domaine (`session.sessions_run`, `session.avg_participants`, `session.participation_rate`,
+`session.activities_run`, `session.completion_rate`), calculés à la demande via une requête native
+unique agrégeant `session`/`session_participant`/les 6 tables d'interaction d'activité. Événement
+`kpi.updated` publié via `ApplicationEventPublisher` depuis `ModuleSessionService#start`/`#end`.
+
+**Vérification avant implémentation** : recherche exhaustive dans `pivot-core` — aucune classe
+`Kpi*`, route `/kpi`, ni événement `kpi.updated` n'existait nulle part dans le repo (tous domaines
+confondus). EN28.14 (contrat KPI transverse, EPIC E28) est donc resté à l'état ⬜ tel quel ; cette
+PR ne le construit pas, elle reproduit uniquement la forme du schéma `KpiRef` qu'il documente, pour
+ce seul domaine — décision utilisateur explicite (portée minimale plutôt que poser le socle
+générique réutilisable par les ~38 autres domaines en side-effect d'un enabler de sprint). Détail
+complet (dont les deux critères de complétion non atteints — `kpi.updated` non signé, conformité
+EN28.14 non applicable) dans `EN19.4`'s propre fichier backlog.
+
+CI en cours sur la PR au moment de cette entrée ; recette mainteneur en attente, comme le reste du
+sprint.
+
 ### Reste à faire
 
-- **EN19.4 — Producteur KPI (`⬛ BE`, `pivot-core`)** : `GET /api/collaboratif/kpi` + événement
-  `kpi.updated` (contrat socle EN28.14, bus EN28.4). **Aucune surface frontend** — non réalisable
-  dans `pivot-ui` ; à implémenter côté `pivot-core`.
+- ~~**EN19.4 — Producteur KPI (`⬛ BE`, `pivot-core`)**~~ ✅ **implémenté** —
+  [`pivot-core#280`](https://github.com/PIVOT-PLATFORM/pivot-core/pull/280) : `GET /api/collaboratif/kpi`
+  (liste) + `GET /api/collaboratif/kpi/{kpiKey}` (pull) + événement `kpi.updated`
+  (`ApplicationEventPublisher`, depuis `ModuleSessionService#start`/`#end`), pour les 5 KPI du
+  domaine. **Portée volontairement réduite au domaine Session live** — EN28.14 (contrat KPI
+  transverse, EPIC E28) n'a aucun code producteur dans `pivot-core` à ce jour (vérifié avant
+  implémentation) ; cette PR suit la forme du schéma `KpiRef` qu'EN28.14 documente sans poser
+  l'abstraction générique réutilisable par les ~38 autres domaines — voir la note « Périmètre /
+  honnêteté » de la PR et le détail dans `EN19.4`'s propre fichier backlog. CI en cours, recette
+  mainteneur en attente.
 - ~~**Backend `pivot-core`** — producteur REST/WS des activités, lectures animateur, export~~
   ✅ **Mergé sur `pivot-core:main`** (voir journal 2026-07-24) — les six activités, le cycle de vie,
   les résultats live et l'export sont en place ; `main` vert. Les specs figées documentent le contrat
