@@ -20,31 +20,59 @@
 > `US20.1.2a/b/c` (Gate 1 PO Agent, 2026-07-10) — le fichier `US20.1.2` original n'est pas
 > implémenté, seules les trois sous-US le sont.
 >
-> **Statut** : 🔎 en cours (réconcilié 2026-07-22) — **le lot E50 retenu est code-complet,
-> backend + frontend mergés** (`US50.1.1`, `US50.3.1`, `US50.3.2` —
+> **Statut** : 🔎 en cours (réconcilié 2026-07-22) — **les deux lots sont code-complets.**
+> **E20 Rétrospective s'avère déjà 100 % code-complète** (backend + frontend, aucun gap AC
+> trouvé — voir §État réel E20), même schéma que La Roue au Sprint 18 : le socle avait déjà été
+> livré avant que ce fichier de sprint ne soit créé. **Le lot E50 retenu est également
+> code-complet, backend + frontend mergés** (`US50.1.1`, `US50.3.1`, `US50.3.2` —
 > [core#259](https://github.com/PIVOT-PLATFORM/pivot-core/pull/259) +
 > [ui#264](https://github.com/PIVOT-PLATFORM/pivot-ui/pull/264), voir §État réel E50) — recette
-> mainteneur restante. `US50.2.1`/`EN50.1` restent `⬜ bloqués` (dépendances hors plan, voir §État
-> réel E50) ; `EN20.3` bloqué même pattern. E20 Rétrospective : voir la reconciliation dédiée
-> (`pivot-docs#298`, en attente de fusion).
+> mainteneur restante sur les deux domaines. `US50.2.1`/`EN50.1` restent `⬜ bloqués`
+> (dépendances hors plan, voir §État réel E50) ; `EN20.3` bloqué même pattern.
 
 ## Items (13)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US20.1.1 | Créer une session de rétrospective | M | High | ⬜ |
-| US20.1.2a | Contribution & révélation des cards | M | High | ⬜ |
-| US20.1.2b | Phase Vote (dot-voting) | M | High | ⬜ |
-| US20.1.2c | Phase Action (transition en session) | S | High | ⬜ |
-| US20.2.1 | Formats de rétrospective prédéfinis et format custom | M | Medium | ⬜ |
-| US20.3.1 | Créer et assigner des actions issues de la rétrospective | M | High | ⬜ |
-| US20.3.2 | Revoir les actions de la rétro précédente au démarrage | S | Medium | ⬜ |
+| US20.1.1 | Créer une session de rétrospective | M | High | 🔎 code livré (backend+frontend) — recette |
+| US20.1.2a | Contribution & révélation des cards | M | High | 🔎 code livré (backend+frontend) — recette |
+| US20.1.2b | Phase Vote (dot-voting) | M | High | 🔎 code livré (backend+frontend) — recette |
+| US20.1.2c | Phase Action (transition en session) | S | High | 🔎 code livré (backend+frontend) — recette |
+| US20.2.1 | Formats de rétrospective prédéfinis et format custom | M | Medium | 🔎 code livré (backend+frontend) — recette |
+| US20.3.1 | Créer et assigner des actions issues de la rétrospective | M | High | 🔎 code livré (backend+frontend) — recette |
+| US20.3.2 | Revoir les actions de la rétro précédente au démarrage | S | Medium | 🔎 code livré (backend+frontend) — recette |
 | EN20.3 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14, non planifié |
 | US50.1.1 | Créer un cycle PI avec itérations et équipes du Train | L | Medium | 🔎 code livré (core#259 + ui#264) — recette |
 | US50.2.1 | Rattacher formulaire de logistique et tâches de préparation | M | Medium | ⬜ **bloqué** — dépend d'E42 Pivot Forms (hors plan S17→S31) et E49 Module To-Do (hors plan), aucun code sur ces deux modules |
 | US50.3.1 | Planifier le Program Board par équipe × itération | L | Medium | 🔎 code livré (core#259 + ui#264) — recette |
 | US50.3.2 | Gérer les dépendances entre tickets du Program Board | M | Medium | 🔎 code livré (core#259 + ui#264) — recette |
 | EN50.1 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14, même situation qu'EN20.3/EN09.2/EN15.7/EN10.1/EN14.1 |
+
+## État réel — E20 Rétrospective (constaté dans le code le 2026-07-22)
+
+> ✅ **E20 Rétrospective : les 7 US sont déjà 100 % code-complètes, backend + frontend, aucun gap
+> AC trouvé** (vérification exhaustive AC-par-AC contre le code réel, pas une supposition).
+> `fr.pivot.agilite.retro` : `RetroSessionController`/`RetroSessionService`/`JoinCodeGenerator`
+> (US20.1.1) ; `RetroCard`/`RetroCardService`/`RetroCardWsController` avec événements masqués vs.
+> révélés facilitateur (US20.1.2a) ; `RetroVote`/`RetroVoteBalance`/`RetroVoteService` avec solde
+> de votes autoritaire serveur, concurrence testée (US20.1.2b) ; `RetroPhaseService`/
+> `RetroPhaseScheduler`/`RetroPhaseController` (US20.1.2c, transition de phase + clôture,
+> session consultable après clôture selon l'AC) ; `RetroFormatCatalog`/`RetroCustomFormat`/
+> `RetroFormatController` (US20.2.1, formats prédéfinis + custom 2-8 colonnes) ;
+> `RetroActionController` (US20.3.1, création d'action limitée à la phase ACTION, propriétaire
+> optionnel validé membre d'équipe) ; `GET .../teams/{teamId}/retro/pending-actions` trié par
+> `dueDate` (US20.3.2). Frontend `pivot-ui` : `create-session.component.ts`,
+> `session-room.component.ts` (gère les 4 phases dont ACTION), `team-actions.component.ts`.
+> Couverture TU/TI complète (dont `RetroCardsAnonymityConstraintIT`,
+> `RetroVoteConcurrencyIT`, `RetroSessionLifecycleIT`,
+> `RetroSessionCustomFormatConstraintIT`). **Écart documentaire relevé** : seul le fichier AC
+> `us-creer-retro.md` (US20.1.1) a ses cases à cocher `- [x]`/✅ à jour ; les fichiers AC des 6
+> autres US (US20.1.2a/b/c, US20.2.1, US20.3.1, US20.3.2) affichent encore des cases `⬜`/`- [ ]`
+> alors que le code correspondant existe et est testé — désynchronisation purement documentaire
+> à corriger (traçabilité AC), aucun développement restant. Recette mainteneur restante sur les 7 US.
+>
+> ⛔ **EN20.3 bloqué** : enabler "Exposer les KPI du domaine", même dépendance EN28.14 non
+> planifiée qu'EN09.2/EN15.7 (S17) et EN10.1/EN14.1 (S18) — voir aussi EN50.1 ci-dessous.
 
 ## État réel — E50 PI Planning (Gate 1, 2026-07-22)
 
