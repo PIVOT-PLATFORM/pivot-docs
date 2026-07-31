@@ -21,25 +21,27 @@
 > PI de Capacity Planning ; aucun couplage réel entre les deux modules. `US11.6.6` (alerte visuelle
 > de dépassement de capacité) n'a toujours pas de fichier US écrit et n'est pas reprise ici.
 >
-> **Statut** : 🔎 en cours (réconcilié 2026-07-22) — **Gate 1 READINESS réalisé sur 9 items** (voir
-> §État réel). `US11.5.2` **fermée** (redondante avec le socle S20, aucun développement). `EN11.2`
-> reste `⬜ bloqué` (dépend d'`EN28.14`, non planifié — même situation que tous les autres
-> enablers KPI de ce programme).
+> **Statut** : ✅ **code-complet, réconcilié 2026-07-31** — les 9 items Gate 1 sont implémentés et
+> mergés (`pivot-core#263` + `pivot-ui#268`, 2026-07-22), vérifiés AC-par-AC contre le code réel
+> lors de cette réconciliation (voir §État réel — Réconciliation 2026-07-31). `US11.5.2`
+> **fermée** (redondante avec le socle S20, aucun développement). `EN11.2` reste `⬜ bloqué`
+> (dépend d'`EN28.14`, non planifié — même situation que tous les autres enablers KPI de ce
+> programme). Recette humaine (passage `Stage: ⬜ → ✅`) toujours à faire, jamais automatique.
 
 ## Items (11)
 
 | Item | Titre | Size | Priorité | 🤖 Dev |
 |------|-------|------|----------|--------|
-| US11.5.1 | Cadence : sprint / incrément / PI (SAFe) | M | High | 🔧 Gate 1 fait — implémentation à faire |
+| US11.5.1 | Cadence : sprint / incrément / PI (SAFe) | M | High | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, AC vérifiées |
 | US11.5.2 | Période de sprint : API préconfigurée ou durée manuelle | L | High | ✅ **fermée** — redondante avec le socle S20, aucun développement (voir §État réel) |
-| EN11.1 | Moteur de capacité & connecteurs (période, absences, calendriers) | L | High | 🔧 Gate 1 fait — implémentation à faire, périmètre resserré (voir §État réel) |
-| US11.6.1 | Jours ouvrables vs jours ouvrés | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'EN11.1 |
-| US11.6.2 | Facteur de concentration (% max par jour moyen) | M | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.6.1 |
-| US11.6.3 | Ajustement par la vélocité du sprint précédent | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.4.1/US11.6.2 |
-| US11.6.4 | Ajustement par la maturité agile | M | Medium | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.6.2/US11.6.3 |
-| US11.6.5 | Capacité nette consolidée (membre → sprint → incrément/PI) | L | High | 🔧 Gate 1 fait — implémentation à faire, dépend d'US11.6.1→US11.6.4 |
-| US11.7.1 | Import automatique des absences (SI RH / absence) | M | High | 🔧 Gate 1 fait — implémentation à faire, périmètre resserré (voir §État réel) |
-| US11.8.1 | RGPD & éthique des données de capacité | M | High | 🔧 Gate 1 fait — implémentation à faire |
+| EN11.1 | Moteur de capacité & connecteurs (période, absences, calendriers) | L | High | ✅ code-complet — `pivot-core#263`, périmètre resserré (voir §État réel), AC vérifiées |
+| US11.6.1 | Jours ouvrables vs jours ouvrés | L | High | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, AC vérifiées |
+| US11.6.2 | Facteur de concentration (% max par jour moyen) | M | High | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, AC vérifiées |
+| US11.6.3 | Ajustement par la vélocité du sprint précédent | L | High | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, AC vérifiées |
+| US11.6.4 | Ajustement par la maturité agile | M | Medium | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, AC vérifiées |
+| US11.6.5 | Capacité nette consolidée (membre → sprint → incrément/PI) | L | High | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, AC vérifiées |
+| US11.7.1 | Import automatique des absences (SI RH / absence) | M | High | ✅ code-complet — `pivot-core#263`/`pivot-ui#268`, périmètre resserré (voir §État réel), AC vérifiées |
+| US11.8.1 | RGPD & éthique des données de capacité | M | High | ✅ complété 2026-07-31 — A11y (`pivot-ui#268`), registre de traitement créé, accès nominatif = exception documentée (voir §État réel) |
 | EN11.2 | Exposer les KPI du domaine (producteur KpiRef) | S | Medium | ⬜ **bloqué** — dépend d'EN28.14, non planifié |
 
 ## État réel — Gate 1 (2026-07-22)
@@ -80,3 +82,35 @@
 >
 > **Couverture** : ce sprint fait partie de la séquence S17→S31 garantissant **aucune US/Enabler des
 > domaines Agilité/Collaboration non planifiée**. Items regroupés par feature ; l'ordre d'attaque suit les dépendances.
+
+## État réel — Réconciliation 2026-07-31
+
+> Le Gate 1 du 2026-07-22 avait produit des AC complètes, puis le code a été livré et mergé le
+> jour même (`pivot-core#263`, `pivot-ui#268`) — mais les checkboxes AC des 9 fichiers US/Enabler
+> n'avaient jamais été mises à jour après merge (même écart documentaire que la réconciliation
+> Sprint 19). Cette réconciliation vérifie **AC-par-AC contre le code réel sur `main`**, pas contre
+> les descriptions de PR.
+>
+> - **EN11.1, US11.5.1, US11.6.1→US11.6.5, US11.7.1** : toutes les AC vérifiées **satisfaites**
+>   par le code mergé (classes, endpoints, codes d'erreur, tests TU/TI cités dans chaque fichier
+>   US). Aucun développement restant sur ces 8 items.
+> - **US11.8.1 (RGPD & éthique)** : 4 des 6 AC déjà satisfaites (droits des personnes via
+>   `DELETE .../absences/{absenceId}`, A11y WCAG 2.1 AA sur les 6 écrans `capacity-*` via
+>   `pivot-ui#268`). 2 AC comblées lors de cette réconciliation :
+>   - **Registre de traitement Art. 30** : créé (`docs/audits/registre-traitements-rgpd.md`,
+>     emplacement recommandé par `RGPD-HIGH-01` de `docs/audits/audit-rgpd.md`), entrée *Capacity
+>     Planning* seule renseignée — la consolidation des autres traitements PIVOT reste la portée
+>     de `RGPD-HIGH-01`, non traitée ici.
+>   - **Accès nominatif au roster** (`GET .../events/{id}/members`) : l'AC visait un accès
+>     restreint au créateur/gestionnaire de l'événement ; le code (inchangé depuis S20) l'ouvre à
+>     tout membre de l'équipe. Vérifié que **c'est la convention transverse de tout le domaine
+>     agilité** (Wheel/Retro/Standup/PI Planning — aucun palier « lecture seule membre » vs
+>     « gestionnaire » nulle part) — **décision retenue : exception documentée plutôt que
+>     correctif**, pour ne pas rompre la cohérence transverse pour un gain de confidentialité
+>     marginal (la donnée exposée reste des périodes sans motif, jamais un score individuel, et
+>     la visibilité reste bornée à l'équipe). Détail complet dans `us-rgpd-ethique-capacite.md`
+>     §Réconciliation 2026-07-31.
+> - **EN11.2** : toujours `⬜ bloqué` sur `EN28.14`, non planifié — inchangé.
+>
+> **Sprint 21 est donc code-complet.** Reste uniquement la recette humaine (passage
+> `Stage: ⬜ → ✅` par le mainteneur, jamais Claude) sur les 9 fichiers concernés.

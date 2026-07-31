@@ -19,34 +19,43 @@ masse plutôt que saisie ligne à ligne) sans prétendre à une intégration tem
 Une US de convergence pourra proposer un ou plusieurs connecteurs temps réel nommés si un accès
 réel à un tenant SAP/Workday/Lucca devient disponible — non traité ici.
 
+**Réconciliation 2026-07-31** — vérifié contre le code réel (`pivot-core#263` mergée) :
+`CapacityAbsenceImportService`/`CapacityAbsenceImportController`, tests
+`CapacityEngineControllerIT` (dont `importCsv_motifColumn_silentlyIgnoredNeverPersistedNorReturned`
+et `importCsv_exactDuplicate_countedButNotRecreated`). Checkboxes jamais mises à jour après
+merge. Une nuance mineure : le rejet 400 couvre fichier vide/> 500 lignes explicitement ;
+« non-CSV » n'a pas de contrôle dédié par type MIME/extension — un contenu non-CSV produit des
+erreurs ligne par ligne plutôt qu'un rejet global, lecture défendable de l'AC mais pas la plus
+littérale.
+
 ## Critères d'acceptation
 
 ### Import CSV (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un événement accessible et un fichier CSV (colonnes `teamMemberIdOrEmail`, `dateDebut`, `dateFin` — **aucune autre colonne acceptée, notamment aucune colonne motif/raison**, voir §RGPD), when `POST .../events/{id}/absences/import`, then chaque ligne valide crée une `CapacityAbsence` (US11.2.2, même entité, mêmes colonnes RGPD-minimales — pas de nouvelle table dupliquée) | ⬜ |
-| Given le fichier importé, when le traitement se termine, then une réponse **ligne par ligne** est retournée : `{ imported: N, errors: [{ line, code }] }` — jamais tout-ou-rien, les lignes valides sont importées même si d'autres échouent | ⬜ |
-| Given une ligne dont `teamMemberIdOrEmail` ne correspond à aucun membre de l'événement, when elle est traitée, then elle échoue avec le code `UNKNOWN_MEMBER` (ligne suivante quand même traitée) | ⬜ |
-| Given une ligne avec des dates invalides (`dateDebut` > `dateFin`, format non parsable), when elle est traitée, then elle échoue avec le code `INVALID_DATE_RANGE` (même code qu'US11.2.2) | ⬜ |
-| Given une absence importée qui **duplique exactement** une absence déjà existante pour ce membre (mêmes `dateDebut`/`dateFin`), when elle est traitée, then elle est **silencieusement ignorée** (comptée dans `imported` mais non recréée) — évite les doublons en cas de ré-import du même export | ⬜ |
-| Given une colonne inconnue dans le CSV (ex. un export SI RH incluant une colonne "motif"/"reason"), when le fichier est traité, then elle est **ignorée sans erreur** — seules les trois colonnes attendues sont lues, aucune n'est persistée au-delà de `dateDebut`/`dateFin` | ⬜ |
+| Given un événement accessible et un fichier CSV (colonnes `teamMemberIdOrEmail`, `dateDebut`, `dateFin` — **aucune autre colonne acceptée, notamment aucune colonne motif/raison**, voir §RGPD), when `POST .../events/{id}/absences/import`, then chaque ligne valide crée une `CapacityAbsence` (US11.2.2, même entité, mêmes colonnes RGPD-minimales — pas de nouvelle table dupliquée) | ✅ `CapacityAbsenceImportService#processRow` |
+| Given le fichier importé, when le traitement se termine, then une réponse **ligne par ligne** est retournée : `{ imported: N, errors: [{ line, code }] }` — jamais tout-ou-rien, les lignes valides sont importées même si d'autres échouent | ✅ `AbsenceImportResponse` |
+| Given une ligne dont `teamMemberIdOrEmail` ne correspond à aucun membre de l'événement, when elle est traitée, then elle échoue avec le code `UNKNOWN_MEMBER` (ligne suivante quand même traitée) | ✅ `CapacityAbsenceImportService#resolveMember` |
+| Given une ligne avec des dates invalides (`dateDebut` > `dateFin`, format non parsable), when elle est traitée, then elle échoue avec le code `INVALID_DATE_RANGE` (même code qu'US11.2.2) | ✅ `CapacityAbsenceImportService#processRow` |
+| Given une absence importée qui **duplique exactement** une absence déjà existante pour ce membre (mêmes `dateDebut`/`dateFin`), when elle est traitée, then elle est **silencieusement ignorée** (comptée dans `imported` mais non recréée) — évite les doublons en cas de ré-import du même export | ✅ `isExactDuplicate` + test `importCsv_exactDuplicate_countedButNotRecreated` |
+| Given une colonne inconnue dans le CSV (ex. un export SI RH incluant une colonne "motif"/"reason"), when le fichier est traité, then elle est **ignorée sans erreur** — seules les trois colonnes attendues sont lues, aucune n'est persistée au-delà de `dateDebut`/`dateFin` | ✅ test `importCsv_motifColumn_silentlyIgnoredNeverPersistedNorReturned` |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given un fichier vide, non-CSV, ou dépassant **500 lignes**, when import, then 400 code `INVALID_IMPORT_FILE` (rejeté avant tout traitement ligne par ligne) | ⬜ |
-| Error : given un `id` d'événement inexistant ou d'un autre tenant, when import, then 404 | ⬜ |
+| Error : given un fichier vide, non-CSV, ou dépassant **500 lignes**, when import, then 400 code `INVALID_IMPORT_FILE` (rejeté avant tout traitement ligne par ligne) | ✅* vide/>500 lignes couverts (test `importCsv_emptyFile_returns400`) ; « non-CSV » n'a pas de contrôle par type de fichier dédié, voir note de réconciliation ci-dessus |
+| Error : given un `id` d'événement inexistant ou d'un autre tenant, when import, then 404 | ✅ test `importCsv_crossTenantEvent_returns404` |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : `tenantId`/`userId` résolus exclusivement depuis le `RequestPrincipal` | ⬜ |
-| Security : given un appelant sans lien avec l'événement, when import, then 404 (jamais 403) | ⬜ |
-| Security — **RGPD, même contrat qu'US11.2.2** : aucune colonne motif/catégorie/commentaire n'est jamais persistée, même si présente dans le fichier importé — test unitaire/TI obligatoire prouvant qu'une colonne "motif" dans le CSV source est ignorée, jamais retrouvée en base ni dans la réponse | ⬜ |
-| Security : test TI obligatoire cross-tenant sur `POST .../absences/import` | ⬜ |
+| Security : `tenantId`/`userId` résolus exclusivement depuis le `RequestPrincipal` | ✅ |
+| Security : given un appelant sans lien avec l'événement, when import, then 404 (jamais 403) | ✅ `eventService.resolveForCaller` |
+| Security — **RGPD, même contrat qu'US11.2.2** : aucune colonne motif/catégorie/commentaire n'est jamais persistée, même si présente dans le fichier importé — test unitaire/TI obligatoire prouvant qu'une colonne "motif" dans le CSV source est ignorée, jamais retrouvée en base ni dans la réponse | ✅ test `importCsv_motifColumn_silentlyIgnoredNeverPersistedNorReturned` |
+| Security : test TI obligatoire cross-tenant sur `POST .../absences/import` | ✅ `importCsv_crossTenantEvent_returns404` |
 
 ## Hors périmètre
 

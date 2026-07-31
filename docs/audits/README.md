@@ -21,6 +21,9 @@ avance) :
   synthèse chiffrée par priorité
 - [PLAN-ACTION.md](PLAN-ACTION.md) — plan d'action consolidé, findings actifs regroupés par
   sévérité (CRITICAL → INFO) avec ID cross-référencé au rapport de domaine
+- [registre-traitements-rgpd.md](registre-traitements-rgpd.md) — registre des traitements Art. 30
+  (pas un audit noté — un registre factuel, alimenté au fil des traitements documentés),
+  recommandé par `RGPD-HIGH-01` de `audit-rgpd.md`
 
 | Audit | Fichier | Profil agent responsable |
 |-------|---------|---------------------------|

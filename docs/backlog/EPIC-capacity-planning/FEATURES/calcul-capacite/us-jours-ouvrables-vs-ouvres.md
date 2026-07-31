@@ -28,38 +28,43 @@ Samedi/Dimanche pour tous les membres (même convention que `CapacityCalculator`
 Documenté explicitement comme une réduction de périmètre, pas un oubli — la richesse multi-localité
 reste l'ambition propre d'`EN22.3`/E22 Roadmap, hors de portée de PIVOT à ce stade.
 
+**Réconciliation 2026-07-31** — vérifié AC-par-AC contre le code réel de `pivot-core` (main,
+`pivot-core#263` mergée) : `CapacityHoliday`/`CapacityHolidayRepository`/
+`CapacityHolidayService`/`CapacityHolidayController`, `CapacityCalculator.countWorkingDays`
+étendu avec paramètre `holidays`. Checkboxes jamais mises à jour après merge.
+
 ## Critères d'acceptation
 
 ### Jours fériés (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un appelant administrateur du tenant, when `POST /api/agilite/capacity/holidays` avec `{ date, label }`, then 201 Created — jour férié ajouté au tenant | ⬜ |
-| Given le tenant de l'appelant, when `GET /api/agilite/capacity/holidays?from=&to=`, then 200 OK avec les jours fériés du tenant, filtrés par période si fournie, triés par `date` | ⬜ |
-| Given un jour férié existant, when `DELETE /api/agilite/capacity/holidays/{id}`, then 204 No Content | ⬜ |
-| Given une date déjà enregistrée comme jour férié pour ce tenant, when un second ajout est tenté sur la même date, then 400 code `DUPLICATE_HOLIDAY` | ⬜ |
+| Given un appelant administrateur du tenant, when `POST /api/agilite/capacity/holidays` avec `{ date, label }`, then 201 Created — jour férié ajouté au tenant | ✅ `CapacityHolidayController`/`CapacityHolidayService#create` |
+| Given le tenant de l'appelant, when `GET /api/agilite/capacity/holidays?from=&to=`, then 200 OK avec les jours fériés du tenant, filtrés par période si fournie, triés par `date` | ✅ `CapacityHolidayService#list` |
+| Given un jour férié existant, when `DELETE /api/agilite/capacity/holidays/{id}`, then 204 No Content | ✅ `CapacityHolidayService#delete` |
+| Given une date déjà enregistrée comme jour férié pour ce tenant, when un second ajout est tenté sur la même date, then 400 code `DUPLICATE_HOLIDAY` | ✅ contrainte unique `(tenantId, date)` + validation service |
 
 ### Calcul des jours ouvrés (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given une période et les jours fériés du tenant, when les jours ouvrés se calculent, then weekends **et** jours fériés tenant tombant dans la période sont exclus des jours ouvrables | ⬜ |
-| Given les jours ouvrables nets d'un membre, when on retire weekends + jours fériés + ses absences (US11.2.2), then on obtient ses **jours ouvrés nets** — remplace `CapacityCalculator.countWorkingDays` (S20, weekends seuls, `isProvisional: true`) | ⬜ |
-| Given un événement sans jour férié tenant configuré, when le calcul s'exécute, then le résultat est identique au comportement S20 (weekends seuls) — aucune régression silencieuse pour les tenants n'ayant pas encore saisi de jours fériés | ⬜ |
+| Given une période et les jours fériés du tenant, when les jours ouvrés se calculent, then weekends **et** jours fériés tenant tombant dans la période sont exclus des jours ouvrables | ✅ `CapacityCalculator.countWorkingDays(..., Set<LocalDate> holidays)` |
+| Given les jours ouvrables nets d'un membre, when on retire weekends + jours fériés + ses absences (US11.2.2), then on obtient ses **jours ouvrés nets** — remplace `CapacityCalculator.countWorkingDays` (S20, weekends seuls, `isProvisional: true`) | ✅ `CapacityCalculator.summarizeInternal` |
+| Given un événement sans jour férié tenant configuré, when le calcul s'exécute, then le résultat est identique au comportement S20 (weekends seuls) — aucune régression silencieuse pour les tenants n'ayant pas encore saisi de jours fériés | ✅ défaut `holidays` vide = comportement S20 inchangé (signature étendue, pas remplacée) |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given `date` absente ou `label` vide/> 100 caractères, when ajout d'un jour férié, then 400 code `INVALID_HOLIDAY` | ⬜ |
-| Error : given un appelant non administrateur du tenant, when ajout/suppression d'un jour férié, then 403 (opération de configuration tenant, pas une ressource d'équipe — seul cas de ce lot où 403 est le bon code, à la différence des ressources d'équipe qui restent en 404 anti-énumération) | ⬜ |
+| Error : given `date` absente ou `label` vide/> 100 caractères, when ajout d'un jour férié, then 400 code `INVALID_HOLIDAY` | ✅ `CapacityHolidayService` validation |
+| Error : given un appelant non administrateur du tenant, when ajout/suppression d'un jour férié, then 403 (opération de configuration tenant, pas une ressource d'équipe — seul cas de ce lot où 403 est le bon code, à la différence des ressources d'équipe qui restent en 404 anti-énumération) | ✅ premier endpoint agilité exigeant `ROLE_ADMIN` (`RequestPrincipal` élargi avec `role`, `pivot-core#263` notes) |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : `tenantId` résolu exclusivement depuis le `RequestPrincipal` | ⬜ |
-| Security : test TI obligatoire prouvant qu'un jour férié d'un tenant n'apparaît jamais dans le calcul d'un autre tenant | ⬜ |
+| Security : `tenantId` résolu exclusivement depuis le `RequestPrincipal` | ✅ |
+| Security : test TI obligatoire prouvant qu'un jour férié d'un tenant n'apparaît jamais dans le calcul d'un autre tenant | ✅ test `holidays_crossTenant_neverVisible` (`CapacityEngineControllerIT`) |
 
 ## Hors périmètre
 

@@ -213,6 +213,12 @@ collaboratif*. Réutiliser telles quelles les finalités/bases légales déjà r
 `privacy.component.ts` section 3 — pas de nouvelle réflexion juridique, juste la
 restructuration en registre exploitable.
 
+**Mise à jour 2026-07-31** : le fichier a été créé à l'emplacement recommandé, initié par
+l'US11.8.1 (E11 Capacity Planning) avec sa seule entrée *Capacity Planning (Agilité)* — pas une
+résolution de ce finding, dont le périmètre reste la consolidation de **tous** les traitements
+existants (auth, audit_events, appareils de confiance, whiteboard…). Score/sévérité inchangés
+tant qu'un passage formel ne couvre pas l'ensemble du registre.
+
 **Effort** : M (rédaction, pas de code).
 
 **Priorité** : P1.

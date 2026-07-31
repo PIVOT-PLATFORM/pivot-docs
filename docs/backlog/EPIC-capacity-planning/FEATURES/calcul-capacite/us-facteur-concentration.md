@@ -8,28 +8,33 @@
 Référence POC : `computeMemberCapacity`/`effectiveFocus` de PouetPouet
 (`apps/web/src/lib/capacity.ts`) — override membre > override événement > défaut, même précédence.
 
+**Réconciliation 2026-07-31** — vérifié contre le code réel (`pivot-core#263` mergée) :
+`CapacityEvent`/`CapacityEventMember.focusFactorPercent`, validation `[10, 100]` dans
+`CapacityEventService`/`CapacityMemberService` (`INVALID_FOCUS_FACTOR`). Checkboxes jamais mises
+à jour après merge.
+
 ## Critères d'acceptation
 
 ### Facteur de concentration (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un événement, when `PATCH .../events/{id}` avec `{ focusFactorPercent }`, then le facteur est appliqué au niveau événement (tous les membres, sauf override individuel) — bornes `[10, 100]` | ⬜ |
-| Given un membre, when `PATCH .../events/{id}/members/{memberId}` avec `{ focusFactorPercent }`, then ce facteur **surcharge** celui de l'événement pour ce seul membre | ⬜ |
-| Given aucun facteur saisi (ni événement ni membre), when la capacité se calcule, then le facteur par défaut **70 %** s'applique — ou celui dérivé de la maturité agile si renseignée (US11.6.4, qui prévaut sur le défaut brut) | ⬜ |
-| Given la capacité d'un membre, when elle se calcule, then **capacité nette (jours) = jours ouvrés nets (US11.6.1) × quotité (`availabilityPercent`, US11.2.1) × facteur de concentration effectif** | ⬜ |
+| Given un événement, when `PATCH .../events/{id}` avec `{ focusFactorPercent }`, then le facteur est appliqué au niveau événement (tous les membres, sauf override individuel) — bornes `[10, 100]` | ✅ `CapacityEventService` L201-206 |
+| Given un membre, when `PATCH .../events/{id}/members/{memberId}` avec `{ focusFactorPercent }`, then ce facteur **surcharge** celui de l'événement pour ce seul membre | ✅ `CapacityMemberService` L106-111, résolution membre > événement dans `CapacityCalculator` |
+| Given aucun facteur saisi (ni événement ni membre), when la capacité se calcule, then le facteur par défaut **70 %** s'applique — ou celui dérivé de la maturité agile si renseignée (US11.6.4, qui prévaut sur le défaut brut) | ✅ `CapacityMaturityDefaults` (défaut global 70/15, ou tiers maturité) |
+| Given la capacité d'un membre, when elle se calcule, then **capacité nette (jours) = jours ouvrés nets (US11.6.1) × quotité (`availabilityPercent`, US11.2.1) × facteur de concentration effectif** | ✅ `CapacityCalculator.summarizeInternal` |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given `focusFactorPercent` hors bornes `[10, 100]` (borne basse non nulle : un facteur à 0 rendrait la capacité toujours nulle, signal probable d'une saisie erronée plutôt qu'une intention réelle), when modification événement/membre, then 400 code `INVALID_FOCUS_FACTOR` | ⬜ |
+| Error : given `focusFactorPercent` hors bornes `[10, 100]` (borne basse non nulle : un facteur à 0 rendrait la capacité toujours nulle, signal probable d'une saisie erronée plutôt qu'une intention réelle), when modification événement/membre, then 400 code `INVALID_FOCUS_FACTOR` | ✅ `CapacityEventService`/`CapacityMemberService` |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : mêmes règles d'accès qu'US11.1.1/US11.2.1 (créateur ou membre de l'équipe, 404 anti-énumération) | ⬜ |
+| Security : mêmes règles d'accès qu'US11.1.1/US11.2.1 (créateur ou membre de l'équipe, 404 anti-énumération) | ✅ `eventService.resolveForCaller` (convention module) |
 
 ## Hors périmètre
 

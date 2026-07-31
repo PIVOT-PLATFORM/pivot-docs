@@ -26,30 +26,38 @@ c'est **inexact** : Gate 1 d'`US50.1.1` (S19, `pivot-docs#299`) a explicitement 
 — cadence PI **découplée**, `US50.1.1` génère ses propres itérations sans dépendre d'`US11.5.1`.
 Cette US ne lève donc aucun blocage pour E50 ; corrigé dans `sprint-21.md` de ce Gate 1.
 
+**Réconciliation 2026-07-31** — vérifié AC-par-AC contre le code réel de `pivot-core` (main,
+`pivot-core#263` mergée) : `CapacityEventType.INCREMENT`, `CapacityEvent#isIpIteration`,
+validation `INVALID_PARENT_EVENT`/`CHILD_PERIOD_OUTSIDE_PARENT` (`CapacityEventService`), tests
+`CapacityEventControllerIT`/`CapacityEngineControllerIT` (dont
+`update_isIpIterationOnTopLevelSprint_acceptedWithoutEffectOnAggregation` et
+`summary_incrementParent_aggregatesChildrenExcludingIpIteration`). Les checkboxes ci-dessous
+n'avaient simplement jamais été mises à jour après le merge.
+
 ## Critères d'acceptation
 
 ### Cadence (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un appelant membre de l'équipe, when `POST /api/agilite/capacity/events` avec `type: "INCREMENT"` ou `type: "PI_PLANNING"`, then 201 Created — même comportement que US11.1.1 (aucun membre auto-alimenté, capacité agrégée depuis les enfants) | ⬜ |
-| Given un événement `INCREMENT` ou `PI_PLANNING` créé, when un `SPRINT`/`RELEASE`/`CUSTOM` lui est rattaché via `parentEventId`, then il hérite de la période comme validation (l'enfant doit rester dans `[startDate, endDate]` du parent — voir Cas d'erreur) et remonte sa capacité à l'agrégation (US11.3.1/US11.6.5) | ⬜ |
-| Given un événement `SPRINT` enfant d'un `PI_PLANNING`, when `PATCH .../events/{id}` avec `{ isIpIteration: true }`, then le flag est posé — cet enfant est **exclu** de la capacité agrégée du PI (délivrable non alloué par défaut) mais reste visible dans la hiérarchie | ⬜ |
-| Given `isIpIteration: true` positionné sur un événement qui n'est **pas** un `SPRINT` enfant d'un `PI_PLANNING` (ex. enfant d'un `INCREMENT`, ou événement racine), when la modification est traitée, then le flag est accepté sans erreur mais **sans effet** sur l'agrégation (pas de sémantique IP en dehors d'un PI SAFe) | ⬜ |
+| Given un appelant membre de l'équipe, when `POST /api/agilite/capacity/events` avec `type: "INCREMENT"` ou `type: "PI_PLANNING"`, then 201 Created — même comportement que US11.1.1 (aucun membre auto-alimenté, capacité agrégée depuis les enfants) | ✅ `CapacityEventType.INCREMENT` + `CapacityEventController#create` |
+| Given un événement `INCREMENT` ou `PI_PLANNING` créé, when un `SPRINT`/`RELEASE`/`CUSTOM` lui est rattaché via `parentEventId`, then il hérite de la période comme validation (l'enfant doit rester dans `[startDate, endDate]` du parent — voir Cas d'erreur) et remonte sa capacité à l'agrégation (US11.3.1/US11.6.5) | ✅ `CapacityEventService` validation parent-enfant + `CapacitySummaryService#summarizeParent` |
+| Given un événement `SPRINT` enfant d'un `PI_PLANNING`, when `PATCH .../events/{id}` avec `{ isIpIteration: true }`, then le flag est posé — cet enfant est **exclu** de la capacité agrégée du PI (délivrable non alloué par défaut) mais reste visible dans la hiérarchie | ✅ `CapacityEvent#isIpIteration`, exclu dans `CapacitySummaryService#summarizeParent` (`.filter(child -> !child.isIpIteration())`) — test `summary_incrementParent_aggregatesChildrenExcludingIpIteration` |
+| Given `isIpIteration: true` positionné sur un événement qui n'est **pas** un `SPRINT` enfant d'un `PI_PLANNING` (ex. enfant d'un `INCREMENT`, ou événement racine), when la modification est traitée, then le flag est accepté sans erreur mais **sans effet** sur l'agrégation (pas de sémantique IP en dehors d'un PI SAFe) | ✅ test `update_isIpIterationOnTopLevelSprint_acceptedWithoutEffectOnAggregation` |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given `parentEventId` référençant un événement qui n'est ni `PI_PLANNING` ni `INCREMENT`, when création/modification d'un enfant, then 400 code `INVALID_PARENT_EVENT` (même code qu'US11.1.1, portée élargie aux deux types parents) | ⬜ |
-| Error : given un enfant dont la période `[startDate, endDate]` déborde de celle de son parent, when création/modification, then 400 code `CHILD_PERIOD_OUTSIDE_PARENT` | ⬜ |
+| Error : given `parentEventId` référençant un événement qui n'est ni `PI_PLANNING` ni `INCREMENT`, when création/modification d'un enfant, then 400 code `INVALID_PARENT_EVENT` (même code qu'US11.1.1, portée élargie aux deux types parents) | ✅ `CapacityEventService` L78 + test `CapacityEventControllerIT` (jsonPath `$.code` = `INVALID_PARENT_EVENT`) |
+| Error : given un enfant dont la période `[startDate, endDate]` déborde de celle de son parent, when création/modification, then 400 code `CHILD_PERIOD_OUTSIDE_PARENT` | ✅ `CapacityEventService` L236 + test `CapacityEngineControllerIT` |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : `tenantId`/`userId` résolus exclusivement depuis le `RequestPrincipal`, mêmes règles d'accès qu'US11.1.1 (créateur ou membre de l'équipe) | ⬜ |
-| Security : test TI obligatoire prouvant qu'un enfant `isIpIteration: true` est bien exclu du calcul agrégé (US11.6.5), et qu'un `INCREMENT` cross-tenant en `parentEventId` est traité en 404 | ⬜ |
+| Security : `tenantId`/`userId` résolus exclusivement depuis le `RequestPrincipal`, mêmes règles d'accès qu'US11.1.1 (créateur ou membre de l'équipe) | ✅ `RequestPrincipal` seul point de résolution (convention module, vérifiée sur les endpoints capacity) |
+| Security : test TI obligatoire prouvant qu'un enfant `isIpIteration: true` est bien exclu du calcul agrégé (US11.6.5), et qu'un `INCREMENT` cross-tenant en `parentEventId` est traité en 404 | ✅* exclusion testée (`summary_incrementParent_aggregatesChildrenExcludingIpIteration`) ; le cross-tenant `INCREMENT`-en-parent n'a pas de test dédié nommé mais partage le chemin `findByIdAndTenantId` déjà couvert cross-tenant pour `PI_PLANNING` (`findById_crossTenant_returns404` et consorts) — même code, pas de branche spécifique à `INCREMENT` |
 
 ## Hors périmètre
 
