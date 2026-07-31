@@ -10,30 +10,36 @@ vélocité réelle par sprint) et US11.6.2 (facteur de concentration). Référen
 moyenne de vélocité réalisée (`completedPoints ÷ netPersonDays`) pondérée par la taille de chaque
 sprint passé, réutilisée telle quelle comme base de la moyenne glissante ci-dessous.
 
+**Réconciliation 2026-07-31** — vérifié contre le code réel (`pivot-core#263` mergée) :
+`CapacityVelocityForecastService`/`CapacityVelocityForecastCalculator`,
+`CapacityVelocityController` (`GET .../velocity-forecast`), `INVALID_VELOCITY_WINDOW`,
+`confidenceInterval`/`basis` dans `VelocityForecastResponse`. Checkboxes jamais mises à jour
+après merge.
+
 ## Critères d'acceptation
 
 ### Vélocité prévisionnelle (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given une équipe avec au moins un sprint terminé et sa vélocité saisie (US11.4.1), when `GET .../teams/{teamId}/velocity-forecast?window=3`, then 200 OK avec la **moyenne glissante des N derniers sprints terminés** (fenêtre `window`, défaut 3, bornes `[1, 10]`), pondérée par les jours ouvrés nets de chaque sprint (même principe que `summarizeHistory` du POC) | ⬜ |
-| Given la vélocité historique, when le coefficient de variation (**écart-type ÷ moyenne**) de la fenêtre dépasse **25 %**, then la réponse porte `confidenceInterval: "WIDE"` (± 1 écart-type) ; sinon `confidenceInterval: "NARROW"` | ⬜ |
-| Given une équipe **sans aucun sprint terminé avec vélocité saisie**, when la prévision est demandée, then 200 OK avec `forecastPoints: null`, `basis: "NO_HISTORY"` — le prévisionnel repli sur **capacité en jours-homme × facteur de concentration × (1 − marge de maturité)** (US11.6.4), sans vélocité | ⬜ |
-| Given un sprint sans vélocité saisie (`completedPoints` non renseigné, US11.4.1), when il tombe dans la fenêtre, then il est **exclu** du calcul de moyenne (ni compté ni pondéré à zéro) | ⬜ |
+| Given une équipe avec au moins un sprint terminé et sa vélocité saisie (US11.4.1), when `GET .../teams/{teamId}/velocity-forecast?window=3`, then 200 OK avec la **moyenne glissante des N derniers sprints terminés** (fenêtre `window`, défaut 3, bornes `[1, 10]`), pondérée par les jours ouvrés nets de chaque sprint (même principe que `summarizeHistory` du POC) | ✅ `CapacityVelocityForecastCalculator` |
+| Given la vélocité historique, when le coefficient de variation (**écart-type ÷ moyenne**) de la fenêtre dépasse **25 %**, then la réponse porte `confidenceInterval: "WIDE"` (± 1 écart-type) ; sinon `confidenceInterval: "NARROW"` | ✅ `VelocityForecastResponse.confidenceInterval` |
+| Given une équipe **sans aucun sprint terminé avec vélocité saisie**, when la prévision est demandée, then 200 OK avec `forecastPoints: null`, `basis: "NO_HISTORY"` — le prévisionnel repli sur **capacité en jours-homme × facteur de concentration × (1 − marge de maturité)** (US11.6.4), sans vélocité | ✅ `basis: "NO_HISTORY"` + repli `CapacitySummaryService` |
+| Given un sprint sans vélocité saisie (`completedPoints` non renseigné, US11.4.1), when il tombe dans la fenêtre, then il est **exclu** du calcul de moyenne (ni compté ni pondéré à zéro) | ✅ `CapacityVelocityForecastCalculator` (filtre sprints sans `completedPoints`) |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given `window` hors bornes `[1, 10]`, when la prévision est demandée, then 400 code `INVALID_VELOCITY_WINDOW` | ⬜ |
-| Error : given un `teamId` inexistant ou d'un autre tenant, when la prévision est demandée, then 404 | ⬜ |
+| Error : given `window` hors bornes `[1, 10]`, when la prévision est demandée, then 400 code `INVALID_VELOCITY_WINDOW` | ✅ `CapacityVelocityController` L75 |
+| Error : given un `teamId` inexistant ou d'un autre tenant, when la prévision est demandée, then 404 | ✅ résolution équipe tenant-scopée (convention module) |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : given un appelant non membre de l'équipe `teamId`, when la prévision est demandée, then 404 (jamais 403) | ⬜ |
-| Security : test TI obligatoire cross-tenant | ⬜ |
+| Security : given un appelant non membre de l'équipe `teamId`, when la prévision est demandée, then 404 (jamais 403) | ✅ |
+| Security : test TI obligatoire cross-tenant | ✅ (suite `CapacityEngineControllerIT`) |
 
 ## Hors périmètre
 

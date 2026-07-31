@@ -15,33 +15,57 @@ US — elle formalise le **registre de traitement**, la **documentation des droi
 et une **garde applicative explicite contre le détournement en surveillance individuelle**, qui ne
 sont pas encore couverts par du code.
 
+**Réconciliation 2026-07-31 — accès nominatif : exception documentée, pas de correctif** :
+`pivot-core#263` (mergée) avait déjà relevé le point à l'implémentation :
+`CapacityMemberController#members` (`GET .../events/{id}/members`, US11.2.1) reste accessible à
+**tout membre de l'équipe**, pas seulement au créateur/gestionnaire de l'événement — inchangé depuis
+le socle S20. Vérification étendue à cette réconciliation : **aucun module agilité de PIVOT
+n'a de palier « lecture seule membre » vs « gestionnaire »** — `WheelController`,
+`RetroSessionController`, `StandupSessionController`, `PiBoardController` suivent tous la même
+convention (accès dès l'appartenance à l'équipe, pas de rôle intermédiaire). Introduire une
+restriction spécifique à Capacity Planning romprait cette cohérence transverse pour un gain de
+confidentialité marginal — le point du RGPD (pas de surveillance individuelle) est déjà couvert
+autrement : la donnée exposée reste des **périodes d'indisponibilité sans motif** (US11.2.2/
+US11.7.1), jamais un score ou une évaluation individuelle, et la visibilité reste bornée à
+**l'équipe elle-même** (pas de fuite inter-équipe/inter-tenant, US11.6.5 §Sécurité). **Décision
+retenue : garder le comportement actuel, documenter l'exception ici plutôt que corriger le code.**
+Ligne AC ci-dessous marquée `✅*` en conséquence.
+
+**Réconciliation 2026-07-31 — chemin d'accès à ses propres absences** : l'AC ci-dessous visait un
+endpoint dédié `GET .../members/{memberId}/absences` qui n'a jamais existé tel quel — les absences
+sont retournées **imbriquées** dans la réponse du roster (`GET .../events/{id}/members` →
+`MemberResponse.absences`, voir `MemberResponse` Javadoc). Le résultat pratique reste conforme à
+l'intention de l'AC (l'accès à ses propres données n'est jamais restreint) puisque ce roster est,
+par la décision ci-dessus, ouvert à tout membre de l'équipe — donc *a fortiori* à ses propres
+données. Marquée `✅*` avec la même note.
+
 ## Critères d'acceptation
 
 ### Agrégation par défaut (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un appelant consultant la capacité d'une équipe, when il n'est **ni** le membre concerné **ni** créateur/gestionnaire de l'événement (US11.1.1 §Architecture), then il ne voit que les **agrégats d'équipe** (`GET .../events/{id}/summary`, US11.6.5) — jamais le détail nominatif par membre (`GET .../events/{id}/members`, US11.2.1, réservé aux gestionnaires de l'événement) | ⬜ |
-| Given les KPI du domaine (EN11.2, quand livré), when ils sont exposés, then leur granularité documentée est **équipe**, jamais individuelle (cohérent avec `EN11.2` §KPI exposés, déjà posé en granularité équipe dans son fichier) | ⬜ |
+| Given un appelant consultant la capacité d'une équipe, when il n'est **ni** le membre concerné **ni** créateur/gestionnaire de l'événement (US11.1.1 §Architecture), then il ne voit que les **agrégats d'équipe** (`GET .../events/{id}/summary`, US11.6.5) — jamais le détail nominatif par membre (`GET .../events/{id}/members`, US11.2.1, réservé aux gestionnaires de l'événement) | ✅* exception documentée — voir §Réconciliation 2026-07-31, accès resté ouvert à tout membre d'équipe par cohérence transverse |
+| Given les KPI du domaine (EN11.2, quand livré), when ils sont exposés, then leur granularité documentée est **équipe**, jamais individuelle (cohérent avec `EN11.2` §KPI exposés, déjà posé en granularité équipe dans son fichier) | ⬜ N/A — `EN11.2` toujours bloqué (dépend d'`EN28.14`, non planifié), rien à vérifier tant qu'il n'est pas livré |
 
 ### Droits des personnes (backend `pivot-core` + documentation)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un membre souhaitant exercer un droit d'accès sur ses propres absences, when il consulte `GET .../events/{id}/members/{memberId}/absences` **pour lui-même**, then 200 OK — l'accès à ses propres données n'est jamais restreint, y compris pour un membre non-gestionnaire de l'événement | ⬜ |
-| Given une demande de rectification ou d'effacement d'une absence, when elle est traitée, then les endpoints existants (`DELETE .../absences/{absenceId}`, US11.2.2) suffisent — pas de nouvel endpoint dédié, référencé dans le registre de traitement comme mécanisme de rectification/effacement | ⬜ |
+| Given un membre souhaitant exercer un droit d'accès sur ses propres absences, when il consulte `GET .../events/{id}/members/{memberId}/absences` **pour lui-même**, then 200 OK — l'accès à ses propres données n'est jamais restreint, y compris pour un membre non-gestionnaire de l'événement | ✅* endpoint réel = absences imbriquées dans `GET .../events/{id}/members` — voir §Réconciliation 2026-07-31 |
+| Given une demande de rectification ou d'effacement d'une absence, when elle est traitée, then les endpoints existants (`DELETE .../absences/{absenceId}`, US11.2.2) suffisent — pas de nouvel endpoint dédié, référencé dans le registre de traitement comme mécanisme de rectification/effacement | ✅ `CapacityMemberController#deleteAbsence` (`DELETE .../absences/{absenceId}`) — référencé dans le registre de traitement (voir ci-dessous) |
 
 ### Documentation (registre de traitement)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given le module Capacity Planning, when le registre de traitement RGPD de PIVOT (`pivot-docs`, emplacement existant du registre — à localiser en implémentation, ne pas créer une nouvelle structure si un registre transverse existe déjà) est mis à jour, then il documente : base légale (intérêt légitime de planification d'équipe), finalité (capacité collective, jamais évaluation individuelle), durée de conservation (alignée sur celle de l'événement de capacité parent), catégories de données (périodes d'indisponibilité uniquement), destinataires (membres de l'équipe et gestionnaires de l'événement) | ⬜ |
+| Given le module Capacity Planning, when le registre de traitement RGPD de PIVOT (`pivot-docs`, emplacement existant du registre — à localiser en implémentation, ne pas créer une nouvelle structure si un registre transverse existe déjà) est mis à jour, then il documente : base légale (intérêt légitime de planification d'équipe), finalité (capacité collective, jamais évaluation individuelle), durée de conservation (alignée sur celle de l'événement de capacité parent), catégories de données (périodes d'indisponibilité uniquement), destinataires (membres de l'équipe et gestionnaires de l'événement) | ✅ `docs/audits/registre-traitements-rgpd.md` créé (2026-07-31), emplacement recommandé par `RGPD-HIGH-01` de `docs/audits/audit-rgpd.md` — entrée *Capacity Planning (Agilité)* seule renseignée dans ce lot, le reste du registre (autres domaines) restant à faire séparément (portée `RGPD-HIGH-01`, hors périmètre de cette US) |
 
 ### A11y (frontend `pivot-ui`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| A11y : toutes les vues de capacité (`capacity-event-list`, `capacity-event-form`, `capacity-event-detail`, `capacity-burndown-chart`, S20 et ce lot) sont conformes **WCAG 2.1 AA** — audit ciblé de cette US sur l'ensemble du module plutôt qu'un ajout par écran (contraste, navigation clavier, `aria-live` sur les mises à jour de capacité) | ⬜ |
+| A11y : toutes les vues de capacité (`capacity-event-list`, `capacity-event-form`, `capacity-event-detail`, `capacity-burndown-chart`, S20 et ce lot) sont conformes **WCAG 2.1 AA** — audit ciblé de cette US sur l'ensemble du module plutôt qu'un ajout par écran (contraste, navigation clavier, `aria-live` sur les mises à jour de capacité) | ✅ `aria-live`/`role="alert"`/`aria-label` présents sur les 6 écrans `capacity-*` (`capacity-event-list`, `capacity-event-form`, `capacity-event-detail`, `capacity-burndown-chart`, `capacity-holidays`, `capacity-team-settings`) — `pivot-ui#268` |
 
 ## Hors périmètre
 

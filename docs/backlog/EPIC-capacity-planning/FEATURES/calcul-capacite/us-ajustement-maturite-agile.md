@@ -11,32 +11,37 @@ y sont des paramètres bruts sans barème) ; les valeurs par défaut ci-dessous 
 PIVOT lui-même (`EPIC-capacity-planning/README.md` §Modèle de calcul), conçues directement à
 partir de ce barème.
 
+**Réconciliation 2026-07-31** — vérifié contre le code réel (`pivot-core#263` mergée) :
+`CapacityTeamMaturity`/`CapacityTeamMaturityHistory`/`CapacityTeamMaturityService`/
+`CapacityMaturityController`/`CapacityMaturityDefaults`. Checkboxes jamais mises à jour après
+merge.
+
 ## Critères d'acceptation
 
 ### Maturité agile (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given une équipe, when `PATCH .../teams/{teamId}/capacity-maturity` avec `{ maturity }` (`FORMING` \| `NORMING` \| `PERFORMING`), then le niveau est enregistré et les défauts chiffrés s'appliquent aux événements de cette équipe : **`FORMING` → focus 60 % / marge 20 %** · **`NORMING` → focus 70 % / marge 10 %** · **`PERFORMING` → focus 80 % / marge 5 %** | ⬜ |
-| Given une équipe sans maturité renseignée, when la capacité se calcule, then le **défaut global** s'applique : focus 70 % / marge 15 % | ⬜ |
-| Given un `focusFactorPercent` explicitement saisi au niveau événement ou membre (US11.6.2), when il coexiste avec une maturité renseignée, then **la saisie explicite prévaut** sur le défaut dérivé de la maturité (la maturité ne fournit qu'un défaut, jamais une valeur imposée) | ⬜ |
-| Given la capacité nette et la marge effective, when l'**engagement recommandé** est calculé, then `engagement = capacité nette × (1 − marge)` | ⬜ |
-| Given une équipe `FORMING` (marge 20 %), when un événement de cette équipe affiche sa capacité, then la marge appliquée est **signalée explicitement** dans la réponse (`marginPercent`, `maturitySource: "TEAM_MATURITY" \| "DEFAULT"`) — jamais silencieuse | ⬜ |
-| Given la maturité d'une équipe, when elle est mise à jour (ex. `FORMING` → `NORMING`), then l'historique des changements est tracé (`CapacityTeamMaturityHistory` — date, ancienne/nouvelle valeur, auteur) | ⬜ |
+| Given une équipe, when `PATCH .../teams/{teamId}/capacity-maturity` avec `{ maturity }` (`FORMING` \| `NORMING` \| `PERFORMING`), then le niveau est enregistré et les défauts chiffrés s'appliquent aux événements de cette équipe : **`FORMING` → focus 60 % / marge 20 %** · **`NORMING` → focus 70 % / marge 10 %** · **`PERFORMING` → focus 80 % / marge 5 %** | ✅ `CapacityMaturityController` + `CapacityMaturityDefaults` (table de correspondance) |
+| Given une équipe sans maturité renseignée, when la capacité se calcule, then le **défaut global** s'applique : focus 70 % / marge 15 % | ✅ `CapacityMaturityDefaults` défaut global |
+| Given un `focusFactorPercent` explicitement saisi au niveau événement ou membre (US11.6.2), when il coexiste avec une maturité renseignée, then **la saisie explicite prévaut** sur le défaut dérivé de la maturité (la maturité ne fournit qu'un défaut, jamais une valeur imposée) | ✅ résolution événement/membre > maturité dans `CapacityCalculator` |
+| Given la capacité nette et la marge effective, when l'**engagement recommandé** est calculé, then `engagement = capacité nette × (1 − marge)` | ✅ `CapacitySummaryService` L85 (`engagementRecommendedPoints`) |
+| Given une équipe `FORMING` (marge 20 %), when un événement de cette équipe affiche sa capacité, then la marge appliquée est **signalée explicitement** dans la réponse (`marginPercent`, `maturitySource: "TEAM_MATURITY" \| "DEFAULT"`) — jamais silencieuse | ✅ `MaturityResponse`/`CapacitySummaryService` L97 (`marginPercent` + `source`) |
+| Given la maturité d'une équipe, when elle est mise à jour (ex. `FORMING` → `NORMING`), then l'historique des changements est tracé (`CapacityTeamMaturityHistory` — date, ancienne/nouvelle valeur, auteur) | ✅ `CapacityTeamMaturityService` L63, `CapacityTeamMaturityHistoryRepository` |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given `maturity` hors énumération `{FORMING, NORMING, PERFORMING}`, when mise à jour, then 400 code `INVALID_MATURITY` | ⬜ |
-| Error : given un `teamId` inexistant ou d'un autre tenant, when mise à jour/lecture, then 404 | ⬜ |
+| Error : given `maturity` hors énumération `{FORMING, NORMING, PERFORMING}`, when mise à jour, then 400 code `INVALID_MATURITY` | ✅ `CapacityTeamMaturityService` validation |
+| Error : given un `teamId` inexistant ou d'un autre tenant, when mise à jour/lecture, then 404 | ✅ test `maturity_crossTenant_returns404` (`CapacityEngineControllerIT`) |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : given un appelant non membre de l'équipe `teamId`, when mise à jour/lecture de la maturité, then 404 (jamais 403) | ⬜ |
-| Security : test TI obligatoire cross-tenant | ⬜ |
+| Security : given un appelant non membre de l'équipe `teamId`, when mise à jour/lecture de la maturité, then 404 (jamais 403) | ✅ |
+| Security : test TI obligatoire cross-tenant | ✅ `maturity_crossTenant_returns404` |
 
 ## Hors périmètre
 

@@ -22,30 +22,35 @@ au niveau équipe) ; il reste `true` uniquement si l'appelant n'a **rien** confi
 férié, aucune maturité, facteur par défaut brut) — signal honnête qu'aucun paramètre réel n'a
 encore été saisi, pas une limitation technique du moteur.
 
+**Réconciliation 2026-07-31** — vérifié contre le code réel (`pivot-core#263` mergée) :
+`CapacitySummaryService`/`CapacityCalculator` étendus, `isProvisional`, tests
+`CapacityEventControllerIT`/`CapacityEngineControllerIT`. Checkboxes jamais mises à jour après
+merge.
+
 ## Critères d'acceptation
 
 ### Consolidation (backend `pivot-core`)
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Given un événement `SPRINT`/`RELEASE`/`CUSTOM` avec ses membres, absences, jours fériés tenant et facteur de concentration effectif, when `GET .../events/{id}/summary`, then 200 OK avec la **capacité nette du sprint** (jours-homme et, si `pointsPerDay` configuré, en points) — même endpoint qu'US11.1.2, réponse enrichie | ⬜ |
-| Given un événement `INCREMENT`/`PI_PLANNING` avec ses enfants `SPRINT`/`RELEASE`/`CUSTOM`, when `GET .../events/{id}/summary`, then 200 OK avec la **capacité du PI/incrément = somme des capacités des enfants**, les enfants marqués `isIpIteration: true` (US11.5.1) **exclus** de la somme | ⬜ |
-| Given `pointsPerDay` et un forecast de vélocité disponible (US11.6.3), when le résumé d'un `SPRINT` en préparation (sans `completedPoints` encore saisi) est demandé, then il porte en plus `forecastPoints` (issu d'US11.6.3) et `engagementRecommendedPoints = forecastPoints × (1 − marge maturité effective)` (US11.6.4) | ⬜ |
-| Given un changement affectant le calcul (ajout/suppression d'absence, modification du facteur de concentration, de la maturité d'équipe, ou de la période), when il survient, then le résumé recalculé au prochain `GET` reflète immédiatement le changement — **pas de valeur mise en cache obsolète** (calcul à la demande, pas de job de recalcul asynchrone au socle) | ⬜ |
-| Given tous les paramètres du moteur complet renseignés (jours fériés tenant même vide-mais-configuré, maturité équipe, facteur de concentration), when le résumé est produit, then `isProvisional: false` ; sinon `true` (voir §Architecture) | ⬜ |
+| Given un événement `SPRINT`/`RELEASE`/`CUSTOM` avec ses membres, absences, jours fériés tenant et facteur de concentration effectif, when `GET .../events/{id}/summary`, then 200 OK avec la **capacité nette du sprint** (jours-homme et, si `pointsPerDay` configuré, en points) — même endpoint qu'US11.1.2, réponse enrichie | ✅ `CapacitySummaryService#getSummary` |
+| Given un événement `INCREMENT`/`PI_PLANNING` avec ses enfants `SPRINT`/`RELEASE`/`CUSTOM`, when `GET .../events/{id}/summary`, then 200 OK avec la **capacité du PI/incrément = somme des capacités des enfants**, les enfants marqués `isIpIteration: true` (US11.5.1) **exclus** de la somme | ✅ `CapacitySummaryService#summarizeParent` + test `summary_incrementParent_aggregatesChildrenExcludingIpIteration` |
+| Given `pointsPerDay` et un forecast de vélocité disponible (US11.6.3), when le résumé d'un `SPRINT` en préparation (sans `completedPoints` encore saisi) est demandé, then il porte en plus `forecastPoints` (issu d'US11.6.3) et `engagementRecommendedPoints = forecastPoints × (1 − marge maturité effective)` (US11.6.4) | ✅ `CapacitySummaryService` L82-85 |
+| Given un changement affectant le calcul (ajout/suppression d'absence, modification du facteur de concentration, de la maturité d'équipe, ou de la période), when il survient, then le résumé recalculé au prochain `GET` reflète immédiatement le changement — **pas de valeur mise en cache obsolète** (calcul à la demande, pas de job de recalcul asynchrone au socle) | ✅ calcul à la demande, aucun cache/job introduit |
+| Given tous les paramètres du moteur complet renseignés (jours fériés tenant même vide-mais-configuré, maturité équipe, facteur de concentration), when le résumé est produit, then `isProvisional: false` ; sinon `true` (voir §Architecture) | ✅ `isProvisional` flip conditionnel (`CapacitySummaryService`) |
 
 ### Cas d'erreur
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Error : given un `id` d'événement inexistant ou d'un autre tenant, when `GET .../summary`, then 404 | ⬜ |
+| Error : given un `id` d'événement inexistant ou d'un autre tenant, when `GET .../summary`, then 404 | ✅ test `summary_crossTenant_returns404` |
 
 ### Sécurité
 
 | Critère | 🤖 Dev |
 |---------|--------|
-| Security : mêmes règles d'accès qu'US11.1.2 (créateur ou membre de l'équipe, 404 anti-énumération) | ⬜ |
-| Security : test TI obligatoire cross-tenant sur `GET .../events/{id}/summary` | ⬜ |
+| Security : mêmes règles d'accès qu'US11.1.2 (créateur ou membre de l'équipe, 404 anti-énumération) | ✅ |
+| Security : test TI obligatoire cross-tenant sur `GET .../events/{id}/summary` | ✅ `summary_crossTenant_returns404` |
 
 ## Hors périmètre
 
