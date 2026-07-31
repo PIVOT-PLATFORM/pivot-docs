@@ -9,12 +9,13 @@
 | Critère | 🤖 Dev |
 |---------|--------|
 | Réception : à réception de l'événement bus `roadmap.event.window.created` `{event_ref, project_ref, titre, participants, période [début, fin], durée}`, MeetOps crée une réunion en statut **`PRE_RESERVED`** (brouillon), sans envoyer d'invitation | ⬜ |
-| Meilleur créneau : le moteur propose **N créneaux classés** dans la période selon (a) disponibilités des participants, (b) heures ouvrées, weekends & jours fériés de la localité, (c) durée demandée + tampon ; le meilleur est proposé par défaut | ⬜ |
+| Meilleur créneau : le moteur propose **N créneaux classés** (défaut `N = 3`, configurable par tenant) dans la période selon (a) disponibilités des participants, (b) heures ouvrées, weekends & jours fériés de la localité, (c) durée demandée + tampon avant/après (configurable, défaut `0 min`) ; le créneau de **rang 1** est proposé par défaut | ⬜ |
 | Disponibilités : les créneaux occupés/libres proviennent des connecteurs calendrier/absences ([EN22.3](pathname:///pivot-docs/backlog/EPIC-roadmap/)) ; un participant sans agenda connecté est **considéré disponible** par défaut (paramétrable) | ⬜ |
 | Validation humaine : la réunion **reste `PRE_RESERVED`** tant que l'organisateur n'a pas validé ; il peut retenir un autre créneau proposé ou ajuster manuellement | ⬜ |
 | Envoi : à la validation → statut **`CONFIRMED`**, l'invitation est envoyée aux participants et l'événement `meetops.booking.confirmed` `{event_ref, créneau}` est publié (la roadmap reflète alors la date retenue) | ⬜ |
 | Cohérence : sur `roadmap.event.window.updated` / `deleted`, une pré-réservation **non confirmée** est recalculée / annulée ; une réunion **déjà confirmée** déclenche une **demande de reprogrammation** (pas d'annulation silencieuse) | ⬜ |
 | Temps réel : le statut de pré-réservation et les créneaux proposés sont poussés à l'organisateur via la room STOMP `/topic/collaboratif/meeting/{meetingId}` | ⬜ |
+| A11y : l'écran de proposition/validation des créneaux est navigable au clavier (sélection d'un créneau, action « valider », ajustement manuel) ; l'état de chaque créneau (**recommandé** / **conflit**) est restitué par texte + icône (jamais par la seule couleur) ; conforme WCAG 2.1 AA | ⬜ |
 | Sécurité / RGPD : `tenantId` extrait du `TenantContext` ; disponibilités consommées **en agrégat** (libre/occupé, sans détail d'agenda ni motif d'absence) ; corrélation par `event_ref` / `project_ref` — **aucune FK inter-modules** (ADR-006/008) | ⬜ |
 | Error : période sans aucun créneau sans conflit → proposer le **moins mauvais** créneau et signaler explicitement le conflit de disponibilité | ⬜ |
 | Tests : réception d'un `window.created` (création `PRE_RESERVED`) · classement des créneaux (participant occupé → créneau déclassé) · validation → `CONFIRMED` + publication bus · `window.deleted` sur pré-réservation non confirmée → annulation | ⬜ |
