@@ -25,7 +25,7 @@ jobs:
           persist-credentials: false
 
       - name: Run Plumber
-        uses: getplumber/plumber@ef9864df81f444647d95889d98695434f6fa9732 # v1
+        uses: getplumber/plumber@7ad9d267ee5a00163cec9e5c749a088d5f565167 # v1
         with:
           sarif: plumber-results.sarif
           output: plumber-results.json
@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@7188fc363630916deb702c7fdcf4e481b751f97a # v4
+        uses: github/codeql-action/upload-sarif@f205ea1c3313d32999d8d6a48b4f6530d4437b38 # v4
         if: always() && hashFiles('plumber-results.sarif') != ''
         continue-on-error: true
         with:
